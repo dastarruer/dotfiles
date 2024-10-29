@@ -1,0 +1,166 @@
+2024-10-29 13:22:15.164 [info] Extension host with pid 5093 started
+2024-10-29 13:22:15.292 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-10-29 13:22:15.437 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-10-29 13:22:15.439 [info] ExtensionService#_doActivateExtension dooez.alt-catppuccin-vsc, startup: true, activationEvent: '*'
+2024-10-29 13:22:15.447 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-10-29 13:22:15.507 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-10-29 13:22:15.593 [info] Eager extensions activated
+2024-10-29 13:22:15.613 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 13:22:15.614 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 13:22:15.628 [info] ExtensionService#_doActivateExtension Catppuccin.catppuccin-vsc, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 13:22:15.632 [info] ExtensionService#_doActivateExtension Codeium.codeium, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 13:22:15.952 [info] ExtensionService#_doActivateExtension ecmel.vscode-html-css, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 13:22:15.954 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 13:22:16.006 [info] ExtensionService#_doActivateExtension WallabyJs.console-ninja, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 13:22:16.135 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2024-10-29 13:22:16.269 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-10-29 13:22:16.279 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-10-29 13:22:16.321 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-10-29 13:29:26.958 [info] Extension host terminating: renderer closed the MessagePort
+2024-10-29 13:29:26.994 [error] Canceled: Canceled
+	at new eA (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:31:109321)
+	at Zb.U (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:31:113933)
+	at s.<computed>.n.charCodeAt.s.<computed> (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:31:111427)
+	at T0.g (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:32325)
+	at T0.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31826)
+	at r.registerCommand.description (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31156)
+	at T0.h (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:32845)
+	at T0.g (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31919)
+	at T0.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31826)
+	at Object.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:156:37049)
+	at Ju._stopHost (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:961758)
+	at Ju.dispose (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:986468)
+	at Si (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:24:701)
+	at file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:14995
+	at file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:24:1011
+	at Object.dispose (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:7:2146)
+	at hB.eb (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:11922)
+	at file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:9877
+	at Array.map (<anonymous>)
+	at hB.$ (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:9865)
+	at hB.terminate (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:10108)
+	at M3.terminate (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:1424)
+	at ps (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:174:15058)
+	at MessagePortMain.<anonymous> (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:174:11603)
+	at MessagePortMain.emit (node:events:519:28)
+	at MessagePortMain.emit (node:domain:488:12)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2619) setContext undefined
+2024-10-29 13:29:26.994 [error] Canceled: Canceled
+	at new eA (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:31:109321)
+	at Zb.U (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:31:113933)
+	at s.<computed>.n.charCodeAt.s.<computed> (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:31:111427)
+	at T0.g (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:32325)
+	at T0.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31826)
+	at r.registerCommand.description (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31156)
+	at T0.h (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:32845)
+	at T0.g (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31919)
+	at T0.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31826)
+	at Object.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:156:37049)
+	at Ju._stopHost (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:961843)
+	at Ju.dispose (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:986468)
+	at Si (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:24:701)
+	at file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:14995
+	at file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:24:1011
+	at Object.dispose (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:7:2146)
+	at hB.eb (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:11922)
+	at file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:9877
+	at Array.map (<anonymous>)
+	at hB.$ (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:9865)
+	at hB.terminate (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:10108)
+	at M3.terminate (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:1424)
+	at ps (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:174:15058)
+	at MessagePortMain.<anonymous> (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:174:11603)
+	at MessagePortMain.emit (node:events:519:28)
+	at MessagePortMain.emit (node:domain:488:12)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2619) setContext undefined
+2024-10-29 13:29:26.994 [error] Canceled: Canceled
+	at new eA (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:31:109321)
+	at Zb.U (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:31:113933)
+	at s.<computed>.n.charCodeAt.s.<computed> (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:31:111427)
+	at T0.g (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:32325)
+	at T0.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31826)
+	at r.registerCommand.description (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31156)
+	at T0.h (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:32845)
+	at T0.g (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31919)
+	at T0.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31826)
+	at Object.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:156:37049)
+	at Ju._clearLatestError (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:934017)
+	at Ju.clearInlineMessagesAndLatestError (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:933865)
+	at Ju._stopHost (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:962156)
+	at Ju.dispose (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:986468)
+	at Si (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:24:701)
+	at file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:14995
+	at file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:24:1011
+	at Object.dispose (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:7:2146)
+	at hB.eb (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:11922)
+	at file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:9877
+	at Array.map (<anonymous>)
+	at hB.$ (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:9865)
+	at hB.terminate (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:10108)
+	at M3.terminate (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:1424)
+	at ps (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:174:15058)
+	at MessagePortMain.<anonymous> (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:174:11603)
+	at MessagePortMain.emit (node:events:519:28)
+	at MessagePortMain.emit (node:domain:488:12)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2619) setContext undefined
+2024-10-29 13:29:26.994 [error] Canceled: Canceled
+	at new eA (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:31:109321)
+	at Zb.U (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:31:113933)
+	at s.<computed>.n.charCodeAt.s.<computed> (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:31:111427)
+	at T0.g (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:32325)
+	at T0.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31826)
+	at r.registerCommand.description (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31156)
+	at T0.h (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:32845)
+	at T0.g (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31919)
+	at T0.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31826)
+	at Object.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:156:37049)
+	at Ju._updateActiveEditorContext (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:901583)
+	at Ju.clearInlineMessagesAndLatestError (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:933902)
+	at Ju._stopHost (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:962156)
+	at Ju.dispose (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:986468)
+	at Si (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:24:701)
+	at file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:14995
+	at file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:24:1011
+	at Object.dispose (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:7:2146)
+	at hB.eb (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:11922)
+	at file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:9877
+	at Array.map (<anonymous>)
+	at hB.$ (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:9865)
+	at hB.terminate (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:10108)
+	at M3.terminate (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:1424)
+	at ps (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:174:15058)
+	at MessagePortMain.<anonymous> (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:174:11603)
+	at MessagePortMain.emit (node:events:519:28)
+	at MessagePortMain.emit (node:domain:488:12)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2619) setContext undefined
+2024-10-29 13:29:26.995 [error] Canceled: Canceled
+	at new eA (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:31:109321)
+	at Zb.U (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:31:113933)
+	at s.<computed>.n.charCodeAt.s.<computed> (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:31:111427)
+	at T0.g (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:32325)
+	at T0.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31826)
+	at r.registerCommand.description (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31156)
+	at T0.h (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:32845)
+	at T0.g (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31919)
+	at T0.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31826)
+	at Object.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:156:37049)
+	at Ju._updateActiveEditorContext (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:901782)
+	at Ju.clearInlineMessagesAndLatestError (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:933902)
+	at Ju._stopHost (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:962156)
+	at Ju.dispose (/home/dastarruer/.vscode/extensions/wallabyjs.console-ninja-1.0.364/out/extension/index.js:1:986468)
+	at Si (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:24:701)
+	at file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:14995
+	at file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:24:1011
+	at Object.dispose (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:7:2146)
+	at hB.eb (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:11922)
+	at file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:9877
+	at Array.map (<anonymous>)
+	at hB.$ (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:9865)
+	at hB.terminate (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:10108)
+	at M3.terminate (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:1424)
+	at ps (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:174:15058)
+	at MessagePortMain.<anonymous> (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:174:11603)
+	at MessagePortMain.emit (node:events:519:28)
+	at MessagePortMain.emit (node:domain:488:12)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2619) setContext undefined
+2024-10-29 13:29:26.998 [info] Extension host with pid 5093 exiting with code 0

@@ -4,7 +4,9 @@
         "workspaces": {
             "file:///home/dastarruer/.config": "__default__profile__"
         },
-        "emptyWindows": {}
+        "emptyWindows": {
+            "1730231419936": "__default__profile__"
+        }
     },
     "profileAssociationsMigration": true,
     "telemetry.sqmId": "",
@@ -12,12 +14,12 @@
     "telemetry.devDeviceId": "9e4a47be-69c8-413c-8e3b-1b654563a027",
     "backupWorkspaces": {
         "workspaces": [],
-        "folders": [
+        "folders": [],
+        "emptyWindows": [
             {
-                "folderUri": "file:///home/dastarruer/.config"
+                "backupFolder": "1730231419936"
             }
-        ],
-        "emptyWindows": []
+        ]
     },
     "lastKnownMenubarData": {
         "menus": {
@@ -92,12 +94,45 @@
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
+                                        "external": "file:///home/dastarruer/dotfile_commit.sh",
+                                        "path": "/home/dastarruer/dotfile_commit.sh",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/dotfile_commit.sh"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/dastarruer/dotfileCommit.sh",
+                                        "path": "/home/dastarruer/dotfileCommit.sh",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/dotfileCommit.sh"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
                                         "external": "file:///home/dastarruer/.config/alacritty/alacritty.toml",
                                         "path": "/home/dastarruer/.config/alacritty/alacritty.toml",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
                                     "label": "~/.config/alacritty/alacritty.toml"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/dastarruer/.config/btop/btop.conf",
+                                        "path": "/home/dastarruer/.config/btop/btop.conf",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.config/btop/btop.conf"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -315,10 +350,6 @@
                         "label": "&&Close Editor"
                     },
                     {
-                        "id": "workbench.action.closeFolder",
-                        "label": "Close &&Folder"
-                    },
-                    {
                         "id": "workbench.action.closeWindow",
                         "label": "Clos&&e Window"
                     },
@@ -512,8 +543,7 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "&&Primary Side Bar",
-                                    "checked": true
+                                    "label": "&&Primary Side Bar"
                                 },
                                 {
                                     "id": "workbench.action.toggleAuxiliaryBar",
@@ -526,8 +556,7 @@
                                 },
                                 {
                                     "id": "workbench.action.togglePanel",
-                                    "label": "&&Panel",
-                                    "checked": true
+                                    "label": "&&Panel"
                                 },
                                 {
                                     "id": "toggle.toggleCustomTitleBar",
@@ -728,6 +757,13 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
+                                    "id": "workbench.action.splitEditorInGroup",
+                                    "label": "Split in &&Group"
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
+                                {
                                     "id": "workbench.action.moveEditorToNewWindow",
                                     "label": "&&Move Editor into New Window"
                                 },
@@ -828,7 +864,7 @@
                     {
                         "id": "editor.action.toggleWordWrap",
                         "label": "&&Word Wrap",
-                        "enabled": false
+                        "checked": true
                     }
                 ]
             },
@@ -845,8 +881,7 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location",
-                        "enabled": false
+                        "label": "&&Last Edit Location"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1166,7 +1201,8 @@
                     },
                     {
                         "id": "workbench.action.terminal.split",
-                        "label": "&&Split Terminal"
+                        "label": "&&Split Terminal",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1366,11 +1402,6 @@
                 "label": "Ctrl+W",
                 "userSettingsLabel": "ctrl+w"
             },
-            "workbench.action.closeFolder": {
-                "label": "Ctrl+K F",
-                "isNative": false,
-                "userSettingsLabel": "ctrl+k f"
-            },
             "workbench.action.closeWindow": {
                 "label": "Alt+F4",
                 "userSettingsLabel": "alt+f4"
@@ -1517,6 +1548,11 @@
                 "label": "Ctrl+K Ctrl+\\",
                 "isNative": false,
                 "userSettingsLabel": "ctrl+k ctrl+\\"
+            },
+            "workbench.action.splitEditorInGroup": {
+                "label": "Ctrl+K Ctrl+Shift+\\",
+                "isNative": false,
+                "userSettingsLabel": "ctrl+k ctrl+shift+\\"
             },
             "workbench.action.copyEditorToNewWindow": {
                 "label": "Ctrl+K O",
@@ -1767,21 +1803,20 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 0,
             "activityBarWidth": 48,
-            "sideBarWidth": 257,
+            "sideBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
         }
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/dastarruer/.config",
-            "backupPath": "/home/dastarruer/.config/Code/Backups/676e99235ee560bf312d2e382549772a",
+            "backupPath": "/home/dastarruer/.config/Code/Backups/1730231419936",
             "uiState": {
                 "mode": 1,
-                "x": 858,
-                "y": 479,
-                "width": 873,
-                "height": 495
+                "x": 865,
+                "y": 0,
+                "width": 866,
+                "height": 487
             }
         },
         "openedWindows": []

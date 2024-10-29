@@ -1,4 +1,0 @@
-2024-10-29 11:41:41.616 [info] Started local extension host with pid 3221.
-2024-10-29 11:41:47.354 [info] Extension host (LocalProcess pid: 3221) is unresponsive.
-2024-10-29 11:41:47.401 [info] Extension host (LocalProcess pid: 3221) is responsive.
-2024-10-29 11:41:47.637 [info] [perf] Render performance baseline is 218ms

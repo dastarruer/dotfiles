@@ -1,3 +1,3 @@
-2024/10/29-11:41:40.221 c28 Reusing MANIFEST /home/dastarruer/.config/Code/Local Storage/leveldb/MANIFEST-000001
-2024/10/29-11:41:40.227 c28 Recovering log #3
-2024/10/29-11:41:40.228 c28 Reusing old log /home/dastarruer/.config/Code/Local Storage/leveldb/000003.log 
+2024/10/29-15:50:18.784 1029 Reusing MANIFEST /home/dastarruer/.config/Code/Local Storage/leveldb/MANIFEST-000001
+2024/10/29-15:50:18.791 1029 Recovering log #3
+2024/10/29-15:50:18.791 1029 Reusing old log /home/dastarruer/.config/Code/Local Storage/leveldb/000003.log 
