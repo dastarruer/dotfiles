@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-taskmanager" version="1.0">
+  <property name="window-maximized" type="bool" value="true"/>
+  <property name="interface" type="empty">
+    <property name="full-command-line" type="bool" value="true"/>
+    <property name="show-all-processes" type="bool" value="false"/>
+    <property name="handle-position" type="int" value="131"/>
+  </property>
+</channel>

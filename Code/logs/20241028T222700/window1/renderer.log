@@ -1,0 +1,5 @@
+2024-10-28 22:27:01.937 [info] Started local extension host with pid 272160.
+2024-10-28 22:27:04.812 [info] [perf] Render performance baseline is 201ms
+2024-10-28 22:30:12.560 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
+2024-10-28 22:40:01.593 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
+2024-10-28 22:42:27.582 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted

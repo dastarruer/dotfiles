@@ -1,0 +1,100 @@
+/* .xfce4-panel#XfcePanelWindow {
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+}
+  
+/* .xfce4-panel#XfcePanelWindow .tasklist .toggle {
+  border-radius: 10px;
+} */ */
+
+/* Just the same CSS attributes for every button on the panel */
+.tasklist button:checked {
+  background-color: #cba6f7;
+  border-radius: 10px;
+}
+
+.tasklist button:hover {
+  background-color: #6c7086;
+  border-radius: 10px;
+}
+
+/* Launcher buttons */
+.launcher button:checked {
+  background-color: #cba6f7;
+  border-radius: 10px;
+}
+
+.launcher button:hover {
+  background-color: #6c7086;
+  border-radius: 10px;
+}
+
+#clock-button {
+  padding: 10px; 
+}
+
+#clock-button:checked {
+  background-color: #cba6f7;
+  border-radius: 10px;
+}
+
+#clock-button:hover {
+  background-color: #6c7086;
+  border-radius: 10px;
+}
+
+#xfce4-power-manager-plugin {
+  padding: 10px;
+}
+
+#xfce4-power-manager-plugin:checked {
+  background-color: #cba6f7;
+  border-radius: 10px;
+}
+
+#xfce4-power-manager-plugin:hover {
+  background-color: #6c7086;
+  border-radius: 10px;
+}
+
+#xfce4-notification-plugin {
+  padding: 10px;
+}
+
+#xfce4-notification-plugin:checked {
+  background-color: #cba6f7;
+  border-radius: 10px;
+}
+
+#xfce4-notification-plugin:hover {
+  background-color: #6c7086;
+  border-radius: 10px;
+}
+
+#whiskermenu-button {
+  padding: 10px;
+}
+
+#whiskermenu-button:checked {
+  background-color: #cba6f7;
+  border-radius: 10px;
+}
+
+#whiskermenu-button:hover {
+  background-color: #6c7086;
+  border-radius: 10px;
+}
+
+#showdesktop-button {
+  padding: 10px;
+}
+
+#showdesktop-button:checked {
+  background-color: #cba6f7;
+  border-radius: 10px;
+}
+
+#showdesktop-button:hover {
+  background-color: #6c7086;
+  border-radius: 10px;
+}

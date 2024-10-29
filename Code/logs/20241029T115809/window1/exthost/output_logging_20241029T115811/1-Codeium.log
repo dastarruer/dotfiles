@@ -1,0 +1,42 @@
+(VSCode) 2024-10-29 11:58:13.028 [INFO]: No proxy settings found
+(VSCode) 2024-10-29 11:58:18.033 [ERROR]: Failed to initialize Unleash: undefined
+(VSCode) 2024-10-29 11:58:18.034 [INFO]: Checking network connection...
+(VSCode) 2024-10-29 11:58:19.710 [INFO]: No Network Issue connecting to https://server.codeium.com
+(VSCode) 2024-10-29 11:58:20.285 [INFO]: Creating manager directory: /tmp/a5fe0ea6-28ae-4b17-a65e-27dd21076f64/codeium/manager
+(VSCode) 2024-10-29 11:58:20.928 [INFO]: Using cached LS with valid crc32: /home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/1347d6f7fffdaec404d99b3f0ca3d8854448c787/language_server_linux_x64
+(VSCode) 2024-10-29 11:58:20.944 [INFO]: Language server started
+2024/10/29 11:58:20 maxprocs: Leaving GOMAXPROCS=16: CPU quota undefined
+I1029 11:58:21.084410  7568 main.go:553] [Language Server Manager] Setting GOMAXPROCS to 16
+I1029 11:58:21.084517  7568 main.go:667] [Language Server Manager] Release 1.22.5 (1347d6f7fffdaec404d99b3f0ca3d8854448c787)
+I1029 11:58:21.084548  7568 main.go:746] [Language Server Manager] Starting language server manager with pid 7568
+I1029 11:58:21.084809  7568 main.go:120] [Language Server Manager] Manager acquired its lock file /tmp/a5fe0ea6-28ae-4b17-a65e-27dd21076f64/codeium/manager/locks/manager.lock
+I1029 11:58:21.086525  7568 main.go:259] [Language Server Manager] Waiting for random port file in /tmp/a5fe0ea6-28ae-4b17-a65e-27dd21076f64/codeium/manager/child_random_port_1730217501084992099_6981086363669902980 to be created
+2024/10/29 11:58:21 maxprocs: Leaving GOMAXPROCS=16: CPU quota undefined
+I1029 11:58:21.221056  7586 main.go:553] Setting GOMAXPROCS to 4
+I1029 11:58:21.221261  7586 main.go:740] Starting language server process with pid 7586
+I1029 11:58:21.221313  7586 server.go:183] Language server will attempt to listen on host 127.0.0.1
+I1029 11:58:21.221516  7586 server.go:190] Language server listening on random port at 36241
+I1029 11:58:21.598637  7586 unleash.go:93] Initializing Unleash
+I1029 11:58:21.952589  7586 unleash.go:113] Successfully initialized Unleash
+E1029 11:58:21.972056  7586 client_manager.go:275] Metadata is nil when trying to refresh user JWT
+I1029 11:58:21.972720  7586 server.go:441] Successfully created API server client
+I1029 11:58:22.030753  7586 server.go:456] Successfully initialized tokenizer
+I1029 11:58:22.205152  7586 server.go:613] Local search is enabled, will index local files.
+I1029 11:58:22.205197  7586 server.go:617] Using 4 indexer workers
+I1029 11:58:22.210266  7586 sqlite_faiss_db_client.go:64] Successfully created embedding search database in 5ms
+I1029 11:58:22.210667  7586 indexer.go:213] Using 4 embed workers
+I1029 11:58:22.210735  7586 search_provider.go:274] Successfully created and started indexer
+I1029 11:58:22.210779  7586 search_provider.go:304] Successfully created embedding search provider
+I1029 11:58:22.219007  7586 server.go:703] Successfully created completion provider
+I1029 11:58:22.219050  7586 server.go:752] Child process attempting to acquire lock file /tmp/a5fe0ea6-28ae-4b17-a65e-27dd21076f64/codeium/manager/locks/child_lock_1730217501085174324_5092080549769330971
+I1029 11:58:22.219138  7586 server.go:760] Child process acquired lock file /tmp/a5fe0ea6-28ae-4b17-a65e-27dd21076f64/codeium/manager/locks/child_lock_1730217501085174324_5092080549769330971
+I1029 11:58:22.237978  7586 server.go:265] LSP listening on random port at 33779
+I1029 11:58:22.251065  7586 web_server.go:259] Chat Web Server listening at ws://127.0.0.1:34487
+33779
+I1029 11:58:22.292582  7568 main.go:295] [Language Server Manager] Found random server port 36241
+I1029 11:58:22.292650  7568 main.go:296] [Language Server Manager] Found random lsp port 33779
+I1029 11:58:22.292683  7568 main.go:303] [Language Server Manager] Attempting to connect to language server at 127.0.0.1:36241
+I1029 11:58:22.306514  7568 main.go:174] [Language Server Manager] Fixing language server port at 36241
+I1029 11:58:22.306550  7568 main.go:355] [Language Server Manager] Successfully connected to new language server at 127.0.0.1:36241
+(VSCode) 2024-10-29 11:58:22.356 [INFO]: Found language server running on port 36241
+(VSCode) 2024-10-29 11:58:22.746 [INFO]: openAllTextDocuments took 5.926328999999896ms

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>Terminal</icon>
+	<name>Open in Terminal</name>
+	<submenu></submenu>
+	<unique-id>1729988259541165-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Open terminal in the selected folder</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>folder</icon>
+	<name>Open as Root</name>
+	<submenu></submenu>
+	<unique-id>1729988259541237-2</unique-id>
+	<command>pkexec thunar %F</command>
+	<description>Open the folder with administration privileges</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>emblem-symbolic-link</icon>
+	<name>Create a Link</name>
+	<submenu></submenu>
+	<unique-id>1729988259541314-3</unique-id>
+	<command>ln -s %f  &apos;Link to %n&apos;</command>
+	<description>Create a symbolic link for each selected item</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<other-files/>
+</action>
+<action>
+	<icon>application-certificate</icon>
+	<name>Verify</name>
+	<submenu></submenu>
+	<unique-id>1729988259541340-4</unique-id>
+	<command>mint-iso-verify %f</command>
+	<description>Verify the authenticity and integrity of the image</description>
+	<range></range>
+	<patterns>*.iso;*.ISO</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>gtk-find</icon>
+	<name>Search</name>
+	<submenu></submenu>
+	<unique-id>1729988259541422-5</unique-id>
+	<command>catfish %f</command>
+	<description>Search for Files</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+</actions>

@@ -1,0 +1,7 @@
+window:
+  padding:
+    x: 5
+    y:5
+  class:
+    instance: Alacritty
+    general: Alacritty

@@ -1,0 +1,24 @@
+.xfce4-panel#XfcePanelWindow {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 13px;
+  border-bottom-right-radius: 13px;
+}
+  
+.xfce4-panel#XfcePanelWindow .tasklist .toggle {
+  border-radius: 10px;
+}
+
+.tasklist #whiske button:checked {
+  background-color: #cba6f7;
+  border-radius: 10px;
+}
+
+.tasklist button:hover {
+  background-color: #6c7086;
+  border-radius: 10px;
+}
+
+#clock-button {
+  font-style: italic;
+}

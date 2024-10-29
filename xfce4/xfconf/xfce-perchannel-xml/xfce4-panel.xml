@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="empty"/>
+  <property name="panels" type="array">
+    <value type="int" value="4"/>
+    <value type="int" value="3"/>
+    <property name="panel-1" type="empty">
+      <property name="position" type="empty"/>
+      <property name="length" type="empty"/>
+      <property name="position-locked" type="empty"/>
+      <property name="size" type="empty"/>
+      <property name="background-style" type="empty"/>
+      <property name="background-alpha" type="empty"/>
+      <property name="enter-opacity" type="empty"/>
+      <property name="leave-opacity" type="empty"/>
+      <property name="plugin-ids" type="empty"/>
+    </property>
+    <property name="dark-mode" type="bool" value="true"/>
+    <property name="panel-4" type="empty">
+      <property name="position" type="string" value="p=10;x=967;y=1039"/>
+      <property name="size" type="uint" value="80"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="3"/>
+        <value type="int" value="1"/>
+        <value type="int" value="29"/>
+        <value type="int" value="4"/>
+        <value type="int" value="2"/>
+      </property>
+      <property name="mode" type="uint" value="0"/>
+      <property name="length" type="double" value="1"/>
+      <property name="autohide-behavior" type="uint" value="2"/>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="background-rgba" type="array">
+        <value type="double" value="0.11764705882352941"/>
+        <value type="double" value="0.11764705882352941"/>
+        <value type="double" value="0.1803921568627451"/>
+        <value type="double" value="1"/>
+      </property>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="length-adjust" type="bool" value="true"/>
+      <property name="icon-size" type="uint" value="0"/>
+    </property>
+    <property name="panel-3" type="empty">
+      <property name="position" type="string" value="p=6;x=960;y=19"/>
+      <property name="size" type="uint" value="42"/>
+      <property name="length" type="double" value="100"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="32"/>
+        <value type="int" value="6"/>
+        <value type="int" value="20"/>
+        <value type="int" value="21"/>
+        <value type="int" value="27"/>
+        <value type="int" value="8"/>
+        <value type="int" value="9"/>
+        <value type="int" value="10"/>
+        <value type="int" value="11"/>
+        <value type="int" value="12"/>
+        <value type="int" value="13"/>
+        <value type="int" value="24"/>
+        <value type="int" value="28"/>
+        <value type="int" value="22"/>
+        <value type="int" value="5"/>
+        <value type="int" value="7"/>
+        <value type="int" value="30"/>
+      </property>
+      <property name="icon-size" type="uint" value="20"/>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="background-rgba" type="array">
+        <value type="double" value="0.11764705882352941"/>
+        <value type="double" value="0.11764705882352941"/>
+        <value type="double" value="0.1803921568627451"/>
+        <value type="double" value="1"/>
+      </property>
+      <property name="autohide-behavior" type="uint" value="1"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="enter-opacity" type="uint" value="80"/>
+      <property name="leave-opacity" type="uint" value="80"/>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-1" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-2" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="true"/>
+    </property>
+    <property name="plugin-3" type="string" value="separator">
+      <property name="items" type="empty"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-4" type="string" value="separator">
+      <property name="items" type="empty"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-5" type="string" value="power-manager-plugin">
+      <property name="items" type="empty"/>
+    </property>
+    <property name="plugin-6" type="string" value="separator">
+      <property name="show-handle" type="empty"/>
+      <property name="middle-click" type="empty"/>
+      <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="false"/>
+    </property>
+    <property name="plugin-7" type="empty">
+      <property name="expand" type="bool" value="false"/>
+      <property name="style" type="empty"/>
+    </property>
+    <property name="plugin-8" type="string" value="separator">
+      <property name="names-visible" type="empty"/>
+      <property name="show-frame" type="empty"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-9" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-10" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-11" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-12" type="string" value="separator">
+      <property name="enable-keyboard-shortcuts" type="empty"/>
+      <property name="enable-mpris" type="empty"/>
+      <property name="mixer-command" type="empty"/>
+      <property name="show-notifications" type="empty"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-13" type="string" value="separator">
+      <property name="digital-time-format" type="empty"/>
+      <property name="digital-layout" type="empty"/>
+      <property name="digital-date-font" type="empty"/>
+      <property name="digital-time-font" type="empty"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-14" type="empty"/>
+    <property name="plugin-29" type="string" value="tasklist">
+      <property name="show-labels" type="bool" value="false"/>
+      <property name="show-handle" type="bool" value="false"/>
+    </property>
+    <property name="plugin-20" type="string" value="whiskermenu">
+      <property name="favorites" type="array">
+      </property>
+      <property name="recent" type="array">
+        <value type="string" value="xfce-keyboard-settings.desktop"/>
+        <value type="string" value="xfce4-mime-settings.desktop"/>
+        <value type="string" value="xfce-wm-settings.desktop"/>
+        <value type="string" value="xfce-ui-settings.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-21" type="string" value="showdesktop"/>
+    <property name="plugin-22" type="string" value="notification-plugin"/>
+    <property name="plugin-24" type="string" value="clock">
+      <property name="mode" type="uint" value="4"/>
+      <property name="flash-separators" type="bool" value="true"/>
+    </property>
+    <property name="plugin-27" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="true"/>
+    </property>
+    <property name="plugin-28" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="true"/>
+    </property>
+    <property name="plugin-30" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-32" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+  </property>
+</channel>

@@ -1,0 +1,18 @@
+[window]
+dynamic_padding = true
+padding = {x = 75,y = 50}
+opacity = 0.75
+
+[colors.primary]
+background = "#1e1e2e"
+foreground = "#cba6f7"
+
+[colors.normal]
+black = "#11111b"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#cba6f7"
+cyan = ""
+white = ""

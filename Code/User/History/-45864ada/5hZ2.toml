@@ -1,0 +1,11 @@
+[window]
+dynamic_padding = true
+padding = {x = 75,y = 50}
+opacity = 0.75
+
+[colors]
+cursor = {text = "CellForeground"}
+
+[colors.primary]
+background = "#1e1e2e"
+foreground = "#cba6f7"

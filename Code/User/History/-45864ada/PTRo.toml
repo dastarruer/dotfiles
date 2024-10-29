@@ -1,0 +1,5 @@
+[general]
+live_config_reload = true
+
+[window]
+padding = {x = 15,y = 15}

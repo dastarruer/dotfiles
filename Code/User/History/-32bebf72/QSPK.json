@@ -1,0 +1,30 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.wordWrap": "bounded",
+    "editor.autoClosingQuotes": "always",
+    "editor.autoClosingBrackets": "always",
+    "workbench.sideBar.location": "right",
+    "explorer.confirmDelete": false,
+    "git.enableSmartCommit": true,
+    "codeium.enableSearch": true,
+    "codeium.enableConfig": {
+        "*": false
+    },
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "workbench.colorTheme": "Alt Catppuccin Mocha",
+    "terminal.integrated.env.windows": {},
+    "console-ninja.featureSet": "Community",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.tabWidth": 4,
+    "terminal.integrated.env.linux": {},
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.multiCursorModifier": "ctrlCmd"
+}

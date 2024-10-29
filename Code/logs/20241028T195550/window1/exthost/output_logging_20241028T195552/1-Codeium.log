@@ -1,0 +1,14 @@
+(VSCode) 2024-10-28 19:55:53.946 [INFO]: No proxy settings found
+(VSCode) 2024-10-28 19:55:58.951 [ERROR]: Failed to initialize Unleash: undefined
+(VSCode) 2024-10-28 19:55:58.952 [INFO]: Checking network connection...
+(VSCode) 2024-10-28 19:55:59.470 [INFO]: No Network Issue connecting to https://server.codeium.com
+(VSCode) 2024-10-28 19:56:00.027 [INFO]: Creating manager directory: /tmp/4b4effcd-e5de-4e57-b1de-b4710f0e31f9/codeium/manager
+(VSCode) 2024-10-28 19:56:00.625 [INFO]: Using cached LS with valid crc32: /home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/1347d6f7fffdaec404d99b3f0ca3d8854448c787/language_server_linux_x64
+(VSCode) 2024-10-28 19:56:00.642 [INFO]: Language server started
+2024/10/28 19:56:00 maxprocs: Leaving GOMAXPROCS=16: CPU quota undefined
+I1028 19:56:00.798504 266188 main.go:553] [Language Server Manager] Setting GOMAXPROCS to 16
+I1028 19:56:00.798636 266188 main.go:667] [Language Server Manager] Release 1.22.5 (1347d6f7fffdaec404d99b3f0ca3d8854448c787)
+I1028 19:56:00.798684 266188 main.go:746] [Language Server Manager] Starting language server manager with pid 266188
+I1028 19:56:00.798972 266188 main.go:120] [Language Server Manager] Manager acquired its lock file /tmp/4b4effcd-e5de-4e57-b1de-b4710f0e31f9/codeium/manager/locks/manager.lock
+I1028 19:56:00.800228 266188 main.go:259] [Language Server Manager] Waiting for random port file in /tmp/4b4effcd-e5de-4e57-b1de-b4710f0e31f9/codeium/manager/child_random_port_1730159760799239881_1557836920616269728 to be created
+2024/10/28 19:56:00 maxprocs: Leaving GOMAXPROCS=16: CPU quota undefined

@@ -1,0 +1,7 @@
+[window]
+dynamic_padding = true
+padding = {x = 75,y = 50}
+opacity = 0.75
+
+[font]
+normal = {family = "JetBrains Mono"}

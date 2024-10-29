@@ -1,0 +1,26 @@
+2024-10-29 11:58:11.423 [info] Extension host with pid 7449 started
+2024-10-29 11:58:11.423 [info] Skipping acquiring lock for /home/dastarruer/.config/Code/User/workspaceStorage/46b66ed4ada56e9f4494042e71169b48.
+2024-10-29 11:58:11.455 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-10-29 11:58:11.462 [info] ExtensionService#_doActivateExtension dooez.alt-catppuccin-vsc, startup: true, activationEvent: '*'
+2024-10-29 11:58:11.561 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-10-29 11:58:11.665 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-10-29 11:58:11.950 [info] Eager extensions activated
+2024-10-29 11:58:11.952 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2024-10-29 11:58:12.011 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 11:58:12.016 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 11:58:12.044 [info] ExtensionService#_doActivateExtension Catppuccin.catppuccin-vsc, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 11:58:12.052 [info] ExtensionService#_doActivateExtension Codeium.codeium, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 11:58:12.725 [info] ExtensionService#_doActivateExtension ecmel.vscode-html-css, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 11:58:12.727 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 11:58:12.835 [info] ExtensionService#_doActivateExtension WallabyJs.console-ninja, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 11:58:18.964 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-10-29 11:58:18.981 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-10-29 11:58:19.065 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-10-29 11:58:19.145 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-10-29 11:58:54.739 [warning] [Decorations] CAPPING events from decorations provider vscode.git 522
+2024-10-29 11:58:56.063 [warning] [Decorations] CAPPING events from decorations provider vscode.git 522
+2024-10-29 11:59:01.132 [warning] [Decorations] CAPPING events from decorations provider vscode.git 522
+2024-10-29 11:59:06.224 [warning] [Decorations] CAPPING events from decorations provider vscode.git 522
+2024-10-29 11:59:11.310 [warning] [Decorations] CAPPING events from decorations provider vscode.git 522
+2024-10-29 11:59:16.396 [warning] [Decorations] CAPPING events from decorations provider vscode.git 522
+2024-10-29 11:59:21.477 [warning] [Decorations] CAPPING events from decorations provider vscode.git 522

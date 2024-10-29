@@ -1,0 +1,58 @@
+.xfce4-panel#XfcePanelWindow {
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+}
+  
+.xfce4-panel#XfcePanelWindow .tasklist .toggle {
+  border-radius: 10px;
+}
+
+/* Tasklist buttons */
+.tasklist button:checked {
+  background-color: #cba6f7;
+  border-radius: 10px;
+}
+
+.tasklist button:hover {
+  background-color: #6c7086;
+  border-radius: 10px;
+}
+
+/* Launcher buttons */
+.launcher button:checked {
+  background-color: #cba6f7;
+  border-radius: 10px;
+}
+
+.launcher button:hover {
+  background-color: #6c7086;
+  border-radius: 10px;
+}
+
+#clock-button #xfce4-power-manager-plugin {
+  padding: 10px; 
+}
+
+#clock-button:checked #xfce4-power-manager-plugin {
+  background-color: #cba6f7;
+  border-radius: 10px;
+}
+
+#clock-button:hover #xfce4-power-manager-plugin {
+  background-color: #6c7086;
+  border-radius: 10px;
+}
+
+/* #xfce4-power-manager-plugin {
+  padding: 10px;
+}
+
+#xfce4-power-manager-plugin:checked {
+  background-color: #cba6f7;
+  border-radius: 10px;
+}
+
+#xfce4-power-manager-plugin:hover {
+  background-color: #6c7086;
+  border-radius: 10px;
+} */

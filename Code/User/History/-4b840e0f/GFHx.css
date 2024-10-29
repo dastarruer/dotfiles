@@ -1,0 +1,12 @@
+.panel button {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.panel button:checked {
+    background-color: #cba6f7;
+}
+
+.panel button:hover {
+    background-color: #6c7086;
+}
