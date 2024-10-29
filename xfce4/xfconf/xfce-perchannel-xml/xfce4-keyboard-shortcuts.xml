@@ -249,7 +249,7 @@
       <property name="&lt;Alt&gt;minus" type="string" value="hide_window_key"/>
       <property name="&lt;Shift&gt;&lt;Alt&gt;plus" type="string" value="raiselower_window_key"/>
       <property name="F11" type="string" value="fullscreen_key"/>
-      <property name="&lt;Primary&gt;Return" type="string" value="maximize_window_key"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;Return" type="string" value="maximize_window_key"/>
     </property>
   </property>
   <property name="providers" type="empty"/>
