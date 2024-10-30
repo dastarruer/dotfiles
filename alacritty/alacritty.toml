@@ -4,6 +4,9 @@ dynamic_padding = true
 padding = {x = 75,y = 50}
 opacity = 0.9
 
+# [font]
+# regular
+
 [colors.primary]
 background = "#1e1e2e"
 foreground = "#b4befe"
