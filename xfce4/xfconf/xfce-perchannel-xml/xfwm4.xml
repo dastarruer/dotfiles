@@ -66,14 +66,19 @@
     <property name="unredirect_overlays" type="empty"/>
     <property name="urgent_blink" type="empty"/>
     <property name="use_compositing" type="bool" value="false"/>
-    <property name="workspace_count" type="int" value="1"/>
-    <property name="workspace_names" type="empty"/>
+    <property name="workspace_count" type="int" value="3"/>
+    <property name="workspace_names" type="array">
+      <value type="string" value="Neofetch"/>
+      <value type="string" value="School"/>
+      <value type="string" value=""/>
+      <value type="string" value="Workspace 4"/>
+    </property>
     <property name="wrap_cycle" type="empty"/>
     <property name="wrap_layout" type="empty"/>
     <property name="wrap_resistance" type="empty"/>
     <property name="wrap_windows" type="empty"/>
     <property name="wrap_workspaces" type="bool" value="false"/>
-    <property name="margin_top" type="empty"/>
+    <property name="margin_top" type="int" value="0"/>
     <property name="margin_left" type="empty"/>
     <property name="margin_right" type="empty"/>
     <property name="margin_bottom" type="empty"/>

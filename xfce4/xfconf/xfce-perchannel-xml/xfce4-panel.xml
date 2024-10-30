@@ -21,11 +21,7 @@
       <property name="position" type="string" value="p=10;x=965;y=1039"/>
       <property name="size" type="uint" value="80"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="3"/>
-        <value type="int" value="1"/>
         <value type="int" value="29"/>
-        <value type="int" value="4"/>
-        <value type="int" value="2"/>
       </property>
       <property name="mode" type="uint" value="0"/>
       <property name="length" type="double" value="1"/>
@@ -40,6 +36,8 @@
       <property name="position-locked" type="bool" value="true"/>
       <property name="length-adjust" type="bool" value="true"/>
       <property name="icon-size" type="uint" value="0"/>
+      <property name="enter-opacity" type="uint" value="80"/>
+      <property name="leave-opacity" type="uint" value="80"/>
     </property>
     <property name="panel-3" type="empty">
       <property name="position" type="string" value="p=6;x=960;y=19"/>
@@ -79,21 +77,13 @@
     </property>
   </property>
   <property name="plugins" type="empty">
-    <property name="plugin-1" type="string" value="separator">
-      <property name="expand" type="bool" value="true"/>
-      <property name="style" type="uint" value="0"/>
-    </property>
-    <property name="plugin-2" type="string" value="separator">
-      <property name="style" type="uint" value="0"/>
-      <property name="expand" type="bool" value="true"/>
-    </property>
-    <property name="plugin-3" type="string" value="separator">
+    <property name="plugin-1" type="empty"/>
+    <property name="plugin-2" type="empty"/>
+    <property name="plugin-3" type="empty">
       <property name="items" type="empty"/>
-      <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-4" type="string" value="separator">
+    <property name="plugin-4" type="empty">
       <property name="items" type="empty"/>
-      <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-5" type="string" value="power-manager-plugin">
       <property name="items" type="empty"/>
@@ -145,11 +135,16 @@
       <property name="favorites" type="array">
       </property>
       <property name="recent" type="array">
-        <value type="string" value="xfce-wm-settings.desktop"/>
         <value type="string" value="xfce-keyboard-settings.desktop"/>
+        <value type="string" value="xfce-wm-settings.desktop"/>
+        <value type="string" value="xfce-session-settings.desktop"/>
+        <value type="string" value="xfce-settings-manager.desktop"/>
+        <value type="string" value="thunar.desktop"/>
         <value type="string" value="xfce4-mime-settings.desktop"/>
         <value type="string" value="xfce-ui-settings.desktop"/>
       </property>
+      <property name="view-mode" type="int" value="1"/>
+      <property name="menu-opacity" type="int" value="80"/>
     </property>
     <property name="plugin-21" type="string" value="showdesktop"/>
     <property name="plugin-22" type="string" value="notification-plugin"/>

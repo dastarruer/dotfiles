@@ -50,7 +50,6 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;Delete" type="string" value="xflock4"/>
       <property name="&lt;Alt&gt;&lt;Super&gt;s" type="string" value="orca"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;f" type="string" value="thunar"/>
-      <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;l" type="string" value="xflock4"/>
       <property name="&lt;Alt&gt;F1" type="string" value="xfce4-popup-applicationsmenu"/>
       <property name="&lt;Super&gt;p" type="string" value="xfce4-display-settings --minimal"/>
@@ -62,6 +61,7 @@
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Super&gt;1" type="string" value="exo-open --launch WebBrowser"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="alacritty"/>
+      <property name="F1" type="string" value="xfce4-popup-whiskermenu"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
@@ -237,19 +237,19 @@
       <property name="&lt;Alt&gt;F6" type="string" value="stick_window_key"/>
       <property name="&lt;Control&gt;&lt;Alt&gt;Left" type="string" value="left_workspace_key"/>
       <property name="override" type="bool" value="true"/>
-      <property name="&lt;Alt&gt;Down" type="string" value="tile_down_key"/>
-      <property name="&lt;Alt&gt;Up" type="string" value="tile_up_key"/>
-      <property name="&lt;Alt&gt;Left" type="string" value="tile_left_key"/>
-      <property name="&lt;Alt&gt;Right" type="string" value="tile_right_key"/>
-      <property name="&lt;Alt&gt;a" type="string" value="tile_up_left_key"/>
-      <property name="&lt;Alt&gt;f" type="string" value="tile_up_right_key"/>
-      <property name="&lt;Alt&gt;s" type="string" value="tile_down_left_key"/>
-      <property name="&lt;Alt&gt;d" type="string" value="tile_down_right_key"/>
       <property name="&lt;Primary&gt;q" type="string" value="close_window_key"/>
-      <property name="&lt;Alt&gt;minus" type="string" value="hide_window_key"/>
-      <property name="&lt;Shift&gt;&lt;Alt&gt;plus" type="string" value="raiselower_window_key"/>
       <property name="F11" type="string" value="fullscreen_key"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;Return" type="string" value="maximize_window_key"/>
+      <property name="&lt;Super&gt;minus" type="string" value="hide_window_key"/>
+      <property name="&lt;Shift&gt;&lt;Super&gt;plus" type="string" value="raiselower_window_key"/>
+      <property name="&lt;Super&gt;Up" type="string" value="tile_up_key"/>
+      <property name="&lt;Super&gt;Down" type="string" value="tile_down_key"/>
+      <property name="&lt;Super&gt;Left" type="string" value="tile_left_key"/>
+      <property name="&lt;Super&gt;Right" type="string" value="tile_right_key"/>
+      <property name="&lt;Super&gt;a" type="string" value="tile_up_left_key"/>
+      <property name="&lt;Super&gt;f" type="string" value="tile_up_right_key"/>
+      <property name="&lt;Super&gt;s" type="string" value="tile_down_left_key"/>
+      <property name="&lt;Super&gt;d" type="string" value="tile_down_right_key"/>
     </property>
   </property>
   <property name="providers" type="empty"/>
