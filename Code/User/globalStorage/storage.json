@@ -246,7 +246,8 @@
                     },
                     {
                         "id": "saveAll",
-                        "label": "Save A&&ll"
+                        "label": "Save A&&ll",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1813,10 +1814,10 @@
             "backupPath": "/home/dastarruer/.config/Code/Backups/1730319028750",
             "uiState": {
                 "mode": 1,
-                "x": 846,
-                "y": 467,
-                "width": 885,
-                "height": 507
+                "x": 865,
+                "y": 486,
+                "width": 866,
+                "height": 488
             }
         },
         "openedWindows": []
