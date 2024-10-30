@@ -5,7 +5,7 @@
             "file:///home/dastarruer/.config": "__default__profile__"
         },
         "emptyWindows": {
-            "1730231419936": "__default__profile__"
+            "1730312833804": "__default__profile__"
         }
     },
     "profileAssociationsMigration": true,
@@ -17,7 +17,7 @@
         "folders": [],
         "emptyWindows": [
             {
-                "backupFolder": "1730231419936"
+                "backupFolder": "1730312833804"
             }
         ]
     },
@@ -94,23 +94,45 @@
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
+                                        "external": "file:///home/dastarruer/.config/gtk-3.0/gtk.css",
+                                        "path": "/home/dastarruer/.config/gtk-3.0/gtk.css",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.config/gtk-3.0/gtk.css"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/dastarruer/.config/picom/picom.conf",
+                                        "path": "/home/dastarruer/.config/picom/picom.conf",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.config/picom/picom.conf"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/dastarruer/bin/change_wallpaper.sh",
+                                        "path": "/home/dastarruer/bin/change_wallpaper.sh",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/bin/change_wallpaper.sh"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
                                         "external": "file:///home/dastarruer/.config/alacritty/alacritty.toml",
                                         "path": "/home/dastarruer/.config/alacritty/alacritty.toml",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
                                     "label": "~/.config/alacritty/alacritty.toml"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///usr/local/bin/dotfile_commit.sh",
-                                        "path": "/usr/local/bin/dotfile_commit.sh",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/usr/local/bin/dotfile_commit.sh"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -133,28 +155,6 @@
                                     },
                                     "enabled": true,
                                     "label": "~/.config/btop/btop.conf"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/dastarruer/.config/picom/picom.conf",
-                                        "path": "/home/dastarruer/.config/picom/picom.conf",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/.config/picom/picom.conf"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/dastarruer/.config/compton.conf",
-                                        "path": "/home/dastarruer/.config/compton.conf",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/.config/compton.conf"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -188,17 +188,6 @@
                                     },
                                     "enabled": true,
                                     "label": "~/.config/alacritty/alacritty.ml"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/dastarruer/.config/gtk-3.0/gtk.css",
-                                        "path": "/home/dastarruer/.config/gtk-3.0/gtk.css",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/.config/gtk-3.0/gtk.css"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -543,8 +532,7 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "&&Primary Side Bar",
-                                    "checked": true
+                                    "label": "&&Primary Side Bar"
                                 },
                                 {
                                     "id": "workbench.action.toggleAuxiliaryBar",
@@ -1804,14 +1792,14 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 0,
             "activityBarWidth": 48,
-            "sideBarWidth": 257,
+            "sideBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
         }
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/dastarruer/.config/Code/Backups/1730231419936",
+            "backupPath": "/home/dastarruer/.config/Code/Backups/1730312833804",
             "uiState": {
                 "mode": 1,
                 "x": 865,

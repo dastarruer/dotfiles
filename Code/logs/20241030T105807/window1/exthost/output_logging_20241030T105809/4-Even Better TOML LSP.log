@@ -1,0 +1,50 @@
+ INFO registered request handler method="initialize"
+ INFO registered request handler method="textDocument/foldingRange"
+ INFO registered request handler method="textDocument/documentSymbol"
+ INFO registered request handler method="textDocument/formatting"
+ INFO registered request handler method="textDocument/completion"
+ INFO registered request handler method="textDocument/hover"
+ INFO registered request handler method="textDocument/documentLink"
+ INFO registered request handler method="textDocument/semanticTokens/full"
+ INFO registered request handler method="textDocument/prepareRename"
+ INFO registered request handler method="textDocument/rename"
+ INFO registered notification handler method="initialized"
+ INFO registered notification handler method="textDocument/didOpen"
+ INFO registered notification handler method="textDocument/didChange"
+ INFO registered notification handler method="textDocument/didSave"
+ INFO registered notification handler method="textDocument/didClose"
+ INFO registered notification handler method="workspace/didChangeConfiguration"
+ INFO registered notification handler method="workspace/didChangeWorkspaceFolders"
+ INFO registered request handler method="taplo/convertToJson"
+ INFO registered request handler method="taplo/convertToToml"
+ INFO registered request handler method="taplo/listSchemas"
+ INFO registered request handler method="taplo/associatedSchema"
+ INFO registered notification handler method="taplo/associateSchema"
+ WARN document_open: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN document_symbols: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN links: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN semantic_tokens: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN document_symbols: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN folding_ranges: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ERROR document_open:publish_diagnostics:collect_schema_errors: schema validation failed error=invalid schema https://raw.githubusercontent.com/distinction-dev/alacritty-schema/main/alacritty/reference.json
+
+Caused by:
+    invalid schema: relative URL without a base document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN hover: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN hover: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN document_change: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN document_symbols: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN semantic_tokens: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN folding_ranges: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN links: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN document_symbols: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN document_change: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ERROR document_change:publish_diagnostics:collect_schema_errors: schema validation failed error=invalid schema https://raw.githubusercontent.com/distinction-dev/alacritty-schema/main/alacritty/reference.json
+
+Caused by:
+    invalid schema: relative URL without a base document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN document_symbols: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN semantic_tokens: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN folding_ranges: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN document_symbols: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
+ WARN links: using detached workspace document_url=file:///home/dastarruer/.config/alacritty/alacritty.toml
