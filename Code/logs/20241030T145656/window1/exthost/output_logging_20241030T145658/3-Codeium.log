@@ -1,0 +1,46 @@
+(VSCode) 2024-10-30 14:57:00.818 [INFO]: No proxy settings found
+(VSCode) 2024-10-30 14:57:01.730 [INFO]: Checking network connection...
+(VSCode) 2024-10-30 14:57:02.138 [INFO]: No Network Issue connecting to https://server.codeium.com
+(VSCode) 2024-10-30 14:57:02.723 [INFO]: Creating manager directory: /tmp/1ab36e9d-2c15-4624-aabf-e16d7ec72324/codeium/manager
+(VSCode) 2024-10-30 14:57:03.302 [INFO]: Using cached LS with valid crc32: /home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/1347d6f7fffdaec404d99b3f0ca3d8854448c787/language_server_linux_x64
+(VSCode) 2024-10-30 14:57:03.316 [INFO]: Language server started
+2024/10/30 14:57:03 maxprocs: Leaving GOMAXPROCS=16: CPU quota undefined
+I1030 14:57:03.447943 165027 main.go:553] [Language Server Manager] Setting GOMAXPROCS to 16
+I1030 14:57:03.448049 165027 main.go:667] [Language Server Manager] Release 1.22.5 (1347d6f7fffdaec404d99b3f0ca3d8854448c787)
+I1030 14:57:03.448078 165027 main.go:746] [Language Server Manager] Starting language server manager with pid 165027
+I1030 14:57:03.448342 165027 main.go:120] [Language Server Manager] Manager acquired its lock file /tmp/1ab36e9d-2c15-4624-aabf-e16d7ec72324/codeium/manager/locks/manager.lock
+I1030 14:57:03.449509 165027 main.go:259] [Language Server Manager] Waiting for random port file in /tmp/1ab36e9d-2c15-4624-aabf-e16d7ec72324/codeium/manager/child_random_port_1730314623448565350_8185303768868534664 to be created
+2024/10/30 14:57:03 maxprocs: Leaving GOMAXPROCS=16: CPU quota undefined
+I1030 14:57:03.585029 165045 main.go:553] Setting GOMAXPROCS to 4
+I1030 14:57:03.585208 165045 main.go:740] Starting language server process with pid 165045
+I1030 14:57:03.585246 165045 server.go:183] Language server will attempt to listen on host 127.0.0.1
+I1030 14:57:03.585437 165045 server.go:190] Language server listening on random port at 44871
+W1030 14:57:08.587268 165045 proxy.go:128] proxy failed to connect: GET https://server.codeium.com/exa.api_server_pb.ApiServerService/GetCompletions giving up after 2 attempt(s): context deadline exceeded
+I1030 14:57:08.587348 165045 unleash.go:93] Initializing Unleash
+I1030 14:57:08.968715 165045 unleash.go:113] Successfully initialized Unleash
+E1030 14:57:08.987148 165045 client_manager.go:275] Metadata is nil when trying to refresh user JWT
+I1030 14:57:08.987969 165045 server.go:441] Successfully created API server client
+I1030 14:57:09.040260 165045 server.go:456] Successfully initialized tokenizer
+I1030 14:57:09.186522 165045 server.go:613] Local search is enabled, will index local files.
+I1030 14:57:09.186577 165045 server.go:617] Using 4 indexer workers
+I1030 14:57:09.190727 165045 sqlite_faiss_db_client.go:64] Successfully created embedding search database in 4ms
+I1030 14:57:09.191108 165045 indexer.go:213] Using 4 embed workers
+I1030 14:57:09.191179 165045 search_provider.go:274] Successfully created and started indexer
+I1030 14:57:09.191215 165045 search_provider.go:304] Successfully created embedding search provider
+I1030 14:57:09.198553 165045 server.go:703] Successfully created completion provider
+I1030 14:57:09.198597 165045 server.go:752] Child process attempting to acquire lock file /tmp/1ab36e9d-2c15-4624-aabf-e16d7ec72324/codeium/manager/locks/child_lock_1730314623448705030_2631447352375719880
+I1030 14:57:09.198685 165045 server.go:760] Child process acquired lock file /tmp/1ab36e9d-2c15-4624-aabf-e16d7ec72324/codeium/manager/locks/child_lock_1730314623448705030_2631447352375719880
+I1030 14:57:09.213970 165045 server.go:265] LSP listening on random port at 39123
+I1030 14:57:09.226174 165045 web_server.go:259] Chat Web Server listening at ws://127.0.0.1:45273
+39123
+I1030 14:57:09.290116 165027 main.go:295] [Language Server Manager] Found random server port 44871
+I1030 14:57:09.290206 165027 main.go:296] [Language Server Manager] Found random lsp port 39123
+I1030 14:57:09.290256 165027 main.go:303] [Language Server Manager] Attempting to connect to language server at 127.0.0.1:44871
+I1030 14:57:09.305400 165027 main.go:174] [Language Server Manager] Fixing language server port at 44871
+I1030 14:57:09.305443 165027 main.go:355] [Language Server Manager] Successfully connected to new language server at 127.0.0.1:44871
+(VSCode) 2024-10-30 14:57:09.371 [INFO]: Found language server running on port 44871
+(VSCode) 2024-10-30 14:57:09.720 [INFO]: openAllTextDocuments took 11.738885999999184ms
+(VSCode) 2024-10-30 14:57:11.523 [INFO]: Disposing language server process
+(VSCode) 2024-10-30 14:57:11.524 [INFO]: Deleting manager directory: /tmp/1ab36e9d-2c15-4624-aabf-e16d7ec72324/codeium/manager
+(VSCode) 2024-10-30 14:57:11.526 [INFO]: Successfully disposed language server
+W1030 14:57:11.524020 165027 main.go:124] [Language Server Manager] Got signal terminated, shutting down

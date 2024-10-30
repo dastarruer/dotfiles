@@ -1,0 +1,33 @@
+[window]
+position = {x = 500, y = 250}
+dynamic_padding = true
+padding = {x = 40,y = 40}
+opacity = 0.4
+blur = true
+
+[font]
+normal = {family = "JetBrains Mono Nerd Font", style = "Regular"}
+bold = {family = "JetBrains Mono Nerd Font", style = "Bold"}
+italic = {family = "JetBrains Mono Nerd Font", style = "Italic"}
+bold_italic = {family = "JetBrains Mono Nerd Font", style = "Bold Italic"}
+size = 12
+
+[colors.primary]
+background = "#1e1e2e"
+foreground = "#b4befe"
+
+[colors.normal]
+black = "#11111b"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#cba6f7"
+cyan = "#94e2d5"
+white = "#cdd6f4"
+
+[cursor]
+style = {shape = "Block", blinking = "On"}
+
+[mouse]
+hide_when_typing =  true

@@ -5,7 +5,8 @@
             "file:///home/dastarruer/.config": "__default__profile__"
         },
         "emptyWindows": {
-            "1730312833804": "__default__profile__"
+            "1730315590694": "__default__profile__",
+            "1730316212808": "__default__profile__"
         }
     },
     "profileAssociationsMigration": true,
@@ -17,7 +18,7 @@
         "folders": [],
         "emptyWindows": [
             {
-                "backupFolder": "1730312833804"
+                "backupFolder": "1730316212808"
             }
         ]
     },
@@ -71,7 +72,8 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor"
+                                    "label": "&&Reopen Closed Editor",
+                                    "enabled": false
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -89,6 +91,17 @@
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/dastarruer/.config/alacritty/alacritty.toml",
+                                        "path": "/home/dastarruer/.config/alacritty/alacritty.toml",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.config/alacritty/alacritty.toml"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -122,17 +135,6 @@
                                     },
                                     "enabled": true,
                                     "label": "~/bin/change_wallpaper.sh"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/dastarruer/.config/alacritty/alacritty.toml",
-                                        "path": "/home/dastarruer/.config/alacritty/alacritty.toml",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/.config/alacritty/alacritty.toml"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -861,7 +863,8 @@
                 "items": [
                     {
                         "id": "workbench.action.navigateBack",
-                        "label": "&&Back"
+                        "label": "&&Back",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.navigateForward",
@@ -1799,13 +1802,13 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/dastarruer/.config/Code/Backups/1730312833804",
+            "backupPath": "/home/dastarruer/.config/Code/Backups/1730316212808",
             "uiState": {
                 "mode": 1,
-                "x": 865,
-                "y": 486,
-                "width": 866,
-                "height": 488
+                "x": 854,
+                "y": 475,
+                "width": 877,
+                "height": 499
             }
         },
         "openedWindows": []

@@ -1,0 +1,74 @@
+(VSCode) 2024-10-30 15:13:13.842 [INFO]: No proxy settings found
+(VSCode) 2024-10-30 15:13:14.738 [INFO]: Checking network connection...
+(VSCode) 2024-10-30 15:13:15.131 [INFO]: No Network Issue connecting to https://server.codeium.com
+(VSCode) 2024-10-30 15:13:15.685 [INFO]: Creating manager directory: /tmp/79cc6ae6-66c1-460c-85cc-a57350d33f09/codeium/manager
+(VSCode) 2024-10-30 15:13:16.277 [INFO]: Using cached LS with valid crc32: /home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/1347d6f7fffdaec404d99b3f0ca3d8854448c787/language_server_linux_x64
+(VSCode) 2024-10-30 15:13:16.294 [INFO]: Language server started
+2024/10/30 15:13:16 maxprocs: Leaving GOMAXPROCS=16: CPU quota undefined
+I1030 15:13:16.447053 425171 main.go:553] [Language Server Manager] Setting GOMAXPROCS to 16
+I1030 15:13:16.447198 425171 main.go:667] [Language Server Manager] Release 1.22.5 (1347d6f7fffdaec404d99b3f0ca3d8854448c787)
+I1030 15:13:16.447227 425171 main.go:746] [Language Server Manager] Starting language server manager with pid 425171
+I1030 15:13:16.447504 425171 main.go:120] [Language Server Manager] Manager acquired its lock file /tmp/79cc6ae6-66c1-460c-85cc-a57350d33f09/codeium/manager/locks/manager.lock
+I1030 15:13:16.448696 425171 main.go:259] [Language Server Manager] Waiting for random port file in /tmp/79cc6ae6-66c1-460c-85cc-a57350d33f09/codeium/manager/child_random_port_1730315596447731452_8389191002480380425 to be created
+2024/10/30 15:13:16 maxprocs: Leaving GOMAXPROCS=16: CPU quota undefined
+I1030 15:13:16.600395 425189 main.go:553] Setting GOMAXPROCS to 4
+I1030 15:13:16.600889 425189 main.go:740] Starting language server process with pid 425189
+I1030 15:13:16.600978 425189 server.go:183] Language server will attempt to listen on host 127.0.0.1
+I1030 15:13:16.601412 425189 server.go:190] Language server listening on random port at 46147
+I1030 15:13:16.976607 425189 unleash.go:93] Initializing Unleash
+I1030 15:13:17.324121 425189 unleash.go:113] Successfully initialized Unleash
+E1030 15:13:17.348229 425189 client_manager.go:275] Metadata is nil when trying to refresh user JWT
+I1030 15:13:17.348951 425189 server.go:441] Successfully created API server client
+I1030 15:13:17.403333 425189 server.go:456] Successfully initialized tokenizer
+I1030 15:13:17.583544 425189 server.go:613] Local search is enabled, will index local files.
+I1030 15:13:17.583589 425189 server.go:617] Using 4 indexer workers
+I1030 15:13:17.587537 425189 sqlite_faiss_db_client.go:64] Successfully created embedding search database in 3ms
+I1030 15:13:17.587934 425189 indexer.go:213] Using 4 embed workers
+I1030 15:13:17.588029 425189 search_provider.go:274] Successfully created and started indexer
+I1030 15:13:17.588070 425189 search_provider.go:304] Successfully created embedding search provider
+I1030 15:13:17.596186 425189 server.go:703] Successfully created completion provider
+I1030 15:13:17.596243 425189 server.go:752] Child process attempting to acquire lock file /tmp/79cc6ae6-66c1-460c-85cc-a57350d33f09/codeium/manager/locks/child_lock_1730315596447867781_6266839290635619178
+I1030 15:13:17.596367 425189 server.go:760] Child process acquired lock file /tmp/79cc6ae6-66c1-460c-85cc-a57350d33f09/codeium/manager/locks/child_lock_1730315596447867781_6266839290635619178
+I1030 15:13:17.606890 425189 server.go:265] LSP listening on random port at 39051
+I1030 15:13:17.617264 425189 web_server.go:259] Chat Web Server listening at ws://127.0.0.1:36619
+39051
+I1030 15:13:17.654684 425171 main.go:295] [Language Server Manager] Found random server port 46147
+I1030 15:13:17.654749 425171 main.go:296] [Language Server Manager] Found random lsp port 39051
+I1030 15:13:17.654822 425171 main.go:303] [Language Server Manager] Attempting to connect to language server at 127.0.0.1:46147
+I1030 15:13:17.669050 425171 main.go:174] [Language Server Manager] Fixing language server port at 46147
+I1030 15:13:17.669079 425171 main.go:355] [Language Server Manager] Successfully connected to new language server at 127.0.0.1:46147
+(VSCode) 2024-10-30 15:13:17.701 [INFO]: Found language server running on port 46147
+(VSCode) 2024-10-30 15:13:18.037 [INFO]: openAllTextDocuments took 6.5916440000000875ms
+(VSCode) 2024-10-30 15:13:38.522 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:39.016 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:39.085 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:39.180 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:39.343 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:39.407 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:39.498 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:39.736 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:39.884 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:40.012 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:40.159 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:40.365 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:40.769 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:41.038 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:45.330 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:52.146 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:52.310 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:52.471 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:52.639 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:52.888 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:53.062 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:53.193 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:53.273 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:53.404 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:55.756 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:56.186 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:56.350 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:56.455 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:13:56.587 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 15:14:29.284 [INFO]: Disposing language server process
+(VSCode) 2024-10-30 15:14:29.284 [INFO]: Deleting manager directory: /tmp/79cc6ae6-66c1-460c-85cc-a57350d33f09/codeium/manager
+(VSCode) 2024-10-30 15:14:29.286 [INFO]: Successfully disposed language server
+W1030 15:14:29.284544 425171 main.go:124] [Language Server Manager] Got signal terminated, shutting down
