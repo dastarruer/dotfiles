@@ -94,23 +94,23 @@
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///usr/local/bin/dotfile_commit.sh",
-                                        "path": "/usr/local/bin/dotfile_commit.sh",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/usr/local/bin/dotfile_commit.sh"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
                                         "external": "file:///home/dastarruer/.config/alacritty/alacritty.toml",
                                         "path": "/home/dastarruer/.config/alacritty/alacritty.toml",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
                                     "label": "~/.config/alacritty/alacritty.toml"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///usr/local/bin/dotfile_commit.sh",
+                                        "path": "/usr/local/bin/dotfile_commit.sh",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "/usr/local/bin/dotfile_commit.sh"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -245,7 +245,8 @@
                     },
                     {
                         "id": "saveAll",
-                        "label": "Save A&&ll"
+                        "label": "Save A&&ll",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1814,9 +1815,9 @@
             "uiState": {
                 "mode": 1,
                 "x": 865,
-                "y": 0,
+                "y": 486,
                 "width": 866,
-                "height": 487
+                "height": 488
             }
         },
         "openedWindows": []
