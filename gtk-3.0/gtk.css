@@ -5,12 +5,10 @@
 
 .tasklist button:checked {
     background-color: #cba6f7;
-    border-radius: 10px;
 }
 
 .tasklist button:hover {
     background-color: #6c7086;
-    border-radius: 10px;
 }
 
 .launcher {
@@ -19,12 +17,10 @@
 
 .launcher button:checked {
     background-color: #cba6f7;
-    border-radius: 10px;
 }
 
 .launcher button:hover {
     background-color: #6c7086;
-    border-radius: 10px;
 }
 
 #clock-button {
@@ -33,12 +29,10 @@
 
 #clock-button:checked {
     background-color: #cba6f7;
-    border-radius: 10px;
 }
 
 #clock-button:hover {
     background-color: #6c7086;
-    border-radius: 10px;
 }
 
 #xfce4-power-manager-plugin {
@@ -47,12 +41,10 @@
 
 #xfce4-power-manager-plugin:checked {
     background-color: #cba6f7;
-    border-radius: 10px;
 }
 
 #xfce4-power-manager-plugin:hover {
     background-color: #6c7086;
-    border-radius: 10px;
 }
 
 #xfce4-notification-plugin {
@@ -61,12 +53,10 @@
 
 #xfce4-notification-plugin:checked {
     background-color: #cba6f7;
-    border-radius: 10px;
 }
 
 #xfce4-notification-plugin:hover {
     background-color: #6c7086;
-    border-radius: 10px;
 }
 
 #whiskermenu-button {
@@ -75,12 +65,10 @@
 
 #whiskermenu-button:checked {
     background-color: #cba6f7;
-    border-radius: 10px;
 }
 
 #whiskermenu-button:hover {
     background-color: #6c7086;
-    border-radius: 10px;
 }
 
 #showdesktop-button {
@@ -89,10 +77,8 @@
 
 #showdesktop-button:checked {
     background-color: #cba6f7;
-    border-radius: 10px;
 }
 
 #showdesktop-button:hover {
     background-color: #6c7086;
-    border-radius: 10px;
 }
