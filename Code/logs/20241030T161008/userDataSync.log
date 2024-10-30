@@ -1,0 +1,13 @@
+2024-10-30 16:10:10.122 [info] Using settings sync service https://vscode-sync.trafficmanager.net/
+2024-10-30 16:10:10.122 [info] Auto Sync is enabled.
+2024-10-30 16:10:10.122 [info] Auto Sync: Suspended until auth token is available.
+2024-10-30 16:10:11.300 [info] Auto Sync: Triggered by Interval
+2024-10-30 16:10:11.300 [info] Sync started.
+2024-10-30 16:10:12.002 [info] Settings: No changes found during synchronizing settings.
+2024-10-30 16:10:12.012 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-10-30 16:10:12.018 [info] Snippets: No changes found during synchronizing snippets.
+2024-10-30 16:10:12.023 [info] Tasks: No changes found during synchronizing tasks.
+2024-10-30 16:10:12.030 [info] GlobalState: No changes found during synchronizing ui state.
+2024-10-30 16:10:12.079 [info] Extensions: No changes found during synchronizing extensions.
+2024-10-30 16:10:12.081 [info] Profiles: No changes found during synchronizing profiles.
+2024-10-30 16:10:12.085 [info] Sync done. Took 788ms

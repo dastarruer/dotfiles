@@ -5,8 +5,7 @@
             "file:///home/dastarruer/.config": "__default__profile__"
         },
         "emptyWindows": {
-            "1730315590694": "__default__profile__",
-            "1730316212808": "__default__profile__"
+            "1730319028750": "__default__profile__"
         }
     },
     "profileAssociationsMigration": true,
@@ -18,7 +17,7 @@
         "folders": [],
         "emptyWindows": [
             {
-                "backupFolder": "1730316212808"
+                "backupFolder": "1730319028750"
             }
         ]
     },
@@ -91,6 +90,28 @@
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/dastarruer/bin/dotfile_commit.sh",
+                                        "path": "/home/dastarruer/bin/dotfile_commit.sh",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/bin/dotfile_commit.sh"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/dastarruer/dotfile_commit.sh",
+                                        "path": "/home/dastarruer/dotfile_commit.sh",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/dotfile_commit.sh"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -179,17 +200,6 @@
                                     },
                                     "enabled": true,
                                     "label": "~/.config/alacritty/alacritty.yml"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/dastarruer/.config/alacritty/alacritty.ml",
-                                        "path": "/home/dastarruer/.config/alacritty/alacritty.ml",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/.config/alacritty/alacritty.ml"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -863,8 +873,7 @@
                 "items": [
                     {
                         "id": "workbench.action.navigateBack",
-                        "label": "&&Back",
-                        "enabled": false
+                        "label": "&&Back"
                     },
                     {
                         "id": "workbench.action.navigateForward",
@@ -873,7 +882,8 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location"
+                        "label": "&&Last Edit Location",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1802,13 +1812,13 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/dastarruer/.config/Code/Backups/1730316212808",
+            "backupPath": "/home/dastarruer/.config/Code/Backups/1730319028750",
             "uiState": {
                 "mode": 1,
-                "x": 854,
-                "y": 475,
-                "width": 877,
-                "height": 499
+                "x": 846,
+                "y": 467,
+                "width": 885,
+                "height": 507
             }
         },
         "openedWindows": []
