@@ -14,5 +14,5 @@ for dir in "$CONFIG"/*/; do
     
     done
 
-git push main main
+git push origin main
 
