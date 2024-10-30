@@ -2,7 +2,8 @@
 position = {x = 500, y = 250}
 dynamic_padding = true
 padding = {x = 40,y = 40}
-opacity = 0.9
+opacity = 0.6
+blur = true
 
 [font]
 normal = {family = "JetBrains Mono Nerd Font", style = "Regular"}
