@@ -4,8 +4,12 @@ dynamic_padding = true
 padding = {x = 75,y = 50}
 opacity = 0.9
 
-# [font]
-# regular
+[font]
+normal = {family = "JetBrains Mono Nerd Font", style = "Regular"}
+bold = {family = "JetBrains Mono Nerd Font", style = "Bold"}
+italic = {family = "JetBrains Mono Nerd Font", style = "Italic"}
+bold_italic = {family = "JetBrains Mono Nerd Font", style = "Bold Italic"}
+size = 12
 
 [colors.primary]
 background = "#1e1e2e"
