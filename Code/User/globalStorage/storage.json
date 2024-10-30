@@ -94,23 +94,12 @@
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///home/dastarruer/dotfile_commit.sh",
-                                        "path": "/home/dastarruer/dotfile_commit.sh",
+                                        "external": "file:///usr/local/bin/dotfile_commit.sh",
+                                        "path": "/usr/local/bin/dotfile_commit.sh",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "~/dotfile_commit.sh"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/dastarruer/dotfileCommit.sh",
-                                        "path": "/home/dastarruer/dotfileCommit.sh",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/dotfileCommit.sh"
+                                    "label": "/usr/local/bin/dotfile_commit.sh"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -122,6 +111,17 @@
                                     },
                                     "enabled": true,
                                     "label": "~/.config/alacritty/alacritty.toml"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/dastarruer/dotfileCommit.sh",
+                                        "path": "/home/dastarruer/dotfileCommit.sh",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/dotfileCommit.sh"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -245,8 +245,7 @@
                     },
                     {
                         "id": "saveAll",
-                        "label": "Save A&&ll",
-                        "enabled": false
+                        "label": "Save A&&ll"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -543,7 +542,8 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "&&Primary Side Bar"
+                                    "label": "&&Primary Side Bar",
+                                    "checked": true
                                 },
                                 {
                                     "id": "workbench.action.toggleAuxiliaryBar",
@@ -1803,7 +1803,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 0,
             "activityBarWidth": 48,
-            "sideBarWidth": 0,
+            "sideBarWidth": 257,
             "statusBarHeight": 22,
             "windowBorder": false
         }

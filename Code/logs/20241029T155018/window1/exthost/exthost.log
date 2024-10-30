@@ -12,3 +12,43 @@
 2024-10-29 15:50:25.936 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
 2024-10-29 15:50:25.956 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
 2024-10-29 15:50:26.048 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-10-29 16:09:46.616 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: 'api', root cause: vscode.github
+2024-10-29 16:09:46.759 [info] ExtensionService#_doActivateExtension Codeium.codeium, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 16:09:47.412 [info] ExtensionService#_doActivateExtension ecmel.vscode-html-css, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 16:09:47.433 [info] ExtensionService#_doActivateExtension WallabyJs.console-ninja, startup: false, activationEvent: 'onStartupFinished'
+2024-10-29 16:09:47.516 [info] ExtensionService#_doActivateExtension tamasfe.even-better-toml, startup: false, activationEvent: 'onLanguage:toml'
+2024-10-29 16:09:48.414 [error] Error: Extension 'vscode.git' is not known or not activated
+	at E0.getActivatedExtension (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:1754)
+	at hB.getExtensionExports (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:10934)
+	at get exports (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:24330)
+	at /home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:2718488
+	at new Promise (<anonymous>)
+	at /home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:2718282
+	at d (/home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:2711221)
+	at Generator.<anonymous> (/home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:2712563)
+	at Generator.next (/home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:2711650)
+	at i (/home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:2717124)
+	at s (/home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:2717327)
+	at /home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:2717386
+	at new Promise (<anonymous>)
+	at /home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:2717267
+	at 25861 (/home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:2718812)
+	at n (/home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:5152769)
+	at 94962 (/home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:1439200)
+	at n (/home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:5152769)
+	at 53918 (/home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:1614203)
+	at n (/home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:5152769)
+	at /home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:5153519
+	at Object.<anonymous> (/home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/extension.js:2:5153550)
+	at Module._compile (node:internal/modules/cjs/loader:1373:14)
+	at Module._extensions..js (node:internal/modules/cjs/loader:1432:10)
+	at Module.load (node:internal/modules/cjs/loader:1215:32)
+	at Module._load (node:internal/modules/cjs/loader:1031:12)
+	at c._load (node:electron/js2c/node_init:2:13801)
+	at e._load (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:174:10870)
+	at t._load (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:166:22422)
+	at i._load (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:158:4651)
+	at Module.require (node:internal/modules/cjs/loader:1240:19)
+	at require (node:internal/modules/helpers:179:18)
+	at hB.xb (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:166:23767)
+	at async Promise.all (index 0)

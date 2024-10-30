@@ -12,3 +12,9 @@
 2024-10-29 15:50:21.149 [info] Removed views:workbench.debug.breakPointsView,workbench.debug.callStackView,workbench.debug.watchExpressionsView,workbench.debug.variablesView from workbench.view.debug
 2024-10-29 15:50:21.150 [info] Added views:workbench.debug.welcome in workbench.view.debug
 2024-10-29 15:50:21.476 [info] Added views:~remote.forwardedPorts in ~remote.forwardedPortsContainer
+2024-10-29 16:09:27.089 [info] Added views:workbench.views.extensions.installed,workbench.views.extensions.popular,extensions.recommendedList in workbench.view.extensions
+2024-10-29 16:09:27.093 [info] Removed views:workbench.views.extensions.popular from workbench.view.extensions
+2024-10-29 16:09:30.667 [info] Removed views:extensions.recommendedList,workbench.views.extensions.installed from workbench.view.extensions
+2024-10-29 16:09:30.677 [info] Added views:workbench.views.extensions.marketplace in workbench.view.extensions
+2024-10-29 16:09:46.518 [info] Added views:codeium.chatPanelView in workbench.view.extension.codeium
+2024-10-29 16:09:48.941 [info] Added views:workbench.panel.comments in workbench.panel.comments
