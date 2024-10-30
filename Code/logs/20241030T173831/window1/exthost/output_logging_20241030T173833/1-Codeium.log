@@ -1,0 +1,210 @@
+(VSCode) 2024-10-30 17:38:35.658 [INFO]: No proxy settings found
+(VSCode) 2024-10-30 17:38:36.414 [INFO]: Checking network connection...
+(VSCode) 2024-10-30 17:38:36.815 [INFO]: No Network Issue connecting to https://server.codeium.com
+(VSCode) 2024-10-30 17:38:37.336 [INFO]: Creating manager directory: /tmp/bf24732a-1272-4c97-a719-9483e9fc9e32/codeium/manager
+(VSCode) 2024-10-30 17:38:37.932 [INFO]: Using cached LS with valid crc32: /home/dastarruer/.vscode/extensions/codeium.codeium-1.22.5/dist/1347d6f7fffdaec404d99b3f0ca3d8854448c787/language_server_linux_x64
+(VSCode) 2024-10-30 17:38:37.950 [INFO]: Language server started
+2024/10/30 17:38:37 maxprocs: Leaving GOMAXPROCS=16: CPU quota undefined
+I1030 17:38:38.102878 1103856 main.go:553] [Language Server Manager] Setting GOMAXPROCS to 16
+I1030 17:38:38.103024 1103856 main.go:667] [Language Server Manager] Release 1.22.5 (1347d6f7fffdaec404d99b3f0ca3d8854448c787)
+I1030 17:38:38.103066 1103856 main.go:746] [Language Server Manager] Starting language server manager with pid 1103856
+I1030 17:38:38.103373 1103856 main.go:120] [Language Server Manager] Manager acquired its lock file /tmp/bf24732a-1272-4c97-a719-9483e9fc9e32/codeium/manager/locks/manager.lock
+I1030 17:38:38.104609 1103856 main.go:259] [Language Server Manager] Waiting for random port file in /tmp/bf24732a-1272-4c97-a719-9483e9fc9e32/codeium/manager/child_random_port_1730324318103604542_3612664291914380135 to be created
+2024/10/30 17:38:38 maxprocs: Leaving GOMAXPROCS=16: CPU quota undefined
+I1030 17:38:38.250924 1103875 main.go:553] Setting GOMAXPROCS to 4
+I1030 17:38:38.251123 1103875 main.go:740] Starting language server process with pid 1103875
+I1030 17:38:38.251173 1103875 server.go:183] Language server will attempt to listen on host 127.0.0.1
+I1030 17:38:38.251433 1103875 server.go:190] Language server listening on random port at 45237
+I1030 17:38:38.616402 1103875 unleash.go:93] Initializing Unleash
+I1030 17:38:38.963132 1103875 unleash.go:113] Successfully initialized Unleash
+E1030 17:38:38.985431 1103875 client_manager.go:275] Metadata is nil when trying to refresh user JWT
+I1030 17:38:38.986037 1103875 server.go:441] Successfully created API server client
+I1030 17:38:39.041065 1103875 server.go:456] Successfully initialized tokenizer
+I1030 17:38:39.194503 1103875 server.go:613] Local search is enabled, will index local files.
+I1030 17:38:39.194545 1103875 server.go:617] Using 4 indexer workers
+I1030 17:38:39.198632 1103875 sqlite_faiss_db_client.go:64] Successfully created embedding search database in 4ms
+I1030 17:38:39.199073 1103875 indexer.go:213] Using 4 embed workers
+I1030 17:38:39.199140 1103875 search_provider.go:274] Successfully created and started indexer
+I1030 17:38:39.199172 1103875 search_provider.go:304] Successfully created embedding search provider
+I1030 17:38:39.204997 1103875 server.go:703] Successfully created completion provider
+I1030 17:38:39.205037 1103875 server.go:752] Child process attempting to acquire lock file /tmp/bf24732a-1272-4c97-a719-9483e9fc9e32/codeium/manager/locks/child_lock_1730324318103739615_3038401223163388454
+I1030 17:38:39.205123 1103875 server.go:760] Child process acquired lock file /tmp/bf24732a-1272-4c97-a719-9483e9fc9e32/codeium/manager/locks/child_lock_1730324318103739615_3038401223163388454
+I1030 17:38:39.212663 1103875 server.go:265] LSP listening on random port at 37305
+I1030 17:38:39.225334 1103875 web_server.go:259] Chat Web Server listening at ws://127.0.0.1:39115
+37305
+I1030 17:38:39.311833 1103856 main.go:295] [Language Server Manager] Found random server port 45237
+I1030 17:38:39.311974 1103856 main.go:296] [Language Server Manager] Found random lsp port 37305
+I1030 17:38:39.312022 1103856 main.go:303] [Language Server Manager] Attempting to connect to language server at 127.0.0.1:45237
+I1030 17:38:39.325567 1103856 main.go:174] [Language Server Manager] Fixing language server port at 45237
+I1030 17:38:39.325594 1103856 main.go:355] [Language Server Manager] Successfully connected to new language server at 127.0.0.1:45237
+(VSCode) 2024-10-30 17:38:39.358 [INFO]: Found language server running on port 45237
+(VSCode) 2024-10-30 17:38:39.707 [INFO]: openAllTextDocuments took 7.6236600000002ms
+E1030 17:39:32.136004 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:39:38.659711 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+(VSCode) 2024-10-30 17:39:38.743 [INFO]: Codeium is not enabled for the current document.
+E1030 17:39:38.760623 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:39:38.821974 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+(VSCode) 2024-10-30 17:39:38.872 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:39:38.972 [INFO]: Codeium is not enabled for the current document.
+E1030 17:39:39.023080 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+(VSCode) 2024-10-30 17:39:39.085 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:39:39.147 [INFO]: Codeium is not enabled for the current document.
+E1030 17:39:39.197281 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:39:39.208266 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+(VSCode) 2024-10-30 17:39:39.257 [INFO]: Codeium is not enabled for the current document.
+E1030 17:39:39.309295 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:39:39.420400 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+(VSCode) 2024-10-30 17:39:39.469 [INFO]: Codeium is not enabled for the current document.
+E1030 17:39:39.521575 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:39:39.692472 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+(VSCode) 2024-10-30 17:39:39.741 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:39:39.827 [INFO]: Codeium is not enabled for the current document.
+E1030 17:39:39.874529 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:39:39.996323 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+(VSCode) 2024-10-30 17:39:40.045 [INFO]: Codeium is not enabled for the current document.
+E1030 17:39:40.097314 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:39:40.307128 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+(VSCode) 2024-10-30 17:39:40.358 [INFO]: Codeium is not enabled for the current document.
+E1030 17:39:40.408287 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:39:40.437925 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+(VSCode) 2024-10-30 17:39:40.486 [INFO]: Codeium is not enabled for the current document.
+E1030 17:39:40.539056 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:39:40.886378 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+(VSCode) 2024-10-30 17:39:40.932 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:39:40.989 [INFO]: Codeium is not enabled for the current document.
+E1030 17:39:41.041501 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:40:13.733574 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:40:14.044616 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:40:14.327379 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:40:15.100137 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+(VSCode) 2024-10-30 17:40:15.150 [INFO]: Codeium is not enabled for the current document.
+E1030 17:40:15.201307 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:40:15.236086 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+(VSCode) 2024-10-30 17:40:15.284 [INFO]: Codeium is not enabled for the current document.
+E1030 17:40:15.337342 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:40:16.083988 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+(VSCode) 2024-10-30 17:40:16.132 [INFO]: Codeium is not enabled for the current document.
+E1030 17:40:16.184236 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:40:16.277289 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+(VSCode) 2024-10-30 17:40:16.325 [INFO]: Codeium is not enabled for the current document.
+E1030 17:40:16.378386 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:40:16.825324 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:40:17.074534 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+E1030 17:40:17.473596 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config not found: stat /home/dastarruer/.config/cava/config: no such file or directory
+(VSCode) 2024-10-30 17:40:49.447 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:50.247 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:50.410 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:50.563 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:50.647 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:50.972 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:51.113 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:51.223 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:51.409 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:51.969 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:52.209 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:52.325 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:52.507 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:52.965 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:53.104 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:53.657 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:53.980 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:40:54.068 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:41:05.903 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:41:06.734 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:41:07.175 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:41:07.311 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:41:08.072 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:41:08.233 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:41:08.768 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:41:09.247 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:41:09.352 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:41:09.497 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:41:10.803 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:41:11.163 [INFO]: Codeium is not enabled for the current document.
+E1030 17:41:42.549344 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config.toml not found: stat /home/dastarruer/.config/cava/config.toml: no such file or directory
+E1030 17:41:52.680260 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config.toml not found: stat /home/dastarruer/.config/cava/config.toml: no such file or directory
+E1030 17:41:55.897231 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config.toml not found: stat /home/dastarruer/.config/cava/config.toml: no such file or directory
+(VSCode) 2024-10-30 17:41:55.946 [INFO]: Codeium is not enabled for the current document.
+E1030 17:41:55.997603 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config.toml not found: stat /home/dastarruer/.config/cava/config.toml: no such file or directory
+E1030 17:41:56.111973 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config.toml not found: stat /home/dastarruer/.config/cava/config.toml: no such file or directory
+(VSCode) 2024-10-30 17:41:56.160 [INFO]: Codeium is not enabled for the current document.
+E1030 17:41:56.212156 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config.toml not found: stat /home/dastarruer/.config/cava/config.toml: no such file or directory
+E1030 17:41:56.256122 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config.toml not found: stat /home/dastarruer/.config/cava/config.toml: no such file or directory
+(VSCode) 2024-10-30 17:41:56.304 [INFO]: Codeium is not enabled for the current document.
+E1030 17:41:56.356543 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config.toml not found: stat /home/dastarruer/.config/cava/config.toml: no such file or directory
+E1030 17:41:56.581910 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config.toml not found: stat /home/dastarruer/.config/cava/config.toml: no such file or directory
+(VSCode) 2024-10-30 17:41:56.630 [INFO]: Codeium is not enabled for the current document.
+E1030 17:41:56.682601 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config.toml not found: stat /home/dastarruer/.config/cava/config.toml: no such file or directory
+E1030 17:41:56.735946 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config.toml not found: stat /home/dastarruer/.config/cava/config.toml: no such file or directory
+(VSCode) 2024-10-30 17:41:56.783 [INFO]: Codeium is not enabled for the current document.
+E1030 17:41:56.836590 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config.toml not found: stat /home/dastarruer/.config/cava/config.toml: no such file or directory
+E1030 17:41:56.874696 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config.toml not found: stat /home/dastarruer/.config/cava/config.toml: no such file or directory
+(VSCode) 2024-10-30 17:41:56.921 [INFO]: Codeium is not enabled for the current document.
+E1030 17:41:56.976004 1103875 open_documents.go:45] open document /home/dastarruer/.config/cava/config.toml not found: stat /home/dastarruer/.config/cava/config.toml: no such file or directory
+(VSCode) 2024-10-30 17:42:53.135 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:42:53.372 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:42:54.022 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:42:54.253 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:42:54.397 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:42:54.564 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:42:54.732 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:42:54.800 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:42:54.946 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:42:55.651 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:42:56.200 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:04.835 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:04.906 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:05.019 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:05.120 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:05.374 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:05.561 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:05.650 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:05.769 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:05.994 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:06.347 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:06.595 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:06.695 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:06.785 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:07.035 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:07.228 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:07.366 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:07.586 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:07.666 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:07.788 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:07.888 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:08.015 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:08.281 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:08.449 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:08.746 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:33.880 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:33.996 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:34.131 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:34.189 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:34.282 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:34.358 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:34.491 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:47.631 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:48.155 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:48.240 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:48.369 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:48.479 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:48.650 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:48.809 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:48.868 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:48.939 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:49.128 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:49.206 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:49.331 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:49.582 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:49.761 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:49.965 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:50.100 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:50.211 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:50.361 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:50.464 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:43:59.050 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:44:12.506 [INFO]: Codeium is not enabled for the current document.
+(VSCode) 2024-10-30 17:44:16.939 [INFO]: Disposing language server process
+(VSCode) 2024-10-30 17:44:16.939 [INFO]: Deleting manager directory: /tmp/bf24732a-1272-4c97-a719-9483e9fc9e32/codeium/manager
+(VSCode) 2024-10-30 17:44:16.941 [INFO]: Successfully disposed language server
+W1030 17:44:16.939495 1103856 main.go:124] [Language Server Manager] Got signal terminated, shutting down

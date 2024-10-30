@@ -5,7 +5,7 @@
             "file:///home/dastarruer/.config": "__default__profile__"
         },
         "emptyWindows": {
-            "1730319028750": "__default__profile__"
+            "1730324312160": "__default__profile__"
         }
     },
     "profileAssociationsMigration": true,
@@ -17,7 +17,7 @@
         "folders": [],
         "emptyWindows": [
             {
-                "backupFolder": "1730319028750"
+                "backupFolder": "1730324312160"
             }
         ]
     },
@@ -71,8 +71,7 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor",
-                                    "enabled": false
+                                    "label": "&&Reopen Closed Editor"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -95,6 +94,39 @@
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
+                                        "external": "file:///home/dastarruer/.config/alacritty/alacritty.toml",
+                                        "path": "/home/dastarruer/.config/alacritty/alacritty.toml",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.config/alacritty/alacritty.toml"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/dastarruer/.config/cava/config",
+                                        "path": "/home/dastarruer/.config/cava/config",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.config/cava/config"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/dastarruer/.config/cava/config.toml",
+                                        "path": "/home/dastarruer/.config/cava/config.toml",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.config/cava/config.toml"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
                                         "external": "file:///home/dastarruer/bin/dotfile_commit.sh",
                                         "path": "/home/dastarruer/bin/dotfile_commit.sh",
                                         "scheme": "file"
@@ -112,17 +144,6 @@
                                     },
                                     "enabled": true,
                                     "label": "~/dotfile_commit.sh"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/dastarruer/.config/alacritty/alacritty.toml",
-                                        "path": "/home/dastarruer/.config/alacritty/alacritty.toml",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/.config/alacritty/alacritty.toml"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -180,28 +201,6 @@
                                     "label": "~/.config/btop/btop.conf"
                                 },
                                 {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/dastarruer/.config/fontconfig/fonts.conf",
-                                        "path": "/home/dastarruer/.config/fontconfig/fonts.conf",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/.config/fontconfig/fonts.conf"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/dastarruer/.config/alacritty/alacritty.yml",
-                                        "path": "/home/dastarruer/.config/alacritty/alacritty.yml",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/.config/alacritty/alacritty.yml"
-                                },
-                                {
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
@@ -238,11 +237,13 @@
                     },
                     {
                         "id": "workbench.action.files.save",
-                        "label": "&&Save"
+                        "label": "&&Save",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.files.saveAs",
-                        "label": "Save &&As..."
+                        "label": "Save &&As...",
+                        "enabled": false
                     },
                     {
                         "id": "saveAll",
@@ -344,11 +345,13 @@
                     },
                     {
                         "id": "workbench.action.files.revert",
-                        "label": "Re&&vert File"
+                        "label": "Re&&vert File",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.closeActiveEditor",
-                        "label": "&&Close Editor"
+                        "label": "&&Close Editor",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.closeWindow",
@@ -393,11 +396,13 @@
                     },
                     {
                         "id": "actions.find",
-                        "label": "&&Find"
+                        "label": "&&Find",
+                        "enabled": false
                     },
                     {
                         "id": "editor.action.startFindReplaceAction",
-                        "label": "&&Replace"
+                        "label": "&&Replace",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -758,13 +763,6 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
-                                    "id": "workbench.action.splitEditorInGroup",
-                                    "label": "Split in &&Group"
-                                },
-                                {
-                                    "id": "vscode.menubar.separator"
-                                },
-                                {
                                     "id": "workbench.action.moveEditorToNewWindow",
                                     "label": "&&Move Editor into New Window"
                                 },
@@ -865,7 +863,7 @@
                     {
                         "id": "editor.action.toggleWordWrap",
                         "label": "&&Word Wrap",
-                        "checked": true
+                        "enabled": false
                     }
                 ]
             },
@@ -1550,11 +1548,6 @@
                 "isNative": false,
                 "userSettingsLabel": "ctrl+k ctrl+\\"
             },
-            "workbench.action.splitEditorInGroup": {
-                "label": "Ctrl+K Ctrl+Shift+\\",
-                "isNative": false,
-                "userSettingsLabel": "ctrl+k ctrl+shift+\\"
-            },
             "workbench.action.copyEditorToNewWindow": {
                 "label": "Ctrl+K O",
                 "isNative": false,
@@ -1811,13 +1804,13 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/dastarruer/.config/Code/Backups/1730319028750",
+            "backupPath": "/home/dastarruer/.config/Code/Backups/1730324312160",
             "uiState": {
                 "mode": 1,
                 "x": 865,
-                "y": 486,
-                "width": 866,
-                "height": 488
+                "y": 0,
+                "width": 870,
+                "height": 491
             }
         },
         "openedWindows": []
