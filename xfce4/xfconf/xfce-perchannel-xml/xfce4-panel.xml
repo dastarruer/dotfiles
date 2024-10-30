@@ -135,16 +135,16 @@
       <property name="favorites" type="array">
       </property>
       <property name="recent" type="array">
-        <value type="string" value="thunar.desktop"/>
-        <value type="string" value="mintdrivers.desktop"/>
+        <value type="string" value="pavucontrol.desktop"/>
         <value type="string" value="spotify.desktop"/>
         <value type="string" value="blueman-manager.desktop"/>
+        <value type="string" value="thunar.desktop"/>
+        <value type="string" value="mintdrivers.desktop"/>
         <value type="string" value="blueman-adapters.desktop"/>
         <value type="string" value="xfce-wm-settings.desktop"/>
         <value type="string" value="xfce-keyboard-settings.desktop"/>
         <value type="string" value="xfce-session-settings.desktop"/>
         <value type="string" value="xfce-settings-manager.desktop"/>
-        <value type="string" value="xfce4-mime-settings.desktop"/>
       </property>
       <property name="view-mode" type="int" value="1"/>
       <property name="menu-opacity" type="int" value="80"/>
