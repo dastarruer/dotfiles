@@ -5,7 +5,7 @@
             "file:///home/dastarruer/.config": "__default__profile__"
         },
         "emptyWindows": {
-            "1730324312160": "__default__profile__"
+            "1730324694417": "__default__profile__"
         }
     },
     "profileAssociationsMigration": true,
@@ -17,7 +17,7 @@
         "folders": [],
         "emptyWindows": [
             {
-                "backupFolder": "1730324312160"
+                "backupFolder": "1730324694417"
             }
         ]
     },
@@ -71,7 +71,8 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor"
+                                    "label": "&&Reopen Closed Editor",
+                                    "enabled": false
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -89,6 +90,17 @@
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/dastarruer/bin/dotfile_commit.sh",
+                                        "path": "/home/dastarruer/bin/dotfile_commit.sh",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/bin/dotfile_commit.sh"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -122,17 +134,6 @@
                                     },
                                     "enabled": true,
                                     "label": "~/.config/cava/config.toml"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/dastarruer/bin/dotfile_commit.sh",
-                                        "path": "/home/dastarruer/bin/dotfile_commit.sh",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/bin/dotfile_commit.sh"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -237,13 +238,11 @@
                     },
                     {
                         "id": "workbench.action.files.save",
-                        "label": "&&Save",
-                        "enabled": false
+                        "label": "&&Save"
                     },
                     {
                         "id": "workbench.action.files.saveAs",
-                        "label": "Save &&As...",
-                        "enabled": false
+                        "label": "Save &&As..."
                     },
                     {
                         "id": "saveAll",
@@ -345,13 +344,11 @@
                     },
                     {
                         "id": "workbench.action.files.revert",
-                        "label": "Re&&vert File",
-                        "enabled": false
+                        "label": "Re&&vert File"
                     },
                     {
                         "id": "workbench.action.closeActiveEditor",
-                        "label": "&&Close Editor",
-                        "enabled": false
+                        "label": "&&Close Editor"
                     },
                     {
                         "id": "workbench.action.closeWindow",
@@ -396,13 +393,11 @@
                     },
                     {
                         "id": "actions.find",
-                        "label": "&&Find",
-                        "enabled": false
+                        "label": "&&Find"
                     },
                     {
                         "id": "editor.action.startFindReplaceAction",
-                        "label": "&&Replace",
-                        "enabled": false
+                        "label": "&&Replace"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -763,6 +758,13 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
+                                    "id": "workbench.action.splitEditorInGroup",
+                                    "label": "Split in &&Group"
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
+                                {
                                     "id": "workbench.action.moveEditorToNewWindow",
                                     "label": "&&Move Editor into New Window"
                                 },
@@ -863,7 +865,7 @@
                     {
                         "id": "editor.action.toggleWordWrap",
                         "label": "&&Word Wrap",
-                        "enabled": false
+                        "checked": true
                     }
                 ]
             },
@@ -1548,6 +1550,11 @@
                 "isNative": false,
                 "userSettingsLabel": "ctrl+k ctrl+\\"
             },
+            "workbench.action.splitEditorInGroup": {
+                "label": "Ctrl+K Ctrl+Shift+\\",
+                "isNative": false,
+                "userSettingsLabel": "ctrl+k ctrl+shift+\\"
+            },
             "workbench.action.copyEditorToNewWindow": {
                 "label": "Ctrl+K O",
                 "isNative": false,
@@ -1804,13 +1811,13 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/dastarruer/.config/Code/Backups/1730324312160",
+            "backupPath": "/home/dastarruer/.config/Code/Backups/1730324694417",
             "uiState": {
                 "mode": 1,
-                "x": 865,
-                "y": 0,
-                "width": 870,
-                "height": 491
+                "x": 787,
+                "y": 480,
+                "width": 874,
+                "height": 494
             }
         },
         "openedWindows": []
