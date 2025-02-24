@@ -7,14 +7,10 @@
     {    
       "class": "WhatSie", 
       "command": "whatsie" 
-    },  
+    },
     {
       "class": "calibre-gui",
       "command": "calibre"
-    }, 
-    {
-      "class": "calibre",
-      "command": "calibre-ebook-viewer"
     }
   ]
 }   
