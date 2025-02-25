@@ -113,7 +113,7 @@ preloaders = [
 	# Video
 	{ mime = "video/*", run = "video" },
 	# PDF
-	{ mime = "application/pdf", run = "pdf" },
+	{ mime = "application/pdf", orphan = "true", run = "pdf" },
 	# Font
 	{ mime = "font/*", run = "font" },
 	{ mime = "application/ms-opentype", run = "font" },

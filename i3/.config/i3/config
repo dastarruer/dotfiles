@@ -129,7 +129,7 @@ bindsym $mod+n exec whatsie
 bindsym $mod+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id rofi -show drun -separator-style none
 # Rofi screenshot
 bindsym Print exec --no-startup-id ~/.config/rofi/scripts/screenshot.sh 
 # Rofimoji

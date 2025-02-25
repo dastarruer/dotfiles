@@ -1,3 +1,5 @@
+@import "~/.cache/wal/colors-rofi-dark"
+
 configuration {
     show-icons: true;
     icon-theme: "Papirus";
@@ -20,4 +22,73 @@ configuration {
   }
 }
 
-@theme "themes/cat-mocha"
+window {
+  transparency: "real";
+  location: center;
+  anchor: center;
+  fullscreen: false;
+  width: 32em;
+  x-offset: 0px;
+  y-offset: 0px;
+  enabled: true;
+  border-radius: 4px;
+  border-color: @background;
+  border: 2px;
+  background-color: @background;
+  cursor: "default";
+}
+inputbar {
+  enabled: true;
+  background-color: @foreground;
+  border-color: @background;
+  orientation: horizontal;
+  children: [ "entry" ];
+}
+entry {
+  enabled: true;
+  padding: 0.75em 1.25em;
+  cursor: text;
+  placeholder: "  Search application...";
+  border-color: @background;
+  background-color: @background;
+  placeholder-color: @selected-foreground;
+}
+listview {
+  enabled: true;
+  columns: 1;
+  lines: 5;
+  cycle: true;
+  dynamic: true;
+  scrollbar: false;
+  layout: vertical;
+  reverse: false;
+  border-color: @background;
+  fixed-height: true;
+  fixed-columns: true;
+  margin:  0.5em 0 0.75em;
+  cursor: "default";
+}
+element {
+  enabled: true;
+  margin: 0 0.75em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  orientation: horizontal;
+}
+element-icon {
+  size: 24px;
+}
+element normal.normal {
+  background-color: inherit;
+  text-color: inherit;
+}
+element selected.normal {
+  border-radius: 8px;
+  background-color: @selected-background;
+}
+element-text {
+  highlight: bold;
+  cursor: inherit;
+  vertical-align: 0.5;
+  horizontal-align: 0.0;
+}

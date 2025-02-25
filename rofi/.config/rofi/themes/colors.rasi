@@ -1,8 +1,9 @@
- * {
-    background: #181825;
-    prompt: #1e1e2e;
-    border: #313244;
-    text: #cdd6f4;
-    stext: #45475a;
-    select: #1e1e2e;
- }
+* {
+   background: #181825;
+   prompt: #1e1e2e;
+   border: #313244;
+   text: #cdd6f4;
+   stext: #45475a;
+   select: #1e1e2e;
+}
+   
