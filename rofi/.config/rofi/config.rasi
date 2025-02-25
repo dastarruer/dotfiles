@@ -51,7 +51,7 @@ entry {
   placeholder: "  Search application...";
   border-color: @background;
   background-color: @background;
-  placeholder-color: @selected-foreground;
+  placeholder-color: @selected-normal-foreground;
 }
 listview {
   enabled: true;
@@ -84,8 +84,9 @@ element normal.normal {
 }
 element selected.normal {
   border-radius: 8px;
-  background-color: @selected-background;
+  background-color: @selected-normal-background;
 }
+
 element-text {
   highlight: bold;
   cursor: inherit;
