@@ -24,6 +24,8 @@ NEXT_INDEX=$(( (CURRENT_INDEX + 1) % NUM_WALLPAPERS ))
 
 # Set the new wallpaper
 feh --bg-scale "${WALLPAPERS[$NEXT_INDEX]}"
+wal -i "${WALLPAPERS[$NEXT_INDEX]}"
+pywalfox update
 
 # Update the index file
 echo "$NEXT_INDEX" > "$INDEX_FILE"

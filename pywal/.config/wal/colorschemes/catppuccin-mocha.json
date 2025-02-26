@@ -1,6 +1,7 @@
 {
   "special": {
     "background": "#1e1e2e",
+    "background-alt": "#181825",
     "foreground": "#cdd6f4",
     "cursor": "#f5e0dc"
   },
