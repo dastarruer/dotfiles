@@ -23,9 +23,9 @@ control_chars =['','','','']
 # else default key value.
 # example:
 display_player_prefix = {
-    "spotify":  '%{F#cba6f7} %{F#cdd6f4}',
-    "firefox":  '%{F#cba6f7} %{F#cdd6f4}',
-    "default":  '%{F#cba6f7} %{F#cdd6f4}'
+    "spotify":  ' ',
+    "firefox":  ' ',
+    "default":  ' '
 }
 
 # (list) : list of metadata fields based on mpris sepecification.
