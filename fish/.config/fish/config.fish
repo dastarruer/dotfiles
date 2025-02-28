@@ -4,7 +4,7 @@ if status --is-interactive
     alias restore="restore_workspace_layouts.sh"
 
     alias df="cd ~/dotfiles"
-    alias update="sudo apt update ; sudo apt upgrade"
+    alias update="sudo apt update ; sudo apt upgrade ; sudo apt autoremove"
     alias grep="grep -i"
     alias apt="sudo apt"
     alias timeshift="sudo timeshift"
@@ -27,6 +27,7 @@ if status --is-interactive
     alias gp="git push"
     alias gl="git log --oneline"
     alias gch="git checkout"
+    alias y="yazi"
     
     alias wlist="nmcli d wifi list"
     alias wconnect="nmcli d wifi connect"
@@ -97,11 +98,4 @@ neofetch
 # zoxide
 zoxide init fish --cmd cd | source
 
-function y
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	yazi $argv --cwd-file="$tmp"
-	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-		builtin cd -- "$cwd"
-	end
-	rm -f -- "$tmp"
-end
+

@@ -23,7 +23,7 @@ fi
 NEXT_INDEX=$(( (CURRENT_INDEX + 1) % NUM_WALLPAPERS ))
 
 # Set the new wallpaper
-wal -i "${WALLPAPERS[$NEXT_INDEX]}" --saturate 0.8
+wal -i "${WALLPAPERS[$NEXT_INDEX]}" --saturate 0.75
 betterlockscreen -u "${WALLPAPERS[$NEXT_INDEX]}"
 pywalfox update
 

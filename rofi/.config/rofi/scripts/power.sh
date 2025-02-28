@@ -11,15 +11,18 @@ case "$CHOICE" in
         # Lock the screen
         betterlockscreen --lock ;;  # Replace with your preferred lock screen command
     "󰗽 Logout")
+        ~/bin/save_workspace_layouts.sh
         # Logout from the current session
         i3-msg exit ;;  # Replace with "pkill -KILL -u $USER" if not using i3
     "󰥔 Suspend")
         # Suspend the system
         systemctl suspend ;;
     " Reboot")
+        ~/bin/save_workspace_layouts.sh
         # Reboot the system
         systemctl reboot ;;
     " Shutdown")
+        ~/bin/save_workspace_layouts.sh
         # Shutdown the system
         systemctl poweroff ;;
     *)
