@@ -3,15 +3,14 @@
 # Define directories
 USB_DEVICE="/dev/sda1"
 MOUNT_POINT="/media/dastarruer/mnt"
-SOURCE_DIRS=("$HOME/Documents/vault" "$HOME/Documents/books")
-GDRIVE_NOTES="$HOME/gdrive/Notes"
+SOURCE_DIRS=("$HOME/Documents/vault" "$HOME/Documents/books" "$HOME/Documents/school")
 
 # Mount the USB drive
 echo "Mounting USB drive..."
 if sudo mount "$USB_DEVICE" "$MOUNT_POINT"; then
     echo "Drive mounted successfully at $MOUNT_POINT."
 else
-    echo "Drive mount failed. Either reinsert the USB or check the connection."
+    echo "Drive mount failed. Either re-insert the USB or check the connection."
     exit 1
 fi
 
@@ -44,6 +43,6 @@ echo "Ejecting USB drive..."
 if sudo eject "$USB_DEVICE"; then
     echo "Drive ejected safely. You can remove it now."
 else
-    echo "Failed to eject the drive. Try manually with: 'sudo eject $USB_DEVICE'"
+    echo "Failed to eject the drive. If you have a tab open currently in the mount directory, close it. Eject manually with: 'sudo eject $USB_DEVICE'"
     exit 1
 fi
