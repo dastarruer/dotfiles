@@ -3,42 +3,50 @@ import dbus
 import signal
 import time
 from unicodedata import east_asian_width
+import os
+import json
+
+# Load pywal foreground color from ~/.cache/wal/colors.json
+try:
+    with open(os.path.expanduser("~/.cache/wal/colors.json"), "r") as f:
+        wal_data = json.load(f)
+        # Typical pywal themes store the main foreground in the "special" section.
+        pywal_fg = wal_data.get("special", {}).get("foreground", "#FFFFFF")
+except Exception as e:
+    pywal_fg = "#FFFFFF"
 
 # Config options
 
-# (int) : Length of media info string. If length of string exceedes this value, the text will scroll. Default value is 20
+# (int): Length of media info string. If length of string exceeds this value, the text will scroll.
 message_display_len = 7
 
-# (int) : Font index of polybar. this value should be 1 more than the font value specified in polybar config.
+# (int): Font index of polybar. This value should be 1 more than the font value specified in polybar config.
 font_index = 1
 
-# (float) : Update speed of the text in seconds.
+# (float): Update speed of the text in seconds.
 update_delay = 0.3
 
-# (list) : list of chars containing previous, play, pause, next glyphs for media controls in respective order
-control_chars =['','','','']
+# (list): List of characters containing previous, play, pause, next glyphs for media controls in respective order.
+control_chars = ['','','','']
 
-# (dict) : dict of char icons to display as prefix.
-# If player name is available as key, then use the corressponding icon,
-# else default key value.
-# example:
+# (dict): Dict of char icons to display as prefix.
 display_player_prefix = {
-    "spotify":  ' ',
-    "firefox":  ' ',
-    "default":  ' '
+    "spotify": f" %{{F{pywal_fg}}}",
+    "firefox": f" %{{F{pywal_fg}}}",
+    "default": f" %{{F{pywal_fg}}}"
 }
 
-# (list) : list of metadata fields based on mpris sepecification.
-# For more details/ field names, refer [mpris sepecification](https://www.freedesktop.org/wiki/Specifications/mpris-spec/metadata/)
+
+# (list): List of metadata fields based on MPRIS specification.
 metadata_fields = ["xesam:title", "xesam:artist"]
 
-# (char) : separator for metadata fields
+# (char): Separator for metadata fields.
 metadata_separator = "-"
 
-# (bool) : Hide text when no player is available? True disables the output for no players.
+# (bool): Hide text when no player is available? True disables the output for no players.
 hide_output = True
 
-# Defult initialization
+# Default initialization
 current_player = None
 player_names = None
 players = None
@@ -50,7 +58,7 @@ last_player_name = None
 
 session_bus = dbus.SessionBus()
 
-def get_name(player_name ):
+def get_name(player_name):
     if player_name not in player_names:
         return
     name = ".".join(player_name.split(".")[3:])
@@ -64,7 +72,8 @@ def get_name_by_index(index):
 def get_status(player):
     status = ""
     try:
-        status = player.Get('org.mpris.MediaPlayer2.Player', 'PlaybackStatus', dbus_interface='org.freedesktop.DBus.Properties')
+        status = player.Get('org.mpris.MediaPlayer2.Player', 'PlaybackStatus',
+                            dbus_interface='org.freedesktop.DBus.Properties')
     except Exception as e:
         pass
     return status
@@ -72,7 +81,8 @@ def get_status(player):
 def get_metadata(player):
     metadata = {}
     try:
-        metadata = player.Get('org.mpris.MediaPlayer2.Player', 'Metadata', dbus_interface='org.freedesktop.DBus.Properties')
+        metadata = player.Get('org.mpris.MediaPlayer2.Player', 'Metadata',
+                              dbus_interface='org.freedesktop.DBus.Properties')
     except Exception as e:
         pass
     return metadata
@@ -84,20 +94,19 @@ def update_prefix_suffix(player_name="", status=""):
     if player_name != "":
         player_option = "-p " + player_name
 
-    prev_button = "%%{A:playerctl %s previous :}%c%%{A}"    %(player_option,control_chars[0])
-    play_button = "%%{A:playerctl %s play :}%c%%{A}"        %(player_option,control_chars[1])
-    pause_button = "%%{A:playerctl %s pause :}%c%%{A}"      %(player_option,control_chars[2])
-    next_button = "%%{A:playerctl %s next :}%c%%{A}"        %(player_option,control_chars[3])
+    prev_button = "%%{A:playerctl %s previous :}%c%%{A}" % (player_option, control_chars[0])
+    play_button = "%%{A:playerctl %s play :}%c%%{A}" % (player_option, control_chars[1])
+    pause_button = "%%{A:playerctl %s pause :}%c%%{A}" % (player_option, control_chars[2])
+    next_button = "%%{A:playerctl %s next :}%c%%{A}" % (player_option, control_chars[3])
 
     suffix = " " + prev_button
     if status == "Playing":
-        suffix += " "+pause_button
+        suffix += " " + pause_button
         status_paused = False
     else:
-        suffix += " "+play_button
+        suffix += " " + play_button
         status_paused = True
-    suffix += " "+next_button
-    # print(suffix)
+    suffix += " " + next_button
     display_suffix = suffix
 
     for key in display_player_prefix.keys():
@@ -109,7 +118,7 @@ def update_prefix_suffix(player_name="", status=""):
 
 def update_players():
     global player_names, players, session_bus, current_player, last_player_name
-    player_names = [service  for service in session_bus.list_names() if service.startswith('org.mpris.MediaPlayer2.')]
+    player_names = [service for service in session_bus.list_names() if service.startswith('org.mpris.MediaPlayer2.')]
     players = [session_bus.get_object(service, '/org/mpris/MediaPlayer2') for service in player_names]
     if last_player_name != get_name(current_player):
         for index, player in enumerate(player_names):
@@ -124,10 +133,9 @@ def handle_event(*args):
     current_player += 1
     current_player %= len(players)
     last_player_name = get_name_by_index(current_player)
-#    print("SIGUSR1: updated values - current_player = %d  players len = %d"%(current_player,len(players)))
 
 def update_message():
-    global players, current_player,player_names, message, display_text, message_display_len, display_suffix, last_player_name
+    global players, current_player, player_names, message, display_text, message_display_len, display_suffix, last_player_name
     if len(players) == 0:
         tmp_message = "No player available"
         update_prefix_suffix()
@@ -141,12 +149,12 @@ def update_message():
             if type(result) == dbus.Array:
                 result = result[0]
             if not result:
-                result = "No "+field.split(":")[1]
+                result = "No " + field.split(":")[1]
             metadata_string_list.append(str(result))
-        metadata_string = (" "+metadata_separator+" ").join(metadata_string_list)
+        metadata_string = (" " + metadata_separator + " ").join(metadata_string_list)
         if visual_len(metadata_string) > message_display_len:
             metadata_string = " " + metadata_string + " |"
-        update_prefix_suffix(name,status)
+        update_prefix_suffix(name, status)
         tmp_message = ""
         if metadata_string:
             tmp_message += str(metadata_string)
@@ -161,7 +169,7 @@ def scroll():
         if visual_len(display_text) > message_display_len:
             display_text = display_text[1:] + display_text[0]
         elif visual_len(display_text) < message_display_len:
-            display_text += " "*(message_display_len - len(display_text))
+            display_text += " " * (message_display_len - len(display_text))
 
 def visual_len(text):
     visual_length = 0
@@ -193,14 +201,17 @@ def make_visual_len(text, visual_desired_length):
 
 def print_text():
     global display_text, message_display_len, players, player_names, display_prefix, display_suffix
-    if hide_output and len(players)==0:
-        print("", flush = True)
+    if hide_output and len(players) == 0:
+        print("", flush=True)
         return
     scroll()
-    print(display_prefix + "" +
-        "%%{T%d}" % (font_index) +
-        make_visual_len(display_text, message_display_len) +
-        "%{T-}" + display_suffix, flush=True)
+    # Insert pywal foreground color formatting after the icon (display_prefix)
+    output = (display_prefix +
+              "%{F" + pywal_fg + "}" +
+              "%%{T%d}" % (font_index) +
+              make_visual_len(display_text, message_display_len) +
+              "%{T-}" + display_suffix)
+    print(output, flush=True)
 
 def main():
     global current_player, players
