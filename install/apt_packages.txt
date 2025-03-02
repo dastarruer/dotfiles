@@ -393,7 +393,6 @@ i3-wm
 i3lock
 i3status
 i965-va-driver:amd64
-i965-va-driver:i386
 icu-devtools
 ideviceinstaller
 ieee-data
@@ -416,7 +415,6 @@ initramfs-tools-core
 inputattach
 install-info
 intel-media-va-driver:amd64
-intel-media-va-driver:i386
 intel-microcode
 inxi
 ipp-usb
@@ -477,7 +475,6 @@ libarchive-dev:amd64
 libarchive13t64:amd64
 libargon2-1:amd64
 libaribb24-0t64:amd64
-libaribb24-0t64:i386
 libasan8:amd64
 libasound2-data
 libasound2-dev:amd64
@@ -526,7 +523,6 @@ libavc1394-0:i386
 libavcodec-dev:amd64
 libavcodec-extra:amd64
 libavcodec-extra60:amd64
-libavcodec-extra60:i386
 libavdevice-dev:amd64
 libavdevice60:amd64
 libavfilter-dev:amd64
@@ -536,7 +532,6 @@ libavformat60:amd64
 libavtp0:amd64
 libavutil-dev:amd64
 libavutil58:amd64
-libavutil58:i386
 libayatana-appindicator3-1
 libayatana-ido3-0.4-0:amd64
 libayatana-indicator3-7:amd64
@@ -635,7 +630,6 @@ libclutter-1.0-0:amd64
 libclutter-gst-3.0-0:amd64
 libclutter-gtk-1.0-0:amd64
 libcodec2-1.2:amd64
-libcodec2-1.2:i386
 libcogl-pango20:amd64
 libcogl-path20:amd64
 libcogl20:amd64
@@ -674,7 +668,6 @@ libdatrie-dev:amd64
 libdatrie1:amd64
 libdatrie1:i386
 libdav1d7:amd64
-libdav1d7:i386
 libdb5.3t64:amd64
 libdb5.3t64:i386
 libdbus-1-3:amd64
@@ -919,7 +912,6 @@ libgoa-1.0-0b:amd64
 libgoa-1.0-common
 libgoa-backend-1.0-2:amd64
 libgomp1:amd64
-libgomp1:i386
 libgpg-error-l10n
 libgpg-error0:amd64
 libgpg-error0:i386
@@ -947,7 +939,6 @@ libgsf-1-114:amd64
 libgsf-1-common
 libgsf-bin
 libgsm1:amd64
-libgsm1:i386
 libgspell-1-2:amd64
 libgspell-1-common
 libgssapi-krb5-2:amd64
@@ -1042,7 +1033,6 @@ libiec61883-0:amd64
 libiec61883-0:i386
 libieee1284-3t64:amd64
 libigdgmm12:amd64
-libigdgmm12:i386
 libijs-0.35:amd64
 libimagequant0:amd64
 libimath-3-1-29t64:amd64
@@ -1259,7 +1249,6 @@ libnss-systemd:amd64
 libnss3:amd64
 libntfs-3g89t64:amd64
 libnuma1:amd64
-libnuma1:i386
 libnvme1t64
 libodbc2:amd64
 libodbc2:i386
@@ -1271,15 +1260,12 @@ liboobs-1-5:amd64
 libopenal-data
 libopenal1:amd64
 libopencore-amrnb0:amd64
-libopencore-amrnb0:i386
 libopencore-amrwb0:amd64
-libopencore-amrwb0:i386
 libopenexr-3-1-30:amd64
 libopengl-dev:amd64
 libopengl0:amd64
 libopenh264-7:amd64
 libopenjp2-7:amd64
-libopenjp2-7:i386
 libopenmpt-modplug1:amd64
 libopenmpt0t64:amd64
 libopenni2-0:amd64
@@ -1518,7 +1504,6 @@ libsharpyuv-dev:amd64
 libsharpyuv0:amd64
 libsharpyuv0:i386
 libshine3:amd64
-libshine3:i386
 libshout3:amd64
 libshout3:i386
 libsidplay1v5:amd64
@@ -1536,7 +1521,6 @@ libsmartcols1:amd64
 libsmbclient0:amd64
 libsnapd-glib-2-1:amd64
 libsnappy1v5:amd64
-libsnappy1v5:i386
 libsndfile1:amd64
 libsndfile1:i386
 libsndio-dev:amd64
@@ -1556,7 +1540,6 @@ libsoup2.4-common
 libsource-highlight-common
 libsource-highlight4t64:amd64
 libsoxr0:amd64
-libsoxr0:i386
 libspa-0.2-bluetooth:amd64
 libspa-0.2-dev:amd64
 libspa-0.2-modules:amd64
@@ -1567,7 +1550,6 @@ libspeechd2:amd64
 libspeex1:amd64
 libspeex1:i386
 libspeexdsp1:amd64
-libspeexdsp1:i386
 libsphinxbase3t64:amd64
 libspirv-cross-c-shared-dev
 libspirv-cross-c-shared0:amd64
@@ -1581,7 +1563,6 @@ libssh-4:amd64
 libssh-4:i386
 libssh-gcrypt-4:amd64
 libssh2-1t64:amd64
-libssl-dev:amd64
 libssl3t64:amd64
 libssl3t64:i386
 libstartup-notification0:amd64
@@ -1593,10 +1574,8 @@ libstdc++6:i386
 libstemmer0d:amd64
 libsuitesparseconfig7:amd64
 libsvtav1enc1d1:amd64
-libsvtav1enc1d1:i386
 libswresample-dev:amd64
 libswresample4:amd64
-libswresample4:i386
 libswscale-dev:amd64
 libswscale7:amd64
 libsystemd-shared:amd64
@@ -1700,13 +1679,10 @@ libv4lconvert0t64:amd64
 libv4lconvert0t64:i386
 libva-dev:amd64
 libva-drm2:amd64
-libva-drm2:i386
 libva-glx2:amd64
 libva-wayland2:amd64
 libva-x11-2:amd64
-libva-x11-2:i386
 libva2:amd64
-libva2:i386
 libvdpau-dev:amd64
 libvdpau1:amd64
 libvdpau1:i386
@@ -1721,7 +1697,6 @@ libvlccore9:amd64
 libvncclient1:amd64
 libvo-aacenc0:amd64
 libvo-amrwbenc0:amd64
-libvo-amrwbenc0:i386
 libvolume-key1:amd64
 libvorbis0a:amd64
 libvorbis0a:i386
@@ -1759,7 +1734,6 @@ libwebp7:i386
 libwebpdecoder3:amd64
 libwebpdemux2:amd64
 libwebpmux3:amd64
-libwebpmux3:i386
 libwebrtc-audio-processing1:amd64
 libwildmidi2:amd64
 libwine:amd64
@@ -1787,9 +1761,7 @@ libx11-xcb-dev:amd64
 libx11-xcb1:amd64
 libx11-xcb1:i386
 libx264-164:amd64
-libx264-164:i386
 libx265-199:amd64
-libx265-199:i386
 libxapian30:amd64
 libxapp1:amd64
 libxatracker2:amd64
@@ -1936,7 +1908,6 @@ libxv-dev:amd64
 libxv1:amd64
 libxv1:i386
 libxvidcore4:amd64
-libxvidcore4:i386
 libxvmc1:amd64
 libxxf86dga1:amd64
 libxxf86vm-dev:amd64
@@ -1959,7 +1930,6 @@ libzstd1:amd64
 libzstd1:i386
 libzvbi-common
 libzvbi0t64:amd64
-libzvbi0t64:i386
 libzxing3:amd64
 lightdm
 lightdm-settings
@@ -2024,9 +1994,7 @@ mesa-libgallium:i386
 mesa-utils
 mesa-utils-bin:amd64
 mesa-va-drivers:amd64
-mesa-va-drivers:i386
 mesa-vdpau-drivers:amd64
-mesa-vdpau-drivers:i386
 mesa-vulkan-drivers:amd64
 mesa-vulkan-drivers:i386
 metacity
@@ -2486,8 +2454,6 @@ util-linux
 uuid-dev:amd64
 uuid-runtime
 va-driver-all:amd64
-va-driver-all:i386
-vdpau-driver-all:i386
 vim-common
 vim-tiny
 vlc
