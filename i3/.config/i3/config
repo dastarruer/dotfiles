@@ -138,6 +138,8 @@ bindsym $mod+e exec --no-startup-id ~/.local/bin/rofimoji
 bindsym $mod+o exec --no-startup-id ~/.config/rofi/scripts/power.sh
 # Wallpaper
 bindsym $mod+Shift+w exec ~/bin/change_wallpaper.sh
+# Theme switching
+bindsym $mod+t exec ~/.config/rofi/scripts/switch_theme.sh
 
 # Toggle picom
 bindsym $mod+c exec --no-startup-id ~/bin/toggle_picom.sh

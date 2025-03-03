@@ -1,12 +1,30 @@
 #!/bin/bash
 
-# Change gtk theme
-GTK_CONFIG="$HOME/dotfiles/gtk-3.0/.config/gtk-3.0/settings.ini"
-NEW_THEME="Gruvbox-Yellow-Dark"
-sed -i "s/^gtk-theme-name=.*/gtk-theme-name=$NEW_THEME/" "$GTK_CONFIG"
+# Define options
+OPTIONS="Catppuccin\nGruvbox"
 
-# Save workspace layout
-~/bin/save_workspace_layouts.sh
+# Show the menu and get the user's choice
+CHOICE=$(echo -e "$OPTIONS" | rofi -dmenu -i -p "Theme switcher:")
 
-# Logout
-i3-msg exit
+# Themes
+WAL=""
+OBSIDIAN=""
+
+case $CHOICE in
+    "Catppuccin")
+        OBSIDIAN="Catppuccin"
+        WAL="$HOME/.config/wal/colorschemes/catppuccin-mocha.json"
+        ;;
+    "Gruvbox")
+        OBSIDIAN="Obsidian gruvbox"
+        WAL="base16-gruvbox-hard"
+        ;;
+    *)
+        exit 1 # Exit if the user selects nothing or closes rofi
+        ;;
+esac
+
+wal --theme "$WAL"
+
+# Change Obsidian theme 
+# sed -i "s/\"cssTheme\": *\"[^\"]*\"/\"cssTheme\": \"$OBSIDIAN\"/" ~/Documents/vault/.obsidian/appearance.json
