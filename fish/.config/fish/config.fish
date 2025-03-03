@@ -4,7 +4,6 @@ if status --is-interactive
     alias restore="restore_workspace_layouts.sh"
 
     alias df="cd ~/dotfiles"
-    alias update="sudo apt update ; sudo apt upgrade ; sudo apt autoremove"
     alias grep="grep -i"
     alias apt="sudo apt"
     alias timeshift="sudo timeshift"
@@ -43,6 +42,12 @@ if status --is-interactive
     alias polybar-edit="code ~/dotfiles/polybar/.config/polybar/."
     alias fish-edit="nano ~/dotfiles/fish/.config/fish/config.fish"
 
+    function update
+	sudo apt update
+	sudo apt upgrade
+	sudo apt autoremove
+	flatpak update
+    end
     # Games
     # To create a steam game function:
         # This is the proton prefix that the game will be played in (note that the directory specified has to be created manually)

@@ -8,11 +8,9 @@ gnome-3-38-2004
 gnome-42-2204
 gnome-46-2404
 gtk-common-themes
-localsend
 mesa-2404
 qbittorrent-arnatious
 qt515-core20
 simplescreenrecorder
 snapd
-spotify
 steam
