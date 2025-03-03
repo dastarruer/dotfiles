@@ -32,4 +32,5 @@ pywalfox update
 ~/bin/change_wallpaper.sh
 
 # Change Obsidian theme 
-# sed -i "s/\"cssTheme\": *\"[^\"]*\"/\"cssTheme\": \"$OBSIDIAN\"/" ~/Documents/vault/.obsidian/appearance.json
+sed -i "s/\"cssTheme\": *\"[^\"]*\"/\"cssTheme\": \"$OBSIDIAN\"/" ~/Documents/vault/.obsidian/appearance.json
+flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian

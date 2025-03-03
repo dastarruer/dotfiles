@@ -10,7 +10,6 @@ gnome-46-2404
 gtk-common-themes
 localsend
 mesa-2404
-obsidian
 qbittorrent-arnatious
 qt515-core20
 simplescreenrecorder
