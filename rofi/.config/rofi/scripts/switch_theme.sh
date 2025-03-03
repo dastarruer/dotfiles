@@ -10,17 +10,20 @@ CHOICE=$(echo -e "$OPTIONS" | rofi -dmenu -i -p "Theme switcher:")
 echo "${CHOICE,,}" > $HOME/.current_theme
 
 # Themes
+BTOP=""
 WAL=""
 OBSIDIAN=""
 SPICETIFY=""
 
 case $CHOICE in
     "Catppuccin")
+        BTOP="catppuccin"
         WAL="$HOME/.config/wal/colorschemes/catppuccin-mocha.json"
         OBSIDIAN="Catppuccin"
         SPICETIFY="catppuccin"
         ;;
     "Gruvbox")
+        BTOP="gruvbox"
         WAL="base16-gruvbox-hard"
         OBSIDIAN="Obsidian gruvbox"
         SPICETIFY="Gruvify"
@@ -41,3 +44,7 @@ flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian
 # Change spicetify (spotify) theme 
 spicetify config current_theme "$SPICETIFY"
 spicetify apply
+
+# Change btop theme
+sed -i "s|^color_theme *= *\"[^\"]*\"|color_theme = \"$BTOP\"|" ~/.config/btop/btop.conf
+pkill -USR1 btop  # Refresh btop if running
