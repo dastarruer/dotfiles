@@ -12,15 +12,18 @@ echo "${CHOICE,,}" > $HOME/.current_theme
 # Themes
 WAL=""
 OBSIDIAN=""
+SPICETIFY=""
 
 case $CHOICE in
     "Catppuccin")
-        OBSIDIAN="Catppuccin"
         WAL="$HOME/.config/wal/colorschemes/catppuccin-mocha.json"
+        OBSIDIAN="Catppuccin"
+        SPICETIFY="catppuccin"
         ;;
     "Gruvbox")
-        OBSIDIAN="Obsidian gruvbox"
         WAL="base16-gruvbox-hard"
+        OBSIDIAN="Obsidian gruvbox"
+        SPICETIFY="Gruvify"
         ;;
     *)
         exit 1 # Exit if the user selects nothing or closes rofi
@@ -34,3 +37,7 @@ pywalfox update
 # Change Obsidian theme 
 sed -i "s/\"cssTheme\": *\"[^\"]*\"/\"cssTheme\": \"$OBSIDIAN\"/" ~/Documents/vault/.obsidian/appearance.json
 flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian
+
+# Change spicetify (spotify) theme 
+spicetify config current_theme "$SPICETIFY"
+spicetify apply

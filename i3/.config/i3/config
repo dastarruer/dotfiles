@@ -110,6 +110,9 @@ bindsym XF86AudioPrev exec playerctl previous
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Connect to airpods
+bindsym $mod+b exec ~/bin/airpods.sh
+
 # Brightness
 bindsym $alt+v exec --no-startup-id brightnessctl set 10%-
 bindsym $alt+b exec --no-startup-id brightnessctl set +10%
