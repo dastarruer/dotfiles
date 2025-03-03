@@ -46,5 +46,5 @@ spicetify config current_theme "$SPICETIFY"
 spicetify apply
 
 # Change btop theme
-sed -i "s|^color_theme *= *\"[^\"]*\"|color_theme = \"$BTOP\"|" ~/.config/btop/btop.conf
+sed -i "s|^color_theme *= *\"[^\"]*\"|color_theme = \"$BTOP\"|" ~/dotfiles/btop/.config/btop.conf
 pkill -USR1 btop  # Refresh btop if running
