@@ -248,6 +248,7 @@ bindsym $mod+Shift+BackSpace move container to workspace number $ws13
 
 # Assign windows to workspaces
 assign [class="Spotify"]$ws5
+assign [class="calibre"]$ws7
 assign [class="obsidian"]$ws10
 
 # reload the configuration file
