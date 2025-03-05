@@ -10,8 +10,8 @@ if [ "$wifi_status" = "enabled" ]; then
     if [ -n "$wifi_name" ]; then
         echo "󰖩 $wifi_name"
     else
-        echo "󰖪 No wifi"
+        echo "󰖪 Wifi off"
     fi
 else
-    echo "󰖪 Disconnected"
+    echo "󰖩 Wifi on"
 fi

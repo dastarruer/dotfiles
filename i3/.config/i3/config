@@ -114,8 +114,8 @@ floating_modifier $mod
 bindsym $mod+b exec ~/bin/airpods.sh
 
 # Brightness
-bindsym $alt+v exec --no-startup-id brightnessctl set 10%-
-bindsym $alt+b exec --no-startup-id brightnessctl set +10%
+bindsym $alt+v exec --no-startup-id brillo -q -U 10
+bindsym $alt+b exec --no-startup-id brillo -q -A 10
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
