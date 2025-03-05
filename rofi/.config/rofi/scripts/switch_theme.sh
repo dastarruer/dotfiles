@@ -25,7 +25,7 @@ case $CHOICE in
     "Gruvbox")
         BTOP="gruvbox"
         WAL="base16-gruvbox-hard"
-        OBSIDIAN="Obsidian gruvbox"
+        OBSIDIAN="Material Gruvbox"
         SPICETIFY="Gruvify"
         ;;
     *)
@@ -33,18 +33,24 @@ case $CHOICE in
         ;;
 esac
 
+notify-send -t 300 "Updating pywal..."
 wal --theme "$WAL"
+notify-send -t 100 "Updating Firefox..."
 pywalfox update
+notify-send -t 500 "Changing wallpaper..."
 ~/bin/change_wallpaper.sh
 
+# Change spicetify (spotify) theme 
+notify-send -t 500 "Updating Spotify..."
+$HOME/.spicetify/spicetify config current_theme $SPICETIFY  # For some reason i gotta specify spicetify's exact path'
+$HOME/.spicetify/spicetify apply
+
 # Change Obsidian theme 
+notify-send -t 500 "Updating Obsidian..."
 sed -i "s/\"cssTheme\": *\"[^\"]*\"/\"cssTheme\": \"$OBSIDIAN\"/" ~/Documents/vault/.obsidian/appearance.json
 flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian
 
-# Change spicetify (spotify) theme 
-spicetify config current_theme "$SPICETIFY"
-spicetify apply
-
+notify-send -t 500 "Updating btop..."
 # Change btop theme
 sed -i "s|^color_theme *= *\"[^\"]*\"|color_theme = \"$BTOP\"|" ~/dotfiles/btop/.config/btop.conf
 pkill -USR1 btop  # Refresh btop if running

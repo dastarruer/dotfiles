@@ -2,7 +2,7 @@
 
 nmcli radio wifi on
 
-notify-send "Searching for connections..."
+notify-send -t 1000 "Searching for connections..."
 
 # Get a list of Wi-Fi networks
 wifi_list=$(nmcli -t -f SSID device wifi list | grep -v '^--$' | sort -u)
@@ -23,14 +23,14 @@ if [[ -z "$password" ]]; then
   exit 0
 fi
 
-notify-send "Connecting to $selected_ssid..."
+notify-send -t 1000 "Connecting to $selected_ssid..."
 
 # Attempt to connect to the selected Wi-Fi with the entered password
 nmcli device wifi connect "$selected_ssid" password "$password"
 
 # Check if the connection was successful
 if [[ $? -eq 0 ]]; then
-  notify-send "Wi-Fi Connected" "Successfully connected to $selected_ssid"
+  notify-send -t 1000 "Wi-Fi Connected" "Successfully connected to $selected_ssid"
 else
-  notify-send "Wi-Fi Connection Failed" "Could not connect to $selected_ssid. Check the password."
+  notify-send -t 1000 "Wi-Fi Connection Failed" "Could not connect to $selected_ssid. Check the password."
 fi

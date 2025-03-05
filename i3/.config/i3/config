@@ -246,6 +246,10 @@ bindsym $mod+Shift+minus move container to workspace number $ws11
 bindsym $mod+Shift+equal move container to workspace number $ws12
 bindsym $mod+Shift+BackSpace move container to workspace number $ws13
 
+# Assign windows to workspaces
+assign [class="Spotify"]$ws5
+assign [class="obsidian"]$ws10
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)

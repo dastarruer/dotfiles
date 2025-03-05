@@ -13,4 +13,3 @@ qbittorrent-arnatious
 qt515-core20
 simplescreenrecorder
 snapd
-steam
