@@ -47,7 +47,7 @@ if status --is-interactive
 	sudo apt upgrade
 	sudo apt autoremove
 	flatpak update
-        pipx update-all
+        pipx upgrade-all
     end
     # Games
     # To create a steam game function:
