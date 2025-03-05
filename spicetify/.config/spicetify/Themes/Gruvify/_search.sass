@@ -1,0 +1,18 @@
+// Search bar background
+form .main-topBar-searchBar
+	background-color: var(--spice-selected-row) !important
+form:hover .main-topBar-searchBar
+	background-color: var(--spice-selected-row) !important
+
+// No little border before explore
+.IconContainer-trailing > div
+	border-inline-start: none
+	-webkit-border-start: none
+
+// Search top result background
+div[data-testid="top-result-card"] > div
+	background-color: var(--spice-selected-row)
+
+// Search top result remove background
+div > button[aria-label="Remove"]
+	background-color: var(--spice-selected-row)
