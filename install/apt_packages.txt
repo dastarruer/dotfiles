@@ -1247,6 +1247,7 @@ libnode-dev
 libnode109:amd64
 libnorm1t64:amd64
 libnotify-bin
+libnotify-dev:amd64
 libnotify4:amd64
 libnpth0t64:amd64
 libnspr4:amd64
@@ -1898,6 +1899,7 @@ libxres1:amd64
 libxshmfence1:amd64
 libxshmfence1:i386
 libxslt1.1:amd64
+libxss-dev:amd64
 libxss1:amd64
 libxss1:i386
 libxt6t64:amd64
@@ -2933,7 +2935,6 @@ xfce4-eyes-plugin:amd64
 xfce4-helpers
 xfce4-indicator-plugin
 xfce4-mailwatch-plugin
-xfce4-notifyd
 xfce4-panel
 xfce4-places-plugin:amd64
 xfce4-power-manager

@@ -8,9 +8,10 @@ CHOICE=$(echo -e "$OPTIONS" | rofi -dmenu -i -p "Theme switcher:")
 
 # Add the current theme to a file so that change_wallpaper.sh knows which is the current theme 
 echo "${CHOICE,,}" > $HOME/.current_theme
-
+#
 # Themes
 BTOP=""
+DUNST=""
 WAL=""
 OBSIDIAN=""
 SPICETIFY=""
@@ -18,6 +19,7 @@ SPICETIFY=""
 case $CHOICE in
     "Catppuccin")
         BTOP="catppuccin"
+        DUNST="$HOME/.config/dunst/dunstrc-catppuccin"
         WAL="$HOME/.config/wal/colorschemes/catppuccin-mocha.json"
         OBSIDIAN="Catppuccin"
         SPICETIFY="catppuccin"
@@ -33,8 +35,11 @@ case $CHOICE in
         ;;
 esac
 
-notify-send -t 300 "Updating pywal..."
+# Restart Dunst to apply changes
+pkill dunst && dunst -conf $DUNST --startup-notification & disown
+
 wal --theme "$WAL"
+notify-send -t 300 "Updating pywal..."
 notify-send -t 100 "Updating Firefox..."
 pywalfox update
 notify-send -t 500 "Changing wallpaper..."
@@ -52,5 +57,5 @@ flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian
 
 notify-send -t 500 "Updating btop..."
 # Change btop theme
-sed -i "s|^color_theme *= *\"[^\"]*\"|color_theme = \"$BTOP\"|" ~/dotfiles/btop/.config/btop.conf
-pkill -USR1 btop  # Refresh btop if running
+#sed -i "s|^color_theme *= *\"[^\"]*\"|color_theme = \"$BTOP\"|" ~/dotfiles/btop/.config/btop.conf
+#pkill -USR1 btop  # Refresh btop if running
