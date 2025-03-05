@@ -34,19 +34,13 @@ case $CHOICE in
         ;;
 esac
 
-# Extract colors
-BACKGROUND=$(sed -n '1p' "$WAL_COLORS")
-FOREGROUND=$(sed -n '2p' "$WAL_COLORS")
-FRAME=$(sed -n '4p' "$WAL_COLORS")
-CRITICAL_FRAME=$(sed -n '9p' "$WAL_COLORS")
-
+notify-send -t 300 "Updating pywal..."
+wal --theme "$WAL"
 
 # Restart Dunst to apply changes
 DUNST_CONFIG="$HOME/.cache/wal/dunstrc"
+notify-send -t 300 "Updating dunst..."
 pkill dunst ; dunst -conf "$DUNST_CONFIG" --startup-notification & disown
-
-notify-send -t 300 "Updating pywal..."
-wal --theme "$WAL"
 
 notify-send -t 100 "Updating Firefox..."
 pywalfox update
