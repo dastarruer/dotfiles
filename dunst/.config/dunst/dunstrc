@@ -16,33 +16,25 @@
     separator_height = 2
     padding = 8
     horizontal_padding = 8
-    frame_color = "#89b4fa"
+    frame_color = "#fabd2f"
     separator_color = frame
-    highlight = "#89b4fa"
-
-    # Keyboard shortcuts
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    history = ctrl+grave
-    context = ctrl+shift+period
+    highlight = "#fabd2f"
 
 [urgency_low]
-    background = "#1e1e2e"
-    foreground = "#cdd6f4"
+    background = "#1d2021"
+    foreground = "#fb4934"
     timeout = 5
 
 [urgency_normal]
-    background = "#1e1e2e"
-    foreground = "#cdd6f4"
+    background = "#1d2021"
+    foreground = "#fb4934"
     timeout = 20
 
 [urgency_critical]
-    background = "#1e1e2e"
-    foreground = "#cdd6f4"
-    frame_color = "#fab387"
+    background = "#1d2021"
+    foreground = "#fb4934"
+    frame_color = "#665c54"
     timeout = 0
-
-
 [global]
     font = "JetBrains Mono"
     format = "<b>%s</b>\n%b"
@@ -61,26 +53,22 @@
     separator_height = 2
     padding = 8
     horizontal_padding = 8
-    separator_color = "#585858"
-    # https://github.com/knopwob/dunst/issues/26#issuecomment-36159395
-    #icon_position = left
-    #icon_folders = /usr/share/icons/elementary/actions/16/
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    history = ctrl+grave
-    context = ctrl+shift+period
+    frame_color = "#cba6f7"
+    separator_color = frame
+    highlight = "#cba6f7"
 
 [urgency_low]
-    background = "#282828"
-    foreground = "#ebdbb2"
+    background = "#181825"
+    foreground = "#74c7ec"
     timeout = 5
 
 [urgency_normal]
-    background = "#282828"
-    foreground = "#ebdbb2"
+    background = "#181825"
+    foreground = "#74c7ec"
     timeout = 20
 
 [urgency_critical]
-    background = "#282828"
-    foreground = "#ebdbb2"
+    background = "#181825"
+    foreground = "#74c7ec"
+    frame_color = "#585b70"
     timeout = 0

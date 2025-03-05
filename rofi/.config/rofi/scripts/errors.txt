@@ -1,0 +1,72 @@
+[[1;32mI[0m] [1;31mtheme[0m: Set theme to [1;37mcatppuccin-mocha.json[0m.
+[[1;32mI[0m] [1;31msequences[0m: Set terminal colors.
+[[1;32mI[0m] [1;31mexport[0m: Reading system templates from: /home/dastarruer/.local/share/pipx/venvs/pywal16/lib/python3.12/site-packages/pywal/templates
+[[1;32mI[0m] [1;31mexport[0m: Reading user templates from: /home/dastarruer/.config/wal/templates
+[[1;32mI[0m] [1;31mexport[0m: Exported all files.
+[[1;32mI[0m] [1;31mexport[0m: Exported all user files to /home/dastarruer/.cache/wal
+[[1;32mI[0m] [1;31mreload[0m: Reloaded environment.
+Theme changed from gruvbox to catppuccin. Resetting wallpaper index.
+[[1;95mB[m] Betterlockscreen
+[[1;92m*[m] Updating image cache...
+[32msuccess[0m Config changed: current_theme = catppuccin
+[34minfo[0m Run "spicetify apply" to apply new config
+[1mspicetify v2.39.5[0m
+[[1;97m=[m] Detected 1 display(s) @ 1920x1080 total resolution
+[[1;97m=[m] Original image(s): city-overhead.png
+[[1;97m=[m] Processing display: eDP (1)
+[[1;97m=[m] Resolution: 1920x1080
+[[1;92m*[m] Resizing base image...
+[34minfo[0m Spicetify up-to-date
+[1mOverwriting themed assets:[0m
+[32mOK[0m
+[32msuccess[0m Custom CSS is updated
+[1mApplying additional modifications:[0m
+[[1;92m*[m] Rendering 'dim' effect...
+[32mOK[0m
+[1mTransferring custom apps:[0m
+[32mOK[0m
+[32msuccess[0m Spotify is spiced up!
+[[1;92m*[m] Rendering 'blur' effect...
+[[1;92m*[m] Rendering 'dimblur' effect...
+[[1;92m*[m] Rendering 'pixel' effect...
+[[1;92m*[m] Rendering 'dimpixel' effect...
+[[1;92m*[m] Rendering 'color' effect...
+[[1;92m*[m] Rendering final wallpaper images...
+[[1;92m*[m] Rendering final lockscreen images...
+[[1;93m+[m] Done
+[[1;32mI[0m] [1;31mtheme[0m: Set theme to [1;37mbase16-gruvbox-hard.json[0m.
+[[1;32mI[0m] [1;31msequences[0m: Set terminal colors.
+[[1;32mI[0m] [1;31mexport[0m: Reading system templates from: /home/dastarruer/.local/share/pipx/venvs/pywal16/lib/python3.12/site-packages/pywal/templates
+[[1;32mI[0m] [1;31mexport[0m: Reading user templates from: /home/dastarruer/.config/wal/templates
+[[1;32mI[0m] [1;31mexport[0m: Exported all files.
+[[1;32mI[0m] [1;31mexport[0m: Exported all user files to /home/dastarruer/.cache/wal
+[[1;32mI[0m] [1;31mreload[0m: Reloaded environment.
+[[1;32mI[0m] [1;31mdonation[0m: if you enjoy pywal16 consider donating at: https://github.com/eylles/pywal16
+[[1;95mB[m] Betterlockscreen
+[[1;92m*[m] Updating image cache...
+[32msuccess[0m Config changed: current_theme = Gruvify
+[34minfo[0m Run "spicetify apply" to apply new config
+[1mspicetify v2.39.5[0m
+[[1;97m=[m] Detected 1 display(s) @ 1920x1080 total resolution
+[[1;97m=[m] Original image(s): bridge.jpg
+[[1;97m=[m] Processing display: eDP (1)
+[[1;97m=[m] Resolution: 1920x1080
+[[1;92m*[m] Resizing base image...
+[34minfo[0m Spicetify up-to-date
+[1mOverwriting themed assets:[0m
+[32mOK[0m
+[32msuccess[0m Custom CSS is updated
+[1mApplying additional modifications:[0m
+[[1;92m*[m] Rendering 'dim' effect...
+[32mOK[0m
+[1mTransferring custom apps:[0m
+[32mOK[0m
+[32msuccess[0m Spotify is spiced up!
+[[1;92m*[m] Rendering 'blur' effect...
+[[1;92m*[m] Rendering 'dimblur' effect...
+[[1;92m*[m] Rendering 'pixel' effect...
+[[1;92m*[m] Rendering 'dimpixel' effect...
+[[1;92m*[m] Rendering 'color' effect...
+[[1;92m*[m] Rendering final wallpaper images...
+[[1;92m*[m] Rendering final lockscreen images...
+[[1;93m+[m] Done
