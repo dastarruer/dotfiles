@@ -33,10 +33,6 @@ case $CHOICE in
         exit 1 # Exit if the user selects nothing or closes rofi
         ;;
 esac
-wal --theme "$WAL"
-
-# Pywal color file
-WAL_COLORS="$HOME/.cache/wal/colors"
 
 # Extract colors
 BACKGROUND=$(sed -n '1p' "$WAL_COLORS")
@@ -44,23 +40,17 @@ FOREGROUND=$(sed -n '2p' "$WAL_COLORS")
 FRAME=$(sed -n '4p' "$WAL_COLORS")
 CRITICAL_FRAME=$(sed -n '9p' "$WAL_COLORS")
 
-# Path to dunst template
-DUNST_TEMPLATE="$HOME/dotfiles/dunst/.config/dunst/dunstrc.template"
-DUNST_CONFIG="$HOME/.cache/wal/dunstrc"
-
-# Replace placeholders in the template and generate the final dunstrc
-# sed -e "s|__background__|$BACKGROUND|g" \
-#     -e "s|__foreground__|$FOREGROUND|g" \
-#     -e "s|__frame__|$FRAME|g" \
-#     -e "s|__critical_frame__|$CRITICAL_FRAME|g" \
-#     "$DUNST_TEMPLATE" >> "$DUNST_CONFIG"
 
 # Restart Dunst to apply changes
+DUNST_CONFIG="$HOME/.cache/wal/dunstrc"
 pkill dunst ; dunst -conf "$DUNST_CONFIG" --startup-notification & disown
 
 notify-send -t 300 "Updating pywal..."
+wal --theme "$WAL"
+
 notify-send -t 100 "Updating Firefox..."
 pywalfox update
+
 notify-send -t 500 "Changing wallpaper..."
 ~/bin/change_wallpaper.sh
 
