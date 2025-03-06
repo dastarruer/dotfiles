@@ -16,6 +16,7 @@ if status --is-interactive
     alias snap="sudo snap"
     alias wifi="wifi.sh"
     alias backup="backup.sh"
+    alias sl="ls"
 
     # Git Aliases
     alias ga="git add"
