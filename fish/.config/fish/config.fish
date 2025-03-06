@@ -95,7 +95,7 @@ set -Ux fish_user_paths $HOME/.cargo/bin $fish_user_paths
 
 # Disable touchpad palm rejection
 xinput set-prop "ELAN06FA:00 04F3:32B9 Touchpad" "libinput Disable While Typing Enabled" 0
-set STARSHIP_CONFIG ~/.cache/wal/starship.toml
+export STARSHIP_CONFIG=~/.cache/wal/starship.toml
 
 # Start Starship prompt
 starship init fish | source

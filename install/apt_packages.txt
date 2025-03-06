@@ -246,6 +246,7 @@ geocode-glib-common
 geoip-database
 gettext
 gettext-base
+gh
 ghostscript
 gir1.2-accountsservice-1.0:amd64
 gir1.2-appindicator3-0.1
