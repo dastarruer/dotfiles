@@ -26,13 +26,13 @@ case $CHOICE in
         BTOP="gruvbox"
         WAL="base16-gruvbox-hard"
         OBSIDIAN="Material Gruvbox"
-        SPICETIFY="Gruvify"
+        SPICETIFY="gruvbox"
         ;;
     "Rose Pine")
         BTOP="catppuccin"
         WAL="$HOME/.config/wal/colorschemes/rose-pine.json"
         OBSIDIAN="Rose Pine"
-        SPICETIFY="catppuccin"
+        SPICETIFY="rose-pine"
         ;;
     *)
         exit 1 # Exit if the user selects nothing or closes rofi
@@ -57,13 +57,13 @@ notify-send -t 500 "Changing wallpaper..."
 
 # Update spicetify (spotify)  
 notify-send -t 500 "Updating Spotify..."
-$HOME/.spicetify/spicetify config current_theme $SPICETIFY  # For some reason i gotta specify spicetify's exact path'
+$HOME/.spicetify/spicetify config color_scheme $SPICETIFY  # For some reason i gotta specify spicetify's exact path'
 $HOME/.spicetify/spicetify apply
 
 # Update Obsidian  
 notify-send -t 500 "Updating Obsidian..."
 sed -i "s/\"cssTheme\": *\"[^\"]*\"/\"cssTheme\": \"$OBSIDIAN\"/" ~/Documents/vault/.obsidian/appearance.json
-flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian
+flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian & disown
 
 # Update btop 
 # notify-send -t 500 "Updating btop..."
