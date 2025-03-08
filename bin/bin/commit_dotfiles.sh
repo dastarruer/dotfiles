@@ -57,15 +57,12 @@ fi
 CHANGES_DETECTED=false
 for DIR in "${PUBLIC_DIRS[@]}"; do
     if [ -d "$DIR" ]; then
-        echo "Checking for changes in $DIR..."
-        
-        # Run rsync in dry-run mode to check for changes
-        if rsync -avh --delete --dry-run "$DIR" "$PUBLIC_DOTFILES" | grep -q '^'; then
-            echo "Changes detected in $DIR. Syncing..."
-            rsync -avh --delete "$DIR" "$PUBLIC_DOTFILES"
+        echo "Syncing $DIR..."
+        if rsync -avh --progress --delete --checksum "$DIR" "$PUBLIC_DOTFILES" | grep -q '^'; then
+            echo "Synced $DIR successfully."
             CHANGES_DETECTED=true
         else
-            echo "No changes in $DIR. Skipping..."
+            echo "No changes detected in $DIR. Skipping..."
         fi
     else
         echo "Warning: Source directory $DIR does not exist. Skipping..."
