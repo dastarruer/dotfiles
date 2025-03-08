@@ -43,7 +43,7 @@ else
   COMMIT_MESSAGE="$1"
 fi
 
-# Check if private repo has changes
+# Push changes to private repo if there are any
 if ! git diff --quiet || ! git diff --staged --quiet; then
     echo "Changes detected in private repo. Committing..."
     git add .
@@ -57,33 +57,29 @@ fi
 CHANGES_DETECTED=false
 for DIR in "${PUBLIC_DIRS[@]}"; do
     if [ -d "$DIR" ]; then
-        echo "Syncing up $DIR..."
-        if rsync -avh --progress --delete "$DIR" "$PUBLIC_DOTFILES"; then
+        echo "Syncing $DIR..."
+        if rsync -avh --progress --delete --checksum "$DIR" "$PUBLIC_DOTFILES" | grep -q '^'; then
             echo "Synced $DIR successfully."
             CHANGES_DETECTED=true
         else
-            echo "Syncing $DIR failed."
-            exit 1
+            echo "No changes detected in $DIR. Skipping..."
         fi
     else
         echo "Warning: Source directory $DIR does not exist. Skipping..."
     fi
 done
 
-# Commit and push public repo if there are changes
-if [ "$CHANGES_DETECTED" = true ]; then
-    cd "$PUBLIC_DOTFILES"
-    if ! git diff --quiet || ! git diff --staged --quiet; then
-        echo "Changes detected in public repo. Committing..."
-        git add .
-        git commit -m "$COMMIT_MESSAGE"
-        git push
-    else
-        echo "No new changes in public repo. Skipping commit and push."
-    fi
-else
-    echo "No changes detected in public repo files. Skipping commit and push."
+# Terminate early if no changes were made in the public repo
+if [ "$CHANGES_DETECTED" = false ]; then
+    echo "No changes detected in public repo. Exiting..."
+    exit 0
 fi
+
+# Commit and push public repo if there were changes
+cd "$PUBLIC_DOTFILES"
+git add .
+git commit -m "$COMMIT_MESSAGE"
+git push
 
 cd "$CURRENT_DIR"
 echo "Finished commit with message: '$COMMIT_MESSAGE'"
