@@ -14,7 +14,7 @@ if bluetoothctl info "$HEADPHONES_MAC" | grep 'Connected: yes' -q; then
 
     # Connect headphones
     notify-send -t 4000 "Connecting to headphones..."
-    bluetoothctl connect "$HEADPHONES_MAC"
+    bluetoothctl connect "$HEADPHONES_MAC" || notify-send -t "Failed to connect headphones. Please try again."
     playerctl play 
 else
     # Connect headphones
