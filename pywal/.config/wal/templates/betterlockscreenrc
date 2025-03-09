@@ -35,7 +35,7 @@ verifcolor={color10.strip}ff
 wrongtext="Try again."
 wrongcolor={color1.strip}ff
 modifcolor={color1.strip}ff
-bgcolor=000000ff
+bgcolor={background.strip}ff
 
 
 #
