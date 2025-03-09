@@ -440,6 +440,10 @@ isympy3
 iucode-tool
 iw
 javascript-common
+jellyfin
+jellyfin-ffmpeg7
+jellyfin-server
+jellyfin-web
 jfsutils
 jq
 kbd
@@ -2768,7 +2772,6 @@ simple-scan
 slick-greeter
 smartmontools
 smbclient
-snapd
 sound-theme-freedesktop
 speech-dispatcher
 speech-dispatcher-audio-plugins:amd64
@@ -2972,6 +2975,7 @@ xml-core
 xorg
 xorg-docs-core
 xorg-sgml-doctools
+xprintidle
 xreader
 xreader-common
 xreader-dbg

@@ -45,7 +45,7 @@ if status --is-interactive
 
     function update
 	sudo apt update
-	sudo apt upgrade
+	sudo apt upgrade -y
 	sudo apt autoremove
 	flatpak update
         pipx upgrade-all
