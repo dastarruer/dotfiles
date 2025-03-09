@@ -1,15 +1,24 @@
 #!/bin/bash
 # Convert wallpaper color scheme to catppuccin
+
 WALLPAPER=$1
 NAME=$2
+THEME=${3:-catppuccin} # Default to catppuccin if no theme is provided
 
-gowall convert "$WALLPAPER" -t catppuccin
+# Validate the theme selection
+if [[ "$THEME" != "catppuccin" && "$THEME" != "rose-pine" && "$THEME" != "gruvbox" ]]; then
+    echo "Invalid theme. Choose from: catppuccin, rose-pine, gruvbox."
+    exit 1
+fi
+
+gowall convert "$WALLPAPER" -t "$THEME"
 read
+
 echo "Moving to wallpapers..."
-mv ~/Pictures/gowall/$WALLPAPER ~/dotfiles/wallpapers/Pictures/wallpapers/$2
+mv ~/Pictures/gowall/$WALLPAPER ~/dotfiles/wallpapers/Pictures/wallpapers/$NAME
 
 echo "Committing dotfiles..."
-commit_dotfiles.sh "Added $NAME wallpaper"
+commit_dotfiles.sh "Added $NAME wallpaper ($THEME theme)"
 
 echo "Setting wallpaper..."
 feh --bg-scale ~/Pictures/wallpapers/$NAME
