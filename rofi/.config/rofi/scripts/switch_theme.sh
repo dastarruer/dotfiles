@@ -31,7 +31,7 @@ case $CHOICE in
     "Rose Pine")
         BTOP="catppuccin"
         WAL="$HOME/.config/wal/colorschemes/rose-pine.json"
-        OBSIDIAN="Rose Pine"
+        OBSIDIAN="rose-pine"
         SPICETIFY="rose-pine"
         ;;
     *)
