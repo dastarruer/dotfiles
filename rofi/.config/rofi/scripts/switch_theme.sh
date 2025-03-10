@@ -67,7 +67,7 @@ sleep 3
 if [[ "$SPOTIFY_STATUS" == "Playing" ]]; then
     sleep 1  # Allow Spotify to fully initialize
     playerctl -p spotify play
-    sleep 1  # Wait before seeking
+    sleep 1
     playerctl -p spotify position "$SPOTIFY_POSITION"
 fi
 
