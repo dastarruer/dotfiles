@@ -2814,7 +2814,6 @@ tcl8.6
 tcpdump
 telnet
 terser
-thermald
 thingy
 thunar
 thunar-archive-plugin:amd64
