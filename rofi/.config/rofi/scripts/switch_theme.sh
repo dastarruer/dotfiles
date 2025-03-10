@@ -51,9 +51,21 @@ pywalfox update
 notify-send -t 500 "Changing wallpaper..."
 ~/bin/change_wallpaper.sh
 
-# Update spicetify (spotify)  
+# Update spicetify (spotify)
 notify-send -t 500 "Updating Spotify..."
+SPOTIFY_STATUS=$(playerctl -p spotify status 2>/dev/null)
+
 $HOME/.spicetify/spicetify apply
+pkill spotify
+spotify &
+
+# Wait for Spotify to start
+sleep 3
+
+# Resume playback if Spotify was playing before
+if [[ "$SPOTIFY_STATUS" == "Playing" ]]; then
+    playerctl -p spotify play
+fi
 
 # Update Obsidian  
 notify-send -t 500 "Updating Obsidian..."
