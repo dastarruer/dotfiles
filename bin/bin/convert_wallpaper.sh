@@ -15,10 +15,8 @@ gowall convert "$WALLPAPER" -t "$THEME"
 read
 
 echo "Moving to wallpapers..."
-mv ~/Pictures/gowall/$WALLPAPER ~/dotfiles/wallpapers/Pictures/wallpapers/$NAME
+mv ~/Pictures/gowall/$WALLPAPER ~/dotfiles/wallpapers/Pictures/wallpapers/$THEME/$NAME
 
 echo "Committing dotfiles..."
 commit_dotfiles.sh "Added $NAME wallpaper ($THEME theme)"
 
-echo "Setting wallpaper..."
-feh --bg-scale ~/Pictures/wallpapers/$NAME
