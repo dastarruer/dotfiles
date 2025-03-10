@@ -31,11 +31,7 @@ mkdir -p "$PUBLIC_DOTFILES"
 
 # Get commit message
 if [ -z "$1" ]; then
-  read -rp "Enter commit message: " COMMIT_MESSAGE
-  if [ -z "$COMMIT_MESSAGE" ]; then
-    echo "No commit message provided. Exiting..."
-    exit 1
-  fi
+  COMMIT_MESSAGE="stuff"
 else
   COMMIT_MESSAGE="$1"
 fi
