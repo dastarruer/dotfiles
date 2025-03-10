@@ -865,6 +865,7 @@ libgeocode-glib-2-0:amd64
 libgexiv2-2:amd64
 libgfortran5:amd64
 libgif7:amd64
+libgirara-gtk3-3t64:amd64
 libgirepository-1.0-1:amd64
 libgirepository-1.0-dev:amd64
 libgirepository-2.0-0:amd64
@@ -1587,6 +1588,7 @@ libsvtav1enc1d1:i386
 libswresample4:amd64
 libswresample4:i386
 libswscale7:amd64
+libsynctex2:amd64
 libsystemd-shared:amd64
 libsystemd0:amd64
 libsystemd0:i386
@@ -3011,6 +3013,8 @@ yelp
 yelp-xsl
 yt-dlp
 yudit-common
+zathura
+zathura-pdf-poppler:amd64
 zenity
 zenity-common
 zip
