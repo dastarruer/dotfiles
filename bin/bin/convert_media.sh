@@ -1,13 +1,13 @@
 #!/bin/bash
 
 if [ -z "$1" ]; then
-  echo "Show name is missing!"
+  echo "Output dir is missing!"
   exit 1
 fi
 
 # Hardcode input and output directories
-input_dir="~/Videos/to_convert/"
-output_dir="/media/jellyfin/shows/$1"
+input_dir="$HOME/Videos/to-convert/"
+output_dir="$HOME/Videos/converted/"
 
 # Check if input directory exists
 if [ ! -d "$input_dir" ]; then
@@ -22,15 +22,21 @@ if [ ! -d "$output_dir" ]; then
 fi
 
 # Loop through all video files in the input directory
-for input_file in "$input_dir"/*; do
+for input_file in "$input_dir"*; do
   if [[ "$input_file" == *.mkv || "$input_file" == *.avi || "$input_file" == *.mov ]]; then
     # Set the output file path
-    output_file="$output_dir/$(basename "$input_file" | sed 's/\.[^.]*$/.mp4/')"
-    
-    # Set log file path
-    log_file="$output_dir/$(basename "$input_file" | sed 's/\.[^.]*$/.log/')"
-    
+    output_file="$output_dir$(basename "$input_file" | sed 's/\.[^.]*$/.mp4/')"
+
     # Convert the file with ffmpeg and log the output
-    ffmpeg -hide_banner -v error -i "$input_file" -c:v libx264 -c:a aac "$output_file" > "$log_file" 2>&1
+    ffmpeg -hide_banner -vaapi_device /dev/dri/renderD128 \
+      -i "$input_file" \
+      -vf 'format=nv12,hwupload' \
+      -c:v hevc_vaapi -b:v 2500k -maxrate 5000k -bufsize 10000k \
+      -c:a aac -b:a 96k -movflags +faststart \
+      "$output_file"
+
   fi
 done
+echo "Moving media to $1..."
+sudo mv "$output_dir*" "$1"
+echo "Done!"

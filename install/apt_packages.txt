@@ -2865,6 +2865,7 @@ uuid-dev:amd64
 uuid-runtime
 va-driver-all:amd64
 va-driver-all:i386
+vainfo
 vdpau-driver-all:i386
 vim-common
 vim-tiny
