@@ -113,6 +113,8 @@ floating_modifier $mod
 # Connect to airpods
 bindsym $mod+b exec ~/bin/airpods.sh
 
+bindsym $mod+Shift+b exec bluetoothctl power off
+
 # Brightness
 bindsym $alt+v exec --no-startup-id brillo -q -U 10
 bindsym $alt+b exec --no-startup-id brillo -q -A 10
