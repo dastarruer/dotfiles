@@ -55,6 +55,11 @@ notify-send -t 500 "Changing wallpaper..."
 notify-send -t 500 "Updating Spotify..."
 SPOTIFY_STATUS=$(playerctl -p spotify status 2>/dev/null)
 
+# Update Obsidian  
+notify-send -t 500 "Updating Obsidian..."
+sed -i "s/\"cssTheme\": *\"[^\"]*\"/\"cssTheme\": \"$OBSIDIAN\"/" ~/Documents/vault/.obsidian/appearance.json
+flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian & disown
+
 $HOME/.spicetify/spicetify apply
 SPOTIFY_POSITION=$(playerctl -p spotify position 2>/dev/null)
 pkill spotify
@@ -70,11 +75,6 @@ if [[ "$SPOTIFY_STATUS" == "Playing" ]]; then
     sleep 0.4
     playerctl -p spotify position "$SPOTIFY_POSITION"
 fi
-
-# Update Obsidian  
-notify-send -t 500 "Updating Obsidian..."
-sed -i "s/\"cssTheme\": *\"[^\"]*\"/\"cssTheme\": \"$OBSIDIAN\"/" ~/Documents/vault/.obsidian/appearance.json
-flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian & disown
 
 # Update btop 
 # notify-send -t 500 "Updating btop..."
