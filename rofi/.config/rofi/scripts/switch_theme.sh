@@ -51,26 +51,26 @@ pywalfox update
 notify-send -t 500 "Changing wallpaper..."
 ~/bin/change_wallpaper.sh
 
-# Update Spicetify (Spotify)
-notify-send -t 500 "Updating Spotify..."
-SPOTIFY_STATUS=$(playerctl -p spotify status 2>/dev/null)
 
 # Update Obsidian  
 notify-send -t 500 "Updating Obsidian..."
 sed -i "s/\"cssTheme\": *\"[^\"]*\"/\"cssTheme\": \"$OBSIDIAN\"/" ~/Documents/vault/.obsidian/appearance.json
 flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian & disown
 
+# Update Spicetify (Spotify)
+notify-send -t 500 "Updating Spotify..."
+SPOTIFY_STATUS=$(playerctl -p spotify status 2>/dev/null)
 $HOME/.spicetify/spicetify apply
 SPOTIFY_POSITION=$(playerctl -p spotify position 2>/dev/null)
 pkill spotify
 spotify &
 
 # Wait for Spotify to start
-sleep 2.5
+sleep 3
 
 # Resume playback if Spotify was playing before
 if [[ "$SPOTIFY_STATUS" == "Playing" ]]; then
-    sleep 1  # Allow Spotify to fully initialize
+    sleep 4  # Allow Spotify to fully initialize
     playerctl -p spotify play
     sleep 0.4
     playerctl -p spotify position "$SPOTIFY_POSITION"
