@@ -79,6 +79,8 @@ celluloid
 cifs-utils
 cinnamon-desktop-data
 circle-flags-svg
+cmake
+cmake-data
 cmatrix
 code
 colord
@@ -645,6 +647,8 @@ libcom-err2:amd64
 libcom-err2:i386
 libcommon-sense-perl:amd64
 libcompizconfig0:amd64
+libconfig-dev:amd64
+libconfig-doc
 libconfig9:amd64
 libconfuse-common
 libconfuse2:amd64
@@ -1467,6 +1471,7 @@ libreoffice-writer
 libresid-builder0c2a
 librest-1.0-0:amd64
 librevenge-0.0-0:amd64
+librhash0:amd64
 librhythmbox-core10:amd64
 librist4:amd64
 libroc0.3:amd64
@@ -1785,6 +1790,7 @@ libxcb-composite0:amd64
 libxcb-composite0-dev:amd64
 libxcb-cursor0:amd64
 libxcb-damage0:amd64
+libxcb-damage0-dev:amd64
 libxcb-dri2-0:amd64
 libxcb-dri2-0:i386
 libxcb-dri3-0:amd64
@@ -1792,16 +1798,19 @@ libxcb-dri3-0:i386
 libxcb-ewmh2:amd64
 libxcb-glx0:amd64
 libxcb-glx0:i386
+libxcb-glx0-dev:amd64
 libxcb-icccm4:amd64
 libxcb-image0:amd64
 libxcb-image0-dev:amd64
 libxcb-keysyms1:amd64
+libxcb-present-dev:amd64
 libxcb-present0:amd64
 libxcb-present0:i386
 libxcb-randr0:amd64
 libxcb-randr0:i386
 libxcb-randr0-dev:amd64
 libxcb-render-util0:amd64
+libxcb-render-util0-dev:amd64
 libxcb-render0:amd64
 libxcb-render0:i386
 libxcb-render0-dev:amd64
@@ -1811,6 +1820,7 @@ libxcb-shape0-dev:amd64
 libxcb-shm0:amd64
 libxcb-shm0:i386
 libxcb-shm0-dev:amd64
+libxcb-sync-dev:amd64
 libxcb-sync1:amd64
 libxcb-sync1:i386
 libxcb-util-dev:amd64
@@ -2010,6 +2020,7 @@ mesa-vdpau-drivers:amd64
 mesa-vdpau-drivers:i386
 mesa-vulkan-drivers:amd64
 mesa-vulkan-drivers:i386
+meson
 metacity
 metacity-common
 mint-artwork
@@ -2071,6 +2082,7 @@ network-manager-pptp
 network-manager-pptp-gnome
 networkd-dispatcher
 nftables
+ninja-build
 node-abbrev
 node-acorn
 node-agent-base
@@ -2480,7 +2492,6 @@ perl
 perl-base
 perl-modules-5.38
 perl-openssl-defaults:amd64
-picom
 pinentry-curses
 pinentry-gnome3
 pipes-sh
@@ -2860,6 +2871,7 @@ usb.ids
 usbmuxd
 usbutils
 user-setup
+uthash-dev:amd64
 util-linux
 uuid-dev:amd64
 uuid-runtime
