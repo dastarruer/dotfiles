@@ -24,9 +24,11 @@ if status --is-interactive
     alias g.="git add . && git status"
     alias gs="git status"
     alias gc="git commit -m"
+    alias gca="git status && git add . && git commit --amend --no-edit"
     alias gp="git push"
     alias gl="git log --oneline"
     alias gch="git checkout"
+
     alias y="yazi"
     
     alias wlist="nmcli d wifi list"
