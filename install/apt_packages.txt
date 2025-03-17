@@ -324,6 +324,7 @@ gnome-themes-extra:amd64
 gnome-themes-extra-data
 gnupg
 gnupg-utils
+gnupg2
 gobject-introspection:amd64
 gobject-introspection-bin
 golang:amd64
@@ -2744,6 +2745,7 @@ rdate
 readline-common
 reiserfsprogs
 rename
+resilio-sync
 rfkill
 rhythmbox-data
 ripgrep
@@ -2785,6 +2787,7 @@ simple-scan
 slick-greeter
 smartmontools
 smbclient
+software-properties-common
 sound-theme-freedesktop
 speech-dispatcher
 speech-dispatcher-audio-plugins:amd64
