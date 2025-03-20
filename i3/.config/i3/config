@@ -252,6 +252,7 @@ bindsym $mod+Shift+BackSpace move container to workspace number $ws13
 assign [class="Spotify"]$ws5
 assign [class="calibre"]$ws7
 assign [class="obsidian"]$ws10
+
 for_window [class="Spotify"] floating enable, resize set 1068 670, move position 81 146
 
 # reload the configuration file

@@ -70,6 +70,7 @@ sleep 3
 
 # Resume playback if Spotify was playing before
 if [[ "$SPOTIFY_STATUS" == "Playing" ]]; then
+    sleep 3
     notify-send -t 1000 "Unpausing Spotify (if this does not work unpause manually)"
     playerctl -p spotify play
     sleep 0.4

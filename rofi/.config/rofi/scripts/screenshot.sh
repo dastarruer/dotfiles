@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the main options for Rofi
-main_options="Full Screenshot\nRegion Screenshot"
+main_options="Full Screenshot\nRegion Screenshot\nOCR"
 
 # Display main options in Rofi and capture the selection
 main_choice=$(echo -e "$main_options" | rofi -dmenu -p "Flameshot:")
@@ -39,7 +39,6 @@ case "$main_choice" in
                 ;;
         esac
         ;;
-    
     *)
         echo "No valid option selected."
         ;;

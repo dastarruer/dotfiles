@@ -669,6 +669,7 @@ libcupsfilters2t64:amd64
 libcupsimage2t64:amd64
 libcurl3t64-gnutls:amd64
 libcurl3t64-gnutls:i386
+libcurl4-openssl-dev:amd64
 libcurl4t64:amd64
 libcurl4t64:i386
 libcwidget4:amd64
@@ -1135,6 +1136,8 @@ libldap-common
 libldap2:amd64
 libldap2:i386
 libldb2:amd64
+liblept5:amd64
+libleptonica-dev
 liblerc-dev:amd64
 liblerc4:amd64
 liblightdm-gobject-1-0:amd64
@@ -1610,6 +1613,8 @@ libtcl8.6:amd64
 libtcmalloc-minimal4t64:amd64
 libtdb1:amd64
 libteamdctl0:amd64
+libtesseract-dev:amd64
+libtesseract5:amd64
 libtevent0t64:amd64
 libtext-charwidth-perl:amd64
 libtext-iconv-perl:amd64
@@ -1699,6 +1704,8 @@ libva-x11-2:amd64
 libva-x11-2:i386
 libva2:amd64
 libva2:i386
+libvala-0.56-0:amd64
+libvalacodegen-0.56-0:amd64
 libvdpau1:amd64
 libvdpau1:i386
 libvidstab1.1:amd64
@@ -2830,6 +2837,9 @@ tcl8.6
 tcpdump
 telnet
 terser
+tesseract-ocr
+tesseract-ocr-eng
+tesseract-ocr-osd
 thingy
 thunar
 thunar-archive-plugin:amd64
@@ -2881,6 +2891,9 @@ uuid-runtime
 va-driver-all:amd64
 va-driver-all:i386
 vainfo
+valac
+valac-0.56-vapi
+valac-bin
 vdpau-driver-all:i386
 vim-common
 vim-tiny
@@ -2914,6 +2927,7 @@ winetricks
 wireless-regdb
 wireless-tools
 wireplumber
+wl-clipboard
 wmctrl
 wpasupplicant
 x11-apps

@@ -28,7 +28,8 @@ if status --is-interactive
     alias gp="git push"
     alias gl="git log --oneline"
     alias gch="git checkout"
-
+    
+    alias cr="cargo run"
     alias y="yazi"
     
     alias wlist="nmcli d wifi list"
