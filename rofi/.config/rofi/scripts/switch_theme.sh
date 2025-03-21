@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define options
-OPTIONS="Catppuccin\nGruvbox\nRose Pine"
+OPTIONS="Catppuccin\nGruvbox\nRose Pine\nTokyo Night Storm"
 
 # Show the menu and get the user's choice
 CHOICE=$(echo -e "$OPTIONS" | rofi -dmenu -i -p "Theme switcher:")
@@ -16,20 +16,21 @@ OBSIDIAN=""
 
 case $CHOICE in
     "Catppuccin")
-        BTOP="catppuccin"
         WAL="$HOME/.config/wal/colorschemes/catppuccin-mocha.json"
         OBSIDIAN="Catppuccin"
         ;;
     "Gruvbox")
-        BTOP="gruvbox"
         WAL="base16-gruvbox-hard"
         OBSIDIAN="Material Gruvbox"
         ;;
     "Rose Pine")
-        BTOP="catppuccin"
         WAL="$HOME/.config/wal/colorschemes/rose-pine.json"
         OBSIDIAN="rose-pine"
         ;;
+    "Tokyo Night Storm")
+        WAL="$HOME/.config/wal/colorschemes/tokyonight-night.json"
+	OBSIDIAN="Tokyo Night"
+	;;
     *)
         exit 1 # Exit if the user selects nothing or closes rofi
         ;;
