@@ -26,6 +26,8 @@ aspell-en
 at-spi2-common
 at-spi2-core
 attr
+audacity
+audacity-data
 autoconf
 automake
 autotools-dev
@@ -809,6 +811,7 @@ libfile-desktopentry-perl
 libfile-fcntllock-perl
 libfile-listing-perl
 libfile-mimeinfo-perl
+libflac++10:amd64
 libflac12t64:amd64
 libflac12t64:i386
 libflashrom1:amd64
@@ -1297,6 +1300,7 @@ libopenmpt0t64:amd64
 libopenni2-0:amd64
 libopus0:amd64
 libopus0:i386
+libopusfile0:amd64
 liborc-0.4-0t64:amd64
 liborc-0.4-0t64:i386
 liborcus-0.18-0:amd64
@@ -1373,6 +1377,8 @@ libpoppler-glib8t64:amd64
 libpoppler134:amd64
 libpopt0:amd64
 libportaudio2:amd64
+libportmidi0:amd64
+libportsmf0t64:amd64
 libpostproc57:amd64
 libppd2:amd64
 libppd2-common
@@ -1502,6 +1508,7 @@ libsasl2-modules-db:i386
 libsasl2-modules-gssapi-mit:amd64
 libsass1:amd64
 libsbc1:amd64
+libsbsms10:amd64
 libsdl2-2.0-0:amd64
 libsdl2-2.0-0:i386
 libseccomp2:amd64
@@ -1591,6 +1598,7 @@ libstdc++-13-dev:amd64
 libstdc++6:amd64
 libstdc++6:i386
 libstemmer0d:amd64
+libsuil-0-0:amd64
 libsuitesparseconfig7:amd64
 libsvtav1enc1d1:amd64
 libsvtav1enc1d1:i386
@@ -1706,6 +1714,7 @@ libva2:amd64
 libva2:i386
 libvala-0.56-0:amd64
 libvalacodegen-0.56-0:amd64
+libvamp-hostsdk3v5:amd64
 libvdpau1:amd64
 libvdpau1:i386
 libvidstab1.1:amd64
@@ -1775,6 +1784,8 @@ libwps-0.4-4:amd64
 libwrap0:amd64
 libwww-perl
 libwww-robotrules-perl
+libwxbase3.2-1t64:amd64
+libwxgtk3.2-1t64:amd64
 libx11-6:amd64
 libx11-6:i386
 libx11-data
