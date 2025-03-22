@@ -3,8 +3,11 @@
 # Headphones MAC Address 
 source ~/.headphones_mac
 
-dunstctl close-all
-bluetoothctl power on
+bluetoothctl power on || { 
+    notify-send -t 1000 "Failed to turn on Bluetooth, opening Blueman..." 
+    blueman-manager & 
+    exit 1
+}
 if bluetoothctl info "$HEADPHONES_MAC" | grep 'Connected: yes' -q; then
     playerctl pause -a
     # Restart bluetooth
