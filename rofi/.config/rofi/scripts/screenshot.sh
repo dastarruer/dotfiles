@@ -39,6 +39,11 @@ case "$main_choice" in
                 ;;
         esac
         ;;
+    "OCR")
+        sleep 0.3
+        flameshot gui -r | tesseract stdin stdout | xsel --clipboard --input 
+        notify-send "Clipboard:" "$(xsel --clipboard --output)"
+        ;;
     *)
         echo "No valid option selected."
         ;;

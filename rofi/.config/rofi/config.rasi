@@ -5,6 +5,7 @@ configuration {
     icon-theme: "Papirus";
     drun-display-format: "{icon} {name}";
   location: 0;
+  case-sensitive: false;
   hide-scrollbar: true;
   disable-history: false;
   display-drun: "󰀸  Applications";
