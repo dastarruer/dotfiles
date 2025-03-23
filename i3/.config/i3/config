@@ -113,6 +113,8 @@ floating_modifier $mod
 # Connect to airpods
 bindsym $mod+b exec ~/bin/airpods.sh
 
+bindsym $mod+Shift+g exec ~/.config/i3/scripts/toggle_i3.sh
+
 bindsym $mod+Shift+b exec bluetoothctl power off
 
 # Brightness

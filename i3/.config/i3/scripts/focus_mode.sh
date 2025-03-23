@@ -18,10 +18,10 @@ if [[ "$current_gap" -gt 0 ]]; then
     # Disable gaps and hide Polybar
     i3-msg gaps inner all set 0
     i3-msg gaps outer all set 0
-    [[ "$POLYBAR_RUNNING" == "true" ]] && pkill polybar
+    pkill polybar
 else
     # Restore gaps and restart Polybar
     i3-msg gaps inner all set "$INNER_GAP"
     i3-msg gaps outer all set "$OUTER_GAP"
-    [[ "$POLYBAR_RUNNING" == "false" ]] && polybar &
+    polybar &
 fi
