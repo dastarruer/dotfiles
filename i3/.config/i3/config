@@ -120,6 +120,9 @@ bindsym $mod+Shift+b exec bluetoothctl power off
 # Brightness
 bindsym $alt+v exec --no-startup-id brillo -q -U 10
 bindsym $alt+b exec --no-startup-id brillo -q -A 10
+bindsym $alt+Shift+v exec --no-startup-id brillo -q -U 5
+bindsym $alt+Shift+b exec --no-startup-id brillo -q -A 5
+
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
