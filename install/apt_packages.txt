@@ -71,8 +71,13 @@ ca-certificates
 cabextract
 calibre
 calibre-bin
+caps
 captain
 cargo
+carla
+carla-data
+carla-lv2
+carla-vst
 casper
 catfish
 cava
@@ -541,6 +546,7 @@ libavcodec-extra60:i386
 libavdevice60:amd64
 libavfilter9:amd64
 libavformat60:amd64
+libavformat60:i386
 libavtp0:amd64
 libavutil58:amd64
 libavutil58:i386
@@ -565,6 +571,7 @@ libblockdev-utils3:amd64
 libblockdev3:amd64
 libbluetooth3:amd64
 libbluray2:amd64
+libbluray2:i386
 libboost-iostreams1.83.0:amd64
 libboost-locale1.83.0:amd64
 libboost-thread1.83.0:amd64
@@ -629,8 +636,10 @@ libchamplain-0.12-0:amd64
 libchamplain-gtk-0.12-0:amd64
 libchm1
 libchromaprint1:amd64
+libchromaprint1:i386
 libcinnamon-desktop4:amd64
 libcjson1:amd64
+libcjson1:i386
 libclone-perl:amd64
 libclucene-contribs1t64:amd64
 libclucene-core1t64:amd64
@@ -817,6 +826,7 @@ libflac12t64:i386
 libflashrom1:amd64
 libflatpak0:amd64
 libflite1:amd64
+libfltk1.3t64:amd64
 libfluidsynth3:amd64
 libfont-afm-perl
 libfontconfig-dev:amd64
@@ -863,7 +873,9 @@ libgd3:i386
 libgdata-common
 libgdata22:amd64
 libgdbm-compat4t64:amd64
+libgdbm-compat4t64:i386
 libgdbm6t64:amd64
+libgdbm6t64:i386
 libgdk-pixbuf-2.0-0:amd64
 libgdk-pixbuf-2.0-0:i386
 libgdk-pixbuf-2.0-dev:amd64
@@ -874,6 +886,7 @@ libgeocode-glib-2-0:amd64
 libgexiv2-2:amd64
 libgfortran5:amd64
 libgif7:amd64
+libgig10t64:amd64
 libgirara-gtk3-3t64:amd64
 libgirepository-1.0-1:amd64
 libgirepository-1.0-dev:amd64
@@ -900,6 +913,7 @@ libglib2.0-dev:amd64
 libglib2.0-dev-bin
 libglibmm-2.4-1t64:amd64
 libglu1-mesa:amd64
+libglu1-mesa:i386
 libglut3.12:amd64
 libglvnd-core-dev:amd64
 libglvnd-dev:amd64
@@ -911,6 +925,7 @@ libglx-mesa0:i386
 libglx0:amd64
 libglx0:i386
 libgme0:amd64
+libgme0:i386
 libgmp-dev:amd64
 libgmp10:amd64
 libgmp10:i386
@@ -1045,6 +1060,7 @@ libidn2-0:i386
 libiec61883-0:amd64
 libiec61883-0:i386
 libieee1284-3t64:amd64
+libieee1284-3t64:i386
 libigdgmm12:amd64
 libigdgmm12:i386
 libijs-0.35:amd64
@@ -1150,6 +1166,7 @@ libllvm17t64:amd64
 libllvm19:amd64
 libllvm19:i386
 liblmdb0:amd64
+liblo7:amd64
 liblocale-gettext-perl
 liblouis-data
 liblouis20:amd64
@@ -1186,6 +1203,7 @@ libmanette-0.2-0:amd64
 libmatroska7:amd64
 libmaxminddb0:amd64
 libmbedcrypto7t64:amd64
+libmbedcrypto7t64:i386
 libmbim-glib4:amd64
 libmbim-proxy
 libmd0:amd64
@@ -1225,6 +1243,7 @@ libmtp-runtime
 libmtp9t64:amd64
 libmujs3:amd64
 libmwaw-0.3-3:amd64
+libmxml1:amd64
 libmysofa1:amd64
 libmythes-1.2-0:amd64
 libnatpmp1t64:amd64
@@ -1263,15 +1282,18 @@ libnma0:amd64
 libnode-dev
 libnode109:amd64
 libnorm1t64:amd64
+libnorm1t64:i386
 libnotify-bin
 libnotify-dev:amd64
 libnotify4:amd64
 libnpth0t64:amd64
 libnspr4:amd64
+libnspr4:i386
 libnss-mdns:amd64
 libnss-myhostname:amd64
 libnss-systemd:amd64
 libnss3:amd64
+libnss3:i386
 libntfs-3g89t64:amd64
 libnuma1:amd64
 libnuma1:i386
@@ -1292,11 +1314,13 @@ libopencore-amrwb0:i386
 libopenexr-3-1-30:amd64
 libopengl-dev:amd64
 libopengl0:amd64
+libopengl0:i386
 libopenh264-7:amd64
 libopenjp2-7:amd64
 libopenjp2-7:i386
 libopenmpt-modplug1:amd64
 libopenmpt0t64:amd64
+libopenmpt0t64:i386
 libopenni2-0:amd64
 libopus0:amd64
 libopus0:i386
@@ -1336,6 +1360,7 @@ libpcap0.8t64:amd64
 libpcap0.8t64:i386
 libpcaudio0:amd64
 libpci3:amd64
+libpci3:i386
 libpciaccess0:amd64
 libpciaccess0:i386
 libpcre2-16-0:amd64
@@ -1349,8 +1374,10 @@ libpcsclite1:i386
 libpeas-1.0-0:amd64
 libpeas-common
 libperl5.38t64:amd64
+libperl5.38t64:i386
 libperlio-gzip-perl
 libpgm-5.3-0t64:amd64
+libpgm-5.3-0t64:i386
 libphonenumber8:amd64
 libpipeline1:amd64
 libpipewire-0.3-0t64:amd64
@@ -1374,7 +1401,9 @@ libpolkit-agent-1-0:amd64
 libpolkit-gobject-1-0:amd64
 libpoppler-cpp0t64:amd64
 libpoppler-glib8t64:amd64
+libpoppler-glib8t64:i386
 libpoppler134:amd64
+libpoppler134:i386
 libpopt0:amd64
 libportaudio2:amd64
 libportmidi0:amd64
@@ -1413,11 +1442,19 @@ libqrencode4:amd64
 libqrtr-glib0:amd64
 libqt5core5t64:amd64
 libqt5dbus5t64:amd64
+libqt5designer5:amd64
 libqt5gui5t64:amd64
+libqt5help5:amd64
 libqt5network5t64:amd64
+libqt5opengl5t64:amd64
+libqt5printsupport5t64:amd64
+libqt5sql5-sqlite:amd64
+libqt5sql5t64:amd64
 libqt5svg5:amd64
+libqt5test5t64:amd64
 libqt5widgets5t64:amd64
 libqt5x11extras5:amd64
+libqt5xml5t64:amd64
 libqt6core6t64:amd64
 libqt6dbus6t64:amd64
 libqt6gui6t64:amd64
@@ -1450,6 +1487,7 @@ libqt6wlshellintegration6:amd64
 libqt6xml6t64:amd64
 libquadmath0:amd64
 librabbitmq4:amd64
+librabbitmq4:i386
 libraptor2-0:amd64
 libraqm0:amd64
 librasqal3t64:amd64
@@ -1484,11 +1522,14 @@ librevenge-0.0-0:amd64
 librhash0:amd64
 librhythmbox-core10:amd64
 librist4:amd64
+librist4:i386
 libroc0.3:amd64
 librsvg2-2:amd64
 librsvg2-2:i386
 librsvg2-common:amd64
 librsvg2-common:i386
+librtaudio6:amd64
+librtmidi6:amd64
 librtmp1:amd64
 librtmp1:i386
 librubberband2:amd64
@@ -1499,6 +1540,7 @@ libsamplerate0:i386
 libsane-common
 libsane-hpaio:amd64
 libsane1:amd64
+libsane1:i386
 libsasl2-2:amd64
 libsasl2-2:i386
 libsasl2-modules:amd64
@@ -1509,6 +1551,7 @@ libsasl2-modules-gssapi-mit:amd64
 libsass1:amd64
 libsbc1:amd64
 libsbsms10:amd64
+libsdl1.2debian:amd64
 libsdl2-2.0-0:amd64
 libsdl2-2.0-0:i386
 libseccomp2:amd64
@@ -1553,9 +1596,12 @@ libsndfile1:i386
 libsndio7.0:amd64
 libsnmp-base
 libsnmp40t64:amd64
+libsnmp40t64:i386
 libsodium23:amd64
+libsodium23:i386
 libsonic0:amd64
 libsord-0-0:amd64
+libsoundio2:amd64
 libsoundtouch1:amd64
 libsoup-2.4-1:amd64
 libsoup-3.0-0:amd64
@@ -1582,11 +1628,13 @@ libsqlite3-0:amd64
 libsqlite3-0:i386
 libsratom-0-0:amd64
 libsrt1.5-gnutls:amd64
+libsrt1.5-gnutls:i386
 libsrtp2-1:amd64
 libss2:amd64
 libssh-4:amd64
 libssh-4:i386
 libssh-gcrypt-4:amd64
+libssh-gcrypt-4:i386
 libssh2-1t64:amd64
 libssl-dev:amd64
 libssl3t64:amd64
@@ -1598,6 +1646,7 @@ libstdc++-13-dev:amd64
 libstdc++6:amd64
 libstdc++6:i386
 libstemmer0d:amd64
+libstk-4.6.2:amd64
 libsuil-0-0:amd64
 libsuitesparseconfig7:amd64
 libsvtav1enc1d1:amd64
@@ -1672,6 +1721,7 @@ libuchardet0:amd64
 libudev1:amd64
 libudev1:i386
 libudfread0:amd64
+libudfread0:i386
 libudisks2-0:amd64
 libunibreak5:amd64
 libunistring5:amd64
@@ -1735,6 +1785,7 @@ libvorbis0a:i386
 libvorbisenc2:amd64
 libvorbisenc2:i386
 libvorbisfile3:amd64
+libvorbisfile3:i386
 libvpl2
 libvpx9:amd64
 libvpx9:i386
@@ -1782,6 +1833,7 @@ libwpd-0.10-10:amd64
 libwpg-0.3-3:amd64
 libwps-0.4-4:amd64
 libwrap0:amd64
+libwrap0:i386
 libwww-perl
 libwww-robotrules-perl
 libwxbase3.2-1t64:amd64
@@ -1961,6 +2013,7 @@ libzimg2:amd64
 libzip4t64:amd64
 libzix-0-0:amd64
 libzmq5:amd64
+libzmq5:i386
 libzstd-dev:amd64
 libzstd1:amd64
 libzstd1:i386
@@ -2005,6 +2058,7 @@ linux-tools-6.8.0-55-generic
 linux-tools-common
 linuxmint-keyring
 lm-sensors
+lmms-common
 localechooser-data
 locales
 login
@@ -2631,6 +2685,7 @@ python3-idna
 python3-ifaddr
 python3-imdbpy
 python3-ipython
+python3-isodate
 python3-jedi
 python3-jeepney
 python3-jwt
@@ -2641,6 +2696,7 @@ python3-lazr.restfulclient
 python3-lazr.uri
 python3-ldb
 python3-libevdev
+python3-liblo
 python3-louis
 python3-lxml:amd64
 python3-lz4
@@ -2686,6 +2742,10 @@ python3-pycurl
 python3-pyelftools
 python3-pygments
 python3-pyparsing
+python3-pyqt5
+python3-pyqt5.qtopengl
+python3-pyqt5.qtsvg
+python3-pyqt5.sip
 python3-pyqt6
 python3-pyqt6.qtqml
 python3-pyqt6.qtquick
@@ -2695,6 +2755,7 @@ python3-pyqt6.qtwebengine
 python3-pyqt6.sip
 python3-pyudev
 python3-qrcode
+python3-rdflib
 python3-regex
 python3-repolib
 python3-repoze.lru
@@ -2710,6 +2771,7 @@ python3-setuptools-whl
 python3-sgmllib3k
 python3-six
 python3-soupsieve
+python3-sparqlwrapper
 python3-speechd
 python3-stack-data
 python3-sympy
@@ -2821,6 +2883,7 @@ steam-libs:amd64
 steam-libs:i386
 steam-libs-i386:i386
 sticky
+stk
 stow
 strace
 suckless-tools
@@ -2842,6 +2905,7 @@ systemd-sysv
 systemd-timesyncd
 sysvinit-utils
 t1utils
+tap-plugins
 tar
 tcl
 tcl8.6
@@ -2862,6 +2926,8 @@ thunderbird-locale-en-us
 time
 timeshift
 timgm6mb-soundfont
+tk
+tk8.6
 tk8.6-blt2.5
 tnftp
 tpm-udev
@@ -2931,9 +2997,12 @@ webp-pixbuf-loader:amd64
 webpack
 wget
 whiptail
-wine
+wine-devel
+wine-devel-amd64
+wine-devel-i386:i386
 wine32:i386
 wine64
+winehq-devel
 winetricks
 wireless-regdb
 wireless-tools
@@ -3064,3 +3133,5 @@ zlib1g:i386
 zlib1g-dev:amd64
 zoxide
 zstd
+zynaddsubfx
+zynaddsubfx-data
