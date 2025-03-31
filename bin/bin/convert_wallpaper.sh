@@ -2,8 +2,8 @@
 # Convert wallpaper color scheme to catppuccin
 
 WALLPAPER=$1
-NAME=$2
-THEME=${3:-catppuccin} # Default to catppuccin if no theme is provided
+NAME=$1
+THEME=${2:-catppuccin} # Default to catppuccin if no theme is provided
 
 # Validate the theme selection
 if [[ "$THEME" != "catppuccin" && "$THEME" != "rose-pine" && "$THEME" != "gruvbox" && "$THEME" != "tokyo-dark" ]] then
