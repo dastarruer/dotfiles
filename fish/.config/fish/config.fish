@@ -30,6 +30,7 @@ if status --is-interactive
     alias gch="git checkout"
     
     alias cr="cargo run"
+    alias ct="cargo test"
     alias y="yazi"
     
     alias wlist="nmcli d wifi list"
@@ -49,8 +50,8 @@ if status --is-interactive
     function update
 	sudo apt update
 	sudo apt upgrade -y
-	sudo apt autoremove
-	flatpak update
+	sudo apt autoremove -y
+	flatpak update -y
         pipx upgrade-all
     end
     # Games
@@ -107,6 +108,4 @@ starship init fish | source
 neofetch
 
 # zoxide
-zoxide init fish --cmd cd | source
-
-
+zoxide init fish | source

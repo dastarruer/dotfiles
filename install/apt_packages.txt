@@ -618,7 +618,6 @@ libcap-ng0:amd64
 libcap2:amd64
 libcap2:i386
 libcap2-bin
-libcapi20-3t64:amd64
 libcapi20-3t64:i386
 libcares2:amd64
 libcbor0.10:amd64
@@ -646,6 +645,7 @@ libclucene-core1t64:amd64
 libclutter-1.0-0:amd64
 libclutter-gst-3.0-0:amd64
 libclutter-gtk-1.0-0:amd64
+libcmark0.30.2:amd64
 libcodec2-1.2:amd64
 libcodec2-1.2:i386
 libcogl-pango20:amd64
@@ -826,7 +826,6 @@ libflac12t64:i386
 libflashrom1:amd64
 libflatpak0:amd64
 libflite1:amd64
-libfltk1.3t64:amd64
 libfluidsynth3:amd64
 libfont-afm-perl
 libfontconfig-dev:amd64
@@ -886,7 +885,6 @@ libgeocode-glib-2-0:amd64
 libgexiv2-2:amd64
 libgfortran5:amd64
 libgif7:amd64
-libgig10t64:amd64
 libgirara-gtk3-3t64:amd64
 libgirepository-1.0-1:amd64
 libgirepository-1.0-dev:amd64
@@ -1243,7 +1241,6 @@ libmtp-runtime
 libmtp9t64:amd64
 libmujs3:amd64
 libmwaw-0.3-3:amd64
-libmxml1:amd64
 libmysofa1:amd64
 libmythes-1.2-0:amd64
 libnatpmp1t64:amd64
@@ -1528,8 +1525,6 @@ librsvg2-2:amd64
 librsvg2-2:i386
 librsvg2-common:amd64
 librsvg2-common:i386
-librtaudio6:amd64
-librtmidi6:amd64
 librtmp1:amd64
 librtmp1:i386
 librubberband2:amd64
@@ -1551,7 +1546,6 @@ libsasl2-modules-gssapi-mit:amd64
 libsass1:amd64
 libsbc1:amd64
 libsbsms10:amd64
-libsdl1.2debian:amd64
 libsdl2-2.0-0:amd64
 libsdl2-2.0-0:i386
 libseccomp2:amd64
@@ -1601,7 +1595,6 @@ libsodium23:amd64
 libsodium23:i386
 libsonic0:amd64
 libsord-0-0:amd64
-libsoundio2:amd64
 libsoundtouch1:amd64
 libsoup-2.4-1:amd64
 libsoup-3.0-0:amd64
@@ -1646,7 +1639,6 @@ libstdc++-13-dev:amd64
 libstdc++6:amd64
 libstdc++6:i386
 libstemmer0d:amd64
-libstk-4.6.2:amd64
 libsuil-0-0:amd64
 libsuitesparseconfig7:amd64
 libsvtav1enc1d1:amd64
@@ -1819,7 +1811,6 @@ libwebpmux3:amd64
 libwebpmux3:i386
 libwebrtc-audio-processing1:amd64
 libwildmidi2:amd64
-libwine:amd64
 libwine:i386
 libwireplumber-0.4-0:amd64
 libwmf-0.2-7:amd64
@@ -2028,16 +2019,17 @@ linux-firmware
 linux-generic
 linux-headers-6.8.0-51
 linux-headers-6.8.0-51-generic
-linux-headers-6.8.0-54
-linux-headers-6.8.0-54-generic
 linux-headers-6.8.0-55
 linux-headers-6.8.0-55-generic
+linux-headers-6.8.0-56
+linux-headers-6.8.0-56-generic
 linux-headers-generic
 linux-image-6.8.0-51-generic
 linux-image-6.8.0-52-generic
 linux-image-6.8.0-53-generic
 linux-image-6.8.0-54-generic
 linux-image-6.8.0-55-generic
+linux-image-6.8.0-56-generic
 linux-image-generic
 linux-libc-dev:amd64
 linux-modules-6.8.0-51-generic
@@ -2045,20 +2037,21 @@ linux-modules-6.8.0-52-generic
 linux-modules-6.8.0-53-generic
 linux-modules-6.8.0-54-generic
 linux-modules-6.8.0-55-generic
+linux-modules-6.8.0-56-generic
 linux-modules-extra-6.8.0-51-generic
 linux-modules-extra-6.8.0-52-generic
 linux-modules-extra-6.8.0-53-generic
 linux-modules-extra-6.8.0-54-generic
 linux-modules-extra-6.8.0-55-generic
+linux-modules-extra-6.8.0-56-generic
 linux-sound-base
-linux-tools-6.8.0-54
-linux-tools-6.8.0-54-generic
 linux-tools-6.8.0-55
 linux-tools-6.8.0-55-generic
+linux-tools-6.8.0-56
+linux-tools-6.8.0-56-generic
 linux-tools-common
 linuxmint-keyring
 lm-sensors
-lmms-common
 localechooser-data
 locales
 login
@@ -2883,7 +2876,6 @@ steam-libs:amd64
 steam-libs:i386
 steam-libs-i386:i386
 sticky
-stk
 stow
 strace
 suckless-tools
@@ -2921,6 +2913,7 @@ thunar-archive-plugin:amd64
 thunar-data
 thunar-media-tags-plugin:amd64
 thunar-volman
+thunderbird
 thunderbird-locale-en
 thunderbird-locale-en-us
 time
@@ -2929,6 +2922,8 @@ timgm6mb-soundfont
 tk
 tk8.6
 tk8.6-blt2.5
+tldr
+tldr-hs
 tnftp
 tpm-udev
 transmission-common
@@ -3001,7 +2996,6 @@ wine-devel
 wine-devel-amd64
 wine-devel-i386:i386
 wine32:i386
-wine64
 winehq-devel
 winetricks
 wireless-regdb
@@ -3133,5 +3127,3 @@ zlib1g:i386
 zlib1g-dev:amd64
 zoxide
 zstd
-zynaddsubfx
-zynaddsubfx-data

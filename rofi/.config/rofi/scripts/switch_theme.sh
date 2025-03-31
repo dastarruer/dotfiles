@@ -66,12 +66,9 @@ SPOTIFY_POSITION=$(playerctl -p spotify position 2>/dev/null)
 notify-send -t 1000 "Restarting Spotify..."
 spicetify refresh
 
-# Wait for Spotify to start
-sleep 3
-
 # Resume playback if Spotify was playing before
 if [[ "$SPOTIFY_STATUS" == "Playing" ]]; then
-    sleep 3
+    sleep 7
     notify-send -t 1000 "Unpausing Spotify (if this does not work unpause manually)"
     playerctl -p spotify play
     sleep 0.4
