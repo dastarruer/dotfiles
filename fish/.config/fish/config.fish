@@ -32,7 +32,7 @@ if status --is-interactive
     alias cr="cargo run"
     alias ct="cargo test"
     alias y="yazi"
-    
+    alias ai="ollama run llama3.2"    
     alias wlist="nmcli d wifi list"
     alias wconnect="nmcli d wifi connect"
 

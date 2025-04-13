@@ -39,6 +39,7 @@ base-files
 base-passwd
 bash
 bash-completion
+bat
 bc
 bind9-dnsutils
 bind9-host
@@ -68,6 +69,7 @@ busybox-static
 bzip2
 bzip2-doc
 ca-certificates
+ca-certificates-java
 cabextract
 calibre
 calibre-bin
@@ -147,6 +149,8 @@ dctrl-tools
 debconf
 debconf-i18n
 debianutils
+default-jre
+default-jre-headless
 desktop-file-utils
 dex
 dhcpcd-base
@@ -207,6 +211,7 @@ flatpak
 fontconfig
 fontconfig-config
 fonts-dejavu-core
+fonts-dejavu-extra
 fonts-dejavu-mono
 fonts-droid-fallback
 fonts-freefont-ttf
@@ -251,6 +256,7 @@ gcr4
 gdb
 gdisk
 genisoimage
+geoclue-2.0
 geocode-glib-common
 geoip-database
 gettext
@@ -449,6 +455,7 @@ isympy-common
 isympy3
 iucode-tool
 iw
+java-common
 javascript-common
 jellyfin
 jellyfin-ffmpeg7
@@ -514,6 +521,8 @@ libatk-adaptor:amd64
 libatk-bridge2.0-0t64:amd64
 libatk-bridge2.0-0t64:i386
 libatk-bridge2.0-dev:amd64
+libatk-wrapper-java
+libatk-wrapper-java-jni:amd64
 libatk1.0-0t64:amd64
 libatk1.0-0t64:i386
 libatk1.0-dev:amd64
@@ -878,6 +887,8 @@ libgdbm6t64:i386
 libgdk-pixbuf-2.0-0:amd64
 libgdk-pixbuf-2.0-0:i386
 libgdk-pixbuf-2.0-dev:amd64
+libgdk-pixbuf-xlib-2.0-0:amd64
+libgdk-pixbuf2.0-0:amd64
 libgdk-pixbuf2.0-bin
 libgdk-pixbuf2.0-common
 libgee-0.8-2:amd64
@@ -889,6 +900,7 @@ libgirara-gtk3-3t64:amd64
 libgirepository-1.0-1:amd64
 libgirepository-1.0-dev:amd64
 libgirepository-2.0-0:amd64
+libgirepository-2.0-dev:amd64
 libgirepository1.0-dev
 libgit2-1.7:amd64
 libgl-dev:amd64
@@ -1106,6 +1118,7 @@ libjs-events
 libjs-inherits
 libjs-is-typedarray
 libjs-jquery
+libjs-jquery-flot
 libjs-jquery-ui
 libjs-mathjax
 libjs-prettify
@@ -1449,6 +1462,7 @@ libqt5sql5-sqlite:amd64
 libqt5sql5t64:amd64
 libqt5svg5:amd64
 libqt5test5t64:amd64
+libqt5webengine-data
 libqt5widgets5t64:amd64
 libqt5x11extras5:amd64
 libqt5xml5t64:amd64
@@ -2019,10 +2033,10 @@ linux-firmware
 linux-generic
 linux-headers-6.8.0-51
 linux-headers-6.8.0-51-generic
-linux-headers-6.8.0-55
-linux-headers-6.8.0-55-generic
 linux-headers-6.8.0-56
 linux-headers-6.8.0-56-generic
+linux-headers-6.8.0-57
+linux-headers-6.8.0-57-generic
 linux-headers-generic
 linux-image-6.8.0-51-generic
 linux-image-6.8.0-52-generic
@@ -2030,6 +2044,7 @@ linux-image-6.8.0-53-generic
 linux-image-6.8.0-54-generic
 linux-image-6.8.0-55-generic
 linux-image-6.8.0-56-generic
+linux-image-6.8.0-57-generic
 linux-image-generic
 linux-libc-dev:amd64
 linux-modules-6.8.0-51-generic
@@ -2038,17 +2053,19 @@ linux-modules-6.8.0-53-generic
 linux-modules-6.8.0-54-generic
 linux-modules-6.8.0-55-generic
 linux-modules-6.8.0-56-generic
+linux-modules-6.8.0-57-generic
 linux-modules-extra-6.8.0-51-generic
 linux-modules-extra-6.8.0-52-generic
 linux-modules-extra-6.8.0-53-generic
 linux-modules-extra-6.8.0-54-generic
 linux-modules-extra-6.8.0-55-generic
 linux-modules-extra-6.8.0-56-generic
+linux-modules-extra-6.8.0-57-generic
 linux-sound-base
-linux-tools-6.8.0-55
-linux-tools-6.8.0-55-generic
 linux-tools-6.8.0-56
 linux-tools-6.8.0-56-generic
+linux-tools-6.8.0-57
+linux-tools-6.8.0-57-generic
 linux-tools-common
 linuxmint-keyring
 lm-sensors
@@ -2089,6 +2106,7 @@ mesa-vulkan-drivers:i386
 meson
 metacity
 metacity-common
+minecraft-launcher
 mint-artwork
 mint-backgrounds-wallpapers
 mint-common
@@ -2531,6 +2549,8 @@ ocl-icd-libopencl1:amd64
 ocl-icd-libopencl1:i386
 onboard
 onboard-common
+openjdk-21-jre:amd64
+openjdk-21-jre-headless:amd64
 openprinting-ppds
 openssh-client
 openssl
@@ -2681,6 +2701,8 @@ python3-ipython
 python3-isodate
 python3-jedi
 python3-jeepney
+python3-json-pointer
+python3-jsonschema
 python3-jwt
 python3-keyutils
 python3-kiwisolver
@@ -2858,6 +2880,7 @@ shared-mime-info
 shim-signed
 simple-scan
 slick-greeter
+smart-connect
 smartmontools
 smbclient
 software-properties-common
@@ -2969,6 +2992,7 @@ valac-bin
 vdpau-driver-all:i386
 vim-common
 vim-tiny
+vivaldi-stable
 vlc
 vlc-bin
 vlc-data
