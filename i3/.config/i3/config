@@ -143,7 +143,7 @@ bindsym $mod+d exec --no-startup-id rofi -show drun -separator-style none
 # Rofi screenshot
 bindsym Print exec --no-startup-id ~/.config/rofi/scripts/screenshot.sh 
 # Rofimoji
-bindsym $mod+e exec --no-startup-id ~/.local/bin/rofimoji
+bindsym $mod+e exec --no-startup-id ~/.local/bin/rofimoji -a copy
 # Power settings
 bindsym $mod+o exec --no-startup-id ~/.config/rofi/scripts/power.sh
 # Wallpaper
@@ -257,7 +257,7 @@ bindsym $mod+Shift+BackSpace move container to workspace number $ws13
 assign [class="Spotify"]$ws5
 assign [class="calibre"]$ws7
 assign [class="obsidian"]$ws10
-
+assign [class="Anki"]$ws9
 for_window [class="Spotify"] floating enable, resize set 1068 670, move position 81 146
 
 # reload the configuration file
