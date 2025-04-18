@@ -42,15 +42,10 @@ fi
 NEXT_INDEX=$(( (CURRENT_INDEX + 1) % NUM_WALLPAPERS ))
 
 # Set the new wallpaper
-if [[ "$CURRENT" == "other" ]]; then
-    wal -i "${WALLPAPERS[$NEXT_INDEX]}" --saturate 0.75
-    pywalfox update
-else 
-    feh --bg-scale "${WALLPAPERS[$NEXT_INDEX]}"
-fi
+swww img --bg-scale "${WALLPAPERS[$NEXT_INDEX]}"
 
 # & disown will make the command run in the background so i can run the script multiple times back to back
-betterlockscreen -u "${WALLPAPERS[$NEXT_INDEX]}" & disown
+#betterlockscreen -u "${WALLPAPERS[$NEXT_INDEX]}" & disown
 
 # Update the index file
 echo "$NEXT_INDEX" > "$INDEX_FILE"

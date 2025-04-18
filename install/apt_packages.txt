@@ -193,6 +193,8 @@ evolution-data-server-common
 exfat-fuse
 exfatprogs
 exo-utils
+extrepo
+extrepo-offline-data
 fakeroot
 fd-find
 fdisk
@@ -231,6 +233,7 @@ fonts-ubuntu
 fonts-urw-base35
 fonts-wine
 foomatic-db-compressed-ppds
+foot
 fprintd
 friendly-recovery
 ftp
@@ -684,6 +687,7 @@ libcrypt-dev:amd64
 libcrypt1:amd64
 libcrypt1:i386
 libcryptsetup12:amd64
+libcryptx-perl
 libctf-nobfd0:amd64
 libctf0:amd64
 libcups2t64:amd64
@@ -732,6 +736,7 @@ libdeflate0:i386
 libdevmapper-event1.02.1:amd64
 libdevmapper1.02.1:amd64
 libdirectfb-1.7-7t64:amd64
+libdisplay-info1:amd64
 libdjvulibre-text
 libdjvulibre21:amd64
 libdmapsharing-4.0-3t64:amd64
@@ -815,6 +820,7 @@ libextutils-depends-perl
 libfaad2:amd64
 libfakeroot:amd64
 libfastjson4:amd64
+libfcft4t64
 libfcgi-perl
 libfcgi0t64:amd64
 libfdisk1:amd64
@@ -1137,6 +1143,7 @@ libjs-util
 libjson-c5:amd64
 libjson-glib-1.0-0:amd64
 libjson-glib-1.0-common
+libjson-perl
 libjson-xs-perl
 libjsoncpp25:amd64
 libjxl-tools
@@ -1185,6 +1192,7 @@ liblept5:amd64
 libleptonica-dev
 liblerc-dev:amd64
 liblerc4:amd64
+libliftoff0:amd64
 liblightdm-gobject-1-0:amd64
 liblilv-0-0:amd64
 liblirc-client0t64:amd64
@@ -1551,6 +1559,7 @@ libreoffice-writer
 libresid-builder0c2a
 librest-1.0-0:amd64
 librevenge-0.0-0:amd64
+librewolf
 librhash0:amd64
 librhythmbox-core10:amd64
 librist4:amd64
@@ -1583,6 +1592,7 @@ libsbc1:amd64
 libsbsms10:amd64
 libsdl2-2.0-0:amd64
 libsdl2-2.0-0:i386
+libseat1:amd64
 libseccomp2:amd64
 libsecret-1-0:amd64
 libsecret-common
@@ -1773,6 +1783,7 @@ libusb-1.0-0:amd64
 libusb-1.0-0:i386
 libusbmuxd6:amd64
 libutempter0:amd64
+libutf8proc3:amd64
 libuuid1:amd64
 libuv1-dev:amd64
 libuv1t64:amd64
@@ -1848,6 +1859,7 @@ libwebrtc-audio-processing1:amd64
 libwildmidi2:amd64
 libwine:i386
 libwireplumber-0.4-0:amd64
+libwlroots12t64:amd64
 libwmf-0.2-7:amd64
 libwmf-0.2-7-gtk:amd64
 libwmf0.2-7-gtk:amd64
@@ -2033,6 +2045,7 @@ libxxf86vm1:i386
 libxxhash0:amd64
 libyajl2:amd64
 libyaml-0-2:amd64
+libyaml-libyaml-perl
 libyelp0:amd64
 libz-mingw-w64
 libzbar0t64:amd64
@@ -2174,6 +2187,7 @@ nano
 nautilus-data
 ncurses-base
 ncurses-bin
+ncurses-term
 neofetch
 net-tools
 netbase
@@ -2930,6 +2944,9 @@ stow
 strace
 suckless-tools
 sudo
+sway
+sway-backgrounds
+swaybg
 switcheroo-control
 syslinux
 syslinux-common
@@ -3054,6 +3071,7 @@ wireless-tools
 wireplumber
 wl-clipboard
 wmctrl
+wmenu
 wpasupplicant
 x11-apps
 x11-common

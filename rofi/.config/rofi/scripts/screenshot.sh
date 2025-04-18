@@ -41,7 +41,7 @@ case "$main_choice" in
         ;;
     "OCR")
         sleep 0.3
-        flameshot gui -r | tesseract stdin stdout | xsel --clipboard --input 
+        flameshot gui -r | convert - -colorspace Gray -contrast-stretch 0 -resize 300% -sharpen 0x1.0 - | tesseract stdin stdout | xsel --clipboard --input
         notify-send "Clipboard:" "$(xsel --clipboard --output)"
         ;;
     *)
