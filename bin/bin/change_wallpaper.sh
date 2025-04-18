@@ -42,7 +42,7 @@ fi
 NEXT_INDEX=$(( (CURRENT_INDEX + 1) % NUM_WALLPAPERS ))
 
 # Set the new wallpaper
-swww img --bg-scale "${WALLPAPERS[$NEXT_INDEX]}"
+swww img "${WALLPAPERS[$NEXT_INDEX]}" -t wipe
 
 # & disown will make the command run in the background so i can run the script multiple times back to back
 #betterlockscreen -u "${WALLPAPERS[$NEXT_INDEX]}" & disown
