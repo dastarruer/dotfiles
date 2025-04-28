@@ -66,7 +66,7 @@ exec --no-startup-id ~/bin/change_wallpaper.sh
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id ~/.local/bin/autotiling
 exec --no-startup-id ~/bin/restore_workspace_layouts.sh
-exec --no-startup-id xset r rate 300 50 
+exec_always --no-startup-id xset r rate 300 50 
 exec_always --no-startup-id dunst
 # set desktop background with custom effect
 exec --no-startup-id betterlockscreen -u ~/Pictures/wallpapers/
@@ -106,6 +106,9 @@ bindsym XF86AudioPlay exec playerctl play-pause -p spotify
 bindsym XF86AudioPause exec playerctl play-pause -p spotify
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86Tools exec spotify
+bindsym XF86Mail exec thunderbird
+bindsym XF86Calculator exec gnome-calculator
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
