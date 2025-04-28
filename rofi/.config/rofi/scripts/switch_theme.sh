@@ -13,15 +13,18 @@ echo "${CHOICE// /-}" | tr '[:upper:]' '[:lower:]' > "$HOME/.current_theme"
 BTOP=""
 WAL=""
 OBSIDIAN=""
+GTK=""
 
 case $CHOICE in
     "Catppuccin")
         WAL="$HOME/.config/wal/colorschemes/catppuccin-mocha.json"
         OBSIDIAN="Catppuccin"
+        GTK="Catppuccin-Dark"
         ;;
     "Gruvbox")
         WAL="base16-gruvbox-hard"
         OBSIDIAN="Material Gruvbox"
+        GTK="Gruvbox-Dark"
         ;;
     "Rose Pine")
         WAL="$HOME/.config/wal/colorschemes/rose-pine.json"
@@ -52,11 +55,15 @@ pywalfox update
 notify-send -t 500 "Changing wallpaper..."
 ~/bin/change_wallpaper.sh
 
+# Update GTK
+sed -i "s/^gtk-theme-name=.*/gtk-theme-name=$GTK/" ~/.config/gtk-3.0/settings.ini
 
-# Update Obsidian  
+# Optionally send a reload signal to xfsettingsd if you're on XFCE
+killall -SIGUSR1 xfsettingsd 2>/dev/null
+# Update Obsidian
 notify-send -t 500 "Updating Obsidian..."
 sed -i "s/\"cssTheme\": *\"[^\"]*\"/\"cssTheme\": \"$OBSIDIAN\"/" ~/Documents/vault/.obsidian/appearance.json
-flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian & disown
+#flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian & disown
 
 # Update Spicetify (Spotify)
 notify-send -t 500 "Updating Spotify..."
