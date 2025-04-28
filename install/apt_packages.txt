@@ -336,6 +336,7 @@ gnome-menus
 gnome-online-accounts
 gnome-online-accounts-gtk
 gnome-session-canberra
+gnome-settings-daemon
 gnome-settings-daemon-common
 gnome-system-tools
 gnome-themes-extra:amd64
@@ -906,6 +907,7 @@ libgdk-pixbuf2.0-0:amd64
 libgdk-pixbuf2.0-bin
 libgdk-pixbuf2.0-common
 libgee-0.8-2:amd64
+libgeoclue-2-0:amd64
 libgeocode-glib-2-0:amd64
 libgexiv2-2:amd64
 libgfortran5:amd64
@@ -954,6 +956,7 @@ libgmp-dev:amd64
 libgmp10:amd64
 libgmp10:i386
 libgmpxx4ldbl:amd64
+libgnome-desktop-3-20t64:amd64
 libgnome-menu-3-0:amd64
 libgnomekbd-common
 libgnomekbd8:amd64
@@ -2635,6 +2638,8 @@ pinentry-curses
 pinentry-gnome3
 pipes-sh
 pipewire:amd64
+pipewire-alsa:amd64
+pipewire-audio
 pipewire-bin
 pipewire-pulse
 pipx
@@ -3189,6 +3194,7 @@ xserver-xorg-video-qxl
 xserver-xorg-video-radeon
 xserver-xorg-video-vesa
 xserver-xorg-video-vmware
+xsettingsd
 xss-lock
 xterm
 xtrans-dev
