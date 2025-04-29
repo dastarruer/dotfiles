@@ -47,6 +47,7 @@ bind9-libs:amd64
 binutils
 binutils-common:amd64
 binutils-x86-64-linux-gnu
+bleachbit
 blt
 blueman
 bluetooth
