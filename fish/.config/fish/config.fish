@@ -2,7 +2,8 @@ if status --is-interactive
     # Aliases
     alias save="save_workspace_layouts.sh"
     alias restore="restore_workspace_layouts.sh"
-
+    alias stats="sudo auto-cpufreq --stats"
+    alias stast="sudo auto-cpufreq --stats"
     alias df="cd ~/dotfiles"
     alias grep="grep -i"
     alias apt="sudo apt"

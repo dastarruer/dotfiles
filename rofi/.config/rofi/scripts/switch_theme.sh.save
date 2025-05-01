@@ -63,7 +63,7 @@ killall -SIGUSR1 xfsettingsd 2>/dev/null
 # Update Obsidian
 notify-send -t 500 "Updating Obsidian..."
 sed -i "s/\"cssTheme\": *\"[^\"]*\"/\"cssTheme\": \"$OBSIDIAN\"/" ~/Documents/vault/.obsidian/appearance.json
-#flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian & disown
+flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian & disown
 
 # Update Spicetify (Spotify)
 notify-send -t 500 "Updating Spotify..."
@@ -81,3 +81,8 @@ if [[ "$SPOTIFY_STATUS" == "Playing" ]]; then
     sleep 0.4
     playerctl -p spotify position "$SPOTIFY_POSITION"
 fi
+
+# Update btop 
+# notify-send -t 500 "Updating btop..."
+#sed -i "s|^color_theme *= *\"[^\"]*\"|color_theme = \"$BTOP\"|" ~/dotfiles/btop/.config/btop.conf
+#pkill -USR1 btop  # Refresh btop if running

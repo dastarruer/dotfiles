@@ -738,7 +738,6 @@ libdeflate0:i386
 libdevmapper-event1.02.1:amd64
 libdevmapper1.02.1:amd64
 libdirectfb-1.7-7t64:amd64
-libdisplay-info1:amd64
 libdjvulibre-text
 libdjvulibre21:amd64
 libdmapsharing-4.0-3t64:amd64
@@ -1202,7 +1201,6 @@ liblept5:amd64
 libleptonica-dev
 liblerc-dev:amd64
 liblerc4:amd64
-libliftoff0:amd64
 liblightdm-gobject-1-0:amd64
 liblilv-0-0:amd64
 liblirc-client0t64:amd64
@@ -1875,7 +1873,6 @@ libwebrtc-audio-processing1:amd64
 libwildmidi2:amd64
 libwine:i386
 libwireplumber-0.4-0:amd64
-libwlroots12t64:amd64
 libwmf-0.2-7:amd64
 libwmf-0.2-7-gtk:amd64
 libwmf0.2-7-gtk:amd64
@@ -2965,9 +2962,6 @@ stow
 strace
 suckless-tools
 sudo
-sway
-sway-backgrounds
-swaybg
 swaylock
 switcheroo-control
 syslinux
@@ -3093,7 +3087,6 @@ wireless-tools
 wireplumber
 wl-clipboard
 wmctrl
-wmenu
 wpasupplicant
 x11-apps
 x11-common
