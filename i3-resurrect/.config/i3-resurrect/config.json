@@ -15,6 +15,11 @@
     {
       "class": "obsidian",
       "command": "obsidian"
+    },
+    {
+	"class":"Anki",
+	"command":"anki"
     }
+
   ]
 }

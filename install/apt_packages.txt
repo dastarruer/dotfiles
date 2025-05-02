@@ -223,6 +223,7 @@ fonts-freefont-ttf
 fonts-jetbrains-mono
 fonts-lato
 fonts-liberation
+fonts-liberation2
 fonts-lyx
 fonts-mathjax
 fonts-noto-cjk
@@ -269,6 +270,7 @@ gettext
 gettext-base
 gh
 ghostscript
+gimp-data
 gir1.2-accountsservice-1.0:amd64
 gir1.2-appindicator3-0.1
 gir1.2-atk-1.0:amd64
@@ -360,6 +362,7 @@ gpg-agent
 gpgconf
 gpgsm
 gpgv
+graphviz
 grep
 grim
 groff-base
@@ -498,6 +501,7 @@ libacl1:amd64
 libacl1-dev:amd64
 libadwaita-1-0:amd64
 libaio1t64:amd64
+libann0
 libanyevent-i3-perl
 libanyevent-perl
 libao-common
@@ -647,8 +651,10 @@ libcdio19t64:amd64
 libcdparanoia0:amd64
 libcdparanoia0:i386
 libcdr-0.1-1:amd64
+libcdt5:amd64
 libcgi-fast-perl
 libcgi-pm-perl
+libcgraph6:amd64
 libchamplain-0.12-0:amd64
 libchamplain-gtk-0.12-0:amd64
 libchm1
@@ -1027,6 +1033,8 @@ libgtksourceview-4-0:amd64
 libgtksourceview-4-common
 libgtop-2.0-11:amd64
 libgtop2-common
+libgts-0.7-5t64:amd64
+libgts-bin
 libguard-perl
 libgucharmap-2-90-7:amd64
 libgudev-1.0-0:amd64
@@ -1037,6 +1045,8 @@ libgupnp-igd-1.6-0:amd64
 libgusb2:amd64
 libgutenprint-common
 libgutenprint9
+libgvc6
+libgvpr2:amd64
 libgweather-4-0t64:amd64
 libgweather-4-common
 libgxps2t64:amd64
@@ -1183,6 +1193,7 @@ libkrb5-3:i386
 libkrb5support0:amd64
 libkrb5support0:i386
 libksba8:amd64
+liblab-gamut1:amd64
 liblangtag-common
 liblangtag1:amd64
 liblapack3:amd64
@@ -1398,6 +1409,7 @@ libpangoxft-1.0-0:amd64
 libpaper-utils
 libpaper1:amd64
 libparted2t64:amd64
+libpathplan4:amd64
 libpcap0.8t64:amd64
 libpcap0.8t64:i386
 libpcaudio0:amd64
@@ -2083,10 +2095,10 @@ linux-firmware
 linux-generic
 linux-headers-6.8.0-51
 linux-headers-6.8.0-51-generic
-linux-headers-6.8.0-57
-linux-headers-6.8.0-57-generic
 linux-headers-6.8.0-58
 linux-headers-6.8.0-58-generic
+linux-headers-6.8.0-59
+linux-headers-6.8.0-59-generic
 linux-headers-generic
 linux-image-6.8.0-51-generic
 linux-image-6.8.0-52-generic
@@ -2096,6 +2108,7 @@ linux-image-6.8.0-55-generic
 linux-image-6.8.0-56-generic
 linux-image-6.8.0-57-generic
 linux-image-6.8.0-58-generic
+linux-image-6.8.0-59-generic
 linux-image-generic
 linux-libc-dev:amd64
 linux-modules-6.8.0-51-generic
@@ -2106,6 +2119,7 @@ linux-modules-6.8.0-55-generic
 linux-modules-6.8.0-56-generic
 linux-modules-6.8.0-57-generic
 linux-modules-6.8.0-58-generic
+linux-modules-6.8.0-59-generic
 linux-modules-extra-6.8.0-51-generic
 linux-modules-extra-6.8.0-52-generic
 linux-modules-extra-6.8.0-53-generic
@@ -2114,11 +2128,12 @@ linux-modules-extra-6.8.0-55-generic
 linux-modules-extra-6.8.0-56-generic
 linux-modules-extra-6.8.0-57-generic
 linux-modules-extra-6.8.0-58-generic
+linux-modules-extra-6.8.0-59-generic
 linux-sound-base
-linux-tools-6.8.0-57
-linux-tools-6.8.0-57-generic
 linux-tools-6.8.0-58
 linux-tools-6.8.0-58-generic
+linux-tools-6.8.0-59
+linux-tools-6.8.0-59-generic
 linux-tools-common
 linuxmint-keyring
 lm-sensors
