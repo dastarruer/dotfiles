@@ -362,6 +362,7 @@ gpg-agent
 gpgconf
 gpgsm
 gpgv
+gphoto2
 graphviz
 grep
 grim
@@ -393,6 +394,8 @@ gstreamer1.0-tools
 gstreamer1.0-vaapi:amd64
 gstreamer1.0-x:amd64
 gstreamer1.0-x:i386
+gthumb
+gthumb-data
 gtk-update-icon-cache
 gtk2-engines-murrine:amd64
 gtk2-engines-pixbuf:amd64
@@ -513,6 +516,7 @@ libapparmor1:i386
 libappstream5:amd64
 libapt-pkg6.0t64:amd64
 libarchive-dev:amd64
+libarchive-zip-perl
 libarchive13t64:amd64
 libargon2-1:amd64
 libaribb24-0t64:amd64
@@ -648,6 +652,7 @@ libcddb2
 libcdio-cdda2t64:amd64
 libcdio-paranoia2t64:amd64
 libcdio19t64:amd64
+libcdk5t64:amd64
 libcdparanoia0:amd64
 libcdparanoia0:i386
 libcdr-0.1-1:amd64
@@ -683,6 +688,7 @@ libcom-err2:amd64
 libcom-err2:i386
 libcommon-sense-perl:amd64
 libcompizconfig0:amd64
+libcompress-raw-lzma-perl:amd64
 libconfig-dev:amd64
 libconfig-doc
 libconfig9:amd64
@@ -1102,6 +1108,7 @@ libieee1284-3t64:i386
 libigdgmm12:amd64
 libigdgmm12:i386
 libijs-0.35:amd64
+libimage-exiftool-perl
 libimagequant0:amd64
 libimath-3-1-29t64:amd64
 libimlib2t64:amd64
@@ -1113,6 +1120,7 @@ libinput-bin
 libinput-dev:amd64
 libinput10:amd64
 libinstpatch-1.0-2:amd64
+libio-compress-brotli-perl
 libio-html-perl
 libio-socket-ssl-perl
 libip4tc2:amd64
@@ -1265,6 +1273,7 @@ libmd4c0:amd64
 libmetacity3:amd64
 libmfx1:amd64
 libmhash2:amd64
+libmime-charset-perl
 libminiupnpc17:amd64
 libminizip1t64:amd64
 libmjpegutils-2.1-0t64:amd64
@@ -1661,6 +1670,7 @@ libsnmp40t64:amd64
 libsnmp40t64:i386
 libsodium23:amd64
 libsodium23:i386
+libsombok3:amd64
 libsonic0:amd64
 libsord-0-0:amd64
 libsoundtouch1:amd64
@@ -1785,6 +1795,7 @@ libudfread0:amd64
 libudfread0:i386
 libudisks2-0:amd64
 libunibreak5:amd64
+libunicode-linebreak-perl
 libunistring5:amd64
 libunistring5:i386
 libunity-protocol-private0:amd64

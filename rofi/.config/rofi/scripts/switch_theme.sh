@@ -63,7 +63,7 @@ killall -SIGUSR1 xfsettingsd 2>/dev/null
 # Update Obsidian
 notify-send -t 500 "Updating Obsidian..."
 sed -i "s/\"cssTheme\": *\"[^\"]*\"/\"cssTheme\": \"$OBSIDIAN\"/" ~/Documents/vault/.obsidian/appearance.json
-#flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian & disown
+flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian & disown
 
 # Update Spicetify (Spotify)
 notify-send -t 500 "Updating Spotify..."
