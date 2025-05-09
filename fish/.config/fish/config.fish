@@ -1,5 +1,6 @@
 if status --is-interactive
     # Aliases
+    alias pls="sudo"
     alias save="save_workspace_layouts.sh"
     alias restore="restore_workspace_layouts.sh"
     alias stats="sudo auto-cpufreq --stats"
