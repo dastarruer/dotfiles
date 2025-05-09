@@ -470,7 +470,6 @@ iucode-tool
 iw
 java-common
 javascript-common
-jellyfin
 jellyfin-ffmpeg7
 jellyfin-server
 jellyfin-web

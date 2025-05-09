@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the main options for Rofi
-main_options="Full Screenshot\nRegion Screenshot\nOCR"
+main_options="Region Screenshot\nFull Screenshot\nOCR"
 
 # Display main options in Rofi and capture the selection
 main_choice=$(echo -e "$main_options" | rofi -dmenu -p "Flameshot:")

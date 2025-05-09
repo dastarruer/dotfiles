@@ -15,6 +15,7 @@ if [[ -z "$selected_ssid" ]]; then
   exit 0
 fi
 
+notify-send -t 1000 "Enter password"
 # Prompt for the Wi-Fi password using Rofi
 password=$(rofi -dmenu -password -p "Enter password for $selected_ssid")
 
