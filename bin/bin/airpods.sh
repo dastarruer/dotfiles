@@ -1,27 +1,42 @@
 #!/bin/bash
 
-# Headphones MAC Address 
+# Headphones MAC Address
 source ~/.headphones_mac
 
-bluetoothctl power on || { 
-    notify-send -t 1000 "Failed to turn on Bluetooth, opening Blueman..." 
-    blueman-manager & 
+# Turn on Bluetooth or fallback
+bluetoothctl power on || {
+    notify-send -t 1000 "Failed to turn on Bluetooth, opening Blueman..."
+    blueman-manager &
     exit 1
 }
+
+# Store the player that was playing
+ACTIVE_PLAYER=$(playerctl -l | while read player; do
+    if playerctl -p "$player" status 2>/dev/null | grep -q Playing; then
+        echo "$player"
+        break
+    fi
+done)
+
+# Pause all players
+playerctl pause -a
+
+# If already connected, restart Bluetooth to refresh
 if bluetoothctl info "$HEADPHONES_MAC" | grep 'Connected: yes' -q; then
-    playerctl pause -a
-    # Restart bluetooth
-    notify-send -t 4000 "Restarting bluetooth..."
+    notify-send -t 4000 "Restarting Bluetooth..."
     bluetoothctl power off
     bluetoothctl power on
-
-    # Connect headphones
-    notify-send -t 4000 "Connecting to headphones..."
-    bluetoothctl connect "$HEADPHONES_MAC" || notify-send -t "Failed to connect headphones. Please try again."
-    playerctl play 
-else
-    # Connect headphones
-    notify-send -t 4000 "Connecting to headphones..."
-    bluetoothctl connect "$HEADPHONES_MAC"
 fi
 
+# Connect headphones
+notify-send -t 4000 "Connecting to headphones..."
+bluetoothctl connect "$HEADPHONES_MAC" || {
+    notify-send -t 4000 "Failed to connect headphones. Please try again."
+    exit 1
+}
+
+# Resume only the previously playing player
+if [ -n "$ACTIVE_PLAYER" ]; then
+    sleep 1
+    playerctl -p "$ACTIVE_PLAYER" play
+fi

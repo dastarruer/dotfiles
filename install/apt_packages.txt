@@ -26,8 +26,6 @@ aspell-en
 at-spi2-common
 at-spi2-core
 attr
-audacity
-audacity-data
 autoconf
 automake
 autotools-dev
@@ -74,13 +72,8 @@ ca-certificates-java
 cabextract
 calibre
 calibre-bin
-caps
 captain
 cargo
-carla
-carla-data
-carla-lv2
-carla-vst
 casper
 catfish
 cava
@@ -106,8 +99,6 @@ compizconfig-settings-manager
 compton
 console-setup
 console-setup-linux
-copyq
-copyq-plugins
 coreutils
 cpdb-backend-cups
 cpio
@@ -189,7 +180,6 @@ emacsen-common
 enchant-2
 espeak-ng-data:amd64
 ethtool
-evolution-data-server
 evolution-data-server-common
 exfat-fuse
 exfatprogs
@@ -339,7 +329,6 @@ gnome-menus
 gnome-online-accounts
 gnome-online-accounts-gtk
 gnome-session-canberra
-gnome-settings-daemon
 gnome-settings-daemon-common
 gnome-system-tools
 gnome-themes-extra:amd64
@@ -534,12 +523,10 @@ libatasmart4:amd64
 libatk-adaptor:amd64
 libatk-bridge2.0-0t64:amd64
 libatk-bridge2.0-0t64:i386
-libatk-bridge2.0-dev:amd64
 libatk-wrapper-java
 libatk-wrapper-java-jni:amd64
 libatk1.0-0t64:amd64
 libatk1.0-0t64:i386
-libatk1.0-dev:amd64
 libatkmm-1.6-1v5:amd64
 libatm1t64:amd64
 libatomic1:amd64
@@ -547,7 +534,6 @@ libatomic1:i386
 libatopology2t64:amd64
 libatspi2.0-0t64:amd64
 libatspi2.0-0t64:i386
-libatspi2.0-dev:amd64
 libattr1:amd64
 libattr1-dev:amd64
 libaudit-common
@@ -628,7 +614,6 @@ libcairo-perl
 libcairo-script-interpreter2:amd64
 libcairo2:amd64
 libcairo2:i386
-libcairo2-dev:amd64
 libcairomm-1.0-1v5:amd64
 libcamel-1.2-64t64:amd64
 libcanberra-gtk-module:amd64
@@ -644,7 +629,6 @@ libcap2-bin
 libcapi20-3t64:i386
 libcbor0.10:amd64
 libcc1-0:amd64
-libcddb2
 libcdio-cdda2t64:amd64
 libcdio-paranoia2t64:amd64
 libcdio19t64:amd64
@@ -713,7 +697,6 @@ libcurl4t64:i386
 libcwidget4:amd64
 libdaemon0:amd64
 libdata-dump-perl
-libdatrie-dev:amd64
 libdatrie1:amd64
 libdatrie1:i386
 libdav1d7:amd64
@@ -726,7 +709,6 @@ libdbus-1-dev:amd64
 libdbus-glib-1-2:amd64
 libdbusmenu-glib4:amd64
 libdbusmenu-gtk3-4:amd64
-libdbusmenu-qt5-2:amd64
 libdc1394-25:amd64
 libdca0:amd64
 libdconf1:amd64
@@ -768,7 +750,6 @@ libduktape207:amd64
 libduktape207:i386
 libdv4t64:amd64
 libdv4t64:i386
-libdvbpsi10:amd64
 libdvdcss2:amd64
 libdvdnav4:amd64
 libdvdread8t64:amd64
@@ -776,7 +757,6 @@ libdw1t64:amd64
 libdw1t64:i386
 libe-book-0.1-1:amd64
 libebackend-1.2-11t64:amd64
-libebml5:amd64
 libebook-1.2-21t64:amd64
 libebook-contacts-1.2-4t64:amd64
 libecal-2.0-3:amd64
@@ -794,7 +774,6 @@ libegl-mesa0:amd64
 libegl-mesa0:i386
 libegl1:amd64
 libegl1:i386
-libegl1-mesa-dev:amd64
 libelf1t64:amd64
 libelf1t64:i386
 libenchant-2-2:amd64
@@ -851,7 +830,6 @@ libfile-desktopentry-perl
 libfile-fcntllock-perl
 libfile-listing-perl
 libfile-mimeinfo-perl
-libflac++10:amd64
 libflac12t64:amd64
 libflac12t64:i386
 libflashrom1:amd64
@@ -871,7 +849,6 @@ libfreehand-0.1-1
 libfreetype-dev:amd64
 libfreetype6:amd64
 libfreetype6:i386
-libfribidi-dev:amd64
 libfribidi0:amd64
 libfribidi0:i386
 libftdi1-2:amd64
@@ -916,7 +893,6 @@ libgdk-pixbuf2.0-0:amd64
 libgdk-pixbuf2.0-bin
 libgdk-pixbuf2.0-common
 libgee-0.8-2:amd64
-libgeoclue-2-0:amd64
 libgeocode-glib-2-0:amd64
 libgexiv2-2:amd64
 libgfortran5:amd64
@@ -935,8 +911,6 @@ libgl1-mesa-dri:amd64
 libgl1-mesa-dri:i386
 libglapi-mesa:amd64
 libglapi-mesa:i386
-libgles-dev:amd64
-libgles1:amd64
 libgles2:amd64
 libglib-object-introspection-perl
 libglib-perl:amd64
@@ -950,8 +924,6 @@ libglibmm-2.4-1t64:amd64
 libglu1-mesa:amd64
 libglu1-mesa:i386
 libglut3.12:amd64
-libglvnd-core-dev:amd64
-libglvnd-dev:amd64
 libglvnd0:amd64
 libglvnd0:i386
 libglx-dev:amd64
@@ -965,7 +937,6 @@ libgmp-dev:amd64
 libgmp10:amd64
 libgmp10:i386
 libgmpxx4ldbl:amd64
-libgnome-desktop-3-20t64:amd64
 libgnome-menu-3-0:amd64
 libgnomekbd-common
 libgnomekbd8:amd64
@@ -994,7 +965,6 @@ libgprofng0:amd64
 libgraphene-1.0-0:amd64
 libgraphite2-3:amd64
 libgraphite2-3:i386
-libgraphite2-dev:amd64
 libgrilo-0.3-0:amd64
 libgs-common
 libgs10:amd64
@@ -1021,7 +991,6 @@ libgtk-3-0t64:amd64
 libgtk-3-0t64:i386
 libgtk-3-bin
 libgtk-3-common
-libgtk-3-dev:amd64
 libgtk-4-1:amd64
 libgtk-4-common
 libgtk-layer-shell0
@@ -1054,8 +1023,6 @@ libgweather-4-0t64:amd64
 libgweather-4-common
 libgxps2t64:amd64
 libhandy-1-0:amd64
-libharfbuzz-cairo0:amd64
-libharfbuzz-dev:amd64
 libharfbuzz-gobject0:amd64
 libharfbuzz-icu0:amd64
 libharfbuzz-subset0:amd64
@@ -1089,7 +1056,6 @@ libhyphen0:amd64
 libibus-1.0-5:amd64
 libibverbs1:amd64
 libical3t64:amd64
-libice-dev:amd64
 libice6:amd64
 libicu-dev:amd64
 libicu74:amd64
@@ -1128,7 +1094,6 @@ libisl23:amd64
 libisofs6t64:amd64
 libitm1:amd64
 libiw30t64:amd64
-libixml11t64:amd64
 libjack-jackd2-0:amd64
 libjack-jackd2-0:i386
 libjansson4:amd64
@@ -1166,20 +1131,12 @@ libjxr-tools
 libjxr0t64:amd64
 libk5crypto3:amd64
 libk5crypto3:i386
-libkate1:amd64
 libkeybinder-3.0-0:amd64
 libkeyutils1:amd64
 libkeyutils1:i386
-libkf5config-bin
-libkf5config-data
-libkf5configcore5:amd64
 libkf5coreaddons-data
-libkf5coreaddons5:amd64
 libkf5notifications-data
-libkf5notifications5:amd64
-libkf5waylandclient5:amd64
 libkf5windowsystem-data
-libkf5windowsystem5:amd64
 libklibc:amd64
 libkmod2:amd64
 libkpathsea6:amd64
@@ -1214,7 +1171,6 @@ libllvm17t64:amd64
 libllvm19:amd64
 libllvm19:i386
 liblmdb0:amd64
-liblo7:amd64
 liblocale-gettext-perl
 liblouis-data
 liblouis20:amd64
@@ -1240,7 +1196,6 @@ liblzma-dev:amd64
 liblzma5:amd64
 liblzma5:i386
 liblzo2-2:amd64
-libmad0:amd64
 libmagic-mgc
 libmagic1t64:amd64
 libmagickcore-6.q16-7-extra:amd64
@@ -1248,7 +1203,6 @@ libmagickcore-6.q16-7t64:amd64
 libmagickwand-6.q16-7t64:amd64
 libmalcontent-0-0:amd64
 libmanette-0.2-0:amd64
-libmatroska7:amd64
 libmaxminddb0:amd64
 libmbedcrypto7t64:amd64
 libmbedcrypto7t64:i386
@@ -1359,19 +1313,16 @@ libopencore-amrnb0:i386
 libopencore-amrwb0:amd64
 libopencore-amrwb0:i386
 libopenexr-3-1-30:amd64
-libopengl-dev:amd64
 libopengl0:amd64
 libopengl0:i386
 libopenh264-7:amd64
 libopenjp2-7:amd64
 libopenjp2-7:i386
-libopenmpt-modplug1:amd64
 libopenmpt0t64:amd64
 libopenmpt0t64:i386
 libopenni2-0:amd64
 libopus0:amd64
 libopus0:i386
-libopusfile0:amd64
 liborc-0.4-0t64:amd64
 liborc-0.4-0t64:i386
 liborcus-0.18-0:amd64
@@ -1393,7 +1344,6 @@ libpam0g:amd64
 libpam0g-dev:amd64
 libpango-1.0-0:amd64
 libpango-1.0-0:i386
-libpango1.0-dev:amd64
 libpangocairo-1.0-0:amd64
 libpangocairo-1.0-0:i386
 libpangoft2-1.0-0:amd64
@@ -1455,16 +1405,12 @@ libpoppler134:amd64
 libpoppler134:i386
 libpopt0:amd64
 libportaudio2:amd64
-libportmidi0:amd64
-libportsmf0t64:amd64
 libpostproc57:amd64
 libppd2:amd64
 libppd2-common
 libproc2-0:amd64
 libprotobuf-c1:amd64
-libprotobuf-lite32t64:amd64
 libprotobuf32t64:amd64
-libproxy-tools
 libproxy1-plugin-gsettings:amd64
 libproxy1-plugin-networkmanager:amd64
 libproxy1v5:amd64
@@ -1495,7 +1441,6 @@ libqt5designer5:amd64
 libqt5gui5t64:amd64
 libqt5help5:amd64
 libqt5network5t64:amd64
-libqt5opengl5t64:amd64
 libqt5printsupport5t64:amd64
 libqt5qml5:amd64
 libqt5qmlmodels5:amd64
@@ -1504,12 +1449,10 @@ libqt5sql5-sqlite:amd64
 libqt5sql5t64:amd64
 libqt5svg5:amd64
 libqt5test5t64:amd64
-libqt5texttospeech5:amd64
 libqt5waylandclient5:amd64
 libqt5waylandcompositor5:amd64
 libqt5webengine-data
 libqt5widgets5t64:amd64
-libqt5x11extras5:amd64
 libqt5xml5t64:amd64
 libqt6core6t64:amd64
 libqt6dbus6t64:amd64
@@ -1555,23 +1498,15 @@ librdf0t64:amd64
 libreadline8t64:amd64
 libreiserfscore0t64
 libreoffice-base-core
-libreoffice-calc
 libreoffice-common
 libreoffice-core
-libreoffice-draw
-libreoffice-gnome
-libreoffice-gtk3
 libreoffice-help-common
-libreoffice-help-en-us
-libreoffice-impress
 libreoffice-style-colibre
 libreoffice-uiconfig-calc
 libreoffice-uiconfig-common
 libreoffice-uiconfig-draw
 libreoffice-uiconfig-impress
 libreoffice-uiconfig-writer
-libreoffice-writer
-libresid-builder0c2a
 librest-1.0-0:amd64
 librevenge-0.0-0:amd64
 librewolf
@@ -1604,7 +1539,6 @@ libsasl2-modules-db:i386
 libsasl2-modules-gssapi-mit:amd64
 libsass1:amd64
 libsbc1:amd64
-libsbsms10:amd64
 libsdl2-2.0-0:amd64
 libsdl2-2.0-0:i386
 libseat-dev:amd64
@@ -1633,13 +1567,11 @@ libshine3:i386
 libshout3:amd64
 libshout3:i386
 libsidplay1v5:amd64
-libsidplay2
 libsigc++-2.0-0v5:amd64
 libsigsegv2:amd64
 libsixel1:amd64
 libslang2:amd64
 libslang2:i386
-libsm-dev:amd64
 libsm6:amd64
 libsmartcols1:amd64
 libsmbclient0:amd64
@@ -1671,7 +1603,6 @@ libsoxr0:i386
 libspa-0.2-bluetooth:amd64
 libspa-0.2-modules:amd64
 libspandsp2t64:amd64
-libspatialaudio0t64:amd64
 libspectre1:amd64
 libspeechd2:amd64
 libspeex1:amd64
@@ -1701,7 +1632,6 @@ libstdc++-13-dev:amd64
 libstdc++6:amd64
 libstdc++6:i386
 libstemmer0d:amd64
-libsuil-0-0:amd64
 libsuitesparseconfig7:amd64
 libsvtav1enc1d1:amd64
 libsvtav1enc1d1:i386
@@ -1731,7 +1661,6 @@ libtext-charwidth-perl:amd64
 libtext-iconv-perl:amd64
 libtext-wrapi18n-perl
 libthai-data
-libthai-dev:amd64
 libthai0:amd64
 libthai0:i386
 libtheora0:amd64
@@ -1793,7 +1722,6 @@ libuno-salhelpergcc3-3t64
 libunshield0:amd64
 libunwind8:amd64
 libunwind8:i386
-libupnp17t64:amd64
 libupower-glib3:amd64
 liburcu8t64:amd64
 liburi-perl
@@ -1820,7 +1748,6 @@ libva2:amd64
 libva2:i386
 libvala-0.56-0:amd64
 libvalacodegen-0.56-0:amd64
-libvamp-hostsdk3v5:amd64
 libvdpau1:amd64
 libvdpau1:i386
 libvidstab1.1:amd64
@@ -1828,10 +1755,6 @@ libvisio-0.1-1:amd64
 libvisual-0.4-0:amd64
 libvisual-0.4-0:i386
 libvisual-0.4-plugins:amd64
-libvlc-bin:amd64
-libvlc5:amd64
-libvlccore9:amd64
-libvncclient1:amd64
 libvo-aacenc0:amd64
 libvo-amrwbenc0:amd64
 libvo-amrwbenc0:i386
@@ -1856,12 +1779,10 @@ libwacom-dev:amd64
 libwacom9:amd64
 libwavpack1:amd64
 libwavpack1:i386
-libwayland-bin
 libwayland-client0:amd64
 libwayland-client0:i386
 libwayland-cursor0:amd64
 libwayland-cursor0:i386
-libwayland-dev:amd64
 libwayland-egl1:amd64
 libwayland-egl1:i386
 libwayland-server0:amd64
@@ -1893,8 +1814,6 @@ libwrap0:amd64
 libwrap0:i386
 libwww-perl
 libwww-robotrules-perl
-libwxbase3.2-1t64:amd64
-libwxgtk3.2-1t64:amd64
 libx11-6:amd64
 libx11-6:i386
 libx11-data
@@ -1943,7 +1862,6 @@ libxcb-render-util0-dev:amd64
 libxcb-render0:amd64
 libxcb-render0:i386
 libxcb-render0-dev:amd64
-libxcb-res0:amd64
 libxcb-screensaver0:amd64
 libxcb-shape0:amd64
 libxcb-shape0-dev:amd64
@@ -1971,14 +1889,11 @@ libxcb-xv0:amd64
 libxcb1:amd64
 libxcb1:i386
 libxcb1-dev:amd64
-libxcomposite-dev:amd64
 libxcomposite1:amd64
 libxcomposite1:i386
-libxcursor-dev:amd64
 libxcursor1:amd64
 libxcursor1:i386
 libxcvt0:amd64
-libxdamage-dev:amd64
 libxdamage1:amd64
 libxdamage1:i386
 libxdmcp-dev:amd64
@@ -1995,16 +1910,12 @@ libxfce4util-bin
 libxfce4util-common
 libxfce4util7:amd64
 libxfconf-0-3:amd64
-libxfixes-dev:amd64
 libxfixes3:amd64
 libxfixes3:i386
 libxfont2:amd64
-libxft-dev:amd64
 libxft2:amd64
-libxi-dev:amd64
 libxi6:amd64
 libxi6:i386
-libxinerama-dev:amd64
 libxinerama1:amd64
 libxinerama1:i386
 libxkbcommon-dev:amd64
@@ -2035,12 +1946,10 @@ libxnvctrl0:amd64
 libxpm4:amd64
 libxpm4:i386
 libxpresent1:amd64
-libxrandr-dev:amd64
 libxrandr2:amd64
 libxrandr2:i386
 libxreaderdocument3
 libxreaderview3
-libxrender-dev:amd64
 libxrender1:amd64
 libxrender1:i386
 libxres1:amd64
@@ -2052,7 +1961,6 @@ libxss1:amd64
 libxss1:i386
 libxt6t64:amd64
 libxtables12:amd64
-libxtst-dev:amd64
 libxtst6:amd64
 libxtst6:i386
 libxv1:amd64
@@ -2221,11 +2129,8 @@ netplan.io
 nettle-dev:amd64
 network-manager
 network-manager-config-connectivity-ubuntu
-network-manager-gnome
 network-manager-openvpn
-network-manager-openvpn-gnome
 network-manager-pptp
-network-manager-pptp-gnome
 networkd-dispatcher
 nftables
 ninja-build
@@ -2254,7 +2159,6 @@ p7zip
 p7zip-full
 packagekit
 packagekit-tools
-pango1.0-tools
 papirus-icon-theme
 parted
 passwd
@@ -2272,8 +2176,6 @@ pinentry-curses
 pinentry-gnome3
 pipes-sh
 pipewire:amd64
-pipewire-alsa:amd64
-pipewire-audio
 pipewire-bin
 pipewire-pulse
 pipx
@@ -2390,7 +2292,6 @@ python3-idna
 python3-ifaddr
 python3-imdbpy
 python3-ipython
-python3-isodate
 python3-jedi
 python3-jeepney
 python3-json-pointer
@@ -2403,7 +2304,6 @@ python3-lazr.restfulclient
 python3-lazr.uri
 python3-ldb
 python3-libevdev
-python3-liblo
 python3-louis
 python3-lxml:amd64
 python3-lz4
@@ -2450,8 +2350,6 @@ python3-pyelftools
 python3-pygments
 python3-pyparsing
 python3-pyqt5
-python3-pyqt5.qtopengl
-python3-pyqt5.qtsvg
 python3-pyqt5.sip
 python3-pyqt6
 python3-pyqt6.qtqml
@@ -2462,7 +2360,6 @@ python3-pyqt6.qtwebengine
 python3-pyqt6.sip
 python3-pyudev
 python3-qrcode
-python3-rdflib
 python3-regex
 python3-repolib
 python3-repoze.lru
@@ -2478,7 +2375,6 @@ python3-setuptools-whl
 python3-sgmllib3k
 python3-six
 python3-soupsieve
-python3-sparqlwrapper
 python3-speechd
 python3-stack-data
 python3-sympy
@@ -2526,7 +2422,6 @@ qt6-image-formats-plugins
 qt6-qpa-plugins:amd64
 qt6-translations-l10n
 qt6-wayland:amd64
-qtspeech5-speechd-plugin:amd64
 qttranslations5-l10n
 qtwayland5:amd64
 rake
@@ -2616,7 +2511,6 @@ systemd-sysv
 systemd-timesyncd
 sysvinit-utils
 t1utils
-tap-plugins
 tar
 tcl
 tcl8.6
@@ -2688,19 +2582,6 @@ vdpau-driver-all:i386
 vim-common
 vim-tiny
 vivaldi-stable
-vlc
-vlc-bin
-vlc-data
-vlc-l10n
-vlc-plugin-access-extra:amd64
-vlc-plugin-base:amd64
-vlc-plugin-notify:amd64
-vlc-plugin-qt:amd64
-vlc-plugin-samba:amd64
-vlc-plugin-skins2:amd64
-vlc-plugin-video-output:amd64
-vlc-plugin-video-splitter:amd64
-vlc-plugin-visualization:amd64
 wamerican
 warpinator
 wayland-protocols
@@ -2768,9 +2649,7 @@ xfce4-places-plugin:amd64
 xfce4-power-manager
 xfce4-power-manager-data
 xfce4-power-manager-plugins
-xfce4-pulseaudio-plugin:amd64
 xfce4-screenshooter
-xfce4-session
 xfce4-settings
 xfce4-systemload-plugin:amd64
 xfce4-taskmanager
