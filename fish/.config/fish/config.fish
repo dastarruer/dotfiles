@@ -11,7 +11,7 @@ if status --is-interactive
     alias timeshift="sudo timeshift"
     alias pipes="pipes -p 10"
     alias cmatrix="cmatrix -u 3 -C magenta"
-    alias ..="cd .."
+    alias ..="z .."
     alias b="btop"
     alias mkdir="mkdir -p"
     alias cmdf="commit_dotfiles.sh"

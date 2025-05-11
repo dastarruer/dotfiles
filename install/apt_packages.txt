@@ -614,6 +614,7 @@ libcairo-perl
 libcairo-script-interpreter2:amd64
 libcairo2:amd64
 libcairo2:i386
+libcairo2-dev:amd64
 libcairomm-1.0-1v5:amd64
 libcamel-1.2-64t64:amd64
 libcanberra-gtk-module:amd64
@@ -1056,6 +1057,7 @@ libhyphen0:amd64
 libibus-1.0-5:amd64
 libibverbs1:amd64
 libical3t64:amd64
+libice-dev:amd64
 libice6:amd64
 libicu-dev:amd64
 libicu74:amd64
@@ -1429,6 +1431,8 @@ libpython3.12-dev:amd64
 libpython3.12-minimal:amd64
 libpython3.12-stdlib:amd64
 libpython3.12t64:amd64
+libqalculate-data
+libqalculate22t64:amd64
 libqhull-r8.0:amd64
 libqmi-glib5:amd64
 libqmi-proxy
@@ -1572,6 +1576,7 @@ libsigsegv2:amd64
 libsixel1:amd64
 libslang2:amd64
 libslang2:i386
+libsm-dev:amd64
 libsm6:amd64
 libsmartcols1:amd64
 libsmbclient0:amd64
@@ -1680,6 +1685,7 @@ libtirpc-common
 libtirpc3t64:amd64
 libtk8.6:amd64
 libtool
+libtool-bin
 libtotem-plparser-common
 libtotem-plparser18:amd64
 libtraceevent1:amd64
@@ -1950,6 +1956,7 @@ libxrandr2:amd64
 libxrandr2:i386
 libxreaderdocument3
 libxreaderview3
+libxrender-dev:amd64
 libxrender1:amd64
 libxrender1:i386
 libxres1:amd64
@@ -2411,6 +2418,7 @@ python3.12
 python3.12-dev
 python3.12-minimal
 python3.12-venv
+qalc
 qt5-gtk-platformtheme:amd64
 qt5-gtk2-platformtheme:amd64
 qt5-style-plugin-cleanlooks:amd64
@@ -2434,6 +2442,7 @@ rfkill
 rhythmbox-data
 ripgrep
 rofi
+rofi-dev
 rpcsvc-proto
 rsync
 rsyslog
