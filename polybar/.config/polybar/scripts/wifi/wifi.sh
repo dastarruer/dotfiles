@@ -8,7 +8,7 @@ notify-send -t 1000 "Searching for connections..."
 wifi_list=$(nmcli -t -f SSID device wifi list | grep -v '^--$' | sort -u)
 
 # Use Rofi to display the list and capture the selection
-selected_ssid=$(echo "$wifi_list" | rofi -dmenu -p -i "Select Wi-Fi")
+selected_ssid=$(echo "$wifi_list" | rofi -dmenu -p "Choose a Wi-Fi connection" -i "Select Wi-Fi")
 
 # Exit if no SSID was selected
 if [[ -z "$selected_ssid" ]]; then
