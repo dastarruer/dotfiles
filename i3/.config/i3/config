@@ -155,9 +155,11 @@ bindsym $mod+o exec --no-startup-id ~/.config/rofi/scripts/power.sh
 bindsym $mod+Shift+w exec ~/bin/change_wallpaper.sh
 # Theme switching
 bindsym $mod+t exec ~/.config/rofi/scripts/switch_theme.sh
+# calculator
+bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '{result}' | xsel --clipboard --input && notify-send -t 1000 "Copied to clipboard""
 
 # Toggle picom
-bindsym $mod+c exec --no-startup-id ~/bin/toggle_picom.sh
+bindsym $mod+Shift+c exec --no-startup-id ~/bin/toggle_picom.sh
 
 # change focus
 # Move mouse pointer to the center of the focused window
@@ -266,7 +268,7 @@ assign [class="Anki"]$ws9
 for_window [class="Spotify"] floating enable, resize set 1068 670, move position 81 146
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+#bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)

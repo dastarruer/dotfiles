@@ -4,6 +4,7 @@ configuration {
     show-icons: true;
     icon-theme: "Papirus";
     drun-display-format: "{icon} {name}";
+  kb-accept-custom: "Control+Return";
   location: 0;
   case-sensitive: false;
   hide-scrollbar: true;
