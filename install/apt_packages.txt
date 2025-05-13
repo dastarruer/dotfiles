@@ -3,7 +3,6 @@ accountsservice
 acl
 adduser
 adwaita-icon-theme
-alacritty
 alsa-base
 alsa-topology-conf
 alsa-ucm-conf
@@ -2123,6 +2122,7 @@ mugshot
 mythes-en-us
 nano
 nautilus-data
+ncdu
 ncurses-base
 ncurses-bin
 ncurses-term

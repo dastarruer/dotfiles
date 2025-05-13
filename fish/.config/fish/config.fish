@@ -19,7 +19,7 @@ if status --is-interactive
     alias wifi="wifi.sh"
     alias backup="backup.sh"
     alias sl="ls"
-
+    alias zth="zathura"
     # Git Aliases
     alias ga="git add"
     alias gb="git branch"
@@ -28,7 +28,7 @@ if status --is-interactive
     alias gc="git commit -m"
     alias gca="git status && git add . && git commit --amend --no-edit"
     alias gp="git push"
-    alias gl="git log --oneline"
+    alias gl="git log --oneline --graph --decorate"
     alias gch="git checkout"
     
     alias cr="cargo run"
