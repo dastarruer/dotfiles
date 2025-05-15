@@ -69,9 +69,11 @@ exec --no-startup-id ~/bin/restore_workspace_layouts.sh
 exec_always --no-startup-id xset r rate 300 50 
 exec_always --no-startup-id dunst
 exec_always --no-startup-id xsettingsd &
-exec_always --no-startup-id ~/bin/airpods.sh
+exec --no-startup-id ~/bin/airpods.sh
 # set desktop background with custom effect
 exec --no-startup-id betterlockscreen -u ~/Pictures/wallpapers/
+# spicetify live reload
+exec_always --no-startup-id spicetify watch -s
 
 # Trackpad settings 
 exec_always --no-startup-id ~/bin/trackpad_settings.sh
