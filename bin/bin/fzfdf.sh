@@ -1,6 +1,6 @@
 #!/bin/bash
 cd ~/dotfiles 
-file=$(find . | fzf)   
+file=$(find . -type f | fzf)   
 if [ -n "$file" ]; then
     nano "$(realpath "$file")"  # Use the absolute path
 else

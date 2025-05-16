@@ -629,6 +629,7 @@ libcap2-bin
 libcapi20-3t64:i386
 libcbor0.10:amd64
 libcc1-0:amd64
+libcddb2
 libcdio-cdda2t64:amd64
 libcdio-paranoia2t64:amd64
 libcdio19t64:amd64
@@ -750,6 +751,7 @@ libduktape207:amd64
 libduktape207:i386
 libdv4t64:amd64
 libdv4t64:i386
+libdvbpsi10:amd64
 libdvdcss2:amd64
 libdvdnav4:amd64
 libdvdread8t64:amd64
@@ -757,6 +759,7 @@ libdw1t64:amd64
 libdw1t64:i386
 libe-book-0.1-1:amd64
 libebackend-1.2-11t64:amd64
+libebml5:amd64
 libebook-1.2-21t64:amd64
 libebook-contacts-1.2-4t64:amd64
 libecal-2.0-3:amd64
@@ -1095,6 +1098,7 @@ libisl23:amd64
 libisofs6t64:amd64
 libitm1:amd64
 libiw30t64:amd64
+libixml11t64:amd64
 libjack-jackd2-0:amd64
 libjack-jackd2-0:i386
 libjansson4:amd64
@@ -1132,6 +1136,7 @@ libjxr-tools
 libjxr0t64:amd64
 libk5crypto3:amd64
 libk5crypto3:i386
+libkate1:amd64
 libkeybinder-3.0-0:amd64
 libkeyutils1:amd64
 libkeyutils1:i386
@@ -1197,6 +1202,7 @@ liblzma-dev:amd64
 liblzma5:amd64
 liblzma5:i386
 liblzo2-2:amd64
+libmad0:amd64
 libmagic-mgc
 libmagic1t64:amd64
 libmagickcore-6.q16-7-extra:amd64
@@ -1204,6 +1210,7 @@ libmagickcore-6.q16-7t64:amd64
 libmagickwand-6.q16-7t64:amd64
 libmalcontent-0-0:amd64
 libmanette-0.2-0:amd64
+libmatroska7:amd64
 libmaxminddb0:amd64
 libmbedcrypto7t64:amd64
 libmbedcrypto7t64:i386
@@ -1319,6 +1326,7 @@ libopengl0:i386
 libopenh264-7:amd64
 libopenjp2-7:amd64
 libopenjp2-7:i386
+libopenmpt-modplug1:amd64
 libopenmpt0t64:amd64
 libopenmpt0t64:i386
 libopenni2-0:amd64
@@ -1411,7 +1419,9 @@ libppd2:amd64
 libppd2-common
 libproc2-0:amd64
 libprotobuf-c1:amd64
+libprotobuf-lite32t64:amd64
 libprotobuf32t64:amd64
+libproxy-tools
 libproxy1-plugin-gsettings:amd64
 libproxy1-plugin-networkmanager:amd64
 libproxy1v5:amd64
@@ -1444,18 +1454,26 @@ libqt5designer5:amd64
 libqt5gui5t64:amd64
 libqt5help5:amd64
 libqt5network5t64:amd64
+libqt5opengl5t64:amd64
+libqt5positioning5:amd64
 libqt5printsupport5t64:amd64
 libqt5qml5:amd64
 libqt5qmlmodels5:amd64
 libqt5quick5:amd64
+libqt5quickwidgets5:amd64
 libqt5sql5-sqlite:amd64
 libqt5sql5t64:amd64
 libqt5svg5:amd64
 libqt5test5t64:amd64
 libqt5waylandclient5:amd64
 libqt5waylandcompositor5:amd64
+libqt5webchannel5:amd64
 libqt5webengine-data
+libqt5webengine5:amd64
+libqt5webenginecore5:amd64
+libqt5webenginewidgets5:amd64
 libqt5widgets5t64:amd64
+libqt5x11extras5:amd64
 libqt5xml5t64:amd64
 libqt6core6t64:amd64
 libqt6dbus6t64:amd64
@@ -1498,6 +1516,7 @@ libraw1394-11:amd64
 libraw1394-11:i386
 libraw23t64:amd64
 librdf0t64:amd64
+libre2-10:amd64
 libreadline8t64:amd64
 libreiserfscore0t64
 libreoffice-base-core
@@ -1510,6 +1529,7 @@ libreoffice-uiconfig-common
 libreoffice-uiconfig-draw
 libreoffice-uiconfig-impress
 libreoffice-uiconfig-writer
+libresid-builder0c2a
 librest-1.0-0:amd64
 librevenge-0.0-0:amd64
 librewolf
@@ -1570,6 +1590,7 @@ libshine3:i386
 libshout3:amd64
 libshout3:i386
 libsidplay1v5:amd64
+libsidplay2
 libsigc++-2.0-0v5:amd64
 libsigsegv2:amd64
 libsixel1:amd64
@@ -1607,6 +1628,7 @@ libsoxr0:i386
 libspa-0.2-bluetooth:amd64
 libspa-0.2-modules:amd64
 libspandsp2t64:amd64
+libspatialaudio0t64:amd64
 libspectre1:amd64
 libspeechd2:amd64
 libspeex1:amd64
@@ -1727,6 +1749,7 @@ libuno-salhelpergcc3-3t64
 libunshield0:amd64
 libunwind8:amd64
 libunwind8:i386
+libupnp17t64:amd64
 libupower-glib3:amd64
 liburcu8t64:amd64
 liburi-perl
@@ -1760,6 +1783,10 @@ libvisio-0.1-1:amd64
 libvisual-0.4-0:amd64
 libvisual-0.4-0:i386
 libvisual-0.4-plugins:amd64
+libvlc-bin:amd64
+libvlc5:amd64
+libvlccore9:amd64
+libvncclient1:amd64
 libvo-aacenc0:amd64
 libvo-amrwbenc0:amd64
 libvo-amrwbenc0:i386
@@ -2003,10 +2030,10 @@ linux-firmware
 linux-generic
 linux-headers-6.8.0-51
 linux-headers-6.8.0-51-generic
-linux-headers-6.8.0-58
-linux-headers-6.8.0-58-generic
 linux-headers-6.8.0-59
 linux-headers-6.8.0-59-generic
+linux-headers-6.8.0-60
+linux-headers-6.8.0-60-generic
 linux-headers-generic
 linux-image-6.8.0-51-generic
 linux-image-6.8.0-52-generic
@@ -2017,6 +2044,7 @@ linux-image-6.8.0-56-generic
 linux-image-6.8.0-57-generic
 linux-image-6.8.0-58-generic
 linux-image-6.8.0-59-generic
+linux-image-6.8.0-60-generic
 linux-image-generic
 linux-libc-dev:amd64
 linux-modules-6.8.0-51-generic
@@ -2028,6 +2056,7 @@ linux-modules-6.8.0-56-generic
 linux-modules-6.8.0-57-generic
 linux-modules-6.8.0-58-generic
 linux-modules-6.8.0-59-generic
+linux-modules-6.8.0-60-generic
 linux-modules-extra-6.8.0-51-generic
 linux-modules-extra-6.8.0-52-generic
 linux-modules-extra-6.8.0-53-generic
@@ -2037,11 +2066,12 @@ linux-modules-extra-6.8.0-56-generic
 linux-modules-extra-6.8.0-57-generic
 linux-modules-extra-6.8.0-58-generic
 linux-modules-extra-6.8.0-59-generic
+linux-modules-extra-6.8.0-60-generic
 linux-sound-base
-linux-tools-6.8.0-58
-linux-tools-6.8.0-58-generic
 linux-tools-6.8.0-59
 linux-tools-6.8.0-59-generic
+linux-tools-6.8.0-60
+linux-tools-6.8.0-60-generic
 linux-tools-common
 linuxmint-keyring
 lm-sensors
@@ -2235,6 +2265,7 @@ pulseaudio
 pulseaudio-utils
 pyqt6-dev-tools
 python-apt-common
+python-babel-localedata
 python-matplotlib-data
 python3
 python3-appdirs
@@ -2247,6 +2278,7 @@ python3-argcomplete
 python3-asttokens
 python3-async-timeout
 python3-attr
+python3-babel
 python3-blinker
 python3-brlapi:amd64
 python3-brotli
@@ -2301,6 +2333,7 @@ python3-imdbpy
 python3-ipython
 python3-jedi
 python3-jeepney
+python3-jinja2
 python3-json-pointer
 python3-jsonschema
 python3-jwt
@@ -2357,6 +2390,11 @@ python3-pyelftools
 python3-pygments
 python3-pyparsing
 python3-pyqt5
+python3-pyqt5.qtopengl
+python3-pyqt5.qtquick
+python3-pyqt5.qtsql
+python3-pyqt5.qtwebchannel
+python3-pyqt5.qtwebengine
 python3-pyqt5.sip
 python3-pyqt6
 python3-pyqt6.qtqml
@@ -2432,6 +2470,8 @@ qt6-translations-l10n
 qt6-wayland:amd64
 qttranslations5-l10n
 qtwayland5:amd64
+qutebrowser
+qutebrowser-qtwebengine
 rake
 rdate
 readline-common
@@ -2591,6 +2631,19 @@ vdpau-driver-all:i386
 vim-common
 vim-tiny
 vivaldi-stable
+vlc
+vlc-bin
+vlc-data
+vlc-l10n
+vlc-plugin-access-extra:amd64
+vlc-plugin-base:amd64
+vlc-plugin-notify:amd64
+vlc-plugin-qt:amd64
+vlc-plugin-samba:amd64
+vlc-plugin-skins2:amd64
+vlc-plugin-video-output:amd64
+vlc-plugin-video-splitter:amd64
+vlc-plugin-visualization:amd64
 wamerican
 warpinator
 wayland-protocols
