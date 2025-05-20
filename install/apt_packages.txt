@@ -105,6 +105,7 @@ cpp
 cpp-13
 cpp-13-x86-64-linux-gnu
 cpp-x86-64-linux-gnu
+cpu-checker
 cracklib-runtime
 cron
 cron-daemon-common
@@ -202,6 +203,9 @@ fish
 fish-common
 flameshot
 flatpak
+fluid-soundfont-gm
+fluid-soundfont-gs
+fluidsynth
 fontconfig
 fontconfig-config
 fonts-dejavu-core
@@ -444,6 +448,8 @@ iproute2
 iptables
 iputils-ping
 iputils-tracepath
+ipxe-qemu
+ipxe-qemu-256k-compat-efi-roms
 irqbalance
 isa-support:amd64
 isc-dhcp-client
@@ -606,6 +612,7 @@ libc6-dbg:amd64
 libc6-dev:amd64
 libcaca0:amd64
 libcaca0:i386
+libcacard0:amd64
 libcairo-gobject-perl
 libcairo-gobject2:amd64
 libcairo-gobject2:i386
@@ -626,6 +633,7 @@ libcap-ng0:amd64
 libcap2:amd64
 libcap2:i386
 libcap2-bin
+libcapi20-3t64:amd64
 libcapi20-3t64:i386
 libcbor0.10:amd64
 libcc1-0:amd64
@@ -702,6 +710,7 @@ libdatrie1:amd64
 libdatrie1:i386
 libdav1d7:amd64
 libdav1d7:i386
+libdaxctl1:amd64
 libdb5.3t64:amd64
 libdb5.3t64:i386
 libdbus-1-3:amd64
@@ -817,6 +826,9 @@ libfcft4t64
 libfcgi-perl
 libfcgi0t64:amd64
 libfdisk1:amd64
+libfdk-aac-dev:amd64
+libfdk-aac2:amd64
+libfdt1:amd64
 libffi-dev:amd64
 libffi8:amd64
 libffi8:i386
@@ -1094,7 +1106,9 @@ libip4tc2:amd64
 libip6tc2:amd64
 libipc-system-simple-perl
 libipt2
+libiscsi7:amd64
 libisl23:amd64
+libisoburn1t64:amd64
 libisofs6t64:amd64
 libitm1:amd64
 libiw30t64:amd64
@@ -1263,6 +1277,7 @@ libncurses6:amd64
 libncurses6:i386
 libncursesw6:amd64
 libncursesw6:i386
+libndctl6:amd64
 libndp0:amd64
 libneon27t64:amd64
 libnet-dbus-perl
@@ -1300,6 +1315,7 @@ libnspr4:amd64
 libnspr4:i386
 libnss-mdns:amd64
 libnss-myhostname:amd64
+libnss-mymachines:amd64
 libnss-systemd:amd64
 libnss3:amd64
 libnss3:i386
@@ -1399,6 +1415,8 @@ libplacebo338:amd64
 libplayerctl2:amd64
 libplist-2.0-4:amd64
 libplymouth5:amd64
+libpmem1:amd64
+libpmemobj1:amd64
 libpng-dev:amd64
 libpng-tools
 libpng16-16t64:amd64
@@ -1508,6 +1526,7 @@ libqt6xml6t64:amd64
 libquadmath0:amd64
 librabbitmq4:amd64
 librabbitmq4:i386
+librados2
 libraptor2-0:amd64
 libraqm0:amd64
 librasqal3t64:amd64
@@ -1515,7 +1534,9 @@ librav1e0:amd64
 libraw1394-11:amd64
 libraw1394-11:i386
 libraw23t64:amd64
+librbd1
 librdf0t64:amd64
+librdmacm1t64:amd64
 libre2-10:amd64
 libreadline8t64:amd64
 libreiserfscore0t64
@@ -1596,6 +1617,7 @@ libsigsegv2:amd64
 libsixel1:amd64
 libslang2:amd64
 libslang2:i386
+libslirp0:amd64
 libsm-dev:amd64
 libsm6:amd64
 libsmartcols1:amd64
@@ -1636,6 +1658,7 @@ libspeex1:i386
 libspeexdsp1:amd64
 libspeexdsp1:i386
 libsphinxbase3t64:amd64
+libspice-server1:amd64
 libsqlite3-0:amd64
 libsqlite3-0:i386
 libsratom-0-0:amd64
@@ -1757,6 +1780,7 @@ liburing2:amd64
 libusb-1.0-0:amd64
 libusb-1.0-0:i386
 libusbmuxd6:amd64
+libusbredirparser1t64:amd64
 libutempter0:amd64
 libutf8proc3:amd64
 libuuid1:amd64
@@ -1779,6 +1803,13 @@ libvalacodegen-0.56-0:amd64
 libvdpau1:amd64
 libvdpau1:i386
 libvidstab1.1:amd64
+libvirglrenderer1:amd64
+libvirt-daemon
+libvirt-daemon-config-network
+libvirt-daemon-config-nwfilter
+libvirt-daemon-driver-qemu
+libvirt-daemon-system-systemd
+libvirt-l10n
 libvisio-0.1-1:amd64
 libvisual-0.4-0:amd64
 libvisual-0.4-0:i386
@@ -1830,6 +1861,7 @@ libwebpmux3:amd64
 libwebpmux3:i386
 libwebrtc-audio-processing1:amd64
 libwildmidi2:amd64
+libwine:amd64
 libwine:i386
 libwireplumber-0.4-0:amd64
 libwmf-0.2-7:amd64
@@ -1969,6 +2001,7 @@ libxml-xpathengine-perl
 libxml2:amd64
 libxml2:i386
 libxml2-dev:amd64
+libxml2-utils
 libxmlb2:amd64
 libxmlsec1t64:amd64
 libxmlsec1t64-nss:amd64
@@ -2086,6 +2119,7 @@ lshw
 lsof
 lto-disabled-list
 ltrace
+lutris
 lvm2
 lxappearance
 lxde-settings-daemon
@@ -2146,6 +2180,7 @@ mokutil
 mount
 mousetweaks
 mscompress
+msr-tools
 mtools
 mtr-tiny
 mugshot
@@ -2190,6 +2225,7 @@ openvpn
 optipng
 orca
 os-prober
+ovmf
 p11-kit
 p11-kit-modules:amd64
 p7zip
@@ -2311,6 +2347,7 @@ python3-dill
 python3-distro
 python3-dnspython
 python3-docopt
+python3-evdev
 python3-executing
 python3-eyed3
 python3-feedparser
@@ -2347,6 +2384,7 @@ python3-libevdev
 python3-louis
 python3-lxml:amd64
 python3-lz4
+python3-magic
 python3-mako
 python3-markdown
 python3-markdown-it
@@ -2379,6 +2417,7 @@ python3-platformdirs
 python3-png
 python3-problem-report
 python3-prompt-toolkit
+python3-protobuf
 python3-psutil
 python3-ptyprocess
 python3-pure-eval
@@ -2457,6 +2496,15 @@ python3.12-dev
 python3.12-minimal
 python3.12-venv
 qalc
+qemu-block-extra
+qemu-system-common
+qemu-system-data
+qemu-system-gui
+qemu-system-modules-opengl
+qemu-system-modules-spice
+qemu-system-x86
+qemu-utils
+qsynth
 qt5-gtk-platformtheme:amd64
 qt5-gtk2-platformtheme:amd64
 qt5-style-plugin-cleanlooks:amd64
@@ -2507,6 +2555,7 @@ sane-airscan
 sane-utils
 sassc
 sbsigntool
+seabios
 seahorse
 seatd
 secureboot-db
@@ -2544,6 +2593,8 @@ suckless-tools
 sudo
 swaylock
 switcheroo-control
+swtpm
+swtpm-tools
 syslinux
 syslinux-common
 syslinux-utils
@@ -2552,6 +2603,7 @@ system-config-printer-common
 system-config-printer-udev
 system-tools-backends
 systemd
+systemd-container
 systemd-coredump
 systemd-dev
 systemd-hwe-hwdb
@@ -2644,6 +2696,7 @@ vlc-plugin-skins2:amd64
 vlc-plugin-video-output:amd64
 vlc-plugin-video-splitter:amd64
 vlc-plugin-visualization:amd64
+vulkan-tools
 wamerican
 warpinator
 wayland-protocols
@@ -2740,6 +2793,7 @@ xml-core
 xorg
 xorg-docs-core
 xorg-sgml-doctools
+xorriso
 xprintidle
 xreader
 xreader-common
