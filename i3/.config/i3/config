@@ -73,7 +73,7 @@ exec --no-startup-id ~/bin/airpods.sh
 # set desktop background with custom effect
 exec --no-startup-id betterlockscreen -u ~/Pictures/wallpapers/
 # spicetify live reload
-exec_always --no-startup-id spicetify watch -s
+exec_always --no-startup-id spicetify watch -s & disown
 
 # Trackpad settings 
 exec_always --no-startup-id ~/bin/trackpad_settings.sh

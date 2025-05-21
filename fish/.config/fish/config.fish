@@ -1,5 +1,6 @@
 if status --is-interactive
     # Aliases
+    alias update="update.sh"
     alias stats="sudo auto-cpufreq --stats"
     alias pls="sudo"
     alias save="save_workspace_layouts.sh"
@@ -50,13 +51,6 @@ if status --is-interactive
     alias polybar-edit="code ~/dotfiles/polybar/.config/polybar/."
     alias fish-edit="nano ~/dotfiles/fish/.config/fish/config.fish"
 
-    function update
-	sudo apt update
-	sudo apt upgrade -y
-	sudo apt autoremove -y
-	flatpak update -y
-        pipx upgrade-all
-    end
     # Games
     # To create a steam game function:
         # This is the proton prefix that the game will be played in (note that the directory specified has to be created manually)
