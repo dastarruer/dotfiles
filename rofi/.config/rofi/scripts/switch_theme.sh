@@ -31,7 +31,7 @@ case $CHOICE in
         OBSIDIAN="rose-pine"
         ;;
     "Tokyo Night Storm")
-        WAL="$HOME/.config/wal/colorschemes/tokyonight-night.json"
+        WAL="tokyonight-night"
 	OBSIDIAN="Tokyo Night"
 	;;
     *)
