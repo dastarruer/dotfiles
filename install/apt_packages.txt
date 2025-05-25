@@ -2179,7 +2179,6 @@ modemmanager
 mokutil
 mount
 mousetweaks
-mpv
 mscompress
 msr-tools
 mtools
