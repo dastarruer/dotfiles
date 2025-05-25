@@ -70,20 +70,4 @@ notify-send -t 500 "Updating Obsidian..."
 sed -i "s/\"cssTheme\": *\"[^\"]*\"/\"cssTheme\": \"$OBSIDIAN\"/" ~/Documents/vault/.obsidian/appearance.json
 flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian & disown
 
-# Update Spicetify (Spotify)
-# Commented out because i discovered spicetify watch -s instead!
-#notify-send -t 500 "Updating Spotify..."
-#SPOTIFY_STATUS=$(playerctl -p spotify status 2>/dev/null)
-#$HOME/.spicetify/spicetify apply
-#SPOTIFY_POSITION=$(playerctl -p spotify position 2>/dev/null)
-#notify-send -t 1000 "Restarting Spotify..."
-#spicetify refresh
-
-# Resume playback if Spotify was playing before
-#if [[ "$SPOTIFY_STATUS" == "Playing" ]]; then
-    #sleep 7
-    #notify-send -t 1000 "Unpausing Spotify (if this does not work unpause manually)"
-    #playerctl -p spotify play
-    #sleep 0.4
-    #playerctl -p spotify position "$SPOTIFY_POSITION"
-#fi
+source ~/.config/fish/config.fish
