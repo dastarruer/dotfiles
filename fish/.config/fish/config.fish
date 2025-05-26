@@ -1,5 +1,6 @@
 if status --is-interactive
     # Aliases
+    alias s="source ~/.config/fish/config.fish"
     alias update="update.sh"
     alias stats="sudo auto-cpufreq --stats"
     alias pls="sudo"
