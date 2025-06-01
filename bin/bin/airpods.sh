@@ -37,6 +37,6 @@ bluetoothctl connect "$HEADPHONES_MAC" || {
 
 # Resume only the previously playing player
 if [ -n "$ACTIVE_PLAYER" ]; then
-    sleep 1
+    sleep 2
     playerctl -p "$ACTIVE_PLAYER" play
 fi

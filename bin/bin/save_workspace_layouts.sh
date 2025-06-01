@@ -9,6 +9,7 @@ then
     exit 1
 fi
 
+notify-send "Saving layout..." -t 5000
 # Save workspaces 1-10
 for workspace in {1..10}
 do
@@ -16,8 +17,10 @@ do
     i3-resurrect save -w $workspace
     if [ $? -ne 0 ]; then
         echo "Failed to save workspace $workspace."
+	notify-send "Failed to save workspace $workspace." -t 5000
     else
         echo "Workspace $workspace saved successfully."
     fi
 done
+notify-send "Saved layout." -t 5000
 exit 0
