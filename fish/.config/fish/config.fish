@@ -108,3 +108,8 @@ neofetch
 
 # zoxide
 zoxide init fish | source
+
+# Pywal colors
+if test -e ~/.cache/wal/colors.fish
+    source ~/.cache/wal/colors.fish
+end

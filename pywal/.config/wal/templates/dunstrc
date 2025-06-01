@@ -17,7 +17,7 @@
     frame_color = "{color5}"
     separator_color = frame
     highlight = "{color5}"
-    frame_width = 0
+    frame_width = 2
     padding = 10
     horizontal_padding = 10
     icon_theme = Papirus-Dark
@@ -27,7 +27,7 @@
     transparency = 10
     origin = top-right
     offset = (0, 300)
-
+    corner_radius = 10
 [urgency_low]
     background = "{background}"
     foreground = "{foreground}"
