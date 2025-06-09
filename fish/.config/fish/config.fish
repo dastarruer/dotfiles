@@ -1,5 +1,7 @@
 if status --is-interactive
     # Aliases
+    alias chx="chmod +x"
+    alias pr="python3 main.py"
     alias ps="sudo auto-cpufreq --force powersave"
     alias p="sudo auto-cpufreq --force performance"
     alias stats="sudo auto-cpufreq --stats"

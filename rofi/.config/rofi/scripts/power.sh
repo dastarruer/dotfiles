@@ -15,6 +15,7 @@ case "$CHOICE" in
         # Logout from the current session
         i3-msg exit ;;  # Replace with "pkill -KILL -u $USER" if not using i3
     "󰥔 Suspend")
+	playerctl -a pause
         # Suspend the system
         systemctl suspend ;;
     " Reboot")

@@ -108,7 +108,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86AudioPlay exec playerctl play-pause -p spotify
 bindsym XF86AudioPause exec playerctl play-pause -p spotify
-bindsym XF86AudioNext exec playerctl next
+bindsym Shift+XF86AudioPause exec playerctl pause -a
+bindsym Shift+XF86AudioPlay exec playerctl play -a
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86Tools exec spotify
 bindsym XF86Mail exec thunderbird
