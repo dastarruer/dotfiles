@@ -115,3 +115,10 @@ zoxide init fish | source
 if test -e ~/.cache/wal/colors.fish
     source ~/.cache/wal/colors.fish
 end
+
+# pnpm
+set -gx PNPM_HOME "/home/dastarruer/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
