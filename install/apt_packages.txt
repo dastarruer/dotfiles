@@ -452,6 +452,7 @@ jellyfin-ffmpeg7
 jellyfin-server
 jellyfin-web
 jfsutils
+jp2a
 jq
 kbd
 kerneloops
