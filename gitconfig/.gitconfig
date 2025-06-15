@@ -4,3 +4,6 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/run/current-system/sw/bin/gh auth git-credential
+[user]
+	email = ayushpramanik399@gmail.com
+	name = Ayush Pramanik
