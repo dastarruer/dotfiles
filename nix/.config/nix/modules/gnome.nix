@@ -1,10 +1,8 @@
-{ ... }:
-
-{
-    # Enable the X11 windowing system.
+{...}: {
+  # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable GNOME 
+  # Enable GNOME
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 

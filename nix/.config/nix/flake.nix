@@ -5,14 +5,14 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { nixpkgs, ... }: {
+  outputs = {nixpkgs, ...}: {
     nixosConfigurations = {
       dastarruer = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ 
+        modules = [
           # Pass inputs to your config
-          ({ ... }: {
-            _module.args.inputs = { inherit nixpkgs; };
+          ({...}: {
+            _module.args.inputs = {inherit nixpkgs;};
           })
           ./configuration.nix
         ];
