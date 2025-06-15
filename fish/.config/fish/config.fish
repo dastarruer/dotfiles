@@ -33,7 +33,7 @@ if status --is-interactive
     alias gs="git status"
     alias gc="git commit -m"
     alias gca="git status && git add . && git commit --amend --no-edit"
-    alias gp="git push"
+    alias gp="git push & disown"
     alias gl="git log --oneline --graph --decorate"
     alias gch="git checkout"
     
