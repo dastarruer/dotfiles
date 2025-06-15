@@ -4,7 +4,7 @@
     ./locale.nix
     ./bootloader.nix
     ./audio.nix
-    ./gnome.nix
+    ./hyprland.nix
     ./packages.nix
     ./keyboard.nix
   ];
