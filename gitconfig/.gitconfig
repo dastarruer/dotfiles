@@ -1,16 +1,6 @@
-[user]
-	email = ayushpramanik399@gmail.com
-	name = dastarruer
-[push]
-	default = current
-[core]
-	editor = code
-	excludesfile = /home/dastarruer/.gitignore_global
-[help]
-	autocorrect = 1
 [credential "https://github.com"]
 	helper = 
-	helper = !/usr/bin/gh auth git-credential
+	helper = !/run/current-system/sw/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
-	helper = !/usr/bin/gh auth git-credential
+	helper = !/run/current-system/sw/bin/gh auth git-credential
