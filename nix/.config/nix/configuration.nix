@@ -41,6 +41,9 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
+  # Enable ssh
+  services.openssh.enable = true;
   
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -48,8 +51,8 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -118,6 +121,7 @@
      oh-my-fish
      cargo
      fzf
+     agenix-cli
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
