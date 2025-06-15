@@ -20,7 +20,7 @@ if status --is-interactive
     alias update="update.sh"
     alias b="btop"
     alias mkdir="mkdir -p"
-    alias cmdf="commit_dotfiles.sh"
+    alias cmdf="commit_dotfiles.sh & disown"
     alias snap="sudo snap"
     alias wifi="wifi.sh"
     alias backup="backup.sh"

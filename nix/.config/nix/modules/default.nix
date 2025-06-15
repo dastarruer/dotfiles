@@ -4,5 +4,6 @@
     imports = [
       ./users.nix
       ./locale.nix
+      ./bootloader.nix
     ];
 }

@@ -7,9 +7,7 @@
       ./modules/default.nix
     ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  
 
   # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
   system.stateVersion = "25.05";
