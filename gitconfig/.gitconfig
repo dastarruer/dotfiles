@@ -7,3 +7,5 @@
 [user]
 	email = ayushpramanik399@gmail.com
 	name = Ayush Pramanik
+[push]
+	autoSetupRemote = true
