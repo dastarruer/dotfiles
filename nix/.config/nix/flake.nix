@@ -7,8 +7,7 @@
 
   outputs = { self, nixpkgs, ... }: {
     nixosConfigurations = {
-      # Replace this with your real hostname
-      nixos = nixpkgs.lib.nixosSystem {
+      dastarruer = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ 
           ./configuration.nix

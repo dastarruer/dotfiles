@@ -11,7 +11,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Define your hostname.
-  networking.hostName = "nixos"; 
+  networking.hostName = "dastarruer"; 
 
   # Enable networking
   networking.networkmanager.enable = true;
