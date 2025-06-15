@@ -14,10 +14,8 @@
      neofetch
      starship
      zoxide
-     oh-my-fish
      cargo
      fzf
-     agenix-cli
      playerctl
      libnotify
   ];

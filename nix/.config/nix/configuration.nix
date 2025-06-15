@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./modules/default.nix
     ];
+
   # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
   system.stateVersion = "25.05";
 
@@ -15,16 +16,8 @@
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
   # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  
+  services.printing.enable = true;  
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

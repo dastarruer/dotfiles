@@ -8,5 +8,6 @@
       ./audio.nix
       ./gnome.nix
       ./packages.nix
+      ./
     ];
 }
