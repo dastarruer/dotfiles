@@ -34,6 +34,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
+  system.stateVersion = "25.05";
+
   # Enable ssh
   services.openssh.enable = true;
   
