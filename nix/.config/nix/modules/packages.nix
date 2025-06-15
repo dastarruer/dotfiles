@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
     # Install firefox.
@@ -18,5 +18,9 @@
      fzf
      playerctl
      libnotify
+     nixd
   ];
+
+  # For nixd i think
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 }
