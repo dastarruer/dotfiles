@@ -4,6 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./modules/users.nix
     ];
 
   # Bootloader.
@@ -67,18 +68,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-  };
-
-  # Define a user account
-  programs.fish.enable = true;
-  users.users.dastarruer = {
-    shell = pkgs.fish;
-    isNormalUser = true;
-    description = "Ayush Pramanik";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
   };
 
   # Enable automatic login for the user.
