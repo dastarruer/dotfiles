@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PRIVATE_DOTFILES="$HOME/dotfiles"
+PRIVATE_DOTFILES="$HOME/.dotfiles"
 
 # Get commit message
 if [ -z "$1" ]; then
