@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Check if i3-resurrect is installed
 if ! command -v i3-resurrect &> /dev/null

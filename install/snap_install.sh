@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Install all Snap packages
 
 # Check if the package list file exists

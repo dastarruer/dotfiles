@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Define directories
 USB_DEVICE="/dev/sda1"

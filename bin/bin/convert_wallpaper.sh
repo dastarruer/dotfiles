@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Convert wallpaper color scheme to catppuccin
 
 WALLPAPER=$1

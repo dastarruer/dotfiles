@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Preferred gap sizes (adjust as needed)
 OUTER_GAP=10

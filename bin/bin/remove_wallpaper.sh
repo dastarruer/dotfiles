@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 WALLPAPER=$(ls ~/Pictures/wallpapers | fzf)
 

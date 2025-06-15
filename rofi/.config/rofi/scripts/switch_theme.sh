@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Define options
 OPTIONS="Catppuccin\nGruvbox\nRose Pine\nTokyo Night Storm"

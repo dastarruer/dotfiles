@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Headphones MAC Address
 source ~/.headphones_mac

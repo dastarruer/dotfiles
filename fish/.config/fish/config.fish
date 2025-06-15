@@ -10,7 +10,7 @@ if status --is-interactive
     alias restore="restore_workspace_layouts.sh"
     alias stats="sudo auto-cpufreq --stats"
     alias stast="sudo auto-cpufreq --stats"
-    alias df="cd ~/dotfiles"
+    alias df="cd ~/.dotfiles"
     alias grep="grep -i"
     alias apt="sudo apt"
     alias timeshift="sudo timeshift"
@@ -50,10 +50,10 @@ if status --is-interactive
     alias fdf="fzfdf.sh"
     alias remove_wallpaper="remove_wallpaper.sh"
 
-    alias picom-edit="nano ~/dotfiles/picom/.config/picom/picom.conf"
-    alias i3-edit="nano ~/dotfiles/i3/.config/i3/config"
-    alias polybar-edit="code ~/dotfiles/polybar/.config/polybar/."
-    alias fish-edit="nano ~/dotfiles/fish/.config/fish/config.fish"
+    alias picom-edit="nano ~/.dotfiles/picom/.config/picom/picom.conf"
+    alias i3-edit="nano ~/.dotfiles/i3/.config/i3/config"
+    alias polybar-edit="code ~/.dotfiles/polybar/.config/polybar/."
+    alias fish-edit="nano ~/.dotfiles/fish/.config/fish/config.fish"
 
     # Games
     # To create a steam game function:

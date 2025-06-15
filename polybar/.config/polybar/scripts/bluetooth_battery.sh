@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Use bluetoothctl to get the list of devices and parse the output
 while IFS=' ' read -r _ address alias; do

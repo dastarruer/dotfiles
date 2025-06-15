@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Add installed packages to install script
 echo "Adding apt packages..."

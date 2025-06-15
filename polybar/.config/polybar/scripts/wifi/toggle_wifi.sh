@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Check the input argument
 if [ "$1" = "off" ]; then

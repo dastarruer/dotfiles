@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # File to store the previous theme
 THEME_FILE="$HOME/.previous_theme"

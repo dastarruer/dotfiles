@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Check if Wi-Fi is enabled
 wifi_status=$(nmcli radio wifi)

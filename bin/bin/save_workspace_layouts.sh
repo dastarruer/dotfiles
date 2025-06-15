@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "Shutdown script executed at $(date)" >> /var/log/shutdown.log
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Install and remove APT packages according to apt_packages.txt
 
 # Check if the package list file exists

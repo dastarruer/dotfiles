@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Define the main options for Rofi
 main_options="region screenshot\nfull screenshot\nocr"
