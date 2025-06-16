@@ -46,7 +46,7 @@ if [[ "$CURRENT" == "other" ]]; then
     wal -i "${WALLPAPERS[$NEXT_INDEX]}" --saturate 0.75
     pywalfox update
 else 
-    swww img "${WALLPAPERS[$NEXT_INDEX]}"
+    swww img "${WALLPAPERS[$NEXT_INDEX]}" -t wipe --transition-angle 30
 fi
 
 # & disown will make the command run in the background so i can run the script multiple times back to back
