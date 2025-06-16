@@ -26,4 +26,8 @@
     rofi-wayland
     swww # Wallpaper daemon (might switch to hyprpaper later)
   ];
+
+  fonts.packages = with pkgs; [
+    font-awesome
+  ];
 }
