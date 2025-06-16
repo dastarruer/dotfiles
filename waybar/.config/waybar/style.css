@@ -1,87 +1,201 @@
 @import "../../.cache/wal/colors-waybar.css";
-
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "sans", "sans-serif", "monospace", "Symbols Nerd Font";
-    font-size: 13px;
-    min-height: 0;
-    margin-left: 2px;
-    margin-right: 2px; 
+  border: none;
+  border-radius: 0;
+  font-family: FiraCode Nerd Font;
+  font-weight: bold;
+  font-size: 11px;
+  min-height: 10px;
 }
 
 window#waybar {
-    border-radius: 0px;
-    background: @background;
-    color: @foreground;
-}
-
-tooltip {
-    background: @background;
-    border-radius: 6px;
-}
-
-tooltip label {
+  background: rgba(21, 18, 27, 0);
   color: @foreground;
 }
 
+tooltip {
+  border-radius: 20px;
+  border-width: 0px;
+  background: @background;
+}
+
 #workspaces button {
-    padding: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    color: alpha(@foreground, 0.3);
-    background: transparent;
+  padding: 5px;
+  color: @color14;
+  margin-right: 5px;
+  border-radius:20px;
+  background-color: @background;
+}
+
+#workspaces button.active {
+  color: @color15;
 }
 
 #workspaces button.focused {
-    background: transparent;
-    color: @foreground;
+  color: @foreground;
+  background: @background;
+  border-radius: 20px;
 }
 
 #workspaces button.urgent {
-    color: @color1;
-    background: transparent;
+  color: @foreground;
+  background: @background;
+  border-radius: 20px;
 }
 
 #workspaces button:hover {
-    background: transparent;
-    color: alpha(@foreground, 0.7);
-    box-shadow: inherit;
-    text-shadow: inherit;
+  background: @foreground;
+  color: @background;
+  border-radius: 20px;
 }
 
-#window,
-#custom-media
-{
-    padding: 0px;
-}
-
-#taskbar button {
-    padding: 4px;
-}
-
-#taskbar button.active {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-#custom-menu,
+#custom-weather,
+#custom-hyprpicker,
+#custom-update,
 #clock,
+#mpris,
+#cpu,
+#memory,
+#disk,
+#temperature,
 #battery,
 #pulseaudio,
 #network,
-#backlight,
+#bluetooth,
+#workspaces,
 #window,
-#mode,
-#scratchpad,
-#custom-media
-{
-    padding: 0px 6px;
+#tray,
+#backlight,
+#custom-randwall,
+#custom-notification {
+  background: @background;
+  padding: 2px 8px;
+  margin: 3px 3px;
+  border-radius: 20px;
+}
+#custom-notification {
+  background-color: @background;
+  color: @foreground;
+  margin-right: 2px;
+}
+#tray {
+  border-radius: 20px;
+  margin-right: 5px;
 }
 
-#custom-menu {
-    padding: 0px 12px 0px 9.5px;
+#workspaces {
+  background: @background;
+  border-radius: 20px;
+  margin-left: 5px;
+  padding-right: 0px;
+  padding-left: 5px;
+}
+#window {
+  border-radius: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+#clock {
+  color: @color6;
+    padding: 10px;
+
+  /* background-color: #282828; */
+  background-color: @background;
+  border-radius: 0px 0px 0px 20px;
+  margin-right: 0px;
+  margin-left: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: bold;
+  font-size: 15px;
+  /*border-left: solid 1px #282738;*/
 }
 
-window#waybar.empty #window {
-    background: transparent;
+#cpu {
+  color: @foreground;
+}
+
+#memory {
+  color: @foreground;
+}
+
+#disk {
+  color: @foreground;
+}
+
+#temperature {
+  color: @foreground;
+  border-radius: 10px;
+}
+
+#temperature.critical {
+  color: @foreground;
+}
+
+#custom-weather {
+  border-radius: 10px;
+  margin-left: 5px;
+}
+
+#custom-update {
+  border-radius: 10px;
+  margin: 0 5px;
+  color: @foreground;
+}
+
+#mpris {
+  color: @foreground;
+  border-radius: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+#bluetooth {
+  color: @foreground;
+  border-radius: 20px;
+}
+
+#network {
+  color: @foreground;
+}
+#pulseaudio {
+  color: @foreground;
+}
+#pulseaudio.microphone {
+  color: @foreground;
+}
+#battery {
+  color: @foreground;
+}
+#backlight {
+  color: @foreground;
+}
+
+#custom-launcher {
+  color: @color14;
+  /* background-color: #282828; */
+  background-color: @background;
+  border-radius: 0px 20px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  padding: 0 20px 0 13px;
+  /*border-right: solid 1px #282738;*/
+  font-size: 15px;
+}
+
+#custom-launcher button:hover {
+  background-color: #fb4934;
+  color: transparent;
+  border-radius: 8px;
+  margin-right: -5px;
+  margin-left: 10px;
+}
+
+#custom-hyprpicker {
+  /* background-color: #282828; */
+  /*color: #8EC07C;*/
+  border-radius: 20px;
+  margin: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  font-weight: bold;
 }
