@@ -21,6 +21,7 @@
     alejandra
     firefox
     btop
+    python3
   ];
 
   # For nixd i think
