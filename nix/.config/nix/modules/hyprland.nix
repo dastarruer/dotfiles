@@ -20,7 +20,8 @@
 
   # Hyprland packages needed
   environment.systemPackages = with pkgs; [
-    waybar
+    waybar 
+    font-awesome # for waybar
     dunst
     rofi-wayland
     swww # Wallpaper daemon (might switch to hyprpaper later)
