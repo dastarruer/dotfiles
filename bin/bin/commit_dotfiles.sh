@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-PRIVATE_DOTFILES="$HOME/.dotfiles"
+dotfiles="$HOME/.dotfiles"
+nix="$dotfiles/nix/.config/nix"
 
 # Get commit message
 if [ -z "$1" ]; then
@@ -9,7 +10,10 @@ else
   COMMIT_MESSAGE="$1"
 fi
 
-cd "$PRIVATE_DOTFILES"
+# Lint all nix files
+alejandra $nix
+
+cd "$dotfiles"
 git add .
 git commit -m "$COMMIT_MESSAGE"
 git push

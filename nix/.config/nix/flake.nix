@@ -5,9 +5,9 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = inputs@{ nixpkgs, ... }: let
+  outputs = inputs @ {nixpkgs, ...}: let
     system = "x86_64-linux";
-    pkgs = import nixpkgs { inherit system; };
+    pkgs = import nixpkgs {inherit system;};
 
     pywalfox = pkgs.python3Packages.buildPythonPackage {
       pname = "pywalfox";
