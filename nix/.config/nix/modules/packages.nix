@@ -20,6 +20,7 @@
     nixd
     alejandra
     firefox
+    btop
   ];
 
   # For nixd i think
