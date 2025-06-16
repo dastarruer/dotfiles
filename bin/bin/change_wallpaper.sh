@@ -46,7 +46,7 @@ if [[ "$CURRENT" == "other" ]]; then
     wal -i "${WALLPAPERS[$NEXT_INDEX]}" --saturate 0.75
     pywalfox update
 else 
-    feh --bg-scale "${WALLPAPERS[$NEXT_INDEX]}"
+    swww img "${WALLPAPERS[$NEXT_INDEX]}"
 fi
 
 # & disown will make the command run in the background so i can run the script multiple times back to back
