@@ -42,10 +42,10 @@ esac
 notify-send -t 300 "Updating pywal..."
 wal --theme "$WAL"
 
-ln -s $HOME/.cache/wal/colors-zathura $HOME/.config/zathura/zathurarc
-ln -s $HOME/.cache/wal/betterlockscreenrc $HOME/.config/betterlockscreen/betterlockscreenrc
-ln -s $HOME/.cache/wal/colors-spicetify.ini $HOME/.config/spicetify/Themes/Onepunch/color.ini
-ln -s $HOME/.cache/wal/dunstrc $HOME/.config/dunstrc
+# Symlink a bunch of files
+ln -sf $HOME/.cache/wal/zathurarc $HOME/.config/zathura/zathurarc
+ln -sf $HOME/.cache/wal/spicetify.ini $HOME/.config/spicetify/Themes/Onepunch/color.ini
+ln -sf $HOME/.cache/wal/dunstrc $HOME/.config/dunstrc
 
 # Restart Dunst to apply changes
 DUNST_CONFIG="$HOME/.cache/wal/dunstrc"
