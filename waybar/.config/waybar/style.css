@@ -1,0 +1,87 @@
+@import "../../.cache/wal/colors-waybar.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "sans", "sans-serif", "monospace", "Symbols Nerd Font";
+    font-size: 13px;
+    min-height: 0;
+    margin-left: 2px;
+    margin-right: 2px; 
+}
+
+window#waybar {
+    border-radius: 0px;
+    background: @background;
+    color: @foreground;
+}
+
+tooltip {
+    background: @background;
+    border-radius: 6px;
+}
+
+tooltip label {
+  color: @foreground;
+}
+
+#workspaces button {
+    padding: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: alpha(@foreground, 0.3);
+    background: transparent;
+}
+
+#workspaces button.focused {
+    background: transparent;
+    color: @foreground;
+}
+
+#workspaces button.urgent {
+    color: @color1;
+    background: transparent;
+}
+
+#workspaces button:hover {
+    background: transparent;
+    color: alpha(@foreground, 0.7);
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#window,
+#custom-media
+{
+    padding: 0px;
+}
+
+#taskbar button {
+    padding: 4px;
+}
+
+#taskbar button.active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#custom-menu,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#backlight,
+#window,
+#mode,
+#scratchpad,
+#custom-media
+{
+    padding: 0px 6px;
+}
+
+#custom-menu {
+    padding: 0px 12px 0px 9.5px;
+}
+
+window#waybar.empty #window {
+    background: transparent;
+}

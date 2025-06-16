@@ -29,5 +29,6 @@
 
   fonts.packages = with pkgs; [
     font-awesome
+    nerd-fonts._3270
   ];
 }
