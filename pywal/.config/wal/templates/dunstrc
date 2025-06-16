@@ -26,7 +26,6 @@
     max_icon_size = 100
     transparency = 10
     origin = top-right
-    offset = (0, 300)
     corner_radius = 10
 [urgency_low]
     background = "{background}"
