@@ -40,7 +40,7 @@ case $CHOICE in
 esac
 
 notify-send -t 300 "Updating pywal..."
-wal --theme "$WAL"
+wal --theme "$WAL" --contrast 4.5
 
 # Symlink a bunch of files
 ln -sf $HOME/.cache/wal/zathurarc $HOME/.config/zathura/zathurarc

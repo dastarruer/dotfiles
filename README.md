@@ -1,0 +1,1 @@
+because i cant be bothered to put it in the config js run pywalfox install to install pywalfox and yh thats it
