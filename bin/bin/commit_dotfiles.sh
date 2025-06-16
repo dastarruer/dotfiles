@@ -16,4 +16,4 @@ alejandra $nix
 cd "$dotfiles"
 git add .
 git commit -m "$COMMIT_MESSAGE"
-git push
+git push & disown

@@ -9,6 +9,7 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system;};
 
+    # Pywalfox stuff because nix hates all of us and packages dont work and the world is falling apart and yk what-
     pywalfox = pkgs.python3Packages.buildPythonPackage {
       pname = "pywalfox";
       version = "2.8.0rc1";
