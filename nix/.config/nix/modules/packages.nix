@@ -24,6 +24,7 @@
     python3
     pywal16
     pywalfox-native
+    xfce.thunar
   ];
 
   # For nixd i think
