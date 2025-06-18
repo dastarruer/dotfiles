@@ -1,5 +1,5 @@
 {
-  description = "My system";
+  description = "My nixos system made by me";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -9,14 +9,13 @@
   outputs = {
     self,
     nixpkgs,
-    spicetify-nix,
     ...
   } @ inputs: {
     nixosConfigurations.dastarruer = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
-        spicetify-nix.nixosModules.default
+        inputs.spicetify-nix.nixosModules.default
       ];
       specialArgs = {
         inherit inputs;
