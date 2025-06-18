@@ -25,6 +25,7 @@
     pywal16
     pywalfox-native
     xfce.thunar
+    spotify
   ];
 
   # For nixd i think
