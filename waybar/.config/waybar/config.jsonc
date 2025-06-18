@@ -8,13 +8,13 @@
     "height": 0,
     "modules-left": [
         "custom/launcher",
-        // "cpu",
-        // "memory",
-        // "disk",
+        "cpu",
+        "memory",
+        "disk"
         // "temperature",
         // "custom/weather",
         // "custom/update",
-        "hyprland/window"
+        // "hyprland/window"
     ],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": [

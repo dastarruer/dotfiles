@@ -1,3 +1,4 @@
+# HELLO FUTURE ME basically spicetify on nix will not work if you also install spotify in packages.nix so yeah
 {
   pkgs,
   inputs,

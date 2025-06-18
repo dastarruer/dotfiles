@@ -25,6 +25,7 @@
     pywal16
     pywalfox-native
     xfce.thunar
+    vesktop
   ];
 
   # For nixd i think
