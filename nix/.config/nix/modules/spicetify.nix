@@ -3,9 +3,14 @@
   inputs,
   ...
 }: {
-  # Import spicetify module
-  imports = [
-    inputs.spicetify-nix.nixosModules.default
+  # Import spicetify nix flake/module/whatever-the-hell
+  # imports = [
+  #   inputs.spicetify-nix.nixosModules.default
+  # ];
+
+  # Get the cli
+  environment.systemPackages = with pkgs; [
+    spicetify-cli
   ];
 
   programs.spicetify = let

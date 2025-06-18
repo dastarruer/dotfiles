@@ -8,5 +8,6 @@
     ./packages.nix
     ./keyboard.nix
     ./networking.nix
+    ./spicetify.nix
   ];
 }
