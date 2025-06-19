@@ -1,26 +1,33 @@
 {
-  description = "My nixos system made by me";
+  description = "My NixOS system made by me";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = {
+  outputs = inputs @ {
     self,
     nixpkgs,
+    spicetify-nix,
+    nix-flatpak,
     ...
-  } @ inputs: {
+  }: let
+    system = "x86_64-linux";
+  in {
     nixosConfigurations.dastarruer = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      inherit system;
+
       modules = [
         ./configuration.nix
-        inputs.spicetify-nix.nixosModules.default
-        inputs.nix-flatpak.nixosModules.nix-flatpak
+        spicetify-nix.nixosModules.default
+        nix-flatpak.nixosModules.nix-flatpak
       ];
+
       specialArgs = {
         inherit inputs;
+        spicePkgs = spicetify-nix.legacyPackages.${system};
       };
     };
   };
