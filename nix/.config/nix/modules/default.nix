@@ -10,5 +10,6 @@
     ./networking.nix
     ./spicetify.nix
     ./flatpak.nix
+    ./bluetooth.nix
   ];
 }
