@@ -13,6 +13,9 @@
     # Add packages here
     packages = [
       "flathub:app/org.vinegarhq.Sober/x86_64/stable"
+      "flathub:app/com.todoist.Todoist/x86_64/stable"
+      "flathub:app/org.localsend.localsend_app/x86_64/stable"
+      "flathub:app/md.obsidian.Obsidian/x86_64/stable"
     ];
 
     overrides = {
@@ -35,6 +38,20 @@
           "xdg-run/app/com.discordapp.Discord:create"
           "xdg-run/discord-ipc-0"
         ];
+      };
+
+      "com.todoist.Todoist" = {
+        # Enable x11 support for todoist since it doesn't use wayland
+        sockets = [
+          "x11"
+          "!wayland"
+          "!fallback-x11"
+        ];
+
+        # Optionally unset ozone platform hint if it causes issues
+        environment = {
+          OZONE_PLATFORM_HINT = null;
+        };
       };
     };
   };
