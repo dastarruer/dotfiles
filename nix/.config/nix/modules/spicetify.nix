@@ -9,12 +9,16 @@
 in {
   programs.spicetify = {
     enable = true;
+
+    # Extensiosn
     enabledExtensions = with spicePkgs.extensions; [
       adblockify
       hidePodcasts
       shuffle
+      loopyLoop
     ];
 
+    # CSS snippets to make spotify look even better
     enabledSnippets = with spicePkgs.snippets; [
       disableRecommendations
       smoothPlaylistRevealGradient
@@ -25,6 +29,13 @@ in {
       hideFriendActivityButton
       roundedButtons
       removeTopSpacing
+      hideFullScreenButton
+      hideMiniPlayerButton
+    ];
+
+    # Custom apps
+    enabledCustomApps = with spicePkgs.apps; [
+      marketplace
     ];
 
     theme = spicePkgs.themes.onepunch;
