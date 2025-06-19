@@ -1,40 +1,41 @@
-# From here github.com/gmodena/nix-flatpak
-{
-  lib,
-  pkgs,
-  ...
-}: {
-  services.flatpak.enable = true;
-
-  # Add a new remote. Keep the default one (flathub)
-  services.flatpak.remotes = lib.mkOptionDefault [
-    {
-      name = "flathub-beta";
-      location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
-    }
-  ];
-
-  services.flatpak.update.auto = {
+# https://github.com/in-a-dil-emma/declarative-flatpak
+{...}: {
+  services.flatpak = {
+    # Enable flatpaks
     enable = true;
-    onCalendar = "weekly";
+
+    # Add remotes here
+    remotes = {
+      "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+      "flathub-beta" = "https://dl.flathub.org/beta-repo/flathub-beta.flatpakrepo";
+    };
+
+    # Add packages here
+    packages = [
+      "flathub:app/org.vinegarhq.Sober/x86_64/stable"
+    ];
+
+    overrides = {
+      global = {
+        # Give all flatpaks access to the home dir
+        filesystems = [
+          "home"
+        ];
+
+        # Remove x11 support for flatpaks, making them run only on wayland
+        sockets = [
+          "!x11"
+          "!fallback-x11"
+        ];
+      };
+
+      # Enable discord for sober
+      "org.vinegarhq.Sober" = {
+        filesystems = [
+          "xdg-run/app/com.discordapp.Discord:create"
+          "xdg-run/discord-ipc-0"
+        ];
+      };
+    };
   };
-
-  services.flatpak.uninstallUnmanaged = true;
-
-  # Flatpaks to install
-  services.flatpak.packages = [
-    "org.vinegarhq.Sober" # Roblox w the gc
-    "com.todoist.Todoist"
-    "md.obsidian.Obsidian"
-    "org.localsend.localsend_app"
-  ];
-
-  # For sober flatpak so it works w discord probably
-  system.activationScripts.flatpakOverrides.text = ''
-    # Apply persistent flatpak override on activation
-    ${pkgs.flatpak}/bin/flatpak override --user \
-      --filesystem=xdg-run/app/com.discordapp.Discord:create \
-      --filesystem=xdg-run/discord-ipc-0 \
-      org.vinegarhq.Sober
-  '';
 }

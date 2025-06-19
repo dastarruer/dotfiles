@@ -1,17 +1,18 @@
 {
   "nodes": {
-    "nix-flatpak": {
+    "flatpaks": {
       "locked": {
-        "lastModified": 1749394952,
-        "narHash": "sha256-WbWkzIvB0gqAdBLghdmUpGveY7MlAS2iMj3VEJnJ9yE=",
-        "owner": "gmodena",
-        "repo": "nix-flatpak",
-        "rev": "64c6e53a3999957c19ab95cda78bde466d8374cc",
+        "lastModified": 1748953068,
+        "narHash": "sha256-L7Tlymc+4cqOCXvKLd2g6J3cycxUg9QG05AVyzlkaC8=",
+        "owner": "in-a-dil-emma",
+        "repo": "declarative-flatpak",
+        "rev": "c573d84f2a2f81e974c75e81eb56812bd3dc4766",
         "type": "github"
       },
       "original": {
-        "owner": "gmodena",
-        "repo": "nix-flatpak",
+        "owner": "in-a-dil-emma",
+        "ref": "dev",
+        "repo": "declarative-flatpak",
         "type": "github"
       }
     },
@@ -49,7 +50,7 @@
     },
     "root": {
       "inputs": {
-        "nix-flatpak": "nix-flatpak",
+        "flatpaks": "flatpaks",
         "nixpkgs": "nixpkgs",
         "spicetify-nix": "spicetify-nix"
       }

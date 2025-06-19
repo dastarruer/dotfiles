@@ -4,14 +4,14 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/dev";
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
     spicetify-nix,
-    nix-flatpak,
+    flatpaks,
     ...
   }: let
     system = "x86_64-linux";
@@ -22,7 +22,7 @@
       modules = [
         ./configuration.nix
         spicetify-nix.nixosModules.default
-        nix-flatpak.nixosModules.nix-flatpak
+        flatpaks.nixosModule
       ];
 
       specialArgs = {
