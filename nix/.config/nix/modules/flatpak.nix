@@ -1,5 +1,4 @@
 # From here github.com/gmodena/nix-flatpak
-
 {
   lib,
   pkgs,
@@ -15,7 +14,11 @@
     }
   ];
 
-  services.flatpak.update.auto.enable = true;
+  services.flatpak.update.auto = {
+    enable = true;
+    onCalendar = "weekly";
+  };
+
   services.flatpak.uninstallUnmanaged = true;
 
   # Flatpaks to install
