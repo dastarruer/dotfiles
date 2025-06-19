@@ -23,6 +23,7 @@
     btop
     python3
     pywal16
+    xorg.xrdb # for pywal
     pywalfox-native
     xfce.thunar
     vesktop
