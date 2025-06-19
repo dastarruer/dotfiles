@@ -48,10 +48,24 @@
           "!fallback-x11"
         ];
 
-        # Optionally unset ozone platform hint if it causes issues
-        environment = {
-          OZONE_PLATFORM_HINT = null;
-        };
+        # disabled for now
+        # environment = {
+        #   OZONE_PLATFORM_HINT = null;
+        # };
+      };
+
+      "md.obsidian.Obsidian" = {
+        # Enable wayland support for obsidian
+        sockets = [
+          "wayland"
+          "!x11"
+          "!fallback-x11"
+        ];
+
+        # Disabled for now but its here js in case...
+        # environment = {
+        #   OZONE_PLATFORM_HINT = "auto";
+        # };
       };
     };
   };
