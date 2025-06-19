@@ -1,4 +1,4 @@
-{lib, ...}: {
+{lib, pkgs, ...}: {
   services.flatpak.enable = true;
   # Add a new remote. Keep the default one (flathub)
   services.flatpak.remotes = lib.mkOptionDefault [
@@ -13,8 +13,15 @@
 
   # Add here the flatpaks you want to install
   services.flatpak.packages = [
-    #{ appId = "com.brave.Browser"; origin = "flathub"; }
-    "com.obsproject.Studio"
-    #"im.riot.Riot"
+    "org.vinegarhq.Sober" # Roblox w the gc
   ];
+
+  # For sober flatpak
+  system.activationScripts.flatpakOverrides.text = ''
+    # Apply persistent flatpak override on activation
+    ${pkgs.flatpak}/bin/flatpak override --user \
+      --filesystem=xdg-run/app/com.discordapp.Discord:create \
+      --filesystem=xdg-run/discord-ipc-0 \
+      org.vinegarhq.Sober
+  '';
 }
