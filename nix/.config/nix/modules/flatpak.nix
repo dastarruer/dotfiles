@@ -1,9 +1,12 @@
+# From here github.com/gmodena/nix-flatpak
+
 {
   lib,
   pkgs,
   ...
 }: {
   services.flatpak.enable = true;
+
   # Add a new remote. Keep the default one (flathub)
   services.flatpak.remotes = lib.mkOptionDefault [
     {
@@ -15,12 +18,15 @@
   services.flatpak.update.auto.enable = true;
   services.flatpak.uninstallUnmanaged = true;
 
-  # Add here the flatpaks you want to install
+  # Flatpaks to install
   services.flatpak.packages = [
     "org.vinegarhq.Sober" # Roblox w the gc
+    "com.todoist.Todoist"
+    "md.obsidian.Obsidian"
+    "org.localsend.localsend_app"
   ];
 
-  # For sober flatpak
+  # For sober flatpak so it works w discord probably
   system.activationScripts.flatpakOverrides.text = ''
     # Apply persistent flatpak override on activation
     ${pkgs.flatpak}/bin/flatpak override --user \
