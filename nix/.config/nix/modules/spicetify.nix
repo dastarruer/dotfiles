@@ -24,6 +24,7 @@ in {
       hideDownloadButton
       hideFriendActivityButton
       roundedButtons
+      removeTopSpacing
     ];
 
     theme = spicePkgs.themes.onepunch;
