@@ -27,6 +27,7 @@
     pywalfox-native
     xfce.thunar
     vesktop
+    brillo
   ];
 
   # For nixd i think

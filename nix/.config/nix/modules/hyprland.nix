@@ -2,6 +2,9 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+
+    # Start hyprland on boot
+    withUWSM = true;
   };
 
   # For stuff between apps like clipboard access, drag and drop, etc.
