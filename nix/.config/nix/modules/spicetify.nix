@@ -15,6 +15,17 @@ in {
       shuffle
     ];
 
+    enabledSnippets = with spicePkgs.snippets; [
+      disableRecommendations
+      smoothPlaylistRevealGradient
+      disableRecommendations
+      pointer
+      modernScrollbar
+      hideDownloadButton
+      hideFriendActivityButton
+      roundedButtons
+    ];
+
     theme = spicePkgs.themes.onepunch;
 
     colorScheme = "dark";
