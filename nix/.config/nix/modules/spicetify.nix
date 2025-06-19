@@ -16,5 +16,9 @@ in {
     ];
 
     theme = spicePkgs.themes.onepunch;
+
+    colorScheme = "dark";
+
+    wayland = true;
   };
 }
