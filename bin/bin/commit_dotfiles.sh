@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 dotfiles="$HOME/.dotfiles"
-nix="$dotfiles/nix/.config/nix"
+nix="$dotfiles"
 
 # Get commit message
 if [ -z "$1" ]; then
