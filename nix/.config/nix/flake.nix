@@ -20,7 +20,10 @@
     system = "x86_64-linux";
   in {
     nixosConfigurations.dastarruer = nixpkgs.lib.nixosSystem {
-      inherit system;
+      specialArgs = {
+        inherit inputs system;
+        spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
+      };
 
       modules = [
         ./configuration.nix
@@ -37,11 +40,6 @@
         inputs.spicetify-nix.nixosModules.default
         inputs.flatpaks.nixosModule
       ];
-
-      specialArgs = {
-        inherit inputs;
-        spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
-      };
     };
   };
 }
