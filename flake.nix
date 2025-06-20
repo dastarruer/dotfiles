@@ -26,7 +26,7 @@
       };
 
       modules = [
-        ./configuration.nix
+        ./nix/configuration.nix
 
         # Home manager
         home-manager.nixosModules.home-manager

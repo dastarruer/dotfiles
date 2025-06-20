@@ -19,9 +19,6 @@
   # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -32,7 +29,7 @@
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
-      dastarruer = import ./home.nix;
+      dastarruer = import ../home.nix;
     };
   };
 }

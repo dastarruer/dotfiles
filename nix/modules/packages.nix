@@ -28,6 +28,7 @@
     xfce.thunar
     vesktop
     brillo
+    btop
   ];
 
   # For nixd i think
