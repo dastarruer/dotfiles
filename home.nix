@@ -13,9 +13,19 @@
     username = "dastarruer";
     homeDirectory = lib.mkForce "/home/dastarruer";
 
-    # file = {
-    #   ".config/fish".source = ./fish;
-    # };
+    file = {
+      ".config/btop".source = ./btop;
+      "bin".source = ./bin;
+      ".bashrc".source = ./bashrc/.bashrc;
+      ".config/kitty".source = ./kitty;
+      ".config/neofetch".source = ./neofetch;
+      ".config/pywal".source = ./pywal;
+      ".config/starship".source = ./starship;
+      "Pictures/wallpapers".source = ./wallpapers;
+      ".config/waybar".source = ./waybar;
+      ".config/yazi".source = ./yazi;
+      ".config/zathura".source = ./zathura;
+    };
 
     # User specific packages
     packages = with pkgs; [
