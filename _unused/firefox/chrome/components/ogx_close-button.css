@@ -1,0 +1,69 @@
+/* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text.
+   https://github.com/Godiesc/firefox-gx */
+
+.tab-close-button:hover {
+    background-color: var(--contrast-color, var(--lwt-accent-color)) !important;
+    fill: var(--general-color) !important;
+}
+
+.tab-close-button {
+    list-style-image: url('../icons/close.svg') !important;
+}
+
+@media not -moz-pref("sidebar.verticalTabs") {
+    
+    .tabbrowser-tab:is(:hover, [selected]):not([pinned]) .tab-close-button { opacity: 1 !important; }
+
+    :is(#TabsToolbar) .close-icon {
+        width: 17px !important;
+        height: 17px !important;
+    }
+
+    .tab-close-button {
+        padding: 4px !important;
+        border-radius: calc(var(--border-radius-urlbar-personal) - 4px) !important;
+        margin-inline-end: -2px !important;
+        opacity: 0.8 !important;
+
+        &:-moz-locale-dir(rtl) {
+            margin-inline: 4px -2px !important;
+        }
+    }
+
+    .tabbrowser-tab:not([pinned]) .tab-close-button{
+        display: flex !important;
+        transition: all 0.2s ease !important;
+    }
+}
+
+#tabbrowser-tabs[orient="vertical"] {
+    &:not([expanded]) {
+        & .tab-close-button {
+            width: 12px !important;
+            height: 12px !important;
+            background: var(--general-color) !important;
+            padding: 2px !important;
+            fill: var(--contrast-color) !important;
+            top: -2px !important;
+            
+            &:hover {
+                background: var(--lwt-tab-text) !important;
+                fill: var(--contrast-color) !important;
+            }
+        }
+    }
+    &[expanded] {
+        /*& .tabbrowser-tab[pinned] {
+            & .tab-close-button {
+                display: none !important;
+            }
+        }/**/
+        & .tab-close-button {
+            height: 16px !important;
+            width:  16px !important;
+            padding: 4px !important;
+            margin-inline-end: -4px !important;
+            border-radius: 2px !important;
+        }
+    }
+}

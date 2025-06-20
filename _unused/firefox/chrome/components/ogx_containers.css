@@ -1,0 +1,50 @@
+/* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
+   https://github.com/Godiesc/firefox-gx */
+
+/* Default contenedor color */
+
+.identity-color-toolbar {
+    --identity-tab-color: color-mix(in srgb, #0c86ee 80%, var(--lwt-tab-text)) !important;
+    --identity-icon-color: color-mix(in srgb, #0c86ee 80%, var(--lwt-tab-text)) !important;
+}
+
+.identity-color-toolbar:-moz-window-inactive {
+    --identity-tab-color: #0c86ee !important;
+    --identity-icon-color: color-mix(in srgb, #0c86ee 60%, transparent) !important;
+}
+
+/* New red container color */
+
+.identity-color-red {
+    --identity-tab-color: #ff2940 !important;
+    --identity-icon-color: #ff2940 !important;
+}
+
+/* _____________________________________________ Default container style _____________________________________________ */
+
+/* Rework en la Linea de Contenedores-BordePestaña */
+
+.tab-context-line {
+    opacity: 0 !important;
+}
+
+.tabbrowser-tab {
+    & .tab-throbber[busy], .tab-icon-pending, .tab-icon-image, .tab-sharing-icon-overlay {
+        outline: 2px solid var(--identity-icon-color, transparent) !important;
+        outline-offset: 2px !important;
+        border-radius: 1px !important;
+        clip-path: xywh(-2px -4px calc(100% + 4px) calc(100% + 4px) round 0px);
+        transition: clip-path 0.1s ease !important;
+    }
+}
+
+/* _____________________________________________ Container line when using classic sound icon _____________________________________________ */
+
+@media ((not -moz-pref("sidebar.verticalTabs")) or (not -moz-pref("firefoxgx.tab-shapes"))) and -moz-pref("firefoxgx.classic-sound-icon") {
+
+    /* _____________ Tab container line for vertical tabs */    
+
+    #tabbrowser-tabs[orient="vertical"] .tab-context-line {
+        display: none !important;
+    }
+}
