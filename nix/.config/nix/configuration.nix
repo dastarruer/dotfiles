@@ -1,8 +1,13 @@
-{...}: {
+{inputs, ...}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+
+    # Import all the other files
     ./modules/default.nix
+
+    # Import home manager
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
@@ -22,4 +27,12 @@
 
   # Better battery life
   services.auto-cpufreq.enable = true;
+
+  # Home manager
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      dastarruer = import ./home.nix;
+    };
+  };
 }
