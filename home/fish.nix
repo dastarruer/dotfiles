@@ -1,7 +1,4 @@
 {
-  config,
-  pkgs,
-  lib,
   ...
 }: 
 {
@@ -9,6 +6,18 @@
   programs.fish = {
     enable = true;
 
+    # Remove greeting
+    shellInit = ''
+      set -g fish_greeting ""
+      neofetch
+
+      # Pywal colors
+      if test -e ~/.cache/wal/colors.fish
+          source ~/.cache/wal/colors.fish
+      end
+    '';
+
+    # Set aliases
     shellAliases = {
       chx = "chmod +x";
       pr = "python3 main.py";

@@ -13,6 +13,7 @@
     neofetch
     starship
     zoxide
+    
     cargo
     fzf
     playerctl

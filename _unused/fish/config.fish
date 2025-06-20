@@ -61,7 +61,6 @@ fish_add_path /home/dastarruer/.spicetify
 set -U fish_user_paths $HOME/.local/bin $fish_user_paths
 set -Ux fish_user_paths $HOME/.cargo/bin $fish_user_paths
 
-# Disable touchpad palm rejection
 export STARSHIP_CONFIG=~/.cache/wal/starship.toml
 
 # Start Starship prompt
