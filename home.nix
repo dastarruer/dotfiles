@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   ...
@@ -18,8 +17,12 @@
     #   ".config/fish".source = ./fish;
     # };
 
+    # User specific packages
     packages = with pkgs; [
       starship
+      vesktop
+      pywal16
+      pywalfox-native
     ];
 
     # I couldn't tell you what this does but oh well

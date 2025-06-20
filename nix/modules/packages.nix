@@ -9,11 +9,9 @@
     vscode-fhs
     git
     gh
-    stow
     neofetch
-    starship
     zoxide
-    
+
     cargo
     fzf
     playerctl
@@ -23,11 +21,7 @@
     firefox
     btop
     python3
-    pywal16
-    xorg.xrdb # for pywal
-    pywalfox-native
     xfce.thunar
-    vesktop
     brillo
     btop
   ];
