@@ -2,7 +2,7 @@
   # Enable fish shell
   programs.fish.enable = true;
 
-  # Define a user account
+  # Define the main user account
   users.users.dastarruer = {
     shell = pkgs.fish;
     isNormalUser = true;

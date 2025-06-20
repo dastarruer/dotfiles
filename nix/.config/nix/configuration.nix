@@ -19,4 +19,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # Better battery life
+  services.auto-cpufreq.enable = true;
 }
