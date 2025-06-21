@@ -1,4 +1,5 @@
-{inputs, system, ...}: let
+# Check here (https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265) for more stuff
+{inputs, ...}: let
   # Firefox theme that I will use
   firefox-theme = "https://github.com/cascadefox/cascade";
 
@@ -46,7 +47,9 @@ in {
 
   programs.firefox = {
     enable = true;
-    profiles.default = {
+
+    profiles.${firefox-profile} = {
+      # Declare a bunch of extensinos
       extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
         ublock-origin
         sponsorblock
@@ -55,7 +58,66 @@ in {
         simple-tab-groups
         auto-tab-discard
         startpage-private-search
+        i-dont-care-about-cookies
+        privacy-badger
+        to-deepl
+        link-cleaner
       ];
+
+      # Declare a bunch of settings which I've stolen from here (https://github.com/gvolpe/nix-config/blob/6feb7e4f47e74a8e3befd2efb423d9232f522ccd/home/programs/browsers/firefox.nix)
+      settings = {
+        "app.normandy.first_run" = false;
+        "app.shield.optoutstudies.enabled" = false;
+
+        # disable updates (pretty pointless with nix)
+        "app.update.channel" = "default";
+
+        "browser.contentblocking.category" = "strict";
+        "browser.ctrlTab.recentlyUsedOrder" = false;
+
+        "browser.download.viewableInternally.typeWasRegistered.svg" = true;
+        "browser.download.viewableInternally.typeWasRegistered.webp" = true;
+        "browser.download.viewableInternally.typeWasRegistered.xml" = true;
+
+        "browser.link.open_newwindow" = true;
+
+        "browser.search.region" = "PL";
+        "browser.search.widget.inNavBar" = true;
+
+        "browser.shell.checkDefaultBrowser" = false;
+        "browser.tabs.loadInBackground" = true;
+
+        # disable all the annoying quick actions
+        "browser.urlbar.quickactions.enabled" = false;
+        "browser.urlbar.quickactions.showPrefs" = false;
+        "browser.urlbar.shortcuts.quickactions" = false;
+        "browser.urlbar.suggest.quickactions" = false;
+
+        "distribution.searchplugins.defaultLocale" = "en-US";
+
+        "doh-rollout.balrog-migration-done" = true;
+        "doh-rollout.doneFirstRun" = true;
+
+        "dom.forms.autocomplete.formautofill" = false;
+
+        "general.autoScroll" = true;
+        "general.useragent.locale" = "en-US";
+
+        "extensions.update.enabled" = false;
+        "extensions.webcompat.enable_picture_in_picture_overrides" = true;
+        "extensions.webcompat.enable_shims" = true;
+        "extensions.webcompat.perform_injections" = true;
+        "extensions.webcompat.perform_ua_overrides" = true;
+
+        "print.print_footerleft" = "";
+        "print.print_footerright" = "";
+        "print.print_headerleft" = "";
+        "print.print_headerright" = "";
+
+        "privacy.donottrackheader.enabled" = true;
+
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+      };
     };
   };
 }
