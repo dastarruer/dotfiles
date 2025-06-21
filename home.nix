@@ -15,6 +15,7 @@ in {
     username = "dastarruer";
     homeDirectory = lib.mkForce "/home/dastarruer";
 
+    # Symlink a bunch of files
     file = {
       ".config/btop".source = ./btop;
       "bin".source = ./bin;
@@ -30,6 +31,11 @@ in {
       ".config/hypr".source = ./hypr;
       ".config/rofi".source = ./rofi;
     };
+
+    # Set PATH variables
+    sessionPath = [
+      "$HOME/bin"
+    ];
 
     # User specific packages
     packages = with pkgs; [
