@@ -40,7 +40,7 @@
           home-manager.users.dastarruer = ./home.nix;
         }
 
-        # Other modules
+        # Flakes
         inputs.spicetify-nix.nixosModules.default
         inputs.flatpaks.nixosModule
       ];

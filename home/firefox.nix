@@ -1,4 +1,4 @@
-{inputs, ...}: let
+{inputs, system, ...}: let
   # Firefox theme that I will use
   firefox-theme = "https://github.com/cascadefox/cascade";
 
@@ -54,6 +54,7 @@ in {
         pywalfox
         simple-tab-groups
         auto-tab-discard
+        startpage-private-search
       ];
     };
   };
