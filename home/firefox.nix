@@ -1,4 +1,4 @@
-{...}: let
+{inputs, ...}: let
   # Firefox theme that I will use
   firefox-theme = "https://github.com/cascadefox/cascade";
 
@@ -47,6 +47,14 @@ in {
   programs.firefox = {
     enable = true;
     profiles.default = {
+      extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
+        ublock-origin
+        sponsorblock
+        darkreader
+        pywalfox
+        simple-tab-groups
+        auto-tab-discard
+      ];
     };
   };
 }

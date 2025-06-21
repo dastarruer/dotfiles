@@ -33,12 +33,12 @@
       };
 
       # Enable discord for sober
-      "org.vinegarhq.Sober" = {
-        filesystems = [
-          "xdg-run/app/com.discordapp.Discord:create"
-          "xdg-run/discord-ipc-0"
-        ];
-      };
+      #      "org.vinegarhq.Sober" = {
+      #        filesystems = [
+      #         "xdg-run/app/com.discordapp.Discord:create"
+      #        "xdg-run/discord-ipc-0"
+      #        ];
+      #      };
 
       "com.todoist.Todoist" = {
         # Enable x11 support for todoist since it doesn't use wayland
