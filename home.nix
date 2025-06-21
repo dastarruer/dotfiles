@@ -17,7 +17,6 @@ in {
 
     # Symlink a bunch of files
     file = {
-      ".config/btop".source = ./btop;
       "bin".source = ./bin;
       ".bashrc".source = ./bashrc/.bashrc;
       ".config/kitty".source = ./kitty;
