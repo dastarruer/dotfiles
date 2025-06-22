@@ -11,7 +11,6 @@
     gh
     neofetch
     zoxide
-
     cargo
     fzf
     playerctl
@@ -23,6 +22,7 @@
     python3
     xfce.thunar
     btop
+    ffmpeg
   ];
 
   # For nixd i think
