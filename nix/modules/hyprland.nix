@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  programs.uwsm.enable = true;
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
