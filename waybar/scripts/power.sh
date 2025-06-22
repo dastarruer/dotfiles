@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/env bash
 
 # Detect whether we're running on Xorg or Wayland
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then

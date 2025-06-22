@@ -1,3 +1,5 @@
+// Waybar comes from here: https://github.com/bibjaw99/workstation
+
 {
     "layer": "top",
     "height": 20,
@@ -7,12 +9,12 @@
     "margin-left": 8,
 
     "modules-left": [
-        "custom/rofi",
+        // "custom/rofi",
         "sway/workspaces",
         "sway/window",
         "hyprland/workspaces",
-        "tray"
-        // "hyprland/window"
+        "tray",
+        "hyprland/window"
     ],
 
     "modules-center": ["clock"],

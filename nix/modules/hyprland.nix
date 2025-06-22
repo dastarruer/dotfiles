@@ -34,7 +34,7 @@
   fonts.packages = with pkgs; [
     font-awesome
     nerd-fonts._3270
-    texlivePackages.jetbrainsmono-otf
+    nerd-fonts.jetbrains-mono
     fira-code
   ];
 }

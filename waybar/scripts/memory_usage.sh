@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Get memory usage using the free command
 memory_info=$(free -h | awk '/^Mem:/ {print $3 "B"}')
