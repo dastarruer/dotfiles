@@ -25,6 +25,9 @@
   # Better battery life
   services.auto-cpufreq.enable = true;
 
+  # Brightness
+  hardware.brillo.enable = true;
+
   # Home manager
   home-manager = {
     extraSpecialArgs = {inherit inputs;};

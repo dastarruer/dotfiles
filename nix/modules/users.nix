@@ -7,6 +7,8 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Ayush Pramanik";
-    extraGroups = ["networkmanager" "wheel"];
+
+    # video group lets me change brightness, wheel lets me use sudo, networkmanager lets me control wifi
+    extraGroups = ["networkmanager" "wheel" "video"];
   };
 }

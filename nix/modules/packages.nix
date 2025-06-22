@@ -22,7 +22,6 @@
     btop
     python3
     xfce.thunar
-    brillo
     btop
   ];
 
