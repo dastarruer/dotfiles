@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }: let
 in {
@@ -16,20 +17,10 @@ in {
     homeDirectory = lib.mkForce "/home/dastarruer";
 
     # Symlink a bunch of files
-    file = {
-      "bin".source = ./bin;
-      ".bashrc".source = ./bashrc/.bashrc;
-      ".config/kitty".source = ./kitty;
-      ".config/neofetch".source = ./neofetch;
-      ".config/pywal".source = ./pywal;
-      ".config/starship".source = ./starship;
-      "Pictures/wallpapers".source = ./wallpapers;
-      ".config/waybar".source = ./waybar;
-      ".config/yazi".source = ./yazi;
-      ".config/zathura".source = ./zathura;
-      ".config/hypr".source = ./hypr;
-      ".config/rofi".source = ./rofi;
-    };
+    activation.symlinkFiles = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      chmod +x ${config.home.homeDirectory}/.dotfiles/symlink.sh
+      ${config.home.homeDirectory}/.dotfiles/symlink.sh
+    '';
 
     # Set PATH variables
     sessionPath = [
