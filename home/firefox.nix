@@ -56,7 +56,6 @@ in {
         darkreader
         pywalfox
         simple-tab-groups
-        auto-tab-discard
         startpage-private-search
         i-dont-care-about-cookies
         privacy-badger
