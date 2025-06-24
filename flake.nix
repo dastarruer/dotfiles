@@ -42,7 +42,6 @@
 
         # Flakes
         inputs.spicetify-nix.nixosModules.default
-        inputs.flatpaks.nixosModule
       ];
     };
   };

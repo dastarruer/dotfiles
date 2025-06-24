@@ -1,4 +1,13 @@
-# https://github.com/in-a-dil-emma/declarative-flatpak
+/*
+   https://github.com/in-a-dil-emma/declarative-flatpak
+
+To find the link to a flatpak, run:
+flatpak run {flatpak}
+and then just take the link that it gives you.
+
+Example: flatpak run net.ankiweb.Anki
+error: app/net.ankiweb.Anki/x86_64/master not installed
+*/
 {...}: {
   services.flatpak = {
     # Enable flatpaks
@@ -16,6 +25,7 @@
       "flathub:app/com.todoist.Todoist/x86_64/stable"
       "flathub:app/org.localsend.localsend_app/x86_64/stable"
       "flathub:app/md.obsidian.Obsidian/x86_64/stable"
+      "flathub:app/net.ankiweb.Anki/x86_64/stable"
     ];
 
     overrides = {
@@ -32,6 +42,7 @@
         ];
       };
 
+      # It bothers me about this everytime I start sober so here
       "org.vinegarhq.Sober" = {
         filesystems = [
           "!home"

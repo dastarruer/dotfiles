@@ -2,12 +2,15 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }: let
 in {
   imports = [
     ./home/fish.nix
     ./home/firefox.nix
+    ./home/flatpak.nix
+    inputs.flatpaks.homeModule
   ];
 
   # Set up user
