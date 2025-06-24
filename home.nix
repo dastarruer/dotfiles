@@ -36,6 +36,7 @@ in {
       vesktop
       pywal16
       pywalfox-native
+      anki-bin
     ];
 
     # I couldn't tell you what this does but oh well

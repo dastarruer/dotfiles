@@ -24,8 +24,6 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
       "flathub:app/org.vinegarhq.Sober/x86_64/stable"
       "flathub:app/com.todoist.Todoist/x86_64/stable"
       "flathub:app/org.localsend.localsend_app/x86_64/stable"
-      "flathub:app/md.obsidian.Obsidian/x86_64/stable"
-      "flathub:app/net.ankiweb.Anki/x86_64/stable"
     ];
 
     overrides = {
