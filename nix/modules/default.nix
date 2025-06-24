@@ -10,5 +10,6 @@
     ./networking.nix
     ./spicetify.nix
     ./bluetooth.nix
+    ./maintenance.nix
   ];
 }
