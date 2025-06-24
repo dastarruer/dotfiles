@@ -37,6 +37,7 @@ in {
       pywal16
       pywalfox-native
       anki-bin
+      flatpak
     ];
 
     # I couldn't tell you what this does but oh well
