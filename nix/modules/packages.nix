@@ -6,7 +6,6 @@
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
     kitty
-    vscode-fhs
     git
     gh
     neofetch
@@ -17,10 +16,8 @@
     libnotify
     nixd
     alejandra
-    firefox
     btop
     python3
-    xfce.thunar
     btop
     ffmpeg
   ];

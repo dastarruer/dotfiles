@@ -1,11 +1,16 @@
 # Comes from https://www.youtube.com/watch?v=EI-6QX60WXc&t=915s
-{...}: {
+{inputs, ...}: {
   # Auto update
   system.autoUpgrade = {
     enable = true;
-    dates = "02:00";
 
-    # reboot after every upgrade (just in case!)
+    # Tell autoUpgrade to update this flake
+    flake = inputs.self.outPath;
+    flags = [
+      "-L" # print build logs
+    ];
+
+    # allow rebooting after every upgrade (just in case!)
     allowReboot = true;
   };
 
