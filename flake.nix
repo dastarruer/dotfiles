@@ -39,9 +39,6 @@
           home-manager.useUserPackages = true;
           home-manager.users.dastarruer = ./home.nix;
         }
-
-        # Flakes
-        inputs.spicetify-nix.nixosModules.default
       ];
     };
   };

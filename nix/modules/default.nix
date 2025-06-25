@@ -8,7 +8,6 @@
     ./packages.nix
     ./keyboard.nix
     ./networking.nix
-    ./spicetify.nix
     ./bluetooth.nix
     ./maintenance.nix
   ];

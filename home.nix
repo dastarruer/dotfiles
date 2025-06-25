@@ -10,6 +10,7 @@ in {
     ./home/fish.nix
     ./home/firefox.nix
     ./home/flatpak.nix
+    ./home/spicetify.nix
     inputs.flatpaks.homeModule
   ];
 

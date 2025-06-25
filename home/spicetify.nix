@@ -7,10 +7,15 @@
 }: let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 in {
+  # Import the spicetify home manager module
+  imports = [
+    inputs.spicetify-nix.homeManagerModules.spicetify
+  ];
+
   programs.spicetify = {
     enable = true;
 
-    # Extensiosn
+    # Extensions
     enabledExtensions = with spicePkgs.extensions; [
       adblockify
       hidePodcasts
