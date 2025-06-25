@@ -36,6 +36,7 @@ in {
       removeTopSpacing
       hideFullScreenButton
       hideMiniPlayerButton
+      roundedImages
     ];
 
     # Custom apps
