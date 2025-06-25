@@ -8,7 +8,12 @@ and then just take the link that it gives you.
 Example: flatpak run net.ankiweb.Anki
 error: app/net.ankiweb.Anki/x86_64/master not installed
 */
-{...}: {
+{inputs, ...}: {
+  # Import flatpak home manager module
+  imports = [
+    inputs.flatpaks.homeModule
+  ];
+
   services.flatpak = {
     # Enable flatpaks
     enable = true;

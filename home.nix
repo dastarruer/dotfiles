@@ -11,7 +11,6 @@ in {
     ./home/firefox.nix
     ./home/flatpak.nix
     ./home/spicetify.nix
-    inputs.flatpaks.homeModule
   ];
 
   # Set up user
