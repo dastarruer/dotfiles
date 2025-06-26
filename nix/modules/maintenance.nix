@@ -5,10 +5,14 @@
     enable = true;
 
     # Tell autoUpgrade to update this flake
-    flake = inputs.self.outPath;
+    flake = "github:dastarruer/dotfiles";
     flags = [
       "-L" # print build logs
     ];
+
+    # Update every night at 2am
+    dates = "02:00";
+    randomizedDelaySec = "45min";
 
     # allow rebooting after every upgrade (just in case!)
     allowReboot = true;
