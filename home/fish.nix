@@ -6,7 +6,7 @@
     # Remove greeting
     shellInit = ''
       set -g fish_greeting ""
-      neofetch
+      fastfetch
 
       # Pywal colors
       if test -e ~/.cache/wal/colors.fish

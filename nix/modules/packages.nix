@@ -8,7 +8,7 @@
     kitty
     git
     gh
-    neofetch
+    fastfetch
     zoxide
     cargo
     fzf
