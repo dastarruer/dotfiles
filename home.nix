@@ -41,6 +41,9 @@ in {
       vscode-fhs
       xfce.thunar
       firefox
+
+      tesseract
+      satty
     ];
 
     # I couldn't tell you what this does but oh well
