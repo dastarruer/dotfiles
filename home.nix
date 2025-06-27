@@ -42,6 +42,7 @@ in {
       xfce.thunar
       firefox
       obsidian
+      zathura
       tesseract
       satty
     ];
