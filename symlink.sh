@@ -23,7 +23,7 @@ ln -sfn "$dotfiles/kitty" "$HOME/.config/kitty"
 ln -sfn "$dotfiles/neofetch" "$HOME/.config/neofetch"
 
 # Pywal
-ln -sfn "$dotfiles/pywal" "$HOME/.config/pywal"
+ln -sfn "$dotfiles/pywal" "$HOME/.config/wal"
 
 # Rofi
 ln -sfn "$dotfiles/rofi" "$HOME/.config/rofi"
