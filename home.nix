@@ -41,7 +41,7 @@ in {
       vscode-fhs
       xfce.thunar
       firefox
-
+      obsidian
       tesseract
       satty
     ];
