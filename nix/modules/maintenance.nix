@@ -3,14 +3,12 @@
   # Auto update
   system.autoUpgrade = {
     enable = true;
-
-    # Tell autoUpgrade to update this flake
-    flake = "github:dastarruer/dotfiles";
+    flake = inputs.self.outPath;
     flags = [
-      "-L" # print build logs
+      "--update-input"
+      "nixpkgs"
+      "--print-build-logs"
     ];
-
-    # Update every night at 2am
     dates = "02:00";
     randomizedDelaySec = "45min";
 
