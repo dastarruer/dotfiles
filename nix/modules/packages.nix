@@ -18,8 +18,8 @@
     alejandra
     btop
     python3
-    btop
     ffmpeg
+    yazi
   ];
 
   # For nixd i think
