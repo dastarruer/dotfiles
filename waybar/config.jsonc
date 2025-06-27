@@ -155,7 +155,7 @@
 
     "clock": {
         // "timezone": "America/New_York",
-        "format": "<span color='#202020' bgcolor='#8ec07c' >  </span> {:%a %d %b %H:%M:%S}",
+        "format": "<span color='#202020' bgcolor='#8ec07c' >  </span> {:%a %d %b %I:%M %p}",
         "tooltip": false,
         "interval": 1
     }
