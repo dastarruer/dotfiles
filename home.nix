@@ -43,9 +43,6 @@ in {
       firefox
       obsidian
       zathura
-      # TODO: Get screenshots working
-      tesseract
-      satty
 
       kitty
       git
@@ -62,18 +59,22 @@ in {
       ffmpeg
       yazi
       rustfmt
-    ];
 
-    fonts.packages = with pkgs; [
+      # TODO: Get screenshots working
+      tesseract
+      satty
+
+      # FONTS
       font-awesome
       nerd-fonts._3270
       nerd-fonts.jetbrains-mono
       fira-code
     ];
-
     # I couldn't tell you what this does but oh well
     stateVersion = "22.11";
   };
+
+  fonts.fontconfig.enable = true;
 
   programs = {
     home-manager.enable = true;
