@@ -20,6 +20,7 @@
     python3
     ffmpeg
     yazi
+    rustfmt
   ];
 
   # For nixd i think
