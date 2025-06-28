@@ -11,6 +11,7 @@ in {
     ./home/firefox.nix
     ./home/flatpak.nix
     ./home/spicetify.nix
+    ./home/packages.nix
   ];
 
   # Set up user
@@ -30,51 +31,9 @@ in {
       "$HOME/bin"
     ];
 
-    # User specific packages
-    packages = with pkgs; [
-      starship
-      vesktop
-      pywal16
-      pywalfox-native
-      anki-bin
-      flatpak
-      vscode-fhs
-      xfce.thunar
-      firefox
-      obsidian
-      zathura
-
-      kitty
-      git
-      gh
-      fastfetch
-      zoxide
-      cargo
-      fzf
-      playerctl
-      nixd
-      alejandra
-      btop
-      python3
-      ffmpeg
-      yazi
-      rustfmt
-
-      # TODO: Get screenshots working
-      tesseract
-      satty
-
-      # FONTS
-      font-awesome
-      nerd-fonts._3270
-      nerd-fonts.jetbrains-mono
-      fira-code
-    ];
     # I couldn't tell you what this does but oh well
     stateVersion = "22.11";
   };
-
-  fonts.fontconfig.enable = true;
 
   programs = {
     home-manager.enable = true;
