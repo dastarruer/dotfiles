@@ -33,11 +33,4 @@
     rofi-wayland
     swww # Wallpaper daemon (might switch to hyprpaper later)
   ];
-
-  fonts.packages = with pkgs; [
-    font-awesome
-    nerd-fonts._3270
-    nerd-fonts.jetbrains-mono
-    fira-code
-  ];
 }

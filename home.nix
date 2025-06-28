@@ -43,8 +43,32 @@ in {
       firefox
       obsidian
       zathura
+      # TODO: Get screenshots working
       tesseract
       satty
+
+      kitty
+      git
+      gh
+      fastfetch
+      zoxide
+      cargo
+      fzf
+      playerctl
+      nixd
+      alejandra
+      btop
+      python3
+      ffmpeg
+      yazi
+      rustfmt
+    ];
+
+    fonts.packages = with pkgs; [
+      font-awesome
+      nerd-fonts._3270
+      nerd-fonts.jetbrains-mono
+      fira-code
     ];
 
     # I couldn't tell you what this does but oh well

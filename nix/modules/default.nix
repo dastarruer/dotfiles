@@ -5,7 +5,7 @@
     ./bootloader.nix
     ./hyprland.nix
     # ./gnome.nix
-    ./packages.nix
+    ./system-packages.nix
     ./keyboard.nix
     ./networking.nix
     ./bluetooth.nix
