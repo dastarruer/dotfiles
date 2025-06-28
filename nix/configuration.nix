@@ -28,6 +28,11 @@
   # Brightness
   hardware.brillo.enable = true;
 
+  # Acheive faster reboot times by making sure services can only take up to five seconds to shut down
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=5s
+  '';
+
   # Home manager
   home-manager = {
     extraSpecialArgs = {inherit inputs;};

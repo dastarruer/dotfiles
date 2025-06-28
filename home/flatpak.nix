@@ -47,10 +47,10 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
 
       # It bothers me about this everytime I start sober so here
       "org.vinegarhq.Sober" = {
-        filesystems = [
-          "!home"
-          "!host"
-        ];
+        # filesystems = [
+        #   "!home"
+        #   "!host"
+        # ];
       };
 
       "com.todoist.Todoist" = {
