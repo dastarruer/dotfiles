@@ -8,7 +8,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
 
-    # Bluetooth or something idk
+    # Fix bluetooth or something idk
     wireplumber.enable = true;
   };
 }
