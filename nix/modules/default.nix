@@ -5,6 +5,7 @@
     ./bootloader.nix
     ./audio.nix
     ./hyprland.nix
+    ./display-manager.nix
     # ./gnome.nix
     ./system-packages.nix
     ./keyboard.nix

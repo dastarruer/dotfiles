@@ -15,7 +15,6 @@
     firefox
     obsidian
     zathura
-
     kitty
     git
     gh
