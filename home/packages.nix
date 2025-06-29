@@ -15,6 +15,7 @@
     firefox
     obsidian
     zathura
+    gruvbox-gtk-theme
     kitty
     git
     gh
