@@ -26,17 +26,18 @@ lang_saved="Screenshot saved to file"
 #            "$lang_nodelay" "$lang_delay" "$lang_delay" "$lang_delay" "$lang_delay" |
 #     rofi -dmenu -p "screenshot" -lines 5
 # ) || exit 2
+# Remove the delay because i dont want it
 rofi_delay="⏰ Delay: 0s"
-
-rofi_save_method=$(
-    printf "%s\n%s\n%s\n" "$lang_copy_clipboard" "$lang_save_png" "$lang_save_jpg" |
-    rofi -dmenu -p "screenshot" -lines 3
-) || exit 3
 
 rofi_scr_type=$(
     printf "%s\n%s\n"  "$lang_scr_fragment" "$lang_scr_whole" "$lang_scr_window" "$lang_scr_output"|
     rofi -dmenu -p "screenshot" -lines 2
 ) || exit 4
+
+rofi_save_method=$(
+    printf "%s\n%s\n%s\n" "$lang_copy_clipboard" "$lang_save_png" "$lang_save_jpg" |
+    rofi -dmenu -p "screenshot" -lines 3
+) || exit 3
 
 #if [ "$rofi_scr_type" = "$lang_scr_fragment" ]; then
 #    screen_fragment=$(slop --highlight --tolerance=0 --color=0.3,0.4,0.6,0.4 -n -f '-g %g ')
