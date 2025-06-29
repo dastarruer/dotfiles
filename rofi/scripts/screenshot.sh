@@ -21,11 +21,12 @@ lang_copied="Screenshot copied to clipboard"
 lang_saved="Screenshot saved to file"
 # END OF LANGUAGE STRINGS
 
-rofi_delay=$(
-    printf "%s \n%s 1s\n%s 3s\n%s 5s\n%s 10s\n%s" \
-           "$lang_nodelay" "$lang_delay" "$lang_delay" "$lang_delay" "$lang_delay" |
-    rofi -dmenu -p "screenshot" -lines 5
-) || exit 2
+# rofi_delay=$(
+#     printf "%s \n%s 1s\n%s 3s\n%s 5s\n%s 10s\n%s" \
+#            "$lang_nodelay" "$lang_delay" "$lang_delay" "$lang_delay" "$lang_delay" |
+#     rofi -dmenu -p "screenshot" -lines 5
+# ) || exit 2
+rofi_delay="⏰ Delay: 0s"
 
 rofi_save_method=$(
     printf "%s\n%s\n%s\n" "$lang_copy_clipboard" "$lang_save_png" "$lang_save_jpg" |
@@ -61,42 +62,42 @@ fi
 filepath="$SAVE_DIR/$filename"
 tempfilepath="/tmp/$filename"
 
-# handle each option, calling the relevant grimshot command
+# handle each option, calling the relevant grimblast command
 # Area screenshot
-# save: grimshot save area "$filepath"
-# copy: grimshot copy area
+# save: grimblast save area "$filepath"
+# copy: grimblast copy area
 if [ "$rofi_scr_type" = "$lang_scr_fragment" ] && [ "$rofi_save_method" = "$lang_copy_clipboard" ]; then
-    grimshot copy area
+    grimblast copy area
 elif [ "$rofi_scr_type" = "$lang_scr_fragment" ] && [ "$rofi_save_method" = "$lang_save_png" ]; then
-    grimshot save area "$filepath"
+    grimblast save area "$filepath"
 elif [ "$rofi_scr_type" = "$lang_scr_fragment" ] && [ "$rofi_save_method" = "$lang_save_jpg" ]; then
-    grimshot save area "$filepath"
+    grimblast save area "$filepath"
     
 # Fullscreen screenshot
-# save: grimshot save screen "$filepath"
-# copy: grimshot copy screen
+# save: grimblast save screen "$filepath"
+# copy: grimblast copy screen
 elif [ "$rofi_scr_type" = "$lang_scr_whole" ] && [ "$rofi_save_method" = "$lang_copy_clipboard" ]; then
-    grimshot copy screen
+    grimblast copy screen
 elif [ "$rofi_scr_type" = "$lang_scr_whole" ] && [ "$rofi_save_method" = "$lang_save_png" ]; then
-    grimshot save screen "$filepath"
+    grimblast save screen "$filepath"
 elif [ "$rofi_scr_type" = "$lang_scr_whole" ] && [ "$rofi_save_method" = "$lang_save_jpg" ]; then
-    grimshot save screen "$filepath"
+    grimblast save screen "$filepath"
 # Window Screenshot
-# save: grimshot save window "$filepath"
-# copy: grimshot copy window
+# save: grimblast save window "$filepath"
+# copy: grimblast copy window
 elif [ "$rofi_scr_type" = "$lang_scr_window" ] && [ "$rofi_save_method" = "$lang_copy_clipboard" ]; then
-    grimshot copy window
+    grimblast copy window
 elif [ "$rofi_scr_type" = "$lang_scr_window" ] && [ "$rofi_save_method" = "$lang_save_png" ]; then
-    grimshot save window "$filepath"
+    grimblast save window "$filepath"
 elif [ "$rofi_scr_type" = "$lang_scr_window" ] && [ "$rofi_save_method" = "$lang_save_jpg" ]; then
-    grimshot save window "$filepath"
+    grimblast save window "$filepath"
 # Current output screenshot
-# save: grimshot save output "$filepath"
-# copy: grimshot copy output
+# save: grimblast save output "$filepath"
+# copy: grimblast copy output
 elif [ "$rofi_scr_type" = "$lang_scr_output" ] && [ "$rofi_save_method" = "$lang_copy_clipboard" ]; then
-    grimshot copy output
+    grimblast copy output
 elif [ "$rofi_scr_type" = "$lang_scr_output" ] && [ "$rofi_save_method" = "$lang_save_png" ]; then
-    grimshot save output "$filepath"
+    grimblast save output "$filepath"
 elif [ "$rofi_scr_type" = "$lang_scr_output" ] && [ "$rofi_save_method" = "$lang_save_jpg" ]; then
-    grimshot save output "$filepath"
+    grimblast save output "$filepath"
 fi
