@@ -8,6 +8,14 @@
       "--update-input"
       "nixpkgs"
       "--print-build-logs"
+
+      # Update the lock file manually because i dont know what im doing
+      "&&"
+      "cd"
+      "/home/dastarruer/.dotfiles"
+      "nix flake update"
+      "/home/dastarruer/bin/commit_dotfiles.sh"
+      "\"Update lock file\""
     ];
     dates = "02:00";
     randomizedDelaySec = "45min";
