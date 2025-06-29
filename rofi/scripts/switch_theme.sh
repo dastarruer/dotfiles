@@ -44,7 +44,7 @@ wal --theme "$WAL" --contrast 4.5
 
 # Symlink a bunch of files
 ln -sf $HOME/.cache/wal/zathurarc $HOME/.config/zathura/zathurarc
-ln -sf $HOME/.cache/wal/colors-spicetify.ini $HOME/.config/spicetify/Themes/Onepunch/color.ini
+# ln -sf $HOME/.cache/wal/colors-spicetify.ini $HOME/.config/spicetify/Themes/Onepunch/color.ini
 ln -sf $HOME/.cache/wal/dunstrc $HOME/.config/dunstrc
 
 # Restart Dunst to apply changes
@@ -65,9 +65,10 @@ sed -i "s/^gtk-theme-name=.*/gtk-theme-name=$GTK/" ~/.config/gtk-3.0/settings.in
 
 # Optionally send a reload signal to xfsettingsd if you're on XFCE
 killall -SIGUSR1 xfsettingsd 2>/dev/null
+
 # Update Obsidian
 notify-send -t 500 "Updating Obsidian..."
 sed -i "s/\"cssTheme\": *\"[^\"]*\"/\"cssTheme\": \"$OBSIDIAN\"/" ~/Documents/vault/.obsidian/appearance.json
-flatpak kill md.obsidian.Obsidian && flatpak run md.obsidian.Obsidian & disown
+pkill -f obsidian/app.asar && obsidian & disown
 
 source ~/.config/fish/config.fish
