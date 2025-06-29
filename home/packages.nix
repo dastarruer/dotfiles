@@ -32,7 +32,8 @@
     yazi
     rustfmt
 
-    # TODO: Get screenshots working
+    # Screenshots
+    # TODO: Add ocr screenshots
     tesseract
     grimblast
     imagemagick
