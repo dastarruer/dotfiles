@@ -44,7 +44,7 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
           "!fallback-x11"
         ];
       };
-apps
+
       # It bothers me about this everytime I start sober so here
       "org.vinegarhq.Sober" = {
         filesystems = [
