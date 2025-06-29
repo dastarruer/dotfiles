@@ -27,31 +27,34 @@ lang_saved="Screenshot saved to file"
 #     rofi -dmenu -p "screenshot" -lines 5
 # ) || exit 2
 # Remove the delay because i dont want it
-rofi_delay="⏰ Delay: 0s"
+rofi_delay="⏰ Delay: 1s"
 
 rofi_scr_type=$(
-    printf "%s\n%s\n"  "$lang_scr_fragment" "$lang_scr_whole" "$lang_scr_window" "$lang_scr_output"|
-    rofi -dmenu -p "screenshot" -lines 2
+    printf "%s\n%s\n" "$lang_scr_fragment" "$lang_scr_whole" "$lang_scr_window" "$lang_scr_output" |
+        rofi -dmenu -p "screenshot" -lines 2
 ) || exit 4
 
 rofi_save_method=$(
     printf "%s\n%s\n%s\n" "$lang_copy_clipboard" "$lang_save_png" "$lang_save_jpg" |
-    rofi -dmenu -p "screenshot" -lines 3
+        rofi -dmenu -p "screenshot" -lines 3
 ) || exit 3
+
+delay() {
+    if [ "$rofi_delay" = "$lang_delay 1s" ]; then
+        notify-send "waiting" "1s"
+        sleep 1
+    elif [ "$rofi_delay" = "$lang_delay 3s" ]; then
+        sleep 3
+    elif [ "$rofi_delay" = "$lang_delay 5s" ]; then
+        sleep 5
+    elif [ "$rofi_delay" = "$lang_delay 10s" ]; then
+        sleep 10
+    fi
+}
 
 #if [ "$rofi_scr_type" = "$lang_scr_fragment" ]; then
 #    screen_fragment=$(slop --highlight --tolerance=0 --color=0.3,0.4,0.6,0.4 -n -f '-g %g ')
 #fi
-
-if [ "$rofi_delay" = "$lang_delay 1s" ]; then
-    sleep 1
-elif [ "$rofi_delay" = "$lang_delay 3s" ]; then
-    sleep 3
-elif [ "$rofi_delay" = "$lang_delay 5s" ]; then
-    sleep 5
-elif [ "$rofi_delay" = "$lang_delay 10s" ]; then
-    sleep 10
-fi
 
 # check if the file should be saved as jpg or png, set "$filepath" accordingly
 filename="Screenshot $(date '+%Y-%m-%d, %R:%S')"
@@ -73,15 +76,18 @@ elif [ "$rofi_scr_type" = "$lang_scr_fragment" ] && [ "$rofi_save_method" = "$la
     grimblast save area "$filepath"
 elif [ "$rofi_scr_type" = "$lang_scr_fragment" ] && [ "$rofi_save_method" = "$lang_save_jpg" ]; then
     grimblast save area "$filepath"
-    
+
 # Fullscreen screenshot
 # save: grimblast save screen "$filepath"
 # copy: grimblast copy screen
 elif [ "$rofi_scr_type" = "$lang_scr_whole" ] && [ "$rofi_save_method" = "$lang_copy_clipboard" ]; then
+    delay
     grimblast copy screen
 elif [ "$rofi_scr_type" = "$lang_scr_whole" ] && [ "$rofi_save_method" = "$lang_save_png" ]; then
+    dleay
     grimblast save screen "$filepath"
 elif [ "$rofi_scr_type" = "$lang_scr_whole" ] && [ "$rofi_save_method" = "$lang_save_jpg" ]; then
+    delay
     grimblast save screen "$filepath"
 # Window Screenshot
 # save: grimblast save window "$filepath"
