@@ -34,7 +34,11 @@
 
     # TODO: Get screenshots working
     tesseract
-    satty
+    grimblast
+    imagemagick
+    slop
+    ffcast
+    xsel
 
     # FONTS
     font-awesome
