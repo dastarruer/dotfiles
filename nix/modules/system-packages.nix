@@ -7,7 +7,7 @@
   environment.systemPackages = with pkgs; [
     libnotify
 
-    # Git push fails if this is not a system package instead of a user one
+    # Git push fails if this is not a system package instead of a user one;
     gh
   ];
 
