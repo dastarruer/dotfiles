@@ -2,15 +2,9 @@
   lib,
   config,
   ...
-}: let
-in {
+}: {
   imports = [
-    ./home/fish.nix
-    ./home/firefox.nix
-    ./home/flatpak.nix
-    ./home/spicetify.nix
-    ./home/packages.nix
-    ./home/symlinks.nix
+    ./home/default.nix
   ];
 
   # Set up user
