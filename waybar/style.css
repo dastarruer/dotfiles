@@ -1,8 +1,9 @@
+@import url("file:///home/dastarruer/.cache/wal/colors-waybar.css");
+
 /* ================================ */
 /*            Common CSS            */
 /* ================================ */
 * {
-  /* `otf-font-awesome` is required to be installed for icons */
   padding: 0;
   margin: 0;
   min-height: 0;
@@ -13,9 +14,8 @@
   box-shadow: none;
 }
 
-/* the whole window */
 window#waybar {
-  color: #fff4d2;
+  color: @foreground;
   background: none;
 }
 
@@ -48,9 +48,9 @@ window#waybar.hidden {
   font-family: JetBrainsMono Nerd Font Propo;
   font-size: 16px;
   font-weight: 800;
-  color: #202020;
-  background: #202020;
-  border: 3px solid #202020;
+  color: @background;
+  background: @background;
+  border: 3px solid @background;
   border-radius: 3px;
 }
 
@@ -72,7 +72,7 @@ window#waybar.hidden {
 }
 
 #custom-rofi {
-  background: #83a598;
+  background: @color6;
   padding: 0 6px;
 }
 
@@ -84,120 +84,118 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-  color: #fff4d2;
+  color: @foreground;
   padding: 0 4px;
   margin: 0px 3px;
   min-width: 25px;
 }
 
 #workspaces button:hover {
-  background: #d3869b;
+  background: @color5;
 }
 
 #workspaces button.visible {
-  background: #8ec07c;
+  background: @color2;
 }
 
 #workspaces button.visible:hover {
-  background: #8ec07c;
+  background: @color2;
 }
 
 #workspaces button.active {
-  background: #8ec07c;
+  background: @color2;
 }
 
 #workspaces button.active:hover {
-  background: #8ec07c;
+  background: @color2;
 }
 
 #workspaces button.urgent {
-  background: #ea6962;
+  background: @color1;
 }
 
 /* ================================ */
-/*            window                 */
+/*            window                */
 /* ================================ */
-
 #window {
-  color: #d3869b;
+  color: @color5;
 }
 
 /* ================================ */
-/*            tray                 */
+/*            tray                  */
 /* ================================ */
-
 #tray {
   padding: 0 6px 0 6px;
 }
 
 /* ================================ */
-/*            disk                 */
+/*            disk                  */
 /* ================================ */
-
 #disk {
-  color: #ea6962;
+  color: @color1;
 }
 
 /* ================================ */
-/*            cpu                  */
+/*            cpu                   */
 /* ================================ */
 #cpu {
-  color: #e78a4e;
+  color: @color3;
 }
 
 /* ================================ */
-/*            temp                  */
+/*         temperature              */
 /* ================================ */
 #temperature {
-  color: #d8a657;
+  color: @color3;
 }
 
 #temperature.critical {
-  color: #cc241d;
+  color: @color1;
 }
 
 /* ================================ */
-/*            backlight             */
+/*           backlight              */
 /* ================================ */
 #backlight {
-  color: #f6c657;
+  color: @color3;
 }
 
 /* ================================ */
-/*            memory                */
+/*           memory                 */
 /* ================================ */
 #custom-memory {
-  color: #458588;
+  color: @color4;
 }
 
 /* ================================ */
-/*         pulseaudio               */
+/*          pulseaudio              */
 /* ================================ */
 #pulseaudio {
-  color: #83a598;
+  color: @color6;
 }
 
 #pulseaudio.muted {
-  color: #ea6962;
+  color: @color1;
 }
 
 /* ================================ */
-/*            battery               */
+/*           battery                */
 /* ================================ */
 #battery {
-  color: #689d6a;
+  color: @color10;
 }
 
 #battery.critical {
-  color: #cc241d;
+  color: @color1;
 }
 
 #battery.warning {
-  color: #e78a4e;
+  color: @color3;
 }
+
 /* ================================ */
 /*            clock                 */
 /* ================================ */
 #clock {
-  color: #8ec07c;
+  color: @color2;
 }
