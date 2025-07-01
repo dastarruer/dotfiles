@@ -11,12 +11,12 @@
       enable = true;
 
       # Set the theme of plymouth
-      theme = "circle_hud";
+      theme = "cuts_alt";
 
       themePackages = with pkgs; [
         # Use an override so it doesn't install every theme
         (adi1090x-plymouth-themes.override {
-          selected_themes = ["circle_hud"];
+          selected_themes = ["cuts_alt"];
         })
       ];
     };
