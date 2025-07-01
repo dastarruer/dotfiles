@@ -6,8 +6,14 @@
 
   # Bootloader.
   boot = {
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+    loader = {
+      # Set a timeout of 0 so it skips the nix generation menu entirely
+      timeout = 0;
+
+      # Enable systemd boot which
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
 
     # Silent Boot
     # https://wiki.archlinux.org/title/Silent_boot
@@ -22,5 +28,9 @@
       # Remove blinking cursor on console
       "vt.global_cursor_default=0"
     ];
+
+    # https://discourse.nixos.org/t/removing-persistent-boot-messages-for-a-silent-boot/14835
+    consoleLogLevel = 0;
+    initrd.verbose = false;
   };
 }
