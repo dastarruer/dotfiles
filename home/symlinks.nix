@@ -69,10 +69,5 @@
         config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/.dotfiles/yazi";
     };
-    ".config/zathura" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/zathura";
-    };
   };
 }
