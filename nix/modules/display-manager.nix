@@ -1,7 +1,5 @@
 {...}: {
   services.displayManager = {
-    defaultSession = "hyprland-uwsm";
-
     # SDDM is compatible with wayland and hyprland so im not using lightdm
     sddm = {
       wayland.enable = true;
@@ -20,4 +18,7 @@
       };
     };
   };
+
+  # Autologin me so i dont get login prompt on boot
+  services.getty.autologinUser = "dastarruer";
 }
