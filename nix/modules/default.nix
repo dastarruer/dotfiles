@@ -2,7 +2,7 @@
   imports = [
     ./users.nix
     ./locale.nix
-    ./bootloader.nix
+    ./boot.nix
     ./audio.nix
     ./hyprland.nix
     ./display-manager.nix
