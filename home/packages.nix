@@ -6,8 +6,6 @@
   home.packages = with pkgs; [
     starship
     vesktop
-    pywal16
-    pywalfox-native
     anki-bin
     flatpak
     vscode-fhs
@@ -40,6 +38,10 @@
     slop
     ffcast
     xsel
+
+    # because i cant be bothered to put it in the config js run pywalfox install to install pywalfox and yh thats it
+    pywal16
+    pywalfox-native
 
     # FONTS
     font-awesome
