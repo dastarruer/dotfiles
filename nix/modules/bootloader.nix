@@ -8,6 +8,7 @@
   boot = {
     loader = {
       # Set a timeout of 0 so it skips the nix generation menu entirely
+      # If you're having issues: https://github.com/NixOS/nixpkgs/issues/266147
       timeout = 0;
 
       # Enable systemd boot which
