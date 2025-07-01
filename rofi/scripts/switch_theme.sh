@@ -46,6 +46,7 @@ wal --theme "$WAL" --contrast 4.5
 ln -sfn $HOME/.cache/wal/zathurarc $HOME/.config/zathura/zathurarc
 # ln -sf $HOME/.cache/wal/colors-spicetify.ini $HOME/.config/spicetify/Themes/Onepunch/color.ini
 ln -sfn $HOME/.cache/wal/dunstrc $HOME/.config/dunstrc
+ln -sfn $HOME/.cache/wal/theme.toml $HOME/.config/yazi/theme.toml
 
 # Restart Dunst to apply changes
 DUNST_CONFIG="$HOME/.cache/wal/dunstrc"
