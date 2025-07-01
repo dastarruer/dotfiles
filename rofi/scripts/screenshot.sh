@@ -9,6 +9,7 @@ lang_scr_whole="📷 Screenshot of whole screen (all monitors)"
 lang_scr_fragment="📷 Screenshot of selected region"
 lang_scr_window="📷 Screenshot of selected Window"
 lang_scr_output="📷 Screenshot of current monitor"
+lang_scr_ocr="📄 OCR Screenshot of selected region"
 
 lang_delay="⏰ Delay:"
 lang_nodelay="🕰 No delay"
@@ -30,14 +31,23 @@ lang_saved="Screenshot saved to file"
 rofi_delay="⏰ Delay: 1s"
 
 rofi_scr_type=$(
-    printf "%s\n%s\n" "$lang_scr_fragment" "$lang_scr_whole" "$lang_scr_window" "$lang_scr_output" |
-        rofi -dmenu -p "screenshot" -lines 2
+    printf "%s\n%s\n%s\n%s\n%s\n" \
+        "$lang_scr_fragment" \
+        "$lang_scr_whole" \
+        "$lang_scr_window" \
+        "$lang_scr_output" \
+        "$lang_scr_ocr" |
+        rofi -dmenu -p "screenshot" -lines 5
 ) || exit 4
 
-rofi_save_method=$(
-    printf "%s\n%s\n%s\n" "$lang_copy_clipboard" "$lang_save_png" "$lang_save_jpg" |
-        rofi -dmenu -p "screenshot" -lines 3
-) || exit 3
+# Only ask for save method if not OCR
+if [ "$rofi_scr_type" != "$lang_scr_ocr" ]; then
+    rofi_save_method=$(
+        printf "%s\n%s\n%s\n" "$lang_copy_clipboard" "$lang_save_png" "$lang_save_jpg" |
+            rofi -dmenu -p "screenshot" -lines 3
+    ) || exit 3
+fi
+
 
 delay() {
     if [ "$rofi_delay" = "$lang_delay 1s" ]; then
@@ -107,4 +117,26 @@ elif [ "$rofi_scr_type" = "$lang_scr_output" ] && [ "$rofi_save_method" = "$lang
     grimblast save output "$filepath"
 elif [ "$rofi_scr_type" = "$lang_scr_output" ] && [ "$rofi_save_method" = "$lang_save_jpg" ]; then
     grimblast save output "$filepath"
+
+elif [ "$rofi_scr_type" = "$lang_scr_ocr" ]; then
+    # Temporary screenshot
+    temp_ocr_img="/tmp/ocr_capture.png"
+
+    grimblast save area "$temp_ocr_img"
+
+    if [ -f "$temp_ocr_img" ]; then
+        # Run OCR with tesseract
+        ocr_text=$(tesseract "$temp_ocr_img" stdout 2>/dev/null)
+
+        # Copy to clipboard
+        if command -v xsel &>/dev/null; then
+            echo "$ocr_text" | xsel --clipboard --input
+        elif command -v xclip &>/dev/null; then
+            echo "$ocr_text" | xclip -selection clipboard
+        fi
+
+        notify-send "OCR complete" "Text copied to clipboard"
+    else
+        notify-send "OCR failed" "No image captured"
+    fi
 fi
