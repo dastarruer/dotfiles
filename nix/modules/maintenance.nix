@@ -21,13 +21,15 @@
   # Remove unused generations
   nix.gc = {
     automatic = true;
-    dates = "00:01";
-    options = "--delete-older-than 10d";
+    dates = "03:00";
+
+    # Very rarely do i rollback so here ig... will speed up boot too
+    options = "--delete-older-than 2d";
   };
 
   # Remove unused packages
   nix.optimise = {
     automatic = true;
-    dates = ["05:00"];
+    dates = ["04:00"];
   };
 }
