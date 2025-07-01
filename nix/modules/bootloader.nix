@@ -1,4 +1,9 @@
 {...}: {
+  # Acheive faster reboot times by making sure services can only take up to ten seconds to shut down
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
+
   # Bootloader.
   boot = {
     loader.systemd-boot.enable = true;
