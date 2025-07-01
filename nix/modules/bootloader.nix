@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   # Acheive faster reboot times by making sure services can only take up to ten seconds to shut down
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=10s
@@ -6,6 +6,22 @@
 
   # Bootloader.
   boot = {
+    # Spalsh screen
+    plymouth = {
+      enable = true;
+
+      # Set the theme of plymouth
+      theme = "circle_hud";
+
+      themePackages = with pkgs; [
+        # Use an override so it doesn't install every theme
+        (adi1090x-plymouth-themes.override {
+          selected_themes = ["circle_hud"];
+        })
+      ];
+    };
+
+    # Bootloader
     loader = {
       # Set a timeout of 0 so it skips the nix generation menu entirely
       # If you're having issues: https://github.com/NixOS/nixpkgs/issues/266147
