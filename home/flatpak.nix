@@ -8,6 +8,7 @@ and then just take the link that it gives you.
 Example: flatpak run net.ankiweb.Anki
 error: app/net.ankiweb.Anki/x86_64/master not installed
 */
+# NOTE FOR NOW STYLIX ISNT PLAYING NICE WITH THIS SO MANUALLY INSTALL THE APPS LISTED BELOWC
 {inputs, ...}: {
   # Import flatpak home manager module
   imports = [
