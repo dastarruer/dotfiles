@@ -47,7 +47,7 @@
     ".config/wal" = {
       source =
         config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/wal";
+        "${config.home.homeDirectory}/.dotfiles/pywal";
     };
     ".config/rofi" = {
       source =
