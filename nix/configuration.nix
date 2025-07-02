@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -27,6 +31,11 @@
 
   # Brightness
   hardware.brillo.enable = true;
+
+  stylix.enable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+  stylix.targets.gtk.enable = false;
+  # stylix.targets.plymouth.enable = false;
 
   # Home manager
   home-manager = {

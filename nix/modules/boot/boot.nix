@@ -11,14 +11,14 @@
       enable = true;
 
       # Set the theme of plymouth
-      theme = "cuts_alt";
+      # theme = "cuts_alt";
 
-      themePackages = with pkgs; [
-        # Use an override so it doesn't install every theme
-        (adi1090x-plymouth-themes.override {
-          selected_themes = ["cuts_alt"];
-        })
-      ];
+      # themePackages = with pkgs; [
+      #   # Use an override so it doesn't install every theme
+      #   (adi1090x-plymouth-themes.override {
+      #     selected_themes = ["cuts_alt"];
+      #   })
+      # ];
     };
 
     # Bootloader

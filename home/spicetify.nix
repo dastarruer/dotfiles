@@ -44,9 +44,9 @@ in {
       marketplace
     ];
 
-    theme = spicePkgs.themes.onepunch;
+    # theme = spicePkgs.themes.onepunch;
 
-    colorScheme = "dark";
+    # colorScheme = "dark";
 
     wayland = true;
   };

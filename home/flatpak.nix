@@ -49,8 +49,8 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
       "org.vinegarhq.Sober" = {
         filesystems = [
           # Deny default filesystem access
-          "!host"
-          "!home"
+          # "!host"
+          # "!home"
 
           # Explicitly allow access to these paths
           "xdg-run/app/com.discordapp.Discord:create"
