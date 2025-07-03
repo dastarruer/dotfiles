@@ -37,10 +37,10 @@
     # pywalfox-native
 
     # FONTS
-    font-awesome
-    nerd-fonts._3270
-    nerd-fonts.jetbrains-mono
-    fira-code
+    # font-awesome
+    # nerd-fonts._3270
+    # nerd-fonts.jetbrains-mono
+    # fira-code
   ];
 
   # Enable programs here so that stylix can configure them
