@@ -9,8 +9,8 @@
     targets.plymouth.enable = false;
 
     # Cursor settings
-    cursor.package = pkgs.bibata-cursors;
-    cursor.name = "Bibata-Modern-Ice";
+    cursor.package = pkgs.capitaine-cursors-themed;
+    cursor.name = "Capitaine Cursors (Gruvbox)";
     cursor.size = 24;
 
     fonts = {
