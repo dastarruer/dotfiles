@@ -8,5 +8,6 @@
     ./symlinks.nix
     ./zathura.nix
     ./kitty.nix
+    ./fastfetch.nix
   ];
 }

@@ -16,7 +16,6 @@
     localsend
     git
     gh
-    fastfetch
     zoxide
     cargo
     fzf
@@ -44,7 +43,7 @@
   programs = {
     home-manager.enable = true;
 
-    # Fish stuff
+    # Shell stuff
     starship.enable = true;
     zoxide.enable = true;
   };
