@@ -48,8 +48,6 @@
   programs = {
     home-manager.enable = true;
 
-    zathura.enable = true;
-
     # Fish stuff
     starship.enable = true;
     zoxide.enable = true;
