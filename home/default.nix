@@ -6,5 +6,7 @@
     ./packages.nix
     ./spicetify.nix
     ./symlinks.nix
+    ./zathura.nix
+    ./kitty.nix
   ];
 }

@@ -13,7 +13,6 @@
     firefox
     obsidian
 
-    kitty
     git
     gh
     fastfetch

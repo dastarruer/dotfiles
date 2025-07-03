@@ -34,11 +34,11 @@
         config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/.dotfiles/hypr";
     };
-    ".config/kitty" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/kitty";
-    };
+    # ".config/kitty" = {
+    #   source =
+    #     config.lib.file.mkOutOfStoreSymlink
+    #     "${config.home.homeDirectory}/.dotfiles/kitty";
+    # };
     ".config/neofetch" = {
       source =
         config.lib.file.mkOutOfStoreSymlink
