@@ -12,7 +12,6 @@
     xfce.thunar
     firefox
     obsidian
-    gruvbox-gtk-theme
 
     kitty
     git
