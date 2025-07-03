@@ -13,6 +13,7 @@
     firefox
     obsidian
     gruvbox-gtk-theme
+
     kitty
     git
     gh
@@ -30,12 +31,8 @@
     rustfmt
 
     # Screenshots
-    # TODO: Add ocr screenshots
     tesseract
     grimblast
-    imagemagick
-    slop
-    ffcast
 
     # because i cant be bothered to put it in the config js run pywalfox install to install pywalfox and yh thats it
     pywal16
