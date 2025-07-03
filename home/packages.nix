@@ -35,7 +35,7 @@
 
     # because i cant be bothered to put it in the config js run pywalfox install to install pywalfox and yh thats it
     pywal16
-    pywalfox-native
+    # pywalfox-native
 
     # FONTS
     font-awesome
@@ -43,4 +43,15 @@
     nerd-fonts.jetbrains-mono
     fira-code
   ];
+
+  # Enable programs here so that stylix can configure them
+  programs = {
+    home-manager.enable = true;
+
+    zathura.enable = true;
+
+    # Fish stuff
+    starship.enable = true;
+    zoxide.enable = true;
+  };
 }

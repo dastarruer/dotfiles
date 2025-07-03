@@ -10,6 +10,7 @@
     plymouth = {
       enable = true;
 
+      # DISABLED BECAUSE STYLIX
       # Set the theme of plymouth
       # theme = "cuts_alt";
 

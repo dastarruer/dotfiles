@@ -138,4 +138,7 @@ in {
       };
     };
   };
+
+  # Tell stylix to style this profile
+  stylix.targets.firefox.profileNames = ["${firefox-profile}"];
 }
