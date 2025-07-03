@@ -12,7 +12,8 @@
     xfce.thunar
     firefox
     obsidian
-
+    todoist-electron
+    localsend
     git
     gh
     fastfetch
@@ -32,15 +33,11 @@
     tesseract
     grimblast
 
+    # Apps
+
     # because i cant be bothered to put it in the config js run pywalfox install to install pywalfox and yh thats it
     pywal16
     # pywalfox-native
-
-    # FONTS
-    # font-awesome
-    # nerd-fonts._3270
-    # nerd-fonts.jetbrains-mono
-    # fira-code
   ];
 
   # Enable programs here so that stylix can configure them
