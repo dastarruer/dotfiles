@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # CONFIG
-SAVE_DIR=$(xdg-user-dir PICTURES)
+SAVE_DIR="$HOME/Pictures"
 # END CONFIG
 
 # LANGUAGE STRINGS
