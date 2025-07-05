@@ -11,5 +11,6 @@
     ./fastfetch.nix
     ./dunst.nix
     ./git.nix
+    ./starship.nix
   ];
 }

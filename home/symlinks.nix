@@ -54,11 +54,11 @@
         config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/.dotfiles/rofi";
     };
-    ".config/starship" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/starship";
-    };
+    # ".config/starship" = {
+    #   source =
+    #     config.lib.file.mkOutOfStoreSymlink
+    #     "${config.home.homeDirectory}/.dotfiles/starship";
+    # };
     ".config/waybar" = {
       source =
         config.lib.file.mkOutOfStoreSymlink
