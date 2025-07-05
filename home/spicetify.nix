@@ -21,6 +21,9 @@ in {
       hidePodcasts
       shuffle
       loopyLoop
+      seekSong
+      powerBar
+      betterGenres
     ];
 
     # CSS snippets to make spotify look even better
