@@ -5,7 +5,7 @@
     iconTheme = {
       package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
-      size = "96x96"; # Matches your icon size range
+      size = "96x96";
     };
 
     settings = {
