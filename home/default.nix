@@ -9,5 +9,6 @@
     ./zathura.nix
     ./kitty.nix
     ./fastfetch.nix
+    ./dunst.nix
   ];
 }

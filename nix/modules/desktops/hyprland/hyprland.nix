@@ -19,7 +19,6 @@
   # Hyprland packages needed
   environment.systemPackages = with pkgs; [
     waybar
-    dunst
     rofi-wayland
     swww # Wallpaper daemon (might switch to hyprpaper later)
 
