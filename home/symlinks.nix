@@ -17,11 +17,11 @@
     #     config.lib.file.mkOutOfStoreSymlink
     #     "${config.home.homeDirectory}/.dotfiles/gitconfig/.gitconfig";
     # };
-    ".gitignore_global" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/gitconfig/.gitignore_global";
-    };
+    # ".gitignore_global" = {
+    #   source =
+    #     config.lib.file.mkOutOfStoreSymlink
+    #     "${config.home.homeDirectory}/.dotfiles/gitconfig/.gitignore_global";
+    # };
     "Pictures/wallpapers" = {
       source =
         config.lib.file.mkOutOfStoreSymlink
