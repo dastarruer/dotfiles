@@ -49,11 +49,11 @@
         config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/.dotfiles/pywal";
     };
-    ".config/rofi" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/rofi";
-    };
+    # ".config/rofi" = {
+    #   source =
+    #     config.lib.file.mkOutOfStoreSymlink
+    #     "${config.home.homeDirectory}/.dotfiles/rofi";
+    # };
     # ".config/starship" = {
     #   source =
     #     config.lib.file.mkOutOfStoreSymlink

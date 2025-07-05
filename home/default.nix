@@ -12,5 +12,6 @@
     ./dunst.nix
     ./git.nix
     ./starship.nix
+    ./rofi.nix
   ];
 }

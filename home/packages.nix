@@ -43,7 +43,6 @@
     home-manager.enable = true;
 
     # Shell stuff
-    starship.enable = true;
     zoxide.enable = true;
   };
 }
