@@ -5,18 +5,18 @@ SAVE_DIR=$(xdg-user-dir PICTURES)
 # END CONFIG
 
 # LANGUAGE STRINGS
-lang_scr_whole="📷 Screenshot of whole screen (all monitors)"
-lang_scr_fragment="📷 Screenshot of selected region"
-lang_scr_window="📷 Screenshot of selected Window"
-lang_scr_output="📷 Screenshot of current monitor"
-lang_scr_ocr="📄 OCR Screenshot of selected region"
+lang_scr_whole="📷 screen"
+lang_scr_fragment="📷 region"
+lang_scr_window="📷 window"
+lang_scr_output="📷 monitor"
+lang_scr_ocr="📄 ocr"
 
 lang_delay="⏰ Delay:"
 lang_nodelay="🕰 No delay"
 
-lang_save_png="🖼️ Save as png"
-lang_save_jpg="🖼️ Save as jpg"
-lang_copy_clipboard="🖼️ Copy to clipboard"
+lang_save_png="🖼️ png"
+lang_save_jpg="🖼️ jpg"
+lang_copy_clipboard="🖼️ clipboard"
 
 lang_copied="Screenshot copied to clipboard"
 lang_saved="Screenshot saved to file"
