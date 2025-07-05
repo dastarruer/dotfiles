@@ -14,7 +14,6 @@
     obsidian
     todoist-electron
     localsend
-    git
     gh
     zoxide
     cargo

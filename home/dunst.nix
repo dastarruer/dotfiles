@@ -10,7 +10,7 @@
 
     settings = {
       global = {
-        # Font & Appearance
+        # Appearance
         format = "<b>%s</b>\n%b";
         alignment = "center";
         word_wrap = true;

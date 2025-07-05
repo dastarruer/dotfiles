@@ -10,5 +10,6 @@
     ./kitty.nix
     ./fastfetch.nix
     ./dunst.nix
+    ./git.nix
   ];
 }

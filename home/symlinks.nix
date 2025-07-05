@@ -12,11 +12,11 @@
         config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/.dotfiles/bashrc/.bashrc";
     };
-    ".gitconfig" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/gitconfig/.gitconfig";
-    };
+    # ".gitconfig" = {
+    #   source =
+    #     config.lib.file.mkOutOfStoreSymlink
+    #     "${config.home.homeDirectory}/.dotfiles/gitconfig/.gitconfig";
+    # };
     ".gitignore_global" = {
       source =
         config.lib.file.mkOutOfStoreSymlink
