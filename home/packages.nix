@@ -21,7 +21,6 @@
     playerctl
     nixd
     alejandra
-    btop
     python3
     ffmpeg
     yazi
@@ -35,8 +34,7 @@
   # Enable programs here so that stylix can configure them
   programs = {
     home-manager.enable = true;
-
-    # Shell stuff
+    btop.enable = true;
     zoxide.enable = true;
   };
 }
