@@ -30,12 +30,6 @@
     # Screenshots
     tesseract
     grimblast
-
-    # Apps
-
-    # because i cant be bothered to put it in the config js run pywalfox install to install pywalfox and yh thats it
-    pywal16
-    # pywalfox-native
   ];
 
   # Enable programs here so that stylix can configure them
