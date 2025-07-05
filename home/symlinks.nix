@@ -39,16 +39,16 @@
     #     config.lib.file.mkOutOfStoreSymlink
     #     "${config.home.homeDirectory}/.dotfiles/kitty";
     # };
-    ".config/neofetch" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/neofetch";
-    };
-    ".config/wal" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/pywal";
-    };
+    # ".config/neofetch" = {
+    #   source =
+    #     config.lib.file.mkOutOfStoreSymlink
+    #     "${config.home.homeDirectory}/.dotfiles/neofetch";
+    # };
+    # ".config/wal" = {
+    #   source =
+    #     config.lib.file.mkOutOfStoreSymlink
+    #     "${config.home.homeDirectory}/.dotfiles/pywal";
+    # };
     # ".config/rofi" = {
     #   source =
     #     config.lib.file.mkOutOfStoreSymlink
