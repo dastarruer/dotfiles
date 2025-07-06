@@ -96,6 +96,8 @@
       };
 
       "$mainMod" = "SUPER";
+      "$terminal" = "kitty";
+      "$menu" = "rofi -show drun";
 
       bind = [
         "$mainMod, RETURN, exec, $terminal"
