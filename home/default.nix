@@ -13,7 +13,6 @@
     ./git.nix
     ./starship.nix
     ./rofi.nix
-    ./yazi.nix
     ./waybar.nix
   ];
 }
