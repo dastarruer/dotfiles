@@ -29,11 +29,11 @@
     };
 
     # .config files
-    ".config/hypr" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/hypr";
-    };
+    # ".config/hypr" = {
+    #   source =
+    #     config.lib.file.mkOutOfStoreSymlink
+    #     "${config.home.homeDirectory}/.dotfiles/hypr";
+    # };
     # ".config/kitty" = {
     #   source =
     #     config.lib.file.mkOutOfStoreSymlink

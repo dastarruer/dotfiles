@@ -14,5 +14,7 @@
     ./starship.nix
     ./rofi.nix
     ./waybar.nix
+    ./hyprland.nix
+    ./hyprlock.nix
   ];
 }
