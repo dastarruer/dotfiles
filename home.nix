@@ -21,12 +21,4 @@
     # I couldn't tell you what this does but oh well
     stateVersion = "22.11";
   };
-
-  programs = {
-    home-manager.enable = true;
-
-    # Fish stuff
-    starship.enable = true;
-    zoxide.enable = true;
-  };
 }

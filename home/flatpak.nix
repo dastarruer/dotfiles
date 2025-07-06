@@ -8,6 +8,7 @@ and then just take the link that it gives you.
 Example: flatpak run net.ankiweb.Anki
 error: app/net.ankiweb.Anki/x86_64/master not installed
 */
+# NOTE FOR NOW STYLIX ISNT PLAYING NICE WITH THIS SO MANUALLY INSTALL THE APPS LISTED BELOWC
 {inputs, ...}: {
   # Import flatpak home manager module
   imports = [
@@ -27,8 +28,6 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
     # Add packages here
     packages = [
       "flathub:app/org.vinegarhq.Sober/x86_64/stable"
-      "flathub:app/com.todoist.Todoist/x86_64/stable"
-      "flathub:app/org.localsend.localsend_app/x86_64/stable"
     ];
 
     overrides = {
@@ -49,8 +48,8 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
       "org.vinegarhq.Sober" = {
         filesystems = [
           # Deny default filesystem access
-          "!host"
-          "!home"
+          # "!host"
+          # "!home"
 
           # Explicitly allow access to these paths
           "xdg-run/app/com.discordapp.Discord:create"
@@ -58,33 +57,31 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
         ];
       };
 
-      "com.todoist.Todoist" = {
-        # Enable x11 support for todoist since it doesn't use wayland
-        sockets = [
-          "x11"
-          "!wayland"
-          "!fallback-x11"
-        ];
+      # "com.todoist.Todoist" = {
+      #   # Enable x11 support for todoist since it doesn't use wayland
+      #   sockets = [
+      #     "x11"
+      #     "!wayland"
+      #     "!fallback-x11"
+      #   ];
 
-        # disabled for now
-        # environment = {
-        #   OZONE_PLATFORM_HINT = null;
-        # };
-      };
-
-      "md.obsidian.Obsidian" = {
-        # Enable wayland support for obsidian
-        sockets = [
-          "wayland"
-          "!x11"
-          "!fallback-x11"
-        ];
-
-        # Disabled for now but its here js in case...
-        # environment = {
-        #   OZONE_PLATFORM_HINT = "auto";
-        # };
-      };
+      # disabled for now
+      # environment = {
+      #   OZONE_PLATFORM_HINT = null;
+      # };
     };
+
+    # "md.obsidian.Obsidian" = {
+    #   # Enable wayland support for obsidian
+    #   sockets = [
+    #     "wayland"
+    #     "!x11"
+    #     "!fallback-x11"
+    #   ];
+
+    # Disabled for now but its here js in case...
+    # environment = {
+    #   OZONE_PLATFORM_HINT = "auto";
+    # };
   };
 }

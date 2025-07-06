@@ -16,6 +16,7 @@
 
     # Set aliases
     shellAliases = {
+      cat = "bat";
       chx = "chmod +x";
       pr = "python3 main.py";
       ps = "sudo auto-cpufreq --force powersave";

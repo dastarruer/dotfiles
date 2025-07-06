@@ -12,40 +12,30 @@
     xfce.thunar
     firefox
     obsidian
-    zathura
-    gruvbox-gtk-theme
-    kitty
-    git
+    todoist-electron
+    localsend
     gh
-    fastfetch
     zoxide
     cargo
     fzf
     playerctl
     nixd
     alejandra
-    btop
     python3
     ffmpeg
     yazi
     rustfmt
 
     # Screenshots
-    # TODO: Add ocr screenshots
     tesseract
     grimblast
-    imagemagick
-    slop
-    ffcast
-
-    # because i cant be bothered to put it in the config js run pywalfox install to install pywalfox and yh thats it
-    pywal16
-    pywalfox-native
-
-    # FONTS
-    font-awesome
-    nerd-fonts._3270
-    nerd-fonts.jetbrains-mono
-    fira-code
   ];
+
+  # Enable programs here so that stylix can configure them
+  programs = {
+    home-manager.enable = true;
+    btop.enable = true;
+    yazi.enable = true;
+    zoxide.enable = true;
+  };
 }

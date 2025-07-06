@@ -21,6 +21,9 @@ in {
       hidePodcasts
       shuffle
       loopyLoop
+      seekSong
+      powerBar
+      betterGenres
     ];
 
     # CSS snippets to make spotify look even better
@@ -44,9 +47,9 @@ in {
       marketplace
     ];
 
-    theme = spicePkgs.themes.onepunch;
+    # theme = spicePkgs.themes.onepunch;
 
-    colorScheme = "dark";
+    # colorScheme = "dark";
 
     wayland = true;
   };
