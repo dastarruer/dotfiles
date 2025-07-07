@@ -13,6 +13,7 @@
     firefox
     obsidian
     todoist-electron
+    musescore
     localsend
     gh
     zoxide
