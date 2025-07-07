@@ -15,7 +15,6 @@
     obsidian
     todoist-electron
     musescore
-    localsend
     vesktop
     anki-bin
 
