@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   # Allow fonts
   fonts.fontconfig.enable = true;
 
@@ -29,6 +33,7 @@
     alejandra
     ffmpeg
     rustfmt
+    inputs.hyprsession-nix.packages.${system}.default
   ];
 
   # Enable programs here so that stylix can configure them

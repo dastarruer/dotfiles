@@ -13,14 +13,15 @@
       exec-once = [
         "waybar"
         "swww-daemon"
+        "hyprsession"
 
         # Start apps
-        "todoist-electron"
-        "obsidian"
-        "anki"
-        "spotify"
-        "firefox"
-        "code"
+        # "todoist-electron"
+        # "obsidian"
+        # "anki"
+        # "spotify"
+        # "firefox"
+        # "code"
 
         # Start clipboard manager
         "wl-paste --type text --watch cliphist store"

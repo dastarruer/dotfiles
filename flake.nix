@@ -13,6 +13,7 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprsession-nix.url = "github:dastarruer/hyprsession-nix";
     stylix.url = "github:danth/stylix";
   };
 
