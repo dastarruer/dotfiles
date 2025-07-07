@@ -4,10 +4,7 @@
 
   # User specific packages
   home.packages = with pkgs; [
-    starship
-    vesktop
-    anki-bin
-    flatpak
+    # Apps
     vscode-fhs
     xfce.thunar
     firefox
@@ -15,21 +12,23 @@
     todoist-electron
     musescore
     localsend
+    vesktop
+    anki-bin
+
+    # Screenshots
+    tesseract
+    grimblast
+
+    # Other
     gh
-    zoxide
+    flatpak
     cargo
     fzf
     playerctl
     nixd
     alejandra
-    python3
     ffmpeg
-    yazi
     rustfmt
-
-    # Screenshots
-    tesseract
-    grimblast
   ];
 
   # Enable programs here so that stylix can configure them
