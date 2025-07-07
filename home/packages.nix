@@ -33,7 +33,6 @@
     alejandra
     ffmpeg
     rustfmt
-    inputs.hyprsession-nix.packages.${system}.default
   ];
 
   # Enable programs here so that stylix can configure them
