@@ -46,6 +46,23 @@ in {
         bitwarden
       ];
 
+      # Set up containers
+      containersForce = true;
+      containers = {
+        personal = {
+          name = "personal";
+          color = "turquoise";
+          icon = "pet";
+          id = 1;
+        };
+        school = {
+          name = "school";
+          color = "orange";
+          icon = "dollar";
+          id = 2;
+        };
+      };
+
       # Declare a bunch of settings which I've stolen from here (https://github.com/gvolpe/nix-config/blob/6feb7e4f47e74a8e3befd2efb423d9232f522ccd/home/programs/browsers/firefox.nix)
       settings = {
         # USER JS OVERRIDES
