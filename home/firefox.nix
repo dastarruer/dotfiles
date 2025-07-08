@@ -13,23 +13,6 @@
   };
 
   betterfoxUserjs = builtins.readFile "${betterfoxGit}/user.js";
-
-  # And then I'm adding these overrides to the user js
-  myOverrides = ''
-    // OVERRIDES
-    user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-    user_pref("sidebar.revamp", false);
-    user_pref("svg.context-properties.content.enabled", true);
-    user_pref("layout.css.has-selector.enabled", true);
-    user_pref("browser.urlbar.suggest.calculator", true);
-    user_pref("browser.urlbar.unitConversion.enabled", true);
-    user_pref("browser.urlbar.trimHttps", true);
-    user_pref("browser.urlbar.trimURLs", true);
-    user_pref("widget.gtk.rounded-bottom-corners.enabled", true);
-    user_pref("widget.gtk.ignore-bogus-leave-notify", 1);
-  '';
-
-  mergedUserJs = "${betterfoxUserjs}\n${myOverrides}";
 in {
   home.file = {
     # Fetch firefox theme (https://www.reddit.com/r/NixOS/comments/1f5wbjd/installing_a_complex_user_css_for_firefox/)
@@ -42,7 +25,7 @@ in {
     };
 
     # Symlink user js
-    ".mozilla/firefox/${firefox-profile}/user.js".text = mergedUserJs;
+    ".mozilla/firefox/${firefox-profile}/user.js".text = betterfoxUserjs;
   };
 
   programs.firefox = {
@@ -65,6 +48,18 @@ in {
 
       # Declare a bunch of settings which I've stolen from here (https://github.com/gvolpe/nix-config/blob/6feb7e4f47e74a8e3befd2efb423d9232f522ccd/home/programs/browsers/firefox.nix)
       settings = {
+        # USER JS OVERRIDES
+        "sidebar.revamp" = false;
+        "svg.context-properties.content.enabled" = true;
+        "layout.css.has-selector.enabled" = true;
+        "browser.urlbar.suggest.calculator" = true;
+        "browser.urlbar.unitConversion.enabled" = true;
+        "browser.urlbar.trimHttps" = true;
+        "browser.urlbar.trimURLs" = true;
+        "widget.gtk.rounded-bottom-corners.enabled" = true;
+        "widget.gtk.ignore-bogus-leave-notify" = 1;
+
+        # OTHER
         # Disable remote experimentation and telemetry
         "app.normandy.first_run" = false; # Don't run Normandy experiments on first run
         "app.shield.optoutstudies.enabled" = false; # Disable Shield studies (user experiments)
@@ -93,7 +88,7 @@ in {
         "browser.shell.checkDefaultBrowser" = false;
 
         # Load new tabs in background (instead of switching to them immediately)
-        # "browser.tabs.loadInBackground" = true;
+        "browser.tabs.loadInBackground" = false;
 
         # Disable quick actions in address bar (e.g., “open settings” shortcut)
         "browser.urlbar.quickactions.enabled" = false;

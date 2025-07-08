@@ -8,6 +8,9 @@
     libnotify
     bat
 
+    # I need to look cool at all times
+    cmatrix
+
     # Git push fails if this is not a system package instead of a user one;
     gh
   ];
