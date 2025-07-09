@@ -6,6 +6,7 @@
       window-title-home-tilde = true;
       statusbar-basename = true;
       selection-clipboard = "clipboard";
+      restore-session = true;
     };
   };
 }
