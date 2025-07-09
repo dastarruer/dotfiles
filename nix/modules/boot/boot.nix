@@ -44,6 +44,9 @@
 
       # Remove blinking cursor on console
       "vt.global_cursor_default=0"
+
+      # Enable deep sleep
+      "mem_sleep_default=deep"
     ];
 
     # https://discourse.nixos.org/t/removing-persistent-boot-messages-for-a-silent-boot/14835
