@@ -1,8 +1,5 @@
 # Check here (https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265) for more stuff
 {inputs, ...}: let
-  # Firefox theme that I will use
-  firefox-theme = "https://github.com/cascadefox/cascade";
-
   # Folder under which all firefox stuff goes
   firefox-profile = "default";
 
@@ -15,14 +12,6 @@
   betterfoxUserjs = builtins.readFile "${betterfoxGit}/user.js";
 in {
   home.file = {
-    # Fetch firefox theme (https://www.reddit.com/r/NixOS/comments/1f5wbjd/installing_a_complex_user_css_for_firefox/)
-    ".mozilla/firefox/${firefox-profile}/chrome" = {
-      source = "${builtins.fetchGit {
-        url = firefox-theme;
-        rev = "f8c6bb5a36f24aba61995204ff5497c865e78e50";
-      }}/chrome";
-      recursive = true;
-    };
 
     # Symlink user js
     ".mozilla/firefox/${firefox-profile}/user.js".text = betterfoxUserjs;

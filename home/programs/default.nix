@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./fastfetch.nix
-    ./firefox.nix
+    ./firefox
     ./git.nix
     ./kitty.nix
     ./rofi.nix
