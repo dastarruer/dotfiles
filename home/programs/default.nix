@@ -8,6 +8,6 @@
     ./spicetify.nix
     ./zathura.nix
     ./dunst.nix
-    ./waybar.nix
+    ./waybar
   ];
 }
