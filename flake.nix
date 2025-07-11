@@ -14,6 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix.url = "github:danth/stylix";
+
+    # Microcode updates
+    ucodenix = {
+      url = "github:e-tho/ucodenix";
+    };
   };
 
   outputs = inputs @ {

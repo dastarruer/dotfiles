@@ -8,6 +8,9 @@
 
     # Import home manager
     inputs.home-manager.nixosModules.home-manager
+
+    # Microcode updates (check flake for url)
+    inputs.ucodenix.nixosModules.default
   ];
 
   # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
@@ -27,6 +30,14 @@
 
   # Brightness
   hardware.brillo.enable = true;
+
+  # Microcode updates (might as well yk)
+  services.ucodenix = {
+    enable = true;
+
+    # Specify cpu id to process only my cpu's thingamabob
+    cpuModelId = "00A50F00";
+  };
 
   # Home manager
   home-manager = {
