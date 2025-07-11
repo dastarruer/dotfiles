@@ -9,5 +9,6 @@
     ./zathura.nix
     ./dunst.nix
     ./waybar
+    ./hyprland
   ];
 }

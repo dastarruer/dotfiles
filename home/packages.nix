@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   # Allow fonts
   fonts.fontconfig.enable = true;
 
