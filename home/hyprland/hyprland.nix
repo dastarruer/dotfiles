@@ -13,6 +13,7 @@
       exec-once = [
         "waybar"
         "swww-daemon"
+        "nm-applet"
 
         # Start apps
         "todoist-electron"
