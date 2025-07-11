@@ -4,7 +4,7 @@
   ...
 }: {
   # Declare a bunch of extensinos
-  profiles.${firefox-profile} = {
+  programs.firefox.profiles.${firefox-profile} = {
     extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
       ublock-origin
       sponsorblock
