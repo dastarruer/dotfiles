@@ -1,9 +1,11 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  theme = "gruvbox-dark-hard";
+in {
   stylix = {
     enable = true;
 
     # Set the color theme
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
 
     # Disable plymouth support
     targets.plymouth.enable = false;
