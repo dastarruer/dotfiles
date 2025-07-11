@@ -1,20 +1,12 @@
 {...}: {
   imports = [
-    ./firefox.nix
-    ./fish.nix
+    ./hyprland
+    ./programs
+    ./shell
+
+    # Has trouble with stylix, so i cant be bothered to fix it
     # ./flatpak.nix
     ./packages.nix
-    ./spicetify.nix
     ./symlinks.nix
-    ./zathura.nix
-    ./kitty.nix
-    ./fastfetch.nix
-    ./dunst.nix
-    ./git.nix
-    ./starship.nix
-    ./rofi.nix
-    ./waybar.nix
-    ./hyprland.nix
-    ./hyprlock.nix
   ];
 }

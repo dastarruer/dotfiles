@@ -70,17 +70,17 @@
     "cpu-microcodes": {
       "flake": false,
       "locked": {
-        "lastModified": 1750520697,
-        "narHash": "sha256-8ahYpUXyNnHqd2X7p5CDXP/1BjvCsP8Xd1PhUZAKIG0=",
+        "lastModified": 1735409317,
+        "narHash": "sha256-08yRkyEKk94ax8KfqRFsffXH8J6DCOCE7vKLvHORWZM=",
         "owner": "platomav",
         "repo": "CPUMicrocodes",
-        "rev": "c57c0f3a605f69ccad10153a95f61f5c5851ec15",
+        "rev": "ec5200961ecdf78cf00e55d73902683e835edefd",
         "type": "github"
       },
       "original": {
         "owner": "platomav",
         "repo": "CPUMicrocodes",
-        "rev": "c57c0f3a605f69ccad10153a95f61f5c5851ec15",
+        "rev": "ec5200961ecdf78cf00e55d73902683e835edefd",
         "type": "github"
       }
     },
@@ -287,6 +287,7 @@
     },
     "root": {
       "inputs": {
+        "cpu-microcodes": "cpu-microcodes",
         "firefox-addons": "firefox-addons",
         "flatpaks": "flatpaks",
         "home-manager": "home-manager",
@@ -460,7 +461,9 @@
     },
     "ucodenix": {
       "inputs": {
-        "cpu-microcodes": "cpu-microcodes"
+        "cpu-microcodes": [
+          "cpu-microcodes"
+        ]
       },
       "locked": {
         "lastModified": 1750690291,

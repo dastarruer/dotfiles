@@ -12,6 +12,13 @@
         config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/.dotfiles/bashrc/.bashrc";
     };
+    "Pictures/wallpapers" = {
+      source =
+        config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/.dotfiles/wallpapers";
+    };
+
+    # UNUSED
     # ".gitconfig" = {
     #   source =
     #     config.lib.file.mkOutOfStoreSymlink
@@ -22,11 +29,6 @@
     #     config.lib.file.mkOutOfStoreSymlink
     #     "${config.home.homeDirectory}/.dotfiles/gitconfig/.gitignore_global";
     # };
-    "Pictures/wallpapers" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/wallpapers";
-    };
 
     # .config files
     # ".config/hypr" = {
