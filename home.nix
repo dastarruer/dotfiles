@@ -21,4 +21,7 @@
     # I couldn't tell you what this does but oh well
     stateVersion = "22.11";
   };
+
+  # Disable stylix configuration for waybar
+  stylix.targets.waybar.enable = false;
 }

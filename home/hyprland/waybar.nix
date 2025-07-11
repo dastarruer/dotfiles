@@ -68,8 +68,7 @@
           active-only = false;
           all-outputs = true;
           warp-on-scroll = false;
-          format = "{icon}";
-          format-icons = {default = "";};
+          format = "{name}";
         };
 
         "hyprland/window" = {
