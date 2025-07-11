@@ -1,4 +1,4 @@
-{firefox-profile, ...}: let
+{firefoxProfile, ...}: let
   betterfoxGit = builtins.fetchGit {
     url = "https://github.com/yokoffing/Betterfox";
     rev = "82553f016744f0eb0528f8d92c3eb30ef9a1f6c4";
@@ -9,12 +9,12 @@
 in {
   # Symlink user js
   home.file = {
-    ".mozilla/firefox/${firefox-profile}/user.js".text = betterfoxUserjs;
+    ".mozilla/firefox/${firefoxProfile}/user.js".text = betterfoxUserjs;
   };
 
   # Declare settings and overrides, most of which I've stolen from here:
   # https://github.com/gvolpe/nix-config/blob/6feb7e4f47e74a8e3befd2efb423d9232f522ccd/home/programs/browsers/firefox.nix
-  programs.firefox.profiles.${firefox-profile} = {
+  programs.firefox.profiles.${firefoxProfile} = {
     settings = {
       # USER JS OVERRIDES
       "sidebar.revamp" = false;

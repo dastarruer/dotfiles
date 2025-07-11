@@ -1,5 +1,5 @@
-{firefox-profile, ...}: {
-  programs.firefox.profiles.${firefox-profile} = {
+{firefoxProfile, ...}: {
+  programs.firefox.profiles.${firefoxProfile} = {
     # Set up containers
     containersForce = true;
     containers = {
