@@ -16,8 +16,14 @@
     stylix.url = "github:danth/stylix";
 
     # Microcode updates
+    # Since my bios doesnt have the security patch, pin it to this specific version
+    cpu-microcodes = {
+      url = "github:platomav/CPUMicrocodes/ec5200961ecdf78cf00e55d73902683e835edefd";
+      flake = false;
+    };
     ucodenix = {
       url = "github:e-tho/ucodenix";
+      inputs.cpu-microcodes.follows = "cpu-microcodes";
     };
   };
 

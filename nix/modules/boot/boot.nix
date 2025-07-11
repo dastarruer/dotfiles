@@ -47,6 +47,9 @@
 
       # Enable deep sleep
       "mem_sleep_default=deep"
+
+      # Disable checksum verification of microcode updates or something do you really care?
+      "microcode.amd_sha_check=off"
     ];
 
     # https://discourse.nixos.org/t/removing-persistent-boot-messages-for-a-silent-boot/14835
