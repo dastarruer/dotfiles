@@ -1,8 +1,10 @@
 {...}: {
   imports = [
-    ./dunst.nix
-    ./hyprland.nix
+    ./source
     ./hyprlock.nix
-    ./waybar.nix
   ];
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+  };
 }
