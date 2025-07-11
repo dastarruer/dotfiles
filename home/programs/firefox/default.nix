@@ -2,21 +2,7 @@
 {inputs, ...}: let
   # Folder under which all firefox stuff goes
   firefox-profile = "default";
-
-  # Basically I'm taking the betterfox user js here
-  betterfoxGit = builtins.fetchGit {
-    url = "https://github.com/yokoffing/Betterfox";
-    rev = "82553f016744f0eb0528f8d92c3eb30ef9a1f6c4";
-  };
-
-  betterfoxUserjs = builtins.readFile "${betterfoxGit}/user.js";
 in {
-  home.file = {
-
-    # Symlink user js
-    ".mozilla/firefox/${firefox-profile}/user.js".text = betterfoxUserjs;
-  };
-
   programs.firefox = {
     enable = true;
 
@@ -52,7 +38,7 @@ in {
         };
       };
 
-      # Declare a bunch of settings which I've stolen from here (https://github.com/gvolpe/nix-config/blob/6feb7e4f47e74a8e3befd2efb423d9232f522ccd/home/programs/browsers/firefox.nix)
+      # Declare settings which I've stolen from here (https://github.com/gvolpe/nix-config/blob/6feb7e4f47e74a8e3befd2efb423d9232f522ccd/home/programs/browsers/firefox.nix)
       settings = {
         # USER JS OVERRIDES
         "sidebar.revamp" = false;

@@ -2,8 +2,8 @@
   # Firefox theme that I will use
   firefox-theme = "https://github.com/cascadefox/cascade";
 in {
+  # Fetch firefox theme (https://www.reddit.com/r/NixOS/comments/1f5wbjd/installing_a_complex_user_css_for_firefox/)
   home.file = {
-    # Fetch firefox theme (https://www.reddit.com/r/NixOS/comments/1f5wbjd/installing_a_complex_user_css_for_firefox/)
     ".mozilla/firefox/${firefox-profile}/chrome" = {
       source = "${builtins.fetchGit {
         url = firefox-theme;
