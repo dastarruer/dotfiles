@@ -7,56 +7,22 @@
 }: let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 in {
-  # Import the spicetify home manager module
+  # Import the spicetify home manager module and other files
   imports = [
     inputs.spicetify-nix.homeManagerModules.spicetify
+
+    ./extensions.nix
+    ./snippets.nix
+    ./theme.nix
   ];
 
   programs.spicetify = {
     enable = true;
 
-    # Extensions
-    enabledExtensions = with spicePkgs.extensions; [
-      adblockify
-      hidePodcasts
-      shuffle
-      loopyLoop
-      seekSong
-      powerBar
-      betterGenres
-    ];
-
-    # CSS snippets to make spotify look even better
-    enabledSnippets = with spicePkgs.snippets; [
-      disableRecommendations
-      smoothPlaylistRevealGradient
-      disableRecommendations
-      pointer
-      modernScrollbar
-      hideDownloadButton
-      hideFriendActivityButton
-      roundedButtons
-      removeTopSpacing
-      hideFullScreenButton
-      hideMiniPlayerButton
-      roundedImages
-    ];
-
     # Custom apps
     enabledCustomApps = with spicePkgs.apps; [
       marketplace
     ];
-
-    theme = {
-      name = "Gruvify";
-
-      src = pkgs.fetchFromGitHub {
-        owner = "Skaytacium";
-        repo = "Gruvify";
-        rev = "main";
-        sha256 = "sha256-9KBA7ettPHjh7CH1QSuwbeLJCh2cdHXFghZeywVtRlI=";
-      };
-    };
 
     wayland = true;
   };
