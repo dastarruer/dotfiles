@@ -3,6 +3,13 @@
   # Folder under which all firefox stuff goes
   firefoxProfile = "default";
 in {
+  imports = [
+    ./containers.nix
+    ./extensions.nix
+    ./settings.nix
+    ./theme.nix
+  ];
+
   programs.firefox = {
     enable = true;
   };
