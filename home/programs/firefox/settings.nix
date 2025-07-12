@@ -101,6 +101,9 @@ in {
 
       # Auto-enable extensions
       "extensions.autoDisableScopes" = 0;
+
+      # Disable alt menu
+      "ui.key.menuAccessKeyFocuses" = false;
     };
   };
 }
