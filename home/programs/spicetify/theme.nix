@@ -3,11 +3,6 @@
   inputs,
   ...
 }: {
-  # Import the spicetify home manager module
-  imports = [
-    inputs.spicetify-nix.homeManagerModules.spicetify
-  ];
-
   # Spicetify themes
   programs.spicetify.theme = {
     name = "Gruvify";
