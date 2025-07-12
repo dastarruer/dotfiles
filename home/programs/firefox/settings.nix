@@ -1,4 +1,6 @@
-{firefoxProfile, ...}: let
+{...}: let
+  firefoxProfile = "default";
+
   betterfoxGit = builtins.fetchGit {
     url = "https://github.com/yokoffing/Betterfox";
     rev = "82553f016744f0eb0528f8d92c3eb30ef9a1f6c4";

@@ -1,4 +1,7 @@
-{firefoxProfile, ...}: {
+{...}: let
+  # Folder under which all firefox stuff goes
+  firefoxProfile = "default";
+in {
   programs.firefox.profiles.${firefoxProfile} = {
     # Set up containers
     containersForce = true;

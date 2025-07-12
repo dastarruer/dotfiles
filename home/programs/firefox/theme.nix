@@ -1,6 +1,8 @@
-{firefoxProfile, ...}: let
+{...}: let
   # Firefox theme that I will use
   firefoxTheme = "https://github.com/cascadefox/cascade";
+
+  firefoxProfile = "default";
 in {
   # Fetch firefox theme (https://www.reddit.com/r/NixOS/comments/1f5wbjd/installing_a_complex_user_css_for_firefox/)
   home.file = {
