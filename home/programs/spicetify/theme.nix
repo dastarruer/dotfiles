@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   # Spicetify themes
   programs.spicetify.theme = {
     name = "Gruvify";
