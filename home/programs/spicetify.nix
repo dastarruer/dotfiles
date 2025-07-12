@@ -3,9 +3,12 @@
 {
   pkgs,
   inputs,
+  config,
+  lib,
   ...
 }: let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+  colors = config.lib.stylix.colors;
 in {
   # Import the spicetify home manager module
   imports = [
@@ -47,9 +50,16 @@ in {
       marketplace
     ];
 
-    # theme = spicePkgs.themes.onepunch;
+    theme = {
+      name = "Gruvify";
 
-    # colorScheme = "dark";
+      src = pkgs.fetchFromGitHub {
+        owner = "Skaytacium";
+        repo = "Gruvify";
+        rev = "main";
+        sha256 = "sha256-9KBA7ettPHjh7CH1QSuwbeLJCh2cdHXFghZeywVtRlI=";
+      };
+    };
 
     wayland = true;
   };

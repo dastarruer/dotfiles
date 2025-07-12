@@ -22,6 +22,9 @@
     stateVersion = "22.11";
   };
 
-  # Disable stylix configuration for waybar
-  stylix.targets.waybar.enable = false;
+  # Disable stylix configuration for certain apps
+  stylix.targets = {
+    spicetify.enable = false;
+    waybar.enable = false;
+  };
 }
