@@ -4,11 +4,9 @@
   pkgs,
   inputs,
   config,
-  lib,
   ...
 }: let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
-  colors = config.lib.stylix.colors;
 in {
   # Import the spicetify home manager module
   imports = [
