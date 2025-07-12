@@ -5,7 +5,7 @@
     ./git.nix
     ./kitty.nix
     ./rofi.nix
-    ./spicetify.nix
+    ./spicetify
     ./zathura.nix
     ./dunst.nix
     ./waybar
