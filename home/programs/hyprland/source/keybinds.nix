@@ -60,7 +60,7 @@
       "$mainMod, T, exec, ~/bin/switch_theme.sh"
       "$mainMod, B, exec, ~/bin/airpods.sh"
       "$mainMod, E, exec, ~/bin/power.sh"
-      "$mainMod, A, exec, ~/bin/wifi.sh"
+      # "$mainMod, A, exec, ~/bin/wifi.sh"
       "$mainMod, W, exec, pkill waybar && waybar &"
       "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
       ", Print, exec, ~/bin/screenshot.sh"
