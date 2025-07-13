@@ -44,6 +44,8 @@
         # Appearance
         "workbench.iconTheme" = "material-icon-theme";
         "workbench.colorTheme" = "Gruvbox Dark Medium";
+        "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'Fira code', monospace";
+        "editor.fontSize" = "15";
 
         # Global formatting settings
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
