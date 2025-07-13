@@ -1,4 +1,11 @@
 {pkgs, ...}: {
+  # Packages to be used alongside vscode
+  home.packages = with pkgs; [
+    nixd
+    alejandra
+    rustfmt
+  ];
+
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;

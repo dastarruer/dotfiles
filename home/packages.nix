@@ -23,10 +23,7 @@
     cargo
     fzf
     playerctl
-    nixd
-    alejandra
     ffmpeg
-    rustfmt
   ];
 
   # Enable programs here so that stylix can configure them
