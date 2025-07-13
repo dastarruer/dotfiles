@@ -22,5 +22,6 @@
   stylix.targets = {
     spicetify.enable = false;
     waybar.enable = false;
+    vscode.enable = false;
   };
 }

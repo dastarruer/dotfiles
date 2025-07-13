@@ -5,7 +5,7 @@
 
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
-        # Language support
+        # LSPs
         jnoortheen.nix-ide
         rust-lang.rust-analyzer
 
@@ -14,17 +14,16 @@
         esbenp.prettier-vscode
         foxundermoon.shell-format
 
+        # Appearance
+        pkief.material-icon-theme
+        jdinhlife.gruvbox
+
         # Other
         aaron-bond.better-comments
         usernamehw.errorlens
       ];
 
       userSettings = {
-        "files.autoSave" = "afterDelay";
-        "editor.wordWrap" = "bounded";
-        "editor.autoClosingQuotes" = "always";
-        "editor.autoClosingBrackets" = "always";
-
         # File explorer settings
         "explorer.confirmDelete" = false;
         "explorer.confirmDragAndDrop" = false;
@@ -40,6 +39,11 @@
         "workbench.sideBar.location" = "right";
         "workbench.activityBar.location" = "top";
         "workbench.statusBar.visible" = false;
+        "editor.minimap.enabled" = false;
+
+        # Appearance
+        "workbench.iconTheme" = "material-icon-theme";
+        "workbench.colorTheme" = "Gruvbox Dark Medium";
 
         # Global formatting settings
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
@@ -47,7 +51,17 @@
         "editor.formatOnSave" = true;
         "editor.formatOnType" = true;
 
-        # Language specific formatter settings
+        # Nix specific settings
+        "nix.serverPath" = "nixd";
+        "nix.enableLanguageServer" = true;
+        "nixpkgs" = {
+          "expr" = "import <nixpkgs { }";
+        };
+        "formatting" = {
+          "command" = ["alejandra"];
+        };
+
+        # Language-specific formatter settings
         "[javascript]" = {
           editor.defaultFormatter = "esbenp.prettier-vscode";
         };
@@ -75,6 +89,12 @@
         "[nix]" = {
           editor.defaultFormatter = "kamadorueda.alejandra";
         };
+
+        # Other
+        "files.autoSave" = "afterDelay";
+        "editor.wordWrap" = "bounded";
+        "editor.autoClosingQuotes" = "always";
+        "editor.autoClosingBrackets" = "always";
       };
     };
   };
