@@ -24,12 +24,56 @@
         "editor.wordWrap" = "bounded";
         "editor.autoClosingQuotes" = "always";
         "editor.autoClosingBrackets" = "always";
-        "workbench.sideBar.location" = "right";
-        "explorer.confirmDelete" = false;
 
+        # File explorer settings
+        "explorer.confirmDelete" = false;
+        "explorer.confirmDragAndDrop" = false;
+        "explorer.confirmPasteNative" = false;
+
+        # Terminal settings
+        "terminal.integrated.enableMultiLinePasteWarning" = false;
+
+        # Git
+        "git.openRepositoryInParentFolders" = "always";
+
+        # UI
+        "workbench.sideBar.location" = "right";
+        "workbench.activityBar.location" = "top";
+        "workbench.statusBar.visible" =  false;
+
+        # Global formatting settings
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
         "editor.formatOnPaste" = true;
         "editor.formatOnSave" = true;
+        "editor.formatOnType" = true;
+
+        # Language specific formatter settings
+         "[javascript]" = {
+      editor.defaultFormatter = "esbenp.prettier-vscode";
+    };
+    "[css]" = {
+      editor.defaultFormatter = "esbenp.prettier-vscode";
+    };
+    "[html]" = {
+      editor.defaultFormatter = "esbenp.prettier-vscode";
+    };
+    "[json]" = {
+      editor.defaultFormatter = "esbenp.prettier-vscode";
+    };
+    "[go]" = {
+      editor.defaultFormatter = "golang.go";
+    };
+    "[rust]" = {
+      editor.defaultFormatter = "rust-lang.rust-analyzer";
+    };
+    "[shellscript]" = {
+      editor.defaultFormatter = "foxundermoon.shell-format";
+    };
+    "[ignore]" = {
+      editor.defaultFormatter = "foxundermoon.shell-format";
+    };
+    "[nix]" = {
+      editor.defaultFormatter = "kamadorueda.alejandra";
       };
     };
   };
