@@ -60,6 +60,11 @@
         "formatting" = {
           "command" = ["alejandra"];
         };
+        "options" = {
+          "nixos" = {
+            "expr" = "(builtin.getFlake \"github:dastarruer/dotfiles\").nixosConfigurations.dastarruer.options"; # Change dastarruer to computer name if needed
+          };
+        };
 
         # Language-specific formatter settings
         "[javascript]" = {
