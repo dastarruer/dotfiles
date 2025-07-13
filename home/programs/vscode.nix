@@ -18,6 +18,19 @@
         aaron-bond.better-comments
         usernamehw.errorlens
       ];
+
+      userSettings = {
+        "files.autoSave" = "afterDelay";
+        "editor.wordWrap" = "bounded";
+        "editor.autoClosingQuotes" = "always";
+        "editor.autoClosingBrackets" = "always";
+        "workbench.sideBar.location" = "right";
+        "explorer.confirmDelete" = false;
+
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "editor.formatOnPaste" = true;
+        "editor.formatOnSave" = true;
+      };
     };
   };
 }
