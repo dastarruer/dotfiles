@@ -5,7 +5,6 @@
   # User specific packages
   home.packages = with pkgs; [
     # Apps
-    vscode-fhs
     xfce.thunar
     firefox
     obsidian

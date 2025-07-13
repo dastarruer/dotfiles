@@ -9,6 +9,7 @@
     ./zathura.nix
     ./dunst.nix
     ./waybar
+    ./vscode.nix
     ./hyprland
   ];
 }
