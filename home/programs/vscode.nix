@@ -39,7 +39,7 @@
         # UI
         "workbench.sideBar.location" = "right";
         "workbench.activityBar.location" = "top";
-        "workbench.statusBar.visible" =  false;
+        "workbench.statusBar.visible" = false;
 
         # Global formatting settings
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
@@ -48,32 +48,33 @@
         "editor.formatOnType" = true;
 
         # Language specific formatter settings
-         "[javascript]" = {
-      editor.defaultFormatter = "esbenp.prettier-vscode";
-    };
-    "[css]" = {
-      editor.defaultFormatter = "esbenp.prettier-vscode";
-    };
-    "[html]" = {
-      editor.defaultFormatter = "esbenp.prettier-vscode";
-    };
-    "[json]" = {
-      editor.defaultFormatter = "esbenp.prettier-vscode";
-    };
-    "[go]" = {
-      editor.defaultFormatter = "golang.go";
-    };
-    "[rust]" = {
-      editor.defaultFormatter = "rust-lang.rust-analyzer";
-    };
-    "[shellscript]" = {
-      editor.defaultFormatter = "foxundermoon.shell-format";
-    };
-    "[ignore]" = {
-      editor.defaultFormatter = "foxundermoon.shell-format";
-    };
-    "[nix]" = {
-      editor.defaultFormatter = "kamadorueda.alejandra";
+        "[javascript]" = {
+          editor.defaultFormatter = "esbenp.prettier-vscode";
+        };
+        "[css]" = {
+          editor.defaultFormatter = "esbenp.prettier-vscode";
+        };
+        "[html]" = {
+          editor.defaultFormatter = "esbenp.prettier-vscode";
+        };
+        "[json]" = {
+          editor.defaultFormatter = "esbenp.prettier-vscode";
+        };
+        "[go]" = {
+          editor.defaultFormatter = "golang.go";
+        };
+        "[rust]" = {
+          editor.defaultFormatter = "rust-lang.rust-analyzer";
+        };
+        "[shellscript]" = {
+          editor.defaultFormatter = "foxundermoon.shell-format";
+        };
+        "[ignore]" = {
+          editor.defaultFormatter = "foxundermoon.shell-format";
+        };
+        "[nix]" = {
+          editor.defaultFormatter = "kamadorueda.alejandra";
+        };
       };
     };
   };
