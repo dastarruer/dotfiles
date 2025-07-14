@@ -14,8 +14,15 @@
 
     # Other
     "files.autoSave" = "afterDelay";
+    "files.trimTrailingWhitespace" = true;
+    "files.insertFinalNewline" = true;
     "editor.wordWrap" = "bounded";
     "editor.autoClosingQuotes" = "always";
     "editor.autoClosingBrackets" = "always";
+    "editor.tabSize" = 4;
+    "editor.detectIndentation" = false;
+    "editor.tabCompletion" = "on";
+    "update.mode" = "none";
+    "extensions.ignoreRecommendations" = true;
   };
 }
