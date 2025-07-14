@@ -1,7 +1,6 @@
 {...}: {
-  # Define appearance related settings here
   programs.vscode.profiles.default.userSettings = {
-    # UI
+    # UI Layout & Navigation
     "workbench.sideBar.location" = "right";
     "workbench.activityBar.location" = "hidden";
     "workbench.statusBar.visible" = false;
@@ -12,13 +11,24 @@
     "workbench.tree.renderIndentGuides" = false;
     "workbench.tree.indent" = 16;
     "explorer.decorations.badges" = false;
-    "editor.lightbuld.enabled" = "off";
+
+    # Editor Display & Visuals
+    "editor.lightbuld.enabled" = "off"; # likely meant "lightbulb"
     "editor.guides.indentation" = false;
     "editor.scrollbar.vertical" = "hidden";
     "editor.scrollbar.horizontal" = "hidden";
     "editor.overviewRulerBorder" = false;
     "editor.hideCursorInOverviewRuler" = true;
     "editor.minimap.enabled" = false;
+    "editor.stickyScroll.enabled" = false;
+
+    # Font & Theme
+    "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'Fira code', monospace";
+    "editor.fontSize" = 15;
+    "workbench.iconTheme" = "material-icon-theme";
+    "workbench.colorTheme" = "Gruvbox Dark Medium";
+
+    # Custom Colors
     "workbench.colorCustomizations" = {
       "editorOverviewRuler.wordHighlightStrongForeground" = "#0000";
       "editorOverviewRuler.selectionHighlightForeground" = "#0000";
@@ -33,13 +43,11 @@
       # "editorOverviewRuler.errorForeground" = "#0000";
       "editorOverviewRuler.infoForeground" = "#0000";
       "editorOverviewRuler.border" = "#0000";
+      "sideBar.border" = "#0000";
+      "editorGroup.border" = "#0000";
     };
 
-    # Appearance
-    "workbench.iconTheme" = "material-icon-theme";
-    "workbench.colorTheme" = "Gruvbox Dark Medium";
-    "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'Fira code', monospace";
-    "editor.fontSize" = "15";
+    # Make comments italicized
     "editor.tokenColorCustomizations" = {
       "textMateRules" = {
         "scope" = "comment";
