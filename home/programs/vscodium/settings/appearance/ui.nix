@@ -11,5 +11,6 @@
     "workbench.tree.renderIndentGuides" = false;
     "workbench.tree.indent" = 16;
     "explorer.decorations.badges" = false;
+    "window.menuBarVisibility" = "hidden";
   };
 }
