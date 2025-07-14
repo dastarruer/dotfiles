@@ -1,7 +1,7 @@
 {...}: {
   imports = [
-    ./appearance.nix
-    ./misc.nix
+    ./appearance
     ./formatters
+    ./misc.nix
   ];
 }
