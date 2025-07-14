@@ -19,12 +19,23 @@
     "editor.scrollbar.horizontal" = "hidden";
     "editor.overviewRulerBorder" = false;
     "editor.hideCursorInOverviewRuler" = true;
-    "editor.minimap.enabled" = false;
     "editor.stickyScroll.enabled" = false;
+    "editor.minimap.enabled" = false;
 
-    # Font & Theme
+    # Font
     "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'Fira code', monospace";
     "editor.fontSize" = 15;
+    # Make comments italicized
+    "editor.tokenColorCustomizations" = {
+      "textMateRules" = {
+        "scope" = "comment";
+        "settings" = {
+          "fontStyle" = "italic";
+        };
+      };
+    };
+
+    # Theme
     "workbench.iconTheme" = "material-icon-theme";
     "workbench.colorTheme" = "Gruvbox Dark Medium";
 
@@ -45,16 +56,6 @@
       "editorOverviewRuler.border" = "#0000";
       "sideBar.border" = "#0000";
       "editorGroup.border" = "#0000";
-    };
-
-    # Make comments italicized
-    "editor.tokenColorCustomizations" = {
-      "textMateRules" = {
-        "scope" = "comment";
-        "settings" = {
-          "fontStyle" = "italic";
-        };
-      };
     };
   };
 }
