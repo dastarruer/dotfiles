@@ -2,8 +2,6 @@
   programs.rofi = {
     enable = true;
 
-    # font = "JetBrainsMono Nerd Font Mono 12";
-
     # Specify rofi-wayland because wayland
     package = pkgs.rofi-wayland;
 
@@ -28,8 +26,6 @@
       display-window = " Win";
       drun-display-format = "{icon} {name}";
       window-format = "{w} · {c}";
-      # icon-theme = "Papirus-Dark";
-      # icon-theme = "Tela-circle-dracula";
       kb-row-up = "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
       kb-row-down = "Down,Control+j";
       kb-accept-entry = "Control+m,Return,KP_Enter";
