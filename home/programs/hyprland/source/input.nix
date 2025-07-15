@@ -1,7 +1,10 @@
 {...}: {
   wayland.windowManager.hyprland.settings = {
     input = {
-      kb_layout = "us";
+      # Keyboard layouts
+      kb_layout = "us, es";
+      kb_options = "grp:alt_space_toggle";
+
       repeat_delay = 300;
       repeat_rate = 50;
       follow_mouse = 1;
