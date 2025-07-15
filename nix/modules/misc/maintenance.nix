@@ -28,6 +28,7 @@
   # Remove unused generations
   nix.gc = {
     automatic = true;
+    persistent = true;
     dates = "03:00";
 
     # Very rarely do i rollback so here ig... will speed up boot too
@@ -37,6 +38,7 @@
   # Remove unused packages
   nix.optimise = {
     automatic = true;
+    persistent = true;
     dates = ["04:00"];
   };
 }
