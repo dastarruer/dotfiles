@@ -5,6 +5,10 @@
     enable = true;
     flake = inputs.self.outPath;
     flags = [
+      # Update inputs
+      "--update-input"
+      "nixpkgs"
+
       # Update lock file
       "--recreate-lock-file"
 
