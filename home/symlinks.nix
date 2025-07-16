@@ -1,4 +1,6 @@
-{config, ...}: {
+{config, ...}: let
+  currentTheme = "gruvbox";
+in {
   # Symlink a bunch of files
   home.file = {
     # $HOME files
@@ -15,7 +17,7 @@
     "Pictures/wallpapers" = {
       source =
         config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/wallpapers";
+        "${config.home.homeDirectory}/.dotfiles/wallpapers/${currentTheme}";
     };
 
     # UNUSED
