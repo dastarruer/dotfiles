@@ -6,7 +6,7 @@ in {
 
     # Set the color theme
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
-    image = ../../../wallpapers/gruvbox/wp2137402-oregairu-wallpapers.png;
+    image = ../../../wallpapers/gruvbox/1022291.jpg;
 
     # Disable plymouth support
     targets.plymouth.enable = false;
