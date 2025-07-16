@@ -24,8 +24,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Use an unmerged matugen branch of stylix (https://github.com/nix-community/stylix/pull/892)
     stylix = {
-      url = "github:danth/stylix";
+      url = "github:make-42/stylix/matugen";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
