@@ -10,7 +10,7 @@
     "anki"
     "spotify"
     "firefox"
-    "code"
+    "codium"
 
     # Start clipboard manager
     "wl-paste --type text --watch cliphist store"
