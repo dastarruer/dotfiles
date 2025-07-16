@@ -20,8 +20,8 @@
 
   # Disable stylix configuration for certain apps
   stylix.targets = {
-    spicetify.enable = false;
+    # spicetify.enable = false;
     waybar.enable = false;
-    vscode.enable = false;
+    # vscode.enable = false;
   };
 }

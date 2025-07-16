@@ -2,7 +2,7 @@
   programs.vscode.profiles.default.userSettings = {
     # Theme
     "workbench.iconTheme" = "material-icon-theme";
-    "workbench.colorTheme" = "Gruvbox Dark Hard";
+    # "workbench.colorTheme" = "Gruvbox Dark Hard";
 
     # Custom Colors
     "workbench.colorCustomizations" = {
