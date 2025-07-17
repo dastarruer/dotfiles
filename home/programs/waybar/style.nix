@@ -1,223 +1,173 @@
 {config, ...}: {
-  programs.waybar.style = ''
-    /* ================================ */
-    /*            Stylix Colors         */
-    /* ================================ */
-    @define-color base      #${config.lib.stylix.colors.base00};
-    @define-color mantle    #${config.lib.stylix.colors.base01};
-    @define-color base  #${config.lib.stylix.colors.base02};
-    @define-color surface1  #${config.lib.stylix.colors.base03};
-    @define-color surface2  #${config.lib.stylix.colors.base04};
-    @define-color text      #${config.lib.stylix.colors.base05};
-    @define-color rosewater #${config.lib.stylix.colors.base06};
-    @define-color lavender  #${config.lib.stylix.colors.base07};
-    @define-color red       #${config.lib.stylix.colors.base08};
-    @define-color peach     #${config.lib.stylix.colors.base09};
-    @define-color yellow    #${config.lib.stylix.colors.base0A};
-    @define-color green     #${config.lib.stylix.colors.base0B};
-    @define-color teal      #${config.lib.stylix.colors.base0C};
-    @define-color blue      #${config.lib.stylix.colors.base0D};
-    @define-color mauve     #${config.lib.stylix.colors.base0E};
-    @define-color flamingo  #${config.lib.stylix.colors.base0F};
+  programs.waybar.style = ''    /* -----------------------------------------------------
+     *                      General
+     * ----------------------------------------------------- */
+    /* Colors */
+    @define-color bg0_h rgba(29,32,33,0.85);
+    @define-color bg  #282828;
+    @define-color bg1 #3C3836;
+    @define-color bg2 #504945;
+    @define-color bg3 #665C54;
+    @define-color fg  #EBDBB2;
+    @define-color red #CC241D;
+    @define-color blue #458588;
+    @define-color purple #B16286;
+    @define-color green #98971A;
+    @define-color aqua #689D6A;
+    @define-color yellow #D79921;
+    @define-color orange #D65D0E;
+    @define-color red1 #FB4934;
 
-    /* Global Properties */
     * {
+        font-family: Hack Nerd Font,sans-serif;
+        font-size: 14px;
+        border-radius: 5px;
         border: none;
-        border-radius: 0px;
-        font-family: JetBrainsMono Nerd Font Propo;
-        font-size: 16px;
-        font-weight: 800;
-        min-height: 0;
+        box-shadow: none;
     }
 
+    /* -----------------------------------------------------
+     *                      Tooltip
+     * ----------------------------------------------------- */
+
+    tooltip {
+        background: @bg;
+        border: solid 1px @bg3;
+    }
+    tooltip label {
+        color: @fg;
+    }
+
+    /* -----------------------------------------------------
+     *                      Window
+     * ----------------------------------------------------- */
+
     window#waybar {
-      background-color: transparent;
-      box-shadow: none;
+       /* background-color: rgba(16, 20, 25,0.5); */
+       /* background-color: @bg; */
+        background-color: transparent;
+
+    }
+
+    window#waybar.hidden {
+        opacity: 0.2;
     }
 
     #window {
-        padding-left: 15px;
-        padding-right: 15px;
-        border-radius: 16px;
-        margin-top: 5px;
-        margin-bottom: 5px;
+        color: @fg;
+        padding: 0 5px;
+    }
+
+    button {
+        border: None;
+        padding: 0;
+    }
+    /* -----------------------------------------------------
+     *                  Workspaces
+     * ----------------------------------------------------- */
+
+    #taskbar {
+        background-color: @bg0_h;
+        padding: 0px 0px;
+        margin: 2px 2px 2px 2px;
+    }
+
+    #taskbar button {
+        min-width: 20px;
+        color: @red;
         font-weight: normal;
-        font-style: normal;
+        padding: 0;
+        margin: 3px 3px 3px 3px;
     }
 
-    tooltip {
-        background: @base;
-        border: 2px solid @teal;
-        border-radius: 12px;
-    }
-    tooltip label {
-        color: @text;
-        padding: 6px;
+    #taskbar button.active {
+        color: @red1;
+        background-color: @bg;
     }
 
-    #workspaces {
-        background: @base;
-        margin: 5px;
-        padding: 8px 5px;
-        border-radius: 16px;
-        color: @text;
-    }
-    #workspaces button {
-        font-weight: bold;
-        padding: 0px 5px;
-        margin: 0px 3px;
-        border-radius: 16px;
-        color: transparent;
-        background: @surface2;
-    }
-    #workspaces button.active {
-        font-weight: bold;
-        background-color: @blue;
-        color: @mantle;
-        min-width: 50px;
-        background-size: 400% 400%;
-    }
-    #workspaces button:hover {
-        background-color: @teal;
-        color: @mantle;
-    }
-    #workspaces button.urgent {
-        background-color: @red;
-        color: @mantle;
+    #taskbar button:hover {
+        background-color: @bg1;
     }
 
-    #custom-swaync, #custom-weather {
-        font-weight: bold;
-        background: @base;
-        margin: 5px;
-        padding: 8px 16px;
-        color: @text;
-    }
-    #custom-weather {
-        border-radius: 24px 10px 24px 10px;
-    }
-    #custom-swaync {
-        border-radius: 10px 24px 10px 24px;
+    /* #taskbar button:first-child {
+        border-radius: 5px 0 0 5px;
     }
 
-    #tray, #pulseaudio, #network, #battery, #cpu, #temperature, #custom-colorpicker, #memory, #custom-pacman, #idle_inhibitor,
-    #custom-playerctl.backward, #custom-playerctl.play, #custom-playerctl.foward {
-        background: @base;
-        font-weight: bold;
-        margin: 5px 0px;
+    #taskbar button:last-child {
+        border-radius: 0 5px 5px 0;
+    } */
+
+    /* -----------------------------------------------------
+     *                      Modules
+     * ----------------------------------------------------- */
+
+    #cpu,
+    #memory,
+    #battery,
+    #wireplumber,
+    #tray,
+    #battery.charging,
+    #battery.plugged,
+    #network {
+        background-color: @bg0_h;
+        color: @purple;
+        padding: 0px 15px;
+        margin: 2px 2px 2px 2px;
     }
 
-    #tray, #pulseaudio, #network, #battery {
-        color: @text;
-        border-radius: 10px 24px 10px 24px;
-        padding: 0 20px;
-        margin-left: 7px;
+    /* #network.disconnected {
+        color: @purple;
+    } */
+
+    #tray {
+        background-color: @bg0_h;
+        color: @fg;
+        padding: 0px 15px;
+        margin: 2px 2px 2px 2px;
     }
 
     #clock {
-        color: @text;
-        background: @base;
-        border-radius: 0px 0px 0px 40px;
-        padding: 10px 10px 15px 25px;
-        margin-left: 7px;
-        font-weight: bold;
-        font-size: 14px;
-    }
-
-    #custom-playerctl.backward, #custom-playerctl.play, #custom-playerctl.foward {
-        font-size: 22px;
-    }
-    #custom-playerctl.backward:hover, #custom-playerctl.play:hover, #custom-playerctl.foward:hover {
-        color: @text;
-    }
-    #custom-playerctl.backward {
-        color: @teal;
-        border-radius: 24px 0px 0px 10px;
-        padding-left: 16px;
-        margin-left: 7px;
-    }
-    #custom-playerctl.play {
-        color: @rosewater;
-        padding: 0 5px;
-    }
-    #custom-playerctl.foward {
-        color: @teal;
-        border-radius: 0px 10px 24px 0px;
-        padding-right: 12px;
-        margin-right: 7px;
-    }
-    #custom-playerlabel {
-        background: @base;
-        color: @text;
-        padding: 0 20px;
-        border-radius: 24px 10px 24px 10px;
-        margin: 5px 0;
-        font-weight: bold;
-    }
-
-    #group-utility {
-        padding: 0px 5px;
-        transition: all .3s ease;
-    }
-
-    #custom-launcher {
-        color: @blue;
-        background: @base;
-        margin: 0px 5px 0px 0px;
-        padding: 0px 35px 0px 15px;
-        border-radius: 0px 0px 40px 0px;
-        font-size: 28px;
-    }
-
-    #custom-colorpicker, #cpu, #temperature, #memory, #custom-pacman, #idle_inhibitor {
-        background: @base;
-        font-size: 16px;
-    }
-
-    #cpu {
-        color: @teal;
-        border-radius: 24px 0px 0px 10px;
-        padding-left: 16px;
-        padding-right: 7px;
-        margin-left: 7px;
+        background-color: @bg0_h;
+        color: @orange;
+        padding: 0px 15px;
+        margin: 2px 2px 2px 2px;
     }
 
     #memory {
-        color: @blue;
-    }
-    #temperature {
-        color: @teal;
-    }
-    #custom-pacman {
-        color: @blue;
-    }
-    #idle_inhibitor {
-        color: @text;
-    }
-    #idle_inhibitor.activated {
-        color: @red;
+        background-color: @bg0_h;
+        color: @aqua;
+        padding: 0px 15px;
+        margin: 2px 2px 2px 2px;
     }
 
-    #temperature, #memory, #custom-pacman, #idle_inhibitor {
-        padding-left: 7px;
-        padding-right: 7px;
+    #cpu {
+        background-color: @bg0_h;
+        color: @green;
+        padding: 0px 15px;
+        margin: 2px 2px 2px 2px;
     }
 
-    #custom-colorpicker {
-        color: @teal;
-        border-radius: 0px 10px 24px 0px;
-        padding-right: 12px;
-        padding-left: 7px;
-        margin-right: 7px;
+    #battery {
+        background-color: @bg0_h;
+        color: @yellow;
+        padding: 0px 15px;
+        margin: 2px 2px 2px 2px;
     }
 
-    #custom-expand {
-        background: transparent;
-        color: @text;
-        margin: 1px;
-        font-size: 22px;
-    }
-    #custom-expand:hover {
+    #wireplumber {
+        background-color: @bg0_h;
         color: @blue;
-    } '';
+        padding: 0px 15px;
+        margin: 2px 2px 2px 2px;
+    }
+
+    @keyframes blink {
+        to {
+            background-color: #ffffff;
+            color: #000000;
+        }
+    }
+
+
+  '';
 }
