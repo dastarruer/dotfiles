@@ -16,7 +16,6 @@
 
     flatpaks = {
       url = "github:in-a-dil-emma/declarative-flatpak/dev";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     firefox-addons = {
