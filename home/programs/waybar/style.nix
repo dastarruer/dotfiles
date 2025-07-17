@@ -1,226 +1,227 @@
 {config, ...}: {
   programs.waybar.style = ''
-    /* ================================ */
-    /*            Stylix Colors         */
-    /* ================================ */
-    @define-color base      #${config.lib.stylix.colors.base00};
-    @define-color mantle    #${config.lib.stylix.colors.base01};
-    @define-color surface0  #${config.lib.stylix.colors.base02};
-    @define-color surface1  #${config.lib.stylix.colors.base03};
-    @define-color surface2  #${config.lib.stylix.colors.base04};
-    @define-color text      #${config.lib.stylix.colors.base05};
-    @define-color rosewater #${config.lib.stylix.colors.base06};
-    @define-color lavender  #${config.lib.stylix.colors.base07};
-    @define-color red       #${config.lib.stylix.colors.base08};
-    @define-color peach     #${config.lib.stylix.colors.base09};
-    @define-color yellow    #${config.lib.stylix.colors.base0A};
-    @define-color green     #${config.lib.stylix.colors.base0B};
-    @define-color teal      #${config.lib.stylix.colors.base0C};
-    @define-color blue      #${config.lib.stylix.colors.base0D};
-    @define-color mauve     #${config.lib.stylix.colors.base0E};
-    @define-color flamingo  #${config.lib.stylix.colors.base0F};
+        /* ================================ */
+        /*            Stylix Colors         */
+        /* ================================ */
+        @define-color base      #${config.lib.stylix.colors.base00};
+        @define-color mantle    #${config.lib.stylix.colors.base01};
+        @define-color surface0  #${config.lib.stylix.colors.base02};
+        @define-color surface1  #${config.lib.stylix.colors.base03};
+        @define-color surface2  #${config.lib.stylix.colors.base04};
+        @define-color text      #${config.lib.stylix.colors.base05};
+        @define-color rosewater #${config.lib.stylix.colors.base06};
+        @define-color lavender  #${config.lib.stylix.colors.base07};
+        @define-color red       #${config.lib.stylix.colors.base08};
+        @define-color peach     #${config.lib.stylix.colors.base09};
+        @define-color yellow    #${config.lib.stylix.colors.base0A};
+        @define-color green     #${config.lib.stylix.colors.base0B};
+        @define-color teal      #${config.lib.stylix.colors.base0C};
+        @define-color blue      #${config.lib.stylix.colors.base0D};
+        @define-color mauve     #${config.lib.stylix.colors.base0E};
+        @define-color flamingo  #${config.lib.stylix.colors.base0F};
 
-    /* ================================ */
-    /*            Common CSS            */
-    /* ================================ */
-    * {
-      padding: 0;
-      margin: 0;
-      min-height: 0;
-      border-radius: 0;
-      border: none;
-      text-shadow: none;
-      transition: none;
-      box-shadow: none;
-    }
+        /* Global Properties */
+        * {
+            border: none;
+            border-radius: 0px;
+            font-family: JetBrainsMono Nerd Font Propo;
+            font-size: 16px;
+            font-weight: 800;
+            min-height: 0;
+        }
 
-    /* The whole window */
+        #window {
+            background: @surface0;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: 16px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* window#waybar {
+            background: @surface1;
+        } */
+
+        tooltip {
+            background: @surface0;
+            border: 2px solid @teal;
+            border-radius: 12px;
+        }
+        tooltip label {
+            color: @text;
+            padding: 6px;
+        }
+
+        #workspaces {
+            background: @surface0;
+            margin: 5px;
+            padding: 8px 5px;
+            border-radius: 16px;
+            color: @text;
+        }
+        #workspaces button {
+            font-weight: bold;
+            padding: 0px 5px;
+            margin: 0px 3px;
+            border-radius: 16px;
+            color: transparent;
+            background: @surface2;
+            transition: all 0.3s ease-in-out;
+        }
+        #workspaces button.active {
+            font-weight: bold;
+            background-color: @blue;
+            color: @mantle;
+            min-width: 50px;
+            background-size: 400% 400%;
+        }
+        #workspaces button:hover {
+            background-color: @teal;
+            color: @mantle;
+        }
+        #workspaces button.urgent {
+            background-color: @red;
+            color: @mantle;
+        }
+
+        #custom-swaync, #custom-weather {
+            font-weight: bold;
+            background: @surface0;
+            margin: 5px;
+            padding: 8px 16px;
+            color: @text;
+        }
+        #custom-weather {
+            border-radius: 24px 10px 24px 10px;
+        }
+        #custom-swaync {
+            border-radius: 10px 24px 10px 24px;
+        }
+
+        #tray, #pulseaudio, #network, #battery, #cpu, #temperature, #custom-colorpicker, #memory, #custom-pacman, #idle_inhibitor,
+        #custom-playerctl.backward, #custom-playerctl.play, #custom-playerctl.foward {
+            background: @surface0;
+            font-weight: bold;
+            margin: 5px 0px;
+        }
+
+        #tray, #pulseaudio, #network, #battery {
+            color: @text;
+            border-radius: 10px 24px 10px 24px;
+            padding: 0 20px;
+            margin-left: 7px;
+        }
+
+        #clock {
+            color: @text;
+            background: @surface0;
+            border-radius: 0px 0px 0px 40px;
+            padding: 10px 10px 15px 25px;
+            margin-left: 7px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        #custom-playerctl.backward, #custom-playerctl.play, #custom-playerctl.foward {
+            font-size: 22px;
+        }
+        #custom-playerctl.backward:hover, #custom-playerctl.play:hover, #custom-playerctl.foward:hover {
+            color: @text;
+        }
+        #custom-playerctl.backward {
+            color: @teal;
+            border-radius: 24px 0px 0px 10px;
+            padding-left: 16px;
+            margin-left: 7px;
+        }
+        #custom-playerctl.play {
+            color: @rosewater;
+            padding: 0 5px;
+        }
+        #custom-playerctl.foward {
+            color: @teal;
+            border-radius: 0px 10px 24px 0px;
+            padding-right: 12px;
+            margin-right: 7px;
+        }
+        #custom-playerlabel {
+            background: @surface0;
+            color: @text;
+            padding: 0 20px;
+            border-radius: 24px 10px 24px 10px;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        #group-utility {
+            padding: 0px 5px;
+            transition: all .3s ease;
+        }
+
+        #custom-launcher {
+            color: @blue;
+            background: @surface0;
+            margin: 0px 5px 0px 0px;
+            padding: 0px 35px 0px 15px;
+            border-radius: 0px 0px 40px 0px;
+            font-size: 28px;
+        }
+
+        #custom-colorpicker, #cpu, #temperature, #memory, #custom-pacman, #idle_inhibitor {
+            background: @surface0;
+            font-size: 16px;
+        }
+
+        #cpu {
+            color: @teal;
+            border-radius: 24px 0px 0px 10px;
+            padding-left: 16px;
+            padding-right: 7px;
+            margin-left: 7px;
+        }
+
+        #memory {
+            color: @blue;
+        }
+        #temperature {
+            color: @teal;
+        }
+        #custom-pacman {
+            color: @blue;
+        }
+        #idle_inhibitor {
+            color: @text;
+        }
+        #idle_inhibitor.activated {
+            color: @red;
+        }
+
+        #temperature, #memory, #custom-pacman, #idle_inhibitor {
+            padding-left: 7px;
+            padding-right: 7px;
+        }
+
+        #custom-colorpicker {
+            color: @teal;
+            border-radius: 0px 10px 24px 0px;
+            padding-right: 12px;
+            padding-left: 7px;
+            margin-right: 7px;
+        }
+
+        #custom-expand {
+            background: transparent;
+            color: @text;
+            margin: 1px;
+            font-size: 22px;
+        }
+        #custom-expand:hover {
+            color: @blue;
+        }
     window#waybar {
-      color: @rosewater;
-      background: none;
-    }
-
-    window#waybar.hidden {
-      opacity: 1;
-    }
-
-    #custom-rofi,
-    #workspaces button,
-    #workspaces button:hover,
-    #workspaces button.visible,
-    #workspaces button.visible:hover,
-    #workspaces button.active,
-    #workspaces button.active:hover,
-    #workspaces button.urgent,
-    #window,
-    #tray,
-    #disk,
-    #cpu,
-    #temperature,
-    #temperature.critical,
-    #backlight,
-    #custom-memory,
-    #pulseaudio,
-    #pulseaudio.muted,
-    #battery,
-    #battery.critical,
-    #battery.warning,
-    #clock {
-      font-family: JetBrainsMono Nerd Font Propo;
-      font-size: 16px;
-      font-weight: 800;
-      color: @base;
-      background: @base;
-      border: 3px solid @base;
-      border-radius: 3px;
-    }
-
-    #window,
-    #tray,
-    #disk,
-    #cpu,
-    #temperature,
-    #temperature.critical,
-    #backlight,
-    #custom-memory,
-    #pulseaudio,
-    #pulseaudio.muted,
-    #battery,
-    #battery.critical,
-    #battery.warning,
-    #clock {
-      padding-right: 4px;
-      padding-left: 4px;
-    }
-
-    #custom-rofi {
-      background: @teal;
-      padding: 0 6px;
-    }
-
-    /* ================================ */
-    /*       workspaces module          */
-    /* ================================ */
-    #workspaces {
-      margin: 0px;
-    }
-
-    #workspaces button {
-      color: @rosewater;
-      padding: 0 4px;
-      margin: 0px 3px;
-      min-width: 25px;
-    }
-
-    #workspaces button:hover {
-      background: @mauve;
-    }
-
-    #workspaces button.visible {
-      background: @green;
-    }
-
-    #workspaces button.visible:hover {
-      background: @green;
-    }
-
-    #workspaces button.active {
-      background: @green;
-    }
-
-    #workspaces button.active:hover {
-      background: @green;
-    }
-
-    #workspaces button.urgent {
-      background: @red;
-    }
-
-    /* ================================ */
-    /*            window                */
-    /* ================================ */
-    #window {
-      color: @mauve;
-    }
-
-    /* ================================ */
-    /*            tray                  */
-    /* ================================ */
-    #tray {
-      padding: 0 6px;
-    }
-
-    /* ================================ */
-    /*            disk                  */
-    /* ================================ */
-    #disk {
-      color: @red;
-    }
-
-    /* ================================ */
-    /*            cpu                   */
-    /* ================================ */
-    #cpu {
-      color: @peach;
-    }
-
-    /* ================================ */
-    /*          temperature             */
-    /* ================================ */
-    #temperature {
-      color: @yellow;
-    }
-
-    #temperature.critical {
-      color: @red;
-    }
-
-    /* ================================ */
-    /*          backlight               */
-    /* ================================ */
-    #backlight {
-      color: @yellow;
-    }
-
-    /* ================================ */
-    /*          memory                  */
-    /* ================================ */
-    #custom-memory {
-      color: @blue;
-    }
-
-    /* ================================ */
-    /*         pulseaudio               */
-    /* ================================ */
-    #pulseaudio {
-      color: @teal;
-    }
-
-    #pulseaudio.muted {
-      color: @red;
-    }
-
-    /* ================================ */
-    /*            battery               */
-    /* ================================ */
-    #battery {
-      color: @green;
-    }
-
-    #battery.critical {
-      color: @red;
-    }
-
-    #battery.warning {
-      color: @peach;
-    }
-
-    /* ================================ */
-    /*            clock                 */
-    /* ================================ */
-    #clock {
-      color: @green;
-    }
-
-  '';
+            background: @surface1;
+        }  '';
 }
