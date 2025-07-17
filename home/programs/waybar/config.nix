@@ -34,7 +34,7 @@
       };
 
       "hyprland/window" = {
-        format = "󰣆 {class}";
+        format = "󰣆  {class}";
         separate-outputs = true;
         icon = false;
       };
