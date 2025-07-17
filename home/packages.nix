@@ -18,7 +18,7 @@
     grimblast
 
     # Other
-    eww
+    eww # eww-wayland is deprecated, so use regular eww
     gh
     flatpak
     cargo
