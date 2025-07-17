@@ -18,7 +18,7 @@
     grimblast
 
     # Other
-    eww-wayland
+    eww
     gh
     flatpak
     cargo
