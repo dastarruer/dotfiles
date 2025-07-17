@@ -1,237 +1,106 @@
 {...}: {
-  programs.waybar.settings = [
-    {
-      layer = "top";
-      position = "top";
-      spacing = 0;
-      height = 35;
-      margin-top = 0;
-      margin-right = 0;
-      margin-bottom = 0;
-      margin-left = 0;
+  programs.waybar = {
+    enable = true;
 
-      modules-left = [
-        "custom/launcher"
-        "group/utility"
-        "custom/playerctl#backward"
-        "custom/playerctl#play"
-        "custom/playerctl#foward"
-        "custom/playerlabel"
-      ];
+    settings = [
+      {
+        layer = "bottom";
+        position = "top";
+        # spacing = 4; # Optional spacing, uncomment if needed
+        height = 35; # Remove for auto height
 
-      modules-center = [
-        "custom/weather"
-        "hyprland/workspaces"
-        "custom/swaync"
-      ];
-
-      modules-right = [
-        "tray"
-        "battery"
-        "pulseaudio"
-        "network"
-        "clock"
-      ];
-
-      "hyprland/workspaces" = {
-        format = "{name}";
-        on-click = "activate";
-        on-scroll-down = "hyprctl dispatch workspace e+1";
-        on-scroll-up = "hyprctl dispatch workspace e-1";
-      };
-
-      "custom/weather" = {
-        format = "{}";
-        format-alt = "{alt}: {}";
-        format-alt-click = "click";
-        interval = 3600;
-        return-type = "json";
-        exec = "$HOME/.config/waybar/scripts/Weather.py";
-        tooltip = true;
-      };
-
-      "custom/swaync" = {
-        tooltip = true;
-        tooltip-format = ''Left Click: Launch Notification Center\nRight Click: Do not Disturb'';
-        format = "{} {icon} ";
-        format-icons = {
-          notification = "<span foreground='red'><sup></sup></span>";
-          none = "";
-          dnd-notification = "<span foreground='red'><sup></sup></span>";
-          dnd-none = "";
-          inhibited-notification = "<span foreground='red'><sup></sup></span>";
-          inhibited-none = "";
-          dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
-          dnd-inhibited-none = "";
-        };
-        return-type = "json";
-        exec-if = "which swaync-client";
-        exec = "swaync-client -swb";
-        on-click = "sleep 0.1 && swaync-client -t -sw";
-        on-click-right = "swaync-client -d -sw";
-        escape = true;
-      };
-
-      "custom/launcher" = {
-        format = "󰣇";
-        tooltip = false;
-        on-click = "~/.config/rofi/scripts/sidelauncher";
-      };
-
-      "custom/pacman" = {
-        format = "󰅢{}";
-        interval = 30;
-        exec = "checkupdates | wc -l";
-        exec-if = "exit 0";
-        on-click = ''kitty --title PacUpdate sh -c 'sleep 0.1; paru -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar'';
-        signal = 8;
-        tooltip = false;
-      };
-
-      cpu = {
-        format = "󰻠";
-        tooltip = true;
-      };
-
-      memory = {
-        format = "";
-      };
-
-      temperature = {
-        critical-threshold = 80;
-        format = "";
-      };
-
-      "custom/colorpicker" = {
-        format = "{}";
-        return-type = "json";
-        interval = "once";
-        exec = "~/.config/waybar/scripts/Colorpicker.sh -j";
-        on-click = "~/.config/waybar/scripts/Colorpicker.sh";
-        signal = 1;
-      };
-
-      idle_inhibitor = {
-        format = "{icon}";
-        format-icons = {
-          activated = "";
-          deactivated = "";
-        };
-      };
-
-      "custom/expand" = {
-        format = "";
-        tooltip = true;
-        tooltip-format = "Click to show utilities";
-      };
-
-      "group/utility" = {
-        orientation = "inherit";
-        drawer = {
-          transition-duration = 600;
-          children-class = "child-utility";
-          transition-left-to-right = true;
-          click-to-reveal = true;
-        };
-        modules = [
-          "custom/expand"
+        modules-left = ["wlr/taskbar"];
+        modules-center = ["clock"];
+        modules-right = [
+          "tray"
+          "battery"
           "cpu"
           "memory"
-          "temperature"
-          "custom/pacman"
-          "idle_inhibitor"
-          "custom/colorpicker"
+          "wireplumber"
+          "network"
         ];
-      };
 
-      "custom/playerctl#backward" = {
-        format = "󰙣 ";
-        on-click = "playerctl previous";
-        on-scroll-down = "wpctl set-volume @DEFAULT_SINK@ 5%-";
-        on-scroll-up = "wpctl set-volume @DEFAULT_SINK@ 5%+";
-        tooltip = false;
-      };
-
-      "custom/playerctl#foward" = {
-        format = "󰙡 ";
-        on-click = "playerctl next";
-        on-scroll-down = "wpctl set-volume @DEFAULT_SINK@ 5%-";
-        on-scroll-up = "wpctl set-volume @DEFAULT_SINK@ 5%+";
-        tooltip = false;
-      };
-
-      "custom/playerctl#play" = {
-        exec = ''playerctl -a metadata --format '{"text": "{{artist}} - {{markup_escape(title)}}", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}' -F'';
-        format = "{icon}";
-        format-icons = {
-          Paused = "<span> </span>";
-          Playing = "<span>󰏥 </span>";
-          Stopped = "<span> </span>";
+        "wlr/taskbar" = {
+          format = "{icon}";
+          icon-size = 16;
+          icon-theme = "Gruvbox Plus Dark";
+          on-click = "minimize-raise";
+          app_ids-mapping = {
+            "org.gnome.FileRoller" = "FileRoller";
+            "org.pwmt.zathura" = "zathura";
+            "com.github.johnfactotum.Foliate" = "foliate";
+          };
         };
-        on-click = "playerctl play-pause";
-        on-scroll-down = "wpctl set-volume @DEFAULT_SINK@ 5%-";
-        on-scroll-up = "wpctl set-volume @DEFAULT_SINK@ 5%+";
-        return-type = "json";
-      };
 
-      "custom/playerlabel" = {
-        exec = ''playerctl -a metadata --format '{"text": "{{artist}} - {{markup_escape(title)}}", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}' -F'';
-        format = "<span>󰎈 {} 󰎈</span>";
-        max-length = 40;
-        on-click = "";
-        return-type = "json";
-      };
-
-      battery = {
-        format = "{icon}  {capacity}%";
-        format-alt = "{icon} {time}";
-        format-charging = " {capacity}%";
-        format-icons = ["" "" "" "" ""];
-        format-plugged = " {capacity}% ";
-        format-time = "{H} h {m} min";
-        states = {
-          critical = 15;
-          good = 95;
-          warning = 30;
+        tray = {
+          icon-size = 16;
+          spacing = 10;
         };
-        on-scroll-up = "~/.config/hypr/scripts/backlight.sh --inc";
-        on-scroll-down = "~/.config/hypr/scripts/backlight.sh --dec";
-      };
 
-      pulseaudio = {
-        format = "{icon} {volume}%";
-        format-icons.default = ["󰕿" "󰖀" "󰕾"];
-        format-muted = "󰝟";
-        on-click = "pavucontrol";
-        scroll-step = 5;
-      };
-
-      network = {
-        format-disconnected = "󰖪 0% ";
-        format-ethernet = "󰈀 100% ";
-        format-linked = "{ifname} (No IP)";
-        format-wifi = "  {signalStrength}%";
-        tooltip-format = "Connected to {essid} {ifname} via {gwaddr}";
-        on-click = "kitty --title KittyNmtui sh -c  'sleep 0.1; nmtui'";
-      };
-
-      tray = {
-        icon-size = 20;
-        spacing = 8;
-      };
-
-      clock = {
-        format = "󰥔 {:%I:%M:%S %p} ";
-        interval = 1;
-        tooltip-format = "<tt>{calendar}</tt>";
-        calendar.format.today = "<span color='#fAfBfC'><b>{}</b></span>";
-        actions = {
-          on-click-right = "shift_down";
-          on-click = "shift_up";
+        battery = {
+          bat = "BAT0";
+          interval = 60;
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          format = "{capacity}% {icon}";
+          format-icons = ["" "" "" "" ""];
+          max-length = 25;
         };
-      };
-    }
-  ];
+
+        cpu = {
+          format = "CPU: {usage}%";
+          tooltip = false;
+        };
+
+        memory = {
+          format = "RAM: {used:0.1f}GB";
+          tooltip = false;
+        };
+
+        network = {
+          # interface = "wlp2*"; # Optional, uncomment if needed
+          format-wifi = "({signalStrength}%) ";
+          format-ethernet = "󰈀";
+          tooltip-format = "{ipaddr}\n<b>up:</b> {bandwidthUpBytes} <b>down:</b> {bandwidthDownBytes}";
+          format-linked = "{ifname} (No IP) ?";
+          format-disconnected = "No connection";
+          on-click = "networkmanager_dmenu";
+          on-click-right = "\${TERMINAL} -a floatterm -e nethogs";
+        };
+
+        wireplumber = {
+          format = "{icon} : {volume}%";
+          format-muted = "";
+          format-icons = ["" " "];
+          on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        };
+
+        clock = {
+          format = "{:%b %d %H:%M}";
+          tooltip-format = "<span color='#FFFFFF'><tt>{calendar}</tt></span>";
+          calendar = {
+            "mode-mon-col" = 4;
+            "on-scroll" = 1;
+            "on-click-right" = "mode";
+            format = {
+              months = "<span color='#BE95FF'><b>{}</b></span>";
+              weeks = "<span color='#525252'><b>{}</b></span>";
+              weekdays = "<span color='#78A9FF'><b>{}</b></span>";
+              today = "<span color='#BE95FF' background='#161616'><b>{}</b></span>";
+            };
+          };
+          actions = {
+            "on-click-right" = "mode";
+            "on-scroll-up" = "shift_up";
+            "on-scroll-down" = "shift_down";
+          };
+          tooltip = true;
+        };
+      }
+    ];
+  };
 }
 # unused
 # "custom/rofi" = {
