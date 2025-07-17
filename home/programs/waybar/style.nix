@@ -5,7 +5,7 @@
     /* ================================ */
     @define-color base      #${config.lib.stylix.colors.base00};
     @define-color mantle    #${config.lib.stylix.colors.base01};
-    @define-color surface0  #${config.lib.stylix.colors.base02};
+    @define-color base  #${config.lib.stylix.colors.base02};
     @define-color surface1  #${config.lib.stylix.colors.base03};
     @define-color surface2  #${config.lib.stylix.colors.base04};
     @define-color text      #${config.lib.stylix.colors.base05};
@@ -29,7 +29,7 @@
         font-weight: 800;
         min-height: 0;
     }
-      
+
     window#waybar {
       background-color: transparent;
       box-shadow: none;
@@ -46,7 +46,7 @@
     }
 
     tooltip {
-        background: @surface0;
+        background: @base;
         border: 2px solid @teal;
         border-radius: 12px;
     }
@@ -56,7 +56,7 @@
     }
 
     #workspaces {
-        background: @surface0;
+        background: @base;
         margin: 5px;
         padding: 8px 5px;
         border-radius: 16px;
@@ -88,7 +88,7 @@
 
     #custom-swaync, #custom-weather {
         font-weight: bold;
-        background: @surface0;
+        background: @base;
         margin: 5px;
         padding: 8px 16px;
         color: @text;
@@ -102,7 +102,7 @@
 
     #tray, #pulseaudio, #network, #battery, #cpu, #temperature, #custom-colorpicker, #memory, #custom-pacman, #idle_inhibitor,
     #custom-playerctl.backward, #custom-playerctl.play, #custom-playerctl.foward {
-        background: @surface0;
+        background: @base;
         font-weight: bold;
         margin: 5px 0px;
     }
@@ -116,7 +116,7 @@
 
     #clock {
         color: @text;
-        background: @surface0;
+        background: @base;
         border-radius: 0px 0px 0px 40px;
         padding: 10px 10px 15px 25px;
         margin-left: 7px;
@@ -147,7 +147,7 @@
         margin-right: 7px;
     }
     #custom-playerlabel {
-        background: @surface0;
+        background: @base;
         color: @text;
         padding: 0 20px;
         border-radius: 24px 10px 24px 10px;
@@ -162,7 +162,7 @@
 
     #custom-launcher {
         color: @blue;
-        background: @surface0;
+        background: @base;
         margin: 0px 5px 0px 0px;
         padding: 0px 35px 0px 15px;
         border-radius: 0px 0px 40px 0px;
@@ -170,7 +170,7 @@
     }
 
     #custom-colorpicker, #cpu, #temperature, #memory, #custom-pacman, #idle_inhibitor {
-        background: @surface0;
+        background: @base;
         font-size: 16px;
     }
 
