@@ -6,7 +6,7 @@
   imports = [
     ./source
     ./hyprlock.nix
-    ./plugins.nix
+    # ./plugins.nix
   ];
 
   wayland.windowManager.hyprland = {
