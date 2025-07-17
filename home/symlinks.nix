@@ -19,6 +19,11 @@ in {
         config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/.dotfiles/wallpapers/${currentTheme}";
     };
+    ".config/eww" = {
+      source =
+        config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/.dotfiles/eww/";
+    };
 
     # UNUSED
     # ".gitconfig" = {
