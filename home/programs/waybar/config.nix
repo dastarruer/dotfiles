@@ -9,10 +9,9 @@
         # spacing = 4; # Optional spacing, uncomment if needed
         height = 35; # Remove for auto height
 
-        modules-left = ["wlr/taskbar"];
+        modules-left = ["tray"];
         modules-center = ["clock"];
         modules-right = [
-          "tray"
           "battery"
           "cpu"
           "memory"
