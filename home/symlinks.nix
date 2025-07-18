@@ -22,7 +22,7 @@ in {
     ".config/eww" = {
       source =
         config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/eww/";
+        "${config.home.homeDirectory}/.dotfiles/config/eww/";
     };
 
     # UNUSED
