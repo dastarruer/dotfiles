@@ -1,3 +1,7 @@
+(defpoll time :interval "1s"
+              :initial "123"
+              `date +%H:%M:%S`)
+
 (defwindow example
     :monitor 0
     :geometry (geometry :x "0%"
@@ -10,8 +14,8 @@
     :reserve (struts :distance "40px" :side "top")
     :windowtype "dock"
     :wm-ignore false
-(greeter :text "Say hello!"
-          :name "Tim"))
+(greeter :text "What's the time?'"
+          :name time))
 
 (defwidget greeter [?text name]
     (box :orientation "horizontal"
