@@ -18,6 +18,7 @@
     grimblast
 
     # Other
+    eww
     gh
     flatpak
     cargo
