@@ -3,6 +3,10 @@
   lib,
   ...
 }: let
+  # Theme-related settings
+  themePackage = pkgs.gruvbox-gtk-theme;
+  themeName = "Gruvbox-GTK-Theme-BL-GS";
+
   # Font-related settings
   fontPackage = pkgs.noto-fonts;
   fontName = "Noto Sans 12";
@@ -14,6 +18,16 @@
 in {
   gtk = {
     enable = true;
+
+    # Theme
+    theme = {
+      package = themePackage;
+      name = themeName;
+    };
+    gtk2.theme = {
+      package = themePackage;
+      name = themeName;
+    };
 
     # Font
     font = {
