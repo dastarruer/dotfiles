@@ -5,7 +5,7 @@
 }: let
   # Theme-related settings
   themePackage = pkgs.gruvbox-gtk-theme;
-  themeName = "Gruvbox-Dark-BL-LB";
+  themeName = "Gruvbox-Dark"; # Note you can get the name of any theme using: cd $(nix build nixpkgs#gruvbox-gtk-theme --print-out-paths --no-link) && nix run nixpkgs#eza -- --tree --level 4
 
   # Icon-related settings
   iconPackage = pkgs.papirus-icon-theme;
