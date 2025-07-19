@@ -23,5 +23,6 @@
     spicetify.enable = false;
     waybar.enable = false;
     vscode.enable = false;
+    gtk.enable = false;
   };
 }
