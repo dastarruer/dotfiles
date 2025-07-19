@@ -7,7 +7,7 @@ in {
     # Set the color theme
     base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
 
-    # Disable plymouth support
+    # Disable targets
     targets.plymouth.enable = false;
 
     # Cursor settings
