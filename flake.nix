@@ -44,7 +44,6 @@
     ucodenix = {
       url = "github:e-tho/ucodenix";
       inputs.cpu-microcodes.follows = "cpu-microcodes";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
