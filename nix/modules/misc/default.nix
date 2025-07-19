@@ -8,5 +8,6 @@
     ./system-packages.nix
     ./users.nix
     ./stylix.nix
+    ./power.nix
   ];
 }
