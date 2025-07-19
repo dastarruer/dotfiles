@@ -9,14 +9,14 @@
       };
 
       listener = [
+        # Turn off screen
         {
-          # Turn off screen
           timeout = 300;
           on-timeout = "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on";
         }
+        # Suspend system
         {
-          # Suspend system
           timeout = 600;
           on-timeout = "systemctl suspend";
         }
