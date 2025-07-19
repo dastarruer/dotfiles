@@ -14,11 +14,5 @@
     suspendKeyLongPress = "reboot";
     rebootKeyLongPress = "reboot";
     hibernateKeyLongPress = "reboot";
-
-    # Auto-suspend after 10 minutes
-    extraConfig = ''
-      IdleAction=suspend
-      IdleActionSec=10min
-    '';
   };
 }
