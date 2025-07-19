@@ -68,8 +68,4 @@ in {
       size = cursorSize;
     };
   };
-
-  # chatgpt told me to use this to prevent conflicts and it works so
-  dconf.settings."org/gnome/desktop/interface".font-name =
-    lib.mkForce fontName;
 }
