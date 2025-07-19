@@ -24,6 +24,7 @@
     cargo
     fzf
     playerctl
+    swayidle
     ffmpeg
   ];
 

@@ -15,5 +15,8 @@
     # Start clipboard manager
     "wl-paste --type text --watch cliphist store"
     "wl-paste --type image --watch cliphist store"
+
+    # Auto-suspend after 10 min of idle
+    "swayidle -w timeout 600 \"playerctl -a pause && hyprlock & disown && systemctl suspend\" &"
   ];
 }
