@@ -7,6 +7,10 @@
   themePackage = pkgs.gruvbox-gtk-theme;
   themeName = "Gruvbox-GTK-Theme-BL-GS";
 
+  # Icon-related settings
+  iconPackage = pkgs.papirus-icon-theme;
+  iconName = "Papirus-Dark";
+
   # Font-related settings
   fontPackage = pkgs.noto-fonts;
   fontName = "Noto Sans 12";
@@ -27,6 +31,16 @@ in {
     gtk2.theme = {
       package = themePackage;
       name = themeName;
+    };
+
+    # Icons
+    iconTheme = {
+      package = iconPackage;
+      name = iconName;
+    };
+    gtk2.iconTheme = {
+      package = iconPackage;
+      name = iconName;
     };
 
     # Font
