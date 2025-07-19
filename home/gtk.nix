@@ -5,7 +5,7 @@
 }: let
   # Theme-related settings
   themePackage = pkgs.gruvbox-gtk-theme;
-  themeName = "Gruvbox-GTK-Theme-BL-GS";
+  themeName = "Gruvbox-Dark-BL-LB";
 
   # Icon-related settings
   iconPackage = pkgs.papirus-icon-theme;
@@ -13,7 +13,8 @@
 
   # Font-related settings
   fontPackage = pkgs.noto-fonts;
-  fontName = "Noto Sans 12";
+  fontName = "Noto Sans";
+  fontSize = 12;
 
   # Cursor-related settings
   cursorPackage = pkgs.capitaine-cursors-themed;
@@ -47,10 +48,12 @@ in {
     font = {
       package = fontPackage;
       name = fontName;
+      size = fontSize;
     };
     gtk2.font = {
       package = fontPackage;
       name = fontName;
+      size = fontSize;
     };
 
     # Cursors
