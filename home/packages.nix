@@ -18,6 +18,7 @@
     grimblast
 
     # Other
+    rofi-calc
     gh
     flatpak
     cargo
