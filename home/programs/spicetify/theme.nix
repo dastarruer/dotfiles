@@ -43,7 +43,7 @@
       text = "${config.lib.stylix.colors.base05}";
       extratext = "${config.lib.stylix.colors.base05}";
       sidebar = "${config.lib.stylix.colors.base00}";
-      player = "${config.lib.stylix.colors.base04}";
+      player = "${config.lib.stylix.colors.base00}";
       secPlayer = "${config.lib.stylix.colors.base04}";
       card = "${config.lib.stylix.colors.base02}";
       secCard = "${config.lib.stylix.colors.base03}";
