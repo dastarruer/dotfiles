@@ -14,6 +14,7 @@ in {
     modernScrollbar
     hideDownloadButton
     hideFriendActivityButton
+    hideFullScreenButton
     roundedButtons
     removeTopSpacing
     hideFullScreenButton
