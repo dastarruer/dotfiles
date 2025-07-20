@@ -27,7 +27,7 @@
       padding: 0;
       margin: 0;
       min-height: 0;
-      border-radius: 0;
+      border-radius: 5px;
       border: none;
       text-shadow: none;
       transition: none;
@@ -72,7 +72,6 @@
       color: @base;
       background: @base;
       border: 3px solid @base;
-      border-radius: 3px;
     }
 
     #window,
