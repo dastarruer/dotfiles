@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   programs.uwsm.enable = true;
 
   programs.hyprland = {
