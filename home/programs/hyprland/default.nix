@@ -17,4 +17,17 @@
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
+
+  # Hyprland packages needed
+  home.packages = with pkgs; [
+    waybar
+    swww
+
+    # Clipboard functionality
+    cliphist
+    wl-clipboard
+
+    # Network manager
+    networkmanagerapplet
+  ];
 }
