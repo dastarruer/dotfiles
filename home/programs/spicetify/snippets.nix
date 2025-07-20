@@ -19,6 +19,7 @@ in {
     hideFriendActivityButton
     hideFullScreenButton
     hideMiniPlayerButton
+    hideLyricsButton
 
     # Round some things
     roundedButtons
