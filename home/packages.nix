@@ -17,6 +17,11 @@
     tesseract
     grimblast
 
+    # Clipboard
+    wl-clipboard
+    cliphist
+    go # a dependency of cliphist
+
     # Other
     rofi-calc
     gh
@@ -25,7 +30,6 @@
     fzf
     playerctl
     ffmpeg
-    wl-clipboard
   ];
 
   # Enable programs here so that stylix can configure them
