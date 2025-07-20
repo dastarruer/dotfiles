@@ -27,10 +27,13 @@
       # If you're having issues: https://github.com/NixOS/nixpkgs/issues/266147
       timeout = 0;
 
-      # Enable systemd boot which
+      # Enable systemd boot which is faster
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
+
+    # Get the latest kernel packages
+    kernelPackages = pkgs.linuxPackages_testing;
 
     # Silent Boot
     # https://wiki.archlinux.org/title/Silent_boot
