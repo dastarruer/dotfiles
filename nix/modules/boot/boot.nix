@@ -7,6 +7,13 @@
     DefaultStartLimitIntervalSec=10s
   '';
 
+  services.journald = {
+    maxFileSize = 1048576; # 1MB per file
+    maxRetentionSec = 7 * 24 * 60 * 60; # 7 days
+    runtimeMaxUse = "50M"; # Limit runtime journal
+    persistent = false; # Only keep runtime logs, not on disk
+  };
+
   # Bootloader.
   boot = {
     # Spalsh screen
