@@ -8,7 +8,7 @@ in {
   # CSS snippets to make spotify look even better
   programs.spicetify.enabledSnippets = with spicePkgs.snippets; [
     disableRecommendations
-    smoothPlaylistRevealGradient
+    removeGradient
     disableRecommendations
     pointer
     modernScrollbar
