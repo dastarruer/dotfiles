@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: let
+{pkgs, ...}: let
   # Theme-related settings
   themePackage = pkgs.gruvbox-gtk-theme;
   themeName = "Gruvbox-Dark";
