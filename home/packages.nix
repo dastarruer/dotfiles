@@ -24,8 +24,8 @@
     cargo
     fzf
     playerctl
-    swayidle
     ffmpeg
+    wl-clipboard
   ];
 
   # Enable programs here so that stylix can configure them
