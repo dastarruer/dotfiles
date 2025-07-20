@@ -39,6 +39,12 @@
     cpuModelId = "00A50F00";
   };
 
+  # Global environment variables
+  environment.sessionVariables = {
+    # For nh
+    FLAKE = "/home/dastarruer/.dotfiles";
+  };
+
   # Home manager
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
