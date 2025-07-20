@@ -7,25 +7,7 @@
 }: {
   # Spicetify themes
   programs.spicetify = {
-    theme = {
-      name = "Onepunch";
-      src = pkgs.fetchFromGitHub {
-        owner = "riasat-sheikh";
-        repo = "Onepunch";
-        rev = "main";
-        sha256 = "sha256-nGxMc9mtshWsCQS8B/dPNXXlWeFM58HvWmp7Aj2/V2c=";
-      };
-
-      additionalCss = lib.concatStringsSep "\n" [
-        ".main-rootview-container; .main-navBar-navBar; .main-topBar-container; .Root__nav-bar; .Root__top-bar {"
-        "  background-color =  ${config.lib.stylix.colors.base00};"
-        "}"
-
-        ".main-view-container__scroll-node-child .main-entityHeader-container {"
-        "  background-color =  ${config.lib.stylix.colors.base00};"
-        "}"
-      ];
-    };
+    theme = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system}.themes.onepunch;
 
     customColorScheme = {
       accent = "${config.lib.stylix.colors.base00}";
