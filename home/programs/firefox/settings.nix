@@ -105,11 +105,5 @@ in {
 
     # Disable alt menu
     "ui.key.menuAccessKeyFocuses" = false;
-
-    # Set bookmark file location to dotfiles
-    "browser.bookmarks.file" = "/home/dastarruer/.dotfiles/home/programs/firefox";
-
-    # Auto export bookmarks once firefox is closed
-    "browser.bookmarks.autoExportHTML" = true;
   };
 }
