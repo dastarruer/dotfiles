@@ -39,10 +39,11 @@
     cpuModelId = "00A50F00";
   };
 
-  # Global environment variables
-  environment.sessionVariables = {
-    # For nh
-    NH_FLAKE = "/home/dastarruer/.dotfiles";
+  # nh
+  programs.nh = {
+    enable = true;
+    # Specify flake path
+    flake = "/home/dastarruer/.dotfiles";
   };
 
   # Home manager
