@@ -42,7 +42,7 @@
   # Global environment variables
   environment.sessionVariables = {
     # For nh
-    FLAKE = "/home/dastarruer/.dotfiles";
+    NH_FLAKE = "/home/dastarruer/.dotfiles";
   };
 
   # Home manager
