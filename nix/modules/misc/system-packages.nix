@@ -7,7 +7,6 @@
   environment.systemPackages = with pkgs; [
     libnotify
     bat
-    nh
 
     # I need to look cool at all times
     cmatrix
