@@ -18,12 +18,6 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
     inputs.flatpaks.homeModule
   ];
 
-  # Run this command in order to give flatpak acces to system fonts (https://wiki.nixos.org/wiki/Fonts#Solution_1:_Copy_fonts_to_$HOME/.local/share/fonts)
-  home.activation.copyFonts = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    mkdir -p "$HOME/.local/share/fonts"
-    cp -L /run/current-system/sw/share/X11/fonts/* "$HOME/.local/share/fonts/" || true
-  '';
-
   services.flatpak = {
     # Enable flatpaks
     enable = true;
@@ -74,23 +68,13 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
           "!fallback-x11"
         ];
       };
-      # "com.todoist.Todoist" = {
-      #   # Enable x11 support for todoist since it doesn't use wayland
-      #   sockets = [
-      #     "x11"
-      #     "!wayland"
-      #     "!fallback-x11"
-      #   ];
-
-      # disabled for now
-      # environment = {
-      #   OZONE_PLATFORM_HINT = null;
-      # };
-
-      # Disabled for now but its here js in case...
-      # environment = {
-      #   OZONE_PLATFORM_HINT = "auto";
-      # };
     };
   };
+
+  # Run this command in order to give flatpak acces to system fonts (https://wiki.nixos.org/wiki/Fonts#Solution_1:_Copy_fonts_to_$HOME/.local/share/fonts)
+  # Note that fonts.fontDir.enable = true is required for this, which is already declared in configuration.nix
+  home.activation.copyFonts = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    mkdir -p "$HOME/.local/share/fonts"
+    cp -L /run/current-system/sw/share/X11/fonts/* "$HOME/.local/share/fonts/" || true
+  '';
 }
