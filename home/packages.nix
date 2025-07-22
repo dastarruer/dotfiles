@@ -7,7 +7,6 @@
     # Apps
     xfce.thunar
     firefox
-    obsidian
     todoist-electron
     musescore
     vesktop
