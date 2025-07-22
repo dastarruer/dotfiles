@@ -10,13 +10,19 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
 */
 {
   inputs,
-  config,
+  lib,
   ...
 }: {
   # Import flatpak home manager module
   imports = [
     inputs.flatpaks.homeModule
   ];
+
+  # Run this command in order to give flatpak acces to system fonts (https://wiki.nixos.org/wiki/Fonts#Solution_1:_Copy_fonts_to_$HOME/.local/share/fonts)
+  home.activation.copyFonts = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    mkdir -p "$HOME/.local/share/fonts"
+    cp -L /run/current-system/sw/share/X11/fonts/* "$HOME/.local/share/fonts/" || true
+  '';
 
   services.flatpak = {
     # Enable flatpaks
@@ -51,15 +57,12 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
       # It bothers me about this everytime I start sober so here
       "org.vinegarhq.Sober" = {
         filesystems = [
+          "!host"
+          "!home"
+
           # Sober overrides
           "xdg-run/app/com.discordapp.Discord:create"
           "xdg-run/discord-ipc-0"
-
-          # Access Nerd Fonts and system fonts
-          "${config.home.homeDirectory}/.local/share/fonts:ro"
-          "${config.home.homeDirectory}/.icons:ro"
-          "/nix/store:ro"
-          "/run/current-system/sw/share/X11/fonts:ro"
         ];
       };
 
