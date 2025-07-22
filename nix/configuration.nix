@@ -46,6 +46,10 @@
     flake = "/home/dastarruer/.dotfiles";
   };
 
+  # Allow fonts to work with flatpak (https://wiki.nixos.org/wiki/Fonts#Flatpak_applications_can't_find_system_fonts)
+  # If any issues arise, read through the wiki
+  fonts.fontDir.enable = true;
+
   # Home manager
   home-manager = {
     extraSpecialArgs = {inherit inputs;};

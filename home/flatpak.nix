@@ -8,8 +8,11 @@ and then just take the link that it gives you.
 Example: flatpak run net.ankiweb.Anki
 error: app/net.ankiweb.Anki/x86_64/master not installed
 */
-# NOTE FOR NOW STYLIX ISNT PLAYING NICE WITH THIS SO MANUALLY INSTALL THE APPS LISTED BELOWC
-{inputs, ...}: {
+{
+  inputs,
+  config,
+  ...
+}: {
   # Import flatpak home manager module
   imports = [
     inputs.flatpaks.homeModule
@@ -28,6 +31,7 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
     # Add packages here
     packages = [
       "flathub:app/org.vinegarhq.Sober/x86_64/stable"
+      "flathub:app/md.obsidian.Obsidian/x86_64/master"
     ];
 
     overrides = {
@@ -47,16 +51,26 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
       # It bothers me about this everytime I start sober so here
       "org.vinegarhq.Sober" = {
         filesystems = [
-          # Deny default filesystem access
-          # "!host"
-          # "!home"
-
-          # Explicitly allow access to these paths
+          # Sober overrides
           "xdg-run/app/com.discordapp.Discord:create"
           "xdg-run/discord-ipc-0"
+
+          # Access Nerd Fonts and system fonts
+          "${config.home.homeDirectory}/.local/share/fonts:ro"
+          "${config.home.homeDirectory}/.icons:ro"
+          "/nix/store:ro"
+          "/run/current-system/sw/share/X11/fonts:ro"
         ];
       };
 
+      "md.obsidian.Obsidian" = {
+        sockets = [
+          # Enable wayland support for obsidian
+          "wayland"
+          "!x11"
+          "!fallback-x11"
+        ];
+      };
       # "com.todoist.Todoist" = {
       #   # Enable x11 support for todoist since it doesn't use wayland
       #   sockets = [
@@ -69,19 +83,11 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
       # environment = {
       #   OZONE_PLATFORM_HINT = null;
       # };
+
+      # Disabled for now but its here js in case...
+      # environment = {
+      #   OZONE_PLATFORM_HINT = "auto";
+      # };
     };
-
-    # "md.obsidian.Obsidian" = {
-    #   # Enable wayland support for obsidian
-    #   sockets = [
-    #     "wayland"
-    #     "!x11"
-    #     "!fallback-x11"
-    #   ];
-
-    # Disabled for now but its here js in case...
-    # environment = {
-    #   OZONE_PLATFORM_HINT = "auto";
-    # };
   };
 }
