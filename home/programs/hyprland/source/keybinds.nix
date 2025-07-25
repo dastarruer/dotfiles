@@ -72,7 +72,7 @@
       "$mainMod, Y, pin"
       "$mainMod, G, centerwindow"
       "$mainMod, F, fullscreen"
-      ",XF86AudioPlay,exec,playerctl play-pause"
+      ",XF86AudioPlay,exec,playerctl play-pause -p spotify"
       ",XF86AudioPrev,exec,playerctl previous"
       ",XF86AudioNext,exec,playerctl next"
     ];
