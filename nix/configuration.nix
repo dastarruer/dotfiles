@@ -23,7 +23,7 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Reduce cpu load during rebuilds
-  nix.settings.max-jobs = 8;
+  nix.settings.max-jobs = 4;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
