@@ -89,8 +89,8 @@
       ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
       "ALT, B , exec, brillo -A 5 -q"
       "ALT , V, exec, brillo -U 5 -q"
-      "ALT, Shift, B , exec, brillo -A 2 -q"
-      "ALT, Shift, V, exec, brillo -U 2 -q"
+      "ALT SHIFT, B , exec, brillo -A 2 -q"
+      "ALT SHIFT, V, exec, brillo -U 2 -q"
     ];
 
     bindl = [
