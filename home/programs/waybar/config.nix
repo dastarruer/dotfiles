@@ -113,7 +113,7 @@
       };
 
       clock = {
-        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'>  </span> {:%a %d | %H:%M}";
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'>  </span> {:%a %d | %b %I:%M %p}";
 
         tooltip = false;
         interval = 1;
