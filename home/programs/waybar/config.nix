@@ -1,4 +1,4 @@
-{...}: {
+{config, ...}: {
   programs.waybar.settings = {
     mainBar = {
       layer = "top";
@@ -34,7 +34,7 @@
       };
 
       "hyprland/window" = {
-        format = "󰣆 {class}";
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0E}' > 󰣆 </span> {class}";
         separate-outputs = true;
         icon = false;
       };
@@ -45,18 +45,18 @@
       };
 
       disk = {
-        format = " {free}";
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}' >  </span> {free}";
         interval = 20;
       };
 
       cpu = {
-        format = " {usage}%";
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base09}' >  </span> {usage}%";
         tooltip = false;
         interval = 1;
       };
 
       backlight = {
-        format = "󰞏 {percent}%";
+        format = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0A}' > 󰞏 </span> {percent}%";
         tooltip = false;
       };
 
@@ -64,14 +64,14 @@
         exec = "~/bin/memory_usage.sh";
         interval = 2;
         return-type = "json";
-        format = " {}";
+        format = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0D}' >  </span> {}";
       };
 
       pulseaudio = {
-        format = " {volume}%";
-        format-muted = " {volume}%";
-        format-bluetooth = "󰂰 {volume}%";
-        format-bluetooth-muted = "󰂲 {volume}%";
+        format = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0C}' >  </span> {volume}%";
+        format-muted = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base08}' >  </span> {volume}%";
+        format-bluetooth = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0D}' > 󰂰 </span> {volume}%";
+        format-bluetooth-muted = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base08}' > 󰂲 </span> {volume}%";
         format-source = "{volume}% ";
         on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
         tooltip = false;
@@ -99,20 +99,22 @@
           "󰂂"
           "󰁹"
         ];
-        format = "{icon} {capacity}%";
-        format-critical = "{icon} {capacity}%!!";
-        format-warning = "{icon} {capacity}%";
-        format-full = "{icon} {capacity}%";
-        format-charging = "󰂅 {capacity}%";
-        format-charging-warning = "󰢝 {capacity}%";
-        format-charging-critical = "󰢜 {capacity}%";
-        format-plugged = "󰂅 {capacity}%";
-        format-alt = "󱧥 {time}";
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> {icon} </span> {capacity}%";
+        format-critical = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}'> {icon} </span> {capacity}%!!";
+        format-warning = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0A}'> {icon} </span> {capacity}%";
+        format-full = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> {icon} </span> {capacity}%";
+        format-charging = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> 󰂅 </span> {capacity}%";
+        format-charging-warning = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0A}'> 󰢝 </span> {capacity}%";
+        format-charging-critical = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}'> 󰢜 </span> {capacity}%";
+        format-plugged = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> 󰂅 </span> {capacity}%";
+        format-alt = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> 󱧥 </span> {time}";
+
         tooltip = false;
       };
 
       clock = {
-        format = " {:%a %d %b %I:%M %p}";
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'>  </span> {:%a %d | %H:%M}";
+
         tooltip = false;
         interval = 1;
       };

@@ -89,7 +89,6 @@
     #battery.warning,
     #clock {
       padding-right: 4px;
-      padding-left: 4px;
     }
 
     #custom-rofi {
