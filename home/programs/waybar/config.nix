@@ -65,7 +65,6 @@
 
       "custom/playerctl#play" = {
         exec = ''playerctl -a metadata --format '{"text": "{{artist}} - {{markup_escape(title)}}", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}' -F'';
-        format = "{icon}";
         format-icons = {
           Paused = "<span> </span>";
           Playing = "<span>󰏥 </span>";
@@ -90,29 +89,12 @@
       };
 
       battery = {
-        format = "{icon}  {capacity}%";
-        format-alt = "{icon} {time}";
-        format-charging = " {capacity}%";
-        format-icons = ["" "" "" "" ""];
-        format-plugged = " {capacity}% ";
         format-time = "{H} h {m} min";
         states = {
           critical = 15;
           good = 95;
           warning = 30;
         };
-        format-icons = [
-          "󰂎"
-          "󰁺"
-          "󰁻"
-          "󰁽"
-          "󰁾"
-          "󰁿"
-          "󰂀"
-          "󰂁"
-          "󰂂"
-          "󰁹"
-        ];
         format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> {icon} </span> {capacity}%";
         format-critical = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}'> {icon} </span> {capacity}%!!";
         format-warning = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0A}'> {icon} </span> {capacity}%";
@@ -138,8 +120,8 @@
           on-click = "shift_up";
         };
       };
-    }
-  ];
+    };
+  };
 }
 # unused
 # "custom/rofi" = {
