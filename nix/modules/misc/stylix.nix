@@ -6,7 +6,7 @@ in {
 
     # Set the color theme
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
-    image = ../../../wallpapers/gruvbox/1022291.jpg;
+    image = ../../../config/wallpapers/other/1022291.jpg;
 
     # Disable targets
     targets.plymouth.enable = false;
