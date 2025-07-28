@@ -5,7 +5,7 @@
     /* ================================ */
     @define-color base      #${config.lib.stylix.colors.base00};
     @define-color mantle    #${config.lib.stylix.colors.base01};
-    @define-color base  #${config.lib.stylix.colors.base02};
+    @define-color surface0  #${config.lib.stylix.colors.base02};
     @define-color surface1  #${config.lib.stylix.colors.base03};
     @define-color surface2  #${config.lib.stylix.colors.base04};
     @define-color text      #${config.lib.stylix.colors.base05};
@@ -20,7 +20,9 @@
     @define-color mauve     #${config.lib.stylix.colors.base0E};
     @define-color flamingo  #${config.lib.stylix.colors.base0F};
 
-    /* Global Properties */
+    /* ================================ */
+    /*            Common CSS            */
+    /* ================================ */
     * {
       padding: 0;
       margin: 0;
@@ -32,9 +34,10 @@
       box-shadow: none;
     }
 
+    /* The whole window */
     window#waybar {
-      background-color: transparent;
-      box-shadow: none;
+      color: @rosewater;
+      background: none;
     }
 
     window#waybar.hidden {
@@ -93,169 +96,129 @@
       padding: 0 6px;
     }
 
+    /* ================================ */
+    /*       workspaces module          */
+    /* ================================ */
     #workspaces {
-        background: @base;
-        margin: 5px;
-        padding: 8px 5px;
-        border-radius: 16px;
-        color: @text;
+      margin: 0px;
     }
+
     #workspaces button {
-        font-weight: bold;
-        padding: 0px 5px;
-        margin: 0px 3px;
-        border-radius: 16px;
-        color: transparent;
-        background: @surface2;
+      color: @rosewater;
+      padding: 0 4px;
+      margin: 0px 3px;
+      min-width: 25px;
     }
-    #workspaces button.active {
-        font-weight: bold;
-        background-color: @blue;
-        color: @mantle;
-        min-width: 50px;
-        background-size: 400% 400%;
-    }
+
     #workspaces button:hover {
-        background-color: @teal;
-        color: @mantle;
+      background: @mauve;
     }
+
+    #workspaces button.visible {
+      background: @green;
+    }
+
+    #workspaces button.visible:hover {
+      background: @green;
+    }
+
+    #workspaces button.active {
+      background: @green;
+    }
+
+    #workspaces button.active:hover {
+      background: @green;
+    }
+
     #workspaces button.urgent {
-        background-color: @red;
-        color: @mantle;
+      background: @red;
     }
 
-    #custom-swaync, #custom-weather {
-        font-weight: bold;
-        background: @base;
-        margin: 5px;
-        padding: 8px 16px;
-        color: @text;
-    }
-    #custom-weather {
-        border-radius: 24px 10px 24px 10px;
-    }
-    #custom-swaync {
-        border-radius: 10px 24px 10px 24px;
+    /* ================================ */
+    /*            window                */
+    /* ================================ */
+    #window {
+      color: @mauve;
     }
 
-    #tray, #pulseaudio, #network, #battery, #cpu, #temperature, #custom-colorpicker, #memory, #custom-pacman, #idle_inhibitor,
-    #custom-playerctl.backward, #custom-playerctl.play, #custom-playerctl.foward {
-        background: @base;
-        font-weight: bold;
-        margin: 5px 0px;
+    /* ================================ */
+    /*            tray                  */
+    /* ================================ */
+    #tray {
+      padding: 0 6px;
     }
 
-    #tray, #pulseaudio, #network, #battery {
-        color: @text;
-        border-radius: 10px 24px 10px 24px;
-        padding: 0 20px;
-        margin-left: 7px;
+    /* ================================ */
+    /*            disk                  */
+    /* ================================ */
+    #disk {
+      color: @red;
     }
 
-    #clock {
-        color: @text;
-        background: @base;
-        border-radius: 0px 0px 0px 40px;
-        padding: 10px 10px 15px 25px;
-        margin-left: 7px;
-        font-weight: bold;
-        font-size: 14px;
-    }
-
-    #custom-playerctl.backward, #custom-playerctl.play, #custom-playerctl.foward {
-        font-size: 22px;
-    }
-    #custom-playerctl.backward:hover, #custom-playerctl.play:hover, #custom-playerctl.foward:hover {
-        color: @text;
-    }
-    #custom-playerctl.backward {
-        color: @teal;
-        border-radius: 24px 0px 0px 10px;
-        padding-left: 16px;
-        margin-left: 7px;
-    }
-    #custom-playerctl.play {
-        color: @rosewater;
-        padding: 0 5px;
-    }
-    #custom-playerctl.foward {
-        color: @teal;
-        border-radius: 0px 10px 24px 0px;
-        padding-right: 12px;
-        margin-right: 7px;
-    }
-    #custom-playerlabel {
-        background: @base;
-        color: @text;
-        padding: 0 20px;
-        border-radius: 24px 10px 24px 10px;
-        margin: 5px 0;
-        font-weight: bold;
-    }
-
-    #group-utility {
-        padding: 0px 5px;
-        transition: all .3s ease;
-    }
-
-    #custom-launcher {
-        color: @blue;
-        background: @base;
-        margin: 0px 5px 0px 0px;
-        padding: 0px 35px 0px 15px;
-        border-radius: 0px 0px 40px 0px;
-        font-size: 28px;
-    }
-
-    #custom-colorpicker, #cpu, #temperature, #memory, #custom-pacman, #idle_inhibitor {
-        background: @base;
-        font-size: 16px;
-    }
-
+    /* ================================ */
+    /*            cpu                   */
+    /* ================================ */
     #cpu {
-        color: @teal;
-        border-radius: 24px 0px 0px 10px;
-        padding-left: 16px;
-        padding-right: 7px;
-        margin-left: 7px;
+      color: @peach;
     }
 
-    #memory {
-        color: @blue;
-    }
+    /* ================================ */
+    /*          temperature             */
+    /* ================================ */
     #temperature {
-        color: @teal;
-    }
-    #custom-pacman {
-        color: @blue;
-    }
-    #idle_inhibitor {
-        color: @text;
-    }
-    #idle_inhibitor.activated {
-        color: @red;
+      color: @yellow;
     }
 
-    #temperature, #memory, #custom-pacman, #idle_inhibitor {
-        padding-left: 7px;
-        padding-right: 7px;
+    #temperature.critical {
+      color: @red;
     }
 
-    #custom-colorpicker {
-        color: @teal;
-        border-radius: 0px 10px 24px 0px;
-        padding-right: 12px;
-        padding-left: 7px;
-        margin-right: 7px;
+    /* ================================ */
+    /*          backlight               */
+    /* ================================ */
+    #backlight {
+      color: @yellow;
     }
 
-    #custom-expand {
-        background: transparent;
-        color: @text;
-        margin: 1px;
-        font-size: 22px;
+    /* ================================ */
+    /*          memory                  */
+    /* ================================ */
+    #custom-memory {
+      color: @blue;
     }
-    #custom-expand:hover {
-        color: @blue;
-    } '';
+
+    /* ================================ */
+    /*         pulseaudio               */
+    /* ================================ */
+    #pulseaudio {
+      color: @teal;
+    }
+
+    #pulseaudio.muted {
+      color: @red;
+    }
+
+    /* ================================ */
+    /*            battery               */
+    /* ================================ */
+    #battery {
+      color: @green;
+    }
+
+    #battery.critical {
+      color: @red;
+    }
+
+    #battery.warning {
+      color: @peach;
+    }
+
+    /* ================================ */
+    /*            clock                 */
+    /* ================================ */
+    #clock {
+      color: @green;
+    }
+
+  '';
 }
