@@ -22,7 +22,10 @@
     randomizedDelaySec = "45min";
 
     # allow rebooting after every upgrade (just in case!)
-    allowReboot = true;
+    # allowReboot = true;
+
+    # Nvm auto reboot sucks
+    allowReboot = false;
   };
 
   # Remove unused generations

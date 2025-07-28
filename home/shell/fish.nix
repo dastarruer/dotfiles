@@ -48,7 +48,7 @@
       gs = "git status";
       gc = "git commit -m";
       gca = "git status && git add . && git commit --amend --no-edit";
-      gp = "git push & disown";
+      gp = "git push";
       gl = "git log --oneline --graph --decorate";
       gch = "git checkout";
       cr = "cargo run";

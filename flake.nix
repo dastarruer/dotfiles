@@ -16,7 +16,6 @@
 
     flatpaks = {
       url = "github:in-a-dil-emma/declarative-flatpak/dev";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     firefox-addons = {
@@ -46,7 +45,6 @@
     ucodenix = {
       url = "github:e-tho/ucodenix";
       inputs.cpu-microcodes.follows = "cpu-microcodes";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

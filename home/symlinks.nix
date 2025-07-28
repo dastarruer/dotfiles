@@ -7,17 +7,17 @@ in {
     "bin" = {
       source =
         config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/bin";
+        "${config.home.homeDirectory}/.dotfiles/config/bin";
     };
     ".bashrc" = {
       source =
         config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/bashrc/.bashrc";
+        "${config.home.homeDirectory}/.dotfiles/bashrc/config/.bashrc";
     };
     "Pictures/wallpapers" = {
       source =
         config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/wallpapers/${currentTheme}";
+        "${config.home.homeDirectory}/.dotfiles/config/wallpapers/${currentTheme}";
     };
 
     # UNUSED

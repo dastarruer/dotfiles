@@ -1,6 +1,6 @@
 {...}: {
   wayland.windowManager.hyprland.settings = {
-    monitor = [",preferred,auto,1"];
+    monitor = ["eDP-1,1920x1080@60.00Hz,0x0,1"];
 
     env = [
       "XCURSOR_SIZE,24"

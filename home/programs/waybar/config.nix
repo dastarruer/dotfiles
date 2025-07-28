@@ -1,6 +1,6 @@
-{...}: {
-  programs.waybar.settings = [
-    {
+{config, ...}: {
+  programs.waybar.settings = {
+    mainBar = {
       layer = "top";
       position = "top";
       spacing = 0;
@@ -35,128 +35,31 @@
 
       "hyprland/workspaces" = {
         format = "{name}";
-        on-click = "activate";
-        on-scroll-down = "hyprctl dispatch workspace e+1";
-        on-scroll-up = "hyprctl dispatch workspace e-1";
       };
 
-      "custom/weather" = {
-        format = "{}";
-        format-alt = "{alt}: {}";
-        format-alt-click = "click";
-        interval = 3600;
-        return-type = "json";
-        exec = "$HOME/.config/waybar/scripts/Weather.py";
-        tooltip = true;
+      "hyprland/window" = {
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0E}' > 󰣆 </span> {class}";
+        separate-outputs = true;
+        icon = false;
       };
 
-      "custom/swaync" = {
-        tooltip = true;
-        tooltip-format = ''Left Click: Launch Notification Center\nRight Click: Do not Disturb'';
-        format = "{} {icon} ";
-        format-icons = {
-          notification = "<span foreground='red'><sup></sup></span>";
-          none = "";
-          dnd-notification = "<span foreground='red'><sup></sup></span>";
-          dnd-none = "";
-          inhibited-notification = "<span foreground='red'><sup></sup></span>";
-          inhibited-none = "";
-          dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
-          dnd-inhibited-none = "";
-        };
-        return-type = "json";
-        exec-if = "which swaync-client";
-        exec = "swaync-client -swb";
-        on-click = "sleep 0.1 && swaync-client -t -sw";
-        on-click-right = "swaync-client -d -sw";
-        escape = true;
+      tray = {
+        icon-size = 15;
+        spacing = 8;
       };
 
-      "custom/launcher" = {
-        format = "󰣇";
-        tooltip = false;
-        on-click = "~/.config/rofi/scripts/sidelauncher";
-      };
-
-      "custom/pacman" = {
-        format = "󰅢{}";
-        interval = 30;
-        exec = "checkupdates | wc -l";
-        exec-if = "exit 0";
-        on-click = ''kitty --title PacUpdate sh -c 'sleep 0.1; paru -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar'';
-        signal = 8;
-        tooltip = false;
+      disk = {
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}' >  </span> {free}";
+        interval = 20;
       };
 
       cpu = {
-        format = "󰻠";
-        tooltip = true;
-      };
-
-      memory = {
-        format = "";
-      };
-
-      temperature = {
-        critical-threshold = 80;
-        format = "";
-      };
-
-      "custom/colorpicker" = {
-        format = "{}";
-        return-type = "json";
-        interval = "once";
-        exec = "~/.config/waybar/scripts/Colorpicker.sh -j";
-        on-click = "~/.config/waybar/scripts/Colorpicker.sh";
-        signal = 1;
-      };
-
-      idle_inhibitor = {
-        format = "{icon}";
-        format-icons = {
-          activated = "";
-          deactivated = "";
-        };
-      };
-
-      "custom/expand" = {
-        format = "";
-        tooltip = true;
-        tooltip-format = "Click to show utilities";
-      };
-
-      "group/utility" = {
-        orientation = "inherit";
-        drawer = {
-          transition-duration = 600;
-          children-class = "child-utility";
-          transition-left-to-right = true;
-          click-to-reveal = true;
-        };
-        modules = [
-          "custom/expand"
-          "cpu"
-          "memory"
-          "temperature"
-          "custom/pacman"
-          "idle_inhibitor"
-          "custom/colorpicker"
-        ];
-      };
-
-      "custom/playerctl#backward" = {
-        format = "󰙣 ";
-        on-click = "playerctl previous";
-        on-scroll-down = "wpctl set-volume @DEFAULT_SINK@ 5%-";
-        on-scroll-up = "wpctl set-volume @DEFAULT_SINK@ 5%+";
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base09}' >  </span> {usage}%";
         tooltip = false;
       };
 
-      "custom/playerctl#foward" = {
-        format = "󰙡 ";
-        on-click = "playerctl next";
-        on-scroll-down = "wpctl set-volume @DEFAULT_SINK@ 5%-";
-        on-scroll-up = "wpctl set-volume @DEFAULT_SINK@ 5%+";
+      backlight = {
+        format = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0A}' > 󰞏 </span> {percent}%";
         tooltip = false;
       };
 
@@ -172,14 +75,18 @@
         on-scroll-down = "wpctl set-volume @DEFAULT_SINK@ 5%-";
         on-scroll-up = "wpctl set-volume @DEFAULT_SINK@ 5%+";
         return-type = "json";
+        format = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0D}' >  </span> {}";
       };
 
-      "custom/playerlabel" = {
-        exec = ''playerctl -a metadata --format '{"text": "{{artist}} - {{markup_escape(title)}}", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}' -F'';
-        format = "<span>󰎈 {} 󰎈</span>";
-        max-length = 40;
-        on-click = "";
-        return-type = "json";
+      pulseaudio = {
+        format = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0C}' >  </span> {volume}%";
+        format-muted = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base08}' >  </span> {volume}%";
+        format-bluetooth = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0D}' > 󰂰 </span> {volume}%";
+        format-bluetooth-muted = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base08}' > 󰂲 </span> {volume}%";
+        format-source = "{volume}% ";
+        on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
+        tooltip = false;
+        max-volume = 130;
       };
 
       battery = {
@@ -194,34 +101,35 @@
           good = 95;
           warning = 30;
         };
-        on-scroll-up = "~/.config/hypr/scripts/backlight.sh --inc";
-        on-scroll-down = "~/.config/hypr/scripts/backlight.sh --dec";
-      };
+        format-icons = [
+          "󰂎"
+          "󰁺"
+          "󰁻"
+          "󰁽"
+          "󰁾"
+          "󰁿"
+          "󰂀"
+          "󰂁"
+          "󰂂"
+          "󰁹"
+        ];
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> {icon} </span> {capacity}%";
+        format-critical = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}'> {icon} </span> {capacity}%!!";
+        format-warning = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0A}'> {icon} </span> {capacity}%";
+        format-full = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> {icon} </span> {capacity}%";
+        format-charging = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> 󰂅 </span> {capacity}%";
+        format-charging-warning = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0A}'> 󰢝 </span> {capacity}%";
+        format-charging-critical = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}'> 󰢜 </span> {capacity}%";
+        format-plugged = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> 󰂅 </span> {capacity}%";
+        format-alt = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> 󱧥 </span> {time}";
 
-      pulseaudio = {
-        format = "{icon} {volume}%";
-        format-icons.default = ["󰕿" "󰖀" "󰕾"];
-        format-muted = "󰝟";
-        on-click = "pavucontrol";
-        scroll-step = 5;
-      };
-
-      network = {
-        format-disconnected = "󰖪 0% ";
-        format-ethernet = "󰈀 100% ";
-        format-linked = "{ifname} (No IP)";
-        format-wifi = "  {signalStrength}%";
-        tooltip-format = "Connected to {essid} {ifname} via {gwaddr}";
-        on-click = "kitty --title KittyNmtui sh -c  'sleep 0.1; nmtui'";
-      };
-
-      tray = {
-        icon-size = 20;
-        spacing = 8;
+        tooltip = false;
       };
 
       clock = {
-        format = "󰥔 {:%I:%M:%S %p} ";
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'>  </span> {:%a %d | %b %I:%M %p}";
+
+        tooltip = false;
         interval = 1;
         tooltip-format = "<tt>{calendar}</tt>";
         calendar.format.today = "<span color='#fAfBfC'><b>{}</b></span>";

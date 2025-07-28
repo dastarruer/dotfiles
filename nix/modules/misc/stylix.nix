@@ -8,7 +8,7 @@ in {
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
     image = ../../../wallpapers/gruvbox/1022291.jpg;
 
-    # Disable plymouth support
+    # Disable targets
     targets.plymouth.enable = false;
 
     # Cursor settings

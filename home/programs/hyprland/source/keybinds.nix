@@ -5,6 +5,7 @@
     "$menu" = "rofi -show drun";
 
     bind = [
+      "$mainMod, C, exec, rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | xclip --clipboard --input && notify-send -t 1000 \"Copied to clipboard\""
       "$mainMod, RETURN, exec, $terminal"
       "$mainMod, Q, killactive"
       "$mainMod, M, exit"
@@ -71,7 +72,7 @@
       "$mainMod, Y, pin"
       "$mainMod, G, centerwindow"
       "$mainMod, F, fullscreen"
-      ",XF86AudioPlay,exec,playerctl play-pause"
+      ",XF86AudioPlay,exec,playerctl play-pause -p spotify"
       ",XF86AudioPrev,exec,playerctl previous"
       ",XF86AudioNext,exec,playerctl next"
     ];
@@ -88,6 +89,8 @@
       ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
       "ALT, B , exec, brillo -A 5 -q"
       "ALT , V, exec, brillo -U 5 -q"
+      "ALT SHIFT, B , exec, brillo -A 2 -q"
+      "ALT SHIFT, V, exec, brillo -U 2 -q"
     ];
 
     bindl = [

@@ -7,7 +7,6 @@
     # Apps
     xfce.thunar
     firefox
-    obsidian
     todoist-electron
     musescore
     vesktop
@@ -17,7 +16,13 @@
     tesseract
     grimblast
 
+    # Clipboard
+    wl-clipboard
+    cliphist
+    go # a dependency of cliphist
+
     # Other
+    rofi-calc
     gh
     flatpak
     cargo

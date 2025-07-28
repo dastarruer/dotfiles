@@ -3,6 +3,7 @@
     "waybar"
     "swww-daemon"
     "nm-applet"
+    "hypridle"
 
     # Start apps
     "todoist-electron"

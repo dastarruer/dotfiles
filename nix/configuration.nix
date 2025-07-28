@@ -22,11 +22,12 @@
   # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  # Reduce cpu load during rebuilds
+  nix.settings.max-jobs = 4;
+  nix.settings.cores = 4;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # Better battery life
-  services.auto-cpufreq.enable = true;
 
   # Brightness
   hardware.brillo.enable = true;
@@ -38,6 +39,11 @@
     # Specify cpu id to process only my cpu's thingamabob
     cpuModelId = "00A50F00";
   };
+
+  # Allow fonts to work with flatpak (https://wiki.nixos.org/wiki/Fonts#Flatpak_applications_can't_find_system_fonts)
+  # If any issues arise, read through the wiki
+  # Note that home-manager flatpak configuration is in flatpak.nix
+  fonts.fontDir.enable = true;
 
   # Home manager
   home-manager = {

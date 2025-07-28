@@ -22,12 +22,14 @@
 
     /* Global Properties */
     * {
-        border: none;
-        border-radius: 0px;
-        font-family: JetBrainsMono Nerd Font Propo;
-        font-size: 16px;
-        font-weight: 800;
-        min-height: 0;
+      padding: 0;
+      margin: 0;
+      min-height: 0;
+      border-radius: 5px;
+      border: none;
+      text-shadow: none;
+      transition: none;
+      box-shadow: none;
     }
 
     window#waybar {
@@ -35,24 +37,60 @@
       box-shadow: none;
     }
 
-    #window {
-        padding-left: 15px;
-        padding-right: 15px;
-        border-radius: 16px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        font-weight: normal;
-        font-style: normal;
+    window#waybar.hidden {
+      opacity: 1;
     }
 
-    tooltip {
-        background: @base;
-        border: 2px solid @teal;
-        border-radius: 12px;
+    #custom-rofi,
+    #workspaces button,
+    #workspaces button:hover,
+    #workspaces button.visible,
+    #workspaces button.visible:hover,
+    #workspaces button.active,
+    #workspaces button.active:hover,
+    #workspaces button.urgent,
+    #window,
+    #tray,
+    #disk,
+    #cpu,
+    #temperature,
+    #temperature.critical,
+    #backlight,
+    #custom-memory,
+    #pulseaudio,
+    #pulseaudio.muted,
+    #battery,
+    #battery.critical,
+    #battery.warning,
+    #clock {
+      font-family: JetBrainsMono Nerd Font Propo;
+      font-size: 16px;
+      font-weight: 800;
+      color: @base;
+      background: @base;
+      border: 3px solid @base;
     }
-    tooltip label {
-        color: @text;
-        padding: 6px;
+
+    #window,
+    #tray,
+    #disk,
+    #cpu,
+    #temperature,
+    #temperature.critical,
+    #backlight,
+    #custom-memory,
+    #pulseaudio,
+    #pulseaudio.muted,
+    #battery,
+    #battery.critical,
+    #battery.warning,
+    #clock {
+      padding-right: 4px;
+    }
+
+    #custom-rofi {
+      background: @teal;
+      padding: 0 6px;
     }
 
     #workspaces {

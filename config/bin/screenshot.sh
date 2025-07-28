@@ -129,11 +129,7 @@ elif [ "$rofi_scr_type" = "$lang_scr_ocr" ]; then
         ocr_text=$(tesseract "$temp_ocr_img" stdout 2>/dev/null)
 
         # Copy to clipboard
-        if command -v xsel &>/dev/null; then
-            echo "$ocr_text" | xsel --clipboard --input
-        elif command -v xclip &>/dev/null; then
-            echo "$ocr_text" | xclip -selection clipboard
-        fi
+        echo "$ocr_text" | wl-copy
 
         notify-send "OCR complete" "Text copied to clipboard"
     else
