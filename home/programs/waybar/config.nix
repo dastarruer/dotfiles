@@ -2,38 +2,34 @@
   programs.waybar.settings = {
     mainBar = {
       layer = "top";
-      position = "top";
-      spacing = 0;
-      height = 35;
-      margin-top = 0;
-      margin-right = 0;
-      margin-bottom = 0;
-      margin-left = 0;
+      height = 20;
+      spacing = 5;
+      margin-top = 5;
+      margin-right = 8;
+      margin-left = 8;
 
       modules-left = [
-        "custom/launcher"
-        "group/utility"
-        "custom/playerctl#backward"
-        "custom/playerctl#play"
-        "custom/playerctl#foward"
-        "custom/playerlabel"
+        "hyprland/workspaces"
+        "tray"
+        "hyprland/window"
       ];
 
-      modules-center = [
-        "custom/weather"
-        "hyprland/workspaces"
-        "custom/swaync"
-      ];
+      modules-center = ["clock"];
 
       modules-right = [
-        "tray"
-        "battery"
+        "disk"
+        "cpu"
+        "backlight"
+        "custom/memory"
         "pulseaudio"
-        "network"
-        "clock"
+        "battery"
       ];
 
       "hyprland/workspaces" = {
+        disable-scroll = true;
+        active-only = false;
+        all-outputs = true;
+        warp-on-scroll = false;
         format = "{name}";
       };
 
@@ -56,6 +52,7 @@
       cpu = {
         format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base09}' >  </span> {usage}%";
         tooltip = false;
+        interval = 1;
       };
 
       backlight = {
@@ -63,16 +60,9 @@
         tooltip = false;
       };
 
-      "custom/playerctl#play" = {
-        exec = ''playerctl -a metadata --format '{"text": "{{artist}} - {{markup_escape(title)}}", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}' -F'';
-        format-icons = {
-          Paused = "<span> </span>";
-          Playing = "<span>󰏥 </span>";
-          Stopped = "<span> </span>";
-        };
-        on-click = "playerctl play-pause";
-        on-scroll-down = "wpctl set-volume @DEFAULT_SINK@ 5%-";
-        on-scroll-up = "wpctl set-volume @DEFAULT_SINK@ 5%+";
+      "custom/memory" = {
+        exec = "~/bin/memory_usage.sh";
+        interval = 2;
         return-type = "json";
         format = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0D}' >  </span> {}";
       };
@@ -88,13 +78,27 @@
         max-volume = 130;
       };
 
+      "battery#bat2".bat = "BAT2";
+
       battery = {
-        format-time = "{H} h {m} min";
+        interval = 1;
         states = {
-          critical = 15;
-          good = 95;
+          good = 99;
           warning = 30;
+          critical = 20;
         };
+        format-icons = [
+          "󰂎"
+          "󰁺"
+          "󰁻"
+          "󰁽"
+          "󰁾"
+          "󰁿"
+          "󰂀"
+          "󰂁"
+          "󰂂"
+          "󰁹"
+        ];
         format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> {icon} </span> {capacity}%";
         format-critical = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}'> {icon} </span> {capacity}%!!";
         format-warning = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0A}'> {icon} </span> {capacity}%";
@@ -113,12 +117,6 @@
 
         tooltip = false;
         interval = 1;
-        tooltip-format = "<tt>{calendar}</tt>";
-        calendar.format.today = "<span color='#fAfBfC'><b>{}</b></span>";
-        actions = {
-          on-click-right = "shift_down";
-          on-click = "shift_up";
-        };
       };
     };
   };
