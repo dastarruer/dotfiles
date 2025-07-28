@@ -6,7 +6,7 @@ in {
 
     # Set the color theme
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
-    image = ../../../config/wallpapers/other/1022291.jpg;
+    image = ../../../config/wallpapers/other/wp2137402-oregairu-wallpapers.png;
 
     # Disable targets
     targets.plymouth.enable = false;
