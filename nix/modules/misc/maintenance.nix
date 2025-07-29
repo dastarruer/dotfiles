@@ -19,7 +19,6 @@
     # Run service once laptop has powered on and has internet access
     persistent = true;
     dates = "02:00";
-    randomizedDelaySec = "45min";
 
     # allow rebooting after every upgrade (just in case!)
     # allowReboot = true;
