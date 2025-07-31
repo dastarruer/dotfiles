@@ -191,7 +191,7 @@
     /*         pulseaudio               */
     /* ================================ */
     #pulseaudio {
-      color: @teal;
+      color: @blue;
     }
 
     #pulseaudio.muted {
