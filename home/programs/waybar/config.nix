@@ -69,9 +69,9 @@
 
       pulseaudio = {
         format = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0C}' >  </span> {volume}%";
-        format-muted = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base08}' >  </span> {volume}%";
-        format-bluetooth = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0D}' > 󰂰 </span> {volume}%";
-        format-bluetooth-muted = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base08}' > 󰂲 </span> {volume}%";
+        format-muted = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0C}' >  </span> {volume}%";
+        format-bluetooth = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0C}' > 󰂰 </span> {volume}%";
+        format-bluetooth-muted = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0C}' > 󰂲 </span> {volume}%";
         format-source = "{volume}% ";
         on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
         tooltip = false;
