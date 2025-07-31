@@ -1,7 +1,11 @@
 {...}: {
   imports = [
     ./desktops/hyprland
-    ./boot
-    ./misc
+    ./system
+    ./services
+    ./users
+
+    ./stylix.nix
+    ./system-packages.nix
   ];
 }
