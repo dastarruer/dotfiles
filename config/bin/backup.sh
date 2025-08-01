@@ -3,7 +3,23 @@
 # Define directories
 USB_DEVICE="/dev/sda1"
 MOUNT_POINT="/media/dastarruer/mnt"
-SOURCE_DIRS=("$HOME/Documents/sheet-music" "$HOME/Documents/vault" "$HOME/Documents/books" "$HOME/Documents/school" "$HOME/Pictures/trips" "$HOME/.ssh")
+USB_SOURCE_DIRS=("$HOME/Documents/sheet-music" "$HOME/Documents/vault" "$HOME/Documents/books" "$HOME/Documents/school" "$HOME/Pictures/trips" "$HOME/.ssh")
+GDRIVE_SOURCE_DIRS=("$HOME/Documents/sheet-music" "$HOME/Documents/books" "$HOME/Documents/school" "$HOME/Pictures/trips")
+
+REMOTE="gdrive:Backups"
+
+echo "Backing up to Google Drive now..."
+
+# Backup to gdrive
+for DIR in "${GDRIVE_SOURCE_DIRS[@]}"; do
+  if [ -d "$DIR" ]; then
+    DEST="$REMOTE/$(basename "$DIR")"
+    echo "Backing up $DIR to $DEST..."
+    rclone sync "$DIR" "$DEST" -P || { echo "Backup failed for $DIR"; exit 1; }
+  else
+    echo "Warning: $DIR does not exist, skipping."
+  fi
+done
 
 # Mount the USB drive
 echo "Mounting USB drive..."
@@ -21,7 +37,7 @@ if ! mount | grep -q "$MOUNT_POINT"; then
 fi
 
 # Perform backup to USB
-for DIR in "${SOURCE_DIRS[@]}"; do
+for DIR in "${USB_SOURCE_DIRS[@]}"; do
     if [ -d "$DIR" ]; then
         echo "Backing up $DIR to $MOUNT_POINT..."
         if sudo rsync -avh --progress --delete "$DIR" "$MOUNT_POINT"; then
@@ -35,6 +51,7 @@ for DIR in "${SOURCE_DIRS[@]}"; do
     fi
 done
 
+notify-send "Backup complete. Check terminal por favor." -t 3000
 echo "Check if files are properly synced at $MOUNT_POINT. Remember to close the tab afterwards, and then press enter to eject:"
 read
 
@@ -46,3 +63,4 @@ else
     echo "Failed to eject the drive. If you have a tab open currently in the mount directory, close it. Eject manually with: 'sudo eject $USB_DEVICE'"
     exit 1
 fi
+
