@@ -1,11 +1,11 @@
 {pkgs, ...}: {
   # Acheive faster reboot times by making sure services can only take up to ten seconds to shut down
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-    DefaultDependencies=yes
-    JobTimeoutSec=10s
-    DefaultStartLimitIntervalSec=10s
-  '';
+  systemd.settings.Manager = {
+    DefaultTimeoutStopSec = "10s";
+    DefaultDependencies = "yes";
+    JobTimeoutSec = "10s";
+    DefaultStartLimitIntervalSec = "10s";
+  };
 
   # Bootloader.
   boot = {
