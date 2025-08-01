@@ -6,14 +6,24 @@ MOUNT_POINT="/media/dastarruer/mnt"
 USB_SOURCE_DIRS=("$HOME/Documents/sheet-music" "$HOME/Documents/vault" "$HOME/Documents/books" "$HOME/Documents/school" "$HOME/Pictures/trips" "$HOME/.ssh")
 GDRIVE_SOURCE_DIRS=("$HOME/Documents/sheet-music" "$HOME/Documents/books" "$HOME/Documents/school" "$HOME/Pictures/trips")
 
-REMOTE="gdrive:Backups"
+REMOTE="gdrive:"
 
-echo "Backing up to Google Drive now..."
+echo "Checking rclone authentication status..."
+
+# Check that rclone works and doesn't need reauthentication
+if rclone about gdrive: >/dev/null 2>&1; then
+  echo "rclone is authenticated and working. Proceeding to backup now..."
+else
+    # Reauthenticate rclone
+    notify-send "Oops!" "Please reauthenticate rclone."
+    rclone config reconnect $REMOTE
+    echo "Done! Proceeding to backup now..."
+fi
 
 # Backup to gdrive
 for DIR in "${GDRIVE_SOURCE_DIRS[@]}"; do
   if [ -d "$DIR" ]; then
-    DEST="$REMOTE/$(basename "$DIR")"
+    DEST="$REMOTE/Backups/$(basename "$DIR")"
     echo "Backing up $DIR to $DEST..."
     rclone sync "$DIR" "$DEST" -P || { echo "Backup failed for $DIR"; exit 1; }
   else
