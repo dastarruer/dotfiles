@@ -3,7 +3,7 @@
 
   betterfoxGit = builtins.fetchGit {
     url = "https://github.com/yokoffing/Betterfox";
-    rev = "82553f016744f0eb0528f8d92c3eb30ef9a1f6c4";
+    ref = "refs/heads/main";
   };
 
   # Get the betterfox userjs as a base for my settings
