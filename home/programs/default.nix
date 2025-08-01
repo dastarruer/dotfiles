@@ -11,5 +11,6 @@
     ./waybar
     ./vscodium
     ./hyprland
+    ./anki
   ];
 }

@@ -10,7 +10,6 @@
     todoist-electron
     musescore
     vesktop
-    anki-bin
 
     # Screenshots
     tesseract
