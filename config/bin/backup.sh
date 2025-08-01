@@ -3,7 +3,7 @@
 # Define directories
 USB_DEVICE="/dev/sda1"
 MOUNT_POINT="/media/dastarruer/mnt"
-SOURCE_DIRS=("$HOME/Documents/vault" "$HOME/Documents/books" "$HOME/Documents/school" "$HOME/Pictures/trips" "$HOME/.ssh")
+SOURCE_DIRS=("$HOME/Documents/sheet-music" "$HOME/Documents/vault" "$HOME/Documents/books" "$HOME/Documents/school" "$HOME/Pictures/trips" "$HOME/.ssh")
 
 # Mount the USB drive
 echo "Mounting USB drive..."
