@@ -10,7 +10,7 @@
       # Move certain apps to workspaces
       "workspace 5 silent,class:^(spotify)$"
       "workspace 6 silent,class:^(Todoist)$"
-      "workspace 9 silent,class:^(Anki)$"
+      "workspace 9 silent,class:^(anki)$"
       "workspace 10 silent,class:^(obsidian)$"
 
       # Spotify rules
