@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-mineral = {
+      url = "github:cynicsketch/nix-mineral";
+      flake = false;
+    };
+
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -77,6 +82,7 @@
           home-manager.users.dastarruer = ./home.nix;
         }
 
+        # Other modules
         inputs.stylix.nixosModules.stylix
       ];
     };
