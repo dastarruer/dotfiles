@@ -45,7 +45,7 @@
       gb = "git branch";
       "g." = "git add . && git status";
       gs = "git status";
-      gc = "git commit -m";
+      gc = "git commit";
       gca = "git status && git add . && git commit --amend --no-edit";
       gp = "git push";
       gl = "git log --oneline --graph --decorate";
