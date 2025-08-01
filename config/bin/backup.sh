@@ -3,8 +3,32 @@
 # Define directories
 USB_DEVICE="/dev/sda1"
 MOUNT_POINT="/media/dastarruer/mnt"
-USB_SOURCE_DIRS=("$HOME/Documents/sheet-music" "$HOME/Documents/vault" "$HOME/Documents/books" "$HOME/Documents/school" "$HOME/Pictures/trips" "$HOME/.ssh")
-GDRIVE_SOURCE_DIRS=("$HOME/Documents/sheet-music" "$HOME/Documents/books" "$HOME/Documents/school" "$HOME/Pictures/trips")
+USB_SOURCE_DIRS=(
+  "$HOME/Documents/sheet-music"
+  "$HOME/Documents/vault"
+  "$HOME/Documents/books"
+  "$HOME/Documents/school"
+  "$HOME/Pictures/trips"
+  "$HOME/.ssh"
+)
+
+# Define individual files to back up
+USB_SOURCE_FILES=(
+  "$HOME/Downloads/bookmarks.html"
+  "$HOME/Downloads/Dark-Reader-Settings.json"
+)
+
+# Expand globs and add to USB_SOURCE_FILES
+for f in "$HOME"/Downloads/SponsorBlockConfig*.json "$HOME"/Downloads/tab-groups-backup*; do
+  [ -e "$f" ] && USB_SOURCE_FILES+=("$f")
+done
+
+GDRIVE_SOURCE_DIRS=(
+  "$HOME/Documents/sheet-music"
+  "$HOME/Documents/books"
+  "$HOME/Documents/school"
+  "$HOME/Pictures/trips"
+)
 
 REMOTE="gdrive:"
 
@@ -46,7 +70,7 @@ if ! mount | grep -q "$MOUNT_POINT"; then
     exit 1
 fi
 
-# Perform backup to USB
+# Perform backup to USB: Directories
 for DIR in "${USB_SOURCE_DIRS[@]}"; do
     if [ -d "$DIR" ]; then
         echo "Backing up $DIR to $MOUNT_POINT..."
@@ -58,6 +82,21 @@ for DIR in "${USB_SOURCE_DIRS[@]}"; do
         fi
     else
         echo "Warning: Source directory $DIR does not exist. Skipping..."
+    fi
+done
+
+# Perform backup to USB: Files
+for FILE in "${USB_SOURCE_FILES[@]}"; do
+    if [ -f "$FILE" ]; then
+        echo "Backing up $FILE to $MOUNT_POINT..."
+        if sudo rsync -avh --progress "$FILE" "$MOUNT_POINT"; then
+            echo "Backup of $FILE completed successfully."
+        else
+            echo "Backup of $FILE failed."
+            exit 1
+        fi
+    else
+        echo "Warning: File $FILE does not exist. Skipping..."
     fi
 done
 
@@ -73,4 +112,3 @@ else
     echo "Failed to eject the drive. If you have a tab open currently in the mount directory, close it. Eject manually with: 'sudo eject $USB_DEVICE'"
     exit 1
 fi
-
