@@ -7,6 +7,10 @@
 
     # Config
     extraConfig = {
+      # Use vs codium for commit messages
+      core.editor = "codium --wait";
+
+      # Automatically push to the current branch or something
       push.autoSetupRemote = true;
 
       credential."https://github.com" = {
