@@ -2,6 +2,7 @@
   imports = [
     ./bluetooth.nix
     ./locale.nix
-    ./kavita.nix
+    # ./kavita.nix
+    ./calibre.nix
   ];
 }

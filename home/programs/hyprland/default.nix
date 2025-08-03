@@ -13,7 +13,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
-    # set the flake package
+    # set to the flake package for more up to date software
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
