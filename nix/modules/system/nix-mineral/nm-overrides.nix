@@ -3,12 +3,7 @@
 #
 # The goal is primarily to provide a premade template for users to make
 # nix-mineral work with any system and use case.
-({
-  config,
-  lib,
-  pkgs,
-  ...
-}: (with lib; {
+{...}: {
   # Import all the options, assuming the nix-overrides folder is in the same
   # folder as this file.
   imports = [
@@ -251,4 +246,4 @@
   # Dont use the nix-mineral default firewall, if you wish to use alternate
   # applications for the same purpose.
   # nm-overrides.software-choice.no-firewall.enable = true;
-}))
+}
