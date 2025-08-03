@@ -107,7 +107,7 @@
 
   # Allow executing binaries in /tmp. Certain applications may need to execute
   # in /tmp, Java being one example.
-  # nm-overrides.desktop.tmp-exec.enable = true;
+  nm-overrides.desktop.tmp-exec.enable = true;
 
   # Allow executing binaries in /var/lib. LXC, and system-wide Flatpaks are
   # among some examples of applications that requiring executing in /var/lib.
