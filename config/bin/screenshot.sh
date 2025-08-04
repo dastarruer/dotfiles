@@ -26,12 +26,12 @@ case "$main_choice" in
         case "$full_choice" in
             "copy to clipboard")
                 sleep 0.3
-                flameshot full -c
+                XDG_CURRENT_DESKTOP=sway flameshot full -c
                 ;;
 
             "save as")
                 sleep 0.3
-                flameshot full
+                XDG_CURRENT_DESKTOP=sway flameshot full
                 ;;
 
             *)
@@ -41,7 +41,7 @@ case "$main_choice" in
         ;;
     "ocr")
         sleep 0.3
-        flameshot gui -r | tesseract stdin stdout | xsel --clipboard --input
+        XDG_CURRENT_DESKTOP=sway flameshot gui -r | tesseract stdin stdout | xsel --clipboard --input
         notify-send "Clipboard:" "$(xsel --clipboard --output)"
         ;;
     *)
