@@ -1,7 +1,4 @@
 {...}: {
-  # Better battery life
-  services.auto-cpufreq.enable = true;
-
   services.logind = {
     # Suspend system when power button is pressed
     powerKey = "suspend";
