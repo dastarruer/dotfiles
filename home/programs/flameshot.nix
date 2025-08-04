@@ -26,4 +26,10 @@
       };
     };
   };
+
+  # Hide the flameshot wayland warning (https://github.com/flameshot-org/flameshot/issues/3186)
+  services.dunst.settings.ignore_flameshot_warning = {
+    body = "grim's screenshot component is implemented based on wlroots, it may not be used in GNOME or similar desktop environments";
+    format = "";
+  };
 }
