@@ -2,7 +2,10 @@
   # Most of these settings are from here: https://discourse.nixos.org/t/battery-life-still-isnt-great/41188
 
   # Enable NixOS power management hooks (basic integration).
-  powerManagement.enable = true;
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "powersave";
+  };
 
   # Load all available firmware blobs.
   # Ensures WiFi, GPU, sound, etc. have proper drivers and power-saving features.
