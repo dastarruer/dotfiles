@@ -4,13 +4,6 @@
       "opacity 1.0 override, class:^(firefox|thunar)$"
       "suppressevent maximize, class:.*"
       "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-
-      # Flameshot rules (https://wiki.hypr.land/FAQ/#:~:text=Option%203%3A%20Install%20flameshot%2E)
-      "noanim, class:^(flameshot)$"
-      "float, class:^(flameshot)$"
-      "move 0 0, class:^(flameshot)$"
-      "pin, class:^(flameshot)$"
-      "noinitialfocus, class:^(flameshot)$"
     ];
 
     windowrulev2 = [

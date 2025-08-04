@@ -32,4 +32,13 @@
     body = "grim's screenshot component is implemented based on wlroots, it may not be used in GNOME or similar desktop environments";
     format = "";
   };
+
+  # Flameshot rules (https://wiki.hypr.land/FAQ/#:~:text=Option%203%3A%20Install%20flameshot%2E)
+  wayland.windowManager.hyprland.settings.windowrule = [
+    "noanim, class:^(flameshot)$"
+    "float, class:^(flameshot)$"
+    "move 0 0, class:^(flameshot)$"
+    "pin, class:^(flameshot)$"
+    "noinitialfocus, class:^(flameshot)$"
+  ];
 }
