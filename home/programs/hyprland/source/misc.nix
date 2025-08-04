@@ -10,6 +10,8 @@
     misc = {
       # Lower amount of frames sent when nothing is happening
       vfr = true;
+
+      disable_hyprland_logo = true;
     };
 
     master.new_status = "master";
