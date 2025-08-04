@@ -2,12 +2,11 @@
   imports = [
     ./desktops/hyprland
     ./boot
+    ./self-hosted
     ./users
 
     ./battery.nix
     ./bluetooth.nix
-    ./calibre.nix
-    # ./kavita.nix
     ./maintenance.nix
     ./networking.nix
     ./power-button.nix

@@ -12,6 +12,7 @@
     ./waybar
     ./vscodium
     ./hyprland
+    ./flameshot.nix
     ./anki
   ];
 }
