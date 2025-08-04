@@ -1,5 +1,10 @@
 # Comes from https://www.youtube.com/watch?v=EI-6QX60WXc&t=915s
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}: {
   # Auto update
   system.autoUpgrade = {
     enable = true;
