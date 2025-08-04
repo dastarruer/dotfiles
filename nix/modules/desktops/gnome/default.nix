@@ -1,7 +1,7 @@
 # UNUSED BECAUSE HYPRLAND SUPERIORITY
 {...}: {
   imports = [
-    ../../pipewire.nix
+    ../../audio/pipewire.nix
   ];
 
   # Enable the X11 windowing system.

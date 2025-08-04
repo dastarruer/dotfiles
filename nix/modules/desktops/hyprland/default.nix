@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ../../pulseaudio.nix
+    ../../audio/pulseaudio.nix
   ];
 
   programs.uwsm.enable = true;
