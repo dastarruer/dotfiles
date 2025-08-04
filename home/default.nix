@@ -7,5 +7,6 @@
     ./packages.nix
     ./symlinks.nix
     ./gtk.nix
+    ./maintenance.nix
   ];
 }
