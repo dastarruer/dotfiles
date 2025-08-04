@@ -4,7 +4,8 @@
 
     ./maintenance.nix
     ./networking.nix
-    ./power.nix
+    ./power-button.nix
+    ./battery.nix
     # ./nix-mineral
   ];
 }
