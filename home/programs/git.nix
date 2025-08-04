@@ -13,16 +13,16 @@
     age.keyFile = "/home/dastarruer/.config/sops/age/keys.txt";
 
     secrets = {
-      git_username = {};
-      git_email = {};
+      name = {};
+      email = {};
     };
   };
 
   programs.git = {
     enable = true;
 
-    userName = "${config.sops.secrets.git_username.path}";
-    userEmail = "${config.sops.secrets.git_email.path}";
+    userName = "${config.sops.secrets.name.path}";
+    userEmail = "${config.sops.secrets.email.path}";
 
     # Config
     extraConfig = {
