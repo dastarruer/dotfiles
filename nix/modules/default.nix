@@ -7,5 +7,6 @@
 
     ./stylix.nix
     ./system-packages.nix
+    ./secrets.nix
   ];
 }
