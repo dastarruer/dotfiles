@@ -1,4 +1,5 @@
 {...}: {
+  # Configure what happens once the power button is pressed
   services.logind = {
     # Suspend system when power button is pressed
     powerKey = "suspend";
