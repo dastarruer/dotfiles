@@ -34,7 +34,7 @@
   };
 
   # Flameshot rules (https://wiki.hypr.land/FAQ/#:~:text=Option%203%3A%20Install%20flameshot%2E)
-  wayland.windowManager.hyprland.settings.windowrule = [
+  waqyland.windowManager.hyprland.settings.windowrule = [
     "noanim, class:^(flameshot)$"
     "float, class:^(flameshot)$"
     "move 0 0, class:^(flameshot)$"
