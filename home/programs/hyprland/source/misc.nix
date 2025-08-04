@@ -7,6 +7,11 @@
       "HYPRCURSOR_SIZE,24"
     ];
 
+    misc = {
+      # Lower amount of frames sent when nothing is happening
+      vfr = true;
+    };
+
     master.new_status = "master";
   };
 }
