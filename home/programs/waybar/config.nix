@@ -46,13 +46,13 @@
 
       disk = {
         format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}' >  </span> {free}";
-        interval = 20;
+        interval = 120;
       };
 
       cpu = {
         format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base09}' >  </span> {usage}%";
         tooltip = false;
-        interval = 1;
+        interval = 5;
       };
 
       backlight = {
@@ -81,7 +81,7 @@
       "battery#bat2".bat = "BAT2";
 
       battery = {
-        interval = 1;
+        interval = 5;
         states = {
           good = 99;
           warning = 30;
@@ -116,7 +116,7 @@
         format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'>  </span> {:%a %d %b | %I:%M %p}";
 
         tooltip = false;
-        interval = 1;
+        interval = 60;
       };
     };
   };
