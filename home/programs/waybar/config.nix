@@ -101,10 +101,10 @@
         ];
         format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> {icon} </span> {capacity}%";
         format-critical = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}'> {icon} </span> {capacity}%!!";
-        format-warning = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0A}'> {icon} </span> {capacity}%";
+        format-warning = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base09}'> {icon} </span> {capacity}%";
         format-full = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> {icon} </span> {capacity}%";
         format-charging = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> 󰂅 </span> {capacity}%";
-        format-charging-warning = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0A}'> 󰢝 </span> {capacity}%";
+        format-charging-warning = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base09}'> 󰢝 </span> {capacity}%";
         format-charging-critical = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}'> 󰢜 </span> {capacity}%";
         format-plugged = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> 󰂅 </span> {capacity}%";
         format-alt = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> 󱧥 </span> {time}";
