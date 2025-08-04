@@ -25,4 +25,9 @@
       github_recovery_codes = {};
     };
   };
+
+  # Symlink public ssh key
+  systemd.tmpfiles.rules = [
+    "L /home/dastarruer/.ssh/id_ed25519.pub - - - - ${./../../secrets/id_ed25519.pub}"
+  ];
 }
