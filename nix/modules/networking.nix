@@ -6,7 +6,7 @@
     # Enable networking
     networkmanager.enable = true;
 
-    # Enable firewall https://nixos.wiki/wiki/Firewall
+    # Enable iptables firewall https://nixos.wiki/wiki/Firewall
     firewall.enable = true;
   };
 
