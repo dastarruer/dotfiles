@@ -36,5 +36,5 @@ jobs:
             exit 0
           fi
 
-          git commit -m "update flake + dotfiles"
+          git commit -m "update flake"
           git push
