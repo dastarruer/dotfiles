@@ -16,10 +16,10 @@
           on-resume = "hyprctl dispatch dpms on";
         }
         # Suspend system
-        {
-          timeout = 600;
-          on-timeout = "systemctl suspend";
-        }
+        # {
+        #   timeout = 600;
+        #   on-timeout = "systemctl suspend";
+        # }
       ];
     };
   };
