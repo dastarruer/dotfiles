@@ -45,6 +45,9 @@
 
     # Disable legacy VGA decoding to allow GPU to fully power down.
     "vga_disable_vga=1"
+
+    # Enable usb autosuspend after 120 seconds
+    "usbcore.autosuspend=120"
   ];
 
   systemd.tmpfiles.rules = [
