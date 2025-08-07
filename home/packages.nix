@@ -21,7 +21,6 @@
     go # a dependency of cliphist
 
     # Other
-    rofi-calc
     gh
     flatpak
     cargo
@@ -34,6 +33,7 @@
   programs = {
     home-manager.enable = true;
     btop.enable = true;
+    sherlock.enable = true;
     yazi.enable = true;
     zoxide.enable = true;
   };

@@ -6,7 +6,7 @@ MOUNT_POINT="/media/dastarruer/mnt"
 USB_SOURCE_DIRS=(
   "$HOME/Documents/sheet-music"
   "$HOME/Documents/vault"
-  "$HOME/Documents/books"
+  "$HOME/Documents/calibre"
   "$HOME/Documents/school"
   "$HOME/Pictures/trips"
   "$HOME/.ssh"
@@ -25,7 +25,7 @@ done
 
 GDRIVE_SOURCE_DIRS=(
   "$HOME/Documents/sheet-music"
-  "$HOME/Documents/books"
+  "$HOME/Documents/calibre"
   "$HOME/Documents/school"
   "$HOME/Pictures/trips"
 )
