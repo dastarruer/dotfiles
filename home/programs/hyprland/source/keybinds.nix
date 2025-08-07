@@ -2,16 +2,13 @@
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
     "$terminal" = "kitty";
-    "$menu" = "rofi -show drun";
 
     bind = [
-      "$mainMod, C, exec, rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | xclip --clipboard --input && notify-send -t 1000 \"Copied to clipboard\""
       "$mainMod, RETURN, exec, $terminal"
       "$mainMod, Q, killactive"
       "$mainMod, M, exit"
       "$mainMod, E, exec, $fileManager"
       "$mainMod, Space, togglefloating"
-      "$mainMod, D, exec, $menu"
       "$mainMod, H, movefocus, l"
       "$mainMod, L, movefocus, r"
       "$mainMod, J, movefocus, u"
@@ -63,7 +60,6 @@
       "$mainMod, E, exec, ~/bin/power.sh"
       # "$mainMod, A, exec, ~/bin/wifi.sh"
       "$mainMod, W, exec, pkill waybar && waybar &"
-      "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
       ", Print, exec, ~/bin/screenshot.sh"
       "$mainMod, S, togglespecialworkspace, magic"
       "$mainMod SHIFT, S, movetoworkspace, special:magic"
