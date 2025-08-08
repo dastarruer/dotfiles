@@ -22,10 +22,6 @@
   # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  # Reduce cpu load during rebuilds
-  nix.settings.max-jobs = 4;
-  nix.settings.cores = 4;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
