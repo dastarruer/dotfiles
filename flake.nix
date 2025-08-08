@@ -9,11 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-mineral = {
-      url = "github:cynicsketch/nix-mineral";
-      flake = false;
-    };
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +21,7 @@
 
     flatpaks = {
       url = "github:in-a-dil-emma/declarative-flatpak/dev";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     firefox-addons = {
@@ -43,7 +39,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # hyprland-plugins = {
     #   url = "github:hyprwm/hyprland-plugins";
