@@ -33,7 +33,6 @@
   programs = {
     home-manager.enable = true;
     btop.enable = true;
-    sherlock.enable = true;
     yazi.enable = true;
     zoxide.enable = true;
   };
