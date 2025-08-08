@@ -49,7 +49,7 @@ for DIR in "${GDRIVE_SOURCE_DIRS[@]}"; do
   if [ -d "$DIR" ]; then
     DEST="$REMOTE/Backups/$(basename "$DIR")"
     echo "Backing up $DIR to $DEST..."
-    rclone sync "$DIR" "$DEST" -P || { echo "Backup failed for $DIR"; exit 1; }
+    rclone sync "$DIR" "$DEST" -PL || { echo "Backup failed for $DIR"; exit 1; }
   else
     echo "Warning: $DIR does not exist, skipping."
   fi
