@@ -15,11 +15,8 @@
       "--update-input"
       "nixpkgs"
 
-      # Update lock file
-      "--recreate-lock-file"
-
-      # Commit after update
-      "--commit-lock-file"
+      # Impure mode
+      "--impure"
     ];
 
     # Run service once laptop has powered on and has internet access
