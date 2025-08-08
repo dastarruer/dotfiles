@@ -5,6 +5,12 @@
     enable = true;
     flake = inputs.self.outPath;
     flags = [
+      # Reduce cpu load
+      "--max-jobs"
+      "4"
+      "--cores"
+      "4"
+
       # Update inputs
       "--update-input"
       "nixpkgs"
