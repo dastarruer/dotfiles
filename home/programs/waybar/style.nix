@@ -1,269 +1,441 @@
 {config, ...}: {
-  programs.waybar.style = ''    /* -----------------------------------------------------
-     *                      General
-     * ----------------------------------------------------- */
-    /* Colors */
-    @define-color bg0_h rgba(29,32,33,0.85);
-    @define-color bg  #282828;
-    @define-color bg1 #3C3836;
-    @define-color bg2 #504945;
-    @define-color bg3 #665C54;
-    @define-color fg  #EBDBB2;
-    @define-color red #CC241D;
-    @define-color blue #458588;
-    @define-color purple #B16286;
-    @define-color green #98971A;
-    @define-color aqua #689D6A;
-    @define-color yellow #D79921;
-    @define-color orange #D65D0E;
-    @define-color red1 #FB4934;
+  programs.waybar.style = ''
+    /* ================================ */
+    /*            Stylix Colors         */
+    /* ================================ */
+    @define-color foreground #${config.lib.stylix.colors.base05};
+    @define-color background #${config.lib.stylix.colors.base00};
 
+    @define-color color01 #${config.lib.stylix.colors.base08};
+    @define-color color02 #${config.lib.stylix.colors.base0B};
+    @define-color color03 #${config.lib.stylix.colors.base0A};
+    @define-color color04 #${config.lib.stylix.colors.base0D};
+    @define-color color05 #${config.lib.stylix.colors.base0E};
+    @define-color color06 #${config.lib.stylix.colors.base0C};
+    @define-color color07 #${config.lib.stylix.colors.base05};
+
+    @define-color color08 #${config.lib.stylix.colors.base03};
+    @define-color color09 #${config.lib.stylix.colors.base08};
+    @define-color color10 #${config.lib.stylix.colors.base0B};
+    @define-color color11 #${config.lib.stylix.colors.base0A};
+    @define-color color12 #${config.lib.stylix.colors.base0D};
+    @define-color color13 #${config.lib.stylix.colors.base0E};
+    @define-color color14 #${config.lib.stylix.colors.base0C};
+    @define-color color15 #${config.lib.stylix.colors.base07};
+
+
+    /* ======================= */
+    /* Global Styles           */
+    /* ======================= */
     * {
-      padding: 0;
-      margin: 0;
-      min-height: 0;
-      border-radius: 5px;
-      border: none;
-      text-shadow: none;
-      transition: none;
-      box-shadow: none;
+        border: none;
+        font-family: JetBrainsMono Nerd Font Propo;
+        font-size: 16px;
+        box-shadow: none;
+        min-width: 28px;
+        min-height: 28px;
     }
-
-    /* -----------------------------------------------------
-     *                      Tooltip
-     * ----------------------------------------------------- */
-
-    tooltip {
-        background: @bg;
-        border: solid 1px @bg3;
-    }
-    tooltip label {
-        color: @fg;
-    }
-
-    /* -----------------------------------------------------
-     *                      Window
-     * ----------------------------------------------------- */
 
     window#waybar {
-       /* background-color: rgba(16, 20, 25,0.5); */
-       /* background-color: @bg; */
-        background-color: transparent;
-
+        background: transparent;
     }
 
-    window#waybar.hidden {
-        opacity: 0.2;
+    /* ======================= */
+    /* Interactive States      */
+    /* ======================= */
+    #custom-arch:hover,
+    #custom-updates:hover,
+    #power-profiles-daemon:hover,
+    #network:hover,
+    #bluetooth:hover,
+    #pulseaudio:hover,
+    #backlight:hover,
+    #custom-power:hover,
+    #pulseaudio.microphone:hover,
+    #pulseaudio.sink-muted:hover {
+        opacity: 0.8;
     }
 
-    #custom-rofi,
-    #workspaces button,
-    #workspaces button:hover,
-    #workspaces button.visible,
-    #workspaces button.visible:hover,
-    #workspaces button.active,
-    #workspaces button.active:hover,
-    #workspaces button.urgent,
-    #window,
-    #tray,
-    #disk,
-    #cpu,
-    #temperature,
-    #temperature.critical,
-    #backlight,
-    #custom-memory,
-    #pulseaudio,
-    #pulseaudio.muted,
-    #battery,
-    #battery.critical,
-    #battery.warning,
-    #clock {
-      font-family: JetBrainsMono Nerd Font Propo;
-      font-size: 16px;
-      font-weight: 800;
-      color: @base;
-      background: @base;
-      border: 3px solid @base;
+    /* ======================= */
+    /* Custom Widgets          */
+    /* ======================= */
+    #custom-arch {
+        color: @foreground;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0 14px;
+        margin: 0 4px;
+        /* border: solid 2px @foreground; */
+        border-radius: 8px;
     }
 
-    #window,
-    #tray,
-    #disk,
-    #cpu,
-    #temperature,
-    #temperature.critical,
-    #backlight,
-    #custom-memory,
-    #pulseaudio,
-    #pulseaudio.muted,
-    #battery,
-    #battery.critical,
-    #battery.warning,
-    #clock {
-      padding-right: 4px;
-    }
-
-    #custom-rofi {
-      background: @teal;
-      padding: 0 6px;
-    }
-
-    /* ================================ */
-    /*       workspaces module          */
-    /* ================================ */
+    /* ======================= */
+    /* Workspace Management    */
+    /* ======================= */
     #workspaces {
-      margin: 0px;
+        margin: 0;
+        padding: 0;
     }
 
     #workspaces button {
-      color: @rosewater;
-      padding: 0 4px;
-      margin: 0px 3px;
-      min-width: 25px;
-    }
-
-    #workspaces button:hover {
-      background: @mauve;
-    }
-
-    #workspaces button.visible {
-      background: @green;
-    }
-
-    #workspaces button.visible:hover {
-      background: @green;
+        color: @color1;
+        padding: 0 8px;
+        margin: 0 4px;
+        /* border: solid 2px transparent; */
+        border-radius: 8px;
     }
 
     #workspaces button.active {
-      background: @green;
+        color: @foreground;
+        /* border: solid 2px @foreground; */
+        background: rgba(255, 255, 255, 0.1);
     }
 
-    #workspaces button.active:hover {
-      background: @green;
+    /* #hyprland-workspaces {
+        margin: 0 8px;
+        padding: 0 8px;
+        background: transparent;
     }
 
-    #workspaces button.urgent {
-      background: @red;
+    #hyprland-workspaces button {
+        padding: 0 12px;
+        margin: 0 2px;
+        color: gray;
+        font-size: 14px;
+        border-radius: 8px;
     }
 
-    /* ================================ */
-    /*            window                */
-    /* ================================ */
-    #window {
-        color: @fg;
-        padding: 0 5px;
+    #hyprland-workspaces button.active {
+        color: @foreground;
+        background: rgba(255, 255, 255, 0.1);
+        font-weight: 600;
     }
 
-    button {
-        border: None;
-        padding: 0;
-    }
-    /* -----------------------------------------------------
-     *                  Workspaces
-     * ----------------------------------------------------- */
-
-    #taskbar {
-        background-color: @bg0_h;
-        padding: 0px 0px;
-        margin: 2px 2px 2px 2px;
-    }
-
-    #taskbar button {
-        min-width: 20px;
-        color: @red;
-        font-weight: normal;
-        padding: 0;
-        margin: 3px 3px 3px 3px;
-    }
-
-    #taskbar button.active {
-        color: @red1;
-        background-color: @bg;
-    }
-
-    #taskbar button:hover {
-        background-color: @bg1;
-    }
-
-    /* #taskbar button:first-child {
-        border-radius: 5px 0 0 5px;
-    }
-
-    #taskbar button:last-child {
-        border-radius: 0 5px 5px 0;
+    #hyprland-workspaces button.urgent {
+        color: red;
+        animation: urgent-pulse 1s ease infinite;
     } */
 
-    /* -----------------------------------------------------
-     *                      Modules
-     * ----------------------------------------------------- */
-
-    #cpu,
-    #memory,
-    #battery,
-    #wireplumber,
-    #tray,
-    #battery.charging,
-    #battery.plugged,
-    #network {
-        background-color: @bg0_h;
-        color: @purple;
-        padding: 0px 15px;
-        margin: 2px 2px 2px 2px;
+    @keyframes urgent-pulse {
+        0% { opacity: 0.5; }
+        100% { opacity: 1; }
+        50% { opacity: 0.5; }
     }
 
-    /* #network.disconnected {
-        color: @purple;
-    } */
-
-    #tray {
-        background-color: @bg0_h;
-        color: @fg;
-        padding: 0px 15px;
-        margin: 2px 2px 2px 2px;
-    }
-
+    /* ======================= */
+    /* System Components       */
+    /* ======================= */
     #clock {
-        background-color: @bg0_h;
-        color: @orange;
-        padding: 0px 15px;
-        margin: 2px 2px 2px 2px;
+        padding: 0 12px;
+        margin: 0 4px;
+        /* border: solid 2px @foreground; */
+        border-radius: 8px;
+        color: @foreground;
+        background: rgba(255, 255, 255, 0.1);
+        font-weight: 500;
     }
 
-    #memory {
-        background-color: @bg0_h;
-        color: @aqua;
-        padding: 0px 15px;
-        margin: 2px 2px 2px 2px;
+
+    #mpris {
+        color: @foreground;
+        padding: 0 12px;
+        margin: 0 4px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    #mpris.playing {
+        color: #8ec07c;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    #mpris.paused {
+        color: #d79921;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    #mpris.stopped {
+        color: #cc241d;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    #custom-monitors {
+        color: @foreground;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0 12px;
+        margin: 0 4px;
+        border-radius: 8px;
     }
 
     #cpu {
-        background-color: @bg0_h;
-        color: @green;
-        padding: 0px 15px;
-        margin: 2px 2px 2px 2px;
+        color: @color14;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0 12px;
+        margin: 0 4px;
+        border-radius: 8px;
     }
 
+    /* ======================= */
+    /* System Indicators       */
+    /* ======================= */
+    #tray {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0 12px;
+        margin: 0 4px;
+        /* border: solid 2px @foreground; */
+        border-radius: 8px;
+    }
+
+    #privacy {
+        background: rgba(255, 255, 0, 0.1);
+        padding: 0 12px;
+        margin: 0 4px;
+        /* border: solid 2px #d79921; */
+        border-radius: 8px;
+    }
+
+    #privacy-item {
+        color: #d79921;
+    }
+
+    /* ======================= */
+    /* Menu                    */
+    /* ======================= */
+
+    #custom-menu {
+        color: @foreground;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0 8px;
+        margin: 0 4px;
+        /* border: solid 2px @foreground; */
+        border-radius: 8px;
+    }
+
+    tooltip class {
+        color: @textcolor;
+    }
+
+    #custom-updates {
+        color: @foreground;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0 12px;
+        margin: 0 4px;
+        /* border: solid 2px @textcolor; */
+        border-radius: 8px;
+    }
+
+    /* Green class - no updates or low count */
+    #custom-updates.green {
+        color: #8ec07c;
+        background: rgba(0, 255, 0, 0.1);
+    }
+
+    /* Yellow class - moderate updates */
+    #custom-updates.yellow {
+        color: #d79921;
+        background: rgba(255, 255, 0, 0.1);
+    }
+
+    /* Red class - many updates */
+    #custom-updates.red {
+        color: #cc241d;
+        background: rgba(255, 0, 0, 0.1);
+    }
+
+    #power-profiles-daemon {
+        color: @foreground;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0 12px;
+        margin: 0 4px;
+        /* border: solid 2px @foreground; */
+        border-radius: 8px;
+    }
+
+    #power-profiles-daemon.performance {
+        color:#cc241d;
+        /* border: solid 2px #cc241d; */
+        background: rgba(255, 0, 0, 0.1);
+    }
+
+    #power-profiles-daemon.balanced {
+        color: #d79921;
+        /* border: solid 2px #d79921; */
+        background: rgba(255, 255, 0, 0.1);
+    }
+
+    #power-profiles-daemon.power-saver {
+        color: #8ec07c;
+        /* border: solid 2px #8ec07c; */
+        background: rgba(0, 255, 0, 0.1);
+    }
+
+
+    /* ======================= */
+    /* Network & Bluetooth     */
+    /* ======================= */
+    #network {
+        color: @foreground;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0 12px;
+        margin: 0 4px;
+        /* border: solid 2px @foreground; */
+        border-radius: 8px;
+    }
+
+    #bluetooth {
+        color: @foreground;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0 12px;
+        margin: 0 4px;
+        /* border: solid 2px @foreground; */
+        border-radius: 8px;
+    }
+
+    #network.disabled {
+        color: #cc241d;
+        /* border: solid 2px #cc241d; */
+        background: rgba(255, 0, 0, 0.1);
+    }
+
+    #bluetooth.disabled {
+        color: #458588;
+        /* border: solid 2px #458588; */
+        background: rgba(0, 0, 255, 0.1);
+    }
+
+    /* ======================= */
+    /* Audio Controls          */
+    /* ======================= */
+
+    #pulseaudio {
+        color: @foreground;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0 12px;
+        margin: 0 4px;
+        /* border: solid 2px @foreground; */
+        border-radius: 8px;
+    }
+
+    #pulseaudio.sink-muted {
+        color: #d79921;
+        /* border: solid 2px #d79921; */
+        background: rgba(255, 255, 0, 0.1);
+    }
+
+    #pulseaudio.microphone {
+        color: @foreground;
+        /* border: solid 2px @foreground; */
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    #pulseaudio.microphone.source-muted {
+        color: #cc241d;
+        /* border: solid 2px #cc241d; */
+        background: rgba(255, 0, 0, 0.1);
+    }
+
+    #pulseaudio-slider {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0 12px;
+        margin: 0 4px;
+        border-radius: 8px;
+    }
+
+    #pulseaudio-slider slider {
+        min-height: 0px;
+        min-width: 0px;
+        background: transparent;
+        box-shadow: none;
+    }
+    #pulseaudio-slider trough {
+        min-height: 8px;
+        min-width: 100px;
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    #pulseaudio-slider highlight {
+        min-width: 8px;
+        min-height: 8px;
+        border-radius: 4px;
+        background: @color6;
+    }
+
+    /* ======================= */
+    /* Hardware Controls       */
+    /* ======================= */
+    #backlight {
+        color: @foreground;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0 12px;
+        margin: 0 4px;
+        /* border: solid 2px @foreground; */
+        border-radius: 8px;
+    }
+
+    #backlight-slider {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0 12px;
+        margin: 0 4px;
+        border-radius: 8px;
+    }
+
+    #backlight-slider slider {
+        min-height: 0px;
+        min-width: 0px;
+        background: transparent;
+        box-shadow: none;
+    }
+    #backlight-slider trough {
+        min-height: 8px;
+        min-width: 100px;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.2);
+    }
+    #backlight-slider highlight {
+        min-width: 8px;
+        min-height: 8px;
+        border-radius: 4px;
+        background: @color9;
+    }
+
+    /* ======================= */
+    /* Battery                 */
+    /* ======================= */
     #battery {
-        background-color: @bg0_h;
-        color: @yellow;
-        padding: 0px 15px;
-        margin: 2px 2px 2px 2px;
+        color: @foreground;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0 12px;
+        margin: 0 4px;
+        /* border: solid 2px @foreground; */
+        border-radius: 8px;
     }
 
-    #wireplumber {
-        background-color: @bg0_h;
-        color: @blue;
-        padding: 0px 15px;
-        margin: 2px 2px 2px 2px;
+    #battery.charging {
+        color: #8ec07c;
+        /* border: solid 2px #8ec07c; */
     }
 
-    @keyframes blink {
-        to {
-            background-color: #ffffff;
-            color: #000000;
-        }
+    #battery.warning {
+        color: #d79921;
+        /* border: solid 2px #d79921; */
     }
 
+    #battery.critical,
+    #battery.plugordie {
+        color: #cc241d;
+        /* border: solid 2px #cc241d; */
+    }
+
+    /* ======================= */
+    /* Power Menu              */
+    /* ======================= */
+    #custom-power {
+        color: @foreground;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 0 4px;
+        padding: 0 12px;
+        /* border: solid 2px @foreground; */
+        border-radius: 8px;
+    }
 
   '';
 }
