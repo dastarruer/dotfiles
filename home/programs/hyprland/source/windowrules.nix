@@ -10,19 +10,8 @@
       # Move certain apps to workspaces
       "workspace 5 silent,class:^(spotify)$"
       "workspace 6 silent,class:^(Todoist)$"
-      "workspace 9 silent,class:^(Anki)$"
+      "workspace 9 silent,class:^(anki)$"
       "workspace 10 silent,class:^(obsidian)$"
-
-      # Spotify rules
-      "float, class:^(spotify)$"
-      "move 81 146, class:^(spotify)$"
-      "size 1068 670, class:^(spotify)$"
-
-      # PIP rules
-      "float, title:^(Picture-in-Picture)$"
-      "move 1492 839, title:^(Picture-in-Picture)$"
-      "size 427 240, title:^(Picture-in-Picture)$"
-      "pin, title:^(Picture-in-Picture)$"
 
       # Blueman rules
       "float, title:^(Bluetooth Devices)$"

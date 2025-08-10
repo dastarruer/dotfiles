@@ -17,7 +17,6 @@
     # Set aliases
     shellAliases = {
       code = "codium";
-      cat = "bat";
       chx = "chmod +x";
       pr = "python3 main.py";
       ps = "sudo auto-cpufreq --force powersave";
@@ -46,9 +45,9 @@
       gb = "git branch";
       "g." = "git add . && git status";
       gs = "git status";
-      gc = "git commit -m";
+      gc = "git commit";
       gca = "git status && git add . && git commit --amend --no-edit";
-      gp = "git push & disown";
+      gp = "git push";
       gl = "git log --oneline --graph --decorate";
       gch = "git checkout";
       cr = "cargo run";

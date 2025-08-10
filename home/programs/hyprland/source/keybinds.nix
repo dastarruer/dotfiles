@@ -2,7 +2,6 @@
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
     "$terminal" = "kitty";
-    "$menu" = "rofi -show drun";
 
     bind = [
       "$mainMod, RETURN, exec, $terminal"
@@ -10,7 +9,6 @@
       "$mainMod, M, exit"
       "$mainMod, E, exec, $fileManager"
       "$mainMod, Space, togglefloating"
-      "$mainMod, D, exec, $menu"
       "$mainMod, H, movefocus, l"
       "$mainMod, L, movefocus, r"
       "$mainMod, J, movefocus, u"
@@ -62,7 +60,6 @@
       "$mainMod, E, exec, ~/bin/power.sh"
       # "$mainMod, A, exec, ~/bin/wifi.sh"
       "$mainMod, W, exec, pkill waybar && waybar &"
-      "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
       ", Print, exec, ~/bin/screenshot.sh"
       "$mainMod, S, togglespecialworkspace, magic"
       "$mainMod SHIFT, S, movetoworkspace, special:magic"
@@ -71,7 +68,7 @@
       "$mainMod, Y, pin"
       "$mainMod, G, centerwindow"
       "$mainMod, F, fullscreen"
-      ",XF86AudioPlay,exec,playerctl play-pause"
+      ",XF86AudioPlay,exec,playerctl play-pause -p spotify"
       ",XF86AudioPrev,exec,playerctl previous"
       ",XF86AudioNext,exec,playerctl next"
     ];
@@ -88,6 +85,8 @@
       ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
       "ALT, B , exec, brillo -A 5 -q"
       "ALT , V, exec, brillo -U 5 -q"
+      "ALT SHIFT, B , exec, brillo -A 2 -q"
+      "ALT SHIFT, V, exec, brillo -U 2 -q"
     ];
 
     bindl = [

@@ -1,6 +1,12 @@
-{...}: {
-  programs.waybar = {
-    enable = true;
+{config, ...}: {
+  programs.waybar.settings = {
+    mainBar = {
+      layer = "top";
+      height = 20;
+      spacing = 5;
+      margin-top = 5;
+      margin-right = 8;
+      margin-left = 8;
 
     settings = [
       {
@@ -9,96 +15,111 @@
         # spacing = 4; # Optional spacing, uncomment if needed
         height = 35; # Remove for auto height
 
-        modules-left = ["tray"];
-        modules-center = ["clock"];
-        modules-right = [
-          "battery"
-          "cpu"
-          "memory"
-          "wireplumber"
-          "network"
+      modules-center = ["clock"];
+
+      modules-right = [
+        "disk"
+        "cpu"
+        "backlight"
+        "custom/memory"
+        "pulseaudio"
+        "battery"
+      ];
+
+      "hyprland/workspaces" = {
+        disable-scroll = true;
+        active-only = false;
+        all-outputs = true;
+        warp-on-scroll = false;
+        format = "{name}";
+      };
+
+      "hyprland/window" = {
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0E}' > 󰣆 </span> {class}";
+        separate-outputs = true;
+        icon = false;
+      };
+
+      tray = {
+        icon-size = 15;
+        spacing = 8;
+      };
+
+      disk = {
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}' >  </span> {free}";
+        interval = 120;
+      };
+
+      cpu = {
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base09}' >  </span> {usage}%";
+        tooltip = false;
+        interval = 5;
+      };
+
+      backlight = {
+        format = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0A}' > 󰞏 </span> {percent}%";
+        tooltip = false;
+      };
+
+      "custom/memory" = {
+        exec = "~/bin/memory_usage.sh";
+        interval = 2;
+        return-type = "json";
+        format = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0D}' >  </span> {}";
+      };
+
+      pulseaudio = {
+        format = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0C}' >  </span> {volume}%";
+        format-muted = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0C}' >  </span> {volume}%";
+        format-bluetooth = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0C}' > 󰂰 </span> {volume}%";
+        format-bluetooth-muted = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0C}' > 󰂲 </span> {volume}%";
+        format-source = "{volume}% ";
+        on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
+        tooltip = false;
+        max-volume = 130;
+      };
+
+      "battery#bat2".bat = "BAT2";
+
+      battery = {
+        interval = 5;
+        states = {
+          good = 99;
+          warning = 30;
+          critical = 20;
+        };
+        format-icons = [
+          "󰂎"
+          "󰁺"
+          "󰁻"
+          "󰁽"
+          "󰁾"
+          "󰁿"
+          "󰂀"
+          "󰂁"
+          "󰂂"
+          "󰁹"
         ];
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> {icon} </span> {capacity}%";
+        format-critical = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}'> {icon} </span> {capacity}%!!";
+        format-warning = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base09}'> {icon} </span> {capacity}%";
+        format-full = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> {icon} </span> {capacity}%";
+        format-charging = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> 󰂅 </span> {capacity}%";
+        format-charging-warning = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base09}'> 󰢝 </span> {capacity}%";
+        format-charging-critical = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}'> 󰢜 </span> {capacity}%";
+        format-plugged = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> 󰂅 </span> {capacity}%";
+        format-alt = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> 󱧥 </span> {time}";
 
-        "wlr/taskbar" = {
-          format = "{icon}";
-          icon-size = 16;
-          icon-theme = "Gruvbox Plus Dark";
-          on-click = "minimize-raise";
-          app_ids-mapping = {
-            "org.gnome.FileRoller" = "FileRoller";
-            "org.pwmt.zathura" = "zathura";
-            "com.github.johnfactotum.Foliate" = "foliate";
-          };
-        };
+        tooltip = false;
+      };
 
-        tray = {
-          icon-size = 16;
-          spacing = 10;
-        };
+      clock = {
+        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'>  </span> {:%a %d %b | %I:%M %p}";
 
-        battery = {
-          bat = "BAT0";
-          interval = 60;
-          states = {
-            warning = 30;
-            critical = 15;
-          };
-          format = "{capacity}% {icon}";
-          format-icons = ["" "" "" "" ""];
-          max-length = 25;
-        };
-
-        cpu = {
-          format = "CPU: {usage}%";
-          tooltip = false;
-        };
-
-        memory = {
-          format = "RAM: {used:0.1f}GB";
-          tooltip = false;
-        };
-
-        network = {
-          # interface = "wlp2*"; # Optional, uncomment if needed
-          format-wifi = "({signalStrength}%) ";
-          format-ethernet = "󰈀";
-          tooltip-format = "{ipaddr}\n<b>up:</b> {bandwidthUpBytes} <b>down:</b> {bandwidthDownBytes}";
-          format-linked = "{ifname} (No IP) ?";
-          format-disconnected = "No connection";
-          on-click = "networkmanager_dmenu";
-          on-click-right = "\${TERMINAL} -a floatterm -e nethogs";
-        };
-
-        wireplumber = {
-          format = "{icon} : {volume}%";
-          format-muted = "";
-          format-icons = ["" " "];
-          on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-        };
-
-        clock = {
-          format = "{:%b %d %H:%M}";
-          tooltip-format = "<span color='#FFFFFF'><tt>{calendar}</tt></span>";
-          calendar = {
-            "mode-mon-col" = 4;
-            "on-scroll" = 1;
-            "on-click-right" = "mode";
-            format = {
-              months = "<span color='#BE95FF'><b>{}</b></span>";
-              weeks = "<span color='#525252'><b>{}</b></span>";
-              weekdays = "<span color='#78A9FF'><b>{}</b></span>";
-              today = "<span color='#BE95FF' background='#161616'><b>{}</b></span>";
-            };
-          };
-          actions = {
-            "on-click-right" = "mode";
-            "on-scroll-up" = "shift_up";
-            "on-scroll-down" = "shift_down";
-          };
-          tooltip = true;
-        };
-      }
-    ];
+        tooltip = false;
+        interval = 60;
+      };
+    };
   };
 }
 # unused

@@ -1,8 +1,18 @@
 {pkgs, ...}: {
   # Acheive faster reboot times by making sure services can only take up to ten seconds to shut down
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-  '';
+  systemd.settings.Manager = {
+    # How long to wait before forcibly killing a service when stopping it
+    DefaultTimeoutStopSec = "10s";
+
+    # Whether systemd should add implicit dependencies like 'After=basic.target'
+    DefaultDependencies = "yes";
+
+    # Maximum time to wait for a job (e.g. starting/stopping a unit) before it's considered failed
+    JobTimeoutSec = "10s";
+
+    # Time window for counting service start failures (used with StartLimitBurst)
+    DefaultStartLimitIntervalSec = "10s";
+  };
 
   # Bootloader.
   boot = {
@@ -27,10 +37,13 @@
       # If you're having issues: https://github.com/NixOS/nixpkgs/issues/266147
       timeout = 0;
 
-      # Enable systemd boot which
+      # Enable systemd boot which is faster
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
+
+    # Get the latest kernel packages
+    kernelPackages = pkgs.linuxPackages_testing;
 
     # Silent Boot
     # https://wiki.archlinux.org/title/Silent_boot
