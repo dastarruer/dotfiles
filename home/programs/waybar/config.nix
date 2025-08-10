@@ -10,7 +10,7 @@
         margin = "8px 8px 0 8px";
 
         modules-left = [
-          "custom/arch"
+          # "custom/arch"
           "hyprland/workspaces"
         ];
 
@@ -29,7 +29,7 @@
           "group/audio"
           "group/brightness"
           "battery"
-          "custom/power"
+          # "custom/power"
         ];
 
         "group/group-extras" = {
@@ -40,7 +40,7 @@
             transition-left-to-right = false;
           };
           modules = [
-            "custom/menu"
+            # "custom/menu"
             "cpu"
             # "custom/updates"
           ];
