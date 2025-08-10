@@ -1,125 +1,309 @@
 {config, ...}: {
-  programs.waybar.settings = {
-    mainBar = {
-      layer = "top";
-      height = 20;
-      spacing = 5;
-      margin-top = 5;
-      margin-right = 8;
-      margin-left = 8;
+  programs.waybar = {
+    enable = true;
 
     settings = [
       {
-        layer = "bottom";
+        layer = "top";
         position = "top";
-        # spacing = 4; # Optional spacing, uncomment if needed
-        height = 35; # Remove for auto height
+        spacing = 0;
+        margin = "8px 8px 0 8px";
 
-      modules-center = ["clock"];
-
-      modules-right = [
-        "disk"
-        "cpu"
-        "backlight"
-        "custom/memory"
-        "pulseaudio"
-        "battery"
-      ];
-
-      "hyprland/workspaces" = {
-        disable-scroll = true;
-        active-only = false;
-        all-outputs = true;
-        warp-on-scroll = false;
-        format = "{name}";
-      };
-
-      "hyprland/window" = {
-        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0E}' > 󰣆 </span> {class}";
-        separate-outputs = true;
-        icon = false;
-      };
-
-      tray = {
-        icon-size = 15;
-        spacing = 8;
-      };
-
-      disk = {
-        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}' >  </span> {free}";
-        interval = 120;
-      };
-
-      cpu = {
-        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base09}' >  </span> {usage}%";
-        tooltip = false;
-        interval = 5;
-      };
-
-      backlight = {
-        format = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0A}' > 󰞏 </span> {percent}%";
-        tooltip = false;
-      };
-
-      "custom/memory" = {
-        exec = "~/bin/memory_usage.sh";
-        interval = 2;
-        return-type = "json";
-        format = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0D}' >  </span> {}";
-      };
-
-      pulseaudio = {
-        format = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0C}' >  </span> {volume}%";
-        format-muted = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0C}' >  </span> {volume}%";
-        format-bluetooth = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0C}' > 󰂰 </span> {volume}%";
-        format-bluetooth-muted = "<span color='#202020' bgcolor='#${config.lib.stylix.colors.base0C}' > 󰂲 </span> {volume}%";
-        format-source = "{volume}% ";
-        on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
-        tooltip = false;
-        max-volume = 130;
-      };
-
-      "battery#bat2".bat = "BAT2";
-
-      battery = {
-        interval = 5;
-        states = {
-          good = 99;
-          warning = 30;
-          critical = 20;
-        };
-        format-icons = [
-          "󰂎"
-          "󰁺"
-          "󰁻"
-          "󰁽"
-          "󰁾"
-          "󰁿"
-          "󰂀"
-          "󰂁"
-          "󰂂"
-          "󰁹"
+        modules-left = [
+          "custom/arch"
+          "hyprland/workspaces"
         ];
-        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> {icon} </span> {capacity}%";
-        format-critical = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}'> {icon} </span> {capacity}%!!";
-        format-warning = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base09}'> {icon} </span> {capacity}%";
-        format-full = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> {icon} </span> {capacity}%";
-        format-charging = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> 󰂅 </span> {capacity}%";
-        format-charging-warning = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base09}'> 󰢝 </span> {capacity}%";
-        format-charging-critical = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base08}'> 󰢜 </span> {capacity}%";
-        format-plugged = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> 󰂅 </span> {capacity}%";
-        format-alt = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'> 󱧥 </span> {time}";
 
-        tooltip = false;
-      };
+        modules-center = [
+          "clock"
+          "mpris"
+        ];
 
-      clock = {
-        format = "<span color='#${config.lib.stylix.colors.base00}' bgcolor='#${config.lib.stylix.colors.base0B}'>  </span> {:%a %d %b | %I:%M %p}";
+        modules-right = [
+          "tray"
+          "group/group-extras"
+          "privacy"
+          "network"
+          "bluetooth"
+          "pulseaudio#microphone"
+          "group/audio"
+          "group/brightness"
+          "battery"
+          "custom/power"
+        ];
 
-        tooltip = false;
-        interval = 60;
-      };
-    };
+        "group/group-extras" = {
+          orientation = "inherit";
+          drawer = {
+            transition-duration = 400;
+            children-class = "extras";
+            transition-left-to-right = false;
+          };
+          modules = [
+            "custom/menu"
+            "cpu"
+            # "custom/updates"
+          ];
+        };
+
+        "group/brightness" = {
+          orientation = "inherit";
+          drawer = {
+            transition-duration = 400;
+            children-class = "brightness";
+            transition-left-to-right = false;
+          };
+          modules = [
+            "backlight"
+            "backlight/slider"
+          ];
+        };
+
+        "group/audio" = {
+          orientation = "inherit";
+          drawer = {
+            transition-duration = 400;
+            children-class = "audio";
+            transition-left-to-right = false;
+          };
+          modules = [
+            "pulseaudio"
+            "pulseaudio/slider"
+          ];
+        };
+
+        "custom/arch" = {
+          format = "󰣇  btw";
+          tooltip = false;
+          on-click = "alacritty";
+          on-click-right = "";
+        };
+
+        "hyprland/workspaces" = {
+          format = "{id}";
+          format-icons = {
+            urgent = "*";
+            special = "󰍛";
+          };
+          sort-by-number = true;
+          all-outputs = true;
+          persistent_workspaces."*" = 4;
+        };
+
+        clock = {
+          interval = 60;
+          format = "{:%I:%M %p}";
+          format-alt = "{:%a, %b %d}";
+          tooltip-format = "<tt><small>{calendar}</small></tt>";
+          on-click = "swaync-client -op";
+        };
+
+        mpris = {
+          format = "{player_icon} {status_icon}";
+          format-paused = "{player_icon} {status_icon}";
+          status-icons = {
+            playing = "󰐊";
+            paused = "󰏤";
+            stopped = "󰓛";
+          };
+          player-icons = {
+            default = "󱜏";
+            spotify_player = "";
+            spotify = "";
+            firefox = "󰺕";
+            chrome = "";
+            vlc = "󰕼";
+          };
+          max-length = 30;
+          return-type = "json";
+          interval = 1;
+          on-click = "playerctl play-pause";
+          on-click-right = "playerctl next";
+          on-click-middle = "playerctl previous";
+          tooltip = false;
+        };
+
+        tray = {
+          icon-size = 14;
+          spacing = 8;
+          reverse-direction = true;
+        };
+
+        privacy = {
+          icon-spacing = 8;
+          icon-size = 14;
+          transition-duration = 250;
+          modules = [
+            {
+              type = "screenshare";
+              tooltip = true;
+              tooltip-icon-size = 24;
+            }
+          ];
+        };
+
+        cpu = {
+          format = "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}";
+          format-icons = [
+            "<span color='#8ec07c'>▁</span>"
+            "<span color='#458588'>▂</span>"
+            "<span color='#f8f8f8'>▃</span>"
+            "<span color='#f8f8f8'>▄</span>"
+            "<span color='#d79921'>▅</span>"
+            "<span color='#d79921'>▆</span>"
+            "<span color='#fe8019'>▇</span>"
+            "<span color='#cc241d'>█</span>"
+          ];
+          interval = 1;
+          tooltip = true;
+          tooltip-format = "CPU Frequency: {avg_frequency} GHz";
+          on-click = "alacritty -e btm";
+        };
+
+        "custom/menu" = {
+          format = "<span size='15pt' font='Material Icons'>menu_open</span>";
+          tooltip = false;
+        };
+
+        "custom/updates" = {
+          format = "  {}";
+          escape = true;
+          return-type = "json";
+          exec = "~/.config/scripts/system/package-updates.sh";
+          interval = 1800;
+          on-click = "alacritty -e yay -Syu --noconfirm";
+        };
+
+        network = {
+          format-icons = {
+            wifi = [
+              "<span size='12pt' font='Material Icons'>network_wifi_1_bar</span>"
+              "<span size='12pt' font='Material Icons'>network_wifi_2_bar</span>"
+              "<span size='12pt' font='Material Icons'>network_wifi_3_bar</span>"
+              "<span size='12pt' font='Material Icons'>signal_wifi_4_bar</span>"
+            ];
+            ethernet = "<span size='12pt' font='Material Icons'>lan</span>";
+            disabled = "<span size='12pt' font='Material Icons'>signal_wifi_off</span>";
+            disconnected = "<span size='12pt' font='Material Icons'>signal_wifi_bad</span>";
+          };
+          format-wifi = "{icon}";
+          format-ethernet = "{icon} Wired";
+          format-disconnected = "{icon}";
+          format-disabled = "{icon}";
+          interval = 5;
+          tooltip-format = "{essid}\t{gwaddr}\n{bandwidthUpBytes} 󰁝\t{bandwidthDownBytes} 󰁅";
+          on-click = "rfkill toggle wifi";
+          on-click-right = "alacritty -e nmtui";
+          tooltip = true;
+          max-length = 20;
+        };
+
+        bluetooth = {
+          interval = 5;
+          format-on = "<span size='14pt' font='Material Icons'></span>";
+          format-off = "<span size='14pt' font='Material Icons'>bluetooth_disabled</span>";
+          format-disabled = "<span size='14pt' font='Material Icons'>bluetooth_disabled</span>";
+          format-connected = "<span size='14pt' font='Material Icons'>bluetooth_connected</span>";
+          tooltip = true;
+          tooltip-format = "{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias} {device_battery_percentage}%";
+          on-click = "rfkill toggle bluetooth";
+          on-click-right = "blueman-manager";
+        };
+
+        "pulseaudio/slider" = {
+          min = 0;
+          max = 100;
+          orientation = "horizontal";
+        };
+
+        pulseaudio = {
+          interval = 1;
+          format = "{icon}";
+          format-muted = "<span size='14pt' font='Material Icons'>volume_off</span>";
+          format-icons = {
+            default = [
+              "<span size='14pt' font='Material Icons'>volume_mute</span>"
+              "<span size='14pt' font='Material Icons'>volume_down</span>"
+              "<span size='14pt' font='Material Icons'>volume_up</span>"
+            ];
+          };
+          on-click-right = "pavucontrol";
+          on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
+          on-scroll-up = "";
+          on-scroll-down = "";
+          tooltip = true;
+          tooltip-format = "Volume: {volume}%\n{desc}";
+        };
+
+        "pulseaudio#microphone" = {
+          format = "{format_source}";
+          format-source = "<span size='13.5pt' font='Material Icons'>mic</span>";
+          format-source-muted = "<span size='13.5pt' font='Material Icons'>mic_off</span>";
+          on-click = "pactl set-source-mute @DEFAULT_SOURCE@ toggle";
+          tooltip = false;
+        };
+
+        "backlight/slider" = {
+          min = 5;
+          max = 100;
+          orientation = "horizontal";
+          device = "intel_backlight";
+        };
+
+        backlight = {
+          device = "intel_backlight";
+          format = "{icon}";
+          format-icons = [
+            "<span size='12.5pt' font='Material Icons'>brightness_1</span>"
+            "<span size='12.5pt' font='Material Icons'>brightness_2</span>"
+            "<span size='12.5pt' font='Material Icons'>brightness_3</span>"
+            "<span size='12.5pt' font='Material Icons'>brightness_4</span>"
+            "<span size='12.5pt' font='Material Icons'>brightness_5</span>"
+            "<span size='12.5pt' font='Material Icons'>brightness_6</span>"
+            "<span size='12.5pt' font='Material Icons'>brightness_7</span>"
+          ];
+          on-scroll-up = "";
+          on-scroll-down = "";
+          tooltip = false;
+        };
+
+        battery = {
+          interval = 10;
+          states = {
+            warning = 20;
+            critical = 10;
+            plugordie = 5;
+          };
+          format = "{icon} {capacity}%";
+          format-icons = [
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
+          format-charging = " {capacity}%";
+          format-plugged = "󰚥 {capacity}%";
+          format-plugordie = "󰂃 {capacity}";
+          tooltip = false;
+          exec-on-event = true;
+          exec-if-event = "state-warning, state-critical";
+          # exec = "~/.config/scripts/battery-notification.sh {capacity}";
+        };
+
+        "custom/power" = {
+          format = "<span size='14pt' font='Material Icons'>power_settings_new</span>";
+          on-click = "wlogout --protocol layer-shell -b 2";
+          tooltip = false;
+        };
+      }
+    ];
   };
 }
 # unused
