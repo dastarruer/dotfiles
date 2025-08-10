@@ -19,11 +19,14 @@
     @define-color red1 #FB4934;
 
     * {
-        font-family: Hack Nerd Font,sans-serif;
-        font-size: 14px;
-        border-radius: 5px;
-        border: none;
-        box-shadow: none;
+      padding: 0;
+      margin: 0;
+      min-height: 0;
+      border-radius: 5px;
+      border: none;
+      text-shadow: none;
+      transition: none;
+      box-shadow: none;
     }
 
     /* -----------------------------------------------------
@@ -53,6 +56,99 @@
         opacity: 0.2;
     }
 
+    #custom-rofi,
+    #workspaces button,
+    #workspaces button:hover,
+    #workspaces button.visible,
+    #workspaces button.visible:hover,
+    #workspaces button.active,
+    #workspaces button.active:hover,
+    #workspaces button.urgent,
+    #window,
+    #tray,
+    #disk,
+    #cpu,
+    #temperature,
+    #temperature.critical,
+    #backlight,
+    #custom-memory,
+    #pulseaudio,
+    #pulseaudio.muted,
+    #battery,
+    #battery.critical,
+    #battery.warning,
+    #clock {
+      font-family: JetBrainsMono Nerd Font Propo;
+      font-size: 16px;
+      font-weight: 800;
+      color: @base;
+      background: @base;
+      border: 3px solid @base;
+    }
+
+    #window,
+    #tray,
+    #disk,
+    #cpu,
+    #temperature,
+    #temperature.critical,
+    #backlight,
+    #custom-memory,
+    #pulseaudio,
+    #pulseaudio.muted,
+    #battery,
+    #battery.critical,
+    #battery.warning,
+    #clock {
+      padding-right: 4px;
+    }
+
+    #custom-rofi {
+      background: @teal;
+      padding: 0 6px;
+    }
+
+    /* ================================ */
+    /*       workspaces module          */
+    /* ================================ */
+    #workspaces {
+      margin: 0px;
+    }
+
+    #workspaces button {
+      color: @rosewater;
+      padding: 0 4px;
+      margin: 0px 3px;
+      min-width: 25px;
+    }
+
+    #workspaces button:hover {
+      background: @mauve;
+    }
+
+    #workspaces button.visible {
+      background: @green;
+    }
+
+    #workspaces button.visible:hover {
+      background: @green;
+    }
+
+    #workspaces button.active {
+      background: @green;
+    }
+
+    #workspaces button.active:hover {
+      background: @green;
+    }
+
+    #workspaces button.urgent {
+      background: @red;
+    }
+
+    /* ================================ */
+    /*            window                */
+    /* ================================ */
     #window {
         color: @fg;
         padding: 0 5px;

@@ -7,15 +7,18 @@
     # Apps
     xfce.thunar
     firefox
-    obsidian
     todoist-electron
     musescore
     vesktop
-    anki-bin
 
     # Screenshots
     tesseract
     grimblast
+
+    # Clipboard
+    wl-clipboard
+    cliphist
+    go # a dependency of cliphist
 
     # Other
     gh

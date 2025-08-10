@@ -3,14 +3,15 @@
     "waybar"
     "swww-daemon"
     "nm-applet"
+    "hypridle"
 
     # Start apps
     "todoist-electron"
-    "obsidian"
     "anki"
     "spotify"
     "firefox"
     "codium"
+    "flatpak run md.obsidian.Obsidian"
 
     # Start clipboard manager
     "wl-paste --type text --watch cliphist store"
