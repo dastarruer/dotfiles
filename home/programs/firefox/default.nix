@@ -11,7 +11,7 @@ in {
     ./containers.nix
     ./extensions.nix
     ./settings.nix
-    ./theme.nix
+    ./theme
   ];
 
   programs.firefox = {
