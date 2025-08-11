@@ -1,5 +1,6 @@
 {config, ...}: let
   waybarDotfilesDir = "${config.home.homeDirectory}/.dotfiles/home/programs/waybar";
+  waybarConfigDir = "${config.home.homeDirectory}/.config/waybar";
 in {
   # Old waybar comes from here: https://github.com/bibjaw99/workstation/tree/master/.config/waybar_block
   # New one from here: https://github.com/saatvik333/hyprland-dotfiles/blob/main/waybar/config
@@ -13,9 +14,9 @@ in {
 
   # Symlink the files
   home.file = {
-    ".config/waybar/config.jsonc".source = config.lib.file.mkOutOfStoreSymlink "${waybarDotfilesDir}/config.jsonc";
+    "${waybarConfigDir}/config.jsonc".source = config.lib.file.mkOutOfStoreSymlink "${waybarDotfilesDir}/config.jsonc";
 
-    ".config/waybar/style.css".source = config.lib.file.mkOutOfStoreSymlink "${waybarDotfilesDir}/style.css";
+    "${waybarConfigDir}/style.css".source = config.lib.file.mkOutOfStoreSymlink "${waybarDotfilesDir}/style.css";
   };
 
   wayland.windowManager.hyprland.settings = {
