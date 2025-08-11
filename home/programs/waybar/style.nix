@@ -77,7 +77,7 @@
     }
 
     #workspaces button {
-        color: @color1;
+        color: @foreground;
         padding: 0 8px;
         margin: 0 4px;
         /* border: solid 2px transparent; */
@@ -89,31 +89,6 @@
         /* border: solid 2px @foreground; */
         background: rgba(255, 255, 255, 0.1);
     }
-
-    /* #hyprland-workspaces {
-        margin: 0 8px;
-        padding: 0 8px;
-        background: transparent;
-    }
-
-    #hyprland-workspaces button {
-        padding: 0 12px;
-        margin: 0 2px;
-        color: gray;
-        font-size: 14px;
-        border-radius: 8px;
-    }
-
-    #hyprland-workspaces button.active {
-        color: @foreground;
-        background: rgba(255, 255, 255, 0.1);
-        font-weight: 600;
-    }
-
-    #hyprland-workspaces button.urgent {
-        color: red;
-        animation: urgent-pulse 1s ease infinite;
-    } */
 
     @keyframes urgent-pulse {
         0% { opacity: 0.5; }
@@ -144,17 +119,17 @@
     }
 
     #mpris.playing {
-        color: #8ec07c;
+        color: @color02;
         background: rgba(255, 255, 255, 0.1);
     }
 
     #mpris.paused {
-        color: #d79921;
+        color: @color03;
         background: rgba(255, 255, 255, 0.1);
     }
 
     #mpris.stopped {
-        color: #cc241d;
+        color: @color01;
         background: rgba(255, 255, 255, 0.1);
     }
 
@@ -188,15 +163,15 @@
     }
 
     #privacy {
-        background: rgba(255, 255, 0, 0.1);
+        background: rgba(0, 0, 0, 0.1);
         padding: 0 12px;
         margin: 0 4px;
-        /* border: solid 2px #d79921; */
+        /* border: solid 2px @color03; */
         border-radius: 8px;
     }
 
     #privacy-item {
-        color: #d79921;
+        color: @color03;
     }
 
     /* ======================= */
@@ -213,7 +188,7 @@
     }
 
     tooltip class {
-        color: @textcolor;
+        color: @foreground;
     }
 
     #custom-updates {
@@ -221,25 +196,25 @@
         background: rgba(255, 255, 255, 0.1);
         padding: 0 12px;
         margin: 0 4px;
-        /* border: solid 2px @textcolor; */
+        /* border: solid 2px @foreground; */
         border-radius: 8px;
     }
 
     /* Green class - no updates or low count */
     #custom-updates.green {
-        color: #8ec07c;
+        color: @color02;
         background: rgba(0, 255, 0, 0.1);
     }
 
     /* Yellow class - moderate updates */
     #custom-updates.yellow {
-        color: #d79921;
+        color: @color03;
         background: rgba(255, 255, 0, 0.1);
     }
 
     /* Red class - many updates */
     #custom-updates.red {
-        color: #cc241d;
+        color: @color01;
         background: rgba(255, 0, 0, 0.1);
     }
 
@@ -253,20 +228,20 @@
     }
 
     #power-profiles-daemon.performance {
-        color:#cc241d;
-        /* border: solid 2px #cc241d; */
+        color: @color01;
+        /* border: solid 2px @color01; */
         background: rgba(255, 0, 0, 0.1);
     }
 
     #power-profiles-daemon.balanced {
-        color: #d79921;
-        /* border: solid 2px #d79921; */
-        background: rgba(255, 255, 0, 0.1);
+        color: @color03;
+        /* border: solid 2px @color03; */
+        background: rgba(255, 255, 255, 0.1);
     }
 
     #power-profiles-daemon.power-saver {
-        color: #8ec07c;
-        /* border: solid 2px #8ec07c; */
+        color: @color02;
+        /* border: solid 2px @color02; */
         background: rgba(0, 255, 0, 0.1);
     }
 
@@ -293,14 +268,14 @@
     }
 
     #network.disabled {
-        color: #cc241d;
-        /* border: solid 2px #cc241d; */
+        color: @color01;
+        /* border: solid 2px @color01; */
         background: rgba(255, 0, 0, 0.1);
     }
 
     #bluetooth.disabled {
-        color: #458588;
-        /* border: solid 2px #458588; */
+        color: @color08;
+        /* border: solid 2px @color08; */
         background: rgba(0, 0, 255, 0.1);
     }
 
@@ -318,8 +293,8 @@
     }
 
     #pulseaudio.sink-muted {
-        color: #d79921;
-        /* border: solid 2px #d79921; */
+        color: @color03;
+        /* border: solid 2px @color03; */
         background: rgba(255, 255, 0, 0.1);
     }
 
@@ -330,8 +305,8 @@
     }
 
     #pulseaudio.microphone.source-muted {
-        color: #cc241d;
-        /* border: solid 2px #cc241d; */
+        color: @color01;
+        /* border: solid 2px @color01; */
         background: rgba(255, 0, 0, 0.1);
     }
 
@@ -358,7 +333,7 @@
         min-width: 8px;
         min-height: 8px;
         border-radius: 4px;
-        background: @color6;
+        background: @color06;
     }
 
     /* ======================= */
@@ -396,7 +371,7 @@
         min-width: 8px;
         min-height: 8px;
         border-radius: 4px;
-        background: @color9;
+        background: @color09;
     }
 
     /* ======================= */
@@ -412,19 +387,19 @@
     }
 
     #battery.charging {
-        color: #8ec07c;
-        /* border: solid 2px #8ec07c; */
+        color: @color02;
+        /* border: solid 2px @color02; */
     }
 
     #battery.warning {
-        color: #d79921;
-        /* border: solid 2px #d79921; */
+        color: @color03;
+        /* border: solid 2px @color03; */
     }
 
     #battery.critical,
     #battery.plugordie {
-        color: #cc241d;
-        /* border: solid 2px #cc241d; */
+        color: @color01;
+        /* border: solid 2px @color01; */
     }
 
     /* ======================= */
