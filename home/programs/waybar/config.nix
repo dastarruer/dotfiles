@@ -145,14 +145,14 @@
         cpu = {
           format = "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}";
           format-icons = [
-            "▁" # green (you can keep color in CSS)
-            "▂" # blue
-            "▃" # white
-            "▄" # white
-            "▅" # yellow
-            "▆" # yellow
-            "▇" # orange
-            "█" # red
+            "▁"
+            "▂"
+            "▃"
+            "▄"
+            "▅"
+            "▆"
+            "▇"
+            "█"
           ];
           interval = 1;
           tooltip = true;
