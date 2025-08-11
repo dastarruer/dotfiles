@@ -43,7 +43,6 @@
     /* ======================= */
     /* Interactive States      */
     /* ======================= */
-    #custom-arch:hover,
     #custom-updates:hover,
     #power-profiles-daemon:hover,
     #network:hover,
@@ -59,7 +58,7 @@
     /* ======================= */
     /* Custom Widgets          */
     /* ======================= */
-    #custom-arch {
+    #custom-nix {
         color: @foreground;
         background: rgba(255, 255, 255, 0.1);
         padding: 0 14px;

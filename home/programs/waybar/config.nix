@@ -1,4 +1,4 @@
-{config, ...}: {
+{...}: {
   programs.waybar = {
     enable = true;
 
@@ -10,7 +10,6 @@
         margin = "8px 8px 0 8px";
 
         modules-left = [
-          # "custom/arch"
           "hyprland/workspaces"
         ];
 
@@ -23,13 +22,10 @@
           "tray"
           "group/sys-resources"
           "privacy"
-          # "network"
-          # "bluetooth"
-          # "pulseaudio#microphone"
           "group/audio"
           "group/brightness"
           "battery"
-          # "custom/power"
+          "custom/nix"
         ];
 
         "group/sys-resources" = {
@@ -73,11 +69,9 @@
           ];
         };
 
-        "custom/arch" = {
-          format = "  btw";
+        "custom/nix" = {
+          format = " btw";
           tooltip = false;
-          on-click = "alacritty";
-          on-click-right = "";
         };
 
         "hyprland/workspaces" = {
