@@ -25,7 +25,7 @@
           "privacy"
           # "network"
           # "bluetooth"
-          "pulseaudio#microphone"
+          # "pulseaudio#microphone"
           "group/audio"
           "group/brightness"
           "battery"
@@ -255,13 +255,7 @@
           device = "amdgpu_bl1"; # Get this by running `ls /sys/class/backlight/`
           format = "{icon}";
           format-icons = [
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
+            "󰞏"
           ];
           on-scroll-up = "";
           on-scroll-down = "";
