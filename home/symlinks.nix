@@ -1,5 +1,5 @@
 {config, ...}: let
-  currentTheme = "catppuccin";
+  currentTheme = "gruvbox";
 in {
   # Symlink a bunch of files
   home.file = {

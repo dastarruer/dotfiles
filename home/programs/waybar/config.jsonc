@@ -10,19 +10,20 @@
 
   "modules-right": [
     "group/sys-resources",
-     "mpris",
     "privacy",
     "group/audio",
     "group/brightness",
+    "mpris",
     "battery"
   ],
 
   "group/sys-resources": {
     "orientation": "inherit",
     "drawer": {
-      "transition-duration": 400,
+      "transition-duration": 200,
       "children-class": "sys-resources",
-      "transition-left-to-right": false
+      "transition-left-to-right": false,
+      "click-to-reveal": true
     },
     "modules": ["custom/sys-resources", "cpu", "custom/memory", "disk"]
   },
@@ -30,9 +31,10 @@
   "group/brightness": {
     "orientation": "inherit",
     "drawer": {
-      "transition-duration": 400,
+      "transition-duration": 200,
       "children-class": "brightness",
-      "transition-left-to-right": false
+      "transition-left-to-right": false,
+      "click-to-reveal": true
     },
     "modules": ["backlight", "backlight/slider"]
   },
@@ -40,9 +42,10 @@
   "group/audio": {
     "orientation": "inherit",
     "drawer": {
-      "transition-duration": 400,
+      "transition-duration": 200,
       "children-class": "audio",
-      "transition-left-to-right": false
+      "transition-left-to-right": false,
+      "click-to-reveal": true
     },
     "modules": ["pulseaudio", "pulseaudio/slider"]
   },
@@ -61,7 +64,7 @@
     "sort-by-number": true,
     "all-outputs": true,
     "persistent_workspaces": {
-      "*": 4
+      "*": 10
     }
   },
 
@@ -191,8 +194,6 @@
     "format-icons": {
       "default": ["", "", ""]
     },
-    "on-click-right": "pavucontrol",
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-scroll-up": "",
     "on-scroll-down": "",
     "tooltip": true,

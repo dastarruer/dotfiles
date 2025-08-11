@@ -25,6 +25,9 @@ window#waybar {
 #pulseaudio:hover,
 #backlight:hover,
 #custom-power:hover,
+#custom-sys-resources:hover,
+#battery:hover,
+#mpris:hover,
 #pulseaudio.microphone:hover,
 #pulseaudio.sink-muted:hover {
   opacity: 0.8;

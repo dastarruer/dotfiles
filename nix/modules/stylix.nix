@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  theme = "catppuccin-mocha";
+  theme = "gruvbox-dark-hard";
 in {
   stylix = {
     enable = true;
