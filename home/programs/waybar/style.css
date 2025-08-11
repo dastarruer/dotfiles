@@ -91,7 +91,6 @@ window#waybar {
 #bluetooth,
 #pulseaudio,
 #pulseaudio.microphone,
-#pulseaudio-slider,
 #backlight,
 #backlight-slider,
 #battery,
@@ -135,6 +134,43 @@ window#waybar {
   background: rgba(0, 0, 255, 0.1);
 }
 
+#backlight {
+    color: @foreground;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 12px;
+    margin: 0 4px;
+    /* border: solid 2px @foreground; */
+    border-radius: 8px;
+}
+
+#backlight-slider {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 12px;
+    margin: 0 4px;
+    border-radius: 8px;
+}
+
+#backlight-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    background: transparent;
+    box-shadow: none;
+}
+
+#backlight-slider trough {
+    min-height: 8px;
+    min-width: 100px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#backlight-slider highlight {
+    min-width: 8px;
+    min-height: 8px;
+    border-radius: 4px;
+    background: @color7;
+}
+
 #pulseaudio.sink-muted {
   color: @color03;
   background: rgba(255, 255, 0, 0.1);
@@ -144,28 +180,44 @@ window#waybar {
   background: rgba(255, 0, 0, 0.1);
 }
 
-#backlight-slider trough {
+#pulseaudio-slider {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0 12px;
+  margin: 0 4px;
+  border-radius: 8px;
+}
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  background: transparent;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough {
   min-height: 8px;
   min-width: 100px;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
-#backlight-slider highlight {
+
+#pulseaudio-slider highlight {
   min-width: 8px;
   min-height: 8px;
   border-radius: 4px;
-  background: @color09;
+  background: @color07;
 }
 
+
 #battery.charging {
-  color: @color02;
+  color: @color04;
 }
 #battery.warning {
-  color: @color03;
+  color: @color01;
 }
 #battery.critical,
 #battery.plugordie {
-  color: @color01;
+  color: @color02;
 }
 
 /* Tooltips */
