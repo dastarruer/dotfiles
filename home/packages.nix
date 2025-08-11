@@ -22,7 +22,7 @@
 
     # Other
     gh
-    flatpak
+    # flatpak
     cargo
     fzf
     playerctl
