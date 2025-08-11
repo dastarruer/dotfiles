@@ -5,9 +5,6 @@ on:
     - cron: "0 0 * * *" # every day at midnight UTC
   workflow_dispatch: # allow manual trigger
 
-permissions:
-  contents: write
-
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -24,6 +21,10 @@ jobs:
       - name: Update flake
         run: nix flake update
 
+      - name: Lint nix files with alejandra
+        run: |
+          nix run github:kamadorueda/alejandra -- .
+
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
@@ -36,5 +37,5 @@ jobs:
             exit 0
           fi
 
-          git commit -m "update flake"
+          git commit -m "update flake + dotfiles"
           git push
