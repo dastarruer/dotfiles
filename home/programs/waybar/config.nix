@@ -248,11 +248,11 @@
           min = 5;
           max = 100;
           orientation = "horizontal";
-          device = "intel_backlight";
+          device = "amdgpu_bl1"; # Get this by running `ls /sys/class/backlight/`
         };
 
         backlight = {
-          device = "intel_backlight";
+          device = "amdgpu_bl1"; # Get this by running `ls /sys/class/backlight/`
           format = "{icon}";
           format-icons = [
             ""
