@@ -166,8 +166,10 @@
         border-radius: 8px;
     }
 
-    #cpu {
-        color: @color14;
+    #cpu,
+    #disk,
+    #custom-memory {
+        color: @foreground;
         background: rgba(255, 255, 255, 0.1);
         padding: 0 12px;
         margin: 0 4px;
@@ -201,7 +203,7 @@
     /* Menu                    */
     /* ======================= */
 
-    #custom-menu {
+    #custom-sys-resources {
         color: @foreground;
         background: rgba(255, 255, 255, 0.1);
         padding: 0 8px;
