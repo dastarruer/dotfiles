@@ -20,7 +20,7 @@
     };
 
     flatpaks = {
-      url = "github:in-a-dil-emma/declarative-flatpak/dev";
+      url = "github:in-a-dil-emma/declarative-flatpak/stable-v3";
     };
 
     firefox-addons = {
