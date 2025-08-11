@@ -23,8 +23,8 @@
           "tray"
           "group/group-extras"
           "privacy"
-          "network"
-          "bluetooth"
+          # "network"
+          # "bluetooth"
           "pulseaudio#microphone"
           "group/audio"
           "group/brightness"
@@ -40,7 +40,7 @@
             transition-left-to-right = false;
           };
           modules = [
-            # "custom/menu"
+            "custom/menu"
             "cpu"
             # "custom/updates"
           ];
@@ -73,7 +73,7 @@
         };
 
         "custom/arch" = {
-          format = "  btw"; # nerd font arch icon
+          format = "  btw";
           tooltip = false;
           on-click = "alacritty";
           on-click-right = "";
@@ -83,7 +83,7 @@
           format = "{id}";
           format-icons = {
             urgent = "*";
-            special = ""; # nerd font gamepad icon for special
+            special = "";
           };
           sort-by-number = true;
           all-outputs = true;
@@ -102,17 +102,17 @@
           format = "{player_icon} {status_icon}";
           format-paused = "{player_icon} {status_icon}";
           status-icons = {
-            playing = ""; # nf-fa-play
-            paused = ""; # nf-fa-pause
-            stopped = ""; # nf-fa-stop
+            playing = "";
+            paused = "";
+            stopped = "";
           };
           player-icons = {
-            default = ""; # nf-mdi-music_note
-            spotify_player = ""; # nf-fa-spotify
+            default = "";
+            spotify_player = "";
             spotify = "";
-            firefox = ""; # nf-fa-firefox
-            chrome = ""; # nf-fa-chrome
-            vlc = "嗢"; # nf-mdi-vlc
+            firefox = "";
+            chrome = "";
+            vlc = "嗢";
           };
           max-length = 30;
           return-type = "json";
@@ -161,12 +161,12 @@
         };
 
         "custom/menu" = {
-          format = ""; # nf-fa-folder_open
+          format = "";
           tooltip = false;
         };
 
         "custom/updates" = {
-          format = "  {}"; # nf-fa-sync_alt
+          format = "  {}";
           escape = true;
           return-type = "json";
           exec = "~/.config/scripts/system/package-updates.sh";
@@ -177,14 +177,14 @@
         network = {
           format-icons = {
             wifi = [
-              "睊" # nf-mdi-wifi_strength_1
-              "直" # nf-mdi-wifi_strength_2
-              "盛" # nf-mdi-wifi_strength_3
-              "瘟" # nf-mdi-wifi_strength_4
+              "睊"
+              "直"
+              "盛"
+              "瘟"
             ];
-            ethernet = ""; # nf-fa-network_wired
-            disabled = "睊"; # nf-mdi-wifi_off
-            disconnected = "盛"; # nf-mdi-wifi_off_outline
+            ethernet = "";
+            disabled = "睊";
+            disconnected = "盛";
           };
           format-wifi = "{icon}";
           format-ethernet = "{icon} Wired";
@@ -200,10 +200,10 @@
 
         bluetooth = {
           interval = 5;
-          format-on = ""; # nf-fa-bluetooth_b
+          format-on = "";
           format-off = ""; # reuse same icon for disabled/off
           format-disabled = "";
-          format-connected = ""; # nf-fa-bluetooth
+          format-connected = "";
           tooltip = true;
           tooltip-format = "{device_enumerate}";
           tooltip-format-enumerate-connected = "{device_alias} {device_battery_percentage}%";
@@ -220,12 +220,12 @@
         pulseaudio = {
           interval = 1;
           format = "{icon}";
-          format-muted = ""; # nf-fa-volume_off
+          format-muted = "";
           format-icons = {
             default = [
-              "" # nf-fa-volume_mute
-              "" # nf-fa-volume_down
-              "" # nf-fa-volume_up
+              ""
+              ""
+              ""
             ];
           };
           on-click-right = "pavucontrol";
@@ -238,8 +238,8 @@
 
         "pulseaudio#microphone" = {
           format = "{format_source}";
-          format-source = ""; # nf-fa-microphone
-          format-source-muted = ""; # nf-fa-microphone_slash
+          format-source = "";
+          format-source-muted = "";
           on-click = "pactl set-source-mute @DEFAULT_SOURCE@ toggle";
           tooltip = false;
         };
@@ -288,8 +288,8 @@
             ""
             ""
           ];
-          format-charging = " {capacity}%"; # nf-fa-bolt
-          format-plugged = " {capacity}%"; # nf-fa-plug
+          format-charging = " {capacity}%";
+          format-plugged = " {capacity}%";
           format-plugordie = " {capacity}";
           tooltip = false;
           exec-on-event = true;
@@ -298,7 +298,7 @@
         };
 
         "custom/power" = {
-          format = ""; # nf-fa-power_off
+          format = "";
           on-click = "wlogout --protocol layer-shell -b 2";
           tooltip = false;
         };
