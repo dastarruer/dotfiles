@@ -102,8 +102,8 @@
           format = "{player_icon} {status_icon}";
           format-paused = "{player_icon} {status_icon}";
           status-icons = {
-            playing = "";
-            paused = "";
+            paused = "";
+            playing = "";
             stopped = "";
           };
           player-icons = {
