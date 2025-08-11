@@ -271,15 +271,23 @@
           };
           format = "{icon} {capacity}%";
           format-icons = [
-            ""
-            ""
-            ""
-            ""
-            ""
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
           ];
           format-charging = " {capacity}%";
           format-plugged = " {capacity}%";
-          format-plugordie = " {capacity}";
+
+          # Show time til battery runs out on click
+          format-alt = "󱧥 {time}";
+
           tooltip = false;
           exec-on-event = true;
           exec-if-event = "state-warning, state-critical";
