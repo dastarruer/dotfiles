@@ -21,7 +21,7 @@
 
         modules-right = [
           "tray"
-          "group/group-extras"
+          "group/sys-resources"
           "privacy"
           # "network"
           # "bluetooth"
@@ -32,17 +32,18 @@
           # "custom/power"
         ];
 
-        "group/group-extras" = {
+        "group/sys-resources" = {
           orientation = "inherit";
           drawer = {
             transition-duration = 400;
-            children-class = "extras";
+            children-class = "sys-resources";
             transition-left-to-right = false;
           };
           modules = [
-            "custom/menu"
+            "custom/sys-resources"
             "cpu"
-            # "custom/updates"
+            "custom/memory"
+            "disk"
           ];
         };
 
@@ -142,26 +143,26 @@
           ];
         };
 
-        cpu = {
-          format = "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}";
-          format-icons = [
-            "▁"
-            "▂"
-            "▃"
-            "▄"
-            "▅"
-            "▆"
-            "▇"
-            "█"
-          ];
-          interval = 1;
-          tooltip = true;
-          tooltip-format = "CPU Frequency: {avg_frequency} GHz";
-          on-click = "alacritty -e btm";
+        disk = {
+          format = " {free}";
+          interval = 120;
         };
 
-        "custom/menu" = {
-          format = "";
+        cpu = {
+          format = " {usage}%";
+          tooltip = false;
+          interval = 5;
+        };
+
+        "custom/memory" = {
+          exec = "~/bin/memory_usage.sh";
+          interval = 2;
+          return-type = "json";
+          format = " {}";
+        };
+
+        "custom/sys-resources" = {
+          format = "󰘚";
           tooltip = false;
         };
 
