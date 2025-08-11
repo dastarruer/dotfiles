@@ -276,11 +276,6 @@
             ""
             ""
             ""
-            ""
-            ""
-            ""
-            ""
-            ""
           ];
           format-charging = " {capacity}%";
           format-plugged = " {capacity}%";
