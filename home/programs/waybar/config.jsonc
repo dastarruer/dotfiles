@@ -192,7 +192,7 @@
   "bluetooth": {
     "interval": 5,
     "format-on": "",
-    "format-off": "", 
+    "format-off": "",
     "format-disabled": "",
     "format-connected": "",
     "tooltip": true,
@@ -238,15 +238,10 @@
   "backlight/slider": {
     "min": 5,
     "max": 100,
-    "orientation": "horizontal",
-
-    "_comment": "Get this by running `ls /sys/class/backlight/`",
-    "device": "amdgpu_bl1"
+    "orientation": "horizontal"
   },
 
   "backlight": {
-    "_comment": "Get this by running `ls /sys/class/backlight/`",
-    "device": "amdgpu_bl1",
     "format": "{icon}",
     "format-icons": [
       "󰞏"
