@@ -34,7 +34,7 @@
 
     animations = {
       enabled = true;
-      animation = "workspaces, 3, 8, default, slidefade 50%";
+      animation = "workspaces, 1, 8, default, slidefade 50%";
     };
 
     dwindle = {
