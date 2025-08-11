@@ -11,9 +11,7 @@ in {
       ublock-origin
       sponsorblock
       darkreader
-      pywalfox
       simple-tab-groups
-      startpage-private-search
       i-dont-care-about-cookies
       privacy-badger
       link-cleaner
