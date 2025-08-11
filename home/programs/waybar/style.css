@@ -45,8 +45,10 @@ window#waybar {
 /* Workspace Management    */
 /* ======================= */
 #workspaces {
-  margin: 0;
   padding: 0;
+  margin: 0 4px;
+  border-radius: 8px;
+  /* background: rgba(255, 255, 255, 0.1); */
 }
 
 #workspaces button {
@@ -54,10 +56,11 @@ window#waybar {
   padding: 0 8px;
   margin: 0 4px;
   border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 #workspaces button.active {
-  color: @foreground;
+  color: @color7;
   background: rgba(255, 255, 255, 0.1);
 }
 
