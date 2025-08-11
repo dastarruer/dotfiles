@@ -259,7 +259,7 @@
       },
       "original": {
         "owner": "in-a-dil-emma",
-        "ref": "dev",
+        "ref": "stable-v3",
         "repo": "declarative-flatpak",
         "type": "github"
       }
