@@ -73,7 +73,7 @@
         };
 
         "custom/arch" = {
-          format = "󰣇  btw";
+          format = "  btw"; # nerd font arch icon
           tooltip = false;
           on-click = "alacritty";
           on-click-right = "";
@@ -83,7 +83,7 @@
           format = "{id}";
           format-icons = {
             urgent = "*";
-            special = "󰍛";
+            special = ""; # nerd font gamepad icon for special
           };
           sort-by-number = true;
           all-outputs = true;
@@ -102,17 +102,17 @@
           format = "{player_icon} {status_icon}";
           format-paused = "{player_icon} {status_icon}";
           status-icons = {
-            playing = "󰐊";
-            paused = "󰏤";
-            stopped = "󰓛";
+            playing = ""; # nf-fa-play
+            paused = ""; # nf-fa-pause
+            stopped = ""; # nf-fa-stop
           };
           player-icons = {
-            default = "󱜏";
-            spotify_player = "";
+            default = ""; # nf-mdi-music_note
+            spotify_player = ""; # nf-fa-spotify
             spotify = "";
-            firefox = "󰺕";
-            chrome = "";
-            vlc = "󰕼";
+            firefox = ""; # nf-fa-firefox
+            chrome = ""; # nf-fa-chrome
+            vlc = "嗢"; # nf-mdi-vlc
           };
           max-length = 30;
           return-type = "json";
@@ -145,14 +145,14 @@
         cpu = {
           format = "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}";
           format-icons = [
-            "<span color='#8ec07c'>▁</span>"
-            "<span color='#458588'>▂</span>"
-            "<span color='#f8f8f8'>▃</span>"
-            "<span color='#f8f8f8'>▄</span>"
-            "<span color='#d79921'>▅</span>"
-            "<span color='#d79921'>▆</span>"
-            "<span color='#fe8019'>▇</span>"
-            "<span color='#cc241d'>█</span>"
+            "▁" # green (you can keep color in CSS)
+            "▂" # blue
+            "▃" # white
+            "▄" # white
+            "▅" # yellow
+            "▆" # yellow
+            "▇" # orange
+            "█" # red
           ];
           interval = 1;
           tooltip = true;
@@ -161,12 +161,12 @@
         };
 
         "custom/menu" = {
-          format = "<span size='15pt' font='Material Icons'>menu_open</span>";
+          format = ""; # nf-fa-folder_open
           tooltip = false;
         };
 
         "custom/updates" = {
-          format = "  {}";
+          format = "  {}"; # nf-fa-sync_alt
           escape = true;
           return-type = "json";
           exec = "~/.config/scripts/system/package-updates.sh";
@@ -177,14 +177,14 @@
         network = {
           format-icons = {
             wifi = [
-              "<span size='12pt' font='Material Icons'>network_wifi_1_bar</span>"
-              "<span size='12pt' font='Material Icons'>network_wifi_2_bar</span>"
-              "<span size='12pt' font='Material Icons'>network_wifi_3_bar</span>"
-              "<span size='12pt' font='Material Icons'>signal_wifi_4_bar</span>"
+              "睊" # nf-mdi-wifi_strength_1
+              "直" # nf-mdi-wifi_strength_2
+              "盛" # nf-mdi-wifi_strength_3
+              "瘟" # nf-mdi-wifi_strength_4
             ];
-            ethernet = "<span size='12pt' font='Material Icons'>lan</span>";
-            disabled = "<span size='12pt' font='Material Icons'>signal_wifi_off</span>";
-            disconnected = "<span size='12pt' font='Material Icons'>signal_wifi_bad</span>";
+            ethernet = ""; # nf-fa-network_wired
+            disabled = "睊"; # nf-mdi-wifi_off
+            disconnected = "盛"; # nf-mdi-wifi_off_outline
           };
           format-wifi = "{icon}";
           format-ethernet = "{icon} Wired";
@@ -200,10 +200,10 @@
 
         bluetooth = {
           interval = 5;
-          format-on = "<span size='14pt' font='Material Icons'></span>";
-          format-off = "<span size='14pt' font='Material Icons'>bluetooth_disabled</span>";
-          format-disabled = "<span size='14pt' font='Material Icons'>bluetooth_disabled</span>";
-          format-connected = "<span size='14pt' font='Material Icons'>bluetooth_connected</span>";
+          format-on = ""; # nf-fa-bluetooth_b
+          format-off = ""; # reuse same icon for disabled/off
+          format-disabled = "";
+          format-connected = ""; # nf-fa-bluetooth
           tooltip = true;
           tooltip-format = "{device_enumerate}";
           tooltip-format-enumerate-connected = "{device_alias} {device_battery_percentage}%";
@@ -220,12 +220,12 @@
         pulseaudio = {
           interval = 1;
           format = "{icon}";
-          format-muted = "<span size='14pt' font='Material Icons'>volume_off</span>";
+          format-muted = ""; # nf-fa-volume_off
           format-icons = {
             default = [
-              "<span size='14pt' font='Material Icons'>volume_mute</span>"
-              "<span size='14pt' font='Material Icons'>volume_down</span>"
-              "<span size='14pt' font='Material Icons'>volume_up</span>"
+              "" # nf-fa-volume_mute
+              "" # nf-fa-volume_down
+              "" # nf-fa-volume_up
             ];
           };
           on-click-right = "pavucontrol";
@@ -238,8 +238,8 @@
 
         "pulseaudio#microphone" = {
           format = "{format_source}";
-          format-source = "<span size='13.5pt' font='Material Icons'>mic</span>";
-          format-source-muted = "<span size='13.5pt' font='Material Icons'>mic_off</span>";
+          format-source = ""; # nf-fa-microphone
+          format-source-muted = ""; # nf-fa-microphone_slash
           on-click = "pactl set-source-mute @DEFAULT_SOURCE@ toggle";
           tooltip = false;
         };
@@ -255,13 +255,13 @@
           device = "intel_backlight";
           format = "{icon}";
           format-icons = [
-            "<span size='12.5pt' font='Material Icons'>brightness_1</span>"
-            "<span size='12.5pt' font='Material Icons'>brightness_2</span>"
-            "<span size='12.5pt' font='Material Icons'>brightness_3</span>"
-            "<span size='12.5pt' font='Material Icons'>brightness_4</span>"
-            "<span size='12.5pt' font='Material Icons'>brightness_5</span>"
-            "<span size='12.5pt' font='Material Icons'>brightness_6</span>"
-            "<span size='12.5pt' font='Material Icons'>brightness_7</span>"
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
           ];
           on-scroll-up = "";
           on-scroll-down = "";
@@ -277,20 +277,20 @@
           };
           format = "{icon} {capacity}%";
           format-icons = [
-            "󰁺"
-            "󰁻"
-            "󰁼"
-            "󰁽"
-            "󰁾"
-            "󰁿"
-            "󰂀"
-            "󰂁"
-            "󰂂"
-            "󰁹"
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
           ];
-          format-charging = " {capacity}%";
-          format-plugged = "󰚥 {capacity}%";
-          format-plugordie = "󰂃 {capacity}";
+          format-charging = " {capacity}%"; # nf-fa-bolt
+          format-plugged = " {capacity}%"; # nf-fa-plug
+          format-plugordie = " {capacity}";
           tooltip = false;
           exec-on-event = true;
           exec-if-event = "state-warning, state-critical";
@@ -298,7 +298,7 @@
         };
 
         "custom/power" = {
-          format = "<span size='14pt' font='Material Icons'>power_settings_new</span>";
+          format = ""; # nf-fa-power_off
           on-click = "wlogout --protocol layer-shell -b 2";
           tooltip = false;
         };
