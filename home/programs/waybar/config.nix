@@ -12,6 +12,7 @@
         modules-left = [
           "custom/nix"
           "hyprland/workspaces"
+          "tray"
         ];
 
         modules-center = [
@@ -20,7 +21,6 @@
         ];
 
         modules-right = [
-          "tray"
           "group/sys-resources"
           "privacy"
           "group/audio"
