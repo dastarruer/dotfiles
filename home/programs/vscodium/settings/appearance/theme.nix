@@ -14,7 +14,7 @@
       "editorOverviewRuler.findMatchForeground" = "#0000";
       "editorOverviewRuler.modifiedForeground" = "#0000";
       "editorOverviewRuler.deletedForeground" = "#0000";
-      "editorOverviewRuler.warningForeground" = "#0000";
+      # "editorOverviewRuler.warningForeground" = "#0000";
       "editorOverviewRuler.addedForeground" = "#0000";
       # "editorOverviewRuler.errorForeground" = "#0000";
       "editorOverviewRuler.infoForeground" = "#0000";
