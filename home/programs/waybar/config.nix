@@ -10,6 +10,7 @@
         margin = "8px 8px 0 8px";
 
         modules-left = [
+          "custom/nix"
           "hyprland/workspaces"
         ];
 
@@ -25,7 +26,6 @@
           "group/audio"
           "group/brightness"
           "battery"
-          "custom/nix"
         ];
 
         "group/sys-resources" = {
