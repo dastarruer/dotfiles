@@ -4,16 +4,9 @@
   "spacing": 0,
   "margin": "8px 8px 0 8px",
 
-  "modules-left": [
-    "custom/nix",
-    "hyprland/workspaces",
-    "tray"
-  ],
+  "modules-left": ["custom/nix", "hyprland/workspaces", "tray"],
 
-  "modules-center": [
-    "clock",
-    "mpris"
-  ],
+  "modules-center": ["clock", "mpris"],
 
   "modules-right": [
     "group/sys-resources",
@@ -30,12 +23,7 @@
       "children-class": "sys-resources",
       "transition-left-to-right": false
     },
-    "modules": [
-      "custom/sys-resources",
-      "cpu",
-      "custom/memory",
-      "disk"
-    ]
+    "modules": ["custom/sys-resources", "cpu", "custom/memory", "disk"]
   },
 
   "group/brightness": {
@@ -45,10 +33,7 @@
       "children-class": "brightness",
       "transition-left-to-right": false
     },
-    "modules": [
-      "backlight",
-      "backlight/slider"
-    ]
+    "modules": ["backlight", "backlight/slider"]
   },
 
   "group/audio": {
@@ -58,10 +43,7 @@
       "children-class": "audio",
       "transition-left-to-right": false
     },
-    "modules": [
-      "pulseaudio",
-      "pulseaudio/slider"
-    ]
+    "modules": ["pulseaudio", "pulseaudio/slider"]
   },
 
   "custom/nix": {
@@ -167,12 +149,7 @@
 
   "network": {
     "format-icons": {
-      "wifi": [
-        "睊",
-        "直",
-        "盛",
-        "瘟"
-      ],
+      "wifi": ["睊", "直", "盛", "瘟"],
       "ethernet": "",
       "disabled": "睊",
       "disconnected": "盛"
@@ -213,11 +190,7 @@
     "format": "{icon}",
     "format-muted": "",
     "format-icons": {
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", ""]
     },
     "on-click-right": "pavucontrol",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
@@ -243,9 +216,7 @@
 
   "backlight": {
     "format": "{icon}",
-    "format-icons": [
-      "󰞏"
-    ],
+    "format-icons": ["󰞏"],
     "on-scroll-up": "",
     "on-scroll-down": "",
     "tooltip": false
@@ -259,18 +230,7 @@
       "plugordie": 5
     },
     "format": "{icon} {capacity}%",
-    "format-icons": [
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
-    ],
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
 
