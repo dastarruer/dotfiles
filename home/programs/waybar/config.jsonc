@@ -119,12 +119,13 @@
 
   "disk": {
     "format": " {free}",
+    "tooltip": true,
     "interval": 120
   },
 
   "cpu": {
     "format": " {usage}%",
-    "tooltip": false,
+    "tooltip": true,
     "interval": 5
   },
 
@@ -132,7 +133,8 @@
     "exec": "~/bin/memory_usage.sh",
     "interval": 2,
     "return-type": "json",
-    "format": " {}"
+    "format": " {}",
+    "tooltip": true
   },
 
   "custom/sys-resources": {
