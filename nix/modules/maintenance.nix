@@ -14,6 +14,7 @@
       # Update inputs
       "--update-input"
       "nixpkgs"
+      "flatpaks"
 
       # Impure mode
       "--impure"
