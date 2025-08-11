@@ -12,7 +12,7 @@ in {
     enable = true;
   };
 
-  # Symlink the files
+  # Symlink the files instead of using home manager (for my own sanity)
   home.file = {
     "${waybarConfigDir}/config.jsonc".source = config.lib.file.mkOutOfStoreSymlink "${waybarDotfilesDir}/config.jsonc";
 
