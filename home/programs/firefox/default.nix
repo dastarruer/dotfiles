@@ -21,8 +21,12 @@ in {
     package = inputs.firefox-nightly.packages.${pkgs.system}.firefox-nightly-bin;
   };
 
-  # Tell stylix to style this profile
-  stylix.targets.firefox.profileNames = ["${firefoxProfile}"];
+  stylix.targets.firefox = {
+    # Tell stylix to style this profile
+    profileNames = ["${firefoxProfile}"];
+
+    colorTheme.enable = true;
+  };
 
   # PIP rules
   wayland.windowManager.hyprland.settings.windowrule = [
