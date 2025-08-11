@@ -19,7 +19,6 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
   ];
 
   services.flatpak = {
-    # Enable flatpaks
     enable = true;
 
     # Add remotes here
@@ -30,7 +29,7 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
 
     # Add packages here
     packages = [
-      "flathub:app/org.vinegarhq.Sober/x86_64/stable"
+      "flathub:app/org.vinegarhq.Sober/x86_64/master"
       "flathub:app/md.obsidian.Obsidian/x86_64/master"
     ];
 
@@ -51,10 +50,6 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
       # It bothers me about this everytime I start sober so here
       "org.vinegarhq.Sober" = {
         filesystems = [
-          "!host"
-          "!home"
-
-          # Sober overrides
           "xdg-run/app/com.discordapp.Discord:create"
           "xdg-run/discord-ipc-0"
         ];
