@@ -95,6 +95,8 @@
     "return-type": "json",
     "interval": 1,
     "on-click": "playerctl play-pause",
+    "on-click-right": "",
+    "on-click-middle": "",
     "tooltip": false
   },
 
