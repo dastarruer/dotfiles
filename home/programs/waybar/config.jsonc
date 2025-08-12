@@ -25,7 +25,7 @@
       "transition-left-to-right": false,
       "click-to-reveal": true
     },
-    "modules": ["custom/sys-resources", "cpu", "custom/memory", "disk"]
+    "modules": ["custom/sys-resources", "cpu", "memory", "disk"]
   },
 
   "group/brightness": {
@@ -130,12 +130,11 @@
     "interval": 5
   },
 
-  "custom/memory": {
-    "exec": "~/bin/memory_usage.sh",
+  "memory": {
     "interval": 2,
-    "return-type": "json",
-    "format": " {}",
-    "tooltip": true
+    "format": " {used}GiB",
+    "tooltip": true,
+    "tooltip-format": "{used:0.1f}GiB used out of {total:0.1f}GiB ({percentage}%)"
   },
 
   "custom/sys-resources": {
