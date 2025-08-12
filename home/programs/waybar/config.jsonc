@@ -194,10 +194,10 @@
     "format": "{icon}",
     "format-muted": "",
     "format-icons": {
-      "default": ["", "", ""]
+      "default": ["", ""],
+      "headphone": ""
     },
-    "on-scroll-up": "",
-    "on-scroll-down": "",
+    "scroll-step": 5,
     "tooltip": true,
     "tooltip-format": "Volume: {volume}%\n{desc}"
   },
