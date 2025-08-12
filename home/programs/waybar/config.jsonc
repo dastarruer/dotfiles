@@ -102,7 +102,7 @@
 
   "tray": {
     "icon-size": 14,
-    "spacing": 8
+    "spacing": 4
   },
 
   "privacy": {
