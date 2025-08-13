@@ -29,7 +29,7 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
 
     # Add packages here
     packages = [
-      "flathub:app/org.vinegarhq.Sober/x86_64/master"
+      "flathub:app/org.vinegarhq.Sober/x86_64/0cd045f324a91cebe5e223d851d021af76dc321d"
       "flathub:app/md.obsidian.Obsidian/x86_64/master"
     ];
 
