@@ -11,6 +11,7 @@ in {
     ./containers.nix
     ./extensions.nix
     ./settings.nix
+    ./search.nix
     ./theme
   ];
 
