@@ -1,6 +1,10 @@
 {pkgs, ...}: {
   programs.firefox.profiles.default.search = {
+    force = true;
+
+    # Use brave because it's about as fast as google
     default = "brave";
+
     engines = {
       brave = {
         name = "Brave Search";
@@ -41,6 +45,7 @@
         definedAliases = [":nw"];
       };
 
+      # Just in case...
       google.metaData.alias = ":g";
     };
   };
