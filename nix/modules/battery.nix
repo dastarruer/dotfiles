@@ -107,13 +107,11 @@
                 grep '^yes' | \
                 cut -d: -f2)
           if [ "$SSID" = "$HOME_SSID" ]; then
-              echo 1 > "$BATTERY_PATH"
-              echo "conservation mode activated"
+              echo 1 > "$BATTERY_PATH" 2>/dev/null
           else
-              echo 0 > "$BATTERY_PATH"
-              echo "conservation mode deactivated"
+              echo 0 > "$BATTERY_PATH" 2>/dev/null
           fi
-          sleep 1
+          sleep 30
       done
     '';
 
