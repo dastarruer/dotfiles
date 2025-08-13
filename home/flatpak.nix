@@ -29,8 +29,8 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
 
     # Add packages here
     packages = [
-      "flathub:app/org.vinegarhq.Sober/x86_64/0cd045f324a91cebe5e223d851d021af76dc321d"
-      "flathub:app/md.obsidian.Obsidian/x86_64/master"
+      "flathub:app/md.obsidian.Obsidian/x86_64/stable"
+      "flathub:app/org.vinegarhq.Sober/x86_64/stable"
     ];
 
     overrides = {
@@ -52,6 +52,9 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
         filesystems = [
           "xdg-run/app/com.discordapp.Discord:create"
           "xdg-run/discord-ipc-0"
+
+          "!home"
+          "!host"
         ];
       };
 
