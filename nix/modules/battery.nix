@@ -73,16 +73,6 @@
   # Needed for conservation mode on lenovo laptops (charging thresholds basically)
   boot.kernelModules = ["ideapad_laptop"];
 
-  # Get the wifi ssid
-  sops = {
-    defaultSopsFile = ../../secrets/secrets.yaml;
-    age.keyFile = "/home/dastarruer/.config/sops/age/keys.txt";
-
-    secrets = {
-      home_wifi = {};
-    };
-  };
-
   # A systemd service to auto enable conservation mode on my home wifi, and disable it when connected to anything else
   systemd.services.home-battery-threshold = {
     description = "Toggle Lenovo IdeaPad conservation mode based on home Wi-Fi";
