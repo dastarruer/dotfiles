@@ -1,4 +1,8 @@
-{...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   # Most of these settings are from here: https://discourse.nixos.org/t/battery-life-still-isnt-great/41188
 
   # Enable NixOS power management hooks (basic integration).
@@ -22,6 +26,11 @@
       battery = {
         governor = "powersave"; # Use the "powersave" CPU governor to reduce frequency scaling.
         turbo = "never"; # Disable CPU turbo boost to save power and lower temps.
+
+        # this doesnt work for whatever reason
+        # enable_thresholds = true;
+        # start_threshold = 40;
+        # stop_threshold = 80;
       };
 
       # Settings for when running on AC power (charger plugged in)
@@ -60,4 +69,58 @@
   # - Gives foreground/interactive tasks higher CPU priority
   # - Improves desktop responsiveness (especially useful on laptops).
   services.system76-scheduler.settings.cfsProfiles.enable = true;
+
+  # Needed for conservation mode on lenovo laptops (charging thresholds basically)
+  boot.kernelModules = ["ideapad_laptop"];
+
+  # Get the wifi ssid
+  sops = {
+    defaultSopsFile = ../../secrets/secrets.yaml;
+    age.keyFile = "/home/dastarruer/.config/sops/age/keys.txt";
+
+    secrets = {
+      home_wifi = {};
+    };
+  };
+
+  # A systemd service to auto enable conservation mode on my home wifi, and disable it when connected to anything else
+  systemd.services.home-battery-threshold = {
+    description = "Toggle Lenovo IdeaPad conservation mode based on home Wi-Fi";
+
+    # Start on boot
+    wantedBy = ["multi-user.target"];
+
+    # Wait for network access
+    after = ["NetworkManager.service"];
+    wants = ["NetworkManager.service"];
+
+    script = ''
+      #!/usr/bin/env bash
+      export PATH=/run/current-system/sw/bin:/usr/bin:/bin
+
+      # This took forever to figure out but you have to cat the path to get the value
+      HOME_SSID="$(cat ${config.sops.secrets.home_wifi.path})"
+      BATTERY_PATH="/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
+
+      while true; do
+          SSID=$(nmcli -t -f active,ssid dev wifi | \
+                grep '^yes' | \
+                cut -d: -f2)
+          if [ "$SSID" = "$HOME_SSID" ]; then
+              echo 1 > "$BATTERY_PATH"
+              echo "conservation mode activated"
+          else
+              echo 0 > "$BATTERY_PATH"
+              echo "conservation mode deactivated"
+          fi
+          sleep 1
+      done
+    '';
+
+    serviceConfig = {
+      Type = "simple";
+      Restart = "always";
+      RestartSec = 10;
+    };
+  };
 }
