@@ -94,23 +94,27 @@
     after = ["NetworkManager.service"];
     wants = ["NetworkManager.service"];
 
+    # Enable conservation mode if my mouse is plugged in
+    # I usually use my mouse at home when I need conservation mode enabled
     script = ''
       #!/usr/bin/env bash
       export PATH=/run/current-system/sw/bin:/usr/bin:/bin
 
-      # This took forever to figure out but you have to cat the path to get the value
-      HOME_SSID="$(cat ${config.sops.secrets.home_wifi.path})"
       BATTERY_PATH="/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
 
+      # ID for mouse
+      MOUSE_ID="046d:c077"
+
       while true; do
-          SSID=$(nmcli -t -f active,ssid dev wifi | \
-                grep '^yes' | \
-                cut -d: -f2)
-          if [ "$SSID" = "$HOME_SSID" ]; then
+          # Check if devices are connected
+          MOUSE_PRESENT=$(${pkgs.usbutils}/bin/lsusb | grep -i "$MOUSE_ID")
+
+          if [[ -n "$MOUSE_PRESENT" ]]; then
               echo 1 > "$BATTERY_PATH" 2>/dev/null
           else
               echo 0 > "$BATTERY_PATH" 2>/dev/null
           fi
+
           sleep 30
       done
     '';
