@@ -10,7 +10,7 @@ in {
     packages = with inputs.firefox-addons.packages."x86_64-linux"; [
       ublock-origin
       sponsorblock
-      darkreader
+      darkreader # To see how to configure custom themes: https://github.com/catppuccin/dark-reader
       simple-tab-groups
       i-dont-care-about-cookies
       privacy-badger
