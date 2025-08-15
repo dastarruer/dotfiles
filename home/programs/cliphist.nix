@@ -1,5 +1,7 @@
-{...}: {
-  programs.cliphist.enable = true;
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    cliphist
+  ];
 
   # Cliphist keybinds
   wayland.windowManager.hyprland.settings.bind = [
