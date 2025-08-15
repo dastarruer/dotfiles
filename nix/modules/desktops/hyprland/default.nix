@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ../../audio/pulseaudio.nix
   ];
@@ -12,4 +12,9 @@
     # Start hyprland on boot
     withUWSM = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    # clipboard functionality
+    wl-clipboard
+  ];
 }
