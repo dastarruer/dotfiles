@@ -4,7 +4,7 @@
     ./firefox
     ./git.nix
     ./kitty.nix
-    ./rofi.nix
+    ./rofi
     ./rclone.nix
     ./spicetify
     ./zathura.nix
