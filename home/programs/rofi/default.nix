@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./config.nix
-    ./programs
+    ./plugins
   ];
 
   programs.rofi = {
@@ -9,5 +9,12 @@
 
     # Specify rofi-wayland because wayland
     package = pkgs.rofi-wayland;
+  };
+
+  # Hyprland keybinds
+  wayland.windowManager.hyprland.settings = {
+    bind = [
+      "$mainMod, D, exec, rofi -show drun"
+    ];
   };
 }
