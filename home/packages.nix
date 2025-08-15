@@ -23,7 +23,6 @@
     # Other
     gh
     flatpak
-    cargo
     fzf
     playerctl
     ffmpeg
