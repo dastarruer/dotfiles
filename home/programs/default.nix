@@ -14,5 +14,6 @@
     ./hyprland
     ./flameshot.nix
     ./anki
+    ./sherlock.nix
   ];
 }

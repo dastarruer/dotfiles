@@ -48,6 +48,11 @@
     #   inputs.hyprland.follows = "hyprland";
     # };
 
+    sherlock = {
+      url = "github:Skxxtz/sherlock";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Microcode updates
     cpu-microcodes = {
       url = "github:platomav/CPUMicrocodes/ec5200961ecdf78cf00e55d73902683e835edefd";
