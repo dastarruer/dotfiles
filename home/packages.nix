@@ -15,11 +15,6 @@
     tesseract
     grimblast
 
-    # Clipboard
-    wl-clipboard
-    cliphist
-    go # a dependency of cliphist
-
     # Other
     gh
     fzf

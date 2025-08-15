@@ -18,5 +18,6 @@
     ./btop.nix
     ./yazi.nix
     ./zoxide.nix
+    ./cliphist.nix
   ];
 }
