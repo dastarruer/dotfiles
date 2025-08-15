@@ -27,11 +27,6 @@
     ffmpeg
   ];
 
-  # Enable programs here so that stylix can configure them
-  programs = {
-    home-manager.enable = true;
-    btop.enable = true;
-    yazi.enable = true;
-    zoxide.enable = true;
-  };
+  # idk why i have to enable this
+  programs.home-manager.enable = true;
 }
