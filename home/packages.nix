@@ -22,7 +22,6 @@
 
     # Other
     gh
-    flatpak
     fzf
     playerctl
     ffmpeg
