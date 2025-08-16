@@ -27,5 +27,6 @@
     # These are fine
     spicetify.enable = false;
     waybar.enable = false;
+    starship.enable = false;
   };
 }
