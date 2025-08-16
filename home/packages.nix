@@ -7,11 +7,9 @@
     # Apps
     xfce.thunar
     firefox
-    obsidian
     todoist-electron
     musescore
     vesktop
-    anki-bin
 
     # Screenshots
     tesseract
@@ -20,18 +18,11 @@
     # Other
     eww
     gh
-    flatpak
-    cargo
     fzf
     playerctl
     ffmpeg
   ];
 
-  # Enable programs here so that stylix can configure them
-  programs = {
-    home-manager.enable = true;
-    btop.enable = true;
-    yazi.enable = true;
-    zoxide.enable = true;
-  };
+  # idk why i have to enable this
+  programs.home-manager.enable = true;
 }

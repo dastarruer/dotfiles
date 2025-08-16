@@ -20,8 +20,13 @@
 
   # Disable stylix configuration for certain apps
   stylix.targets = {
+    # Note that these requires manual theming
+    vscode.enable = false;
+    gtk.enable = false;
+
+    # These are fine
     spicetify.enable = false;
     waybar.enable = false;
-    vscode.enable = false;
+    starship.enable = false;
   };
 }

@@ -1,12 +1,35 @@
-{...}: {
+{
+  config,
+  inputs,
+  ...
+}: {
+  imports = [
+    inputs.sops-nix.homeManagerModules.sops
+  ];
+
+  # Get the encrypted username and email
+  sops = {
+    defaultSopsFile = ../../secrets/secrets.yaml;
+    age.keyFile = "/home/dastarruer/.config/sops/age/keys.txt";
+
+    secrets = {
+      name = {};
+      email = {};
+    };
+  };
+
   programs.git = {
     enable = true;
 
-    userName = "Ayush Pramanik";
-    userEmail = "ayushpramanik399@gmail.com";
+    userName = "${config.sops.secrets.name.path}";
+    userEmail = "${config.sops.secrets.email.path}";
 
     # Config
     extraConfig = {
+      # Use vs codium for commit messages
+      core.editor = "codium --wait";
+
+      # Automatically push to the current branch or something
       push.autoSetupRemote = true;
 
       credential."https://github.com" = {

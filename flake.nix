@@ -9,18 +9,27 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     flatpaks = {
-      url = "github:in-a-dil-emma/declarative-flatpak/dev";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:in-a-dil-emma/declarative-flatpak/stable-v3";
     };
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    firefox-nightly = {
+      url = "github:nix-community/flake-firefox-nightly/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -29,11 +38,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # hyprland-plugins = {
     #   url = "github:hyprwm/hyprland-plugins";
     #   inputs.hyprland.follows = "hyprland";
+    # };
+
+    # sherlock = {
+    #   url = "github:Skxxtz/sherlock";
+    #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
     # Microcode updates
@@ -45,7 +62,6 @@
     ucodenix = {
       url = "github:e-tho/ucodenix";
       inputs.cpu-microcodes.follows = "cpu-microcodes";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -74,6 +90,7 @@
           home-manager.users.dastarruer = ./home.nix;
         }
 
+        # Other modules
         inputs.stylix.nixosModules.stylix
       ];
     };
