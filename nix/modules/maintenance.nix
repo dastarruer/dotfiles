@@ -11,9 +11,12 @@
       "--cores"
       "4"
 
-      # Update inputs
+      # Update nixpkgs
       "--update-input"
       "nixpkgs"
+
+      # Update flatpaks
+      "--update-input"
       "flatpaks"
 
       # Impure mode
