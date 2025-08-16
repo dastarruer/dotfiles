@@ -38,7 +38,7 @@ window#waybar {
 /* ======================= */
 #custom-nix {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
+  background: @background;
   padding: 0 14px;
   margin: 0 4px;
   border-radius: 4px;
@@ -51,7 +51,7 @@ window#waybar {
   padding: 0;
   margin: 0 4px;
   border-radius: 4px;
-  /* background: rgba(255, 255, 255, 0.1); */
+  /* background: @background; */
 }
 
 #workspaces button {
@@ -59,12 +59,12 @@ window#waybar {
   padding: 0 8px;
   margin: 0 4px;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.1);
+  background: @background;
 }
 
 #workspaces button.active {
   color: @color7;
-  background: rgba(255, 255, 255, 0.1);
+  background: @background;
 }
 
 @keyframes urgent-pulse {
@@ -102,7 +102,7 @@ window#waybar {
 #battery,
 #custom-power {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
+  background: @background;
   padding: 0 12px;
   margin: 0 4px;
   border-radius: 4px;
@@ -142,7 +142,7 @@ window#waybar {
 
 #backlight {
     color: @foreground;
-    background: rgba(255, 255, 255, 0.1);
+    background: @background;
     padding: 0 12px;
     margin: 0 4px;
     /* border: solid 2px @foreground; */
@@ -150,7 +150,7 @@ window#waybar {
 }
 
 #backlight-slider {
-    background: rgba(255, 255, 255, 0.1);
+    background: @background;
     padding: 0 12px;
     margin: 0 4px;
     border-radius: 4px;
@@ -187,7 +187,7 @@ window#waybar {
 }
 
 #pulseaudio-slider {
-  background: rgba(255, 255, 255, 0.1);
+  background: @background;
   padding: 0 12px;
   margin: 0 4px;
   border-radius: 4px;
