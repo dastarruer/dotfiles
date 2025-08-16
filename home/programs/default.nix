@@ -19,5 +19,6 @@
     ./yazi.nix
     ./zoxide.nix
     ./cliphist.nix
+    ./eww.nix
   ];
 }
