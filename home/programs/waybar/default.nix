@@ -13,12 +13,9 @@ in {
   };
 
   # Symlink the files instead of using home manager (for my own sanity)
-  home.file = {
-    "${waybarConfigDir}/config.jsonc".source = config.lib.file.mkOutOfStoreSymlink "${waybarDotfilesDir}/config.jsonc";
+  home.file."${waybarConfigDir}".source = config.lib.file.mkOutOfStoreSymlink "${waybarDotfilesDir}/config/waybar";
 
-    "${waybarConfigDir}/style.css".source = config.lib.file.mkOutOfStoreSymlink "${waybarDotfilesDir}/style.css";
-  };
-
+  # Waybar rules that are recommended by the hyprland wiki
   wayland.windowManager.hyprland.settings = {
     layerrule = [
       "blur,waybar"
