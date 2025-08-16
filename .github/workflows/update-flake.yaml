@@ -21,10 +21,6 @@ jobs:
       - name: Update flake
         run: nix flake update
 
-      - name: Lint nix files with alejandra
-        run: |
-          nix run github:kamadorueda/alejandra -- .
-
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
