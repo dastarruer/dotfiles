@@ -11,12 +11,16 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
 {
   inputs,
   lib,
+  pkgs,
   ...
 }: {
   # Import flatpak home manager module
   imports = [
     inputs.flatpaks.homeModule
   ];
+
+  # This is needed for launching flatpaks with rofi
+  home.packages = with pkgs; [flatpak];
 
   services.flatpak = {
     enable = true;
