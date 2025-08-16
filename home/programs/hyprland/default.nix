@@ -27,10 +27,6 @@
     waybar
     swww
 
-    # Clipboard functionality
-    cliphist
-    wl-clipboard
-
     # Network manager
     networkmanagerapplet
   ];
