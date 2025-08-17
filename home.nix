@@ -25,6 +25,7 @@
     gtk.enable = false;
 
     # These are fine
+    hyprland.enable = false;
     spicetify.enable = false;
     waybar.enable = false;
     starship.enable = false;
