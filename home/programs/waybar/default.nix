@@ -14,11 +14,11 @@
   };
 
   # Waybar rules that are recommended by the hyprland wiki
-  wayland.windowManager.hyprland.settings = {
-    layerrule = [
-      "blur,waybar"
-      "xray 0,waybar"
-      "ignorezero,waybar"
-    ];
-  };
+  # wayland.windowManager.hyprland.settings = {
+  #   layerrule = [
+  #     "blur,waybar"
+  #     "xray 0,waybar"
+  #     "ignorezero,waybar"
+  #   ];
+  # };
 }
