@@ -9,19 +9,26 @@
     };
 
     decoration = {
+      # Rounding
       rounding = 4;
       rounding_power = 2;
+
+      # Opacity
       active_opacity = 0.8;
       inactive_opacity = 0.8;
       fullscreen_opacity = 1;
       dim_inactive = false;
       dim_strength = 0.05;
+
+      # Shadows
       shadow = {
         enabled = true;
         range = 5;
         render_power = 2;
         ignore_window = true;
       };
+
+      # Blur
       blur = {
         enabled = true;
         size = 10;
