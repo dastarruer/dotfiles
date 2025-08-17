@@ -1,7 +1,7 @@
 {config, ...}: {
   # Generate a colors.conf file using Stylix base16 colors
   # This gets symlinked in default.nix
-  home.file.".dotfiles/config/hypr/hyprland/colors.conf".text = ''
+  home.file."${config.home.homeDirectory}/.dotfiles/config/hypr/hyprland/colors.conf".text = ''
     col.bg0 = ${config.lib.stylix.colors.base00}
     col.bg1 = ${config.lib.stylix.colors.base01}
     col.bg2 = ${config.lib.stylix.colors.base02}
