@@ -32,16 +32,9 @@
 
   # Symlink hyprland config
   home.file = {
-    ".config/hypr/hyprland.config" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/config/hypr/hyprland.conf";
-    };
-
-    ".config/hypr/hyprland" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/config/hypr/hyprland";
+    ".config/hypr" = {
+      source = "${config.home.homeDirectory}/.dotfiles/config/hypr";
+      recursive = true; # copies the entire directory3
     };
   };
 }
