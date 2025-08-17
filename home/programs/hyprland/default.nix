@@ -30,11 +30,13 @@
     networkmanagerapplet
   ];
 
+  # nope nope nope just symlink it manually this is pain
   # Symlink hyprland config
-  home.file = {
-    ".config/hypr" = {
-      source = "${config.home.homeDirectory}/.dotfiles/config/hypr";
-      recursive = true; # copies the entire directory3
-    };
-  };
+  # home.file = {
+  #   ".config/hypr" = {
+  #     source =
+  #       config.lib.file.mkOutOfStoreSymlink
+  #       "${config.home.homeDirectory}/.dotfiles/config/hypr";
+  #   };
+  # };
 }

@@ -5,8 +5,8 @@
   ];
 
   # Hyprland keybinds
-  wayland.windowManager.hyprland.settings.bind = [
-    # Rofi-calc
-    "$mainMod, C, exec, rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}'\" | wl-copy && notify-send -t 1000 \"Copied to clipboard\""
-  ];
+  # wayland.windowManager.hyprland.settings.bind = [
+  #   # Rofi-calc
+  #   "$mainMod, C, exec, rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}'\" | wl-copy && notify-send -t 1000 \"Copied to clipboard\""
+  # ];
 }

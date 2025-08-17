@@ -12,9 +12,9 @@
   };
 
   # Hyprland keybinds
-  wayland.windowManager.hyprland.settings = {
-    bind = [
-      "$mainMod, D, exec, rofi -show drun"
-    ];
-  };
+  # wayland.windowManager.hyprland.settings = {
+  #   bind = [
+  #     "$mainMod, D, exec, rofi -show drun"
+  #   ];
+  # };
 }

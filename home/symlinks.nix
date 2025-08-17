@@ -15,7 +15,7 @@ in {
     ".bashrc" = {
       source =
         config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/bashrc/config/.bashrc";
+        "${config.home.homeDirectory}/.dotfiles/config/bashrc/.bashrc";
     };
     "Pictures/wallpapers" = {
       source =
