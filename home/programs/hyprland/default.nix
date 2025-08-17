@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  config,
   ...
 }: {
   imports = [
@@ -30,12 +31,14 @@
   ];
 
   # nope nope nope just symlink it manually this is pain
+  # run this command: ln -s ~/.dotfiles/config/hypr ~/.config/hypr
   # Symlink hyprland config
-  # home.file = {
-  #   ".config/hypr" = {
-  #     source =
-  #       config.lib.file.mkOutOfStoreSymlink
-  #       "${config.home.homeDirectory}/.dotfiles/config/hypr";
-  #   };
+  # home.file.".config/hypr" = {
+  #   source =
+  #     config.lib.file.mkOutOfStoreSymlink
+  #     ".dotfiles/config/hypr";
+
+  #   # Copy every file in the dir
+  #   recursive = true;
   # };
 }
