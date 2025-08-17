@@ -7,6 +7,7 @@
   imports = [
     ./hyprlock.nix
     ./hypridle.nix
+    ./colors.nix
     # ./plugins.nix
   ];
 
