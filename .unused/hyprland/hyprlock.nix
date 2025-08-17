@@ -1,5 +1,4 @@
 {...}: {
-  # Use home manager to configure hyprlock because stylix auto configures it, and i cant be bothered rn.
   programs.hyprlock = {
     enable = true;
     settings = {

@@ -31,17 +31,9 @@
   ];
 
   # Symlink hyprland config
-  home.file = {
-    ".config/hypr/hyprland.config" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/config/hypr/hyprland.conf";
-    };
-
-    ".config/hypr/hyprland" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/config/hypr/hyprland";
-    };
+  home.file.".config/hypr" = {
+    source =
+      config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/.dotfiles/config/hypr";
   };
 }
