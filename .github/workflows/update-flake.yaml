@@ -3,7 +3,10 @@ name: Update Nix Flake
 on:
   schedule:
     - cron: "0 0 * * *" # every day at midnight UTC
-  workflow_dispatch: # allow manual trigger
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   update:
