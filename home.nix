@@ -20,6 +20,8 @@
 
   # Disable stylix configuration for certain apps
   stylix.targets = {
+    hyprlock.enable = true;
+
     # Note that these requires manual theming
     vscode.enable = false;
     gtk.enable = false;
