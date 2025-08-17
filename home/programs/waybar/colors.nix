@@ -1,6 +1,6 @@
 {config, ...}: {
   # Define colors to be used by style.css
-  home.file.".config/waybar/colors.css".text = ''
+  home.file.".dotfiles/config/waybar/colors.css".text = ''
     /* ================================ */
     /*            Stylix Colors         */
     /* ================================ */
