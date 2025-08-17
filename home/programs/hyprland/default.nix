@@ -5,7 +5,6 @@
   ...
 }: {
   imports = [
-    ./source
     ./hyprlock.nix
     ./hypridle.nix
     # ./plugins.nix
