@@ -91,7 +91,7 @@ image {
     monitor =
     path = ~/.config/hypr/pfp.png
     border_color = 0xffdddddd
-    border_size = 0
+    border_size = 3
     size = 173
     rounding = -1
     rotate = 0
