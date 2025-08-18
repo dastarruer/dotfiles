@@ -3,10 +3,8 @@
   pkgs,
   ...
 }: {
+  # Remove old files from downloads
   systemd.user = {
-    enable = true;
-
-    # Remove old files from downloads
     services.cleanup-downloads = {
       Unit = {
         Description = "Remove old files from Downloads directory";
