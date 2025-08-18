@@ -11,8 +11,8 @@
   "modules-right": [
     "group/sys-resources",
     "privacy",
-    "group/audio",
-    "group/brightness",
+    "pulseaudio",
+    "backlight",
     "mpris",
     "battery"
   ],
@@ -191,7 +191,7 @@
 
   "pulseaudio": {
     "interval": 1,
-    "format": "{icon}",
+    "format": "{icon} {volume}%",
     "format-muted": "",
     "format-icons": {
       "default": ["", ""],
@@ -217,7 +217,7 @@
   },
 
   "backlight": {
-    "format": "{icon}",
+    "format": "{icon} {percent}%",
     "format-icons": ["󰞏"],
     "on-scroll-up": "",
     "on-scroll-down": "",
