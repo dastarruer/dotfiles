@@ -7,17 +7,12 @@ background {
 
     # Gets replaced by config/bin/change_wallpaper.sh
     path = $HYPRLOCK_WALL
-    
+
     color = rgba(25, 20, 20, 1.0)
 
     # all these options are taken from hyprland, see https://wiki.hyprland.org/Configuring/Variables/#blur for explanations
-    blur_passes = 0 # 0 disables blurring
+    blur_passes = 2 # 0 disables blurring
     blur_size = 2
-    noise = 0
-    contrast = 0
-    brightness = 0
-    vibrancy = 0
-    vibrancy_darkness = 0.0
 }
 
 input-field {
