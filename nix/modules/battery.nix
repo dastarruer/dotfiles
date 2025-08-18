@@ -73,38 +73,37 @@
   # Needed for conservation mode on lenovo laptops (charging thresholds basically)
   boot.kernelModules = ["ideapad_laptop"];
 
+  # Dependencies for the systemd service below
+  environment.systemPackages = with pkgs; [
+    usbutils
+  ];
+
   # A systemd service to auto enable conservation mode on my home wifi, and disable it when connected to anything else
   systemd.services.home-battery-threshold = {
-    description = "Toggle Lenovo IdeaPad conservation mode based on home Wi-Fi";
+    description = "Toggle Lenovo IdeaPad conservation mode based on whether the mouse is plugged in";
 
     # Start on boot
     wantedBy = ["multi-user.target"];
 
     # Wait for network access
     after = ["NetworkManager.service"];
-    wants = ["NetworkManager.service"];
 
     # Enable conservation mode if my mouse is plugged in
     # I usually use my mouse at home when I need conservation mode enabled
     script = ''
       #!/usr/bin/env bash
-      export PATH=/run/current-system/sw/bin:/usr/bin:/bin
 
       BATTERY_PATH="/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
-
-      # ID for mouse
       MOUSE_ID="046d:c077"
 
       while true; do
-          # Check if devices are connected
-          MOUSE_PRESENT=$(${pkgs.usbutils}/bin/lsusb | grep -i "$MOUSE_ID")
-
-          if [[ -n "$MOUSE_PRESENT" ]]; then
-              echo 1 > "$BATTERY_PATH" 2>/dev/null
+          if lsusb | grep -iq "$MOUSE_ID"; then
+              echo 1 | tee "$BATTERY_PATH"
+              echo "toggle conservation mode on"
           else
-              echo 0 > "$BATTERY_PATH" 2>/dev/null
+              echo 0 | tee "$BATTERY_PATH"
+              echo "toggle conservation mode off"
           fi
-
           sleep 10
       done
     '';
