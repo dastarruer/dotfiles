@@ -8,7 +8,6 @@
     ./hyprlock.nix
     ./hypridle.nix
     ./colors.nix
-    ./plugins.nix
   ];
 
   wayland.windowManager.hyprland = {

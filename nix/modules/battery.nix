@@ -105,7 +105,7 @@
               echo 0 > "$BATTERY_PATH" 2>/dev/null
           fi
 
-          sleep 30
+          sleep 10
       done
     '';
 
