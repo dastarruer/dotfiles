@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   # Remove old files from downloads
   systemd.user = {
     services.cleanup-downloads = {
