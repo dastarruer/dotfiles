@@ -22,8 +22,10 @@ NEXT_INDEX=$(( (CURRENT_INDEX + 1) % NUM_WALLPAPERS ))
 # Set the new wallpaper
 swww img "${WALLPAPERS[$NEXT_INDEX]}" -t wipe --transition-angle 30 --transition-duration 1
 
-# Only replace the path in the background block
-sed "s|path = \$HYPRLOCK_WALL|path = ${WALLPAPERS[$NEXT_INDEX]}|" $HYPRLOCK_TMP > $HYPRLOCK_CONFIG
+# Add the wallpaper to hyprlock
+echo "background {
+    path = /home/dastarruer/Pictures/wallpapers/wallhaven-2e2xyx.jpg
+}" > $HOME/.config/hypr/hyprlock-background.conf
 
 # & disown will make the command run in the background so i can run the script multiple times back to back
 # betterlockscreen -u "${WALLPAPERS[$NEXT_INDEX]}" & disown
