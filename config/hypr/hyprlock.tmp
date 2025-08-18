@@ -6,7 +6,7 @@ background {
     monitor =
 
     # Gets replaced by config/bin/change_wallpaper.sh
-    path = /home/dastarruer/Pictures/wallpapers/gruvbox_astro.jpg
+    path = $HYPRLOCK_WALL
     
     color = rgba(25, 20, 20, 1.0)
 
