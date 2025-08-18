@@ -97,7 +97,7 @@ image {
     rotate = 0
     reload_time = -1
     reload_cmd =
-    position = 0, 150
+    position = 0, 125
     halign = center
     valign = center
     shadow_passes = 3
