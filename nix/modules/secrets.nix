@@ -24,14 +24,6 @@
 
       # Recovery codes just in case
       github_recovery_codes = {};
-
-      # Kavita (i dont use this but why not)
-      kavita_tokenkey = {
-        owner = config.users.users.dastarruer.name;
-        group = config.users.users.dastarruer.group;
-        path = "/etc/kavita-tokenkey"; # Same path from kavita.nix
-        mode = "0600";
-      };
     };
   };
 
