@@ -139,7 +139,8 @@
 
   "custom/sys-resources": {
     "format": "󰘚",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "System resources (click to expand)"
   },
 
   "custom/updates": {
