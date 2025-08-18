@@ -1,7 +1,7 @@
 {
   inputs,
   pkgs,
-  # config,
+  config,
   ...
 }: {
   imports = [
@@ -33,10 +33,10 @@
   # run this command: ln -s ~/.dotfiles/config/hypr ~/.config/hypr
   # xdg.configFile."hypr".enable = false;
   # # Symlink hyprland config
-  # home.file.".config/hypr" = {
-  #   source = "${config.home.homeDirectory}/.dotfiles/config/hypr";
+  home.file.".config/hypr" = {
+    source = "${config.home.homeDirectory}/.dotfiles/config/hypr";
 
-  #   # Copy every file in the dir
-  #   recursive = true;
-  # };
+    # Copy every file in the dir
+    recursive = true;
+  };
 }

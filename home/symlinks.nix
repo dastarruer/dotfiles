@@ -10,7 +10,7 @@ in {
         "${config.home.homeDirectory}/.dotfiles/config/bin";
 
       # Set every script to executable
-      executable = true;
+      # executable = true;
     };
     ".bashrc" = {
       source =

@@ -8,12 +8,11 @@
     xfce.thunar
     firefox
     todoist-electron
-    musescore
+    # musescore
     vesktop
 
     # Screenshots
     tesseract
-    grimblast
 
     # Other
     gh
