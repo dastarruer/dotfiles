@@ -5,7 +5,7 @@
     ./self-hosted
     ./users
 
-    ./battery.nix
+    ./battery
     ./bluetooth.nix
     ./maintenance.nix
     ./networking.nix
