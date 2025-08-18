@@ -11,9 +11,7 @@
       };
       Service = {
         Type = "oneshot";
-
-        # Delete any files older than 5 days
-        ExecStart = "${pkgs.findutils}/bin/find ${config.home.homeDirectory}/Downloads -type f -mtime +5 -delete";
+        ExecStart = "%h/bin/cleanup-downloads.sh";
       };
     };
 
