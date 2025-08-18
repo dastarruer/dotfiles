@@ -12,13 +12,4 @@
       config.lib.file.mkOutOfStoreSymlink
       "${config.home.homeDirectory}/.dotfiles/config/waybar";
   };
-
-  # Waybar rules that are recommended by the hyprland wiki
-  # wayland.windowManager.hyprland.settings = {
-  #   layerrule = [
-  #     "blur,waybar"
-  #     "xray 0,waybar"
-  #     "ignorezero,waybar"
-  #   ];
-  # };
 }
