@@ -1,7 +1,7 @@
 {
   inputs,
   pkgs,
-  config,
+  lib,
   ...
 }: {
   imports = [
@@ -30,10 +30,17 @@
   ];
 
   # Symlink hyprland config
-  home.file.".config/hypr" = {
-    source = "${config.home.homeDirectory}/.dotfiles/config/hypr";
+  # Do this manually because apparently symlinking a directory is too hard for home manager...
+  home.activation.linkHyprland = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    SRC="$HOME/.dotfiles/config/hypr"
+    DEST="$HOME/.config/hypr"
 
-    # Copy every file in the dir
-    recursive = true;
-  };
+    # Remove existing symlink or directory
+    if [ -e "$DEST" ]; then
+        rm -rf "$DEST"
+    fi
+
+    # Create symlink
+    ln -s "$SRC" "$DEST"
+  '';
 }
