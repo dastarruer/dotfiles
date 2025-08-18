@@ -7,7 +7,7 @@ background {
 
     # Gets replaced by config/bin/change_wallpaper.sh
     path = $HYPRLOCK_WALL
-
+    
     color = rgba(25, 20, 20, 1.0)
 
     # all these options are taken from hyprland, see https://wiki.hyprland.org/Configuring/Variables/#blur for explanations
@@ -106,7 +106,7 @@ image {
     halign = center
     valign = center
     shadow_passes = 3
-    shadow_size = 3
-    shadow_boost = 1.5
+    shadow_size = 2
+    shadow_boost = 0.5
     shadow_color = 8ec07c99
 }
