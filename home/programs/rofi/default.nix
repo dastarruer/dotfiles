@@ -1,9 +1,10 @@
 {
   pkgs,
-  lib,
+  config,
   ...
 }: {
   imports = [
+    ./theme.nix
     ./plugins
   ];
 
@@ -14,19 +15,14 @@
     package = pkgs.rofi-wayland;
   };
 
+  # Without this, home manager can't symlink files to .config (https://github.com/nix-community/home-manager/issues/1807#issuecomment-3131623755)
+  xdg.configFile."rofi/config.rasi".enable = false;
+
   # Symlink the rofi config
-  # Do this manually because apparently symlinking a directory is too hard for home manager...
-  # Rofi config comes from here: https://github.com/Spelljinxer/dotfiles/blob/main/.config/rofi/
-  home.activation.linkRofi = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    SRC="$HOME/.dotfiles/config/rofi"
-    DEST="$HOME/.config/rofi"
-
-    # Remove existing symlink or directory
-    if [ -e "$DEST" ]; then
-        rm -rf "$DEST"
-    fi
-
-    # Create symlink
-    ln -s "$SRC" "$DEST"
-  '';
+  home.file.".config/rofi" = {
+    source =
+      config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/.dotfiles/config/rofi";
+    recursive = true;
+  };
 }

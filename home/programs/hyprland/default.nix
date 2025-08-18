@@ -1,7 +1,7 @@
 {
   inputs,
   pkgs,
-  lib,
+  config,
   ...
 }: {
   imports = [
@@ -29,18 +29,18 @@
     networkmanagerapplet
   ];
 
+  # Without this, home manager can't symlink files to .config (https://github.com/nix-community/home-manager/issues/1807#issuecomment-3131623755)
+  xdg.configFile = {
+    "hypr/hyprland.conf".enable = false;
+    "hypr/hypridle.conf".enable = false;
+    "hypr/hyprlock.conf".enable = false;
+  };
+
   # Symlink hyprland config
-  # Do this manually because apparently symlinking a directory is too hard for home manager...
-  home.activation.linkHyprland = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    SRC="$HOME/.dotfiles/config/hypr"
-    DEST="$HOME/.config/hypr"
-
-    # Remove existing symlink or directory
-    if [ -e "$DEST" ]; then
-        rm -rf "$DEST"
-    fi
-
-    # Create symlink
-    ln -s "$SRC" "$DEST"
-  '';
+  home.file.".config/hypr" = {
+    source =
+      config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/.dotfiles/config/hypr";
+    recursive = true;
+  };
 }

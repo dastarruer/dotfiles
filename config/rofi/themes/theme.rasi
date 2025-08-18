@@ -1,8 +1,1 @@
-* {
-    main-bg:            #1b1e25;
-    main-fg:            #CCD9FFE6;
-    main-br:            #D9C95EE6;
-    main-ex:            #76C4D7E6;
-    select-bg:          #EAB2C2;
-    select-fg:          #522936E6;
-}
+/nix/store/5hciqy5k8p93hzjrccirqqzdvg75m1xf-home-manager-files/.dotfiles/config/rofi/themes/theme.rasi
