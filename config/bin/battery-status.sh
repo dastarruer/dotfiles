@@ -3,7 +3,7 @@
 status="$(cat /sys/class/power_supply/BAT0/status)"
 level="$(cat /sys/class/power_supply/BAT0/capacity)"
 
-if [[ "$status" == "Discharging" || "$status" == "Full"]]; then
+if [[ "$status" == "Discharging" || "$status" == "Full" ]]; then
   if [[ "$level" -eq 0 ]]; then
     echo "$level% "
   elif [[ "$level" -ge 1 && "$level" -le 25 ]]; then
