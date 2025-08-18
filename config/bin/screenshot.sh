@@ -41,8 +41,8 @@ case "$main_choice" in
         ;;
     "ocr")
         sleep 0.3
-        XDG_CURRENT_DESKTOP=sway flameshot gui -r | tesseract stdin stdout | xsel --clipboard --input
-        notify-send "Clipboard:" "$(xsel --clipboard --output)"
+        XDG_CURRENT_DESKTOP=sway flameshot gui -r | tesseract stdin stdout | wl-copy
+        notify-send "Clipboard:" "$(wl-paste)"
         ;;
     *)
         echo "No valid option selected."
