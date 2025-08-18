@@ -14,6 +14,9 @@
       "1.1.1.1" # Cloudflare (fast + privacy focused)
       "9.9.9.9" # Quad9 (blocks malicious domains)
     ];
+
+    # idk what this does
+    usePredictableInterfaceNames = true;
   };
 
   environment.systemPackages = with pkgs; [
