@@ -3,7 +3,7 @@
 in {
   # Symlink the firefox chrome to its proper place
   home.file.".mozilla/firefox/${firefoxProfile}/chrome" = {
-    source = ./chrome;
+    source = config.lib.file.mkOutOfStoreSymlink ./chrome;
     recursive = true;
   };
 
