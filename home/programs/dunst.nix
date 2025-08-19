@@ -23,7 +23,7 @@
 
         # Icon Settings
         icon_theme = "Papirus-Dark";
-        icon_corner_radius = 10;
+        icon_corner_radius = 0;
         min_icon_size = 80;
         max_icon_size = 100;
 
