@@ -16,5 +16,5 @@ if [[ "$status" == "Discharging" || "$status" == "Full" ]]; then
     echo "$level% "
   fi
 elif [[ "$status" == "Charging" ]]; then
-  echo "$level "
+  echo "$level% "
 fi

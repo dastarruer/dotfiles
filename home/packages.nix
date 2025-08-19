@@ -9,6 +9,7 @@
     firefox
     todoist-electron
     # musescore
+    foliate
     vesktop
 
     # Screenshots
