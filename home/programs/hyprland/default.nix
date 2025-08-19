@@ -19,7 +19,7 @@
     # For stuff between apps like clipboard access, drag and drop, etc.
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 
-    plugins = with pkgs.hyprlandPlugins; [
+    plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [
       borders-plus-plus
     ];
   };
