@@ -16,7 +16,7 @@
         word_wrap = true;
         ignore_newline = false;
         transparency = 10;
-        corner_radius = 10;
+        corner_radius = 0;
         line_height = 0;
         separator_height = 2;
         frame_width = 2;
