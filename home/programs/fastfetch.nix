@@ -1,46 +1,18 @@
-{...}: {
+{config, ...}: {
   programs.fastfetch = {
     enable = true;
+  };
 
-    settings = {
-      logo = {
-        type = "auto";
+  # Without this, home manager can't symlink files to .config (https://github.com/nix-community/home-manager/issues/1807#issuecomment-3131623755)
+  xdg.configFile = {
+    "fastfetch/config.jsonc".enable = false;
+  };
 
-        padding = {
-          left = 4;
-        };
-      };
-      modules = [
-        "title"
-        "separator"
-        "os"
-        {
-          type = "host";
-          format = "{/2}{-}{/}{2}{?3} {3}{?}";
-        }
-        "kernel"
-        "uptime"
-        {
-          type = "battery";
-          format = "{/4}{-}{/}{4}{?5} [{5}]{?}";
-        }
-        "break"
-        "packages"
-        "shell"
-        "display"
-        "terminal"
-        "break"
-        "cpu"
-        {
-          type = "gpu";
-          key = "GPU";
-        }
-        "memory"
-        "break"
-        "colors"
-      ];
-
-      brightColor = "true";
-    };
+  # Symlink fastfetch config
+  home.file.".config/fastfetch" = {
+    source =
+      config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/.dotfiles/config/fastfetch";
+    recursive = true;
   };
 }
