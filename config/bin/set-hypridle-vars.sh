@@ -6,14 +6,17 @@ if [[ -z "$1" ]]; then
   exit 1
 fi
 
-# Path to hypridle variables file
-config_file="$HOME/.config/hypr/hypridle-variables.conf"
+# Path to hypridle file
+config_file="$HOME/.config/hypr/hypridle.conf"
 
-# Write the argument into the file
-echo "\$screen_off_secs = 300
-\$suspend_secs = $1" > "$config_file"
+# If the variable already exists, replace it. Otherwise append it.
+if grep -q "^\$suspend_secs" "$config_file"; then
+  sed -i "s/^\$suspend_secs = .*/\$suspend_secs = $1/" "$config_file"
+else
+  echo "\$suspend_secs = $1" >> "$config_file"
+fi
 
-echo "Wrote '$1' to $config_file"
+echo "Updated suspend_secs to '$1' in $config_file"
 
-# Reload hyprland
-hyprctl reload
+# Restart hypridle
+pkill hypridle && hypridle &

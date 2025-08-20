@@ -1,14 +1,10 @@
-{...}: {
+{pkgs, ...}: {
   services.hypridle = {
     enable = true;
   };
 
-  # Symlink hypridle
-  # home.file = {
-  #   ".config/hypr/hypridle.config" = {
-  #     source =
-  #       config.lib.file.mkOutOfStoreSymlink
-  #       "${config.home.homeDirectory}/.dotfiles/config/hypr/hypridle.conf";
-  #   };
-  # };
+  # Idk why but services.hypridle doesnt work
+  home.packages = with pkgs; [
+    hypridle
+  ];
 }
