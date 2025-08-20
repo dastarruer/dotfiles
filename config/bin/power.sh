@@ -15,7 +15,7 @@ case "$CHOICE" in
     hyprctl dispatch exit
     ;;
 "󰥔 Suspend")
-    playerctl -a pause
+    $HOME/bin/pause-all.sh
     hyprlock & disown
     systemctl suspend
     ;;

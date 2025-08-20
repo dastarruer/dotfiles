@@ -13,6 +13,9 @@
       # Wait for network access
       after = ["NetworkManager.service"];
 
+      # Run the service before suspend
+      before = ["sleep.target"];
+
       # Lets the service use packages here
       path = with pkgs; [
         usbutils # for lsusb
