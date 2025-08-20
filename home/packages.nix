@@ -6,17 +6,15 @@
   home.packages = with pkgs; [
     # Apps
     xfce.thunar
-    firefox
     todoist-electron
     # musescore
     foliate
-    vesktop
+    # vesktop
 
     # Screenshots
     tesseract
 
     # Other
-    gh
     fzf
     playerctl
     ffmpeg
