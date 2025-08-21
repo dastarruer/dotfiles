@@ -1,5 +1,9 @@
-config/waybar/colors.css
+# Hyprland
 config/hypr/hyprland/colors.conf
 config/hypr/hyprlock-background.conf
 config/hypr/hypridle-variables.conf
+config/hypr/hyprland/load-plugins.conf
+
+# Other
+config/waybar/colors.css
 config/rofi/themes/theme.rasi
