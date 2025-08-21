@@ -12,6 +12,7 @@
     "clock"
   ],
   "modules-right": [
+    "group/hypridle",
     "group/system",
     "mpris",
     "battery"
@@ -167,6 +168,38 @@
     "exec": "~/.config/scripts/system/package-updates.sh",
     "interval": 1800,
     "on-click": "alacritty -e yay -Syu --noconfirm"
+  },
+  "group/hypridle": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 200,
+      "children-class": "hypridle",
+      "transition-left-to-right": false,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/hypridle",
+      "custom/hypridle-10min",
+      "custom/hypridle-20min",
+      "custom/hypridle-30min"
+    ]
+  },
+  "custom/hypridle": {
+    "format": "󰘚",
+    "tooltip": true,
+    "tooltip-format": "Configure hypridle (click to expand)"
+  },
+  "custom/hypridle-10min": {
+    "format": "10min",
+    "on-click": "~/bin/set-hypridle-vars.sh 600"
+  },
+  "custom/hypridle-20min": {
+    "format": "20min",
+    "on-click": "~/bin/set-hypridle-vars.sh 1200"
+  },
+  "custom/hypridle-30min": {
+    "format": "30min",
+    "on-click": "~//bin/set-hypridle-vars.sh 1800"
   },
   "network": {
     "format-icons": {
