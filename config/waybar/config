@@ -179,26 +179,32 @@
     },
     "modules": [
       "custom/hypridle",
-      "custom/hypridle-10min",
+      "custom/hypridle-30min",
       "custom/hypridle-20min",
-      "custom/hypridle-30min"
+      "custom/hypridle-10min"
     ]
   },
   "custom/hypridle": {
-    "format": "󰘚",
+    "format": "󰒲",
     "tooltip": true,
     "tooltip-format": "Configure hypridle (click to expand)"
   },
   "custom/hypridle-10min": {
-    "format": "10min",
+    "format": "󰤄",
+    "tooltip": true,
+    "tooltip-format": "Suspend after 10 minutes idling",
     "on-click": "~/bin/set-hypridle-vars.sh 600"
   },
   "custom/hypridle-20min": {
-    "format": "20min",
+    "format": "󰤄󰤄",
+    "tooltip": true,
+    "tooltip-format": "Suspend after 20 minutes idling",
     "on-click": "~/bin/set-hypridle-vars.sh 1200"
   },
   "custom/hypridle-30min": {
-    "format": "30min",
+    "format": "󰤄󰤄󰤄",
+    "tooltip": true,
+    "tooltip-format": "Suspend after 30 minutes idling",
     "on-click": "~//bin/set-hypridle-vars.sh 1800"
   },
   "network": {

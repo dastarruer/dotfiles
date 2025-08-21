@@ -16,6 +16,9 @@ else
   echo "\$suspend_secs = $1" >> "$config_file"
 fi
 
+# Track current selection for Waybar
+echo "$suspend_secs" > "$XDG_RUNTIME_DIR/hypridle-timeout"
+
 echo "Updated suspend_secs to '$1' in $config_file"
 
 # Restart hypridle
