@@ -3,20 +3,19 @@
   "position": "top",
   "spacing": 0,
   "margin": "8px 8px 0 8px",
-
-  "modules-left": ["custom/nix", "hyprland/workspaces", "tray"],
-
-  "modules-center": ["clock"],
-
+  "modules-left": [
+    "custom/nix",
+    "hyprland/workspaces",
+    "tray"
+  ],
+  "modules-center": [
+    "clock"
+  ],
   "modules-right": [
-    "group/sys-resources",
-    "privacy",
-    "pulseaudio",
-    "backlight",
+    "group/system",
     "mpris",
     "battery"
   ],
-
   "group/sys-resources": {
     "orientation": "inherit",
     "drawer": {
@@ -25,9 +24,28 @@
       "transition-left-to-right": false,
       "click-to-reveal": true
     },
-    "modules": ["custom/sys-resources", "cpu", "memory", "disk"]
+    "modules": [
+      "custom/sys-resources",
+      "cpu",
+      "memory",
+      "disk"
+    ]
   },
-
+  "group/system": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 200,
+      "children-class": "system",
+      "transition-left-to-right": false,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/system",
+      "group/sys-resources",
+      "backlight",
+      "pulseaudio"
+    ]
+  },
   "group/brightness": {
     "orientation": "inherit",
     "drawer": {
@@ -36,9 +54,11 @@
       "transition-left-to-right": false,
       "click-to-reveal": true
     },
-    "modules": ["backlight", "backlight/slider"]
+    "modules": [
+      "backlight",
+      "backlight/slider"
+    ]
   },
-
   "group/audio": {
     "orientation": "inherit",
     "drawer": {
@@ -47,14 +67,15 @@
       "transition-left-to-right": false,
       "click-to-reveal": true
     },
-    "modules": ["pulseaudio", "pulseaudio/slider"]
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ]
   },
-
   "custom/nix": {
     "format": " btw",
     "tooltip": false
   },
-
   "hyprland/workspaces": {
     "format": "{id}",
     "format-icons": {
@@ -67,14 +88,12 @@
       "*": 10
     }
   },
-
   "clock": {
     "interval": 60,
     "format": "{:%a %d %b | %I:%M %p}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "on-click": "swaync-client -op"
   },
-
   "mpris": {
     "format": "{player_icon} {status_icon} {dynamic}",
     "format-paused": "{player_icon} {status_icon}",
@@ -99,12 +118,10 @@
     "on-click-middle": "",
     "tooltip": false
   },
-
   "tray": {
     "icon-size": 14,
     "spacing": 4
   },
-
   "privacy": {
     "icon-spacing": 8,
     "icon-size": 14,
@@ -117,32 +134,32 @@
       }
     ]
   },
-
   "disk": {
     "format": " {free}",
     "tooltip": true,
     "interval": 120
   },
-
   "cpu": {
     "format": " {usage}%",
     "tooltip": true,
     "interval": 5
   },
-
   "memory": {
     "interval": 2,
     "format": " {used}GiB",
     "tooltip": true,
     "tooltip-format": "{used:0.1f}GiB used out of {total:0.1f}GiB ({percentage}%)"
   },
-
+  "custom/system": {
+    "format": "󰍺",
+    "tooltip": true,
+    "tooltip-format": "System information (click to expand)"
+  },
   "custom/sys-resources": {
     "format": "󰘚",
     "tooltip": true,
     "tooltip-format": "System resources (click to expand)"
   },
-
   "custom/updates": {
     "format": "  {}",
     "escape": true,
@@ -151,10 +168,14 @@
     "interval": 1800,
     "on-click": "alacritty -e yay -Syu --noconfirm"
   },
-
   "network": {
     "format-icons": {
-      "wifi": ["睊", "直", "盛", "瘟"],
+      "wifi": [
+        "睊",
+        "直",
+        "盛",
+        "瘟"
+      ],
       "ethernet": "",
       "disabled": "睊",
       "disconnected": "盛"
@@ -170,7 +191,6 @@
     "tooltip": true,
     "max-length": 20
   },
-
   "bluetooth": {
     "interval": 5,
     "format-on": "",
@@ -183,26 +203,26 @@
     "on-click": "rfkill toggle bluetooth",
     "on-click-right": "blueman-manager"
   },
-
   "pulseaudio/slider": {
     "min": 0,
     "max": 100,
     "orientation": "horizontal"
   },
-
   "pulseaudio": {
     "interval": 1,
     "format": "{icon} {volume}%",
     "format-muted": "",
     "format-icons": {
-      "default": ["", ""],
+      "default": [
+        "",
+        ""
+      ],
       "headphone": ""
     },
     "scroll-step": 5,
     "tooltip": true,
     "tooltip-format": "Volume: {volume}%\n{desc}"
   },
-
   "pulseaudio#microphone": {
     "format": "{format_source}",
     "format-source": "",
@@ -210,21 +230,20 @@
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
     "tooltip": false
   },
-
   "backlight/slider": {
     "min": 5,
     "max": 100,
     "orientation": "horizontal"
   },
-
   "backlight": {
     "format": "{icon} {percent}%",
-    "format-icons": ["󰞏"],
+    "format-icons": [
+      "󰞏"
+    ],
     "on-scroll-up": "",
     "on-scroll-down": "",
     "tooltip": false
   },
-
   "battery": {
     "interval": 10,
     "states": {
@@ -233,23 +252,31 @@
       "plugordie": 5
     },
     "format": "{icon} {capacity}%",
-    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
-
     "_comment": "Show time til battery runs out on click",
     "format-alt": "󱧥 {time}",
     "tooltip": false,
     "exec-on-event": true,
     "exec-if-event": "state-warning, state-critical"
   },
-
   "custom/power": {
     "format": "",
     "on-click": "wlogout --protocol layer-shell -b 2",
     "tooltip": false
   },
-
   "custom/rofi": {
     "format": "",
     "on-click": "rofi -show drun -disable-history -show-icons",
