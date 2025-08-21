@@ -24,7 +24,7 @@ window#waybar {
 #bluetooth:hover,
 #custom-power:hover,
 #custom-sys-resources:hover,
-#custom-system,
+#custom-system:hover,
 #battery:hover,
 #mpris:hover,
 #pulseaudio.microphone:hover,
@@ -91,6 +91,7 @@ window#waybar {
 #privacy,
 #custom-sys-resources,
 #custom-system,
+#custom-hypridle
 #custom-updates,
 #power-profiles-daemon,
 #network,
