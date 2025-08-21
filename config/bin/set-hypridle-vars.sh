@@ -6,6 +6,7 @@ if [[ -z "$1" ]]; then
   exit 1
 fi
 
+
 # Path to hypridle file
 config_file="$HOME/.config/hypr/hypridle.conf"
 
@@ -17,9 +18,10 @@ else
 fi
 
 # Track current selection for Waybar
-echo "$suspend_secs" > "$XDG_RUNTIME_DIR/hypridle-timeout"
-
-echo "Updated suspend_secs to '$1' in $config_file"
+echo "$1" > "$XDG_RUNTIME_DIR/hypridle-timeout"
 
 # Restart hypridle
 pkill hypridle && hypridle &
+
+notify-send "Will suspend after $(($1 / 60)) minutes"
+

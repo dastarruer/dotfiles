@@ -190,22 +190,34 @@
     "tooltip-format": "Configure hypridle (click to expand)"
   },
   "custom/hypridle-10min": {
-    "format": "󰤄",
+    "format": "{text}",
+    "return-type": "json",
     "tooltip": true,
     "tooltip-format": "Suspend after 10 minutes idling",
-    "on-click": "~/bin/set-hypridle-vars.sh 600"
+    "on-click": "~/bin/set-hypridle-vars.sh 600",
+    "interval": 1,
+    "_comment": "chatgpt gave me this great way to create togglable buttons with waybar",
+    "exec": "test \"$(cat $XDG_RUNTIME_DIR/hypridle-timeout 2>/dev/null)\" = 600 && echo '{\"text\":\"󰤄\",\"class\":\"active\"}' || echo '{\"text\":\"󰤄\"}'"
   },
   "custom/hypridle-20min": {
-    "format": "󰤄󰤄",
+    "format": "{text}",
+    "return-type": "json",
     "tooltip": true,
     "tooltip-format": "Suspend after 20 minutes idling",
-    "on-click": "~/bin/set-hypridle-vars.sh 1200"
+    "on-click": "~/bin/set-hypridle-vars.sh 1200",
+    "interval": 1,
+    "_comment": "chatgpt gave me this great way to create togglable buttons with waybar",
+    "exec": "test \"$(cat $XDG_RUNTIME_DIR/hypridle-timeout 2>/dev/null)\" = 1200 && echo '{\"text\":\"󰤄󰤄\",\"class\":\"active\"}' || echo '{\"text\":\"󰤄󰤄\"}'"
   },
   "custom/hypridle-30min": {
-    "format": "󰤄󰤄󰤄",
+    "format": "{text}",
+    "return-type": "json",
     "tooltip": true,
-    "tooltip-format": "Suspend after 30 minutes idling",
-    "on-click": "~//bin/set-hypridle-vars.sh 1800"
+    "tooltip-format": "Suspend after 20 minutes idling",
+    "on-click": "~/bin/set-hypridle-vars.sh 1800",
+    "interval": 1,
+    "_comment": "chatgpt gave me this great way to create togglable buttons with waybar",
+    "exec": "test \"$(cat $XDG_RUNTIME_DIR/hypridle-timeout 2>/dev/null)\" = 1800 && echo '{\"text\":\"󰤄󰤄󰤄\",\"class\":\"active\"}' || echo '{\"text\":\"󰤄󰤄󰤄\"}'"
   },
   "network": {
     "format-icons": {

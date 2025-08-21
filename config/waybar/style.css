@@ -144,7 +144,13 @@ window#waybar {
   color: @color08;
   background: rgba(0, 0, 255, 0.1);
 }
-
+#custom-hypridle-10min.active,
+#custom-hypridle-20min.active,
+#custom-hypridle-30min.active {
+    color: @color3;   /* green for active */
+    background-color: rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+}
 #backlight {
     color: @foreground;
     background: @background;
