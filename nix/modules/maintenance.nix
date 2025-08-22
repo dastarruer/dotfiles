@@ -2,7 +2,7 @@
 {inputs, ...}: {
   # Auto update
   system.autoUpgrade = {
-    enable = true;
+    enable = false;
     flake = inputs.self.outPath;
     flags = [
       # Reduce cpu load
