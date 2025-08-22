@@ -25,7 +25,9 @@
 
     # Run service once laptop has powered on and has internet access
     persistent = true;
-    dates = "02:00";
+
+    # Run after school
+    dates = "15:00";
 
     # allow rebooting after every upgrade (just in case!)
     # allowReboot = true;
