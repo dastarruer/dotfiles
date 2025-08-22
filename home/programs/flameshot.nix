@@ -25,7 +25,7 @@
         copyPathAfterSave = true;
 
         # For wayland
-        useGrimAdaptor = true;
+        # useGrimAdapter = true;
       };
     };
   };
