@@ -15,6 +15,7 @@ in {
       (recolor.withConfig {
         config = theme;
       })
+      # Image occlusion enhanced
       (pkgs.anki-utils.buildAnkiAddon (finalAttrs: {
         pname = "image-occlusion-enhanced";
         # To find the version, run:
