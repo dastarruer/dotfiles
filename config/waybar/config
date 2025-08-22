@@ -213,7 +213,7 @@
     "format": "{text}",
     "return-type": "json",
     "tooltip": true,
-    "tooltip-format": "Suspend after 20 minutes idling",
+    "tooltip-format": "Suspend after 30 minutes idling",
     "on-click": "~/bin/set-hypridle-vars.sh 1800",
     "interval": 1,
     "_comment": "chatgpt gave me this great way to create togglable buttons with waybar",
