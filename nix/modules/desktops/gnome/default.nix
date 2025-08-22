@@ -1,7 +1,7 @@
 # UNUSED BECAUSE HYPRLAND SUPERIORITY
 {...}: {
   imports = [
-    ../../audio/pipewire.nix
+    ../../audio/puleaudio.nix
   ];
 
   # Enable the X11 windowing system.

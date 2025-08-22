@@ -1,5 +1,5 @@
 {...}: {
-  # Enable sound with pipewire, which is better for wayland
+  # idk what any of this does idek if this enables puleaudio
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
