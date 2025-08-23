@@ -40,7 +40,7 @@
     "hypr/hyprlock.conf".enable = false;
   };
 
-  home.file.".dotfiles/config/hypr/hyprland/load-plugins.conf".text = ''
+  home.file.".cache/hypr/load-plugins.conf".text = ''
     exec-once = hyprctl plugin load ${inputs.hyprland-plugins.packages.${pkgs.system}.borders-plus-plus}/lib/libborders-plus-plus.so
   '';
 
