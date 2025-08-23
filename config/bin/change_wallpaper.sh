@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-HYPRLOCK_CONFIG="$HOME/.config/hypr/hyprlock-background.conf"
+HYPRLOCK_CONFIG="$HOME/.cache/hypr/hyprlock-background.conf"
 
 # File to track the last selected wallpaper
 INDEX_FILE="$HOME/.cache/.current_wallpaper_index"
