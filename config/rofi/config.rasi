@@ -12,7 +12,7 @@ configuration {
     icon-theme:                  "Papirus-Dark";
 }
 
-@theme "~/.config/rofi/themes/theme.rasi"
+@theme "~/.cache/rofi/theme.rasi"
 
 
 // Main //

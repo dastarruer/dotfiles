@@ -1,6 +1,6 @@
 {config, ...}: {
   # Generate the theme.rasi file
-  home.file.".dotfiles/config/rofi/themes/theme.rasi".text = ''
+  home.file.".cache/rofi/theme.rasi".text = ''
     * {
       main-bg:    #${config.lib.stylix.colors.base00};
       main-fg:    #${config.lib.stylix.colors.base05};
