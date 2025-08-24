@@ -8,7 +8,8 @@
     xfce.thunar
     todoist-electron
     # musescore
-    foliate
+    # foliate
+    kdePackages.kdenlive
     # vesktop
 
     # Screenshots
