@@ -15,8 +15,8 @@
     "height": 8,
     "width": 17,
     "padding": {
-    //   "top": 1
-    //   "left": 4
+      //   "top": 1
+      //   "left": 4
     }
   },
   "display": {
@@ -29,14 +29,11 @@
   },
   "modules": [
     {
-      "type": "title",
-      "color": {
-        "user": "1;94",
-        "at": "0;#ffffff",
-        "host": "1;94"
-      }
+      "type": "command",
+      "key": " ",
+      "text": "echo \"hello, dastarruer\""
     },
-    "break",
+    // "break",
     {
       "type": "os",
       "format": "{2}"
