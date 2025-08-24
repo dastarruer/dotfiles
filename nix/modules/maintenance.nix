@@ -19,6 +19,10 @@
       "--update-input"
       "flatpaks"
 
+      # Update hyprland
+      "--update-input"
+      "hyprland"
+
       # Impure mode
       "--impure"
     ];
