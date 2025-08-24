@@ -11,7 +11,6 @@
     # foliate
     kdePackages.kdenlive
     # vesktop
-    mpv
 
     # Screenshots
     tesseract
