@@ -12,8 +12,8 @@
     // }
     "source": "~/.config/fastfetch/pfp.png",
     "type": "kitty",
-    "height": 8,
-    "width": 17,
+    "height": 6,
+    "width": 12,
     "padding": {
       //   "top": 1
       //   "left": 4
