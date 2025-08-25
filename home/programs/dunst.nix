@@ -61,7 +61,7 @@
       # Play an alert sound for all notifications: https://github.com/dunst-project/dunst/issues/257
       play_sound = {
         summary = "*";
-        script = "${config.home.homeDirectory}/.config/dunst/alert.sh";
+        script = "${config.home.homeDirectory}/.config/dunst/scripts/alert.sh";
       };
     };
   };
@@ -69,12 +69,18 @@
   # Symlink the files used to play an alert for every notification
   home.file = {
     # This file comes from: https://mixkit.co/free-sound-effects/notification/
-    ".config/dunst/alert.wav".source =
-      config.lib.file.mkOutOfStoreSymlink
-      "${config.home.homeDirectory}/.dotfiles/config/dunst/alert.wav";
+    ".config/dunst/scripts" = {
+      source =
+        config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/.dotfiles/config/dunst/scripts";
+      recursive = true;
+    };
 
-    ".config/dunst/alert.sh".source =
-      config.lib.file.mkOutOfStoreSymlink
-      "${config.home.homeDirectory}/.dotfiles/config/dunst/alert.sh";
+    ".config/dunst/alerts" = {
+      source =
+        config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/.dotfiles/config/dunst/alerts";
+      recursive = true;
+    };
   };
 }
