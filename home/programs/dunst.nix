@@ -58,10 +58,9 @@
         timeout = 0;
       };
 
-      # Play an alert sound for all notifications
+      # Play an alert sound for all notifications: https://github.com/dunst-project/dunst/issues/257
       play_sound = {
         summary = "*";
-        #
         script = "${config.home.homeDirectory}/.config/dunst/alert.sh";
       };
     };
