@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   services.dunst = {
     enable = true;
 
@@ -53,6 +57,25 @@
       urgency_critical = {
         timeout = 0;
       };
+
+      # Play an alert sound for all notifications
+      play_sound = {
+        summary = "*";
+        #
+        script = "${config.home.homeDirectory}/.config/dunst/alert.sh";
+      };
     };
+  };
+
+  # Symlink the files used to play an alert for every notification
+  home.file = {
+    # This file comes from: https://mixkit.co/free-sound-effects/notification/
+    ".config/dunst/alert.wav".source =
+      config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/.dotfiles/config/dunst/alert.wav";
+
+    ".config/dunst/alert.sh".source =
+      config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/.dotfiles/config/dunst/alert.sh";
   };
 }
