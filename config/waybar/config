@@ -13,7 +13,9 @@
   ],
   "modules-right": [
     "group/hypridle",
-    "group/system",
+    "group/sys-resources",
+    "backlight",
+    "pulseaudio",
     "mpris",
     "battery"
   ],
