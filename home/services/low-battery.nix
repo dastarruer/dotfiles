@@ -6,7 +6,7 @@
     };
 
     Service = {
-      ExecStart = "%h/bin/low-battery.sh";
+      ExecStart = "%h/.dotfiles/home/services/scripts/low-battery.sh";
       Restart = "always";
     };
 
