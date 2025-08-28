@@ -196,7 +196,7 @@
     "return-type": "json",
     "tooltip": true,
     "tooltip-format": "Suspend after 5 minutes idling",
-    "on-click": "~/bin/set-hypridle-vars.sh 300",
+    "on-click": "~/.config/waybar/scripts/set-hypridle-vars.sh 300",
     "interval": 1,
     "_comment": "chatgpt gave me this great way to create togglable buttons with waybar",
     "exec": "test \"$(cat $XDG_RUNTIME_DIR/hypridle-timeout 2>/dev/null)\" = 300 && echo '{\"text\":\"󰤄\",\"class\":\"active\"}' || echo '{\"text\":\"󰤄\"}'"
@@ -206,7 +206,7 @@
     "return-type": "json",
     "tooltip": true,
     "tooltip-format": "Suspend after 15 minutes idling",
-    "on-click": "~/bin/set-hypridle-vars.sh 900",
+    "on-click": "~/.config/waybar/scripts/set-hypridle-vars.sh 900",
     "interval": 1,
     "_comment": "chatgpt gave me this great way to create togglable buttons with waybar",
     "exec": "test \"$(cat $XDG_RUNTIME_DIR/hypridle-timeout 2>/dev/null)\" = 900 && echo '{\"text\":\"󰤄󰤄\",\"class\":\"active\"}' || echo '{\"text\":\"󰤄󰤄\"}'"
@@ -216,7 +216,7 @@
     "return-type": "json",
     "tooltip": true,
     "tooltip-format": "Suspend after 30 minutes idling",
-    "on-click": "~/bin/set-hypridle-vars.sh 1800",
+    "on-click": "~/.config/waybar/scripts/set-hypridle-vars.sh 1800",
     "interval": 1,
     "_comment": "chatgpt gave me this great way to create togglable buttons with waybar",
     "exec": "test \"$(cat $XDG_RUNTIME_DIR/hypridle-timeout 2>/dev/null)\" = 1800 && echo '{\"text\":\"󰤄󰤄󰤄\",\"class\":\"active\"}' || echo '{\"text\":\"󰤄󰤄󰤄\"}'"
