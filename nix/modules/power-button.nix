@@ -1,16 +1,16 @@
 {...}: {
   # Configure what happens once the power button is pressed
-  services.logind = {
+  services.logind.settings.Login = {
     # Suspend system when power button is pressed
-    powerKey = "suspend";
-    suspendKey = "suspend";
-    rebootKey = "suspend";
-    hibernateKey = "suspend";
+    HandlePowerKey = "suspend";
+    HandleSuspendKey = "suspend";
+    HandleRebootKey = "suspend";
+    HandleHibernateKey = "suspend";
 
     # Reboot system on long press
-    powerKeyLongPress = "reboot";
-    suspendKeyLongPress = "reboot";
-    rebootKeyLongPress = "reboot";
-    hibernateKeyLongPress = "reboot";
+    HandlePowerKeyLongPress = "reboot";
+    HandleSuspendKeyLongPress = "reboot";
+    HandleRebootKeyLongPress = "reboot";
+    HandleHibernateKeyLongPress = "reboot";
   };
 }
