@@ -56,3 +56,11 @@ alias polybar-edit="code ~/.dotfiles/polybar/.config/polybar/."
 alias fish-edit="nano ~/.dotfiles/fish/.config/fish/config.fish"
 alias cp="cp -r"
 alias rm="rm -r"
+
+
+# Starship
+function starship_transient_prompt_func
+  starship module character
+end
+starship init fish | source
+enable_transience
