@@ -28,6 +28,12 @@
   # Brightness
   hardware.brillo.enable = true;
 
+  nix.settings = {
+    # Use all possible cpu resources for rebuilds
+    max-jobs = "auto";
+    cores = 0;
+  };
+
   # Microcode updates (might as well yk)
   services.ucodenix = {
     enable = true;
