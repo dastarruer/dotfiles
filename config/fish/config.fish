@@ -64,3 +64,6 @@ function starship_transient_prompt_func
 end
 starship init fish | source
 enable_transience
+
+# Zoxide
+zoxide init fish | source
