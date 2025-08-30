@@ -16,6 +16,8 @@ in {
         config = theme;
       })
 
+      review-heatmap
+
       # Image occlusion enhanced
       (pkgs.anki-utils.buildAnkiAddon (finalAttrs: {
         pname = "image-occlusion-enhanced";
