@@ -4,6 +4,7 @@
     ./boot
     ./self-hosted
     ./users
+    ./services
 
     ./battery
     ./bluetooth.nix
