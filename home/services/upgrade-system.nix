@@ -1,11 +1,7 @@
 {pkgs, ...}: {
   # Service to upgrade system
-  systemd.services.upgrade-system = {
-    path = with pkgs; [
-      bash
-    ];
-
-    unitConfig = {
+  systemd.user.services.upgrade-system = {
+    Unit = {
       Description = "Auto-upgrade system.";
 
       # Wait for internet access
@@ -13,16 +9,18 @@
       Wants = ["network-online.target"];
     };
 
-    serviceConfig = {
+    Service = {
       ExecStart = ./scripts/upgrade-system.sh;
       Restart = "on-failure";
     };
 
-    wantedBy = ["default.target"];
+    Install = {
+      WantedBy = ["default.target"];
+    };
   };
 
   # Timer to trigger upgrade-system.service daily
-  systemd.timers.upgrade-system = {
+  systemd.user.timers.upgrade-system = {
     timerConfig = {
       OnCalendar = "15:00";
       Persistent = true; # run timer after system wakes up
