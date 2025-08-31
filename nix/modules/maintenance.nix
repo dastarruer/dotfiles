@@ -30,7 +30,7 @@
     # Run service once laptop has powered on and has internet access
     persistent = true;
 
-    # Run after school
+    # Run when i get home
     dates = "15:00";
 
     # allow rebooting after every upgrade (just in case!)
