@@ -21,11 +21,13 @@
 
   # Timer to trigger upgrade-system.service daily
   systemd.user.timers.upgrade-system = {
-    timerConfig = {
+    Timer = {
       OnCalendar = "15:00";
       Persistent = true; # run timer after system wakes up
     };
 
-    wantedBy = ["timers.target"];
+    Install = {
+      WantedBy = ["timers.target"];
+    };
   };
 }
