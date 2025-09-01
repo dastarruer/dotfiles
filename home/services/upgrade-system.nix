@@ -1,33 +1,59 @@
-{pkgs, ...}: {
-  # Service to upgrade system
-  systemd.user.services.upgrade-system = {
+# {pkgs, ...}: {
+#   # Service to auto upgrade system
+#   systemd.services.upgrade-system = {
+#     path = with pkgs; [
+#       bash
+#       libnotify
+#       sudo
+#       nix
+#       nixos-rebuild
+#       gitMinimal
+#     ];
+#     description = "Auto-upgrade system";
+#     serviceConfig = {
+#       Type = "oneshot";
+#       ExecStart = ./scripts/upgrade-system.sh;
+#       User = "root";
+#     };
+#     wantedBy = ["multi-user.target"];
+#     after = ["network-online.target"];
+#     wants = ["network-online.target"];
+#   };
+#   # Timer to trigger daily
+#   systemd.timers.upgrade-system = {
+#     wantedBy = ["timers.target"];
+#     timerConfig = {
+#       OnCalendar = "15:00";
+#       Persistent = true;
+#     };
+#   };
+# }
+{...}: {
+  systemd.user.services.auto-upgrade = {
     Unit = {
-      Description = "Auto-upgrade system.";
-
-      # Wait for internet access
+      Description = "Auto-upgrade system";
       After = ["network-online.target"];
       Wants = ["network-online.target"];
     };
 
     Service = {
+      Type = "oneshot";
       ExecStart = ./scripts/upgrade-system.sh;
-      Restart = "on-failure";
     };
 
     Install = {
-      WantedBy = ["default.target"];
+      wantedBy = ["multi-user.target"];
     };
   };
 
-  # Timer to trigger upgrade-system.service daily
-  systemd.user.timers.upgrade-system = {
+  systemd.user.timers.auto-upgrade = {
     Timer = {
       OnCalendar = "15:00";
-      Persistent = true; # run timer after system wakes up
+      Persistent = true;
     };
 
     Install = {
-      WantedBy = ["timers.target"];
+      wantedBy = ["timers.target"];
     };
   };
 }

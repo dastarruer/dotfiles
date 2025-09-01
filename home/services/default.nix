@@ -1,8 +1,8 @@
 {...}: {
   imports = [
     ./cleanup-downloads.nix
-    ./smart-pause-resume.nix
     ./upgrade-system.nix
+    ./smart-pause-resume.nix
   ];
 
   systemd.user.enable = true;
