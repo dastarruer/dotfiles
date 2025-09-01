@@ -22,8 +22,9 @@ notify() {
 }
 
 # Wait until the internet is reachable
-# I'd make the service wait for internet, but cant be bothered
+# I'd make the service wait for internet, but cant be bothered, so here's chatgpt's solution
 until ping -c1 8.8.8.8 &>/dev/null; do
+    notify "System Upgrade" "Waiting for internet..."
     sleep 10
 done
 
