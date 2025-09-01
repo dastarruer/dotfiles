@@ -4,6 +4,5 @@
     ./auto-cpufreq.nix
     ./kernel-params.nix
     ./misc.nix
-    ./conservation-mode.nix
   ];
 }
