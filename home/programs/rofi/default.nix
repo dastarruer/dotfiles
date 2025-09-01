@@ -1,3 +1,4 @@
+# The rofi config is from here: https://github.com/sdushantha/dotfiles/blob/master/rofi/.config/rofi/themes/default.rasi
 {
   pkgs,
   config,

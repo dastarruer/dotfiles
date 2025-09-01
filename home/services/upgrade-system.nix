@@ -9,7 +9,7 @@
     Service = {
       Type = "oneshot";
       ExecStart = ./scripts/upgrade-system.sh;
-      Environment = "SUDO_PASSWORD=${config.sops.secrets.password.path}";
+      Environment = "SUDO_PASSWORD=${config.sops.secrets.sudo_password.path}";
     };
 
     Install = {
