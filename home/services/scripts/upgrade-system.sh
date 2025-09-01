@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-USER="dastarruer"
-USERID=$(id -u "$USER")
-
 # $PASSWORD is declared in upgrade-system.nix
 PASSWORD="$(cat "$PASSWORD")"
 
 # This is a necessary wrapper around notify-send in order to send notifications from a systemd service
+USER="dastarruer"
+USERID=$(id -u "$USER")
 notify() {
     local title=$1
     local message=$2

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 # This is a necessary wrapper around notify-send in order to send notifications from a systemd service
+USER="dastarruer"
+USERID=$(id -u "$USER")
 notify() {
     local title=$1
     local message=$2
@@ -15,9 +17,9 @@ notify() {
     fi
 }
 
-notify "Clearing downloads directory..."
+notify "Clearing downloads directory..." "it's that time of day!"
 
 # Delete files older than five days in the downloads dir
-find $HOME/Downloads -mindepth 1 -mtime +5 -delete
+find /home/dastarruer/Downloads -mindepth 1 -mtime +2 -delete
 
 notify "Cleared downloads directory."
