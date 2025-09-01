@@ -6,4 +6,7 @@
   ];
 
   systemd.user.enable = true;
+
+  # Get the system password, some services will need sudo privileges
+  sops.secrets.sudo_password = {};
 }

@@ -1,7 +1,4 @@
 {config, ...}: {
-  # Get the system password
-  sops.secrets.password = {};
-
   systemd.user.services.auto-upgrade = {
     Unit = {
       Description = "Auto-upgrade system";
@@ -12,7 +9,7 @@
     Service = {
       Type = "oneshot";
       ExecStart = ./scripts/upgrade-system.sh;
-      Environment = "PASSWORD=${config.sops.secrets.password.path}";
+      Environment = "SUDO_PASSWORD=${config.sops.secrets.password.path}";
     };
 
     Install = {

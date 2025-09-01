@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# $PASSWORD is declared in upgrade-system.nix
-PASSWORD="$(cat "$PASSWORD")"
+# $SUDO_PASSWORD is declared in upgrade-system.nix
+SUDO_PASSWORD="$(cat "$SUDO_PASSWORD")"
 
 # This is a necessary wrapper around notify-send in order to send notifications from a systemd service
 USER="dastarruer"
@@ -30,7 +30,7 @@ if ! nix flake update --flake /home/$USER/.dotfiles; then
     exit 1
 fi
 
-if ! echo "$PASSWORD" | sudo -S nixos-rebuild switch --flake "/home/$USER/.dotfiles" --impure --max-jobs 4 --cores 4; then
+if ! echo "$SUDO_PASSWORD" | sudo -S nixos-rebuild switch --flake "/home/$USER/.dotfiles" --impure --max-jobs 4 --cores 4; then
     notify "Upgrade Failed" "System rebuild failed. Check service status for details."
     git restore flake.lock
     exit 1
