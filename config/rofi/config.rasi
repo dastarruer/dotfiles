@@ -9,7 +9,6 @@ configuration {
     drun-display-format:         "{name}";
     window-format:               "{w}{t}";
     font:                        "JetBrainsMonoNerd Font Mono 12";
-    icon-theme:                  "Papirus-Dark";
 }
 
 @theme "~/.cache/rofi/theme.rasi"
