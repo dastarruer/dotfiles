@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  config,
+  ...
+}: let
   # Theme-related settings
   themePackage = pkgs.gruvbox-gtk-theme;
   themeName = "Gruvbox-Dark";
@@ -8,8 +12,8 @@
   iconName = "Papirus-Dark";
 
   # Font-related settings
-  fontPackage = pkgs.noto-fonts;
-  fontName = "Noto Sans";
+  fontPackage = config.stylix.fonts.sansSerif.package;
+  fontName = "${config.stylix.fonts.sansSerif.name}";
   fontSize = 12;
 
   # Cursor-related settings

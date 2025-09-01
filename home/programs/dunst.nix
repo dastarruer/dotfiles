@@ -1,14 +1,11 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{config, ...}: {
   services.dunst = {
     enable = true;
 
     iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus-Dark";
+      # Dunst will share the same icon theme as gtk
+      package = config.gtk.iconTheme.package;
+      name = "${config.gtk.iconTheme.name}";
       size = "96x96";
     };
 

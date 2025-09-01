@@ -28,7 +28,7 @@ in {
              "grayscale": 0,
              "sepia": 0,
              "useFont": false,
-             "fontFamily": "Noto Sans",
+             fontFamily = "${config.stylix.fonts.sansSerif.name}",
              "textStroke": 0,
              "engine": "dynamicTheme",
              "stylesheet": "",
