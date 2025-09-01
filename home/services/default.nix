@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./cleanup-downloads.nix
-    ./upgrade-system.nix
+    ./auto-upgrade.nix
     ./smart-pause-resume.nix
   ];
 

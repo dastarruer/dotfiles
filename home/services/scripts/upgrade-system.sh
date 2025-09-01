@@ -21,6 +21,12 @@ notify() {
     fi
 }
 
+# Wait until the internet is reachable
+# I'd make the service wait for internet, but cant be bothered
+until ping -c1 8.8.8.8 &>/dev/null; do
+    sleep 10
+done
+
 cd /home/dastarruer/.dotfiles
 
 notify "System Upgrade" "It's that time of the day! Upgrading system... Please stand by..."

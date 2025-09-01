@@ -18,6 +18,10 @@
   };
 
   systemd.user.timers.auto-upgrade = {
+    Unit = {
+      Description = "Timer for auto-upgrade system";
+    };
+
     Timer = {
       OnCalendar = "15:00";
       Persistent = true;
