@@ -2,11 +2,6 @@
 set -g fish_greeting ""
 fastfetch
 
-# Pywal colors
-if test -e ~/.cache/wal/colors.fish
-    source ~/.cache/wal/colors.fish
-end
-
 # Aliases
 alias code="codium"
 alias chx="chmod +x"
