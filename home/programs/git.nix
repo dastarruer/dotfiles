@@ -8,14 +8,9 @@
   ];
 
   # Get the encrypted username and email
-  sops = {
-    defaultSopsFile = ../../secrets/secrets.yaml;
-    age.keyFile = "/home/dastarruer/.config/sops/age/keys.txt";
-
-    secrets = {
-      name = {};
-      email = {};
-    };
+  sops.secrets = {
+    name = {};
+    email = {};
   };
 
   programs.git = {

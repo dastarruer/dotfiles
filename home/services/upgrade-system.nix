@@ -1,13 +1,6 @@
 {config, ...}: {
   # Get the system password
-  sops = {
-    defaultSopsFile = ../../secrets/secrets.yaml;
-    age.keyFile = "/home/dastarruer/.config/sops/age/keys.txt";
-
-    secrets = {
-      password = {};
-    };
-  };
+  sops.secrets.password = {};
 
   systemd.user.services.auto-upgrade = {
     Unit = {
