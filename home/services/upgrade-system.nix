@@ -1,3 +1,44 @@
+{config, ...}: {
+  # Get the system password
+  sops = {
+    defaultSopsFile = ../../secrets/secrets.yaml;
+    age.keyFile = "/home/dastarruer/.config/sops/age/keys.txt";
+
+    secrets = {
+      password = {};
+    };
+  };
+
+  systemd.user.services.auto-upgrade = {
+    Unit = {
+      Description = "Auto-upgrade system";
+      After = ["network-online.target"];
+      Wants = ["network-online.target"];
+    };
+
+    Service = {
+      Type = "oneshot";
+      ExecStart = ./scripts/upgrade-system.sh;
+      Environment = "PASSWORD=${config.sops.secrets.password.path}";
+    };
+
+    Install = {
+      WantedBy = ["multi-user.target"];
+    };
+  };
+
+  systemd.user.timers.auto-upgrade = {
+    Timer = {
+      OnCalendar = "15:00";
+      Persistent = true;
+    };
+
+    Install = {
+      WantedBy = ["timers.target"];
+    };
+  };
+}
+# if i ever switch it back to a nixos service
 # {pkgs, ...}: {
 #   # Service to auto upgrade system
 #   systemd.services.upgrade-system = {
@@ -28,32 +69,4 @@
 #     };
 #   };
 # }
-{...}: {
-  systemd.user.services.auto-upgrade = {
-    Unit = {
-      Description = "Auto-upgrade system";
-      After = ["network-online.target"];
-      Wants = ["network-online.target"];
-    };
 
-    Service = {
-      Type = "oneshot";
-      ExecStart = ./scripts/upgrade-system.sh;
-    };
-
-    Install = {
-      wantedBy = ["multi-user.target"];
-    };
-  };
-
-  systemd.user.timers.auto-upgrade = {
-    Timer = {
-      OnCalendar = "15:00";
-      Persistent = true;
-    };
-
-    Install = {
-      wantedBy = ["timers.target"];
-    };
-  };
-}
