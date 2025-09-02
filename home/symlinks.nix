@@ -23,6 +23,9 @@ in {
         "${config.home.homeDirectory}/.dotfiles/config/wallpapers/${currentTheme}";
     };
   };
+
+  # Put ~/bin in PATH
+  home.sessionPath = ["$HOME/bin"];
 }
 # UNUSED
 # ".gitconfig" = {
