@@ -1,8 +1,10 @@
 {...}: {
   imports = [
     ./cleanup-downloads.nix
-    ./auto-upgrade.nix
     ./smart-pause-resume.nix
+
+    # Fix this later
+    # ./auto-upgrade.nix
   ];
 
   systemd.user.enable = true;
