@@ -1,8 +1,11 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   # Define vscode extensions
-  programs.vscode.profiles.default.extensions = with pkgs.vscode-extensions; [
+  programs.vscode.profiles.default.extensions = with inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace; [
     # LSPs
-    jnoortheen.nix-ide
     rust-lang.rust-analyzer
 
     # Formatters
@@ -21,8 +24,6 @@
 
   # Add necessary packages for each extension
   home.packages = with pkgs; [
-    nixd
-    alejandra
     rustfmt
   ];
 }

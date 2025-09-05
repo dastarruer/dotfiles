@@ -2,6 +2,7 @@
   imports = [
     ./extensions.nix
     ./settings
+    ./languages
   ];
 
   programs.vscode = {

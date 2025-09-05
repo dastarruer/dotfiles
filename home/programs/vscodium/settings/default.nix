@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./appearance
-    ./formatters
     ./misc.nix
+    ./formatting.nix
   ];
 }

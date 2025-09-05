@@ -1,16 +1,10 @@
 {...}: {
-  # Import language specific formatting options
+  # Import language specific options
   imports = [
-    ./nix.nix
+    ./nix
   ];
 
   programs.vscode.profiles.default.userSettings = {
-    # Global formatting settings
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
-    "editor.formatOnPaste" = true;
-    "editor.formatOnSave" = true;
-    "editor.formatOnType" = true;
-
     # Language-specific formatter settings
     "[javascript]" = {
       editor.defaultFormatter = "esbenp.prettier-vscode";

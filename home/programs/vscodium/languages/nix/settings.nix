@@ -1,5 +1,4 @@
-{...}: {
-  # Since nix needs its own special settings to work, it gets an entire file to itself -- aptly titled 'nix.nix'
+{pkgs, ...}: {
   programs.vscode.profiles.default.userSettings = {
     "nix.serverPath" = "nixd";
     "nix.enableLanguageServer" = true;
@@ -18,4 +17,9 @@
       };
     };
   };
+
+  # My chosen formatter
+  home.packages = with pkgs; [
+    alejandra
+  ];
 }
