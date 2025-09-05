@@ -20,5 +20,6 @@
     ./zoxide.nix
     ./cliphist.nix
     ./mpv.nix
+    ./direnv.nix
   ];
 }
