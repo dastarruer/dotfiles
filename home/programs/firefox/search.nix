@@ -4,6 +4,7 @@
 
     # Use brave because it's about as fast as google
     default = "brave";
+    privateDefault = "brave";
 
     engines = {
       brave = {
