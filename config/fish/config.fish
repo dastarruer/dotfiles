@@ -62,3 +62,8 @@ enable_transience
 
 # Zoxide
 zoxide init fish | source
+
+# Add ~/bin to the PATH if it’s not already there
+if not contains $HOME/bin $PATH
+    set -gx PATH $HOME/bin $PATH
+end
