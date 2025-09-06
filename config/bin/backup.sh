@@ -32,6 +32,21 @@ GDRIVE_SOURCE_DIRS=(
 
 REMOTE="gdrive:"
 
+# Mount the USB drive
+echo "Mounting USB drive..."
+if sudo mount "$USB_DEVICE" "$MOUNT_POINT"; then
+    echo "Drive mounted successfully at $MOUNT_POINT."
+else
+    echo "Drive mount failed. Either re-insert the USB or check the connection."
+    exit 1
+fi
+
+# Verify the USB is mounted
+if ! mount | grep -q "$MOUNT_POINT"; then
+    echo "Error: USB is not mounted at $MOUNT_POINT. Aborting backup."
+    exit 1
+fi
+
 echo "Checking rclone authentication status..."
 
 # Check that rclone works and doesn't need reauthentication
@@ -54,21 +69,6 @@ for DIR in "${GDRIVE_SOURCE_DIRS[@]}"; do
     echo "Warning: $DIR does not exist, skipping."
   fi
 done
-
-# Mount the USB drive
-echo "Mounting USB drive..."
-if sudo mount "$USB_DEVICE" "$MOUNT_POINT"; then
-    echo "Drive mounted successfully at $MOUNT_POINT."
-else
-    echo "Drive mount failed. Either re-insert the USB or check the connection."
-    exit 1
-fi
-
-# Verify the USB is mounted
-if ! mount | grep -q "$MOUNT_POINT"; then
-    echo "Error: USB is not mounted at $MOUNT_POINT. Aborting backup."
-    exit 1
-fi
 
 # Perform backup to USB: Directories
 for DIR in "${USB_SOURCE_DIRS[@]}"; do
