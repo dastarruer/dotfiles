@@ -5,3 +5,34 @@
   min-width: 24px;
   min-height: 28px;
 }
+
+#clock,
+#mpris,
+#custom-monitors,
+#cpu,
+#disk,
+#memory,
+#tray,
+#privacy,
+#custom-sys-resources,
+#custom-system,
+#custom-hypridle,
+#custom-hypridle-5min,
+#custom-hypridle-15min,
+#custom-hypridle-30min,
+#custom-updates,
+#power-profiles-daemon,
+#network,
+#bluetooth,
+#pulseaudio,
+#pulseaudio.microphone,
+#backlight,
+#backlight-slider,
+#battery,
+#custom-power {
+  color: @foreground;
+  background: @background;
+  padding: 0 12px;
+  margin: 0 4px;
+  border-radius: 0px;
+}
