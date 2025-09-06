@@ -7,16 +7,15 @@
     # Apps
     xfce.thunar
     todoist-electron
+    qbittorrent # need this for... reasons
     # musescore
     # foliate
-    kdePackages.kdenlive
+    # kdePackages.kdenlive
     # vesktop
-
-    # Screenshots
-    tesseract
 
     # Other
     fzf
+    tesseract
     playerctl
     ffmpeg
   ];

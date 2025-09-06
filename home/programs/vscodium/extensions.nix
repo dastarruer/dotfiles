@@ -5,9 +5,6 @@
 }: {
   # Define vscode extensions
   programs.vscode.profiles.default.extensions = with inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace; [
-    # LSPs
-    rust-lang.rust-analyzer
-
     # Formatters
     kamadorueda.alejandra
     esbenp.prettier-vscode
