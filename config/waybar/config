@@ -3,6 +3,7 @@
   "position": "top",
   "spacing": 0,
   "margin": "8px 8px 0 8px",
+  "reload_style_on_change": true,
   "modules-left": [
     "custom/nix",
     "hyprland/workspaces",
