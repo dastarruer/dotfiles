@@ -4,6 +4,7 @@
     ./firefox
     ./git.nix
     ./kitty.nix
+    ./shell
     ./rofi
     ./rclone.nix
     ./spicetify

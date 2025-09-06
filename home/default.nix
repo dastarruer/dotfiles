@@ -2,7 +2,6 @@
   imports = [
     ./programs
     ./services
-    ./shell
 
     ./flatpak.nix
     ./packages.nix
