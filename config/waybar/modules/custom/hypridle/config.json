@@ -1,0 +1,52 @@
+{
+  "group/hypridle": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 200,
+      "children-class": "hypridle",
+      "transition-left-to-right": false,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/hypridle",
+      "custom/hypridle-30min",
+      "custom/hypridle-15min",
+      "custom/hypridle-5min"
+    ]
+  },
+  "custom/hypridle": {
+    "format": "󰒲",
+    "tooltip": true,
+    "tooltip-format": "Configure hypridle (click to expand)"
+  },
+  "custom/hypridle-5min": {
+    "format": "{text}",
+    "return-type": "json",
+    "tooltip": true,
+    "tooltip-format": "Suspend after 5 minutes idling",
+    "on-click": "~/.config/waybar/scripts/set-hypridle-vars.sh 300",
+    "interval": 1,
+    "_comment": "chatgpt gave me this great way to create togglable buttons with waybar",
+    "exec": "test \"$(cat $XDG_RUNTIME_DIR/hypridle-timeout 2>/dev/null)\" = 300 && echo '{\"text\":\"󰤄\",\"class\":\"active\"}' || echo '{\"text\":\"󰤄\"}'"
+  },
+  "custom/hypridle-15min": {
+    "format": "{text}",
+    "return-type": "json",
+    "tooltip": true,
+    "tooltip-format": "Suspend after 15 minutes idling",
+    "on-click": "~/.config/waybar/scripts/set-hypridle-vars.sh 900",
+    "interval": 1,
+    "_comment": "chatgpt gave me this great way to create togglable buttons with waybar",
+    "exec": "test \"$(cat $XDG_RUNTIME_DIR/hypridle-timeout 2>/dev/null)\" = 900 && echo '{\"text\":\"󰤄󰤄\",\"class\":\"active\"}' || echo '{\"text\":\"󰤄󰤄\"}'"
+  },
+  "custom/hypridle-30min": {
+    "format": "{text}",
+    "return-type": "json",
+    "tooltip": true,
+    "tooltip-format": "Suspend after 30 minutes idling",
+    "on-click": "~/.config/waybar/scripts/set-hypridle-vars.sh 1800",
+    "interval": 1,
+    "_comment": "chatgpt gave me this great way to create togglable buttons with waybar",
+    "exec": "test \"$(cat $XDG_RUNTIME_DIR/hypridle-timeout 2>/dev/null)\" = 1800 && echo '{\"text\":\"󰤄󰤄󰤄\",\"class\":\"active\"}' || echo '{\"text\":\"󰤄󰤄󰤄\"}'"
+  }
+}

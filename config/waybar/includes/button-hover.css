@@ -1,0 +1,14 @@
+#custom-updates:hover,
+#power-profiles-daemon:hover,
+#network:hover,
+#bluetooth:hover,
+#custom-power:hover,
+#custom-hypridle:hover,
+#custom-sys-resources:hover,
+#custom-system:hover,
+#battery:hover,
+#mpris:hover,
+#pulseaudio.microphone:hover,
+#pulseaudio.sink-muted:hover {
+  opacity: 0.8;
+}
