@@ -79,8 +79,8 @@
         inherit inputs system;
         spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
       };
-
       modules = [
+        inputs.stylix.nixosModules.stylix
         ./nix/configuration.nix
       ];
     };

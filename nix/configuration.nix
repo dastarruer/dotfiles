@@ -46,12 +46,4 @@
   # If any issues arise, read through the wiki
   # Note that home-manager flatpak configuration is in flatpak.nix
   fonts.fontDir.enable = true;
-
-  # Home manager
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      dastarruer = import ../home/home.nix;
-    };
-  };
 }
