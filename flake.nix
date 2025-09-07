@@ -78,8 +78,8 @@
       specialArgs = {
         inherit inputs system;
       };
-
       modules = [
+        inputs.stylix.nixosModules.stylix
         ./nix/configuration.nix
       ];
     };
