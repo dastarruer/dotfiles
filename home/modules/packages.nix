@@ -7,7 +7,7 @@
     # Apps
     xfce.thunar
     todoist-electron
-    qbittorrent # need this for... reasons
+    # qbittorrent # need this for... reasons
     # musescore
     # foliate
     # kdePackages.kdenlive
