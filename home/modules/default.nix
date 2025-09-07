@@ -6,6 +6,7 @@
     ./flatpak.nix
     ./packages.nix
     ./symlinks.nix
+    ./stylix.nix
     ./gtk.nix
   ];
 }

@@ -40,18 +40,12 @@
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
-      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-
-    # sherlock = {
-    #   url = "github:Skxxtz/sherlock";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
 
     # Microcode updates
     cpu-microcodes = {
@@ -77,7 +71,9 @@
     ...
   }: let
     system = "x86_64-linux";
+    pkgs = import nixpkgs {inherit system;};
   in {
+    # NixOS configuration (system only)
     nixosConfigurations.dastarruer = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs system;
@@ -86,17 +82,19 @@
 
       modules = [
         ./nix/configuration.nix
+      ];
+    };
 
-        # Home manager
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.dastarruer = ./home/home.nix;
-        }
-
-        # Other modules
-        inputs.stylix.nixosModules.stylix
+    # Standalone Home Manager
+    homeConfigurations.dastarruer = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extraSpecialArgs = {
+        inherit inputs system;
+        spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
+      };
+      modules = [
+        inputs.stylix.homeModules.stylix
+        ./home/home.nix
       ];
     };
   };

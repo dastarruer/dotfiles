@@ -13,6 +13,9 @@
     stateVersion = "22.11";
   };
 
+  programs.home-manager.enable = true;
+  nixpkgs.config.allowUnfree = true;
+
   # Set some necessary sops settings
   sops = {
     age.keyFile = "/home/dastarruer/.config/sops/age/keys.txt";

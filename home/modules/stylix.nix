@@ -20,9 +20,6 @@
     # Set the color theme
     base16Scheme = lib.mkDefault "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
 
-    # Disable targets
-    targets.plymouth.enable = false;
-
     # Cursor settings
     cursor.package = lib.mkDefault pkgs.capitaine-cursors-themed;
     cursor.name = lib.mkDefault "Capitaine Cursors (Gruvbox)";
