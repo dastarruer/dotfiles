@@ -10,6 +10,7 @@
     "~/.config/waybar/modules/custom/nix/config.json",
     "~/.config/waybar/modules/backlight/config.json",
     "~/.config/waybar/modules/mpris/config.json",
+    "~/.config/waybar/modules/tray/config.json",
     "~/.config/waybar/modules/backlight/config.json",
     "~/.config/waybar/modules/workspaces/config.json",
     "~/.config/waybar/modules/battery/config.json",
@@ -29,10 +30,6 @@
       "memory",
       "disk"
     ]
-  },
-  "tray": {
-    "icon-size": 14,
-    "spacing": 4
   },
   "privacy": {
     "icon-spacing": 8,
