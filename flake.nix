@@ -77,7 +77,6 @@
     nixosConfigurations.dastarruer = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs system;
-        spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
       };
 
       modules = [
