@@ -1,6 +1,8 @@
-{config, ...}: let
-  currentTheme = "gruvbox";
-in {
+{
+  config,
+  # lib,
+  ...
+}: {
   # Symlink a bunch of files
   home.file = {
     # $HOME files
@@ -20,12 +22,9 @@ in {
     "Pictures/wallpapers" = {
       source =
         config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/config/wallpapers/${currentTheme}";
+        "${config.home.homeDirectory}/.dotfiles/config/wallpapers/gruvbox";
     };
   };
-
-  # Put ~/bin in PATH
-  home.sessionPath = ["$HOME/bin"];
 }
 # UNUSED
 # ".gitconfig" = {
