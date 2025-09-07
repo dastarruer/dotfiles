@@ -1,28 +1,13 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
-  specialisation.catppuccin.configuration = {
-    stylix = {
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-
-      cursor = {
-        package = pkgs.catppuccin-cursors;
-        name = "mochaMauve";
-      };
-    };
-  };
-
+{pkgs, ...}: {
   stylix = {
     enable = true;
 
     # Set the color theme
-    base16Scheme = lib.mkDefault "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
 
     # Cursor settings
-    cursor.package = lib.mkDefault pkgs.capitaine-cursors-themed;
-    cursor.name = lib.mkDefault "Capitaine Cursors (Gruvbox)";
+    cursor.package = pkgs.capitaine-cursors-themed;
+    cursor.name = "Capitaine Cursors (Gruvbox)";
     cursor.size = 24;
 
     fonts = {
