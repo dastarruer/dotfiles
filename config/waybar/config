@@ -9,6 +9,7 @@
     "~/.config/waybar/modules/custom/hypridle/config.json",
     "~/.config/waybar/modules/custom/nix/config.json",
     "~/.config/waybar/modules/backlight/config.json",
+    "~/.config/waybar/modules/mpris/config.json",
     "~/.config/waybar/modules/backlight/config.json",
     "~/.config/waybar/modules/workspaces/config.json",
     "~/.config/waybar/modules/battery/config.json",
@@ -28,45 +29,6 @@
       "memory",
       "disk"
     ]
-  },
-  "group/system": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 200,
-      "children-class": "system",
-      "transition-left-to-right": false,
-      "click-to-reveal": true
-    },
-    "modules": [
-      "custom/system",
-      "group/sys-resources",
-      "backlight",
-      "pulseaudio"
-    ]
-  },
-  "mpris": {
-    "format": "{player_icon} {status_icon} {dynamic}",
-    "format-paused": "{player_icon} {status_icon}",
-    "status-icons": {
-      "paused": "",
-      "playing": "",
-      "stopped": ""
-    },
-    "player-icons": {
-      "default": "",
-      "spotify_player": "",
-      "spotify": "",
-      "firefox": "",
-      "chrome": "",
-      "vlc": "󱍼"
-    },
-    "max-length": 15,
-    "return-type": "json",
-    "interval": 1,
-    "on-click": "playerctl play-pause",
-    "on-click-right": "",
-    "on-click-middle": "",
-    "tooltip": false
   },
   "tray": {
     "icon-size": 14,
