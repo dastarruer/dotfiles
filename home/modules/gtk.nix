@@ -1,12 +1,9 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }: let
-  # Theme-related settings
-  themePackage = pkgs.gruvbox-gtk-theme;
-  themeName = "Gruvbox-Dark";
-
   # Icon-related settings
   iconPackage = pkgs.papirus-icon-theme;
   iconName = "Papirus-Dark";
@@ -17,21 +14,21 @@
   fontSize = 12;
 
   # Cursor-related settings
-  cursorPackage = pkgs.capitaine-cursors-themed;
-  cursorName = "Capitaine Cursors (Gruvbox)";
-  cursorSize = 24;
+  cursorPackage = config.stylix.cursor.package;
+  cursorName = "${config.stylix.cursor.name}";
+  cursorSize = config.stylix.cursor.size;
 in {
   gtk = {
     enable = true;
 
     # Theme
     theme = {
-      package = themePackage;
-      name = themeName;
+      package = lib.mkDefault pkgs.gruvbox-gtk-theme;
+      name = lib.mkDefault "Gruvbox-Dark";
     };
     gtk2.theme = {
-      package = themePackage;
-      name = themeName;
+      package = lib.mkDefault pkgs.gruvbox-gtk-theme;
+      name = lib.mkDefault "Gruvbox-Dark";
     };
 
     # Icons
@@ -66,6 +63,18 @@ in {
       package = cursorPackage;
       name = cursorName;
       size = cursorSize;
+    };
+  };
+
+  specialisation.catppuccin.configuration.gtk = {
+    # Theme
+    theme = {
+      package = pkgs.magnetic-catppuccin-gtk;
+      name = "Catppuccin-Dark";
+    };
+    gtk2.theme = {
+      package = pkgs.magnetic-catppuccin-gtk;
+      name = "Catppuccin-Dark";
     };
   };
 }
