@@ -1,0 +1,10 @@
+#battery.charging {
+  color: @color04;
+}
+#battery.warning {
+  color: @color01;
+}
+#battery.critical,
+#battery.plugordie {
+  color: @color02;
+}

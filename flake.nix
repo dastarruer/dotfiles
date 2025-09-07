@@ -9,13 +9,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     flatpaks = {
-      url = "github:in-a-dil-emma/declarative-flatpak/dev";
+      url = "github:in-a-dil-emma/declarative-flatpak/stable-v3";
     };
 
     firefox-addons = {
@@ -23,23 +28,40 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Use an unmerged matugen branch of stylix (https://github.com/nix-community/stylix/pull/892)
+    firefox-nightly = {
+      url = "github:nix-community/flake-firefox-nightly/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix = {
       url = "github:make-42/stylix/matugen";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    # hyprland-plugins = {
-    #   url = "github:hyprwm/hyprland-plugins";
-    #   inputs.hyprland.follows = "hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+
+    # sherlock = {
+    #   url = "github:Skxxtz/sherlock";
+    #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
     # Microcode updates
     cpu-microcodes = {
       url = "github:platomav/CPUMicrocodes/ec5200961ecdf78cf00e55d73902683e835edefd";
       flake = false;
+    };
+
+    vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     ucodenix = {
@@ -70,9 +92,10 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.dastarruer = ./home.nix;
+          home-manager.users.dastarruer = ./home/home.nix;
         }
 
+        # Other modules
         inputs.stylix.nixosModules.stylix
       ];
     };

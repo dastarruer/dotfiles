@@ -1,0 +1,10 @@
+# drag and drop
+[[mgr.prepend_keymap]]
+on  = "<C-n>"
+run = 'shell -- dragon-drop -x -i -T "$1"'
+desc = "Initiate drag and drop"
+
+[[mgr.prepend_keymap]]
+on  = "<C-f>"
+run  = "cd /home/dastarruer/Documents/school/G10"
+desc = "Change to schoolwork dir"

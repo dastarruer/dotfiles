@@ -22,15 +22,17 @@
   # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  # Reduce cpu load during rebuilds
-  nix.settings.max-jobs = 4;
-  nix.settings.cores = 4;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # Brightness
   hardware.brillo.enable = true;
+
+  nix.settings = {
+    # Use all possible cpu resources for rebuilds
+    max-jobs = "auto";
+    cores = 0;
+  };
 
   # Microcode updates (might as well yk)
   services.ucodenix = {
@@ -49,7 +51,7 @@
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
-      dastarruer = import ../home.nix;
+      dastarruer = import ../home/home.nix;
     };
   };
 }

@@ -1,11 +1,18 @@
 {pkgs, ...}: {
   # Acheive faster reboot times by making sure services can only take up to ten seconds to shut down
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-    DefaultDependencies=yes
-    JobTimeoutSec=10s
-    DefaultStartLimitIntervalSec=10s
-  '';
+  systemd.settings.Manager = {
+    # How long to wait before forcibly killing a service when stopping it
+    DefaultTimeoutStopSec = "10s";
+
+    # Whether systemd should add implicit dependencies like 'After=basic.target'
+    DefaultDependencies = "yes";
+
+    # Maximum time to wait for a job (e.g. starting/stopping a unit) before it's considered failed
+    JobTimeoutSec = "10s";
+
+    # Time window for counting service start failures (used with StartLimitBurst)
+    DefaultStartLimitIntervalSec = "10s";
+  };
 
   # Bootloader.
   boot = {

@@ -1,0 +1,26 @@
+{
+  "mpris": {
+    "format": "{player_icon} {status_icon} {dynamic}",
+    "format-paused": "{player_icon} {status_icon}",
+    "status-icons": {
+      "paused": "",
+      "playing": "",
+      "stopped": ""
+    },
+    "player-icons": {
+      "default": "",
+      "spotify_player": "",
+      "spotify": "",
+      "firefox": "",
+      "chrome": "",
+      "vlc": "󱍼"
+    },
+    "max-length": 15,
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "",
+    "on-click-middle": "",
+    "tooltip": false
+  }
+}

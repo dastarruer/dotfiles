@@ -1,0 +1,90 @@
+// Config //
+configuration {
+    kb-row-up: "Up,Alt+k";
+    kb-row-down: "Down,Alt+j";
+    kb-mode-next: "Tab";
+    kb-element-next: "";
+
+    drun {
+        display-name: "";
+    }
+
+    run {
+        display-name: "";
+    }
+
+    window {
+        display-name: "";
+    }
+
+    clipboard {
+        display-name: "󰅍";
+    }
+
+    ssh {
+        display-name: "";
+    }
+
+    emoji {
+        display-name: ":)";
+    }
+
+    timeout {
+        delay: 30;
+        action: "kb-cancel";
+    }
+}
+
+@theme "~/.cache/rofi/theme.rasi"
+
+* {
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    transparency: "real";
+    width: 500px;
+}
+
+mainbox {
+    children: [inputbar, listview];
+}
+
+inputbar {
+    children: [prompt, entry];
+}
+
+listview {
+    lines: 5;
+}
+
+prompt {
+    background-color: inherit;
+    padding: 12px;
+}
+
+entry {
+    background-color: inherit;
+    padding: 12px 3px;
+}
+
+element {
+    children: [element-icon, element-text];
+    padding: 8px 10px 8px 10px;
+}
+
+element run {
+    children: [element-icon, element-text];
+}
+
+element-icon {
+    padding: 10px 10px;
+    size: 20px;
+}
+
+element-text {
+    padding: 10px 0;
+    text-color: inherit;
+}

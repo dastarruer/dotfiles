@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+HYPRLOCK_CONFIG="$HOME/.cache/hypr/hyprlock-background.conf"
+
 # File to track the last selected wallpaper
 INDEX_FILE="$HOME/.cache/.current_wallpaper_index"
 
@@ -18,6 +20,9 @@ NEXT_INDEX=$(( (CURRENT_INDEX + 1) % NUM_WALLPAPERS ))
 
 # Set the new wallpaper
 swww img "${WALLPAPERS[$NEXT_INDEX]}" -t wipe --transition-angle 30 --transition-duration 1
+
+# Add the wallpaper to hyprlock
+echo "\$background = ${WALLPAPERS[$NEXT_INDEX]}" > $HYPRLOCK_CONFIG
 
 # & disown will make the command run in the background so i can run the script multiple times back to back
 # betterlockscreen -u "${WALLPAPERS[$NEXT_INDEX]}" & disown

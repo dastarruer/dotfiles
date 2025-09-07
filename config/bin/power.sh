@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Define options
-OPTIONS=" Lock\n󰗽 Logout\n󰥔 Suspend\n Reboot\n Shutdown\n󰍹 Turn Off Screen"
+OPTIONS=" Lock\n󰗽 Logout\n󰥔 Suspend\n Reboot\n Shutdown"
 
 # Show the menu and get the user's choice
 CHOICE=$(echo -e "$OPTIONS" | rofi -dmenu -i -p "Power Menu:")
@@ -15,7 +15,7 @@ case "$CHOICE" in
     hyprctl dispatch exit
     ;;
 "󰥔 Suspend")
-    playerctl -a pause
+    $HOME/bin/pause-all.sh
     hyprlock & disown
     systemctl suspend
     ;;
@@ -26,9 +26,6 @@ case "$CHOICE" in
 " Shutdown")
     # ~/bin/save_workspace_layouts.sh
     systemctl poweroff
-    ;;
-"󰍹 Turn Off Screen")
-    hyprctl dispatch dpms off
     ;;
 *)
     exit 1

@@ -1,0 +1,7 @@
+{
+  "include": [
+    "~/.config/waybar/modules/custom/hypridle/config.json",
+    "~/.config/waybar/modules/custom/nix/config.json",
+    "~/.config/waybar/modules/custom/sys-resources/config.json"
+  ]
+}
