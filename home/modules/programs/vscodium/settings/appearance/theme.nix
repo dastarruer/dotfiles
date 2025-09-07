@@ -1,16 +1,17 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }: {
   programs.vscode.profiles.default = {
     # Extensions required for theming
-    extensions = with inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace; [
+    extensions = lib.mkDefault (with inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace; [
       pkief.material-icon-theme
       jdinhlife.gruvbox
-    ];
+    ]);
 
-    userSettings = {
+    userSettings = lib.mkDefault {
       # Theme
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.colorTheme" = "Gruvbox Dark Hard";
@@ -32,6 +33,18 @@
         "editorOverviewRuler.border" = "#0000";
         "sideBar.border" = "#0000";
         "editorGroup.border" = "#0000";
+      };
+    };
+  };
+
+  specialisation.catppuccin.configuration = {
+    programs.vscode.profiles.default = {
+      extensions = with inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace; [
+        catppuccin.catppuccin-vsc
+      ];
+
+      userSettings = {
+        "workbench.colorTheme" = "Catppuccin Mocha";
       };
     };
   };
