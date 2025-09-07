@@ -51,7 +51,7 @@
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
-      dastarruer = import ../home.nix;
+      dastarruer = import ../home/home.nix;
     };
   };
 }

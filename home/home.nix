@@ -1,6 +1,6 @@
 {lib, ...}: {
   imports = [
-    ./home/default.nix
+    ./modules/default.nix
   ];
 
   # Set up user
@@ -16,7 +16,7 @@
   # Set some necessary sops settings
   sops = {
     age.keyFile = "/home/dastarruer/.config/sops/age/keys.txt";
-    defaultSopsFile = ./secrets/secrets.yaml;
+    defaultSopsFile = ../secrets/secrets.yaml;
   };
 
   # Disable stylix configuration for certain apps

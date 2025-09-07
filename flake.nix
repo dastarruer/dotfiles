@@ -92,7 +92,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.dastarruer = ./home.nix;
+          home-manager.users.dastarruer = ./home/home.nix;
         }
 
         # Other modules
