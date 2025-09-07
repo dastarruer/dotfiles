@@ -4,12 +4,12 @@ in {
   home.file = {
     # Symlink the firefox chrome to its proper place
     ".mozilla/firefox/${firefoxProfile}/chrome" = {
-      source = ./chrome;
+      source = config.lib.file.mkOutOfStoreSymlink ./chrome;
       recursive = true;
     };
 
     # Generate the colors file
-    ".mozilla/firefox/${firefoxProfile}/chrome/colors.css".text = ''
+    ".cache/firefox/colors.css".text = ''
       /*
 
       ┌─┐┌─┐┌┐┌┌─┐┬┌─┐┬ ┬┬─┐┌─┐┌┬┐┬┌─┐┌┐┌
