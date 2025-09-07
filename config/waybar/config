@@ -10,7 +10,8 @@
     "~/.config/waybar/modules/backlight/config.json",
     "~/.config/waybar/modules/backlight/config.json",
     "~/.config/waybar/modules/workspaces/config.json",
-    "~/.config/waybar/modules/battery/config.json"
+    "~/.config/waybar/modules/battery/config.json",
+    "~/.config/waybar/modules/clock/config.json"
   ],
   "modules-left": [
     "custom/nix",
@@ -57,12 +58,6 @@
       "backlight",
       "pulseaudio"
     ]
-  },
-  "clock": {
-    "interval": 60,
-    "format": "{:%a %d %b | %I:%M %p}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "on-click": "swaync-client -op"
   },
   "mpris": {
     "format": "{player_icon} {status_icon} {dynamic}",
