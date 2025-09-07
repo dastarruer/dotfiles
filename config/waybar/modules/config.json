@@ -1,0 +1,12 @@
+{
+  "include": [
+    "~/.config/waybar/modules/custom/config.json",
+    "~/.config/waybar/modules/backlight/config.json",
+    "~/.config/waybar/modules/mpris/config.json",
+    "~/.config/waybar/modules/tray/config.json",
+    "~/.config/waybar/modules/backlight/config.json",
+    "~/.config/waybar/modules/workspaces/config.json",
+    "~/.config/waybar/modules/battery/config.json",
+    "~/.config/waybar/modules/clock/config.json"
+  ]
+}

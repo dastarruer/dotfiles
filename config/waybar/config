@@ -6,15 +6,6 @@
   "reload_style_on_change": true,
   "include": [
     "~/.config/waybar/layout.json",
-    "~/.config/waybar/modules/custom/hypridle/config.json",
-    "~/.config/waybar/modules/custom/nix/config.json",
-    "~/.config/waybar/modules/custom/sys-resources/config.json",
-    "~/.config/waybar/modules/backlight/config.json",
-    "~/.config/waybar/modules/mpris/config.json",
-    "~/.config/waybar/modules/tray/config.json",
-    "~/.config/waybar/modules/backlight/config.json",
-    "~/.config/waybar/modules/workspaces/config.json",
-    "~/.config/waybar/modules/battery/config.json",
-    "~/.config/waybar/modules/clock/config.json"
+    "~/.config/waybar/modules/config.json"
   ]
 }
