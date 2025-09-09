@@ -1,9 +1,9 @@
 {...}: let
   firefoxProfile = "default";
 
-  betterfoxGit = builtins.fetchGit {
-    url = "https://github.com/yokoffing/Betterfox";
-    ref = "refs/heads/main";
+  betterfoxGit = builtins.fetchTarball {
+    url = "https://github.com/yokoffing/Betterfox/archive/refs/heads/main.tar.gz";
+    sha256 = "1kyg4zpq073mvz69n3l0jw68ki2h1y1nj6dk6fg5n6b7iar48cv9";
   };
 
   # Get the betterfox userjs as a base for my settings

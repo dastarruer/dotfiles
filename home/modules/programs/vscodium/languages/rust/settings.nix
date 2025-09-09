@@ -5,6 +5,9 @@
     };
 
     # Use clippy to check for errors
-    "rust-analyzer.check.command" = "clippy";
+    "rust-analyzer.check.command" = "cargo clippy";
+
+    # Use Self::fn() instead of Type::fn()
+    "rust-analyzer.assist.preferSelf" = false;
   };
 }
