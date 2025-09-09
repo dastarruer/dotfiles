@@ -2,7 +2,10 @@
   config,
   inputs,
   ...
-}: {
+}: let
+  userName = builtins.readFile config.sops.secrets.name.path;
+  userEmail = builtins.readFile config.sops.secrets.email.path;
+in {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
   ];
@@ -16,8 +19,8 @@
   programs.git = {
     enable = true;
 
-    userName = "${config.sops.secrets.name.path}";
-    userEmail = "${config.sops.secrets.email.path}";
+    userName = userName;
+    userEmail = userEmail;
 
     # Config
     extraConfig = {
