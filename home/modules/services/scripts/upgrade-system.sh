@@ -37,13 +37,23 @@ if ! nix flake update --flake /home/$USER/.dotfiles; then
     exit 1
 fi
 
-if ! echo "$SUDO_PASSWORD" | sudo -S nixos-rebuild switch --flake "/home/$USER/.dotfiles" --impure --max-jobs 4 --cores 4; then
+# First do a system rebuild
+if ! echo "$SUDO_PASSWORD" | sudo -S nixos-rebuild switch --flake "/home/$USER/.dotfiles" --max-jobs 4 --cores 4; then
     notify "Upgrade Failed" "System rebuild failed. Check service status for details."
     git restore flake.lock
     exit 1
 fi
 
-notify "System Upgrade" "System updated successfully!."
+notify "System Upgrade" "System updated successfully! now for home-manager"
+
+# Then a hm rebuild
+if ! home-manager switch --flake "/home/$USER/.dotfiles" -b backup --max-jobs 4 --cores 4; then
+    notify "Upgrade Failed" "home-manager rebuild failed. Check service status for details."
+    git restore flake.lock
+    exit 1
+fi
+
+notify "System Upgrade" "all done! home-manager updated successfully."
 
 git add flake.lock
 git commit -m "Update system"
