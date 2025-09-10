@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Restore flake.lock if anything fails
+trap 'git restore flake.lock' ERR
+
 # Wait until the internet is reachable
 # I'd make the service wait for internet, but cant be bothered, so here's chatgpt's solution
 until ping -c1 8.8.8.8 &>/dev/null; do
