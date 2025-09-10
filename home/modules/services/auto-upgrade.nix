@@ -1,17 +1,15 @@
-{config, ...}: {
+{...}: {
   systemd.user.services.auto-upgrade = {
     Unit = {
       Description = "Auto-upgrade system";
 
       # Run the service after auto-update-flake
       After = ["auto-update-flake.service"];
-      Wants = ["auto-update-flake.service"];
     };
 
     Service = {
       Type = "oneshot";
       ExecStart = ./scripts/auto-upgrade.sh;
-      Environment = "SUDO_PASSWORD=${config.sops.secrets.sudo_password.path}";
     };
 
     Install = {
@@ -23,7 +21,7 @@
     Unit = {
       Description = "Auto-update configuration flake";
       After = ["network-online.target"];
-      Wants = ["network-online.target"];
+      Wants = ["network-online.target" "auto-upgrade.service"];
     };
 
     Service = {

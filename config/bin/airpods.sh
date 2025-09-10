@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# IF HEADPHONES JS DONT WANT TO WORK RESTART PIPEWIRE:
+# systemctl --user restart pipewire.service
 
 # Headphones MAC Address
 source ~/.headphones_mac

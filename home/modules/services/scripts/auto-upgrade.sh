@@ -24,7 +24,6 @@ notify-send "System Upgrade" "It's that time of the day! Upgrading system... Ple
 # Then a hm rebuild
 if ! home-manager switch --flake "/home/$USER/.dotfiles" -b backup --max-jobs 4 --cores 4 --impure; then
     notify-send "Upgrade Failed" "home-manager rebuild failed. Check service status for details."
-    git restore flake.lock
     exit 1
 fi
 
