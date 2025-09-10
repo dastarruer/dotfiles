@@ -8,5 +8,6 @@
     ./symlinks.nix
     ./stylix.nix
     ./gtk.nix
+    ./maintenance.nix
   ];
 }
