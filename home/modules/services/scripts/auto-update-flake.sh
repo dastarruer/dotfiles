@@ -11,6 +11,7 @@ until ping -c1 8.8.8.8 &>/dev/null; do
     sleep 10
 done
 
+cd /home/dastarruer/.dotfiles
 if ! nix flake update --flake /home/$USER/.dotfiles; then
     notify-send "Flake update failed" "Unable to update flake.lock. Check service status for details."
     exit 1
