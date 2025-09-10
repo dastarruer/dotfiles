@@ -32,31 +32,20 @@ cd /home/dastarruer/.dotfiles
 
 notify "System Upgrade" "It's that time of the day! Upgrading system... Please stand by..."
 
-if ! nix flake update --flake /home/$USER/.dotfiles; then
-    notify "Upgrade Failed" "Unable to update flake.lock. Check service status for details."
-    exit 1
-fi
-
 # First do a system rebuild
-if ! echo "$SUDO_PASSWORD" | sudo -S nixos-rebuild switch --flake "/home/$USER/.dotfiles" --max-jobs 4 --cores 4; then
-    notify "Upgrade Failed" "System rebuild failed. Check service status for details."
-    git restore flake.lock
-    exit 1
-fi
+# if ! echo "$SUDO_PASSWORD" | sudo -S nixos-rebuild switch --flake "/home/$USER/.dotfiles" --max-jobs 4 --cores 4; then
+#     notify "Upgrade Failed" "System rebuild failed. Check service status for details."
+#     git restore flake.lock
+#     exit 1
+# fi
 
-notify "System Upgrade" "System updated successfully! now for home-manager"
+# notify "System Upgrade" "System updated successfully! now for home-manager"
 
 # Then a hm rebuild
-if ! home-manager switch --flake "/home/$USER/.dotfiles" -b backup --max-jobs 4 --cores 4; then
+if ! home-manager switch --flake "/home/$USER/.dotfiles" -b backup --max-jobs 4 --cores 4 --impure; then
     notify "Upgrade Failed" "home-manager rebuild failed. Check service status for details."
     git restore flake.lock
     exit 1
 fi
 
 notify "System Upgrade" "all done! home-manager updated successfully."
-
-git add flake.lock
-git commit -m "Update system"
-git push
-
-notify "Git status" "Pushed flake.lock successfully"

@@ -2,8 +2,10 @@
   systemd.user.services.auto-upgrade = {
     Unit = {
       Description = "Auto-upgrade system";
-      After = ["network-online.target"];
-      Wants = ["network-online.target"];
+
+      # Run the service after auto-update-flake
+      After = ["auto-update-flake.service"];
+      Wants = ["auto-update-flake.service"];
     };
 
     Service = {
@@ -17,9 +19,26 @@
     };
   };
 
-  systemd.user.timers.auto-upgrade = {
+  systemd.user.services.auto-update-flake = {
     Unit = {
-      Description = "Timer for auto-upgrade system";
+      Description = "Auto-update configuration flake";
+      After = ["network-online.target"];
+      Wants = ["network-online.target"];
+    };
+
+    Service = {
+      Type = "oneshot";
+      ExecStart = ./scripts/auto-update-flake.sh;
+    };
+
+    Install = {
+      WantedBy = ["multi-user.target"];
+    };
+  };
+
+  systemd.user.timers.auto-update-flake = {
+    Unit = {
+      Description = "Timer for auto-update-flake service";
     };
 
     Timer = {
