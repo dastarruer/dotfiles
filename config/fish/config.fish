@@ -67,3 +67,6 @@ zoxide init fish | source
 if not contains $HOME/bin $PATH
     set -gx PATH $HOME/bin $PATH
 end
+
+# nix-direnv
+eval (direnv hook fish)
