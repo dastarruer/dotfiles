@@ -8,6 +8,7 @@
     ./rofi
     ./rclone.nix
     ./spicetify
+    ./distrobox.nix
     ./zathura.nix
     ./dunst.nix
     ./waybar
