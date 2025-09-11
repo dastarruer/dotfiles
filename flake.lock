@@ -164,11 +164,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1757507612,
-        "narHash": "sha256-Xfuf2jEGVx8Qz8eBraiMvFx0noTXL/IcpFnSuUchDlY=",
+        "lastModified": 1757553238,
+        "narHash": "sha256-F4vcoQ8jtVtLpHPNVPXl7l9bkqAia46WhDN9BNkhCKs=",
         "owner": "nix-community",
         "repo": "flake-firefox-nightly",
-        "rev": "ecc5988057d1ff36cc1b7e594d03f2c9854ca145",
+        "rev": "e1d992e16158ae64e559c23fea60281b27a769b8",
         "type": "github"
       },
       "original": {
@@ -698,16 +698,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1757347588,
-        "narHash": "sha256-tLdkkC6XnsY9EOZW9TlpesTclELy8W7lL2ClL+nma8o=",
-        "owner": "NixOS",
+        "lastModified": 1757546200,
+        "narHash": "sha256-lStKbRmgIpDKCAAG3bP5+ky6BtR+PbXFN+xJgzJtrG0=",
+        "owner": "dastarruer",
         "repo": "nixpkgs",
-        "rev": "b599843bad24621dcaa5ab60dac98f9b0eb1cabe",
+        "rev": "af1bfc078482fbc11079867cfe2075f45f377962",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
+        "owner": "dastarruer",
+        "ref": "master",
         "repo": "nixpkgs",
         "type": "github"
       }
