@@ -1,5 +1,5 @@
 {pkgs, ...}: {
   programs.rofi.plugins = [
-    pkgs.rofi-emoji-wayland
+    pkgs.rofi-emoji
   ];
 }

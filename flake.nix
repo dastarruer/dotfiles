@@ -77,7 +77,6 @@
     nixosConfigurations.dastarruer = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs system;
-        spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
       };
       modules = [
         inputs.stylix.nixosModules.stylix
@@ -91,6 +90,7 @@
       extraSpecialArgs = {
         inherit inputs system;
         spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
+        vscode-extensions = inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace;
       };
       modules = [
         inputs.stylix.homeModules.stylix
