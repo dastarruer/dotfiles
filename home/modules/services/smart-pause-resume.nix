@@ -6,7 +6,7 @@
     };
 
     Service = {
-      ExecStart = ./scripts/smart-pause-resume.sh;
+      ExecStart = "${./scripts/smart-pause-resume.sh}";
       Restart = "on-failure";
     };
 

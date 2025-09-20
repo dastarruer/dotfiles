@@ -9,7 +9,7 @@
 
     Service = {
       Type = "oneshot";
-      ExecStart = ./scripts/auto-upgrade.sh;
+      ExecStart = "${./scripts/auto-upgrade.sh}";
     };
 
     Install = {
@@ -26,7 +26,7 @@
 
     Service = {
       Type = "oneshot";
-      ExecStart = ./scripts/auto-update-flake.sh;
+      ExecStart = "${./scripts/auto-update-flake.sh}";
     };
 
     Install = {

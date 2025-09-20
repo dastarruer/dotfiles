@@ -18,10 +18,6 @@
 
     # For stuff between apps like clipboard access, drag and drop, etc.
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-
-    plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.system}.borders-plus-plus
-    ];
   };
 
   # Hyprland packages needed
@@ -39,10 +35,6 @@
     "hypr/hypridle.conf".enable = false;
     "hypr/hyprlock.conf".enable = false;
   };
-
-  home.file.".cache/hypr/load-plugins.conf".text = ''
-    exec-once = hyprctl plugin load ${inputs.hyprland-plugins.packages.${pkgs.system}.borders-plus-plus}/lib/libborders-plus-plus.so
-  '';
 
   # Symlink hyprland config
   home.file.".config/hypr" = {

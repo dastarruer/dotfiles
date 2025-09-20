@@ -7,7 +7,7 @@
       };
       Service = {
         Type = "oneshot";
-        ExecStart = ./scripts/cleanup-downloads.sh;
+        ExecStart = "${./scripts/cleanup-downloads.sh}";
       };
     };
 
