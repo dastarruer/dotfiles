@@ -14,7 +14,9 @@
       ExecStart = ./scripts/upgrade-system.sh;
     };
     wantedBy = ["multi-user.target"];
-    after = ["network-online.target"];
+
+    # Run after home manager upgrade
+    after = ["network-online.target" "auto-upgrade.service"];
     wants = ["network-online.target"];
   };
 
