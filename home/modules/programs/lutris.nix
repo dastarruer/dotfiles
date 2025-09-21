@@ -1,12 +1,21 @@
 {pkgs, ...}: {
   programs.lutris = {
     enable = true;
+
+    defaultWinePackage = pkgs.proton-ge-bin;
     protonPackages = with pkgs; [
       proton-ge-bin
     ];
+
     extraPackages = with pkgs; [
       gamescope
       gamemode
     ];
   };
+
+  home.packages = with pkgs; [
+    vulkan-tools
+    mesa
+    python313Packages.ds4drv # for ps4 controller support
+  ];
 }
