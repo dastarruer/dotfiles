@@ -16,6 +16,5 @@
   home.packages = with pkgs; [
     vulkan-tools
     mesa
-    python313Packages.ds4drv # for ps4 controller support
   ];
 }
