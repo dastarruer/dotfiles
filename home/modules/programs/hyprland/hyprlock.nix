@@ -6,7 +6,7 @@
 
   systemd.user.services.hyprlock = {
     Unit = {
-      Description = "Lock screen with Hyprlock before suspend";
+      Description = "Lock screen with hyprlock before suspend";
       Before = ["sleep.target"];
     };
 
