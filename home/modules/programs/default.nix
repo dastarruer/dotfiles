@@ -18,6 +18,7 @@
     ./anki
     # ./sherlock.nix
     ./foliate.nix
+    ./lutris.nix
     ./btop.nix
     ./yazi.nix
     ./zoxide.nix
