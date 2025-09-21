@@ -21,15 +21,12 @@ in {
     hideMiniPlayerButton
     hideLyricsButton
 
-    # Round some things
-    roundedButtons
-    roundedImages
-
     # Fix some things
     fixNowPlayingIcon
     fixLikedButton
 
     # Other
+    beSquare
     pointer
     modernScrollbar
   ];
