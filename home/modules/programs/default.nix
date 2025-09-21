@@ -17,6 +17,7 @@
     ./flameshot.nix
     ./anki
     # ./sherlock.nix
+    ./foliate.nix
     ./btop.nix
     ./yazi.nix
     ./zoxide.nix

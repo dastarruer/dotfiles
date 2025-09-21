@@ -9,7 +9,6 @@
     todoist-electron
     # qbittorrent # need this for... reasons
     # musescore
-    # foliate
     # kdePackages.kdenlive
     # vesktop
 
