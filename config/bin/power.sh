@@ -16,7 +16,6 @@ case "$CHOICE" in
     ;;
 "󰥔 Suspend")
     $HOME/bin/pause-all.sh
-    hyprlock & disown
     systemctl suspend
     ;;
 " Reboot")
