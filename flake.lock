@@ -268,16 +268,16 @@
     },
     "flatpaks": {
       "locked": {
-        "lastModified": 1758625450,
-        "narHash": "sha256-g4teQKizyRyhgZUcGHgvV4/HCWxQV1ZZqgquiexKI+s=",
+        "lastModified": 1758628187,
+        "narHash": "sha256-jj1BwSiJN0mFHsLI2OrZcCRXACO8/7/DyLiJjyFuRD8=",
         "owner": "in-a-dil-emma",
         "repo": "declarative-flatpak",
-        "rev": "c51eed8a40526bc11be1c247842ea8f5e4454cf9",
+        "rev": "e735be1530378f059c8ecb121a6527ee0e294e2c",
         "type": "github"
       },
       "original": {
         "owner": "in-a-dil-emma",
-        "ref": "stable-v3",
+        "ref": "dev",
         "repo": "declarative-flatpak",
         "type": "github"
       }

@@ -9,6 +9,7 @@
     description = "Ayush Pramanik";
 
     # video group lets me change brightness, wheel lets me use sudo, networkmanager lets me control wifi
-    extraGroups = ["networkmanager" "wheel" "video" "input"];
+    # docker group lets me use docker without root
+    extraGroups = ["networkmanager" "wheel" "video" "input" "docker"];
   };
 }

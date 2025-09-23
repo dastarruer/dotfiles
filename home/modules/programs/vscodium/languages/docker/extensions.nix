@@ -4,7 +4,7 @@
   ...
 }: {
   programs.vscode.profiles.default.extensions = with vscode-extensions; [
-    ms-azuretools.vscode-docker
+    ms-azuretools.vscode-containers
   ];
 
   # obviously i gotta install docker...
