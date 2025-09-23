@@ -7,6 +7,7 @@
   imports = [
     ./nix
     ./rust
+    ./docker
   ];
 
   # General language formatter settings
