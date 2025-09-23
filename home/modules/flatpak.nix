@@ -40,35 +40,35 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
     overrides = {
       global = {
         # Give all flatpaks access to the home dir
-        filesystems = [
-          "home"
-        ];
+        filesystems = {
+          "home" = true;
+        };
 
         # Remove x11 support for flatpaks, making them run only on wayland
-        sockets = [
-          "!x11"
-          "!fallback-x11"
-        ];
+        sockets = {
+          "x11" = false;
+          "fallback-x11" = false;
+        };
       };
 
       # It bothers me about this everytime I start sober so here
       "org.vinegarhq.Sober" = {
-        filesystems = [
-          "xdg-run/app/com.discordapp.Discord:create"
-          "xdg-run/discord-ipc-0"
+        filesystems = {
+          "xdg-run/app/com.discordapp.Discord:create" = true;
+          "xdg-run/discord-ipc-0" = true;
 
-          "!home"
-          "!host"
-        ];
+          "home" = false;
+          "host" = false;
+        };
       };
 
       "md.obsidian.Obsidian" = {
-        sockets = [
+        sockets = {
           # Enable wayland support for obsidian
-          "wayland"
-          "!x11"
-          "!fallback-x11"
-        ];
+          "wayland" = true;
+          "x11" = false;
+          "fallback-x11" = false;
+        };
       };
     };
   };
