@@ -1,8 +1,4 @@
 {pkgs, ...}: {
-  imports = [
-    ../../audio/pulseaudio.nix
-  ];
-
   programs.uwsm.enable = true;
 
   programs.hyprland = {

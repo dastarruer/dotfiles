@@ -13,5 +13,6 @@
     ./power-button.nix
     ./system-packages.nix
     ./secrets.nix
+    ./audio.nix
   ];
 }

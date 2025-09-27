@@ -21,7 +21,7 @@ fi
 echo "$1" > "$XDG_RUNTIME_DIR/hypridle-timeout"
 
 # Restart hypridle
-pkill hypridle && hypridle &
+systemctl restart hypridle.service --user
 
 notify-send "Will suspend after $(($1 / 60)) minutes"
 
