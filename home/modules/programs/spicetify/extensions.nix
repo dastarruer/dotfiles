@@ -8,10 +8,8 @@ in {
   programs.spicetify.enabledExtensions = with spicePkgs.extensions; [
     adblockify
     hidePodcasts
-    shuffle
     loopyLoop
     seekSong
-    powerBar
     betterGenres
   ];
 }
