@@ -25,5 +25,7 @@
     ./cliphist.nix
     ./mpv.nix
     ./direnv.nix
+    ./obsidian.nix
+    ./sober.nix
   ];
 }

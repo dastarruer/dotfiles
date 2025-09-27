@@ -20,7 +20,9 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
   ];
 
   # This is needed for launching flatpaks with rofi
-  home.packages = with pkgs; [flatpak];
+  home.packages = with pkgs; [
+    flatpak
+  ];
 
   services.flatpak = {
     enable = true;
@@ -31,12 +33,6 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
       "flathub-beta" = "https://dl.flathub.org/beta-repo/flathub-beta.flatpakrepo";
     };
 
-    # Add packages here
-    packages = [
-      "flathub:app/md.obsidian.Obsidian/x86_64/stable"
-      "flathub:app/org.vinegarhq.Sober/x86_64/stable"
-    ];
-
     overrides = {
       global = {
         # Give all flatpaks access to the home dir
@@ -46,26 +42,6 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
 
         # Remove x11 support for flatpaks, making them run only on wayland
         sockets = {
-          "x11" = false;
-          "fallback-x11" = false;
-        };
-      };
-
-      # It bothers me about this everytime I start sober so here
-      "org.vinegarhq.Sober" = {
-        filesystems = {
-          "xdg-run/app/com.discordapp.Discord:create" = true;
-          "xdg-run/discord-ipc-0" = true;
-
-          "home" = false;
-          "host" = false;
-        };
-      };
-
-      "md.obsidian.Obsidian" = {
-        sockets = {
-          # Enable wayland support for obsidian
-          "wayland" = true;
           "x11" = false;
           "fallback-x11" = false;
         };
