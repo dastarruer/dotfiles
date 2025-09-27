@@ -1,10 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: let
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
-in {
+{spicePkgs, ...}: {
   # CSS snippets to make spotify look even better
   programs.spicetify.enabledSnippets = with spicePkgs.snippets; [
     # Disable some things

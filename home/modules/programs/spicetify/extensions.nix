@@ -1,10 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: let
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
-in {
+{spicePkgs, ...}: {
   programs.spicetify.enabledExtensions = with spicePkgs.extensions; [
     adblockify
     hidePodcasts

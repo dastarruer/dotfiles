@@ -87,7 +87,7 @@
       inherit pkgs;
       extraSpecialArgs = {
         inherit inputs system;
-        spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
+        spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
         vscode-extensions = inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace;
       };
       modules = [

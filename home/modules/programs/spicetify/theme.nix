@@ -1,12 +1,11 @@
 {
-  pkgs,
-  inputs,
+  spicePkgs,
   config,
   ...
 }: {
   # Spicetify themes
   programs.spicetify = {
-    theme = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system}.themes.onepunch;
+    theme = spicePkgs.themes.onepunch;
 
     customColorScheme = {
       # More vivid accents & UI highlights
