@@ -14,6 +14,8 @@
       autoSync = true;
       syncMedia = true;
 
+      autoSyncMediaMinutes = 10;
+
       keyFile = config.sops.secrets.anki_synckey.path;
       usernameFile = config.sops.secrets.email.path;
     };
