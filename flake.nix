@@ -19,7 +19,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/dev";
+    flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/latest";
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";

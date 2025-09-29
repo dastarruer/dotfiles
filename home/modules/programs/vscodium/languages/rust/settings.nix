@@ -9,5 +9,8 @@
 
     # Use Self::fn() instead of Type::fn()
     "rust-analyzer.assist.preferSelf" = false;
+
+    # Enable all features for rustfmt
+    "rust-analyzer.cargo.allFeatures" = true;
   };
 }
