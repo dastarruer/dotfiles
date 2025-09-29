@@ -8,7 +8,9 @@
 
   programs.anki = {
     enable = true;
+
     theme = "dark";
+    minimalistMode = true;
 
     sync = {
       autoSync = true;
