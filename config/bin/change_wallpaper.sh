@@ -19,7 +19,8 @@ NUM_WALLPAPERS=${#WALLPAPERS[@]}
 NEXT_INDEX=$(( (CURRENT_INDEX + 1) % NUM_WALLPAPERS ))
 
 # Set the new wallpaper
-swww img "${WALLPAPERS[$NEXT_INDEX]}" -t wipe --transition-angle 30 --transition-duration 1
+# swww img "${WALLPAPERS[$NEXT_INDEX]}" -t wipe --transition-angle 30 --transition-duration 1
+caelestia wallpaper -f "${WALLPAPERS[$NEXT_INDEX]}"
 
 # Symlink the wallpaper so it can be accessed by other programs
 ln -sf ${WALLPAPERS[$NEXT_INDEX]} $HOME/Pictures/wallpaper
