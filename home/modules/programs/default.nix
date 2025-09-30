@@ -10,7 +10,7 @@
     ./spicetify
     ./distrobox.nix
     ./zathura.nix
-    ./dunst.nix
+    # ./dunst.nix
     ./waybar
     ./vscodium
     ./hyprland
