@@ -12,9 +12,4 @@
       gamemode
     ];
   };
-
-  home.packages = with pkgs; [
-    vulkan-tools
-    mesa
-  ];
 }

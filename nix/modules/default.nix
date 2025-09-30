@@ -14,5 +14,6 @@
     ./system-packages.nix
     ./secrets.nix
     ./audio.nix
+    ./gaming.nix
   ];
 }
