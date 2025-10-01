@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }: {
   services.flameshot = {
@@ -29,6 +30,11 @@
       };
     };
   };
+
+  # Create the save dir for flameshot
+  home.activation.createSavePath = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    mkdir -p "$HOME/Pictures/screenshots"
+  '';
 
   # Hide the flameshot wayland warning (https://github.com/flameshot-org/flameshot/issues/3186)
   services.dunst.settings.ignore_flameshot_warning = {
