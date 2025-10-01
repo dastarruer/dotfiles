@@ -7,7 +7,7 @@
     "explorer.confirmPasteNative" = false;
 
     # Terminal settings
-    "terminal.integrated.enableMultiLinePasteWarning" = false;
+    "terminal.integrated.enableMultiLinePasteWarning" = "never";
 
     # Git
     "git.openRepositoryInParentFolders" = "always";

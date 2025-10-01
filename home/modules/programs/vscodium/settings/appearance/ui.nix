@@ -8,7 +8,7 @@
     "workbench.startupEditor" = "none";
     "workbench.tips.enabled" = false;
     "breadcrumbs.enable" = false;
-    "workbench.tree.renderIndentGuides" = false;
+    "workbench.tree.renderIndentGuides" = "onHover";
     "workbench.tree.indent" = 16;
     "explorer.decorations.badges" = false;
     "window.menuBarVisibility" = "hidden";

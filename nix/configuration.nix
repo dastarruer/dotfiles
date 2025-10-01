@@ -57,4 +57,11 @@
   #   mkdir -p "/home/dastarruer/.local/share/fonts"
   #   cp -L /run/current-system/sw/share/X11/fonts/* "/home/dastarruer/.local/share/fonts/" || true
   # '';
+
+  # Gives extra ram basically
+  zramSwap = {
+    enable = true;
+    priority = 100;
+    algorithm = "zstd";
+  };
 }

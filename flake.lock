@@ -984,11 +984,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758553579,
-        "narHash": "sha256-/p9ID64/5G988NDPvfRSjgbV8GdfvJ2el9kz71nrRnU=",
+        "lastModified": 1759351713,
+        "narHash": "sha256-zCCCxojma1icU7vJk+ovi3sn0R5Iy7AcREbUhva9e/o=",
         "owner": "e-tho",
         "repo": "ucodenix",
-        "rev": "ba7f0a366460e0fbea9622fc770cb982be0e4720",
+        "rev": "b01d140e94f6b9fb20fc4d7d5ad92394e9b3c636",
         "type": "github"
       },
       "original": {
