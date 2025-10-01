@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{inputs, pkgs, ...}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -50,4 +50,8 @@
   # If any issues arise, read through the wiki
   # Note that home-manager flatpak configuration is in flatpak.nix
   fonts.fontDir.enable = true;
+
+  environment.systemPackages = with pkgs; [
+ kitty
+ ];
 }

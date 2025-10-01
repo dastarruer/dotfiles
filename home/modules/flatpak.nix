@@ -51,6 +51,7 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
 
   # Run this command in order to give flatpak acces to system fonts (https://wiki.nixos.org/wiki/Fonts#Solution_1:_Copy_fonts_to_$HOME/.local/share/fonts)
   # Note that fonts.fontDir.enable = true is required for this, which is already declared in configuration.nix
+  # TODO: Somehow give user access to these directories
   home.activation.copyFonts = lib.hm.dag.entryAfter ["writeBoundary"] ''
     mkdir -p "$HOME/.local/share/fonts"
     cp -L /run/current-system/sw/share/X11/fonts/* "$HOME/.local/share/fonts/" || true

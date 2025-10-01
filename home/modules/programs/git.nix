@@ -13,7 +13,6 @@ in {
   # Get the encrypted username and email
   sops.secrets = {
     name = {};
-    email = {};
   };
 
   programs.git = {

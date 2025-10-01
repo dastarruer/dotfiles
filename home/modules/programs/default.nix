@@ -2,7 +2,7 @@
   imports = [
     ./fastfetch.nix
     ./firefox
-    ./git.nix
+   ./git.nix
     ./kitty.nix
     ./shell
     ./rofi
@@ -15,7 +15,7 @@
     ./vscodium
     ./hyprland
     ./flameshot.nix
-    ./anki
+   ./anki
     # ./sherlock.nix
     ./foliate.nix
     ./lutris.nix
