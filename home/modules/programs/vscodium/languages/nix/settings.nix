@@ -17,9 +17,4 @@
       };
     };
   };
-
-  # My chosen formatter
-  home.packages = with pkgs; [
-    alejandra
-  ];
 }

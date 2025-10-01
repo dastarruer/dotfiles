@@ -3,13 +3,17 @@
   pkgs,
   ...
 }: {
-  # Install nix lsp
   programs.vscode.profiles.default.extensions = with vscode-extensions; [
+    # nix lsp
     jnoortheen.nix-ide
+
+    # Formatter
+    kamadorueda.alejandra
   ];
 
-  # Required for lsp support
   home.packages = with pkgs; [
+    # Required for lsp support
     nixd
+    alejandra
   ];
 }
