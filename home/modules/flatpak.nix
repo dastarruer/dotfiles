@@ -24,6 +24,10 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
     flatpak
   ];
 
+  # FUTURE ME IF flatpak list throws an error, then run:
+  # sudo rm -rf /var/lib/flatpak/repo
+  # sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+  # sudo flatpak remote-add --if-not-exists flathub-beta https://dl.flathub.org/beta-repo/flathub-beta.flatpakrepo
   services.flatpak = {
     enable = true;
 
@@ -48,12 +52,4 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
       };
     };
   };
-
-  # Run this command in order to give flatpak acces to system fonts (https://wiki.nixos.org/wiki/Fonts#Solution_1:_Copy_fonts_to_$HOME/.local/share/fonts)
-  # Note that fonts.fontDir.enable = true is required for this, which is already declared in configuration.nix
-  # TODO: Somehow give user access to these directories
-  home.activation.copyFonts = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    mkdir -p "$HOME/.local/share/fonts"
-    cp -L /run/current-system/sw/share/X11/fonts/* "$HOME/.local/share/fonts/" || true
-  '';
 }

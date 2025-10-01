@@ -54,7 +54,11 @@
   # Note that home-manager flatpak configuration is in flatpak.nix
   fonts.fontDir.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    kitty
-  ];
+  # Run this command in order to give flatpak acces to system fonts (https://wiki.nixos.org/wiki/Fonts#Solution_1:_Copy_fonts_to_$HOME/.local/share/fonts)
+  # Note that fonts.fontDir.enable = true is required for this, which is already declared in configuration.nix
+  # TODO: make this work, it hangs nixos-rebuild
+  # system.activationScripts.copyFonts.text = ''
+  #   mkdir -p "/home/dastarruer/.local/share/fonts"
+  #   cp -L /run/current-system/sw/share/X11/fonts/* "/home/dastarruer/.local/share/fonts/" || true
+  # '';
 }
