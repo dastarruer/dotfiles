@@ -64,4 +64,9 @@
     priority = 100;
     algorithm = "zstd";
   };
+
+  boot.kernel.sysctl = {
+    # Only use swap when completely necessary
+    "vm.swappiness" = 20;
+  };
 }
