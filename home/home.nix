@@ -1,4 +1,8 @@
-{lib, inputs, ...}: {
+{
+  lib,
+  inputs,
+  ...
+}: {
   imports = [
     ./modules/default.nix
 
@@ -19,13 +23,12 @@
   nixpkgs.config.allowUnfree = true;
 
   # Set some necessary sops settings
- sops = {
-age.keyFile = "/home/dastarruer/.config/sops/age/keys.txt";
-   defaultSopsFile = ../secrets/secrets.yaml;
+  sops = {
+    age.keyFile = "/home/dastarruer/.config/sops/age/keys.txt";
+    defaultSopsFile = ../secrets/secrets.yaml;
 
-
-  # I'll put at least one secret here so on reinstall no errors pop up
-   secrets.email = {};
+    # I'll put at least one secret here so on reinstall no errors pop up
+    secrets.email = {};
   };
 
   # Disable stylix configuration for certain apps

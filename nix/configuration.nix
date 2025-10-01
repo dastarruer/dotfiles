@@ -1,7 +1,10 @@
-{inputs, pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
 
     # Import all the other files
     ./modules/default.nix
@@ -52,6 +55,6 @@
   fonts.fontDir.enable = true;
 
   environment.systemPackages = with pkgs; [
- kitty
- ];
+    kitty
+  ];
 }
