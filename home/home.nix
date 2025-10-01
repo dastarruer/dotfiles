@@ -27,8 +27,11 @@
     age.keyFile = "/home/dastarruer/.config/sops/age/keys.txt";
     defaultSopsFile = ../secrets/secrets.yaml;
 
-    # I'll put at least one secret here so on reinstall no errors pop up
-    secrets.email = {};
+    # Put secrets here so on reinstall no errors pop up
+    secrets = {
+      name = {};
+      email = {};
+    };
   };
 
   # Disable stylix configuration for certain apps

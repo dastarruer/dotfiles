@@ -10,11 +10,6 @@ in {
     inputs.sops-nix.homeManagerModules.sops
   ];
 
-  # Get the encrypted username and email
-  sops.secrets = {
-    name = {};
-  };
-
   programs.git = {
     enable = true;
 
