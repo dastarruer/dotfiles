@@ -10,7 +10,6 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
 */
 {
   inputs,
-  lib,
   pkgs,
   ...
 }: {
