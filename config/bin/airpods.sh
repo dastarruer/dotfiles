@@ -3,7 +3,7 @@
 # systemctl --user restart pipewire.service
 
 # Headphones MAC Address
-source ~/.headphones_mac
+HEADPHONES_MAC=70:8C:F2:65:74:82
 
 # Turn on Bluetooth or fallback
 bluetoothctl power on || {
