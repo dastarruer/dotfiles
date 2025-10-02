@@ -16,8 +16,7 @@
     wantedBy = ["multi-user.target"];
 
     # Run after home manager upgrade
-    after = ["network-online.target" "auto-upgrade.service"];
-    wants = ["network-online.target"];
+    after = ["auto-upgrade.service"];
   };
 
   # Timer to trigger daily

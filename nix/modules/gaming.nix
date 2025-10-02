@@ -8,14 +8,12 @@
     # should install mesa graphics drivers?
     extraPackages = with pkgs; [
       mesa
-      mesa.drivers
       vulkan-loader
       vulkan-tools
     ];
 
     extraPackages32 = with pkgs.pkgsi686Linux; [
       mesa
-      mesa.drivers
       vulkan-loader
     ];
   };
