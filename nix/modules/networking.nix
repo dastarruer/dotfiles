@@ -23,6 +23,12 @@
     networkmanager
   ];
 
+  # Kinda fixes long boot times? Not realyl
+  systemd.network.wait-online = {
+    enable = false;
+    timeout = 1;
+  };
+
   # Enable firmware for wifi cards
   hardware.enableAllFirmware = true;
 }
