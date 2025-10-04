@@ -69,4 +69,11 @@
     # Only use swap when completely necessary
     "vm.swappiness" = 20;
   };
+
+  # Used to sync system clock
+  # Use these settings so that boot does not get slowed down
+  services.timesyncd = {
+    enable = true;
+    servers = ["time.cloudflare.com" "pool.ntp.org"];
+  };
 }

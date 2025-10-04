@@ -26,6 +26,8 @@ playerctl pause -a
 # If already connected, restart Bluetooth to refresh
 if bluetoothctl info "$HEADPHONES_MAC" | grep 'Connected: yes' -q; then
     notify-send -t 4000 "Restarting Bluetooth..."
+    # Sometimes headphones can't connect to high fidelity audio profile, so this fixes it
+    systemctl --user restart pipewire.service
     bluetoothctl power off
     bluetoothctl power on
 fi

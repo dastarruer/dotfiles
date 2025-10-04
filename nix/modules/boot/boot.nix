@@ -14,6 +14,9 @@
     DefaultStartLimitIntervalSec = "10s";
   };
 
+  # Acheive faster boot times by not connecting to internet on boot
+  systemd.network.wait-online.enable = false;
+
   # Bootloader.
   boot = {
     # Spalsh screen
