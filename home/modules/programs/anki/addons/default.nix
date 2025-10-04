@@ -3,6 +3,7 @@
     ./image-occlusion-enhanced.nix
     ./passfail2.nix
     ./recolor.nix
+    # ./auto-sync.nix
   ];
 
   # install addons that don't need configuration
