@@ -27,6 +27,7 @@ GDRIVE_SOURCE_DIRS=(
   "$HOME/Documents/sheet-music"
   "$HOME/Documents/calibre"
   "$HOME/Documents/school"
+  "$HOME/Documents/ludusavi-backups"
   "$HOME/Pictures/trips"
 )
 
