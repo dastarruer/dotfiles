@@ -18,7 +18,7 @@
     "${config.home.homeDirectory}/.dotfiles/config/ludusavi/config/yaml";
 
   # Automate backups: https://github.com/mtkennerly/ludusavi/blob/master/docs/help/backup-automation.md
-  systemd.user.services.ludusavi = {
+  systemd.user.services.ludusavi-backup = {
     Unit = {
       Description = "Ludusavi backup";
     };
@@ -33,7 +33,7 @@
   };
 
   # Timer to trigger automatic backups daily
-  systemd.user.timers.ludusavi = {
+  systemd.user.timers.ludusavi-backup = {
     Unit = {
       Description = "Ludusavi backup timer";
     };
