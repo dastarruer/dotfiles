@@ -16,7 +16,7 @@ case "$CHOICE" in
     ;;
 "󰥔 Suspend")
     $HOME/bin/pause-all.sh
-    systemctl suspend
+    hyprlock & disown && systemctl suspend
     ;;
 " Reboot")
     # ~/bin/save_workspace_layouts.sh
