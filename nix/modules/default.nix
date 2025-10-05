@@ -15,5 +15,6 @@
     ./secrets.nix
     ./audio.nix
     ./gaming.nix
+    ./earlyoom.nix
   ];
 }
