@@ -1,7 +1,21 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   home.packages = with pkgs; [
     ludusavi
   ];
+
+  # Without this, home manager can't symlink files to .config (https://github.com/nix-community/home-manager/issues/1807#issuecomment-3131623755)
+  xdg.configFile = {
+    "ludusavi/config.yaml".enable = false;
+  };
+
+  # Symlink ludusavi config.yaml file
+  home.file.".config/ludusavi/config.yaml".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/.dotfiles/config/ludusavi/config/yaml";
 
   # Automate backups: https://github.com/mtkennerly/ludusavi/blob/master/docs/help/backup-automation.md
   systemd.user.services.ludusavi = {
@@ -18,6 +32,7 @@
     };
   };
 
+  # Timer to trigger automatic backups daily
   systemd.user.timers.ludusavi = {
     Unit = {
       Description = "Ludusavi backup timer";

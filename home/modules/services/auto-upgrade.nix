@@ -26,7 +26,7 @@
 
     Service = {
       Type = "oneshot";
-      ExecStart = "${./scripts/auto-update-flake.sh}";
+      ExecStart = "${./scripts/auto-update-flake.sh} & disown";
     };
 
     Install = {

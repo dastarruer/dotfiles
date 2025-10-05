@@ -1,0 +1,79 @@
+---
+runtime:
+  threads: ~
+release:
+  check: true
+manifest:
+  enable: true
+language: en-US
+theme: dark
+roots:
+  - store: lutris
+    path: /home/dastarruer/.config/lutris
+    database: /home/dastarruer/.local/share/lutris/pga.db
+redirects: []
+backup:
+  path: /home/dastarruer/Documents/ludusavi-backups
+  ignoredGames: []
+  filter:
+    excludeStoreScreenshots: false
+    cloud:
+      exclude: false
+      epic: false
+      gog: false
+      origin: false
+      steam: false
+      uplay: false
+    ignoredPaths: []
+    ignoredRegistry: []
+  toggledPaths: {}
+  toggledRegistry: {}
+  sort:
+    key: status
+    reversed: false
+  retention:
+    full: 1
+    differential: 0
+  format:
+    chosen: zip
+    zip:
+      compression: zstd
+    compression:
+      deflate:
+        level: 9
+      bzip2:
+        level: 6
+      zstd:
+        level: 22
+  onlyConstructive: false
+restore:
+  path: /home/dastarruer/Documents/ludusavi-backup
+  ignoredGames: []
+  toggledPaths: {}
+  toggledRegistry: {}
+  sort:
+    key: status
+    reversed: false
+  reverseRedirects: false
+scan:
+  showDeselectedGames: true
+  showUnchangedGames: true
+  showUnscannedGames: true
+cloud:
+  remote:
+    GoogleDrive:
+      id: ludusavi-1759688851
+  path: ludusavi-backup
+  synchronize: true
+apps:
+  rclone:
+    path: /nix/store/ij4c45gvwjdvsr72znydb351xakrl4qn-rclone-1.71.1/bin/rclone
+    arguments: "--fast-list --ignore-checksum"
+customGames:
+  - name: Marvel’s Spider-Man - Miles Morales
+    integration: override
+    files:
+      - /home/dastarruer/Games/marvels-spider-man-miles-morales/drive_c/Games
+    registry: []
+    installDir:
+      - ""
