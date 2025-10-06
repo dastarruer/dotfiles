@@ -10,7 +10,6 @@ todoist-electron &
 anki &
 spotify &
 firefox &
-codium &
 flatpak run md.obsidian.Obsidian &
 
 # Start clipboard manager

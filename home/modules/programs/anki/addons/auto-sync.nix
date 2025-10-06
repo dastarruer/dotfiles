@@ -13,16 +13,6 @@
           rev = finalAttrs.version;
           hash = "sha256-pXEagmdHiOLTIIP+qvgQFtlvwMrQsXyVxnZHFizq5Uc=";
         };
-        postPatch = ''
-          substituteInPlace options_dialog.py \
-            --replace "from PyQt5 import QtCore, QtGui" "from PyQt6 import QtCore, QtGui"
-          substituteInPlace main.py \
-            --replace "from PyQt5 import QtCore, QtGui" "from PyQt6 import QtCore, QtGui"
-          substituteInPlace config.py \
-            --replace "from PyQt5 import QtCore, QtGui" "from PyQt6 import QtCore, QtGui"
-          substituteInPlace constants.py \
-            --replace "QStyle.SP_BrowserReload" "QStyle.StandardPixmap.SP_BrowserReload"
-        '';
       }))
   ];
 }
