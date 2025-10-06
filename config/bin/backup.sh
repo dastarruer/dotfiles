@@ -9,6 +9,7 @@ USB_SOURCE_DIRS=(
   "$HOME/Documents/calibre"
   "$HOME/Documents/school"
   "$HOME/Pictures/trips"
+  "$HOME/Documents/ludusavi-backups"
   "$HOME/.ssh"
 )
 
