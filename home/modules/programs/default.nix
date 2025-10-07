@@ -20,6 +20,7 @@
     # ./sherlock.nix
     ./foliate.nix
     ./btop.nix
+    ./obs.nix
     ./yazi.nix
     ./zoxide.nix
     ./cliphist.nix
