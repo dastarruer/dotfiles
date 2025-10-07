@@ -5,10 +5,10 @@
     ];
 
     # Enable wayland support for obsidian
-    overrides."md.obsidian.Obsidian".sockets = {
-      "wayland" = true;
-      "x11" = false;
-      "fallback-x11" = false;
-    };
+    overrides."md.obsidian.Obsidian".sockets = [
+      "wayland"
+      "!x11"
+      "!fallback-x11"
+    ];
   };
 }

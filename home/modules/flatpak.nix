@@ -15,7 +15,7 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
 }: {
   # Import flatpak home manager module
   imports = [
-    inputs.flatpaks.homeModules.default
+    inputs.flatpaks.homeModule
   ];
 
   # This is needed for launching flatpaks with rofi
@@ -39,15 +39,15 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
     overrides = {
       global = {
         # Give all flatpaks access to the home dir
-        filesystems = {
-          "home" = true;
-        };
+        filesystems = [
+          "home"
+        ];
 
         # Remove x11 support for flatpaks, making them run only on wayland
-        sockets = {
-          "x11" = false;
-          "fallback-x11" = false;
-        };
+        sockets = [
+          "!x11"
+          "!fallback-x11"
+        ];
       };
     };
   };
