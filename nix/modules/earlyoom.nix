@@ -7,5 +7,10 @@
 
     # If 5% of memory is left, start killing processes
     freeMemThreshold = 5;
+
+    extraArgs = [
+      "--avoid"
+      ".*\.ex$" # Don't kill any wine apps, like games
+    ];
   };
 }
