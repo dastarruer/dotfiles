@@ -12,11 +12,6 @@
     "ludusavi/config.yaml".enable = false;
   };
 
-  # Symlink ludusavi config.yaml file
-  home.file.".config/ludusavi/config.yaml".source =
-    config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/.dotfiles/config/ludusavi/config/yaml";
-
   # Automate backups: https://github.com/mtkennerly/ludusavi/blob/master/docs/help/backup-automation.md
   systemd.user.services.ludusavi-backup = {
     Unit = {
