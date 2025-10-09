@@ -32,7 +32,7 @@
   };
 
   # Create the save dir for flameshot
-  home.activation.createSavePath = lib.hm.dag.entryAfter ["writeBoundary"] ''
+  home.activation.createScreenshotDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
     mkdir -p "$HOME/Pictures/screenshots"
   '';
 
