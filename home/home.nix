@@ -34,6 +34,9 @@
     };
   };
 
+  # Enable configuration for mime, whatever that means...
+  xdg.mimeApps.enable = true;
+
   # Disable stylix configuration for certain apps
   stylix.targets = {
     # Note that these requires manual theming

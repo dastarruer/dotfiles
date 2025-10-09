@@ -27,6 +27,8 @@
 
     # Network manager
     networkmanagerapplet
+
+    jq
   ];
 
   # Without this, home manager can't symlink files to .config (https://github.com/nix-community/home-manager/issues/1807#issuecomment-3131623755)
@@ -42,5 +44,37 @@
       config.lib.file.mkOutOfStoreSymlink
       "${config.home.homeDirectory}/.dotfiles/config/hypr";
     recursive = true;
+  };
+
+  # Workaround to open hyprlinks in current workspace (just like the one here!): https://www.reddit.com/r/hyprland/comments/1b5jvvm/opening_browser_in_the_current_workspace/
+  # First add the script to path
+  home.sessionPath = [
+    "$HOME/bin/open_url.sh"
+  ];
+
+  xdg = {
+    # The script to run every time a url is clicked
+    desktopEntries."open_url" = {
+      name = "Open URL";
+      exec = "open_url.sh %u";
+      terminal = false;
+      type = "Application";
+
+      # Don't show this in rofi
+      noDisplay = true;
+    };
+
+    # This section just runs the previously declared .desktop file when a link is clicked
+    mimeApps = {
+      associations.added = {
+        "x-scheme-handler/http" = ["open_url.desktop"];
+        "x-scheme-handler/https" = ["open_url.desktop"];
+      };
+
+      defaultApplications = {
+        "x-scheme-handler/http" = ["open_url.desktop"];
+        "x-scheme-handler/https" = ["open_url.desktop"];
+      };
+    };
   };
 }
