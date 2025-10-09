@@ -70,10 +70,10 @@
             # Focus the existing Firefox window
             ${pkgs.hyprland}/bin/hyprctl dispatch focuswindow address:"$current_ff_address"
             # Open the URL in a new tab
-            firefox-nightly --new-tab "$url" &
+            ${inputs.firefox-nightly.packages.${pkgs.system}.firefox-nightly-bin}/bin/firefox-nightly --new-tab "$url" &
         else
             # No Firefox window on this workspace, open a new window
-            firefox-nightly --new-window "$url" &
+            ${inputs.firefox-nightly.packages.${pkgs.system}.firefox-nightly-bin}/bin/firefox-nightly --new-window "$url" &
         fi
       ''} %u";
       terminal = false;
