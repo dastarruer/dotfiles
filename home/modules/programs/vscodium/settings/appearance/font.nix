@@ -6,12 +6,14 @@
 
     # Make comments italicized
     "editor.tokenColorCustomizations" = {
-      "textMateRules" = {
-        "scope" = "comment";
-        "settings" = {
-          "fontStyle" = "italic";
-        };
-      };
+      "textMateRules" = [
+        {
+          "scope" = "comment";
+          "settings" = {
+            "fontStyle" = "italic";
+          };
+        }
+      ];
     };
   };
 }

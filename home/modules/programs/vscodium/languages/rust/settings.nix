@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   programs.vscode.profiles.default.userSettings = {
     "[rust]" = {
       editor.defaultFormatter = "rust-lang.rust-analyzer";
@@ -12,7 +12,5 @@
 
     # Enable all features for rustfmt
     "rust-analyzer.cargo.allFeatures" = true;
-
-    "lldb.executable" = "${pkgs.lldb}/bin/lldb";
   };
 }
