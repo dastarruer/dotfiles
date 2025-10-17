@@ -1,3 +1,4 @@
+# On install, use admin and admin123 for username and password respectively
 {...}: {
   services.calibre-web = {
     enable = true;
