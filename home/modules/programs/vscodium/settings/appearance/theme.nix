@@ -8,22 +8,12 @@
     extensions = with inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace; [
       pkief.material-icon-theme
       amerey.blackplusplus
-      oderwat.indent-rainbow # Recommended by the theme readme
     ];
 
     userSettings = {
       # Theme
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.colorTheme" = "Black++ Grey Matter";
-
-      # Recommended settings from the theme readme
-      "indentRainbow.colors" = [
-        "rgba(255,255,255,0.1)"
-        "rgba(255,255,255,0.2)"
-        "rgba(255,255,255,0.3)"
-        "rgba(255,255,255,0.2)"
-        "rgba(255,255,255,0.1)"
-      ];
 
       # Custom Colors
       "workbench.colorCustomizations" = {
