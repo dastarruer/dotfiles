@@ -7,7 +7,8 @@
 
     # Cursor settings
     cursor.package = pkgs.bibata-cursors;
-    cursor.name = "Bibata Modern Classic";
+    # To find the cursor name: ls ~/.nix-profile/share/icons
+    cursor.name = "Bibata-Modern-Classic";
     cursor.size = 24;
 
     fonts = {
