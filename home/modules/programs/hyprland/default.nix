@@ -31,16 +31,16 @@
 
   # Without this, home manager can't symlink files to .config (https://github.com/nix-community/home-manager/issues/1807#issuecomment-3131623755)
   xdg.configFile = {
-    "hypr/hyprland.conf".enable = false;
-    "hypr/hypridle.conf".enable = false;
+    # "hypr/hyprland.conf".enable = false;
+    # "hypr/hypridle.conf".enable = false;
     "hypr/hyprlock.conf".enable = false;
   };
 
   # Symlink hyprland config
-  home.file.".config/hypr" = {
+  home.file.".config/hypridle" = {
     source =
       config.lib.file.mkOutOfStoreSymlink
-      "${config.home.homeDirectory}/.dotfiles/config/hypr";
+      "${config.home.homeDirectory}/.dotfiles/config/hypridle";
     recursive = true;
   };
 

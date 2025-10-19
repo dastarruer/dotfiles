@@ -10,6 +10,7 @@
     ./spicetify
     ./gaming
     # ./distrobox.nix
+    ./ax-shell.nix
     ./zathura.nix
     ./dunst.nix
     ./waybar
