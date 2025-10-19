@@ -7,13 +7,13 @@
     # Extensions required for theming
     extensions = with inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace; [
       pkief.material-icon-theme
-      amerey.blackplusplus
+      tintedtheming.base16-tinted-themes
     ];
 
     userSettings = {
       # Theme
       "workbench.iconTheme" = "material-icon-theme";
-      "workbench.colorTheme" = "Black++ Grey Matter";
+      "workbench.colorTheme" = "base16-default-dark";
 
       # Custom Colors
       "workbench.colorCustomizations" = {
