@@ -2,9 +2,7 @@
   inputs,
   config,
   ...
-}:
-
-let
+}: let
   # --- Варианты анимации смены обоев ---
   wallpaperTransition = [
     "img"
@@ -38,7 +36,7 @@ let
 
   # --- Пути к обоям и иконке профиля ---
   wallpapersPath = "${config.xdg.configHome}/Pictures/wallpapers";
-  faceIconPath = "${../../../home/assets/avatar.png}";
+  faceIconPath = "${../../../config/pfp.png}";
 
   # --- Горячие клавиши ---
   keybinds = {
@@ -115,8 +113,7 @@ let
       suffix = "B";
     };
   };
-in
-{
+in {
   imports = [
     inputs.ax-shell.homeManagerModules.default
   ];
@@ -134,13 +131,11 @@ in
       #     input_path = "${inputs.matugen-themes}/templates/alacritty.toml";
       #     output_path = "${config.xdg.configHome}/alacritty/matugen_colors.toml";
       #   };
-      };
     };
 
     # --- ГЛАВНЫЙ БЛОК НАСТРОЕК (settings) ---
     # Все, что находится здесь, передается в JSON-конфиг для самого приложения.
     settings = {
-
       # --- Общие настройки ---
       terminalCommand = "alacritty -e"; # Какой терминал использовать для tmux
       datetime12hFormat = false; # Использовать 12-часовой формат времени (true/false)
@@ -173,7 +168,7 @@ in
         };
 
         metrics = {
-          disks = [ "/" ]; # Список дисков для отображения в виджете
+          disks = ["/"]; # Список дисков для отображения в виджете
         };
 
         # Включение/отключение виджетов на баре
