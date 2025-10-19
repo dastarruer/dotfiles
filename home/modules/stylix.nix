@@ -3,7 +3,7 @@
     enable = true;
 
     # Set the color theme
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/black-metal-gorgoroth.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/default-dark.yaml";
 
     # Cursor settings
     cursor.package = pkgs.bibata-cursors;
