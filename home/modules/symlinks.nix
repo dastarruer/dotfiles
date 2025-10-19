@@ -10,9 +10,6 @@
       source =
         config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/.dotfiles/config/bin";
-
-      # Set every script to executable
-      # executable = true;
     };
     ".bashrc" = {
       source =
@@ -22,7 +19,7 @@
     "Pictures/wallpapers" = {
       source =
         config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/config/wallpapers/gruvbox";
+        "${config.home.homeDirectory}/.dotfiles/config/wallpapers";
     };
   };
 }
