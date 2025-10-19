@@ -3,11 +3,11 @@
     enable = true;
 
     # Set the color theme
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/black-metal-gorgoroth.yaml";
 
     # Cursor settings
-    cursor.package = pkgs.capitaine-cursors-themed;
-    cursor.name = "Capitaine Cursors (Gruvbox)";
+    cursor.package = pkgs.bibata-cursors;
+    cursor.name = "Bibata Modern Classic";
     cursor.size = 24;
 
     fonts = {
