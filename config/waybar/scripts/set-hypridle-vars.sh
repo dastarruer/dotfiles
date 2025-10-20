@@ -12,15 +12,15 @@ config_file="$HOME/.config/hypr/hypridle.conf"
 
 case "$1" in
   0)
-    ln -sf "$config_file/no-suspend.conf" "$HOME/.config/hypr/hypridle.conf"
+    ln -sf "$HOME/.dotfiles/config/hypr/hypridle/no-suspend.conf" "$config_file"
     notify-send "Idle suspend disabled"
     ;;
   5)
-    ln -sf "$config_file/5min.conf" "$HOME/.config/hypr/hypridle.conf"
+    ln -sf "$HOME/.dotfiles/config/hypr/hypridle/5min.conf" "$config_file"
     notify-send "Will suspend after 5 minutes"
     ;;
   30)
-    ln -sf "$config_file/30min.conf" "$HOME/.config/hypr/hypridle.conf"
+    ln -sf "$HOME/.dotfiles/config/hypr/hypridle/30min.conf" "$config_file"
     notify-send "Will suspend after 30 minutes"
     ;;
   *)
