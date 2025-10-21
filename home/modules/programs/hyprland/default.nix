@@ -20,14 +20,19 @@
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
-  # Hyprland packages needed
-  home.packages = with pkgs; [
-    waybar
-    swww
+  home = {
+    # Hyprland packages needed
+    packages = with pkgs; [
+      waybar
+      swww
 
-    # Network manager
-    networkmanagerapplet
-  ];
+      # Network manager
+      networkmanagerapplet
+    ];
+
+    # This line does not do anything, so this env variable is declared in config.fish
+    # sessionVariables.NIXOS_OZONE_WL = "1";
+  };
 
   # Without this, home manager can't symlink files to .config (https://github.com/nix-community/home-manager/issues/1807#issuecomment-3131623755)
   xdg.configFile = {

@@ -70,3 +70,6 @@ end
 
 # nix-direnv
 eval (direnv hook fish)
+
+# Tell electron apps to use wayland (https://nixos.wiki/wiki/Wayland)
+set -x NIXOS_OZONE_WL "1"
