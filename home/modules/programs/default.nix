@@ -11,6 +11,7 @@
     ./gaming
     # ./distrobox.nix
     ./zathura.nix
+    ./imv.nix
     ./dunst.nix
     ./waybar
     ./vscodium
