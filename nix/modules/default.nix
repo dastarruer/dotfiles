@@ -16,5 +16,6 @@
     ./audio.nix
     ./gaming.nix
     ./earlyoom.nix
+    ./ddcutil.nix
   ];
 }
