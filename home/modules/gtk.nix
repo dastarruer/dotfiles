@@ -14,12 +14,12 @@
   # Font-related settings
   fontPackage = config.stylix.fonts.sansSerif.package;
   fontName = "${config.stylix.fonts.sansSerif.name}";
-  fontSize = 12;
+  fontSize = config.stylix.fonts.sizes.applications;
 
   # Cursor-related settings
-  cursorPackage = pkgs.capitaine-cursors-themed;
-  cursorName = "Capitaine Cursors (Gruvbox)";
-  cursorSize = 24;
+  cursorPackage = config.stylix.cursor.package;
+  cursorName = "${config.stylix.cursor.name}";
+  cursorSize = config.stylix.cursor.size;
 in {
   gtk = {
     enable = true;

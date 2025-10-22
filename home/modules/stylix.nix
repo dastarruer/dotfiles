@@ -6,10 +6,13 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/default-dark.yaml";
 
     # Cursor settings
-    cursor.package = pkgs.bibata-cursors;
-    # To find the cursor name: ls ~/.nix-profile/share/icons
-    cursor.name = "Bibata-Modern-Classic";
-    cursor.size = 24;
+    cursor = {
+      package = pkgs.bibata-cursors;
+      size = 24;
+
+      # To find the cursor name: ls ~/.nix-profile/share/icons
+      name = "Bibata-Modern-Classic";
+    };
 
     fonts = {
       monospace = {
