@@ -10,7 +10,7 @@
     ./bluetooth.nix
     ./maintenance.nix
     ./networking.nix
-    ./power-button.nix
+    ./logind.nix
     ./system-packages.nix
     ./secrets.nix
     ./audio.nix

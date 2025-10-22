@@ -1,5 +1,4 @@
 {...}: {
-  # Configure what happens once the power button is pressed
   services.logind.settings.Login = {
     # Suspend system when power button is pressed
     HandlePowerKey = "suspend";
@@ -12,5 +11,9 @@
     HandleSuspendKeyLongPress = "reboot";
     HandleRebootKeyLongPress = "reboot";
     HandleHibernateKeyLongPress = "reboot";
+
+    # Suspend laptop if lid is closed, and if is connected to monitor then don't do anything
+    HandleLidSwitch = "suspend";
+    HandleLidSwitchDocked = "ignore";
   };
 }
