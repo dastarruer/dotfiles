@@ -4,8 +4,8 @@
   ...
 }: let
   # Theme-related settings
-  themePackage = pkgs.gruvbox-gtk-theme;
-  themeName = "Gruvbox-Dark";
+  themePackage = pkgs.adementary-theme;
+  themeName = "Adementary-dark";
 
   # Icon-related settings
   iconPackage = pkgs.papirus-icon-theme;
