@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./calibre.nix
+    # ./calibre.nix
     # ./kavita.nix
   ];
 }

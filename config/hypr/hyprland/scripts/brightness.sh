@@ -1,15 +1,16 @@
 #!/usr/bin/env sh
 set +e
 
-usage="Usage: $0 [+] or [-]"
+usage="Usage: $0 [+|-] [brightness]"
 
-if [ "$#" -ne 1 ]; then
-    echo "No direction parameter provided"
+if [ "$#" -ne 2 ]; then
+    echo "No direction/brightness parameter provided"
     echo "$usage"
     exit 1
 fi
 
 arg="$1"
+brightness="$2"
 
 if [ "$arg" == "help" ] || [ "$arg" == "--help" ] || [ "$arg" == "-h" ]; then
     echo "$usage"
@@ -27,13 +28,12 @@ direction=$arg
 monitor_data=$(hyprctl monitors -j)
 focused_name=$(echo $monitor_data | jq -r '.[] | select(.focused == true) | .name')
 
-if [ "$focused_name" == "eDP-1" ]; then
+if [ "$focused_name" != "eDP-1" ]; then
     if [ "$direction" == "-" ]; then
-        brillo -u 150000 -U 8
+        brillo -s ddcci7 -U $brightness -q
     else
-        brillo -u 150000 -A 8
+        brillo -s ddcci7 -A $brightness -q
     fi
 else
-    focused_id=$(echo $monitor_data | jq -r '.[] | select(.focused == true) | .id')
-    ddcutil --sleep-multiplier=.2 --display=$focused_id setvcp 10 $direction 20
+    brillo -s amdgpu_bl1 -A $brightness -q
 fi
