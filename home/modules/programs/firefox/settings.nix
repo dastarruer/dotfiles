@@ -3,7 +3,7 @@
 
   betterfoxGit = builtins.fetchTarball {
     url = "https://github.com/yokoffing/Betterfox/archive/refs/heads/main.tar.gz";
-    sha256 = "1wwxmzymq3v13q05ashpwsnk2wcmyz4yy4kfb1asyjj944qs70xi";
+    sha256 = "0vsz86bbchjqx5szy9an777nnykrxzgp3zlyb0vpr3hqymzgpfq8";
   };
 
   # Get the betterfox userjs as a base for my settings

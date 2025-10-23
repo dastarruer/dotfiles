@@ -26,6 +26,7 @@
     packages = with pkgs; [
       waybar
       swww
+      jq
 
       # Network manager
       networkmanagerapplet
