@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   # From https://wiki.nixos.org/wiki/PipeWire
-  # having issues with your headset again? try this!!! https://wiki.archlinux.org/title/Bluetooth_headset#Switch_between_HSP/HFP_and_A2DP_setting
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true; # if not already enabled
@@ -9,6 +8,12 @@
     pulse.enable = true;
     # If you want to use JACK applications, uncomment the following
     #jack.enable = true;
+  };
+
+  # Make headphones use a2dp audio profile: https://wiki.archlinux.org/title/Bluetooth_headset#A2DP_sink_profile_is_unavailable
+  hardware.bluetooth.settings.General = {
+    Disable = "Headset";
+    MultiProfile = "multiple";
   };
 
   environment.systemPackages = with pkgs; [
