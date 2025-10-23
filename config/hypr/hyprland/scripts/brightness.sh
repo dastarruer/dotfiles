@@ -35,5 +35,9 @@ if [ "$focused_name" != "eDP-1" ]; then
         brillo -s ddcci7 -A $brightness -q
     fi
 else
-    brillo -s amdgpu_bl1 -A $brightness -q
+    if [ "$direction" == "-" ]; then
+        brillo -s amdgpu_bl1 -U $brightness -q
+    else
+        brillo -s amdgpu_bl1 -A $brightness -q
+    fi
 fi
