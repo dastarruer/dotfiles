@@ -6,7 +6,7 @@
       "special": ""
     },
     "sort-by-number": true,
-    "all-outputs": true,
+    "all-outputs": false,
     "persistent_workspaces": {
       "*": 10
     }
