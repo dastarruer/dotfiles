@@ -3,14 +3,9 @@
 waybar &
 swww-daemon &
 nm-applet &
-hypridle &
 
 # Start apps
-todoist-electron &
-anki &
-spotify &
-firefox &
-flatpak run md.obsidian.Obsidian &
+./apps.sh
 
 # Start clipboard manager
 wl-paste --type text --watch cliphist store &
