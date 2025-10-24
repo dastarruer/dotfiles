@@ -49,4 +49,12 @@
     spicetify.enable = false;
     waybar.enable = false;
   };
+
+  # Settings to make fonts less blurry
+  fonts.fontconfig = {
+    enable = true;
+    antialiasing = true;
+    hinting = "slight";
+    subpixelRendering = "rgb";
+  };
 }
