@@ -1,20 +1,21 @@
 {
   spicePkgs,
   config,
-  lib,
+  # lib,
   ...
 }: {
   # Spicetify themes
   programs.spicetify = {
-    theme = {
-      name = spicePkgs.themes.onepunch;
-      additionalCss =
-        lib.concatStringsSep "\n" [
-          "*{
-         font-family: \"<font>\" !important
-       }"
-        ];
-    };
+    # theme = {
+    #   name = spicePkgs.themes.onepunch;
+    #   additionalCss =
+    #     lib.concatStringsSep "\n" [
+    #       "*{
+    #      font-family: \"<font>\" !important
+    #    }"
+    #     ];
+    # };
+    theme = spicePkgs.themes.onepunch;
 
     customColorScheme = {
       # More vivid accents & UI highlights
