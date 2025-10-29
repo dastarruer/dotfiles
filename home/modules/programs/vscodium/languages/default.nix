@@ -8,6 +8,7 @@
     ./nix
     ./rust
     ./docker
+    ./python
   ];
 
   # General language formatter settings

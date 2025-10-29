@@ -4,3 +4,4 @@ pkill -f todoist
 pkill -f anki
 pkill -f spotify
 pkill -f obsidian
+pkill -f codium
