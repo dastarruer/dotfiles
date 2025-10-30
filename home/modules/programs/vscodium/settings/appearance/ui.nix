@@ -3,7 +3,7 @@
   programs.vscode.profiles.default.userSettings = {
     "workbench.sideBar.location" = "right";
     "workbench.activityBar.location" = "top";
-    "workbench.statusBar.visible" = false;
+    # "workbench.statusBar.visible" = false;
     "workbench.editor.showTabs" = "single";
     "workbench.startupEditor" = "none";
     "workbench.tips.enabled" = false;
