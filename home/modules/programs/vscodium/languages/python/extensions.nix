@@ -5,6 +5,8 @@
 }: {
   programs.vscode.profiles.default.extensions = with vscode-extensions; [
     ms-python.python # Python LSP
+    ms-python.vscode-pylance
+
     # There was also black but ruff can sort imports too so I went with this
     charliermarsh.ruff # Python formatter
   ];
