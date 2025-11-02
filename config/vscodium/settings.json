@@ -143,7 +143,6 @@
     "editorOverviewRuler.wordHighlightStrongForeground": "#0000",
     "sideBar.border": "#0000"
   },
-  "workbench.colorTheme": "base16-default-dark",
   "workbench.editor.showTabs": "single",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "right",
