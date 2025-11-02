@@ -19,7 +19,7 @@ in {
     enable = true;
 
     # Use firefox nightly
-    package = inputs.firefox-nightly.packages.${pkgs.system}.firefox-nightly-bin;
+    package = inputs.firefox-nightly.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin;
   };
 
   stylix.targets.firefox = {
