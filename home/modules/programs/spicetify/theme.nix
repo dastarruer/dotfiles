@@ -1,21 +1,28 @@
 {
-  spicePkgs,
+  pkgs,
   config,
-  # lib,
+  lib,
   ...
 }: {
   # Spicetify themes
   programs.spicetify = {
-    # theme = {
-    #   name = spicePkgs.themes.onepunch;
-    #   additionalCss =
-    #     lib.concatStringsSep "\n" [
-    #       "*{
-    #      font-family: \"<font>\" !important
-    #    }"
-    #     ];
-    # };
-    theme = spicePkgs.themes.onepunch;
+    theme = {
+      name = "Onepunch";
+
+      src = pkgs.fetchFromGitHub {
+        owner = "riasat-sheikh";
+        repo = "Onepunch";
+        rev = "98034712add505ae513b118b94b6d18bba25b3cd";
+        hash = "sha256-nGxMc9mtshWsCQS8B/dPNXXlWeFM58HvWmp7Aj2/V2c=";
+      };
+
+      additionalCss = lib.concatStringsSep "\n" [
+        # Change the font to the stylix font
+        "* {
+              font-family: \"${config.stylix.fonts.serif.name}\" !important
+         }"
+      ];
+    };
 
     customColorScheme = {
       # More vivid accents & UI highlights
