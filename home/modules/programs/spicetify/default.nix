@@ -24,6 +24,9 @@ in {
       marketplace
     ];
 
+    # Chromium devtools
+    alwaysEnableDevTools = true;
+
     wayland = true;
   };
 }
