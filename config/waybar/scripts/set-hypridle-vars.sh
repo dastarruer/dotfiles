@@ -12,8 +12,10 @@ config_file="$HOME/.config/hypr/hypridle.conf"
 
 case "$1" in
   0)
-    ln -sf "$HOME/.dotfiles/config/hypr/hypridle/no-suspend.conf" "$config_file"
-    notify-send "Idle suspend disabled"
+    systemctl --user stop hypridle
+    # ln -sf "$HOME/.dotfiles/config/hypr/hypridle/no-suspend.conf" "$config_file"
+    notify-send "Hypridle disabled"
+    exit 0
     ;;
   5)
     ln -sf "$HOME/.dotfiles/config/hypr/hypridle/5min.conf" "$config_file"

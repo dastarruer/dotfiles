@@ -43,7 +43,7 @@
     "format": "{text}",
     "return-type": "json",
     "tooltip": true,
-    "tooltip-format": "Disable suspend after idling",
+    "tooltip-format": "Disable hypridle",
     "on-click": "~/.config/waybar/scripts/set-hypridle-vars.sh 0",
     "interval": 1,
     "_comment": "chatgpt gave me this great way to create togglable buttons with waybar",
