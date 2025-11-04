@@ -36,19 +36,19 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
       "flathub-beta" = "https://dl.flathub.org/beta-repo/flathub-beta.flatpakrepo";
     };
 
-    overrides = {
-      global = {
-        # Give all flatpaks access to the home dir
-        filesystems = [
-          "home"
-        ];
+    # overrides = {
+    #   global = {
+    #     # Give all flatpaks access to the home dir
+    #     filesystems = [
+    #       "home"
+    #     ];
 
-        # Remove x11 support for flatpaks, making them run only on wayland
-        sockets = [
-          "!x11"
-          "!fallback-x11"
-        ];
-      };
-    };
+    #     # Remove x11 support for flatpaks, making them run only on wayland
+    #     sockets = [
+    #       "!x11"
+    #       "!fallback-x11"
+    #     ];
+    #   };
+    # };
   };
 }

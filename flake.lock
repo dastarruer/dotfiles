@@ -251,16 +251,16 @@
     },
     "flatpaks": {
       "locked": {
-        "lastModified": 1758618987,
-        "narHash": "sha256-tmswzZtjXObn8jYTle6ne9l3bG+Bkrc2tc8esB8IaCg=",
-        "owner": "in-a-dil-emma",
+        "lastModified": 1762211514,
+        "narHash": "sha256-iH5Gg6IbhJEiJKF02pXC0yPGYn8sHouYg0Ivr1l0M7o=",
+        "owner": "dastarruer",
         "repo": "declarative-flatpak",
-        "rev": "9fbd355ce16db22dfd4be2e61e8d47559a4e12e2",
+        "rev": "febd910554f8779d3fae6c296afc9ea82f831612",
         "type": "github"
       },
       "original": {
-        "owner": "in-a-dil-emma",
-        "ref": "v3.0.0",
+        "owner": "dastarruer",
+        "ref": "fix/use-tmpfiles-settings",
         "repo": "declarative-flatpak",
         "type": "github"
       }
