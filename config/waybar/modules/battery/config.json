@@ -9,7 +9,7 @@
     "format": "{icon} {capacity}%",
     "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format-plugged": "",
     "_comment": "Show time til battery runs out on click",
     "format-alt": "󱧥 {time}",
     "tooltip": false,
