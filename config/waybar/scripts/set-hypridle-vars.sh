@@ -14,6 +14,7 @@ case "$1" in
   0)
     systemctl --user stop hypridle
     # ln -sf "$HOME/.dotfiles/config/hypr/hypridle/no-suspend.conf" "$config_file"
+    echo "$1" > "$XDG_RUNTIME_DIR/hypridle-timeout"
     notify-send "Hypridle disabled"
     exit 0
     ;;
