@@ -19,7 +19,7 @@
       additionalCss = lib.concatStringsSep "\n" [
         # Change the font to the stylix font
         "* {
-              font-family: \"${config.stylix.fonts.serif.name}\" !important
+              font-family: \"Noto Serif\" !important
          }"
       ];
     };

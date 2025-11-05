@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Download unfree packages
+export NIXPKGS_ALLOW_UNFREE=1
+
 # Wait until the internet is reachable
 # I'd make the service wait for internet, but cant be bothered, so here's chatgpt's solution
 until ping -c1 8.8.8.8 &>/dev/null; do

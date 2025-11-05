@@ -35,8 +35,10 @@
         # Max fsr sharpness (0-20, where 0 is max and 20 is min)
         gamescope_fsr_sharpness = "0";
 
-        # Set game to 1080p
-        gamescope_game_res = "1920x1080";
+        # Set game to 720p
+        gamescope_game_res = "1280x720";
+
+        # Upscale game to my 1080p monitor
         gamescope_output_res = "1920x1080";
       };
 
