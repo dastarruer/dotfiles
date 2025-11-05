@@ -27,6 +27,7 @@
       waybar
       swww
       jq
+      socat
 
       # Network manager
       networkmanagerapplet
