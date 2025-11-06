@@ -1,18 +1,9 @@
-# https://wiki.hypr.land/FAQ/#how-do-i-move-my-favorite-workspaces-to-a-new-monitor-when-i-plug-it-in
-
 #!/usr/bin/env bash
+# https://wiki.hypr.land/FAQ/#how-do-i-move-my-favorite-workspaces-to-a-new-monitor-when-i-plug-it-in
 
 handle() {
   case $1 in monitoradded*)
-    hyprctl dispatch moveworkspacetomonitor "1 1"
-    hyprctl dispatch moveworkspacetomonitor "2 1"
-    hyprctl dispatch moveworkspacetomonitor "4 1"
-    hyprctl dispatch moveworkspacetomonitor "5 1"
-    hyprctl dispatch moveworkspacetomonitor "6 1"
-    hyprctl dispatch moveworkspacetomonitor "7 1"
-    hyprctl dispatch moveworkspacetomonitor "8 1"
-    hyprctl dispatch moveworkspacetomonitor "9 1"
-    hyprctl dispatch moveworkspacetomonitor "10 1"
+    ./move_windows_to_monitor.sh
   esac
 }
 
