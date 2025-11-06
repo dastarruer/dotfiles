@@ -1,4 +1,4 @@
-https://wiki.hypr.land/FAQ/#how-do-i-move-my-favorite-workspaces-to-a-new-monitor-when-i-plug-it-in
+# https://wiki.hypr.land/FAQ/#how-do-i-move-my-favorite-workspaces-to-a-new-monitor-when-i-plug-it-in
 
 #!/usr/bin/env bash
 
