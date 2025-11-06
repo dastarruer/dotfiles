@@ -1,11 +1,59 @@
 {
-  "layer": "top",
+  "layer": "bottom",
   "position": "top",
+  "height": 30,
   "spacing": 0,
-  "margin": "8px 8px 0 8px",
-  "reload_style_on_change": true,
-  "include": [
-    "~/.config/waybar/layout.json",
-    "~/.config/waybar/modules/config.json"
-  ]
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/mode"
+  ],
+  "modules-center": [
+    "custom/clock"
+  ],
+  "modules-right": [
+    "hyprland/language",
+    "pulseaudio",
+    "battery",
+    "backlight",
+    "tray"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "format": "{icon}{name}",
+    "format-icons": {
+      "default": " ",
+      "urgent": "!",
+      "active": "*"
+    }
+  },
+  "hyprland/mode": {
+    "format": "  {}"
+  },
+  "custom/clock": {
+    "format": "<span color='#252525'>[ </span>{text}<span color='#252525'> ]</span>",
+    "exec": "date +'%I:%M %A, %b %d' | awk '{print tolower($0)}'",
+    "interval": 3
+  },
+  "hyprland/language": {
+    "format": "<span color='#252525'>[ </span><span color='#afa193'><b>key: </b></span>{short}<span color='#252525'> / </span>",
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "format": "<span color='#afa193'><b>vol:</b></span> {volume}%"
+  },
+  "battery": {
+    "format": "<span color='#252525'> / </span><span color='#afa193'><b>bat:</b></span> {capacity}%",
+    "format-charging": "<span color='#252525'> / </span><span color='#afa193'><b>ac:</b></span> {capacity}%",
+    "tooltip": false,
+    "interval": 20
+  },
+  "backlight": {
+    "format": "<span color='#252525'> / </span><span color='#afa193'><b>mon:</b></span> {percent}%<span color='#252525'> ]</span>",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 7,
+    "tooltip": false
+  }
 }
