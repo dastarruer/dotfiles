@@ -21,7 +21,8 @@ window#waybar {
 #pulseaudio,
 #battery,
 #backlight,
-#custom-clock {
+#custom-clock,
+#cpu {
     font-family: "JetBrainsMono Nerd Font";
     color: @fg;
 }

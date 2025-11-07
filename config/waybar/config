@@ -5,7 +5,8 @@
   "spacing": 0,
   "modules-left": [
     "hyprland/workspaces",
-    "hyprland/mode"
+    "hyprland/mode",
+    "cpu"
   ],
   "modules-center": [
     "custom/clock"
@@ -17,6 +18,10 @@
     "backlight",
     "tray"
   ],
+  "cpu": {
+    "interval": 10,
+    "format": "<span color='#252525'> / </span><span color='#afa193'><b>cpu:</b></span> {}%<span color='#252525'> ]</span>"
+  },
   "hyprland/workspaces": {
     "disable-scroll": true,
     "format": "{icon}{name}",
