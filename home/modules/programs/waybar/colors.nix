@@ -57,7 +57,8 @@
     #battery,
     #backlight,
     #custom-clock,
-    #cpu {
+    #cpu,
+    #memory {
         font-family: "JetBrainsMono Nerd Font";
         color: @fg;
     }

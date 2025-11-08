@@ -16,6 +16,7 @@
 
         "modules-left" = [
           "hyprland/workspaces"
+          "memory"
           "cpu"
         ];
         "modules-center" = [
@@ -31,7 +32,14 @@
 
         cpu = {
           interval = 10;
-          format = "<span color='#${config.lib.stylix.colors.base01}'> [] </span><span color='#${config.lib.stylix.colors.base09}'><b>cpu:</b></span> {usage}%<span color='#${config.lib.stylix.colors.base01}'> ] </span>";
+          format = "<span color='#${config.lib.stylix.colors.base09}'><b>cpu:</b></span> {usage}%<span color='#${config.lib.stylix.colors.base01}'> ] </span>";
+        };
+
+        memory = {
+          interval = 10;
+          format = "<span color='#${config.lib.stylix.colors.base01}'> [ </span><span color='#${config.lib.stylix.colors.base09}'><b>mem:</b></span> {percentage}%<span color='#${config.lib.stylix.colors.base01}'> / </span>";
+          tooltip = true;
+          tooltip-format = "{used:0.1f}GiB / {total:0.1f}GiB used";
         };
 
         "hyprland/workspaces" = {
@@ -56,18 +64,19 @@
         };
 
         pulseaudio = {
-          format = "<span color='#${config.lib.stylix.colors.base09}'><b>vol:</b></span> {volume}%";
+          format = "<span color='#${config.lib.stylix.colors.base09}'><b>vol:</b></span> {volume}% </span>{short}<span color='#${config.lib.stylix.colors.base01}'> / </span>";
         };
 
         battery = {
-          format = "<span color='#${config.lib.stylix.colors.base01}'> / </span><span color='#${config.lib.stylix.colors.base09}'><b>bat:</b></span> {capacity}%";
-          "format-charging" = "<span color='#${config.lib.stylix.colors.base01}'> / </span><span color='#${config.lib.stylix.colors.base09}'><b>ac:</b></span> {capacity}%";
+          format = "<span color='#${config.lib.stylix.colors.base09}'><b>bat:</b></span> {capacity}%</span>{short}<span color='#${config.lib.stylix.colors.base01}'> / </span>";
+          "format-charging" = "<span color='#${config.lib.stylix.colors.base09}'><b>ac:</b></span> {capacity}%</span>{short}<span color='#${config.lib.stylix.colors.base01}'> / </span>";
+          "format-plugged" = "</span>{short}<span color='#${config.lib.stylix.colors.base01}'> / </span>";
           tooltip = false;
           interval = 20;
         };
 
         backlight = {
-          format = "<span color='#${config.lib.stylix.colors.base01}'> / </span><span color='#${config.lib.stylix.colors.base09}'><b>mon:</b></span> {percent}%<span color='#${config.lib.stylix.colors.base01}'> ]</span>";
+          format = "<span color='#${config.lib.stylix.colors.base09}'><b>mon:</b></span> {percent}%<span color='#${config.lib.stylix.colors.base01}'> ]</span>";
           tooltip = false;
         };
 
@@ -78,12 +87,5 @@
         };
       };
     };
-  };
-
-  # Symlink the entire Waybar directory
-  home.file.".config/waybar" = {
-    source =
-      config.lib.file.mkOutOfStoreSymlink
-      "${config.home.homeDirectory}/.dotfiles/config/waybar";
   };
 }
