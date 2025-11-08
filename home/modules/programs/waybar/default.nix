@@ -14,13 +14,24 @@
         height = 30;
         spacing = 0;
 
-        "modules-left" = ["hyprland/workspaces" "hyprland/mode" "cpu"];
-        "modules-center" = ["custom/clock"];
-        "modules-right" = ["hyprland/language" "pulseaudio" "battery" "backlight" "tray"];
+        "modules-left" = [
+          "hyprland/workspaces"
+          "cpu"
+        ];
+        "modules-center" = [
+          "custom/clock"
+        ];
+        "modules-right" = [
+          "hyprland/language"
+          "pulseaudio"
+          "battery"
+          "backlight"
+          "tray"
+        ];
 
         cpu = {
           interval = 10;
-          format = "<span color='#${config.lib.stylix.colors.base01}'> / </span><span color='#${config.lib.stylix.colors.base09}'><b>cpu:</b></span> {}%<span color='#${config.lib.stylix.colors.base01}'> ]</span>";
+          format = "<span color='#${config.lib.stylix.colors.base01}'> [] </span><span color='#${config.lib.stylix.colors.base09}'><b>cpu:</b></span> {usage}%<span color='#${config.lib.stylix.colors.base01}'> ] </span>";
         };
 
         "hyprland/workspaces" = {
@@ -31,10 +42,6 @@
             urgent = "!";
             active = "*";
           };
-        };
-
-        "hyprland/mode" = {
-          format = "  {}";
         };
 
         "custom/clock" = {
