@@ -49,6 +49,7 @@
     spicetify.enable = false;
     waybar.enable = false;
     dunst.enable = false;
+    rofi.enable = false;
   };
 
   # Settings to make fonts less blurry
