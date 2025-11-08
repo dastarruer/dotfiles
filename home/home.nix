@@ -48,6 +48,7 @@
     anki.enable = false;
     spicetify.enable = false;
     waybar.enable = false;
+    dunst.enable = false;
   };
 
   # Settings to make fonts less blurry
