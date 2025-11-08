@@ -37,7 +37,7 @@
 
         # Display & Positioning
         monitor = 0;
-        follow = "mouse";
+        follow = "keyboard";
         padding = 10;
         horizontal_padding = 10;
         origin = "top-right";
