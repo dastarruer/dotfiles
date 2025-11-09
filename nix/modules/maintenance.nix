@@ -1,44 +1,44 @@
 # Comes from https://www.youtube.com/watch?v=EI-6QX60WXc&t=915s
-{inputs, ...}: {
+{...}: {
   # Auto update
-  system.autoUpgrade = {
-    enable = true;
-    flake = inputs.self.outPath;
-    flags = [
-      # Reduce cpu load
-      "--max-jobs"
-      "4"
-      "--cores"
-      "4"
+  # system.autoUpgrade = {
+  #   enable = true;
+  #   flake = inputs.self.outPath;
+  #   flags = [
+  #     # Reduce cpu load
+  #     "--max-jobs"
+  #     "4"
+  #     "--cores"
+  #     "4"
 
-      # Update nixpkgs
-      "--update-input"
-      "nixpkgs"
+  #     # Update nixpkgs
+  #     "--update-input"
+  #     "nixpkgs"
 
-      # Update flatpaks
-      "--update-input"
-      "flatpaks"
+  #     # Update flatpaks
+  #     "--update-input"
+  #     "flatpaks"
 
-      # Update hyprland
-      "--update-input"
-      "hyprland"
+  #     # Update hyprland
+  #     "--update-input"
+  #     "hyprland"
 
-      # Impure mode
-      "--impure"
-    ];
+  #     # Impure mode
+  #     "--impure"
+  #   ];
 
-    # Run service once laptop has powered on and has internet access
-    persistent = true;
+  #   # Run service once laptop has powered on and has internet access
+  #   persistent = true;
 
-    # Run after school
-    dates = "15:00";
+  #   # Run after school
+  #   dates = "15:00";
 
-    # allow rebooting after every upgrade (just in case!)
-    # allowReboot = true;
+  #   # allow rebooting after every upgrade (just in case!)
+  #   # allowReboot = true;
 
-    # Nvm auto reboot sucks
-    allowReboot = false;
-  };
+  #   # Nvm auto reboot sucks
+  #   allowReboot = false;
+  # };
 
   # Remove unused generations
   nix.gc = {
@@ -46,8 +46,7 @@
     persistent = true;
     dates = "03:00";
 
-    # Very rarely do i rollback so here ig... will speed up boot too
-    options = "--delete-older-than 2d";
+    options = "--delete-older-than 7d";
   };
 
   # Remove unused packages
