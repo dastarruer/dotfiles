@@ -34,4 +34,15 @@
       OnCalendar = "minutely";
     };
   };
+
+  # services.udev.extraRules = let
+  #   bash = "${pkgs.bash}/bin/bash";
+  #   tee = "${pkgs.coreutils}/bin/tee";
+  #   echo = "${pkgs.coreutils}/bin/echo";
+  #   cat = "${pkgs.coreutils}/bin/cat";
+  #   batteryPath = "/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode";
+  # in ''
+  #   # Toggle conservation mode on AC state change
+  #   ACTION=="change", SUBSYSTEM=="power_supply", RUN+="${bash} -c 'current=\$(${cat} ${batteryPath}); if [ \"\$current\" -eq 0 ]; then new=1; else new=0; fi; ${echo} \$new | ${tee} ${batteryPath}; ${echo} toggled conservation mode to \$new'"
+  # '';
 }

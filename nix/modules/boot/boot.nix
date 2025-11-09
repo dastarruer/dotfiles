@@ -48,7 +48,7 @@
     };
 
     # Get the latest kernel packages
-    kernelPackages = pkgs.linuxPackages_6_17;
+    kernelPackages = pkgs.linuxPackages_latest;
 
     # Silent Boot
     # https://wiki.archlinux.org/title/Silent_boot
