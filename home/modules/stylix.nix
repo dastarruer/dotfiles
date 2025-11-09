@@ -5,6 +5,21 @@
     # Set the color theme
     base16Scheme = "${pkgs.base16-schemes}/share/themes/default-dark.yaml";
 
+    # Disable stylix configuration for certain apps
+    targets = {
+      # Note that these requires manual theming
+      vscode.enable = false;
+      gtk.enable = false;
+
+      # These are fine
+      hyprland.enable = false;
+      anki.enable = false;
+      spicetify.enable = false;
+      waybar.enable = false;
+      dunst.enable = false;
+      rofi.enable = false;
+    };
+
     # Cursor settings
     cursor = {
       package = pkgs.bibata-cursors;

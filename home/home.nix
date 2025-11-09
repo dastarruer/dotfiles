@@ -37,21 +37,6 @@
   # Enable configuration for mime, whatever that means...
   xdg.mimeApps.enable = true;
 
-  # Disable stylix configuration for certain apps
-  stylix.targets = {
-    # Note that these requires manual theming
-    vscode.enable = false;
-    gtk.enable = false;
-
-    # These are fine
-    hyprland.enable = false;
-    anki.enable = false;
-    spicetify.enable = false;
-    waybar.enable = false;
-    dunst.enable = false;
-    rofi.enable = false;
-  };
-
   # Settings to make fonts less blurry
   fonts.fontconfig = {
     enable = true;
