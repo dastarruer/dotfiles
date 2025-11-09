@@ -16,12 +16,12 @@
         hash = "sha256-nGxMc9mtshWsCQS8B/dPNXXlWeFM58HvWmp7Aj2/V2c=";
       };
 
-      # additionalCss = lib.concatStringsSep "\n" [
-      #   # Change the font to the stylix font
-      #   "* {
-      #         font-family: \"Noto Serif\" !important
-      #    }"
-      # ];
+      additionalCss = lib.concatStringsSep "\n" [
+        # Change the font to the stylix font
+        "* {
+              font-family: \"${config.stylix.fonts.serif.name}\" !important
+         }"
+      ];
     };
 
     customColorScheme = {
