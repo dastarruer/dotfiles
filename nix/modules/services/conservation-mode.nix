@@ -29,7 +29,7 @@
     # https://wiki.archlinux.org/title/Udev
     # use udevadm monitor --property --udev command to get all these values
     ''
-      ACTION=="change", SUBSYSTEM=="drm", ENV{DEVNAME}=="/dev/dri/card1", RUN+="${toggleConservation}"
+      ACTION=="change", SUBSYSTEM=="drm", RUN+="${toggleConservation}"
     '';
 
   # A systemd service to auto enable conservation mode on my home wifi, and disable it when connected to anything else
