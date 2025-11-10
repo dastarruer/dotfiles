@@ -1,7 +1,7 @@
 # Waybar from here: https://github.com/saatvik333/hyprland-dotfiles/blob/main/waybar/config
 {config, ...}: {
   imports = [
-    ./colors.nix
+    ./theme.nix
   ];
 
   programs.waybar = {
