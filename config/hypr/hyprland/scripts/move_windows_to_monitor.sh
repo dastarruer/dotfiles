@@ -11,3 +11,9 @@ hyprctl dispatch moveworkspacetomonitor "8 1"
 hyprctl dispatch moveworkspacetomonitor "9 1"
 hyprctl dispatch moveworkspacetomonitor "10 1"
 hyprctl dispatch moveworkspacetomonitor "11 0"
+
+# Change focused workspace on monitor 0 to 11
+hyprctl dispatch focusmonitor 0
+hyprctl dispatch focusworkspaceoncurrentmonitor 11
+hyprctl dispatch focusmonitor 1
+
