@@ -12,6 +12,10 @@
     theme = "dark";
     minimalistMode = true;
 
+    # Disable pressing spacebar to rate a card
+    # I only ever use this by accident
+    spacebarRatesCard = false;
+
     sync = {
       autoSync = true;
       syncMedia = true;
