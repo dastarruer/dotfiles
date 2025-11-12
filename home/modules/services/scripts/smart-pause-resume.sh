@@ -68,20 +68,23 @@ pause_others() {              # pause_others <currentBusName>
   done
 }
 
+# Comment this out so a player does not unpause immediately after pausing another player (e.g. spotify plays right after unpausing a yt video) because this is how it works on apple devices. id like to keep my attention span please and thank you
 resume_next() {               # attempt to resume next valid player in stack
-  local n
-  while n=$(pop_stack); do
-    # try to resume, suppress stderr to avoid noise
-    if playerctl --player="$n" play &>/dev/null; then
-      STATUS[$n]="Playing"
-      unset 'AUTO_PAUSED[$n]' || true
-      return 0
-    else
-      # player vanished; drop its state and continue
-      unset 'STATUS[$n]'
-      unset 'AUTO_PAUSED[$n]' || true
-    fi
-  done
+#   local n
+#   while n=$(pop_stack); do
+#     # try to resume, suppress stderr to avoid noise
+#     if playerctl --player="$n" play &>/dev/null; then
+#       STATUS[$n]="Playing"
+#       unset 'AUTO_PAUSED[$n]' || true
+#       return 0
+#     else
+#       # player vanished; drop its state and continue
+#       unset 'STATUS[$n]'
+#       unset 'AUTO_PAUSED[$n]' || true
+#     fi
+#   done
+    # ':' indicates that this function does nothing
+    :
 }
 
 # ───────────────── event dispatcher ────────────────────── #
