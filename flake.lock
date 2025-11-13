@@ -527,6 +527,26 @@
         "type": "github"
       }
     },
+    "hyprscroller": {
+      "inputs": {
+        "hyprland": [
+          "hyprland"
+        ]
+      },
+      "locked": {
+        "lastModified": 1762803789,
+        "narHash": "sha256-aAbHgf2Rp2IUospRjdsSFQF5ieeqq8yqJYv76zqD1Pk=",
+        "owner": "cpiber",
+        "repo": "hyprscroller",
+        "rev": "a5843b9201dc0728e745310e9f685c797565ba8b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cpiber",
+        "repo": "hyprscroller",
+        "type": "github"
+      }
+    },
     "hyprtoolkit": {
       "inputs": {
         "aquamarine": [
@@ -766,6 +786,7 @@
         "flatpaks": "flatpaks",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
+        "hyprscroller": "hyprscroller",
         "nixpkgs": "nixpkgs_2",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
