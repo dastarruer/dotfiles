@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   services.dunst = {
     enable = true;
 
@@ -96,28 +100,23 @@
       };
 
       # Play an alert sound for all notifications: https://github.com/dunst-project/dunst/issues/257
-      play_sound = {
+      play_sound = let
+        alertPath = ./alerts/default.wav;
+      in {
         summary = "*";
-        script = "${config.home.homeDirectory}/.config/dunst/scripts/alert.sh";
+        script = "${pkgs.writeShellScript "alert" ''
+          #!/run/current-system/sw/bin/bash
+
+          if [ "$DUNST_APP_NAME" != "Spotify" ] && \
+             [ "$DUNST_APP_NAME" != "flameshot" ] && \
+             [[ "$DUNST_SUMMARY" != *"Wallpaper set to:"* ]]; then
+              # Only play if no pw-play process is currently running
+              if ! pgrep -x pw-play >/dev/null; then
+                  ${pkgs.pipewire}/bin/pw-play ${alertPath} &
+              fi
+          fi
+        ''}";
       };
-    };
-  };
-
-  # Symlink the files used to play an alert for every notification
-  home.file = {
-    # This file comes from: https://mixkit.co/free-sound-effects/notification/
-    ".config/dunst/scripts" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/config/dunst/scripts";
-      recursive = true;
-    };
-
-    ".config/dunst/alerts" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/config/dunst/alerts";
-      recursive = true;
     };
   };
 }

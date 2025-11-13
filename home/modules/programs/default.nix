@@ -12,7 +12,7 @@
     # ./distrobox.nix
     ./zathura.nix
     ./imv.nix
-    ./dunst.nix
+    ./dunst
     ./waybar
     ./vscodium
     ./hyprland
