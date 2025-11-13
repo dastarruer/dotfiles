@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   systemd.user = {
     # Remove old files from downloads
     services.cleanup-downloads = {
@@ -7,7 +7,15 @@
       };
       Service = {
         Type = "oneshot";
-        ExecStart = "${./scripts/cleanup-downloads.sh}";
+        ExecStart = "${pkgs.writeShellScript "cleanup-downloads" ''
+          #!/run/current-system/sw/bin/bash
+          ${pkgs.libnotify}/bin/notify-send "Clearing downloads directory..." "it's that time of day!"
+
+          # Delete files older than two days in the downloads dir
+          ${pkgs.findutils}/bin/find /home/dastarruer/Downloads -mindepth 1 -mtime +2 -delete
+
+          ${pkgs.libnotify}/bin/notify-send "Cleared downloads directory."
+        ''}";
       };
     };
 
