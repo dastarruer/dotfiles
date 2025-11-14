@@ -13,6 +13,7 @@
     ./zathura.nix
     ./imv.nix
     ./dunst
+    ./whatsapp.nix
     ./waybar
     ./vscodium
     ./hyprland
