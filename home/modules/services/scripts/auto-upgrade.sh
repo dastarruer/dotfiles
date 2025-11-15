@@ -13,7 +13,7 @@ done
 
 cd /home/dastarruer/.dotfiles
 
-notify-send "System Upgrade" "It's that time of the day! Upgrading system... Please stand by..."
+notify-send "System Upgrade" "It's that time of the day! Upgrading system... System will not suspend until upgrade is finished."
 
 # First do a system rebuild
 # if ! echo "$SUDO_PASSWORD" | sudo -S nixos-rebuild switch --flake "/home/$USER/.dotfiles" --max-jobs 4 --cores 4; then
@@ -25,7 +25,7 @@ notify-send "System Upgrade" "It's that time of the day! Upgrading system... Ple
 # notify-send "System Upgrade" "System updated successfully! now for home-manager"
 
 # Then a hm rebuild
-if ! home-manager switch --flake "/home/$USER/.dotfiles" -b backup --max-jobs 4 --cores 4 --impure; then
+if ! systemd-inhibit home-manager switch --flake "/home/$USER/.dotfiles" -b backup --max-jobs 4 --cores 4 --impure; then
     notify-send "Upgrade Failed" "home-manager rebuild failed. Check service status for details."
     exit 1
 fi
