@@ -25,7 +25,7 @@ notify-send "System Upgrade" "It's that time of the day! Upgrading system... Sys
 # notify-send "System Upgrade" "System updated successfully! now for home-manager"
 
 # Then a hm rebuild
-if ! systemd-inhibit home-manager switch --flake "/home/$USER/.dotfiles" -b backup --max-jobs 4 --cores 4 --impure; then
+if ! systemd-inhibit home-manager switch --flake "/home/$USER/.dotfiles" -b backup --max-jobs 1 --cores 1 --impure; then
     notify-send "Upgrade Failed" "home-manager rebuild failed. Check service status for details."
     exit 1
 fi
