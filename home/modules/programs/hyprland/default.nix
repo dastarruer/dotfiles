@@ -9,7 +9,7 @@
     ./hypridle.nix
     ./hyprsunset.nix
     ./colors.nix
-    ./plugins.nix
+    # ./plugins.nix
   ];
 
   # Allows GUI apps to run sudo on wayland basically
