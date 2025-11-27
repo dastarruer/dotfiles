@@ -17,7 +17,7 @@
     homeDirectory = lib.mkForce "/home/dastarruer";
 
     # I couldn't tell you what this does but oh well
-    stateVersion = "22.11";
+    stateVersion = "25.11";
   };
 
   programs.home-manager.enable = true;
