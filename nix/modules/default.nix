@@ -17,5 +17,6 @@
     ./gaming.nix
     ./earlyoom.nix
     ./ddcutil.nix
+    ./ds4drv.nix
   ];
 }
