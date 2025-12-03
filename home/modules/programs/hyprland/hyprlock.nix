@@ -13,6 +13,9 @@
     Service = {
       Type = "forking";
       ExecStart = "${pkgs.hyprlock}/bin/hyprlock";
+
+      # https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Custom_systemd_units
+      ExecStartPost = "${pkgs.coreutils}/bin/sleep 1";
     };
 
     Install = {
