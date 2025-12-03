@@ -16,6 +16,7 @@
     ./whatsapp.nix
     ./waybar
     ./vscodium
+    ./kde-connect.nix
     ./hyprland
     ./flameshot.nix
     ./anki
