@@ -14,6 +14,11 @@
           run = "cd /home/dastarruer/Documents/school/G10";
           desc = "Change to schoolwork dir";
         }
+        {
+          on = "<C-o>";
+          run = ''shell -- ${pkgs.ocrmypdf}/bin/ocrmypdf "$1" "$1"'';
+          desc = "Add OCR layer to pdf";
+        }
       ];
     };
   };
