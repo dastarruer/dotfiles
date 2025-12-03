@@ -16,7 +16,7 @@
         }
         {
           on = "<C-o>";
-          run = ''shell -- ${pkgs.ocrmypdf}/bin/ocrmypdf "$1" "$1"'';
+          run = ''shell -- ${pkgs.ocrmypdf}/bin/ocrmypdf --skip-text "$1" "$1"'';
           desc = "Add OCR layer to pdf";
         }
       ];
