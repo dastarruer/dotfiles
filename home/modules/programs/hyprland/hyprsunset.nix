@@ -3,9 +3,9 @@
     enable = true;
 
     extraArgs = [
-      # Change temperature to a slightly warmer 5000K
+      # Change temperature to a slightly warmer 5500K
       "-t"
-      "5000"
+      "5500"
     ];
   };
 }
