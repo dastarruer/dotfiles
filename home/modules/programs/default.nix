@@ -17,7 +17,7 @@
     ./waybar
     ./vscodium
     ./hyprland
-    ./flameshot.nix
+    # ./flameshot.nix
     ./anki
     # ./sherlock.nix
     ./foliate.nix

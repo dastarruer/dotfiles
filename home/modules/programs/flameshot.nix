@@ -27,6 +27,7 @@
 
         # For wayland
         useGrimAdapter = true;
+        disabledGrimWarning = true;
       };
     };
   };

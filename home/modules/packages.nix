@@ -15,6 +15,7 @@
     # Other
     fzf
     tesseract
+    grimblast
     playerctl
     ffmpeg
   ];

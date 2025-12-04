@@ -11,37 +11,16 @@ case "$main_choice" in
     "region screenshot")
         echo "Selected: Region Screenshot"
         sleep 0.3
-        flameshot gui
+        grimblast copysave area -n
         ;;
 
     "full screenshot")
-        echo "Selected: Full Screenshot"
-
-        # Define the secondary options for full screenshot
-        full_options="copy to clipboard\nsave as"
-
-        # Display secondary options in Rofi and capture the selection
-        full_choice=$(echo -e "$full_options" | rofi -dmenu -p "Flameshot:")
-
-        case "$full_choice" in
-            "copy to clipboard")
-                sleep 0.3
-                XDG_CURRENT_DESKTOP=sway flameshot full -c
-                ;;
-
-            "save as")
-                sleep 0.3
-                XDG_CURRENT_DESKTOP=sway flameshot full
-                ;;
-
-            *)
-                echo "No valid option selected for full screenshot."
-                ;;
-        esac
+        sleep 0.3
+        grimblast copysave screen -n
         ;;
     "ocr")
         sleep 0.3
-        XDG_CURRENT_DESKTOP=sway flameshot gui -r | tesseract stdin stdout | wl-copy
+        grimblast save area - | tesseract stdin stdout | wl-copy
         notify-send "Clipboard:" "$(wl-paste)"
         ;;
     *)
