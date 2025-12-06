@@ -16,4 +16,7 @@
       restore-session = true;
     };
   };
+
+  # Set zathura as default pdf viewer
+  xdg.mimeApps.defaultApplications."application/pdf" = ["org.pwmt.zathura.desktop"];
 }
