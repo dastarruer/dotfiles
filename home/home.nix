@@ -35,6 +35,8 @@
     };
   };
 
+  services.polkit-gnome.enable = true;
+
   # Workaround to open hyprlinks in current workspace (just like the one here!): https://www.reddit.com/r/hyprland/comments/1b5jvvm/opening_browser_in_the_current_workspace/
   xdg = {
     # The script to run every time a url is clicked

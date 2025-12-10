@@ -12,9 +12,6 @@
     # ./plugins.nix
   ];
 
-  # Allows GUI apps to run sudo on wayland basically
-  services.hyprpolkitagent.enable = true;
-
   wayland.windowManager.hyprland = {
     enable = true;
 
