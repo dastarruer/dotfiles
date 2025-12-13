@@ -3,6 +3,7 @@
     ./headphones.nix
     ./change-wallpaper.nix
     ./brightness.nix
+    ./kill-apps.nix
   ];
 
   wayland.windowManager.hyprland.settings = {
@@ -60,7 +61,6 @@
       "SUPER+SHIFT, minus, movetoworkspacesilent, 11"
 
       # Other keybinds
-      "SUPER, P, exec, ~/.dotfiles/config/hypr/hyprland/scripts/kill_apps.sh"
       "SUPER, O, exec, ~/.dotfiles/config/hypr/hyprland/scripts/apps.sh"
       "SUPER, TAB, workspace, previous"
       "SUPER, K, exec, ~/.dotfiles/config/hypr/hyprland/scripts/move_windows_to_monitor.sh"
