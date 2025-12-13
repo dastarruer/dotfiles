@@ -2,7 +2,7 @@
   script = "${pkgs.writeShellApplication {
     name = "brightness";
     runtimeInputs = with pkgs; [
-      hyprctl
+      hyprland
       jq
       brillo
     ];
@@ -27,26 +27,26 @@
 
       if [ "$arg" != "+" ] && [ "$arg" != "-" ]; then
           echo "Direction parameter must be '+' or '-'"
-          echo $usage
+          echo "$usage"
           exit 1
       fi
 
       direction=$arg
 
       monitor_data=$(hyprctl monitors -j)
-      focused_name=$(echo $monitor_data | jq -r '.[] | select(.focused == true) | .name')
+      focused_name=$(echo "$monitor_data" | jq -r '.[] | select(.focused == true) | .name')
 
       if [ "$focused_name" != "eDP-1" ]; then
           if [ "$direction" == "-" ]; then
-              brillo -s ddcci7 -U $brightness -q
+              brillo -s ddcci7 -U "$brightness" -q
           else
-              brillo -s ddcci7 -A $brightness -q
+              brillo -s ddcci7 -A "$brightness" -q
           fi
       else
           if [ "$direction" == "-" ]; then
-              brillo -s amdgpu_bl1 -U $brightness -q
+              brillo -s amdgpu_bl1 -U "$brightness" -q
           else
-              brillo -s amdgpu_bl1 -A $brightness -q
+              brillo -s amdgpu_bl1 -A "$brightness" -q
           fi
       fi
     '';
