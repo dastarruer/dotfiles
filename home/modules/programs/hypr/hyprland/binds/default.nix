@@ -5,6 +5,7 @@
     ./brightness.nix
     ./kill-apps.nix
     ./move-windows-to-monitor.nix
+    ./toggle-monitor.nix
   ];
 
   wayland.windowManager.hyprland.settings = {
@@ -64,9 +65,6 @@
       # Other keybinds
       "SUPER, O, exec, ~/.dotfiles/config/hypr/hyprland/scripts/apps.sh"
       "SUPER, TAB, workspace, previous"
-      "SUPER, Y, exec, ~/.dotfiles/config/hypr/hyprland/scripts/toggle_monitor.sh"
-      "SUPER+SHIFT, Y, exec, ~/.dotfiles/config/hypr/hyprland/scripts/toggle_laptop_screen.sh"
-      "SUPER, T, exec, ~/bin/switch_theme.sh"
       "SUPER, E, exec, ~/bin/power.sh"
       "SUPER, W, exec, pidof waybar && pkill waybar || waybar &"
       ",Print, exec, ~/bin/screenshot.sh"
