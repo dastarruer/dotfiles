@@ -6,6 +6,7 @@
     ./kill-apps.nix
     ./move-windows-to-monitor.nix
     ./toggle-monitor.nix
+    ./screenshot.nix
   ];
 
   wayland.windowManager.hyprland.settings = {
@@ -67,7 +68,6 @@
       "SUPER, TAB, workspace, previous"
       "SUPER, E, exec, ~/bin/power.sh"
       "SUPER, W, exec, pidof waybar && pkill waybar || waybar &"
-      ",Print, exec, ~/bin/screenshot.sh"
       "SUPER, S, togglespecialworkspace, magic"
       "SUPER+SHIFT, S, movetoworkspace, special:magic"
       "SUPER, mouse_down, workspace, e+1"
