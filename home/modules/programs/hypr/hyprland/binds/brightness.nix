@@ -1,6 +1,7 @@
 {pkgs, ...}: let
+  name = "brightness";
   script = "${pkgs.writeShellApplication {
-    name = "brightness";
+    name = "${name}";
     runtimeInputs = with pkgs; [
       hyprland
       jq
@@ -50,7 +51,7 @@
           fi
       fi
     '';
-  }}/bin/brightness";
+  }}/bin/${name}";
 in {
   wayland.windowManager.hyprland.settings = {
     bind = [

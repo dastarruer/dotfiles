@@ -1,8 +1,10 @@
 {pkgs, ...}: {
   wayland.windowManager.hyprland.settings = {
-    bind = [
+    bind = let
+      name = "headphones";
+    in [
       "SUPER, B, exec, ${pkgs.writeShellApplication {
-        name = "airpods";
+        name = "${name}";
         runtimeInputs = with pkgs; [
           bluez
           libnotify
@@ -52,7 +54,7 @@
               playerctl -p "$ACTIVE_PLAYER" play
           fi
         '';
-      }}/bin/airpods"
+      }}/bin/${name}"
     ];
   };
 }

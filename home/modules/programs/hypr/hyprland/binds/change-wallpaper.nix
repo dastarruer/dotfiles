@@ -1,8 +1,10 @@
 {pkgs, ...}: {
   wayland.windowManager.hyprland.settings = {
-    bind = [
+    bind = let
+      name = "change_wallpaper";
+    in [
       "SUPER+SHIFT, W, exec, ${pkgs.writeShellApplication {
-        name = "change_wallpaper";
+        name = "${name}";
         runtimeInputs = with pkgs; [
           swww
           libnotify
@@ -37,7 +39,7 @@
           # Notify user
           notify-send -t 1000 "Wallpaper set to: $(basename "''\${WALLPAPERS[$NEXT_INDEX]}")"
         '';
-      }}/bin/change_wallpaper"
+      }}/bin/${name}"
     ];
   };
 }

@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./airpods.nix
+    ./headphones.nix
     ./change-wallpaper.nix
     ./brightness.nix
   ];
