@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 waybar &
-swww-daemon &
 nm-applet &
 
 # Start apps
