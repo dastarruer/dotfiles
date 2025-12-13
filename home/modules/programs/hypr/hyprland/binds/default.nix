@@ -1,6 +1,8 @@
 {...}: {
   imports = [
     ./airpods.nix
+    ./change-wallpaper.nix
+    ./brightness.nix
   ];
 
   wayland.windowManager.hyprland.settings = {
@@ -61,7 +63,6 @@
       "SUPER, P, exec, ~/.dotfiles/config/hypr/hyprland/scripts/kill_apps.sh"
       "SUPER, O, exec, ~/.dotfiles/config/hypr/hyprland/scripts/apps.sh"
       "SUPER, TAB, workspace, previous"
-      "SUPER+SHIFT, W, exec, ~/bin/change-wallpaper.sh"
       "SUPER, K, exec, ~/.dotfiles/config/hypr/hyprland/scripts/move_windows_to_monitor.sh"
       "SUPER, Y, exec, ~/.dotfiles/config/hypr/hyprland/scripts/toggle_monitor.sh"
       "SUPER+SHIFT, Y, exec, ~/.dotfiles/config/hypr/hyprland/scripts/toggle_laptop_screen.sh"
@@ -99,8 +100,6 @@
       ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-      "ALT, B, exec, ~/.dotfiles/config/hypr/hyprland/scripts/brightness.sh + 5"
-      "ALT, V, exec, ~/.dotfiles/config/hypr/hyprland/scripts/brightness.sh - 5"
     ];
 
     # Legacy media keys
