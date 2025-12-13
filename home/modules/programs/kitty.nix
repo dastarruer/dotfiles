@@ -24,4 +24,9 @@
       confirm_os_window_close = 0;
     };
   };
+
+  # Set hyprland keybind
+  wayland.windowManager.hyprland.settings."bind" = [
+    "SUPER, RETURN, exec, kitty"
+  ];
 }

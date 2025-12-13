@@ -13,7 +13,6 @@
   wayland.windowManager.hyprland.settings = {
     # General Mod and Terminal
     "bind" = [
-      "SUPER, RETURN, exec, kitty"
       "SUPER, Q, killactive"
       "SUPER, E, exec, $fileManager"
       "SUPER, Space, togglefloating"
@@ -50,6 +49,7 @@
       "SUPER, 9, workspace, 9"
       "SUPER, 0, workspace, 10"
       "SUPER, minus, workspace, 11"
+      "SUPER, TAB, workspace, previous"
 
       # Move windows to workspace
       "SUPER+SHIFT, 1, movetoworkspacesilent, 1"
@@ -65,9 +65,7 @@
       "SUPER+SHIFT, minus, movetoworkspacesilent, 11"
 
       # Other keybinds
-      "SUPER, TAB, workspace, previous"
       "SUPER, E, exec, ~/bin/power.sh"
-      "SUPER, W, exec, pidof waybar && pkill waybar || waybar &"
       "SUPER, S, togglespecialworkspace, magic"
       "SUPER+SHIFT, S, movetoworkspace, special:magic"
       "SUPER, mouse_down, workspace, e+1"

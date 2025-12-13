@@ -6,8 +6,20 @@
 
   programs.waybar.enable = true;
 
-  # Start waybar
-  wayland.windowManager.hyprland.settings."exec-once" = [
-    "waybar &"
-  ];
+  wayland.windowManager.hyprland.settings = {
+    # Start waybar
+    "exec-once" = [
+      "waybar &"
+    ];
+    # Start/stop waybar keybind
+    bind = [
+      "SUPER, W, exec, pidof waybar && pkill waybar || waybar &"
+    ];
+    # more hyprland stuff i dont understand
+    layerrule = [
+      "blur, waybar"
+      "xray 0, waybar"
+      "ignorezero, waybar"
+    ];
+  };
 }
