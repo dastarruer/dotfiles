@@ -1,0 +1,5 @@
+source = $HOME/.config/hypr/hyprlock/background.conf
+source = $HOME/.config/hypr/hyprlock/password-input.conf
+source = $HOME/.config/hypr/hyprlock/battery-status.conf
+source = $HOME/.config/hypr/hyprlock/date.conf
+source = $HOME/.config/hypr/hyprlock/pfp.conf

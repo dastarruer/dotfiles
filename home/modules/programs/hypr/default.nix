@@ -1,8 +1,8 @@
-{config, ...}: {
+{...}: {
   imports = [
     ./hyprland
     # ./hypridle.nix
-    ./hyprlock.nix
+    ./hyprlock
     ./hyprsunset.nix
   ];
 
@@ -10,7 +10,7 @@
   xdg.configFile = {
     "hypr/hyprland.conf".enable = true;
     "hypr/hypridle.conf".enable = false;
-    "hypr/hyprlock.conf".enable = false;
+    "hypr/hyprlock.conf".enable = true;
   };
 
   # Symlink hyprland config

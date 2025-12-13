@@ -13,6 +13,7 @@
 
       # These are fine
       hyprland.enable = false;
+      hyprlock.enable = false;
       anki.enable = false;
       spicetify.enable = false;
       waybar.enable = false;
