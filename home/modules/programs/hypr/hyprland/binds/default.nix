@@ -1,4 +1,8 @@
 {...}: {
+  imports = [
+    ./airpods.nix
+  ];
+
   wayland.windowManager.hyprland.settings = {
     # General Mod and Terminal
     "bind" = [
@@ -62,7 +66,6 @@
       "SUPER, Y, exec, ~/.dotfiles/config/hypr/hyprland/scripts/toggle_monitor.sh"
       "SUPER+SHIFT, Y, exec, ~/.dotfiles/config/hypr/hyprland/scripts/toggle_laptop_screen.sh"
       "SUPER, T, exec, ~/bin/switch_theme.sh"
-      "SUPER, B, exec, ~/bin/airpods.sh"
       "SUPER, E, exec, ~/bin/power.sh"
       "SUPER, W, exec, pidof waybar && pkill waybar || waybar &"
       ",Print, exec, ~/bin/screenshot.sh"

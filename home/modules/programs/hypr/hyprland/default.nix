@@ -4,11 +4,12 @@
   ...
 }: {
   imports = [
+    ./binds
+
     ./colors.nix
     ./windowrules.nix
     ./misc.nix
     ./layerrules.nix
-    ./keybinds.nix
     ./input.nix
     ./decoration.nix
     ./autostart.nix
