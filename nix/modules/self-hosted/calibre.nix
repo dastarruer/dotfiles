@@ -1,5 +1,5 @@
 # On install, use admin and admin123 for username and password respectively
-{...}: {
+{pkgs, ...}: {
   services.calibre-web = {
     enable = true;
     openFirewall = true;
@@ -20,4 +20,6 @@
       enableBookUploading = true;
     };
   };
+
+  environment.systemPackages = [pkgs.calibre];
 }

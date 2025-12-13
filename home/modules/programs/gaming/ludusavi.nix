@@ -32,7 +32,7 @@
     };
 
     Timer = {
-      OnCalendar = "19:00";
+      OnCalendar = "Sat 11:00";
     };
 
     Install = {
