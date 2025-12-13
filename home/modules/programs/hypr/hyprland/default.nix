@@ -11,6 +11,7 @@
     ./keybinds.nix
     ./input.nix
     ./decoration.nix
+    ./autostart.nix
     # ./plugins.nix
   ];
 

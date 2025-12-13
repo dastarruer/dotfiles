@@ -1,1 +1,1 @@
-/nix/store/hmp8r8n4g3lq1lh9k44gpfwwicn25ym9-home-manager-files/bin/airpods.sh
+/nix/store/ksy1q2r8c6drdd41p3aa1xss3gana005-home-manager-files/bin/airpods.sh

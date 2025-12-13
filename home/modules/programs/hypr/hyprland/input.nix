@@ -19,6 +19,7 @@
         disable_while_typing = 0;
       };
     };
+
     # Device-specific settings
     device = {
       name = "epic-mouse-v1";
