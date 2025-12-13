@@ -16,7 +16,7 @@
     ./whatsapp.nix
     ./waybar
     ./vscodium
-    ./hyprland
+    ./hypr
     # ./flameshot.nix
     ./anki
     # ./sherlock.nix

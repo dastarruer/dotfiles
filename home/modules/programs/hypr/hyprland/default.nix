@@ -5,10 +5,10 @@
   ...
 }: {
   imports = [
-    ./hyprlock.nix
+    ../hyprlock.nix
     # ./hypridle.nix
-    ./hyprsunset.nix
-    ./colors.nix
+    ../hyprsunset.nix
+    ../colors.nix
     # ./plugins.nix
   ];
 
