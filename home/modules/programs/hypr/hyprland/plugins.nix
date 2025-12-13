@@ -7,8 +7,12 @@
     plugins = [
       inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
     ];
+
+    settings = {
+      "plugin:split-monitor-workspaces" = {
+        keep_focused = true;
+        enable_persistent_workspaces = false;
+      };
+    };
   };
-  home.file.".cache/hypr/load-plugins.conf".text = ''
-    exec-once = hyprctl plugin load ${inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces}/lib/libsplit-monitor-workspaces.so;
-  '';
 }
