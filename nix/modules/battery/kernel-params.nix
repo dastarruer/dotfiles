@@ -45,4 +45,16 @@
     # Disable wake-on-lan
     ''ACTION=="add", SUBSYSTEM=="net", KERNEL=="eth*", RUN+="${pkgs.ethtool}/bin/ethtool -s %k wol d"''
   ];
+
+  #   I thnk this works?
+  systemd.services.amdgpu-power = {
+    description = "Set AMD GPU to battery mode";
+    after = ["multi-user.target"];
+    wantedBy = ["multi-user.target"];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "/bin/sh -c 'echo battery > /sys/class/drm/card1/device/power_dpm_state'";
+      RemainAfterExit = true;
+    };
+  };
 }
