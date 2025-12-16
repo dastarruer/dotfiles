@@ -1,4 +1,4 @@
-{...}: {
+{lib, pkgs, ...}: {
   # Doesn't declare all kernel params, just the ones for battery saving
   boot.kernelParams = [
     # Enable aggressive SATA link power management (saves power on SSD/HDD).
@@ -20,11 +20,22 @@
     "snd_hda_intel.power_save=10"
 
     # No clue (https://wiki.archlinux.org/title/Power_management#Writeback_Time)
-    "vm.dirty_writeback_centisecs = 6000"
+    "vm.dirty_writeback_centisecs=6000"
+
+    # Disable kernel debugger
+    "kernel.nmi_watchdog=0"
   ];
 
   boot.blacklistedKernelModules = [
     # Disable ethernet
     "r8169"
+  ];
+
+  services.udev.extraRules = lib.concatStringsSep "\n" [
+    # USB autosuspend: (https://ivanvojtko.blogspot.com/2016/04/how-to-get-longer-battery-life-on-linux.html)
+    ''ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"''
+
+    # Disable wake-on-lan
+    ''ACTION=="add", SUBSYSTEM=="net", KERNEL=="eth*", RUN+="${pkgs.ethtool}/bin/ethtool -s %k wol d"''
   ];
 }
