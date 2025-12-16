@@ -28,6 +28,9 @@
 
     # Disable kernel debugger
     "kernel.nmi_watchdog=0"
+
+    # Power saving for integrated gpu
+    "amdgpu.dpm=1"
   ];
 
   boot.blacklistedKernelModules = [
