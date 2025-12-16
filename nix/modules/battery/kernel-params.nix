@@ -1,4 +1,8 @@
-{lib, pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   # Doesn't declare all kernel params, just the ones for battery saving
   boot.kernelParams = [
     # Enable aggressive SATA link power management (saves power on SSD/HDD).

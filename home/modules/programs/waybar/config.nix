@@ -65,7 +65,8 @@
         "format" = "<span color='#${config.lib.stylix.colors.base09}'><b>bat:</b></span> {capacity}%<span color='#${config.lib.stylix.colors.base01}'> / </span>";
         "format-charging" = "<span color='#${config.lib.stylix.colors.base09}'><b>ac:</b></span> {capacity}%<span color='#${config.lib.stylix.colors.base01}'> / </span>";
         "format-plugged" = "";
-        tooltip = false;
+        tooltip = true;
+        tooltip-format = "{timeTo}";
         interval = 20;
       };
 
