@@ -22,4 +22,9 @@
     # No clue (https://wiki.archlinux.org/title/Power_management#Writeback_Time)
     "vm.dirty_writeback_centisecs = 6000"
   ];
+
+  boot.blacklistedKernelModules = [
+    # Disable ethernet
+    "r8169"
+  ];
 }
