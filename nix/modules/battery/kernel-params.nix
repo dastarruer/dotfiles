@@ -13,7 +13,13 @@
     # Disable legacy VGA decoding to allow GPU to fully power down.
     "vga_disable_vga=1"
 
-    # Enable usb autosuspend after 120 seconds
-    "usbcore.autosuspend=120"
+    # Enable usb autosuspend after 5 seconds (https://wiki.archlinux.org/title/Power_management#USB_autosuspend)
+    "usbcore.autosuspend=5"
+
+    # Turn on powersaving timeout for audio kernel module (https://wiki.archlinux.org/title/Power_management#Audio)
+    "snd_hda_intel.power_save=10"
+
+    # No clue (https://wiki.archlinux.org/title/Power_management#Writeback_Time)
+    "vm.dirty_writeback_centisecs = 6000"
   ];
 }
