@@ -30,5 +30,6 @@
     ./direnv.nix
     ./obsidian.nix
     ./sober.nix
+    ./batsignal.nix
   ];
 }
