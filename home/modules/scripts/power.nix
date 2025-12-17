@@ -6,8 +6,8 @@
         runtimeInputs = with prev; [
           rofi
           hyprlock
-          hyprland
-          systemdMinimal
+          hyprland # hyprctl
+          systemdMinimal # systemctl
         ];
         text = ''
           # Define options
@@ -25,7 +25,7 @@
               hyprctl dispatch exit
               ;;
           "󰥔 Suspend")
-              $HOME/bin/pause-all.sh
+              "$HOME"/bin/pause-all.sh
               hyprlock & disown && systemctl suspend
               ;;
           " Reboot")
