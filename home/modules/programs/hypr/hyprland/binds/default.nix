@@ -1,15 +1,4 @@
-{...}: {
-  imports = [
-    ./headphones.nix
-    ./change-wallpaper.nix
-    ./brightness.nix
-    ./kill-apps.nix
-    ./move-windows-to-monitor.nix
-    ./toggle-monitor.nix
-    ./screenshot.nix
-    ./apps.nix
-  ];
-
+{pkgs, ...}: {
   wayland.windowManager.hyprland.settings = {
     # General Mod and Terminal
     "bind" = [
@@ -63,6 +52,18 @@
       "SUPER+SHIFT, 9, movetoworkspacesilent, 9"
       "SUPER+SHIFT, 0, movetoworkspacesilent, 10"
       "SUPER+SHIFT, minus, movetoworkspacesilent, 11"
+
+      # Custom scripts (defined in home/modules/scripts)
+      "SUPER, O, exec, ${pkgs.apps}/bin/apps"
+      "ALT, B, exec, ${pkgs.brightness}/bin/brightness + 5"
+      "ALT, V, exec, ${pkgs.brightness}/bin/brightness - 5"
+      "SUPER+SHIFT, W, exec, ${pkgs.change-wallpaper}/bin/change-wallpaper"
+      "SUPER, B, exec, ${pkgs.headphones}/bin/headphones"
+      "SUPER, P, exec, ${pkgs.kill-apps}/bin/kill-apps"
+      "SUPER, K, exec, ${pkgs.move-windows-to-monitor}/bin/move-windows-to-monitor"
+      "SUPER, Y, exec, ${pkgs.toggle-hdmi}/bin/toggle-HDMI-A-1"
+      "SUPER+SHIFT, Y, exec, ${pkgs.toggle-laptop}/bin/toggle-eDP-1"
+      ",Print, exec, ${pkgs.screenshot}/bin/screenshot"
 
       # Other keybinds
       "SUPER, E, exec, ~/bin/power.sh"
