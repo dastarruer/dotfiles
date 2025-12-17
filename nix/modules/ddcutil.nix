@@ -39,8 +39,8 @@
     ddcciDev = "AMDGPU DM i2c hw bus 1";
     ddcciNode = "/sys/bus/i2c/devices/i2c-7/new_device";
   in ''
-      SUBSYSTEM=="i2c", ACTION=="add", ATTR{name}=="${ddcciDev}", RUN+="${bash} -c 'sleep 30; printf ddcci\ 0x37 > ${ddcciNode}'"
-    # '';
+    SUBSYSTEM=="i2c", ACTION=="add", ATTR{name}=="${ddcciDev}", RUN+="${bash} -c 'sleep 30; printf ddcci\ 0x37 > ${ddcciNode}'"
+  '';
 
   # https://wiki.nixos.org/wiki/Backlight#Via_ddcutil
   # this way i have to manually use the ddcutil command but it's faster so yk

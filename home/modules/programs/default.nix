@@ -31,5 +31,6 @@
     ./obsidian.nix
     ./sober.nix
     ./swww.nix
+    ./batsignal.nix
   ];
 }
