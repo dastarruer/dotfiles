@@ -4,7 +4,7 @@
       name = "handle_monitor_connect";
     in [
       # Start networkmanager in systray
-      "${pkgs.networkmanager}/bin/nm-applet"
+      "${pkgs.networkmanagerapplet}/bin/nm-applet"
 
       # Move all windows to monitor on connect (https://wiki.hypr.land/FAQ/#how-do-i-move-my-favorite-workspaces-to-a-new-monitor-when-i-plug-it-in)
       "${pkgs.writeShellApplication {

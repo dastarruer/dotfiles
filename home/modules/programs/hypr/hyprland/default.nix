@@ -27,17 +27,6 @@
   };
 
   home = {
-    # Hyprland packages needed
-    packages = with pkgs; [
-      waybar
-      swww
-      jq
-      socat
-
-      # Network manager
-      networkmanagerapplet
-    ];
-
     # Use wayland
     sessionVariables.NIXOS_OZONE_WL = "1";
   };
