@@ -4,8 +4,7 @@
     settings = {
       "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
       logo = {
-        # TODO: Move this somewhere else
-        source = ./hypr/hyprlock/images/pfp.png;
+        source = "${../../../config/images/pfp.png}";
         type = "kitty";
         height = 6;
         width = 12;
