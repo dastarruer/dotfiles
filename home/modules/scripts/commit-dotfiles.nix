@@ -11,6 +11,8 @@
           dotfiles="$HOME/.dotfiles"
           nix="$dotfiles"
 
+          cd "$dotfiles"
+
           # Get commit message
           if [ -z "$1" ]; then
             COMMIT_MESSAGE="stuff"
@@ -22,9 +24,8 @@
           git pull
 
           # Lint all nix files
-          alejandra $nix
+          alejandra "$nix"
 
-          cd "$dotfiles"
           git add .
           git commit -m "$COMMIT_MESSAGE"
           git push & disown

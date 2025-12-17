@@ -2,7 +2,8 @@
   programs.hyprlock.settings.image = [
     {
       monitor = "";
-      path = "~/.config/hypr/hyprlock/images/pfp.png";
+      # TODO: Move this somewhere else
+      path = "${./images/pfp.png}";
       border_color = "0xffdddddd";
       border_size = 3;
       size = 173;
