@@ -64,9 +64,9 @@
       "SUPER, Y, exec, ${pkgs.toggle-hdmi}/bin/toggle-HDMI-A-1"
       "SUPER+SHIFT, Y, exec, ${pkgs.toggle-laptop}/bin/toggle-eDP-1"
       ",Print, exec, ${pkgs.screenshot}/bin/screenshot"
+      "SUPER, E, exec, ${pkgs.power}/bin/power"
 
       # Other keybinds
-      "SUPER, E, exec, ~/bin/power.sh"
       "SUPER, S, togglespecialworkspace, magic"
       "SUPER+SHIFT, S, movetoworkspace, special:magic"
       "SUPER, mouse_down, workspace, e+1"

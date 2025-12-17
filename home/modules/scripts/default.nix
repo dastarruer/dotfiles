@@ -8,5 +8,6 @@
     ./move-windows-to-monitor.nix
     ./screenshot.nix
     ./toggle-monitors.nix
+    ./power.nix
   ];
 }
