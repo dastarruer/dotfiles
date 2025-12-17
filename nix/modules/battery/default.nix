@@ -35,7 +35,7 @@
   ];
 
   # Powersaving for wifi
-  networking.networkmanager.settings.connection.wifi.powersave = 3;
+  networking.networkmanager.settings.connection."wifi.powersave" = 3;
 
   # Enable NixOS power management hooks (basic integration).
   powerManagement = {
