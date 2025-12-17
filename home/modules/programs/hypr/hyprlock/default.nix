@@ -12,22 +12,23 @@
     enable = true;
   };
 
+  # https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Custom_systemd_units
   systemd.user.services.hyprlock = {
     Unit = {
-      Description = "Lock screen with hyprlock before suspend";
+      Description = "Lock the screen before sleep";
       Before = ["sleep.target"];
-    };
-
-    Service = {
-      Type = "forking";
-      ExecStart = "${pkgs.hyprlock}/bin/hyprlock";
-
-      # https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Custom_systemd_units
-      ExecStartPost = "${pkgs.coreutils}/bin/sleep 1";
     };
 
     Install = {
       WantedBy = ["sleep.target"];
+    };
+
+    Service = {
+      Type = "forking";
+      User = "%I";
+      Environment = "DISPLAY=:0";
+      ExecStart = "${pkgs.hyprlock}/bin/hyprlock";
+      ExecStartPost = "${pkgs.coreutils}/bin/sleep 1";
     };
   };
 }

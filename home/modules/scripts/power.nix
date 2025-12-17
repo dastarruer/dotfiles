@@ -21,14 +21,15 @@
 
           case "$CHOICE" in
           " Lock")
-              ${lockCommand}
+              ${lockCommand} & disown
               ;;
           "󰗽 Logout")
               ${logoutCommand}
               ;;
           "󰥔 Suspend")
               "$HOME"/bin/pause-all.sh
-              systemctl suspend
+              # TODO: Create systemd service to auto-lock on suspend
+              ${lockCommand} & disown && sleep 1 && systemctl suspend
               ;;
           " Reboot")
               # ~/bin/save_workspace_layouts.sh
