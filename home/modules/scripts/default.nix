@@ -11,5 +11,6 @@
     ./backup.nix
     ./power.nix
     ./fzfdf.nix
+    ./commit-dotfiles.nix
   ];
 }
