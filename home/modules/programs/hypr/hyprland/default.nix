@@ -38,7 +38,7 @@
       networkmanagerapplet
     ];
 
-    # This line does not do anything, so this env variable is declared in config.fish
-    # sessionVariables.NIXOS_OZONE_WL = "1";
+    # Use wayland
+    sessionVariables.NIXOS_OZONE_WL = "1";
   };
 }

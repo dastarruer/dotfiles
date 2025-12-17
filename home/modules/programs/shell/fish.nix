@@ -41,10 +41,4 @@
       fastfetch
     '';
   };
-
-  # Set session variables (replaces set -x)
-  home.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-    NIXPKGS_ALLOW_UNFREE = "1";
-  };
 }

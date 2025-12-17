@@ -18,6 +18,9 @@
 
     # I couldn't tell you what this does but oh well
     stateVersion = "25.11";
+
+    # Allow unfree packages.
+    sessionVariables.NIXPKGS_ALLOW_UNFREE = "1";
   };
 
   programs.home-manager.enable = true;
