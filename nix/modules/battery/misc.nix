@@ -21,4 +21,6 @@
   # - Gives foreground/interactive tasks higher CPU priority
   # - Improves desktop responsiveness (especially useful on laptops).
   services.system76-scheduler.settings.cfsProfiles.enable = true;
+
+  powerManagement.powertop.enable = true;
 }
