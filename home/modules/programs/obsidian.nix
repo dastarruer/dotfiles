@@ -11,4 +11,10 @@
       "!fallback-x11"
     ];
   };
+
+  wayland.windowManager.hyprland.settings = {
+    windowrulev2 = [
+      "workspace 10 silent,class:^(obsidian)$"
+    ];
+  };
 }

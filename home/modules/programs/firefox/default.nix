@@ -28,4 +28,14 @@ in {
 
     colorTheme.enable = true;
   };
+
+  # Windowrules for picture-in-picture
+  wayland.windowManager.hyprland.settings = {
+    windowrule = [
+      "float, title:^(Picture-in-Picture)$"
+      "move 1492 839, title:^(Picture-in-Picture)$"
+      "size 427 240, title:^(Picture-in-Picture)$"
+      "pin, title:^(Picture-in-Picture)$"
+    ];
+  };
 }

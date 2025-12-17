@@ -42,4 +42,15 @@
     body = "grim's screenshot component is implemented based on wlroots, it may not be used in GNOME or similar desktop environments";
     format = "";
   };
+
+  wayland.windowManager.hyprland.settings = {
+    windowrule = [
+      "noanim, title:^(flameshot)$"
+      "float, title:^(flameshot)$"
+      "move 0 0, title:^(flameshot)$"
+      "pin, title:^(flameshot)$"
+      "noinitialfocus, title:^(flameshot)$"
+      "monitor 1, class:^(flameshot)$"
+    ];
+  };
 }

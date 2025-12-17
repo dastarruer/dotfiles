@@ -19,4 +19,11 @@
 
   # Set zathura as default pdf viewer
   xdg.mimeApps.defaultApplications."application/pdf" = ["org.pwmt.zathura.desktop"];
+
+  wayland.windowManager.hyprland.settings = {
+    windowrulev2 = [
+      "workspace 9 silent,class:^(anki)$"
+      "idleinhibit focus, class:^(anki)$"
+    ];
+  };
 }

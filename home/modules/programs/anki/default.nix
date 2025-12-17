@@ -26,4 +26,10 @@
       usernameFile = config.sops.secrets.email.path;
     };
   };
+
+  wayland.windowManager.hyprland.settings = {
+    windowrulev2 = [
+      "idleinhibit focus, class:^(org.pwmt.zathura)$"
+    ];
+  };
 }
