@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   nixpkgs.overlays = [
     (final: prev: {
       power = prev.writeShellApplication {
@@ -28,7 +28,7 @@
               ${logoutCommand}
               ;;
           "󰥔 Suspend")
-              "$HOME"/bin/pause-all.sh
+              ${pkgs.pause-all}/bin/pause-all
               # TODO: Create systemd service to auto-lock on suspend
               ${lockCommand} & disown && sleep 1 && systemctl suspend
               ;;

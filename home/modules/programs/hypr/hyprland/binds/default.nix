@@ -74,7 +74,7 @@
       "SUPER, G, centerwindow"
       "SUPER, F, fullscreen"
       ",XF86AudioPlay, exec, playerctl play-pause -p spotify"
-      "SHIFT,XF86AudioPlay, exec, $HOME/bin/pause-all.sh"
+      "SHIFT,XF86AudioPlay, exec, ${pkgs.pause-all}/bin/pause-all"
       ",XF86AudioPrev, exec, playerctl previous"
       ",XF86AudioNext, exec, playerctl next"
 
