@@ -13,7 +13,7 @@
     HandleHibernateKeyLongPress = "reboot";
 
     # Suspend laptop if lid is closed, and if is connected to monitor then don't do anything
-    HandleLidSwitch = "ignore"; #"suspend";
+    HandleLidSwitch = "suspend";
     HandleLidSwitchDocked = "ignore";
   };
 }

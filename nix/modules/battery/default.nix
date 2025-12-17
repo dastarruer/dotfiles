@@ -58,8 +58,6 @@
   # - Improves desktop responsiveness (especially useful on laptops).
   services.system76-scheduler.settings.cfsProfiles.enable = true;
 
-  powerManagement.powertop.enable = true;
-
   # I thnk this works?
   systemd.services.amdgpu-power = {
     description = "Set AMD GPU to battery mode";
