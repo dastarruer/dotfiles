@@ -10,5 +10,6 @@
     ./toggle-monitors.nix
     ./backup.nix
     ./power.nix
+    ./fzfdf.nix
   ];
 }
