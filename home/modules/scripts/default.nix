@@ -1,3 +1,4 @@
+# A collection of bash scripts that have been added to nixpkgs using overlays. This is so that scripts can be added to things like keybinds, or home.packages
 {...}: {
   imports = [
     ./change-wallpaper.nix
