@@ -9,7 +9,9 @@
           libnotify
           blueman
           playerctl
+          coreutils
           gnugrep
+          gawk
         ];
 
         text = ''

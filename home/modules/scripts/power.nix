@@ -8,6 +8,7 @@
           hyprlock
           hyprland # hyprctl
           systemd # systemctl
+          coreutils # echo
         ];
         text = let
           lockCommand = "hyprlock";
@@ -32,11 +33,9 @@
               ${lockCommand} & disown && sleep 1 && systemctl suspend
               ;;
           " Reboot")
-              # ~/bin/save_workspace_layouts.sh
               systemctl reboot
               ;;
           " Shutdown")
-              # ~/bin/save_workspace_layouts.sh
               systemctl poweroff
               ;;
           *)

@@ -8,6 +8,7 @@
           swww
           libnotify
           findutils
+          coreutils
         ];
 
         text = ''

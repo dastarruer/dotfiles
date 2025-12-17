@@ -9,6 +9,7 @@
           runtimeInputs = with prev; [
             hyprland
             gawk
+            gnugrep
           ];
 
           text = ''

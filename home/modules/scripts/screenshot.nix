@@ -8,8 +8,9 @@
           rofi
           grimblast
           tesseract
-          wl-clipboard
-          libnotify
+          wl-clipboard # wl-copy
+          libnotify # notify-send
+          coreutils # echo
         ];
 
         text = ''
@@ -22,7 +23,6 @@
           # Handle the main choice
           case "$main_choice" in
               "region screenshot")
-                  echo "Selected: Region Screenshot"
                   sleep 0.3
                   grimblast copysave area -n
                   ;;
@@ -35,9 +35,6 @@
                   sleep 0.3
                   grimblast save area - | tesseract stdin stdout | wl-copy
                   notify-send "Clipboard:" "$(wl-paste)"
-                  ;;
-              *)
-                  echo "No valid option selected."
                   ;;
           esac
         '';

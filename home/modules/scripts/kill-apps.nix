@@ -3,6 +3,11 @@
     (final: prev: {
       kill-apps = prev.writeShellApplication {
         name = "kill-apps";
+
+        runtimeInputs = with prev; [
+          procps # pkill
+        ];
+
         text = ''
           pkill -f todoist
           pkill -f anki

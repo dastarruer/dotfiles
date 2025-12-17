@@ -15,6 +15,8 @@
             rclone
             rsync
             util-linux # mount, eject
+            coreutils
+            sudo
           ];
 
           text = ''

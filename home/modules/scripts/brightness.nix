@@ -1,13 +1,14 @@
-{pkgs, ...}: {
+{...}: {
   nixpkgs.overlays = [
     (final: prev: {
       brightness = prev.writeShellApplication {
         name = "brightness";
 
-        runtimeInputs = with pkgs; [
+        runtimeInputs = with prev; [
           hyprland
           jq
           brillo
+          coreutils
         ];
 
         text = ''

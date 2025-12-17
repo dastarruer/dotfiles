@@ -8,6 +8,7 @@
           nano
           fzf
           findutils
+          coreutils
         ];
         text = ''
           cd ~/.dotfiles
