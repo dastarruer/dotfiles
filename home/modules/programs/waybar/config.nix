@@ -67,7 +67,7 @@
         "format-plugged" = "";
         tooltip = true;
         tooltip-format = "{timeTo}";
-        interval = 20;
+        interval = 5;
       };
 
       backlight = {
