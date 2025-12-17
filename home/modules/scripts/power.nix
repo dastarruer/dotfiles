@@ -7,9 +7,12 @@
           rofi
           hyprlock
           hyprland # hyprctl
-          systemdMinimal # systemctl
+          systemd # systemctl
         ];
-        text = ''
+        text = let
+          lockCommand = "hyprlock";
+          logoutCommand = "hyprctl dispatch exit";
+        in ''
           # Define options
           OPTIONS=" Lock\n󰗽 Logout\n󰥔 Suspend\n Reboot\n Shutdown"
 
@@ -18,15 +21,14 @@
 
           case "$CHOICE" in
           " Lock")
-              hyprlock
+              ${lockCommand}
               ;;
           "󰗽 Logout")
-              # ~/bin/save_workspace_layouts.sh
-              hyprctl dispatch exit
+              ${logoutCommand}
               ;;
           "󰥔 Suspend")
               "$HOME"/bin/pause-all.sh
-              hyprlock & disown && systemctl suspend
+              systemctl suspend
               ;;
           " Reboot")
               # ~/bin/save_workspace_layouts.sh
