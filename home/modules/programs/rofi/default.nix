@@ -9,4 +9,10 @@
   programs.rofi = {
     enable = true;
   };
+
+  wayland.windowManager.hyprland.settings = {
+    "bind" = [
+      "SUPER, D, exec, rofi -show drun"
+    ];
+  };
 }
