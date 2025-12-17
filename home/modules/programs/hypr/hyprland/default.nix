@@ -9,7 +9,6 @@
     ./colors.nix
     ./windowrules.nix
     ./misc.nix
-    ./layerrules.nix
     ./input.nix
     ./decoration.nix
     ./autostart.nix

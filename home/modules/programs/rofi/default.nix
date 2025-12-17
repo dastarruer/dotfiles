@@ -14,5 +14,11 @@
     "bind" = [
       "SUPER, D, exec, rofi -show drun"
     ];
+
+    layerrule = [
+      "blur, rofi"
+      "xray 0, rofi"
+      "ignorezero, rofi"
+    ];
   };
 }
