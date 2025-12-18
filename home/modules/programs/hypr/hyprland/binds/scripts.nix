@@ -11,7 +11,6 @@
       "SUPER, K, exec, ${pkgs.move-windows-to-monitor}/bin/move-windows-to-monitor"
       "SUPER, Y, exec, ${pkgs.toggle-hdmi}/bin/toggle-HDMI-A-1"
       "SUPER+SHIFT, Y, exec, ${pkgs.toggle-laptop}/bin/toggle-eDP-1"
-      ",Print, exec, ${pkgs.screenshot}/bin/screenshot"
       "SUPER, E, exec, ${pkgs.power}/bin/power"
     ];
   };
