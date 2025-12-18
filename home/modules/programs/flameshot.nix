@@ -32,11 +32,6 @@
     };
   };
 
-  # Create the save dir for flameshot
-  home.activation.createScreenshotDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    mkdir -p "$HOME/Pictures/screenshots"
-  '';
-
   # Hide the flameshot wayland warning (https://github.com/flameshot-org/flameshot/issues/3186)
   services.dunst.settings.ignore_flameshot_warning = {
     body = "grim's screenshot component is implemented based on wlroots, it may not be used in GNOME or similar desktop environments";

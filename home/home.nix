@@ -19,8 +19,18 @@
     # I couldn't tell you what this does but oh well
     stateVersion = "25.11";
 
-    # Allow unfree packages.
-    sessionVariables.NIXPKGS_ALLOW_UNFREE = "1";
+    sessionVariables = {
+      # Allow unfree packages.
+      NIXPKGS_ALLOW_UNFREE = "1";
+
+      # Necessary for grimblast and other screenshot tools
+      XDG_SCREENSHOTS_DIR = "/home/dastarruer/Pictures/screenshots";
+    };
+
+    # Create the save dir for screenshots
+    activation.createScreenshotDir = lib.hm.dag.entryBefore ["writeBoundary"] ''
+      mkdir -p "$HOME/Pictures/screenshots"
+    '';
   };
 
   programs.home-manager.enable = true;
