@@ -10,6 +10,8 @@
     inputs.sops-nix.homeManagerModules.sops
   ];
 
+  systemd.user.enable = true;
+
   # Set up user
   home = {
     # Set username and home directory
