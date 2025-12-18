@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  # Based off grimblast manual
   wayland.windowManager.hyprland.settings = {
     "bind" = [
       "SUPER, P, exec, ${pkgs.grimblast}/bin/grimblast copysave active -n"
