@@ -26,12 +26,15 @@
       # Necessary for grimblast and other screenshot tools
       XDG_SCREENSHOTS_DIR = "/home/dastarruer/Pictures/screenshots";
     };
-
-    # Create the save dir for screenshots
-    activation.createScreenshotDir = lib.hm.dag.entryBefore ["writeBoundary"] ''
-      mkdir -p "$HOME/Pictures/screenshots"
-    '';
   };
+
+  systemd.user.tmpfiles.rules = [
+    # Create the save dir for screenshots, deleting files older than 30 days
+    "d %h/Pictures/screenshots - - - 30d -"
+
+    # Create the Downloads dir, deleting files older than 5 days
+    "d %h/Downloads - - - 5d -"
+  ];
 
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
