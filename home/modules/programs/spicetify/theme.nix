@@ -24,45 +24,27 @@
       ];
     };
 
+    # Colors can be found here: https://github.com/riasat-sheikh/Onepunch/blob/main/color.ini
+    # Style guide here: https://github.com/chriskempson/base16/blob/main/styling.md
     customColorScheme = {
-      # More vivid accents & UI highlights
-      accent = "${config.lib.stylix.colors.base0C}";
-      accentActive = "${config.lib.stylix.colors.base0D}";
-      accentInactive = "${config.lib.stylix.colors.base03}";
-      banner = "${config.lib.stylix.colors.base0A}";
-      borderActive = "${config.lib.stylix.colors.base08}";
-      borderInactive = "${config.lib.stylix.colors.base01}";
-      header = "${config.lib.stylix.colors.base0E}";
-      highlight = "${config.lib.stylix.colors.base0B}";
-
-      # Background-based elements (restored to original muted tone)
+      text = "${config.lib.stylix.colors.base05}";
+      subtext = "${config.lib.stylix.colors.base04}";
+      extratext = "${config.lib.stylix.colors.base0A}";
       main = "${config.lib.stylix.colors.base00}";
       sidebar = "${config.lib.stylix.colors.base00}";
       player = "${config.lib.stylix.colors.base00}";
-      secPlayer = "${config.lib.stylix.colors.base04}";
-      card = "${config.lib.stylix.colors.base02}";
-      secCard = "${config.lib.stylix.colors.base03}";
-      shadow = "${config.lib.stylix.colors.base01}";
-      selectedRow = "${config.lib.stylix.colors.base02}";
-
-      # Text & UI
-      text = "${config.lib.stylix.colors.base05}";
-      subtext = "${config.lib.stylix.colors.base05}";
-      extratext = "${config.lib.stylix.colors.base05}";
-      defaultFgColor = "${config.lib.stylix.colors.base05}";
-
-      # Buttons (vivid upgrades retained)
-      button = "${config.lib.stylix.colors.base0D}";
-      buttonActive = "${config.lib.stylix.colors.base0B}";
-      buttonDisabled = "${config.lib.stylix.colors.base01}";
-
-      # Tabs and misc
-      tabActive = "${config.lib.stylix.colors.base0E}";
-      misc = "${config.lib.stylix.colors.base03}";
-
-      # Notifications
+      sec-player = "${config.lib.stylix.colors.base00}";
+      card = "${config.lib.stylix.colors.base01}";
+      sec-card = "${config.lib.stylix.colors.base08}";
+      shadow = "${config.lib.stylix.colors.base00}";
+      selected-row = "${config.lib.stylix.colors.base05}";
+      button = "${config.lib.stylix.colors.base09}";
+      button-active = "${config.lib.stylix.colors.base09}";
+      button-disabled = "${config.lib.stylix.colors.base05}";
+      tab-active = "${config.lib.stylix.colors.base08}";
       notification = "${config.lib.stylix.colors.base09}";
-      notificationError = "${config.lib.stylix.colors.base08}";
+      notification-error = "${config.lib.stylix.colors.base08}";
+      misc = "${config.lib.stylix.colors.base0D}";
     };
   };
 }
