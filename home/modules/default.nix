@@ -10,5 +10,6 @@
     ./stylix.nix
     ./gtk.nix
     ./maintenance.nix
+    ./fontconfig.nix
   ];
 }
