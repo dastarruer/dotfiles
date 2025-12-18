@@ -2,6 +2,7 @@
   inputs,
   pkgs,
   config,
+  lib,
   ...
 }: {
   imports = [
@@ -34,18 +35,21 @@
     # The script to run every time a url is clicked
     desktopEntries."open_url" = {
       name = "Open URL";
-      exec = "${pkgs.writeShellApplication {
+
+      exec = let
+        firefoxPkg = config.programs.firefox.package;
+      in "${pkgs.writeShellApplication {
         name = "open-url";
 
-        runtimeInputs = with pkgs; let
-          firefoxPkg = config.programs.firefox.package;
-        in [
+        runtimeInputs = with pkgs; [
           jq
           hyprland
           firefoxPkg
         ];
 
-        text = ''
+        text = let
+          firefoxExe = lib.getExe firefoxPkg;
+        in ''
           #!/run/current-system/sw/bin/bash
           # Get current workspace ID
           workspace_id=$(hyprctl activeworkspace -j | jq ".id")
@@ -66,10 +70,10 @@
               # Focus the existing Firefox window
               hyprctl dispatch focuswindow address:"$current_ff_address"
               # Open the URL in a new tab
-              firefox-nightly --new-tab "$url" &
+              ${firefoxExe} --new-tab "$url" &
           else
               # No Firefox window on this workspace, open a new window
-              firefox-nightly --new-window "$url" &
+              ${firefoxExe} --new-window "$url" &
           fi
         '';
       }}/bin/open-url %u";
