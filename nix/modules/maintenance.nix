@@ -1,44 +1,25 @@
 # Comes from https://www.youtube.com/watch?v=EI-6QX60WXc&t=915s
-{...}: {
+{inputs, ...}: {
   # Auto update
-  # system.autoUpgrade = {
-  #   enable = true;
-  #   flake = inputs.self.outPath;
-  #   flags = [
-  #     # Reduce cpu load
-  #     "--max-jobs"
-  #     "4"
-  #     "--cores"
-  #     "4"
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      # Reduce cpu load
+      "--max-jobs"
+      "1"
+      "--cores"
+      "1"
 
-  #     # Update nixpkgs
-  #     "--update-input"
-  #     "nixpkgs"
+      "--impure"
+    ];
 
-  #     # Update flatpaks
-  #     "--update-input"
-  #     "flatpaks"
+    # Run service once laptop has powered on and has internet access
+    persistent = true;
 
-  #     # Update hyprland
-  #     "--update-input"
-  #     "hyprland"
-
-  #     # Impure mode
-  #     "--impure"
-  #   ];
-
-  #   # Run service once laptop has powered on and has internet access
-  #   persistent = true;
-
-  #   # Run after school
-  #   dates = "15:00";
-
-  #   # allow rebooting after every upgrade (just in case!)
-  #   # allowReboot = true;
-
-  #   # Nvm auto reboot sucks
-  #   allowReboot = false;
-  # };
+    # Run after home manager update
+    dates = "Sun 12:00";
+  };
 
   # Remove unused generations
   nix.gc = {

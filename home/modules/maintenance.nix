@@ -9,7 +9,7 @@
     options = "--delete-older-than 7d";
   };
 
-  # Periodically expire hm generations, idk if nix.gc makes this redundant though
+  # Remove old home manager generations
   services.home-manager.autoExpire = {
     enable = true;
     frequency = "daily";
