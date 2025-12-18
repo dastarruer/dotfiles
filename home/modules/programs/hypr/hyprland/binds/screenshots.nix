@@ -1,6 +1,14 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   # Based off grimblast manual
   wayland.windowManager.hyprland.settings = {
+    env = [
+      "SLURP_ARGS, -d -b ${config.lib.stylix.colors.base00}80 -B ${config.lib.stylix.colors.base05}4D -c ${config.lib.stylix.colors.base09}"
+    ];
+
     "bind" = [
       "SUPER, P, exec, ${pkgs.grimblast}/bin/grimblast copysave active -n"
       "SUPER+SHIFT, P, exec, ${pkgs.grimblast}/bin/grimblast copysave area -n"
