@@ -1,7 +1,0 @@
-#custom-hypridle-5min.active,
-#custom-hypridle-30min.active,
-#custom-hypridle-no-suspend.active {
-  color: @color3; /* green for active */
-  background-color: rgba(255, 255, 255, 0.1);
-  font-weight: bold;
-}

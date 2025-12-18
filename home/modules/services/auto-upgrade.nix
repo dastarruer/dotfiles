@@ -40,7 +40,7 @@
     };
 
     Timer = {
-      OnCalendar = "15:00";
+      OnCalendar = "Sat 12:00";
       Persistent = true;
     };
 

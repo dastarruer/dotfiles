@@ -1,7 +1,0 @@
-#custom-nix {
-  color: @foreground;
-  background: @background;
-  padding: 0 14px;
-  margin: 0 4px;
-  border-radius: 0px;
-}

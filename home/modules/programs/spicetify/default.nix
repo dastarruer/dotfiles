@@ -24,6 +24,21 @@ in {
       marketplace
     ];
 
+    # Chromium devtools
+    alwaysEnableDevTools = true;
+
     wayland = true;
+  };
+
+  wayland.windowManager.hyprland.settings = {
+    windowrule = [
+      "float, class:^(spotify)$"
+      "move 81 146, class:^(spotify)$"
+      "size 1068 670, class:^(spotify)$"
+    ];
+
+    windowrulev2 = [
+      "workspace 5 silent,class:^(spotify)$"
+    ];
   };
 }

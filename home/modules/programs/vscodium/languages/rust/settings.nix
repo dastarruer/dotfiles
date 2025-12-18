@@ -12,5 +12,7 @@
 
     # Enable all features for rustfmt
     "rust-analyzer.cargo.allFeatures" = true;
+
+    "rust-analyzer.server.path" = "rust-analyzer";
   };
 }

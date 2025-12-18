@@ -7,37 +7,18 @@
     flags = [
       # Reduce cpu load
       "--max-jobs"
-      "4"
+      "1"
       "--cores"
-      "4"
+      "1"
 
-      # Update nixpkgs
-      "--update-input"
-      "nixpkgs"
-
-      # Update flatpaks
-      "--update-input"
-      "flatpaks"
-
-      # Update hyprland
-      "--update-input"
-      "hyprland"
-
-      # Impure mode
       "--impure"
     ];
 
     # Run service once laptop has powered on and has internet access
     persistent = true;
 
-    # Run after school
-    dates = "15:00";
-
-    # allow rebooting after every upgrade (just in case!)
-    # allowReboot = true;
-
-    # Nvm auto reboot sucks
-    allowReboot = false;
+    # Run after home manager update
+    dates = "Sun 12:00";
   };
 
   # Remove unused generations
@@ -46,8 +27,7 @@
     persistent = true;
     dates = "03:00";
 
-    # Very rarely do i rollback so here ig... will speed up boot too
-    options = "--delete-older-than 2d";
+    options = "--delete-older-than 7d";
   };
 
   # Remove unused packages

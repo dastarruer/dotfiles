@@ -68,6 +68,15 @@
   boot.kernel.sysctl = {
     # Only use swap when completely necessary
     "vm.swappiness" = 20;
+
+    # For RAM intensive applications that may not use all the ram it allocates, promise more ram than is available (only up to a certain point. Otherwise, the process may be killed by earlyoom).
+    # https://medium.com/@charles.vissol/optimize-your-linux-69c70320d852
+    # "vm.overcommit-memory" = 2;
+    "vm.overcommit-memory" = 0;
+
+    # write dirty pages to disk once 5% of ram holds dirty pages
+    # https://medium.com/@charles.vissol/optimize-your-linux-69c70320d852
+    "vm.dirty_background_ratio" = 5;
   };
 
   # Used to sync system clock
@@ -76,4 +85,7 @@
     enable = true;
     servers = ["time.cloudflare.com" "pool.ntp.org"];
   };
+
+  # Reduce blurry fonts: https://www.reddit.com/r/xfce/comments/vfe7uy/comment/icyffxj/?force-legacy-sct=1
+  environment.etc."environment".text = ''FREETYPE_PROPERTIES="truetype:interpreter-version=35"'';
 }

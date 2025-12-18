@@ -6,11 +6,11 @@
   # Symlink a bunch of files
   home.file = {
     # $HOME files
-    "bin" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/.dotfiles/config/bin";
-    };
+    # "bin" = {
+    #   source =
+    #     config.lib.file.mkOutOfStoreSymlink
+    #     "${config.home.homeDirectory}/.dotfiles/config/bin";
+    # };
     ".bashrc" = {
       source =
         config.lib.file.mkOutOfStoreSymlink

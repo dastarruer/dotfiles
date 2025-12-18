@@ -9,5 +9,6 @@
   # install addons that don't need configuration
   programs.anki.addons = with pkgs.ankiAddons; [
     review-heatmap
+    anki-quizlet-importer-extended
   ];
 }

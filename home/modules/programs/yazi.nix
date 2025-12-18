@@ -1,22 +1,25 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   programs.yazi = {
     enable = true;
+
+    keymap = {
+      mgr.prepend_keymap = [
+        {
+          on = "<C-n>";
+          run = ''shell -- ${pkgs.dragon-drop}/bin/dragon-drop -x -i -T "$1"'';
+          desc = "Initiate drag and drop";
+        }
+        {
+          on = "<C-f>";
+          run = "cd /home/dastarruer/Documents/school/G10";
+          desc = "Change to schoolwork dir";
+        }
+        {
+          on = "<C-o>";
+          run = ''shell -- ${pkgs.ocrmypdf}/bin/ocrmypdf --skip-text "$1" "$1"'';
+          desc = "Add OCR layer to pdf";
+        }
+      ];
+    };
   };
-
-  # Dependencies
-  home.packages = with pkgs; [
-    dragon-drop # Drag and drop functionality
-  ];
-
-  # Without this, home manager can't symlink files to .config (https://github.com/nix-community/home-manager/issues/1807#issuecomment-3131623755)
-  xdg.configFile."yazi/keymap.toml".enable = false;
-
-  # Symlink keybinds
-  home.file.".config/yazi/keymap.toml".source =
-    config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/.dotfiles/config/yazi/keymap.toml";
 }

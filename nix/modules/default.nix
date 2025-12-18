@@ -10,11 +10,13 @@
     ./bluetooth.nix
     ./maintenance.nix
     ./networking.nix
-    ./power-button.nix
+    ./logind.nix
     ./system-packages.nix
     ./secrets.nix
     ./audio.nix
     ./gaming.nix
     ./earlyoom.nix
+    ./ddcutil.nix
+    # ./ds4drv.nix
   ];
 }

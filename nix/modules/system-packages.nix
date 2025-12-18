@@ -17,6 +17,29 @@
     enable = true;
     openFirewall = true;
   };
+  # https://www.reddit.com/r/NixOS/comments/xz4m6m/how_to_use_kdeconnect_on_nixos/
+  programs.kdeconnect = {
+    enable = true;
+  };
+  networking.firewall = {
+    allowedTCPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      } # KDE Connect
+    ];
+    allowedUDPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      } # KDE Connect
+    ];
+  };
+
+  # Also unable to use this w home manager
+  services.input-remapper = {
+    enable = true;
+  };
 
   # For nixd i think
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];

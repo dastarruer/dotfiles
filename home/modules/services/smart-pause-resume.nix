@@ -14,4 +14,28 @@
       WantedBy = ["default.target"];
     };
   };
+
+  # Add pause-all script to nixpkgs
+  nixpkgs.overlays = [
+    (final: prev: {
+      pause-all = prev.writeShellApplication {
+        name = "pause-all";
+
+        runtimeInputs = with prev; [
+          systemdMinimal
+          playerctl
+        ];
+
+        text = ''
+          if systemctl --user --quiet is-active smart-pause-resume.service; then
+            systemctl --user stop smart-pause-resume.service
+            playerctl --all-players pause
+            systemctl --user start smart-pause-resume.service
+          else
+            playerctl --all-players pause
+          fi
+        '';
+      };
+    })
+  ];
 }

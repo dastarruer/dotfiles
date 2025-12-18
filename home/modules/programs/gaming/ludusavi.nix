@@ -12,6 +12,8 @@
   systemd.user.services.ludusavi-backup = {
     Unit = {
       Description = "Ludusavi backup";
+      After = ["network-online.target"];
+      Wants = ["network-online.target"];
     };
 
     Service = {
@@ -30,7 +32,7 @@
     };
 
     Timer = {
-      OnCalendar = "16:00";
+      OnCalendar = "Sat 11:00";
     };
 
     Install = {

@@ -1,3 +1,4 @@
+# Declare settings that speed up boot times, and some other things as well
 {pkgs, ...}: {
   # Acheive faster reboot times by making sure services can only take up to ten seconds to shut down
   systemd.settings.Manager = {
@@ -15,7 +16,8 @@
   };
 
   # Acheive faster boot times by not connecting to internet on boot
-  systemd.network.wait-online.enable = false;
+  # (https://discourse.nixos.org/t/how-to-disable-networkmanager-wait-online-service-in-the-configuration-file/19963)
+  systemd.services.NetworkManager-wait-online.enable = false;
 
   # Bootloader.
   boot = {
@@ -46,7 +48,7 @@
     };
 
     # Get the latest kernel packages
-    kernelPackages = pkgs.linuxPackages_testing;
+    kernelPackages = pkgs.linuxPackages_latest;
 
     # Silent Boot
     # https://wiki.archlinux.org/title/Silent_boot

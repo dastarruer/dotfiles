@@ -12,6 +12,10 @@
     theme = "dark";
     minimalistMode = true;
 
+    # Disable pressing spacebar to rate a card
+    # I only ever use this by accident
+    spacebarRatesCard = false;
+
     sync = {
       autoSync = true;
       syncMedia = true;
@@ -21,5 +25,11 @@
       keyFile = config.sops.secrets.anki_synckey.path;
       usernameFile = config.sops.secrets.email.path;
     };
+  };
+
+  wayland.windowManager.hyprland.settings = {
+    windowrulev2 = [
+      "idleinhibit focus, class:^(org.pwmt.zathura)$"
+    ];
   };
 }

@@ -12,11 +12,13 @@
     # ./distrobox.nix
     ./ax-shell.nix
     ./zathura.nix
-    ./dunst.nix
+    ./imv.nix
+    ./dunst
+    ./whatsapp.nix
     ./waybar
     ./vscodium
-    ./hyprland
-    ./flameshot.nix
+    ./hypr
+    # ./flameshot.nix
     ./anki
     # ./sherlock.nix
     ./foliate.nix
@@ -29,5 +31,7 @@
     ./direnv.nix
     ./obsidian.nix
     ./sober.nix
+    ./swww.nix
+    ./batsignal.nix
   ];
 }

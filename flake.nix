@@ -2,7 +2,7 @@
   description = "My NixOS system made by me";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -25,6 +25,10 @@
     };
 
     flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/v3.0.0";
+    # flatpaks = {
+    #   url = "github:dastarruer/declarative-flatpak/fix/use-tmpfiles-settings";
+    #   # rev = "fix/use-tmpfiles-settings";
+    # };
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -43,6 +47,11 @@
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
+    };
+
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland";
     };
 
     # hyprland-plugins = {

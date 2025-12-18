@@ -19,7 +19,7 @@ in {
     enable = true;
 
     # Use firefox nightly
-    package = inputs.firefox-nightly.packages.${pkgs.system}.firefox-nightly-bin;
+    package = inputs.firefox-nightly.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin;
   };
 
   stylix.targets.firefox = {
@@ -27,5 +27,15 @@ in {
     profileNames = ["${firefoxProfile}"];
 
     colorTheme.enable = true;
+  };
+
+  # Windowrules for picture-in-picture
+  wayland.windowManager.hyprland.settings = {
+    windowrule = [
+      "float, title:^(Picture-in-Picture)$"
+      "move 1492 839, title:^(Picture-in-Picture)$"
+      "size 427 240, title:^(Picture-in-Picture)$"
+      "pin, title:^(Picture-in-Picture)$"
+    ];
   };
 }

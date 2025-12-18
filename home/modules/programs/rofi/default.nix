@@ -1,7 +1,8 @@
 # The rofi config is from here: https://github.com/sdushantha/dotfiles/blob/master/rofi/.config/rofi/themes/default.rasi
-{config, ...}: {
+{...}: {
   imports = [
     ./theme.nix
+    ./config.nix
     ./plugins
   ];
 
@@ -9,14 +10,15 @@
     enable = true;
   };
 
-  # Without this, home manager can't symlink files to .config (https://github.com/nix-community/home-manager/issues/1807#issuecomment-3131623755)
-  xdg.configFile."rofi/config.rasi".enable = false;
+  wayland.windowManager.hyprland.settings = {
+    "bind" = [
+      "SUPER, D, exec, rofi -show drun"
+    ];
 
-  # Symlink the rofi config
-  home.file.".config/rofi" = {
-    source =
-      config.lib.file.mkOutOfStoreSymlink
-      "${config.home.homeDirectory}/.dotfiles/config/rofi";
-    recursive = true;
+    layerrule = [
+      "blur, rofi"
+      "xray 0, rofi"
+      "ignorezero, rofi"
+    ];
   };
 }

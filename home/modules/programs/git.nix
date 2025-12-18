@@ -13,11 +13,12 @@ in {
   programs.git = {
     enable = true;
 
-    userName = userName;
-    userEmail = userEmail;
+    settings = {
+      user = {
+        name = userName;
+        email = userEmail;
+      };
 
-    # Config
-    extraConfig = {
       # Use vs codium for commit messages
       core.editor = "codium --wait";
 
