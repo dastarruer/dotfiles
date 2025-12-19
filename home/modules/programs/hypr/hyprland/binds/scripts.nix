@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   wayland.windowManager.hyprland.settings = {
-    "bind" = [
+    bind = [
       # Custom scripts (defined in home/modules/scripts)
       "SUPER, O, exec, ${pkgs.apps}/bin/apps"
       "ALT, B, exec, ${pkgs.brightness}/bin/brightness + 5"

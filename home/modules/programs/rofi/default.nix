@@ -11,7 +11,7 @@
   };
 
   wayland.windowManager.hyprland.settings = {
-    "bind" = [
+    bind = [
       "SUPER, D, exec, rofi -show drun"
     ];
 

@@ -4,7 +4,7 @@
   ];
 
   wayland.windowManager.hyprland.settings = {
-    "bind" = [
+    bind = [
       "SUPER, A, exec, rofi -modi emoji -show emoji"
     ];
   };

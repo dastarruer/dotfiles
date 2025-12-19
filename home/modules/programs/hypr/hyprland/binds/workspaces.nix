@@ -1,6 +1,6 @@
 {...}: {
   wayland.windowManager.hyprland.settings = {
-    "bind" = [
+    bind = [
       # Workspace switching
       "SUPER, 1, workspace, 1"
       "SUPER, 2, workspace, 2"

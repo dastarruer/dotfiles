@@ -26,7 +26,7 @@
   };
 
   # Set hyprland keybind
-  wayland.windowManager.hyprland.settings."bind" = [
+  wayland.windowManager.hyprland.settings.bind = [
     "SUPER, RETURN, exec, kitty"
   ];
 }

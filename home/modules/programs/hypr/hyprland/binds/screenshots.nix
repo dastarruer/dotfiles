@@ -9,7 +9,7 @@
       "SLURP_ARGS, -d -b ${config.lib.stylix.colors.base00}80 -B ${config.lib.stylix.colors.base05}4D -c ${config.lib.stylix.colors.base09}"
     ];
 
-    "bind" = [
+    bind = [
       "SUPER, P, exec, ${pkgs.grimblast}/bin/grimblast copysave active -n"
       "SUPER+SHIFT, P, exec, ${pkgs.grimblast}/bin/grimblast copysave area -n"
       "SUPER+CTRL, P, exec, ${pkgs.grimblast}/bin/grimblast copysave screen -n"

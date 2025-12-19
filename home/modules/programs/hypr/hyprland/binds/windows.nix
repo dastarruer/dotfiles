@@ -1,6 +1,6 @@
 {...}: {
   wayland.windowManager.hyprland.settings = {
-    "bind" = [
+    bind = [
       "SUPER, Q, killactive"
       "SUPER, Space, togglefloating"
       "SUPER, G, centerwindow"
