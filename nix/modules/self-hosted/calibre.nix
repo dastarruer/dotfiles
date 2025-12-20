@@ -1,4 +1,5 @@
 # On install, use admin and admin123 for username and password respectively
+# For setting up email: https://www.reddit.com/r/kindle/comments/fsbgny/using_my_gmail_inside_calibre_to_send_books_to_my/
 {pkgs, ...}: {
   services.calibre-web = {
     enable = true;
