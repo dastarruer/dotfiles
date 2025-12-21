@@ -1,5 +1,5 @@
 {
-  inputs,
+  #   inputs,
   pkgs,
   config,
   lib,
@@ -20,11 +20,14 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
-    # set to the flake package for more up to date software
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # This requires building from source constantly. Cannot figure out how to use cachix to install prebuilt binaries instead, so instead using nixpkgs
+    package = pkgs.hyprland;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    # # set to the flake package for more up to date software
+    # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
-    # For stuff between apps like clipboard access, drag and drop, etc.
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    # # For stuff between apps like clipboard access, drag and drop, etc.
+    # portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   # Use wayland for chromium/electron apps
