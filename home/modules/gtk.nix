@@ -4,8 +4,8 @@
   ...
 }: let
   # Theme-related settings
-  themePackage = pkgs.adementary-theme;
-  themeName = "Adementary-dark";
+  themePackage = pkgs.gnome-themes-extra;
+  themeName = "Adwaita-dark";
 
   # Icon-related settings
   iconPackage = pkgs.papirus-icon-theme;
