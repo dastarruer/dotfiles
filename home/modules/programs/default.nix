@@ -32,5 +32,6 @@
     ./sober.nix
     ./swww.nix
     ./batsignal.nix
+    ./calibre.nix
   ];
 }

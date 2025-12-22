@@ -1,0 +1,3 @@
+{...}: {
+  services.calibre.enable = true;
+}
