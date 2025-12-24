@@ -2,9 +2,8 @@
   # Allow fonts
   fonts.fontconfig.enable = true;
 
-  # User specific packages
+  # Packages that don't need extra config
   home.packages = with pkgs; [
-    # Apps
     xfce.thunar
     todoist-electron
     brave
@@ -12,12 +11,6 @@
     # musescore
     # kdePackages.kdenlive
     # vesktop
-
-    # Other
-    fzf
-    tesseract
-    grimblast
-    playerctl
     ffmpeg
   ];
 
