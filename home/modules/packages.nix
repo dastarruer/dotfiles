@@ -1,7 +1,4 @@
 {pkgs, ...}: {
-  # Allow fonts
-  fonts.fontconfig.enable = true;
-
   # Packages that don't need extra config
   home.packages = with pkgs; [
     xfce.thunar
