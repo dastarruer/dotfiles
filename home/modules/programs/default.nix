@@ -33,5 +33,6 @@
     ./swww.nix
     ./batsignal.nix
     ./calibre.nix
+    ./libreoffice.nix
   ];
 }
