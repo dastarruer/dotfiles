@@ -28,6 +28,7 @@
     ./cliphist.nix
     ./mpv.nix
     ./direnv.nix
+    ./steam-link.nix
     ./obsidian.nix
     ./sober.nix
     ./swww.nix
