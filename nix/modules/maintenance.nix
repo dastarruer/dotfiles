@@ -5,6 +5,10 @@
     enable = true;
     flake = inputs.self.outPath;
     flags = [
+      # Update and commit lockfile
+      "--recreate-lock-file"
+      # "--commit-lock-file" # Requires git config, so is commented out
+
       # Reduce cpu load
       "--max-jobs"
       "1"
@@ -17,8 +21,7 @@
     # Run service once laptop has powered on and has internet access
     persistent = true;
 
-    # Run after home manager update
-    dates = "Sun 12:00";
+    dates = "Sat 10:00";
   };
 
   # Remove unused generations
