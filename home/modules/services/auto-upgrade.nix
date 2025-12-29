@@ -3,7 +3,8 @@
     Unit = {
       Description = "Auto-upgrade system";
 
-      # Run the service after auto-update-flake
+      # Run the service after auto-update-flake, but only if it succeeds
+      Requires = ["auto-update-flake.service"];
       After = ["auto-update-flake.service"];
     };
 
