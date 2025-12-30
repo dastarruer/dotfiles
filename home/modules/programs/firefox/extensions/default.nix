@@ -15,7 +15,7 @@ in {
     force = true;
 
     # Declare a bunch of extensions
-    packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
+    packages = with firefoxAddonPkgs; [
       ublock-origin
       sponsorblock
       simple-tab-groups

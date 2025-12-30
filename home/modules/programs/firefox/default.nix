@@ -1,9 +1,5 @@
 # Check here (https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265) for more stuff
-{
-  inputs,
-  pkgs,
-  ...
-}: let
+{firefoxPkgs, ...}: let
   # Folder under which all firefox stuff goes
   firefoxProfile = "default";
 in {
@@ -19,7 +15,7 @@ in {
     enable = true;
 
     # Use firefox nightly
-    package = inputs.firefox-nightly.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin;
+    package = firefoxPkgs.firefox-nightly-bin;
   };
 
   stylix.targets.firefox = {

@@ -4,12 +4,6 @@
 
     # Import all the other files
     ./modules/default.nix
-
-    # Import home manager
-    inputs.home-manager.nixosModules.home-manager
-
-    # Microcode updates (check flake for url)
-    inputs.ucodenix.nixosModules.default
   ];
 
   # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)

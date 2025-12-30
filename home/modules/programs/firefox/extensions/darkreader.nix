@@ -1,13 +1,12 @@
 {
-  inputs,
   config,
-  pkgs,
+  firefoxAddonPkgs,
   ...
 }: let
   # Folder under which all firefox stuff goes
   firefoxProfile = "default";
 in {
-  programs.firefox.profiles.${firefoxProfile}.extensions.packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
+  programs.firefox.profiles.${firefoxProfile}.extensions.packages = with firefoxAddonPkgs; [
     darkreader
   ];
 

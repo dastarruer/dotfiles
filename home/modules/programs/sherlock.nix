@@ -1,9 +1,4 @@
-{inputs, ...}: {
-  # import the sherlock homeManager Module from our input
-  imports = [
-    inputs.sherlock.homeManagerModules.default
-  ];
-
+{...}: {
   # disable the default home manager module
   # otherwise they will conflict
   disabledModules = ["programs/sherlock.nix"];

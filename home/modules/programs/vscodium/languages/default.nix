@@ -1,8 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{vscode-extensions, ...}: {
   # Import language specific options
   imports = [
     ./nix
@@ -13,7 +9,7 @@
 
   # General language formatter settings
   programs.vscode.profiles.default = {
-    extensions = with inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace; [
+    extensions = with vscode-extensions; [
       esbenp.prettier-vscode
       # foxundermoon.shell-format
     ];

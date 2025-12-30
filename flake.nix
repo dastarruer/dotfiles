@@ -87,6 +87,9 @@
       };
       modules = [
         inputs.stylix.nixosModules.stylix
+        inputs.sops-nix.nixosModules.sops
+        inputs.home-manager.nixosModules.home-manager
+        inputs.ucodenix.nixosModules.default
         ./nix/configuration.nix
       ];
     };
@@ -97,11 +100,16 @@
       extraSpecialArgs = {
         inherit inputs system;
         spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
-
+        firefoxPkgs = inputs.firefox-nightly.packages.${pkgs.stdenv.hostPlatform.system};
+        firefoxAddonPkgs = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
         vscode-extensions = inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace;
       };
       modules = [
         inputs.stylix.homeModules.stylix
+        inputs.sops-nix.homeManagerModules.sops
+        inputs.flatpaks.homeModule
+        inputs.sherlock.homeManagerModules.default
+
         ./home/home.nix
       ];
     };

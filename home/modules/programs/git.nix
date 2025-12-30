@@ -1,15 +1,7 @@
-{
-  config,
-  inputs,
-  ...
-}: let
+{config, ...}: let
   userName = builtins.readFile config.sops.secrets.name.path;
   userEmail = builtins.readFile config.sops.secrets.email.path;
 in {
-  imports = [
-    inputs.sops-nix.homeManagerModules.sops
-  ];
-
   programs.git = {
     enable = true;
 

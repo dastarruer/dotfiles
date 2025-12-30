@@ -1,12 +1,6 @@
-{
-  lib,
-  inputs,
-  ...
-}: {
+{lib, ...}: {
   imports = [
     ./modules/default.nix
-
-    inputs.sops-nix.homeManagerModules.sops
   ];
 
   systemd.user.enable = true;

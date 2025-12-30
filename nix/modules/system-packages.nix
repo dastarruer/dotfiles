@@ -17,6 +17,7 @@
     enable = true;
     openFirewall = true;
   };
+
   # https://www.reddit.com/r/NixOS/comments/xz4m6m/how_to_use_kdeconnect_on_nixos/
   programs.kdeconnect = {
     enable = true;
