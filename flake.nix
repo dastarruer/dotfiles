@@ -108,7 +108,7 @@
         inputs.stylix.homeModules.stylix
         inputs.sops-nix.homeManagerModules.sops
         inputs.flatpaks.homeModule
-        inputs.sherlock.homeManagerModules.default
+        # inputs.sherlock.homeManagerModules.default
 
         ./home/home.nix
       ];
