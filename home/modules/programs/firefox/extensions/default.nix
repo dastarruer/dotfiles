@@ -1,6 +1,5 @@
 {
-  inputs,
-  pkgs,
+  firefoxAddonPkgs,
   ...
 }: let
   # Folder under which all firefox stuff goes
