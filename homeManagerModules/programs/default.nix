@@ -1,4 +1,4 @@
-{...}: {
+{lib, ...}: {
   imports = [
     ./fastfetch.nix
     ./firefox
@@ -36,4 +36,9 @@
     ./calibre.nix
     ./libreoffice.nix
   ];
+
+  # Enable all programs by default
+  myPrograms = {
+    git.enable = lib.mkDefault true;
+  };
 }
