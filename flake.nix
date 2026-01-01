@@ -90,7 +90,8 @@
         inputs.sops-nix.nixosModules.sops
         inputs.home-manager.nixosModules.home-manager
         inputs.ucodenix.nixosModules.default
-        ./nix/configuration.nix
+
+        ./hosts/laptop/configuration.nix
       ];
     };
 
@@ -111,7 +112,7 @@
         inputs.spicetify-nix.homeManagerModules.spicetify
         # inputs.sherlock.homeManagerModules.default
 
-        ./home/home.nix
+        ./hosts/laptop/home.nix
       ];
     };
   };

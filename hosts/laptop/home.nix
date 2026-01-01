@@ -1,6 +1,6 @@
 {lib, ...}: {
   imports = [
-    ./modules/default.nix
+    ../../homeManagerModules/default.nix
   ];
 
   systemd.user.enable = true;
