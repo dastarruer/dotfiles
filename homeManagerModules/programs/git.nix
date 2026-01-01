@@ -4,7 +4,7 @@
   ...
 }: {
   options = {
-    myPrograms.git.enable = lib.mkEnableOption "Enable git";
+    myPrograms.git.enable = lib.mkEnableOption "Enable git functionality.";
   };
 
   config = lib.mkIf config.myPrograms.git.enable {

@@ -40,5 +40,6 @@
   # Enable all programs by default
   myPrograms = {
     git.enable = lib.mkDefault true;
+    kitty.enable = lib.mkDefault true;
   };
 }
