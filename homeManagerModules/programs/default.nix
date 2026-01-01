@@ -56,6 +56,7 @@
     sober.enable = lib.mkDefault true;
     swww.enable = lib.mkDefault true;
     batsignal.enable = lib.mkDefault true;
+    calibre.enable = lib.mkDefault true;
 
     # Modules that do not work as of now
     whatsapp.enable = lib.mkDefault false;
