@@ -1,7 +1,4 @@
-{
-  firefoxAddonPkgs,
-  ...
-}: let
+{firefoxAddonPkgs, ...}: let
   # Folder under which all firefox stuff goes
   firefoxProfile = "default";
 in {

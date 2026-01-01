@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   # Packages that don't need extra config
   home.packages = with pkgs; [
-    xfce.thunar
+    thunar
     todoist-electron
     brave
     # qbittorrent # need this for... reasons
