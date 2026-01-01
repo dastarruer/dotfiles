@@ -1,11 +1,21 @@
-{...}: {
-  programs.rclone = {
-    enable = true;
+{
+  config,
+  lib,
+  ...
+}: {
+  options = {
+    myPrograms.rclone.enable = lib.mkEnableOption "Enable git functionality.";
+  };
 
-    # Declare the rclone config file
-    remotes.gdrive.config = {
-      type = "drive";
-      scope = "drive";
+  config = lib.mkIf config.myPrograms.rclone.enable {
+    programs.rclone = {
+      enable = true;
+
+      # Declare the rclone config file
+      remotes.gdrive.config = {
+        type = "drive";
+        scope = "drive";
+      };
     };
   };
 }

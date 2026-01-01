@@ -41,5 +41,6 @@
   myPrograms = {
     git.enable = lib.mkDefault true;
     kitty.enable = lib.mkDefault true;
+    rclone.enable = lib.mkDefault true;
   };
 }
