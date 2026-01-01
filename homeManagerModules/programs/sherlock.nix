@@ -8,16 +8,10 @@
   };
 
   config = lib.mkIf config.myPrograms.sherlock.enable {
-    # disable the default home manager module
-    # otherwise they will conflict
-    disabledModules = ["programs/sherlock.nix"];
-
     # example configuration
     programs.sherlock = {
       enable = true;
-
-      # for faster startup times
-      runAsService = true;
+      systemd.enable = true; # Run as a daemon
 
       settings = {
         # config.json / config.toml
