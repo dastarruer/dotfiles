@@ -108,6 +108,7 @@
         inputs.stylix.homeModules.stylix
         inputs.sops-nix.homeManagerModules.sops
         inputs.flatpaks.homeModule
+        inputs.spicetify-nix.homeManagerModules.spicetify
         # inputs.sherlock.homeManagerModules.default
 
         ./home/home.nix

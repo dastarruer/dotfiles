@@ -1,7 +1,6 @@
 # HELLO FUTURE ME basically spicetify on nix will not work if you also install spotify in packages.nix so yeah
 # https://gerg-l.github.io/spicetify-nix/usage.html
 {spicePkgs, ...}: {
-  # Import the spicetify home manager module and other files
   imports = [
     ./extensions.nix
     ./snippets.nix
