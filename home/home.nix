@@ -34,17 +34,5 @@
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
 
-  # Set some necessary sops settings
-  sops = {
-    age.keyFile = "/home/dastarruer/.config/sops/age/keys.txt";
-    defaultSopsFile = ../secrets/secrets.yaml;
-
-    # Put secrets here so on reinstall no errors pop up
-    secrets = {
-      name = {};
-      email = {};
-    };
-  };
-
   services.polkit-gnome.enable = true;
 }

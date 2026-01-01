@@ -4,7 +4,10 @@
     ./addons
   ];
 
-  sops.secrets.anki_synckey = {};
+  sops.secrets = {
+    anki_synckey = {};
+    email = {}; # This is also in git.nix, but no errors will show up if this is put here as well
+  };
 
   programs.anki = {
     enable = true;
