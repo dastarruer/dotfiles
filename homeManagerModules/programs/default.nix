@@ -45,6 +45,7 @@
     zathura.enable = lib.mkDefault true;
     imv.enable = lib.mkDefault true;
     foliate.enable = lib.mkDefault true;
-    whatsapp.enable = lib.mkDefault false;
+    btop.enable = lib.mkDefault true;
+    whatsapp.enable = lib.mkDefault false; # Does not work, and enabling does nothing
   };
 }
