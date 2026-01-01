@@ -1,10 +1,10 @@
 {config, ...}: {
   sops = {
-    # Path to your secrets file
+    # Path to secrets file
     defaultSopsFile = ../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
 
-    # Path to your age key
+    # Path to age key
     age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
 
     secrets = {

@@ -12,7 +12,6 @@
     ./networking.nix
     ./logind.nix
     ./system-packages.nix
-    ./secrets.nix
     ./audio.nix
     ./gaming.nix
     ./earlyoom.nix

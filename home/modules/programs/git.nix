@@ -2,6 +2,11 @@
   userName = builtins.readFile config.sops.secrets.name.path;
   userEmail = builtins.readFile config.sops.secrets.email.path;
 in {
+  sops.secrets = {
+    name = {};
+    email = {};
+  };
+
   programs.git = {
     enable = true;
 
