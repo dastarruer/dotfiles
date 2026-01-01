@@ -60,6 +60,7 @@
     distrobox.enable = lib.mkDefault true;
     libreoffice.enable = lib.mkDefault true;
     flameshot.enable = lib.mkDefault true;
+    zoxide.enable = lib.mkDefault true;
 
     # Modules that do not work as of now
     whatsapp.enable = lib.mkDefault false;
