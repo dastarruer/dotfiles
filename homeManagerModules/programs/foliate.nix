@@ -1,9 +1,19 @@
-{...}: {
-  programs.foliate = {
-    enable = true;
+{
+  config,
+  lib,
+  ...
+}: {
+  options = {
+    myPrograms.foliate.enable = lib.mkEnableOption "Enable foliate, an EPUB reader.";
+  };
 
-    settings = {
-      invert = true;
+  config = lib.mkIf config.myPrograms.foliate.enable {
+    programs.foliate = {
+      enable = true;
+
+      settings = {
+        invert = true;
+      };
     };
   };
 }

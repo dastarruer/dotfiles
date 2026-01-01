@@ -35,4 +35,6 @@
   nixpkgs.config.allowUnfree = true;
 
   services.polkit-gnome.enable = true;
+
+  myPrograms.foliate.enable = false;
 }

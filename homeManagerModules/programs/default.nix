@@ -42,8 +42,9 @@
     git.enable = lib.mkDefault true;
     kitty.enable = lib.mkDefault true;
     rclone.enable = lib.mkDefault true;
-    zathura = lib.mkDefault true;
-    imv = lib.mkDefault true;
-    whatsapp = lib.mkDefault false;
+    zathura.enable = lib.mkDefault true;
+    imv.enable = lib.mkDefault true;
+    foliate.enable = lib.mkDefault true;
+    whatsapp.enable = lib.mkDefault false;
   };
 }
