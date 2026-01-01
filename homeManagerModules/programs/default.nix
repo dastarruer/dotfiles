@@ -19,7 +19,7 @@
     ./hypr
     # ./flameshot.nix
     ./anki
-    # ./sherlock.nix
+    ./sherlock.nix
     ./foliate.nix
     ./btop.nix
     ./obs.nix
@@ -52,6 +52,9 @@
     direnv.enable = lib.mkDefault true;
     steam-link.enable = lib.mkDefault true;
     obsidian.enable = lib.mkDefault true;
-    whatsapp.enable = lib.mkDefault false; # Does not work, and enabling does nothing
+
+    # Modules that do not work as of now
+    sherlock.enable = lib.mkDefault true;
+    whatsapp.enable = lib.mkDefault false;
   };
 }

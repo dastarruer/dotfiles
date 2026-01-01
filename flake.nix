@@ -40,6 +40,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sherlock = {
+      url = "github:Skxxtz/sherlock";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # hyprland = {
     #   url = "github:hyprwm/Hyprland";
     # };
@@ -110,7 +115,7 @@
         inputs.sops-nix.homeManagerModules.sops
         inputs.flatpaks.homeModule
         inputs.spicetify-nix.homeManagerModules.spicetify
-        # inputs.sherlock.homeManagerModules.default
+        inputs.sherlock.homeManagerModules.default
 
         ./hosts/laptop/home.nix
       ];

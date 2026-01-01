@@ -1,64 +1,74 @@
-{...}: {
-  # disable the default home manager module
-  # otherwise they will conflict
-  disabledModules = ["programs/sherlock.nix"];
+{
+  config,
+  lib,
+  ...
+}: {
+  options = {
+    myPrograms.sherlock.enable = lib.mkEnableOption "Enable sherlock, an application launcher. NOTE THAT THIS DOES NOT WORK AS OF NOW. ENABLING THIS MAY CAUSE THINGS TO BREAK";
+  };
 
-  # example configuration
-  programs.sherlock = {
-    enable = true;
+  config = lib.mkIf config.myPrograms.sherlock.enable {
+    # disable the default home manager module
+    # otherwise they will conflict
+    disabledModules = ["programs/sherlock.nix"];
 
-    # for faster startup times
-    runAsService = true;
+    # example configuration
+    programs.sherlock = {
+      enable = true;
 
-    settings = {
-      # config.json / config.toml
-      # use nix syntax
-      config = {};
+      # for faster startup times
+      runAsService = true;
 
-      # fallback.json
-      # A list of launchers
-      launchers = [
-        {
-          name = "Calculator";
-          type = "calculation";
-          args = {
-            capabilities = [
-              "calc.math"
-              "calc.units"
-            ];
-          };
-          priority = 1;
-        }
-        {
-          name = "App Launcher";
-          type = "app_launcher";
-          args = {};
-          priority = 2;
-          home = "Home";
-        }
-      ];
+      settings = {
+        # config.json / config.toml
+        # use nix syntax
+        config = {};
 
-      # sherlock_alias.json
-      # use nix syntax
-      aliases = {
-        vesktop = {name = "Discord";};
-      };
-
-      # main.css
-      style =
-        /*
-        css
-        */
-        ''
-          * {
-              font-family: sans-serif;
+        # fallback.json
+        # A list of launchers
+        launchers = [
+          {
+            name = "Calculator";
+            type = "calculation";
+            args = {
+              capabilities = [
+                "calc.math"
+                "calc.units"
+              ];
+            };
+            priority = 1;
           }
-        '';
+          {
+            name = "App Launcher";
+            type = "app_launcher";
+            args = {};
+            priority = 2;
+            home = "Home";
+          }
+        ];
 
-      # sherlockignore
-      ignore = ''
-        Avahi*
-      '';
+        # sherlock_alias.json
+        # use nix syntax
+        aliases = {
+          vesktop = {name = "Discord";};
+        };
+
+        # main.css
+        style =
+          /*
+          css
+          */
+          ''
+            * {
+                font-family: sans-serif;
+            }
+          '';
+
+        # sherlockignore
+        ignore = ''
+          Avahi*
+        '';
+      };
     };
   };
 }
