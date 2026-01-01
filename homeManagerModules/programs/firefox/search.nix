@@ -1,5 +1,9 @@
-{pkgs, ...}: {
-  programs.firefox.profiles.default.search = {
+{
+  config,
+  pkgs,
+  ...
+}: {
+  programs.firefox.profiles.${config.myPrograms.firefox.profile}.search = {
     force = true;
 
     # Use brave because it's about as fast as google

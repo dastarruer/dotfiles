@@ -2,11 +2,8 @@
   config,
   firefoxAddonPkgs,
   ...
-}: let
-  # Folder under which all firefox stuff goes
-  firefoxProfile = "default";
-in {
-  programs.firefox.profiles.${firefoxProfile}.extensions.packages = with firefoxAddonPkgs; [
+}: {
+  programs.firefox.profiles."${config.myPrograms.firefox.profile}".extensions.packages = with firefoxAddonPkgs; [
     darkreader
   ];
 

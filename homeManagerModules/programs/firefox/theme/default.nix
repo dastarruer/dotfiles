@@ -1,9 +1,7 @@
-{config, ...}: let
-  firefoxProfile = "default";
-in {
+{config, ...}: {
   home.file = {
     # Symlink the firefox chrome to its proper place
-    ".mozilla/firefox/${firefoxProfile}/chrome" = {
+    ".mozilla/firefox/config.myPrograms.firefox.profile/chrome" = {
       source = config.lib.file.mkOutOfStoreSymlink ./chrome;
       recursive = true;
     };

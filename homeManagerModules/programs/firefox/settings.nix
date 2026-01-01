@@ -1,7 +1,5 @@
-{...}: let
-  firefoxProfile = "default";
-
-  betterfoxGit = builtins.fetchTarball {
+{config, ...}: let
+  betterfoxGit = fetchTarball {
     url = "https://github.com/yokoffing/Betterfox/archive/refs/heads/main.tar.gz";
     sha256 = "0a3qq3fn4dvcnr4c98ryb8h543p6lkq7wdc9qjgshqx09m15ysnc";
   };
@@ -11,12 +9,12 @@
 in {
   # Symlink user js
   home.file = {
-    ".mozilla/firefox/${firefoxProfile}/user.js".text = betterfoxUserjs;
+    ".mozilla/firefox/config.myPrograms.firefox.profile/user.js".text = betterfoxUserjs;
   };
 
   # Declare settings and overrides, most of which I've stolen from here:
   # https://github.com/gvolpe/nix-config/blob/6feb7e4f47e74a8e3befd2efb423d9232f522ccd/home/programs/browsers/firefox.nix
-  programs.firefox.profiles.${firefoxProfile}.settings = {
+  programs.firefox.profiles."${config.myPrograms.firefox.profile}".settings = {
     # USER JS OVERRIDES
     "sidebar.revamp" = false;
     "svg.context-properties.content.enabled" = true;

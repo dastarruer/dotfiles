@@ -1,12 +1,13 @@
-{firefoxAddonPkgs, ...}: let
-  # Folder under which all firefox stuff goes
-  firefoxProfile = "default";
-in {
+{
+  config,
+  firefoxAddonPkgs,
+  ...
+}: {
   imports = [
     ./darkreader.nix
   ];
 
-  programs.firefox.profiles.${firefoxProfile}.extensions = {
+  programs.firefox.profiles."${config.myPrograms.firefox.profile}".extensions = {
     # Required for stylix
     force = true;
 
