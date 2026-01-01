@@ -4,7 +4,11 @@
   ...
 }: {
   options = {
-    myPrograms.zathura.enable = lib.mkEnableOption "Enable zathura, a PDF reader.";
+    myPrograms.zathura.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable zathura, a PDF reader.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.zathura.enable {

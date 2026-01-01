@@ -39,7 +39,6 @@
 
   # Enable all programs by default
   myPrograms = {
-    zathura.enable = lib.mkDefault true;
     imv.enable = lib.mkDefault true;
     foliate.enable = lib.mkDefault true;
     btop.enable = lib.mkDefault true;
