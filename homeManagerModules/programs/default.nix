@@ -54,6 +54,7 @@
     obsidian.enable = lib.mkDefault true;
     sherlock.enable = lib.mkDefault true;
     sober.enable = lib.mkDefault true;
+    swww.enable = lib.mkDefault true;
 
     # Modules that do not work as of now
     whatsapp.enable = lib.mkDefault false;
