@@ -1,7 +1,7 @@
 {config, ...}: {
   sops = {
     # Path to secrets file
-    defaultSopsFile = ../../secrets/secrets.yaml;
+    defaultSopsFile = ../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
 
     # Path to age key
@@ -16,5 +16,5 @@
   };
 
   # Symlink ssh key
-  home.file.".ssh/id_ed25519.pub".source = ../../secrets/id_ed25519.pub;
+  home.file.".ssh/id_ed25519.pub".source = ../secrets/id_ed25519.pub;
 }
