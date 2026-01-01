@@ -47,6 +47,7 @@
     foliate.enable = lib.mkDefault true;
     btop.enable = lib.mkDefault true;
     obs.enable = lib.mkDefault true;
+    yazi.enable = lib.mkDefault true;
     whatsapp.enable = lib.mkDefault false; # Does not work, and enabling does nothing
   };
 }
