@@ -4,7 +4,11 @@
   ...
 }: {
   options = {
-    myPrograms.git.enable = lib.mkEnableOption "Enable git functionality.";
+    myPrograms.git.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable git functionality.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.git.enable {

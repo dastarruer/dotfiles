@@ -39,8 +39,6 @@
 
   # Enable all programs by default
   myPrograms = {
-    git.enable = lib.mkDefault true;
-    kitty.enable = lib.mkDefault true;
     rclone.enable = lib.mkDefault true;
     zathura.enable = lib.mkDefault true;
     imv.enable = lib.mkDefault true;
@@ -62,7 +60,6 @@
     flameshot.enable = lib.mkDefault true;
     zoxide.enable = lib.mkDefault true;
     firefox.enable = lib.mkDefault true;
-    shell.enable = lib.mkDefault true;
 
     # Modules that do not work as of now
     whatsapp.enable = lib.mkDefault false;

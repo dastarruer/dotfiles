@@ -4,7 +4,11 @@
   ...
 }: {
   options = {
-    myPrograms.kitty.enable = lib.mkEnableOption "Enable kitty, a terminal emulator.";
+    myPrograms.kitty.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable kitty, a terminal emulator.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.kitty.enable {
