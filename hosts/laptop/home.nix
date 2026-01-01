@@ -36,5 +36,8 @@
 
   services.polkit-gnome.enable = true;
 
-  myPrograms.foliate.enable = false;
+  myPrograms = {
+    foliate.enable = false;
+    sherlock.enable = false;
+  };
 }

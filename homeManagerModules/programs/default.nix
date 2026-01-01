@@ -52,9 +52,9 @@
     direnv.enable = lib.mkDefault true;
     steam-link.enable = lib.mkDefault true;
     obsidian.enable = lib.mkDefault true;
+    sherlock.enable = lib.mkDefault true;
 
     # Modules that do not work as of now
-    sherlock.enable = lib.mkDefault true;
     whatsapp.enable = lib.mkDefault false;
   };
 }
