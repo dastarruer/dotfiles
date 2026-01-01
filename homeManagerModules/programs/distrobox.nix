@@ -1,16 +1,15 @@
-{...}: {
-  programs.distrobox = {
-    enable = true;
-    containers = {
-      sql-test = {
-        additional_packages = "mysql-server";
-        entry = true;
-        image = "debian:13";
-        init_hooks = [
-          "ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/docker"
-          "ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/docker-compose"
-        ];
-      };
+{
+  config,
+  lib,
+  ...
+}: {
+  options = {
+    myPrograms.distrobox.enable = lib.mkEnableOption "Enable distrobox.";
+  };
+
+  config = lib.mkIf config.myPrograms.distrobox.enable {
+    programs.distrobox = {
+      enable = true;
     };
   };
 }

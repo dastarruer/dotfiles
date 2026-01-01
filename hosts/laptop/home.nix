@@ -39,5 +39,6 @@
   myPrograms = {
     foliate.enable = false;
     sherlock.enable = false;
+    distrobox.enable = false;
   };
 }
