@@ -11,6 +11,5 @@
     ffmpeg
   ];
 
-  # idk why i have to enable this
   programs.home-manager.enable = true;
 }
