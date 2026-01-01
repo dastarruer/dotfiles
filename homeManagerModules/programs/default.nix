@@ -50,6 +50,7 @@
     yazi.enable = lib.mkDefault true;
     mpv.enable = lib.mkDefault true;
     direnv.enable = lib.mkDefault true;
+    steam-link.enable = lib.mkDefault true;
     whatsapp.enable = lib.mkDefault false; # Does not work, and enabling does nothing
   };
 }
