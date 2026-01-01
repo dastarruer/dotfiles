@@ -39,7 +39,6 @@
 
   # Enable all programs by default
   myPrograms = {
-    rclone.enable = lib.mkDefault true;
     zathura.enable = lib.mkDefault true;
     imv.enable = lib.mkDefault true;
     foliate.enable = lib.mkDefault true;

@@ -4,7 +4,11 @@
   ...
 }: {
   options = {
-    myPrograms.rclone.enable = lib.mkEnableOption "Enable git functionality.";
+    myPrograms.rclone.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable rclone, a program for accessing cloud drives from the terminal.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.rclone.enable {
