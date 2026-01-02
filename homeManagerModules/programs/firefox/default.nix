@@ -15,7 +15,11 @@
 
   options = {
     myPrograms.firefox = {
-      enable = lib.mkEnableOption "Enable firefox .";
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = true;
+        description = "Enable firefox.";
+      };
       profile = lib.mkOption {
         type = lib.types.str;
         default = "default";

@@ -39,8 +39,6 @@
 
   # Enable all programs by default
   myPrograms = {
-    firefox.enable = lib.mkDefault true;
-
     # Modules that do not work as of now
     whatsapp.enable = lib.mkDefault false;
   };
