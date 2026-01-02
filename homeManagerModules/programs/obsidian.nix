@@ -4,10 +4,15 @@
   ...
 }: {
   options = {
-    myPrograms.obsidian.enable = lib.mkEnableOption "Enable Obsidian, a note-taking app.";
+    myPrograms.obsidian.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable Obsidian, a notetaking app.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.obsidian.enable {
+    # Use the flatpak, which does not ask for login every reboot
     services.flatpak = {
       packages = [
         "flathub:app/md.obsidian.Obsidian/x86_64/stable"
