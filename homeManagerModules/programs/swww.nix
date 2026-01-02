@@ -4,7 +4,11 @@
   ...
 }: {
   options = {
-    myPrograms.swww.enable = lib.mkEnableOption "Enable swww, a wallpaper daemon.";
+    myPrograms.swww.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable swww, a wallpaper daemon.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.swww.enable {
