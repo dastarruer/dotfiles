@@ -4,7 +4,6 @@
     ./fastfetch.nix
     ./rofi
     ./distrobox.nix
-    ./imv.nix
     ./dunst
     ./waybar
     ./hypr

@@ -16,6 +16,7 @@
     ./steam-link.nix
     ./obsidian.nix
     ./sober.nix
+    ./imv.nix
   ];
 
   options = {
