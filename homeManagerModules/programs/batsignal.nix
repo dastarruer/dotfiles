@@ -4,7 +4,11 @@
   ...
 }: {
   options = {
-    myPrograms.batsignal.enable = lib.mkEnableOption "Enable batsignal, a script to send notifications on low battery.";
+    myPrograms.batsignal.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable batsignal, a script to send notifications on low battery.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.batsignal.enable {
