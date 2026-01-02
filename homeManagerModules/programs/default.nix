@@ -11,7 +11,6 @@
     ./imv.nix
     ./dunst
     ./waybar
-    ./vscodium
     ./hypr
     ./flameshot.nix
     ./sherlock.nix

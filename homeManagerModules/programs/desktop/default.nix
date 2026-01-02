@@ -2,6 +2,7 @@
   imports = [
     ./calibre.nix
     ./libreoffice.nix
+    ./vscodium
     ./firefox
     ./kitty.nix
     ./spicetify
