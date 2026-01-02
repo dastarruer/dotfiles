@@ -2,7 +2,9 @@
   config,
   lib,
   ...
-}: {
+}: let
+  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+in {
   imports = [
     ./theme.nix
     ./config.nix
@@ -19,7 +21,7 @@
   config = lib.mkIf config.dotfiles.window-manager.waybar.enable {
     programs.waybar.enable = true;
 
-    wayland.windowManager.hyprland.settings = {
+    wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
       # Start waybar
       "exec-once" = [
         "waybar &"

@@ -4,7 +4,9 @@
   lib,
   firefoxPkgs,
   ...
-}: {
+}: let
+  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+in {
   imports = [
     ./containers.nix
     ./settings.nix
@@ -44,7 +46,7 @@
     };
 
     # Windowrules for picture-in-picture
-    wayland.windowManager.hyprland.settings = {
+    wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
       windowrule = [
         "float, title:^(Picture-in-Picture)$"
         "move 1492 839, title:^(Picture-in-Picture)$"

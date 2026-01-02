@@ -1,5 +1,11 @@
 # Check here for packaging an anki addon: https://github.com/NixOS/nixpkgs/blob/master/pkgs/games/anki/with-addons.nix
-{config, ...}: {
+{
+  config,
+  lib,
+  ...
+}: let
+  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+in {
   imports = [
     ./addons
   ];
@@ -30,9 +36,10 @@
     };
   };
 
-  wayland.windowManager.hyprland.settings = {
+  wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
     windowrulev2 = [
-      "idleinhibit focus, class:^(org.pwmt.zathura)$"
+      "workspace 9 silent,class:^(anki)$"
+      "idleinhibit focus, class:^(anki)$"
     ];
   };
 }

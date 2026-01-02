@@ -2,7 +2,9 @@
   config,
   lib,
   ...
-}: {
+}: let
+  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+in {
   options = {
     dotfiles.desktop.zathura.enable = lib.mkOption {
       type = lib.types.bool;
@@ -33,10 +35,9 @@
     # Set zathura as default pdf viewer
     xdg.mimeApps.defaultApplications."application/pdf" = ["org.pwmt.zathura.desktop"];
 
-    wayland.windowManager.hyprland.settings = {
+    wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
       windowrulev2 = [
-        "workspace 9 silent,class:^(anki)$"
-        "idleinhibit focus, class:^(anki)$"
+        "idleinhibit focus, class:^(org.pwmt.zathura)$"
       ];
     };
   };

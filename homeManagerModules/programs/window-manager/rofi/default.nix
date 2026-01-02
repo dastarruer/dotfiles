@@ -3,7 +3,9 @@
   config,
   lib,
   ...
-}: {
+}: let
+  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+in {
   imports = [
     ./theme.nix
     ./config.nix
@@ -23,7 +25,7 @@
       enable = true;
     };
 
-    wayland.windowManager.hyprland.settings = {
+    wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
       bind = [
         "SUPER, D, exec, rofi -show drun"
       ];

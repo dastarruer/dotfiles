@@ -2,7 +2,9 @@
   config,
   lib,
   ...
-}: {
+}: let
+  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+in {
   options = {
     dotfiles.desktop.obsidian.enable = lib.mkOption {
       type = lib.types.bool;
@@ -26,7 +28,7 @@
       ];
     };
 
-    wayland.windowManager.hyprland.settings = {
+    wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
       windowrulev2 = [
         "workspace 10 silent,class:^(obsidian)$"
       ];

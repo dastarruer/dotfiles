@@ -3,12 +3,14 @@
   lib,
   config,
   ...
-}: {
+}: let
+  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+in {
   home.packages = with pkgs; [
     cliphist
   ];
 
-  wayland.windowManager.hyprland.settings = {
+  wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
     # Start clipboard manager on startup
     "exec-once" = [
       "wl-paste --type text --watch cliphist store &"

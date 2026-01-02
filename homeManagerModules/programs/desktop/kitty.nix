@@ -2,7 +2,9 @@
   config,
   lib,
   ...
-}: {
+}: let
+  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+in {
   options = {
     dotfiles.desktop.kitty.enable = lib.mkOption {
       type = lib.types.bool;
@@ -39,7 +41,7 @@
     };
 
     # Set hyprland keybind
-    wayland.windowManager.hyprland.settings.bind = [
+    wayland.windowManager.hyprland.settings.bind = lib.mkIf hyprland.enable [
       "SUPER, RETURN, exec, kitty"
     ];
   };

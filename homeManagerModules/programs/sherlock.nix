@@ -6,7 +6,7 @@
   options = {
     dotfiles.sherlock.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = false; # Does not work as of now
       description = "Enable sherlock, an application launcher. NOTE THAT THIS DOES NOT WORK AS OF NOW. ENABLING THIS MAY CAUSE THINGS TO BREAK.";
     };
   };

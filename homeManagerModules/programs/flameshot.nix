@@ -3,7 +3,9 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+in {
   options = {
     dotfiles.flameshot.enable = lib.mkOption {
       type = lib.types.bool;
@@ -47,7 +49,7 @@
       format = "";
     };
 
-    wayland.windowManager.hyprland.settings = {
+    wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
       windowrule = [
         "noanim, title:^(flameshot)$"
         "float, title:^(flameshot)$"

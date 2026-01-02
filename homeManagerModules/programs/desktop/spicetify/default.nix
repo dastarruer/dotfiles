@@ -5,7 +5,9 @@
   lib,
   spicePkgs,
   ...
-}: {
+}: let
+  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+in {
   imports = [
     ./extensions.nix
     ./snippets.nix
@@ -35,7 +37,8 @@
       wayland = true;
     };
 
-    wayland.windowManager.hyprland.settings = {
+    wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
+      # looks aesthetic innit
       windowrule = [
         "float, class:^(spotify)$"
         "move 81 146, class:^(spotify)$"
