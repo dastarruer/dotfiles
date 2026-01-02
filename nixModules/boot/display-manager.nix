@@ -8,7 +8,7 @@
       # Define SDDM config
       settings = {
         General = {
-          background = "/home/dastarruer/Pictures/wallpapers/gruvbox/wall.jpg";
+          background = "/home/dastarruer/Pictures/wallpaper";
         };
 
         Autologin = {

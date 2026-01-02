@@ -25,7 +25,7 @@
           }
           {
             on = "<C-f>";
-            run = "cd /home/dastarruer/Documents/school/G10";
+            run = "cd ${config.home.homeDirectory}/Documents/school/G10";
             desc = "Change to schoolwork dir";
           }
           {

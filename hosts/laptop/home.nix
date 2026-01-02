@@ -1,4 +1,8 @@
-{lib, ...}: {
+{
+  config,
+  lib,
+  ...
+}: {
   imports = [
     ../../homeManagerModules/default.nix
   ];
@@ -18,8 +22,8 @@
       # Allow unfree packages.
       NIXPKGS_ALLOW_UNFREE = "1";
 
-      # Necessary for grimblast and other screenshot tools
-      XDG_SCREENSHOTS_DIR = "/home/dastarruer/Pictures/screenshots";
+      # Necessary for some screenshot tools
+      XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/screenshots";
     };
   };
 
