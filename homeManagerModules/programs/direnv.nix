@@ -4,7 +4,11 @@
   ...
 }: {
   options = {
-    myPrograms.direnv.enable = lib.mkEnableOption "Enable direnv, a program to dynamically load and unload dev environments.";
+    myPrograms.direnv.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable direnv.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.direnv.enable {
