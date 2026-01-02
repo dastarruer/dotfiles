@@ -39,7 +39,6 @@
 
   # Enable all programs by default
   myPrograms = {
-    mpv.enable = lib.mkDefault true;
     direnv.enable = lib.mkDefault true;
     steam-link.enable = lib.mkDefault true;
     obsidian.enable = lib.mkDefault true;
