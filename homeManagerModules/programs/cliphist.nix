@@ -5,6 +5,7 @@
   ...
 }: let
   hyprland = config.dotfiles.window-manager.hypr.hyprland;
+  rofi = config.dotfiles.window-manager.rofi;
 in {
   home.packages = with pkgs; [
     cliphist
@@ -18,7 +19,7 @@ in {
     ];
 
     # If rofi is enabled
-    bind = lib.mkIf config.programs.rofi.enable [
+    bind = lib.mkIf rofi.enable [
       "SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
     ];
   };
