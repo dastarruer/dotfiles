@@ -40,5 +40,9 @@
     foliate.enable = false;
     sherlock.enable = false;
     distrobox.enable = false;
+
+    hypr = {
+      hypridle.enable = false;
+    };
   };
 }
