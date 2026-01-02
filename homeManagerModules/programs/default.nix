@@ -39,7 +39,6 @@
 
   # Enable all programs by default
   myPrograms = {
-    foliate.enable = lib.mkDefault true;
     btop.enable = lib.mkDefault true;
     obs.enable = lib.mkDefault true;
     yazi.enable = lib.mkDefault true;
