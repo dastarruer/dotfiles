@@ -9,7 +9,7 @@
   ];
 
   options = {
-    dotfiles.shell.enable = lib.mkOption {
+    dotfiles.cli.shell.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable the fish shell and starship.";
@@ -17,9 +17,9 @@
   };
 
   config = {
-    dotfiles.shell = {
-      fish.enable = lib.mkDefault config.dotfiles.shell.enable;
-      starship.enable = lib.mkDefault config.dotfiles.shell.enable;
+    dotfiles.cli.shell = {
+      fish.enable = lib.mkDefault config.dotfiles.cli.shell.enable;
+      starship.enable = lib.mkDefault config.dotfiles.cli.shell.enable;
     };
   };
 }

@@ -2,10 +2,7 @@
   imports = [
     ./desktop
     ./fastfetch.nix
-    ./git.nix
-    ./shell
     ./rofi
-    ./rclone.nix
     ./distrobox.nix
     ./imv.nix
     ./dunst
@@ -13,11 +10,8 @@
     ./hypr
     ./flameshot.nix
     ./sherlock.nix
-    ./btop.nix
-    ./yazi.nix
-    ./zoxide.nix
     ./cliphist.nix
-    ./direnv.nix
+    ./cli
     ./swww.nix
     ./batsignal.nix
   ];
