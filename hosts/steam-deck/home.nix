@@ -12,8 +12,8 @@
   # Set up user
   home = {
     # Set username and home directory
-    username = "dastarruer";
-    homeDirectory = lib.mkForce "/home/dastarruer";
+    username = "deck";
+    homeDirectory = lib.mkForce "/home/deck";
 
     # No clue what this does
     stateVersion = "25.11";
@@ -42,17 +42,15 @@
 
   dotfiles = {
     desktop = {
-      enableAll = true;
-      foliate.enable = false;
-      gaming.enable = false;
+      enableAll = false;
+      gaming.enable = true;
+      spicetify.enable = true;
+      firefox.enable = true;
     };
 
     sherlock.enable = false;
     distrobox.enable = false;
-
-    hypr = {
-      enable = true;
-      hypridle.enable = false;
-    };
+    cliphist.enable = false;
+    flameshot.enable = false;
   };
 }

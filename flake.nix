@@ -95,7 +95,7 @@
       ];
     };
 
-    # Standalone Home Manager
+    # Laptop
     homeConfigurations.dastarruer = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {
@@ -112,6 +112,26 @@
         inputs.spicetify-nix.homeManagerModules.spicetify
 
         ./hosts/laptop/home.nix
+      ];
+    };
+
+    # Steam deck
+    homeConfigurations.deck = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extraSpecialArgs = {
+        inherit inputs system;
+        spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+        firefoxPkgs = inputs.firefox-nightly.packages.${pkgs.stdenv.hostPlatform.system};
+        firefoxAddonPkgs = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
+        vscode-extensions = inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace;
+      };
+      modules = [
+        inputs.stylix.homeModules.stylix
+        inputs.sops-nix.homeManagerModules.sops
+        inputs.flatpaks.homeModule
+        inputs.spicetify-nix.homeManagerModules.spicetify
+
+        ./hosts/steam-deck/home.nix
       ];
     };
   };
