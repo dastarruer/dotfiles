@@ -39,7 +39,6 @@
 
   # Enable all programs by default
   myPrograms = {
-    distrobox.enable = lib.mkDefault true;
     libreoffice.enable = lib.mkDefault true;
     flameshot.enable = lib.mkDefault true;
     zoxide.enable = lib.mkDefault true;
