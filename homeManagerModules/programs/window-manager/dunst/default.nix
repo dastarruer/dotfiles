@@ -7,7 +7,7 @@
   options = {
     dotfiles.window-manager.dunst.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = config.dotfiles.window-manager.enable;
       description = "Enable window-manager.dunst, a script to send notifications on low battery.";
     };
   };

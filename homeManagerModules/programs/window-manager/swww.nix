@@ -8,7 +8,7 @@ in {
   options = {
     dotfiles.window-manager.swww.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = config.dotfiles.window-manager.enable;
       description = "Enable swww, a wallpaper daemon.";
     };
   };

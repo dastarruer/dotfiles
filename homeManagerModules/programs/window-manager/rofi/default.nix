@@ -15,7 +15,7 @@ in {
   options = {
     dotfiles.window-manager.rofi.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = config.dotfiles.window-manager.enable;
       description = "Enable rofi, an app launcher.";
     };
   };

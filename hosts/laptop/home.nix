@@ -50,9 +50,9 @@
     sherlock.enable = false;
     distrobox.enable = false;
 
-    hypr = {
+    window-manager = {
       enable = true;
-      hypridle.enable = false;
+      hypr.hypridle.enable = false;
     };
   };
 }
