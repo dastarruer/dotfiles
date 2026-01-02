@@ -1,50 +1,61 @@
 {
-  pkgs,
+  config,
   lib,
+  pkgs,
   ...
 }: {
-  programs.lutris = {
-    enable = true;
+  options = {
+    dotfiles.desktop.gaming.lutris.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = config.dotfiles.desktop.gaming.enable;
+      description = "Enable lutris, a game launcher.";
+    };
+  };
 
-    defaultWinePackage = pkgs.proton-ge-bin;
-    protonPackages = with pkgs; [
-      proton-ge-bin
-    ];
+  config = lib.mkIf config.dotfiles.lutris.enable {
+    programs.lutris = {
+      enable = true;
 
-    extraPackages = with pkgs; [
-      gamescope
-      gamemode
-    ];
+      defaultWinePackage = pkgs.proton-ge-bin;
+      protonPackages = with pkgs; [
+        proton-ge-bin
+      ];
 
-    runners.wine.settings = {
-      system = {
-        # Enable gamescope. Pretty useful since it has a frame limiter, and
-        # automatically adjusts the game resolution to meet said frame rate.
-        gamescope = "true";
-        gamescope_flags = lib.concatStringsSep " " [
-          "--force-grab-cursor" # Forces the game to capture mouse movement, so camera movement is not restricted
-          "--expose-wayland" # Wayland support
-        ];
+      extraPackages = with pkgs; [
+        gamescope
+        gamemode
+      ];
 
-        # Set fps limit of 30
-        gamescope_fps_limiter = "30";
+      runners.wine.settings = {
+        system = {
+          # Enable gamescope. Pretty useful since it has a frame limiter, and
+          # automatically adjusts the game resolution to meet said frame rate.
+          gamescope = "true";
+          gamescope_flags = lib.concatStringsSep " " [
+            "--force-grab-cursor" # Forces the game to capture mouse movement, so camera movement is not restricted
+            "--expose-wayland" # Wayland support
+          ];
 
-        # Fullscreen game window
-        gamescope_window_mode = "-f";
+          # Set fps limit of 30
+          gamescope_fps_limiter = "30";
 
-        # Max fsr sharpness (0-20, where 0 is max and 20 is min)
-        gamescope_fsr_sharpness = "0";
+          # Fullscreen game window
+          gamescope_window_mode = "-f";
 
-        # Set game to 720p
-        gamescope_game_res = "1280x720";
+          # Max fsr sharpness (0-20, where 0 is max and 20 is min)
+          gamescope_fsr_sharpness = "0";
 
-        # Upscale game to my 1080p monitor
-        gamescope_output_res = "1920x1080";
-      };
+          # Set game to 720p
+          gamescope_game_res = "1280x720";
 
-      runner = {
-        # Enable controller support
-        autoconf_joypad = true;
+          # Upscale game to my 1080p monitor
+          gamescope_output_res = "1920x1080";
+        };
+
+        runner = {
+          # Enable controller support
+          autoconf_joypad = true;
+        };
       };
     };
   };

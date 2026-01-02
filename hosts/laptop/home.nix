@@ -40,6 +40,7 @@
     desktop = {
       enableAll = true;
       foliate.enable = false;
+      gaming.enable = false;
     };
 
     sherlock.enable = false;

@@ -6,7 +6,6 @@
     ./shell
     ./rofi
     ./rclone.nix
-    ./gaming
     ./distrobox.nix
     ./imv.nix
     ./dunst
