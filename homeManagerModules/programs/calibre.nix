@@ -4,7 +4,11 @@
   ...
 }: {
   options = {
-    myPrograms.calibre.enable = lib.mkEnableOption "Enable calibre, an app for managing your book collection.";
+    myPrograms.calibre.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable calibre, an app for managing your book collection.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.calibre.enable {

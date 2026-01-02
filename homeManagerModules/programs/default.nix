@@ -39,7 +39,6 @@
 
   # Enable all programs by default
   myPrograms = {
-    calibre.enable = lib.mkDefault true;
     distrobox.enable = lib.mkDefault true;
     libreoffice.enable = lib.mkDefault true;
     flameshot.enable = lib.mkDefault true;
