@@ -4,7 +4,11 @@
   ...
 }: {
   options = {
-    myPrograms.imv.enable = lib.mkEnableOption "Enable imv, an image viewer.";
+    myPrograms.imv.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable imv, an image viewer.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.imv.enable {
