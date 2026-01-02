@@ -39,7 +39,6 @@
 
   # Enable all programs by default
   myPrograms = {
-    zoxide.enable = lib.mkDefault true;
     firefox.enable = lib.mkDefault true;
 
     # Modules that do not work as of now
