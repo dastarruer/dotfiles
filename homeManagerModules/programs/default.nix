@@ -1,4 +1,4 @@
-{lib, ...}: {
+{...}: {
   imports = [
     ./fastfetch.nix
     ./firefox
@@ -36,10 +36,4 @@
     ./calibre.nix
     ./libreoffice.nix
   ];
-
-  # Enable all programs by default
-  myPrograms = {
-    # Modules that do not work as of now
-    whatsapp.enable = lib.mkDefault false;
-  };
 }
