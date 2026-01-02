@@ -15,7 +15,7 @@
   options = {
     dotfiles.desktop.spicetify.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = config.dotfiles.desktop.enableAll;
       description = "Enable spicetify, a modified version of Spotify.";
     };
   };

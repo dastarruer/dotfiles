@@ -6,7 +6,7 @@
   options = {
     dotfiles.desktop.obs.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = config.dotfiles.desktop.enableAll;
       description = "Enable OBS, a screen recording app.";
     };
   };

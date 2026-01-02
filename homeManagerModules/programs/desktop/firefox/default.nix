@@ -17,7 +17,7 @@
     dotfiles.desktop.firefox = {
       enable = lib.mkOption {
         type = lib.types.bool;
-        default = true;
+        default = config.dotfiles.desktop.enableAll;
         description = "Enable firefox.";
       };
       profile = lib.mkOption {

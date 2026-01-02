@@ -38,6 +38,7 @@
 
   dotfiles = {
     desktop = {
+      enableAll = true;
       foliate.enable = false;
     };
 

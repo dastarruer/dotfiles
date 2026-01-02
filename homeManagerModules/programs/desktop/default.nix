@@ -1,4 +1,4 @@
-{...}: {
+{lib, ...}: {
   imports = [
     ./calibre.nix
     ./libreoffice.nix
@@ -15,4 +15,8 @@
     ./obsidian.nix
     ./sober.nix
   ];
+
+  options = {
+    dotfiles.desktop.enableAll = lib.mkEnableOption "Enable all desktop apps.";
+  };
 }

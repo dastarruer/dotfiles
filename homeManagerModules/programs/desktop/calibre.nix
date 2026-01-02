@@ -6,7 +6,7 @@
   options = {
     dotfiles.desktop.calibre.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = config.dotfiles.desktop.enableAll;
       description = "Enable calibre, an app for managing your book collection.";
     };
   };

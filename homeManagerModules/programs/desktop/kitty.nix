@@ -6,7 +6,7 @@
   options = {
     dotfiles.desktop.kitty.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = config.dotfiles.desktop.enableAll;
       description = "Enable kitty, a terminal emulator.";
     };
   };

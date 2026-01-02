@@ -6,7 +6,7 @@
   options = {
     dotfiles.desktop.sober.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = config.dotfiles.desktop.enableAll;
       description = "Enable Sober, an app for playing Roblox on Linux.";
     };
   };
