@@ -39,7 +39,6 @@
 
   # Enable all programs by default
   myPrograms = {
-    flameshot.enable = lib.mkDefault true;
     zoxide.enable = lib.mkDefault true;
     firefox.enable = lib.mkDefault true;
 

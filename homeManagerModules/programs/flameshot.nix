@@ -5,7 +5,11 @@
   ...
 }: {
   options = {
-    myPrograms.flameshot.enable = lib.mkEnableOption "Enable flameshot, a screenshot tool. Will be disabled by default if myPrograms.hyprland.enable is set to true.";
+    myPrograms.flameshot.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable flameshot, a screenshot tool. Will be disabled by default if myPrograms.hyprland.enable is set to true.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.flameshot.enable {
