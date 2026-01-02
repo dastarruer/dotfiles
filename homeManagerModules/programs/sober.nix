@@ -4,7 +4,11 @@
   ...
 }: {
   options = {
-    myPrograms.sober.enable = lib.mkEnableOption "Enable Sober, an app for playing Roblox on Linux.";
+    myPrograms.sober.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable Sober, an app for playing Roblox on Linux.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.sober.enable {

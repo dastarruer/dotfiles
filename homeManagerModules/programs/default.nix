@@ -39,7 +39,6 @@
 
   # Enable all programs by default
   myPrograms = {
-    sober.enable = lib.mkDefault true;
     swww.enable = lib.mkDefault true;
     batsignal.enable = lib.mkDefault true;
     calibre.enable = lib.mkDefault true;
