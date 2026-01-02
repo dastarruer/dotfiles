@@ -39,7 +39,6 @@
 
   # Enable all programs by default
   myPrograms = {
-    obs.enable = lib.mkDefault true;
     yazi.enable = lib.mkDefault true;
     mpv.enable = lib.mkDefault true;
     direnv.enable = lib.mkDefault true;

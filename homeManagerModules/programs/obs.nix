@@ -4,7 +4,11 @@
   ...
 }: {
   options = {
-    myPrograms.obs.enable = lib.mkEnableOption "Enable OBS, a screen recording app.";
+    myPrograms.obs.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable OBS, a screen recording app.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.obs.enable {
