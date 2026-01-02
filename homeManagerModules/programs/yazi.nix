@@ -5,7 +5,11 @@
   ...
 }: {
   options = {
-    myPrograms.yazi.enable = lib.mkEnableOption "Enable yazi, a file terminal manager.";
+    myPrograms.yazi.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable yazi, a terminal file browser.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.yazi.enable {
