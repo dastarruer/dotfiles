@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    dotfiles.kitty.enable = lib.mkOption {
+    dotfiles.desktop.kitty.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable kitty, a terminal emulator.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.kitty.enable {
+  config = lib.mkIf config.dotfiles.desktop.kitty.enable {
     programs.kitty = {
       enable = true;
 

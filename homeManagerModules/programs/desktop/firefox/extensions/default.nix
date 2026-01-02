@@ -7,7 +7,7 @@
     ./darkreader.nix
   ];
 
-  programs.firefox.profiles."${config.dotfiles.firefox.profile}".extensions = {
+  programs.firefox.profiles."${config.dotfiles.desktop.firefox.profile}".extensions = {
     # Required for stylix
     force = true;
 

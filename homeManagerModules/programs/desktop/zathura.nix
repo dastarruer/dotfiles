@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    dotfiles.zathura.enable = lib.mkOption {
+    dotfiles.desktop.zathura.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable zathura, a PDF reader.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.zathura.enable {
+  config = lib.mkIf config.dotfiles.desktop.zathura.enable {
     programs.zathura = {
       enable = true;
 

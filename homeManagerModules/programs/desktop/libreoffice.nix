@@ -5,14 +5,14 @@
   ...
 }: {
   options = {
-    dotfiles.libreoffice.enable = lib.mkOption {
+    dotfiles.desktop.libreoffice.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable libreoffice.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.libreoffice.enable {
+  config = lib.mkIf config.dotfiles.desktop.libreoffice.enable {
     home.packages = with pkgs; [
       libreoffice
     ];

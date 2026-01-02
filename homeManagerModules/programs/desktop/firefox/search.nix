@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  programs.firefox.profiles.${config.dotfiles.firefox.profile}.search = {
+  programs.firefox.profiles.${config.dotfiles.desktop.firefox.profile}.search = {
     force = true;
 
     # Use brave because it's about as fast as google

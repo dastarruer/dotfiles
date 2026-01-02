@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    dotfiles.calibre.enable = lib.mkOption {
+    dotfiles.desktop.calibre.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable calibre, an app for managing your book collection.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.calibre.enable {
+  config = lib.mkIf config.dotfiles.desktop.calibre.enable {
     programs.calibre.enable = true;
 
     # Style guide here: https://github.com/chriskempson/base16/blob/main/styling.md

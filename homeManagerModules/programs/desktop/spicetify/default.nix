@@ -13,14 +13,14 @@
   ];
 
   options = {
-    dotfiles.spicetify.enable = lib.mkOption {
+    dotfiles.desktop.spicetify.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable spicetify, a modified version of Spotify.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.spicetify.enable {
+  config = lib.mkIf config.dotfiles.desktop.spicetify.enable {
     programs.spicetify = {
       enable = true;
 

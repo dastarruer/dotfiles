@@ -1,7 +1,7 @@
 {config, ...}: {
   home.file = {
     # Symlink the firefox chrome to its proper place
-    ".mozilla/firefox/config.dotfiles.firefox.profile/chrome" = {
+    ".mozilla/firefox/config.dotfiles.desktop.firefox.profile/chrome" = {
       source = config.lib.file.mkOutOfStoreSymlink ./chrome;
       recursive = true;
     };

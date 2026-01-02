@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    dotfiles.sober.enable = lib.mkOption {
+    dotfiles.desktop.sober.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable Sober, an app for playing Roblox on Linux.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.sober.enable {
+  config = lib.mkIf config.dotfiles.desktop.sober.enable {
     services.flatpak = {
       packages = [
         "flathub:app/org.vinegarhq.Sober/x86_64/stable"

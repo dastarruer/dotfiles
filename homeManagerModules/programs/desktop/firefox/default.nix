@@ -14,7 +14,7 @@
   ];
 
   options = {
-    dotfiles.firefox = {
+    dotfiles.desktop.firefox = {
       enable = lib.mkOption {
         type = lib.types.bool;
         default = true;
@@ -28,7 +28,7 @@
     };
   };
 
-  config = lib.mkIf config.dotfiles.firefox.enable {
+  config = lib.mkIf config.dotfiles.desktop.firefox.enable {
     programs.firefox = {
       enable = true;
 
@@ -38,7 +38,7 @@
 
     stylix.targets.firefox = {
       # Tell stylix to style this profile
-      profileNames = ["${config.dotfiles.firefox.profile}"];
+      profileNames = ["${config.dotfiles.desktop.firefox.profile}"];
 
       colorTheme.enable = true;
     };

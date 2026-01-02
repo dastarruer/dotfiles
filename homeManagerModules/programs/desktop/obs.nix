@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    dotfiles.obs.enable = lib.mkOption {
+    dotfiles.desktop.obs.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable OBS, a screen recording app.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.obs.enable {
+  config = lib.mkIf config.dotfiles.desktop.obs.enable {
     programs.obs-studio.enable = true;
 
     # Create the save dir for obs

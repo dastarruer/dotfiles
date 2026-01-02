@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    dotfiles.foliate.enable = lib.mkOption {
+    dotfiles.desktop.foliate.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable foliate, an EPUB reader.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.foliate.enable {
+  config = lib.mkIf config.dotfiles.desktop.foliate.enable {
     programs.foliate = {
       enable = true;
 

@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    dotfiles.obsidian.enable = lib.mkOption {
+    dotfiles.desktop.obsidian.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable Obsidian, a notetaking app.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.obsidian.enable {
+  config = lib.mkIf config.dotfiles.desktop.obsidian.enable {
     # Use the flatpak, which does not ask for login every reboot
     services.flatpak = {
       packages = [
