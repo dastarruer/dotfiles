@@ -16,8 +16,10 @@
     };
   };
 
-  dotfiles.shell = {
-    fish.enable = lib.mkDefault config.dotfiles.shell.enable;
-    starship.enable = lib.mkDefault config.dotfiles.shell.enable;
+  config = {
+    dotfiles.shell = {
+      fish.enable = lib.mkDefault config.dotfiles.shell.enable;
+      starship.enable = lib.mkDefault config.dotfiles.shell.enable;
+    };
   };
 }

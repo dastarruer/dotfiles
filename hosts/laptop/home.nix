@@ -42,6 +42,7 @@
     distrobox.enable = false;
 
     hypr = {
+      enable = true;
       hypridle.enable = false;
     };
   };

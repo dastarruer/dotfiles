@@ -4,11 +4,7 @@
   ...
 }: {
   options = {
-    dotfiles.hypr.hypridle.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Enable hypridle.";
-    };
+    dotfiles.hypr.hypridle.enable = lib.mkEnableOption "Enable hypridle.";
   };
 
   config = lib.mkIf config.dotfiles.hypr.hypridle.enable {

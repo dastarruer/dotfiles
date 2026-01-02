@@ -17,11 +17,7 @@
   ];
 
   options = {
-    dotfiles.hypr.hyprland.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Enable hyprland, a script to send notifications on low battery.";
-    };
+    dotfiles.hypr.hyprland.enable = lib.mkEnableOption "Enable hyprland, a script to send notifications on low battery.";
   };
 
   config = lib.mkIf config.dotfiles.hypr.hyprland.enable {

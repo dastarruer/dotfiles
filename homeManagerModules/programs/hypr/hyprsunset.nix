@@ -4,11 +4,7 @@
   ...
 }: {
   options = {
-    dotfiles.hypr.hyprsunset.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Enable hyprsunset.";
-    };
+    dotfiles.hypr.hyprsunset.enable = lib.mkEnableOption "Enable hyprsunset.";
   };
 
   config = lib.mkIf config.dotfiles.hypr.hyprsunset.enable {

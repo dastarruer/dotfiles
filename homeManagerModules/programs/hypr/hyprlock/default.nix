@@ -13,11 +13,7 @@
   ];
 
   options = {
-    dotfiles.hypr.hyprlock.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Enable hyprlock.";
-    };
+    dotfiles.hypr.hyprlock.enable = lib.mkEnableOption "Enable hyprlock.";
   };
 
   config = lib.mkIf config.dotfiles.hypr.hyprlock.enable {
