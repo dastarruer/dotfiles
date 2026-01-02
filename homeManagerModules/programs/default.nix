@@ -39,7 +39,6 @@
 
   # Enable all programs by default
   myPrograms = {
-    sherlock.enable = lib.mkDefault true;
     sober.enable = lib.mkDefault true;
     swww.enable = lib.mkDefault true;
     batsignal.enable = lib.mkDefault true;

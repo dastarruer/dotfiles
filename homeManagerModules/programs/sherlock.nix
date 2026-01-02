@@ -4,7 +4,11 @@
   ...
 }: {
   options = {
-    myPrograms.sherlock.enable = lib.mkEnableOption "Enable sherlock, an application launcher. NOTE THAT THIS DOES NOT WORK AS OF NOW. ENABLING THIS MAY CAUSE THINGS TO BREAK";
+    myPrograms.sherlock.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable sherlock, an application launcher. NOTE THAT THIS DOES NOT WORK AS OF NOW. ENABLING THIS MAY CAUSE THINGS TO BREAK.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.sherlock.enable {
