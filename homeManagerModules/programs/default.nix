@@ -1,7 +1,6 @@
 {...}: {
   imports = [
     ./desktop
-    ./fastfetch.nix
     ./rofi
     ./distrobox.nix
     ./dunst
