@@ -5,6 +5,7 @@
   ...
 }: let
   hyprland = config.dotfiles.window-manager.hypr.hyprland;
+  dunst = config.dotfiles.window-manager.dunst;
 in {
   options = {
     dotfiles.flameshot.enable = lib.mkOption {
@@ -44,7 +45,7 @@ in {
     };
 
     # Hide the flameshot wayland warning (https://github.com/flameshot-org/flameshot/issues/3186)
-    services.dunst.settings.ignore_flameshot_warning = {
+    services.dunst.settings.ignore_flameshot_warning = lib.mkIf dunst.enable {
       body = "grim's screenshot component is implemented based on wlroots, it may not be used in GNOME or similar desktop environments";
       format = "";
     };
