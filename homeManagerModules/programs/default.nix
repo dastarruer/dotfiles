@@ -39,7 +39,6 @@
 
   # Enable all programs by default
   myPrograms = {
-    steam-link.enable = lib.mkDefault true;
     obsidian.enable = lib.mkDefault true;
     sherlock.enable = lib.mkDefault true;
     sober.enable = lib.mkDefault true;

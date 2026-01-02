@@ -4,7 +4,11 @@
   ...
 }: {
   options = {
-    myPrograms.steam-link.enable = lib.mkEnableOption "Enable the Steam Link app for remoting into the Steam Deck.";
+    myPrograms.steam-link.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable Steam Link.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.steam-link.enable {
