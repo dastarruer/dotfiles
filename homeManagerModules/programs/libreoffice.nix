@@ -5,7 +5,11 @@
   ...
 }: {
   options = {
-    myPrograms.libreoffice.enable = lib.mkEnableOption "Enable libreoffice, an office suite.";
+    myPrograms.libreoffice.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable libreoffice.";
+    };
   };
 
   config = lib.mkIf config.myPrograms.libreoffice.enable {
