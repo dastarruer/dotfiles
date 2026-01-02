@@ -1,5 +1,5 @@
 {config, ...}: {
-  programs.firefox.profiles."${config.myPrograms.firefox.profile}" = {
+  programs.firefox.profiles."${config.dotfiles.firefox.profile}" = {
     # Set up containers
     containersForce = true;
     containers = {

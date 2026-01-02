@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    myPrograms.swww.enable = lib.mkOption {
+    dotfiles.swww.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable swww, a wallpaper daemon.";
     };
   };
 
-  config = lib.mkIf config.myPrograms.swww.enable {
+  config = lib.mkIf config.dotfiles.swww.enable {
     services.swww.enable = true;
 
     # Start swww daemon on startup

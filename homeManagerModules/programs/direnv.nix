@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    myPrograms.direnv.enable = lib.mkOption {
+    dotfiles.direnv.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable direnv.";
     };
   };
 
-  config = lib.mkIf config.myPrograms.direnv.enable {
+  config = lib.mkIf config.dotfiles.direnv.enable {
     programs.direnv = {
       enable = true;
       nix-direnv.enable = true;

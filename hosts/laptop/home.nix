@@ -36,7 +36,7 @@
 
   services.polkit-gnome.enable = true;
 
-  myPrograms = {
+  dotfiles = {
     foliate.enable = false;
     sherlock.enable = false;
     distrobox.enable = false;

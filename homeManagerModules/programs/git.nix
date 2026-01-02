@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    myPrograms.git.enable = lib.mkOption {
+    dotfiles.git.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable git functionality.";
     };
   };
 
-  config = lib.mkIf config.myPrograms.git.enable {
+  config = lib.mkIf config.dotfiles.git.enable {
     sops.secrets = {
       name = {};
       email = {};

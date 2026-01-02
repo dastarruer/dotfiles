@@ -5,10 +5,10 @@
   ...
 }: {
   options = {
-    myPrograms.shell.fish.enable = lib.mkEnableOption "Enable fish functionality.";
+    dotfiles.shell.fish.enable = lib.mkEnableOption "Enable fish functionality.";
   };
 
-  config = lib.mkIf config.myPrograms.shell.fish.enable {
+  config = lib.mkIf config.dotfiles.shell.fish.enable {
     programs.fish = {
       enable = true;
 

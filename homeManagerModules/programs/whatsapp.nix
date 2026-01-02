@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    myPrograms.whatsapp.enable = lib.mkOption {
+    dotfiles.whatsapp.enable = lib.mkOption {
       type = lib.types.bool;
       default = false; # Non-functional as of now
       description = "Enable WhatsApp PWA. NOTE: THIS DOES NOT WORK AS OF NOW. ENABLING DOES NOTHING.";
     };
   };
 
-  config = lib.mkIf config.myPrograms.whatsapp.enable {
+  config = lib.mkIf config.dotfiles.whatsapp.enable {
     programs.firefoxpwa.profiles.default.sites.whatsapp.settings = {
       config = {
         name = "WhatsApp";
