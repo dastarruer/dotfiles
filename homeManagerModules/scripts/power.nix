@@ -20,11 +20,10 @@ in {
       power = prev.writeShellApplication {
         name = "power";
 
-        runtimeInputs = with prev;
-          [
-            systemd
-            coreutils
-          ];
+        runtimeInputs = with prev; [
+          systemd
+          coreutils
+        ];
 
         text = ''
           OPTIONS=" Lock\n󰗽 Logout\n󰥔 Suspend\n Reboot\n Shutdown"

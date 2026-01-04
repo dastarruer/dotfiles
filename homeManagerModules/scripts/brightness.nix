@@ -1,12 +1,17 @@
-{...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+in {
   nixpkgs.overlays = [
     (final: prev: {
       brightness = prev.writeShellApplication {
         name = "brightness";
 
         runtimeInputs = with prev; [
-          hyprland
-          jq
           brillo
           coreutils
         ];
@@ -38,8 +43,13 @@
 
           direction=$arg
 
-          monitor_data=$(hyprctl monitors -j)
-          focused_name=$(echo "$monitor_data" | jq -r '.[] | select(.focused == true) | .name')
+          # Fallback to eDP-1 if Hyprland is not enabled or detection fails
+          focused_name="eDP-1"
+          ${lib.optionalString hyprland.enable ''
+            if monitor_data=$(${pkgs.hyprland}/bin/hyprctl monitors -j 2>/dev/null); then
+                focused_name=$(echo "$monitor_data" | ${lib.getExe pkgs.jq} -r '.[] | select(.focused == true) | .name')
+            fi
+          ''}
 
           if [ "$focused_name" != "eDP-1" ]; then
               if [ "$direction" == "-" ]; then
