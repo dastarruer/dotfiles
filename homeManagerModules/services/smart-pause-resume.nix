@@ -29,10 +29,13 @@
         text = ''
           if systemctl --user --quiet is-active smart-pause-resume.service; then
             systemctl --user stop smart-pause-resume.service
-            playerctl --all-players pause
+
+            # || true makes sure the script does not return a non-zero exit code
+            playerctl --all-players pause || true
+
             systemctl --user start smart-pause-resume.service
           else
-            playerctl --all-players pause
+            playerctl --all-players pause || true
           fi
         '';
       };
