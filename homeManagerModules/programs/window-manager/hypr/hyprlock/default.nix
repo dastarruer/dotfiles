@@ -13,10 +13,10 @@
   ];
 
   options = {
-    dotfiles.hypr.hyprlock.enable = lib.mkEnableOption "Enable hyprlock.";
+    dotfiles.window-manager.hypr.hyprlock.enable = lib.mkEnableOption "Enable hyprlock.";
   };
 
-  config = lib.mkIf config.dotfiles.hypr.hyprlock.enable {
+  config = lib.mkIf config.dotfiles.window-manager.hypr.hyprlock.enable {
     # Config taken from here: https://github.com/FireDrop6000/hyprland-mydots/blob/master/.config/hypr/hyprlock.conf
     programs.hyprlock = {
       enable = true;

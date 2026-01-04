@@ -3,7 +3,9 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  cfg = config.dotfiles.desktop.gaming.lutris;
+in {
   options = {
     dotfiles.desktop.gaming.lutris.enable = lib.mkOption {
       type = lib.types.bool;
@@ -12,7 +14,7 @@
     };
   };
 
-  config = lib.mkIf config.dotfiles.lutris.enable {
+  config = lib.mkIf cfg.enable {
     programs.lutris = {
       enable = true;
 

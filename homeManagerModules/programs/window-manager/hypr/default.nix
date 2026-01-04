@@ -11,7 +11,7 @@
   ];
 
   options = {
-    dotfiles.hypr.enable = lib.mkOption {
+    dotfiles.window-manager.hypr.enable = lib.mkOption {
       type = lib.types.bool;
       default = config.dotfiles.window-manager.enable;
       description = "Enable hyprland, hypridle, hyprsunset, and hyprlock.";
@@ -19,9 +19,9 @@
   };
 
   config = let
-    cfg = config.dotfiles.hypr;
+    cfg = config.dotfiles.window-manager.hypr;
   in {
-    dotfiles.hypr = {
+    dotfiles.window-manager.hypr = {
       hyprland.enable = lib.mkDefault cfg.enable;
       hypridle.enable = lib.mkDefault cfg.enable;
       hyprlock.enable = lib.mkDefault cfg.enable;

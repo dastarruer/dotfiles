@@ -4,10 +4,10 @@
   ...
 }: {
   options = {
-    dotfiles.hypr.hyprsunset.enable = lib.mkEnableOption "Enable hyprsunset.";
+    dotfiles.window-manager.hypr.hyprsunset.enable = lib.mkEnableOption "Enable hyprsunset.";
   };
 
-  config = lib.mkIf config.dotfiles.hypr.hyprsunset.enable {
+  config = lib.mkIf config.dotfiles.window-manager.hypr.hyprsunset.enable {
     services.hyprsunset = {
       enable = true;
 

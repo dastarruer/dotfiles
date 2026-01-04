@@ -1,10 +1,10 @@
 # Comes from https://www.youtube.com/watch?v=EI-6QX60WXc&t=915s
-{inputs, ...}: {
+{config, ...}: {
   services.home-manager.autoUpgrade = {
     enable = true;
     frequency = "Sat 12:00";
     useFlake = true;
-    flakeDir = inputs.self.outPath;
+    flakeDir = "${config.home.homeDirectory}/.dotfiles";
   };
 
   # Remove unused generations

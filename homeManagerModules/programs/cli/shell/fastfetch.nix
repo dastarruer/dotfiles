@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   lib,
   ...
@@ -13,7 +14,7 @@
       settings = {
         "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
         logo = {
-          source = "${../../../../config/images/pfp.png}";
+          source = "${inputs.self.outPath}/config/images/pfp.png";
           type = "kitty";
           height = 6;
           width = 12;

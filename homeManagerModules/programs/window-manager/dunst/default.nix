@@ -12,7 +12,7 @@
     };
   };
 
-  config = lib.mkIf config.window-manager.dunst.enable {
+  config = lib.mkIf config.dotfiles.window-manager.dunst.enable {
     services.dunst = {
       enable = true;
 

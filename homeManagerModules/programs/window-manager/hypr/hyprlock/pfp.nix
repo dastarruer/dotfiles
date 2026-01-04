@@ -1,8 +1,8 @@
-{...}: {
+{inputs, ...}: {
   programs.hyprlock.settings.image = [
     {
       monitor = "";
-      path = "${../../../../config/images/pfp.png}";
+      path = "${inputs.self.outPath}/config/images/pfp.png";
       border_color = "0xffdddddd";
       border_size = 3;
       size = 173;

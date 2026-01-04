@@ -12,7 +12,7 @@
     };
   };
 
-  config = lib.mkIf config.dotfiles.ludusavi.enable {
+  config = lib.mkIf config.dotfiles.desktop.gaming.ludusavi.enable {
     home.packages = with pkgs; [
       ludusavi
     ];
