@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ../../homeManagerModules/default.nix
+    ../../modules/home-manager/default.nix
   ];
 
   systemd.user.enable = true;
