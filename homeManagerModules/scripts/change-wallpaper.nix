@@ -1,11 +1,17 @@
-{...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  swww = config.dotfiles.window-manager.swww;
+in {
   nixpkgs.overlays = [
     (final: prev: {
       change-wallpaper = prev.writeShellApplication {
         name = "change-wallpaper";
 
         runtimeInputs = with prev; [
-          swww
           libnotify
           findutils
           coreutils
@@ -28,9 +34,12 @@
 
           # Calculate the next index
           NEXT_INDEX=$(( (CURRENT_INDEX + 1) % NUM_WALLPAPERS ))
+          SELECTED_WALLPAPER=''${WALLPAPERS[$NEXT_INDEX]}
 
           # Set the new wallpaper
-          swww img "''\${WALLPAPERS[$NEXT_INDEX]}" -t wipe --transition-angle 30 --transition-duration 1
+          ${lib.optionalString swww.enable ''
+            ${pkgs.swww}/bin/swww img "$SELECTED_WALLPAPER" -t wipe --transition-angle 30 --transition-duration 1
+          ''}
 
           # Symlink the wallpaper so it can be accessed by other programs
           ln -sf "''\${WALLPAPERS["$NEXT_INDEX"]}" "$HOME"/Pictures/wallpaper
@@ -39,7 +48,7 @@
           echo "$NEXT_INDEX" > "$INDEX_FILE"
 
           # Notify user
-          notify-send -t 1000 "Wallpaper set to: $(basename "''\${WALLPAPERS[$NEXT_INDEX]}")"
+          notify-send -t 1000 "Wallpaper set to: $(basename "$SELECTED_WALLPAPER")"
         '';
       };
     })
