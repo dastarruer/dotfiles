@@ -24,9 +24,6 @@
             COMMIT_MESSAGE="$1"
           fi
 
-          # If the flake has been updated, pull the file
-          git pull
-
           # Lint all nix files
           alejandra "$nix"
 
