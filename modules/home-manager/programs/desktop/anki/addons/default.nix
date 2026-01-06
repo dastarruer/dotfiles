@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    ./image-occlusion-enhanced.nix
     ./passfail2.nix
     ./recolor.nix
     # ./auto-sync.nix
@@ -10,5 +9,6 @@
   programs.anki.addons = with pkgs.ankiAddons; [
     review-heatmap
     anki-quizlet-importer-extended
+    image-occlusion-enhanced
   ];
 }
