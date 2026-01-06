@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    dotfiles.desktop.sober.enable = lib.mkOption {
+    home-manager.desktop.sober.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.desktop.enableAll;
+      default = config.home-manager.desktop.enableAll;
       description = "Enable Sober, an app for playing Roblox on Linux.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.desktop.sober.enable {
+  config = lib.mkIf config.home-manager.desktop.sober.enable {
     services.flatpak = {
       packages = [
         "flathub:app/org.vinegarhq.Sober/x86_64/stable"

@@ -5,7 +5,7 @@
   firefoxPkgs,
   ...
 }: let
-  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hypr.hyprland;
 in {
   imports = [
     ./containers.nix
@@ -16,10 +16,10 @@ in {
   ];
 
   options = {
-    dotfiles.desktop.firefox = {
+    home-manager.desktop.firefox = {
       enable = lib.mkOption {
         type = lib.types.bool;
-        default = config.dotfiles.desktop.enableAll;
+        default = config.home-manager.desktop.enableAll;
         description = "Enable firefox.";
       };
       profile = lib.mkOption {
@@ -30,7 +30,7 @@ in {
     };
   };
 
-  config = lib.mkIf config.dotfiles.desktop.firefox.enable {
+  config = lib.mkIf config.home-manager.desktop.firefox.enable {
     programs.firefox = {
       enable = true;
 
@@ -40,7 +40,7 @@ in {
 
     stylix.targets.firefox = {
       # Tell stylix to style this profile
-      profileNames = ["${config.dotfiles.desktop.firefox.profile}"];
+      profileNames = ["${config.home-manager.desktop.firefox.profile}"];
 
       colorTheme.enable = true;
     };

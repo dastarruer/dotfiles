@@ -40,7 +40,7 @@
 
   services.polkit-gnome.enable = true;
 
-  dotfiles = {
+  home-manager = {
     desktop = {
       enableAll = false;
       gaming.enable = true;

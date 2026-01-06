@@ -3,17 +3,17 @@
   lib,
   ...
 }: let
-  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hypr.hyprland;
 in {
   options = {
-    dotfiles.window-manager.swww.enable = lib.mkOption {
+    home-manager.window-manager.swww.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.window-manager.enable;
+      default = config.home-manager.window-manager.enable;
       description = "Enable swww, a wallpaper daemon.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.window-manager.swww.enable {
+  config = lib.mkIf config.home-manager.window-manager.swww.enable {
     services.swww.enable = true;
 
     # Start swww daemon on startup

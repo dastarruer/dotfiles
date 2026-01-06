@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    dotfiles.cli.git.enable = lib.mkOption {
+    home-manager.cli.git.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable git functionality.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.cli.git.enable {
+  config = lib.mkIf config.home-manager.cli.git.enable {
     sops.secrets = {
       name = {};
       email = {};

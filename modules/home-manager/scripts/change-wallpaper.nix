@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  swww = config.dotfiles.window-manager.swww;
+  swww = config.home-manager.window-manager.swww;
 in {
   nixpkgs.overlays = [
     (final: prev: {

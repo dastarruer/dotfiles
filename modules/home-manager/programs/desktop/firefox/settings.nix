@@ -9,12 +9,12 @@
 in {
   # Symlink user js
   home.file = {
-    ".mozilla/firefox/config.dotfiles.desktop.firefox.profile/user.js".text = betterfoxUserjs;
+    ".mozilla/firefox/config.home-manager.desktop.firefox.profile/user.js".text = betterfoxUserjs;
   };
 
   # Declare settings and overrides, most of which I've stolen from here:
   # https://github.com/gvolpe/nix-config/blob/6feb7e4f47e74a8e3befd2efb423d9232f522ccd/home/programs/browsers/firefox.nix
-  programs.firefox.profiles."${config.dotfiles.desktop.firefox.profile}".settings = {
+  programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}".settings = {
     # USER JS OVERRIDES
     "sidebar.revamp" = false;
     "svg.context-properties.content.enabled" = true;

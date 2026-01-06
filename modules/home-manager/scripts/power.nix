@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: let
-  hyprland = config.dotfiles.window-manager.hypr.hyprland;
-  hyprlock = config.dotfiles.window-manager.hypr.hyprlock;
-  rofi = config.dotfiles.window-manager.rofi;
+  hyprland = config.home-manager.window-manager.hypr.hyprland;
+  hyprlock = config.home-manager.window-manager.hypr.hyprlock;
+  rofi = config.home-manager.window-manager.rofi;
 
   lockCmd = lib.optionalString hyprlock.enable "${lib.getExe pkgs.hyprlock}";
   logoutCmd = lib.optionalString hyprland.enable "${pkgs.hyprland}/bin/hyprctl dispatch exit";

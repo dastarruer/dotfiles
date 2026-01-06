@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hypr.hyprland;
 in {
   imports = [
     ./theme.nix
@@ -11,14 +11,14 @@ in {
   ];
 
   options = {
-    dotfiles.window-manager.waybar.enable = lib.mkOption {
+    home-manager.window-manager.waybar.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.window-manager.enable;
+      default = config.home-manager.window-manager.enable;
       description = "Enable waybar, a status bar.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.window-manager.waybar.enable {
+  config = lib.mkIf config.home-manager.window-manager.waybar.enable {
     programs.waybar.enable = true;
 
     wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {

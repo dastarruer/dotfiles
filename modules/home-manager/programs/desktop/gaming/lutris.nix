@@ -4,12 +4,12 @@
   pkgs,
   ...
 }: let
-  cfg = config.dotfiles.desktop.gaming.lutris;
+  cfg = config.home-manager.desktop.gaming.lutris;
 in {
   options = {
-    dotfiles.desktop.gaming.lutris.enable = lib.mkOption {
+    home-manager.desktop.gaming.lutris.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.desktop.gaming.enable;
+      default = config.home-manager.desktop.gaming.enable;
       description = "Enable lutris, a game launcher.";
     };
   };

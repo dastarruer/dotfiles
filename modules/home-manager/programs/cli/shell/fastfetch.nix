@@ -5,10 +5,10 @@
   ...
 }: {
   options = {
-    dotfiles.cli.shell.fastfetch.enable = lib.mkEnableOption "Enable fastfetch.";
+    home-manager.cli.shell.fastfetch.enable = lib.mkEnableOption "Enable fastfetch.";
   };
 
-  config = lib.mkIf config.dotfiles.cli.shell.fastfetch.enable {
+  config = lib.mkIf config.home-manager.cli.shell.fastfetch.enable {
     programs.fastfetch = {
       enable = true;
       settings = {

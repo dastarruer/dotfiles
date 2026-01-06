@@ -3,17 +3,17 @@
   lib,
   ...
 }: let
-  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hypr.hyprland;
 in {
   options = {
-    dotfiles.desktop.kitty.enable = lib.mkOption {
+    home-manager.desktop.kitty.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.desktop.enableAll;
+      default = config.home-manager.desktop.enableAll;
       description = "Enable kitty, a terminal emulator.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.desktop.kitty.enable {
+  config = lib.mkIf config.home-manager.desktop.kitty.enable {
     programs.kitty = {
       enable = true;
 

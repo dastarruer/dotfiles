@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hypr.hyprland;
 in {
   nixpkgs.overlays = [
     (final: prev: {

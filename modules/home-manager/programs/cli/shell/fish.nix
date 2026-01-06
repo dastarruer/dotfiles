@@ -5,10 +5,10 @@
   ...
 }: {
   options = {
-    dotfiles.cli.shell.fish.enable = lib.mkEnableOption "Enable fish functionality.";
+    home-manager.cli.shell.fish.enable = lib.mkEnableOption "Enable fish functionality.";
   };
 
-  config = lib.mkIf config.dotfiles.cli.shell.fish.enable {
+  config = lib.mkIf config.home-manager.cli.shell.fish.enable {
     programs.fish = {
       enable = true;
 

@@ -3,17 +3,17 @@
   lib,
   ...
 }: let
-  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hypr.hyprland;
 in {
   options = {
-    dotfiles.desktop.obsidian.enable = lib.mkOption {
+    home-manager.desktop.obsidian.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.desktop.enableAll;
+      default = config.home-manager.desktop.enableAll;
       description = "Enable Obsidian, a notetaking app.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.desktop.obsidian.enable {
+  config = lib.mkIf config.home-manager.desktop.obsidian.enable {
     # Use the flatpak, which does not ask for login every reboot
     services.flatpak = {
       packages = [

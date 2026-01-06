@@ -4,10 +4,10 @@
   ...
 }: {
   options = {
-    dotfiles.window-manager.hypr.hypridle.enable = lib.mkEnableOption "Enable hypridle.";
+    home-manager.window-manager.hypr.hypridle.enable = lib.mkEnableOption "Enable hypridle.";
   };
 
-  config = lib.mkIf config.dotfiles.window-manager.hypr.hypridle.enable {
+  config = lib.mkIf config.home-manager.window-manager.hypr.hypridle.enable {
     services.hypridle = {
       enable = true;
 

@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    dotfiles.desktop.imv.enable = lib.mkOption {
+    home-manager.desktop.imv.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.desktop.enableAll;
+      default = config.home-manager.desktop.enableAll;
       description = "Enable imv, an image viewer.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.desktop.imv.enable {
+  config = lib.mkIf config.home-manager.desktop.imv.enable {
     programs.imv = {
       enable = true;
       settings = {

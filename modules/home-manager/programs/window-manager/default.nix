@@ -9,6 +9,6 @@
   ];
 
   options = {
-    dotfiles.window-manager.enable = lib.mkEnableOption "Enable a window-manager instead of a desktop environment.";
+    home-manager.window-manager.enable = lib.mkEnableOption "Enable a window-manager instead of a desktop environment.";
   };
 }

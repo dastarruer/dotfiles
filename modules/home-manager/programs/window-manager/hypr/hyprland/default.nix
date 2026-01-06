@@ -17,10 +17,10 @@
   ];
 
   options = {
-    dotfiles.window-manager.hypr.hyprland.enable = lib.mkEnableOption "Enable hyprland, a script to send notifications on low battery.";
+    home-manager.window-manager.hypr.hyprland.enable = lib.mkEnableOption "Enable hyprland, a script to send notifications on low battery.";
   };
 
-  config = lib.mkIf config.dotfiles.window-manager.hypr.hyprland.enable {
+  config = lib.mkIf config.home-manager.window-manager.hypr.hyprland.enable {
     wayland.windowManager.hyprland = {
       enable = true;
 

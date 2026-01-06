@@ -4,7 +4,7 @@
   ...
 }: {
   # flameshot is unneeded
-  dotfiles.flameshot.enable = false;
+  home-manager.flameshot.enable = false;
 
   # Based off grimblast manual
   wayland.windowManager.hyprland.settings = {

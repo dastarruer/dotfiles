@@ -1,5 +1,5 @@
 {config, ...}: {
-  programs.firefox.profiles."${config.dotfiles.desktop.firefox.profile}" = {
+  programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}" = {
     # Set up containers
     containersForce = true;
     containers = {

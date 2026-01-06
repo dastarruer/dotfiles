@@ -20,6 +20,6 @@
   ];
 
   options = {
-    dotfiles.desktop.enableAll = lib.mkEnableOption "Enable all desktop apps.";
+    home-manager.desktop.enableAll = lib.mkEnableOption "Enable all desktop apps.";
   };
 }

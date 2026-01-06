@@ -5,14 +5,14 @@
   ...
 }: {
   options = {
-    dotfiles.window-manager.dunst.enable = lib.mkOption {
+    home-manager.window-manager.dunst.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.window-manager.enable;
+      default = config.home-manager.window-manager.enable;
       description = "Enable window-manager.dunst, a script to send notifications on low battery.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.window-manager.dunst.enable {
+  config = lib.mkIf config.home-manager.window-manager.dunst.enable {
     services.dunst = {
       enable = true;
 

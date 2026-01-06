@@ -11,14 +11,14 @@
   ];
 
   options = {
-    dotfiles.desktop.vscode.enable = lib.mkOption {
+    home-manager.desktop.vscode.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.desktop.enableAll;
+      default = config.home-manager.desktop.enableAll;
       description = "Enable vscode.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.desktop.vscode.enable {
+  config = lib.mkIf config.home-manager.desktop.vscode.enable {
     programs.vscode = {
       enable = true;
       # Use vscode fhs so lldb works: https://www.reddit.com/r/NixOS/comments/1e724mx/how_can_i_debug_rust_with_vscode_and/

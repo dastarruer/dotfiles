@@ -3,7 +3,7 @@
   firefoxAddonPkgs,
   ...
 }: {
-  programs.firefox.profiles."${config.dotfiles.desktop.firefox.profile}".extensions.packages = with firefoxAddonPkgs; [
+  programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}".extensions.packages = with firefoxAddonPkgs; [
     darkreader
   ];
 

@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    dotfiles.desktop.mpv.enable = lib.mkOption {
+    home-manager.desktop.mpv.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.desktop.enableAll;
+      default = config.home-manager.desktop.enableAll;
       description = "Enable mpv, a video player.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.desktop.mpv.enable {
+  config = lib.mkIf config.home-manager.desktop.mpv.enable {
     programs.mpv.enable = true;
   };
 }

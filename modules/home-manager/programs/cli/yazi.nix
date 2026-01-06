@@ -5,14 +5,14 @@
   ...
 }: {
   options = {
-    dotfiles.cli.yazi.enable = lib.mkOption {
+    home-manager.cli.yazi.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable yazi, a terminal file browser.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.cli.yazi.enable {
+  config = lib.mkIf config.home-manager.cli.yazi.enable {
     programs.yazi = {
       enable = true;
 

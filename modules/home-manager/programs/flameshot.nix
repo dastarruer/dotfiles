@@ -4,18 +4,18 @@
   pkgs,
   ...
 }: let
-  hyprland = config.dotfiles.window-manager.hypr.hyprland;
-  dunst = config.dotfiles.window-manager.dunst;
+  hyprland = config.home-manager.window-manager.hypr.hyprland;
+  dunst = config.home-manager.window-manager.dunst;
 in {
   options = {
-    dotfiles.flameshot.enable = lib.mkOption {
+    home-manager.flameshot.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
-      description = "Enable flameshot, a screenshot tool. Will be disabled by default if dotfiles.window-manager.hyprland.enable is set to true.";
+      description = "Enable flameshot, a screenshot tool. Will be disabled by default if home-manager.window-manager.hyprland.enable is set to true.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.flameshot.enable {
+  config = lib.mkIf config.home-manager.flameshot.enable {
     services.flameshot = {
       enable = true;
 

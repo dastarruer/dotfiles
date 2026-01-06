@@ -6,7 +6,7 @@
   spicePkgs,
   ...
 }: let
-  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hypr.hyprland;
 in {
   imports = [
     ./extensions.nix
@@ -15,14 +15,14 @@ in {
   ];
 
   options = {
-    dotfiles.desktop.spicetify.enable = lib.mkOption {
+    home-manager.desktop.spicetify.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.desktop.enableAll;
+      default = config.home-manager.desktop.enableAll;
       description = "Enable spicetify, a modified version of Spotify.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.desktop.spicetify.enable {
+  config = lib.mkIf config.home-manager.desktop.spicetify.enable {
     programs.spicetify = {
       enable = true;
 

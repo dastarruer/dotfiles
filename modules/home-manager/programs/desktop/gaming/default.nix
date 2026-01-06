@@ -5,7 +5,7 @@
   ];
 
   options = {
-    dotfiles.desktop.gaming.enable = lib.mkOption {
+    home-manager.desktop.gaming.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable gaming desktop apps.";

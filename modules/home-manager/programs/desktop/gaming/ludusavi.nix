@@ -5,14 +5,14 @@
   ...
 }: {
   options = {
-    dotfiles.desktop.gaming.ludusavi.enable = lib.mkOption {
+    home-manager.desktop.gaming.ludusavi.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.desktop.gaming.enable;
+      default = config.home-manager.desktop.gaming.enable;
       description = "Enable ludusavi, a game-save backup tool.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.desktop.gaming.ludusavi.enable {
+  config = lib.mkIf config.home-manager.desktop.gaming.ludusavi.enable {
     home.packages = with pkgs; [
       ludusavi
     ];

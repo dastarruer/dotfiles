@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    dotfiles.window-manager.batsignal.enable = lib.mkOption {
+    home-manager.window-manager.batsignal.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.window-manager.enable;
+      default = config.home-manager.window-manager.enable;
       description = "Enable batsignal, a script to send notifications on low battery.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.window-manager.batsignal.enable {
+  config = lib.mkIf config.home-manager.window-manager.batsignal.enable {
     services.batsignal = {
       enable = true;
       extraArgs = [

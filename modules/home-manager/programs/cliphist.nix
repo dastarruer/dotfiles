@@ -4,12 +4,12 @@
   pkgs,
   ...
 }: let
-  hyprland = config.dotfiles.window-manager.hypr.hyprland;
-  rofi = config.dotfiles.window-manager.rofi;
-  cfg = config.dotfiles.cliphist;
+  hyprland = config.home-manager.window-manager.hypr.hyprland;
+  rofi = config.home-manager.window-manager.rofi;
+  cfg = config.home-manager.cliphist;
 in {
   options = {
-    dotfiles.cliphist.enable = lib.mkOption {
+    home-manager.cliphist.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Enable cliphist, a clipboard history manager.";

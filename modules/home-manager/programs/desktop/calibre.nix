@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    dotfiles.desktop.calibre.enable = lib.mkOption {
+    home-manager.desktop.calibre.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.desktop.enableAll;
+      default = config.home-manager.desktop.enableAll;
       description = "Enable calibre, an app for managing your book collection.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.desktop.calibre.enable {
+  config = lib.mkIf config.home-manager.desktop.calibre.enable {
     programs.calibre.enable = true;
 
     # Style guide here: https://github.com/chriskempson/base16/blob/main/styling.md

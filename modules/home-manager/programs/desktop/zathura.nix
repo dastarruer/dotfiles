@@ -3,17 +3,17 @@
   lib,
   ...
 }: let
-  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hypr.hyprland;
 in {
   options = {
-    dotfiles.desktop.zathura.enable = lib.mkOption {
+    home-manager.desktop.zathura.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.desktop.enableAll;
+      default = config.home-manager.desktop.enableAll;
       description = "Enable zathura, a PDF reader.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.desktop.zathura.enable {
+  config = lib.mkIf config.home-manager.desktop.zathura.enable {
     programs.zathura = {
       enable = true;
 

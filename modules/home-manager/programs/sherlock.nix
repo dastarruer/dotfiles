@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    dotfiles.sherlock.enable = lib.mkOption {
+    home-manager.sherlock.enable = lib.mkOption {
       type = lib.types.bool;
       default = false; # Does not work as of now
       description = "Enable sherlock, an application launcher. NOTE THAT THIS DOES NOT WORK AS OF NOW. ENABLING THIS MAY CAUSE THINGS TO BREAK.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.sherlock.enable {
+  config = lib.mkIf config.home-manager.sherlock.enable {
     # example configuration
     programs.sherlock = {
       enable = true;

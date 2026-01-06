@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  hyprland = config.dotfiles.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hypr.hyprland;
 in {
   imports = [
     ./theme.nix
@@ -13,14 +13,14 @@ in {
   ];
 
   options = {
-    dotfiles.window-manager.rofi.enable = lib.mkOption {
+    home-manager.window-manager.rofi.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.dotfiles.window-manager.enable;
+      default = config.home-manager.window-manager.enable;
       description = "Enable rofi, an app launcher.";
     };
   };
 
-  config = lib.mkIf config.dotfiles.window-manager.rofi.enable {
+  config = lib.mkIf config.home-manager.window-manager.rofi.enable {
     programs.rofi = {
       enable = true;
     };
