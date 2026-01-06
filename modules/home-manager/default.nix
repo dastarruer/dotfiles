@@ -9,6 +9,7 @@
     ./symlinks.nix
     ./stylix.nix
     ./gtk.nix
+    ./qt.nix
     ./maintenance.nix
     ./secrets.nix
     ./fontconfig.nix

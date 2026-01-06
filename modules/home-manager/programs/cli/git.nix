@@ -29,7 +29,7 @@
           email = userEmail;
         };
 
-        # Use vs codium for commit messages
+        # Use vscode for commit messages
         core.editor = "${lib.getExe config.programs.vscode.package} --wait";
 
         # Automatically push to the current branch or something
