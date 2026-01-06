@@ -14,7 +14,7 @@
 
       # Aliases are handled in their own dedicated attribute set
       shellAliases = {
-        code = "codium";
+        code = "${lib.getExe config.programs.vscode.package}";
         chx = "chmod +x";
         pr = "python3 main.py";
         df = "cd ~/.dotfiles";

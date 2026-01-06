@@ -30,7 +30,7 @@
         };
 
         # Use vs codium for commit messages
-        core.editor = "codium --wait";
+        core.editor = "${lib.getExe config.programs.vscode.package} --wait";
 
         # Automatically push to the current branch or something
         push.autoSetupRemote = true;

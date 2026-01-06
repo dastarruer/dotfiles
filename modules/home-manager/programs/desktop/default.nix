@@ -3,7 +3,7 @@
     ./calibre.nix
     ./libreoffice.nix
     ./gaming
-    ./vscodium
+    ./vscode
     ./firefox
     ./kitty.nix
     ./spicetify
