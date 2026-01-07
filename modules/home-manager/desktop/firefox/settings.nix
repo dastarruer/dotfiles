@@ -103,5 +103,8 @@ in {
 
     # Disable alt menu
     "ui.key.menuAccessKeyFocuses" = false;
+
+    # Disable middle click paste
+    "middlemouse.paste" = false;
   };
 }
