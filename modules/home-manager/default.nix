@@ -1,5 +1,7 @@
 {...}: {
   imports = [
+    ./cli
+    ./desktop
     ./programs
     ./scripts
     ./services
