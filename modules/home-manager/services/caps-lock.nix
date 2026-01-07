@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = [pkgs.evtest pkgs.libnotify];
 
   systemd.user.services.caps-lock-monitor = {
