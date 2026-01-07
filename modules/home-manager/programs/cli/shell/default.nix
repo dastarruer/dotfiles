@@ -12,7 +12,7 @@
   options = {
     home-manager.cli.shell.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = config.home-manager.cli.enable;
       description = "Enable the fish shell and starship.";
     };
   };

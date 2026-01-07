@@ -6,7 +6,7 @@
   options = {
     home-manager.cli.btop.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = config.home-manager.cli.enable;
       description = "Enable btop, a terminal system monitor.";
     };
   };

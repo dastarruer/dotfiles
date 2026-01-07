@@ -6,7 +6,7 @@
   options = {
     home-manager.cli.rclone.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = config.home-manager.cli.enable;
       description = "Enable rclone, a program for accessing cloud drives from the terminal.";
     };
   };

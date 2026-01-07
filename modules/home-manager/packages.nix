@@ -8,8 +8,5 @@
     # musescore
     # kdePackages.kdenlive
     # vesktop
-    ffmpeg
   ];
-
-  programs.home-manager.enable = true;
 }

@@ -47,6 +47,8 @@
       gaming.enable = false;
     };
 
+    cli.enable = true;
+
     sherlock.enable = false;
     distrobox.enable = false;
 

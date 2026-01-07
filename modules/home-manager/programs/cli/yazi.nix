@@ -7,7 +7,7 @@
   options = {
     home-manager.cli.yazi.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = config.home-manager.cli.enable;
       description = "Enable yazi, a terminal file browser.";
     };
   };
