@@ -47,10 +47,12 @@
       gaming.enable = false;
     };
 
-    cli.enable = true;
+    cli = {
+      enable = true;
+      distrobox.enable = false;
+    };
 
     sherlock.enable = false;
-    distrobox.enable = false;
 
     window-manager = {
       enable = true;

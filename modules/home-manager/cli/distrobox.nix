@@ -4,14 +4,14 @@
   ...
 }: {
   options = {
-    home-manager.distrobox.enable = lib.mkOption {
+    home-manager.cli.distrobox.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = config.home-manager.cli.enable;
       description = "Enable distrobox functionality.";
     };
   };
 
-  config = lib.mkIf config.home-manager.distrobox.enable {
+  config = lib.mkIf config.home-manager.cli.distrobox.enable {
     programs.distrobox = {
       enable = true;
     };

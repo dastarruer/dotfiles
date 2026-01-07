@@ -11,6 +11,7 @@
     ./rclone.nix
     ./yazi.nix
     ./zoxide.nix
+    ./distrobox.nix
     ./direnv.nix
   ];
 
