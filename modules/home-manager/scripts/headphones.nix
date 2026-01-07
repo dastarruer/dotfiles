@@ -20,7 +20,7 @@
 
           # Turn on Bluetooth or fallback
           bluetoothctl power on || {
-              notify-send -t 1000 "Failed to turn on Bluetooth, opening Blueman..."
+              notify-send -t 1000 -u low -i dialog-warning "Failed to turn on Bluetooth, opening Blueman..."
               blueman-manager &
               exit 1
           }
@@ -38,15 +38,15 @@
 
           # If already connected, restart Bluetooth to refresh
           if bluetoothctl info "$HEADPHONES_MAC" | grep 'Connected: yes' -q; then
-              notify-send -t 4000 "Restarting Bluetooth..."
+              notify-send -t 1500 -u low -i dialog-warning "Restarting Bluetooth..."
               bluetoothctl power off
               bluetoothctl power on
           fi
 
           # Connect headphones
-          notify-send -t 4000 "Connecting to headphones..."
+          notify-send -t 1500 -u low -i headphones "Connecting to headphones..."
           bluetoothctl connect "$HEADPHONES_MAC" || {
-              notify-send -t 4000 "Failed to connect headphones. Please try again."
+              notify-send -t 1500 -u low -i dialog-error "Failed to connect headphones. Please try again."
               exit 1
           }
 
