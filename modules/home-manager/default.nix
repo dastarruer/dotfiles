@@ -1,8 +1,9 @@
 {...}: {
   imports = [
     ./programs
-    ./services
     ./scripts
+    ./services
+    ./window-manager
 
     ./flatpak.nix
     ./packages.nix
