@@ -114,18 +114,31 @@
           alertPath = ./alerts/default.wav;
         in {
           summary = "*";
-          script = "${pkgs.writeShellScript "alert" ''
-            #!/run/current-system/sw/bin/bash
+          script = let
+            name = "alert";
+          in "${pkgs.writeShellApplication {
+            name = "${name}";
 
-            if [ "$DUNST_APP_NAME" != "Spotify" ] && \
-               [ "$DUNST_APP_NAME" != "flameshot" ] && \
-               [[ "$DUNST_SUMMARY" != *"Wallpaper set to:"* ]]; then
-                # Only play if no pw-play process is currently running
-                if ! pgrep -x pw-play >/dev/null; then
-                    ${pkgs.pipewire}/bin/pw-play ${alertPath} &
-                fi
-            fi
-          ''}";
+            runtimeInputs = with pkgs; [
+              pipewire
+            ];
+
+            text = ''
+              # Only proceed if urgency is NOT LOW
+              if [ "$DUNST_URGENCY" = "LOW" ]; then
+                  exit 0
+              fi
+
+              if [ "$DUNST_APP_NAME" != "Spotify" ] && \
+                 [ "$DUNST_APP_NAME" != "flameshot" ] && \
+                 [[ "$DUNST_SUMMARY" != *"Wallpaper set to:"* ]]; then
+                  # Only play if no pw-play process is currently running
+                  if ! pgrep -x pw-play >/dev/null; then
+                      pw-play ${alertPath} &
+                  fi
+              fi
+            '';
+          }}";
         };
       };
     };
