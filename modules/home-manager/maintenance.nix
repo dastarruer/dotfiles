@@ -4,6 +4,7 @@
     enable = true;
     frequency = "Sat 12:00";
     useFlake = true;
+    # inputs.self.outDir will throw an error when used with useFlake for whatever reason.
     flakeDir = "${config.home.homeDirectory}/.dotfiles";
   };
 
