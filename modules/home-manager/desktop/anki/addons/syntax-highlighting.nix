@@ -16,6 +16,8 @@
         };
         # Treat that src folder as the root
         sourceRoot = "${finalAttrs.src.name}/src/syntax_highlighting_ng";
+        patchFlags = [ "-p3" ];
+  patches = [ ./0001-Change-language.patch ];
       }))
   ];
 }
