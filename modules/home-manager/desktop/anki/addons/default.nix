@@ -2,6 +2,7 @@
   imports = [
     ./passfail2.nix
     ./recolor.nix
+    ./syntax-highlighting.nix
     # ./auto-sync.nix
   ];
 
