@@ -98,11 +98,11 @@
         };
 
         urgency_low = {
-          timeout = 10;
+          timeout = 2;
         };
 
         urgency_normal = {
-          timeout = 10;
+          timeout = 3;
         };
 
         urgency_critical = {
