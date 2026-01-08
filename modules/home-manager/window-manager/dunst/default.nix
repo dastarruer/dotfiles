@@ -75,7 +75,7 @@
           sticky_history = true;
           history_length = 20;
 
-          browser = "/usr/bin/xdg-open";
+          browser = "${pkgs.xdg-utils}/bin/xdg-open";
           always_run_script = true;
           title = "Dunst";
           class = "Dunst";
