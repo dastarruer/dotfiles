@@ -14,7 +14,7 @@
     persistent = true;
     dates = "03:00";
 
-    options = "--delete-older-than 7d";
+    options = "--delete-older-than 15d";
   };
 
   # Remove old home manager generations
