@@ -46,7 +46,9 @@
   home-manager = {
     desktop = {
       enableAll = true;
+
       foliate.enable = false;
+      flameshot.enable = false;
       gaming.enable = false;
     };
 
@@ -68,6 +70,7 @@
     window-manager = {
       enable = true;
       hypr.hypridle.enable = false;
+      sherlock.enable = false;
     };
   };
 }

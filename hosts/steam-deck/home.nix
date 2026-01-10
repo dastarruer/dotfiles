@@ -42,7 +42,6 @@
 
   home-manager = {
     desktop = {
-      enableAll = false;
       gaming.enable = true;
       spicetify.enable = true;
       firefox.enable = true;

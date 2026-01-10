@@ -17,6 +17,7 @@
     ./obsidian.nix
     ./sober.nix
     ./imv.nix
+    ./flameshot.nix
   ];
 
   options = {

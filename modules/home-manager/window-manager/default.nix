@@ -6,6 +6,7 @@
     ./hypr
     ./swww.nix
     ./batsignal.nix
+    ./sherlock.nix
   ];
 
   options = {

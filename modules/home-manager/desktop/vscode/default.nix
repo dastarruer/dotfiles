@@ -36,7 +36,7 @@
         package = pkgs.vscode.fhs;
 
         # Privacy settings (https://paulsorensen.io/github-copilot-vscode-privacy/)
-        profiles.${profile}.settings = {
+        profiles.${profile}.userSettings = {
           "telemetry.telemetryLevel" = "off";
           "telemetry.feedback.enabled" = false;
           "workbench.enableExperiments" = false;

@@ -10,7 +10,7 @@ in {
   options = {
     home-manager.flameshot.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = config.home-manager.desktop.enableAll;
       description = "Enable flameshot, a screenshot tool. Will be disabled by default if home-manager.window-manager.hyprland.enable is set to true.";
     };
   };
@@ -20,7 +20,7 @@ in {
       enable = true;
 
       # Enable wayland support with this build flag
-      package = pkgs.flameshot.override {
+      package = lib.mkIf hyprland.enable pkgs.flameshot.override {
         enableWlrSupport = true;
       };
 
@@ -30,7 +30,7 @@ in {
           showStartupLaunchMessage = false;
 
           # Auto save to this path
-          savePath = "${config.home.homeDirectory}/Pictures/screenshots";
+          savePath = "${config.home.sessionVariables.XDG_SCREENSHOTS_DIR}";
           savePathFixed = true;
           saveAsFileExtension = ".jpg";
           filenamePattern = "%F_%H-%M";

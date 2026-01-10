@@ -13,6 +13,7 @@
     ./zoxide.nix
     ./distrobox.nix
     ./direnv.nix
+    ./cliphist.nix
   ];
 
   options = {

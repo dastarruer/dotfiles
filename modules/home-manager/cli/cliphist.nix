@@ -11,7 +11,7 @@ in {
   options = {
     home-manager.cliphist.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = config.home-manager.cli.enable;
       description = "Enable cliphist, a clipboard history manager.";
     };
   };

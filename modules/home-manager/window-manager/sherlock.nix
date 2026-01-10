@@ -4,9 +4,9 @@
   ...
 }: {
   options = {
-    home-manager.sherlock.enable = lib.mkOption {
+    home-manager.window-manager.sherlock.enable = lib.mkOption {
       type = lib.types.bool;
-      default = false; # Does not work as of now
+      default = config.home-manager.window-manager.enable;
       description = "Enable sherlock, an application launcher. NOTE THAT THIS DOES NOT WORK AS OF NOW. ENABLING THIS MAY CAUSE THINGS TO BREAK.";
     };
   };
