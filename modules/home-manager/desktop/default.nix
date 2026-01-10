@@ -23,6 +23,7 @@
     ./sober.nix
     ./imv.nix
     ./flameshot.nix
+    ./timer.nix
   ];
 
   options = {
