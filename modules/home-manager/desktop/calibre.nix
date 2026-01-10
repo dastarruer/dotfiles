@@ -14,6 +14,11 @@
   config = lib.mkIf config.home-manager.desktop.calibre.enable {
     programs.calibre.enable = true;
 
+    # Backup calibre library
+    home-manager.cli.rclone.backupPaths = [
+      "${config.home.homeDirectory}/Documents/calibre"
+    ];
+
     # Style guide here: https://github.com/chriskempson/base16/blob/main/styling.md
     # Has to be applied manually with: Preferences -> Look and Feel -> Adjust colors -> Import
     home.file.".config/calibre/theme.calibre-palette".text = ''

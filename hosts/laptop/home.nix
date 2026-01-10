@@ -68,8 +68,6 @@
       distrobox.enable = false;
       rclone = {
         backupPaths = [
-          "${config.home.homeDirectory}/Documents/calibre"
-          "${config.home.homeDirectory}/Documents/ludusavi-backup"
           "${config.home.homeDirectory}/Documents/sheet-music"
           "${config.home.homeDirectory}/Documents/school"
         ];

@@ -53,5 +53,10 @@
         WantedBy = ["timers.target"];
       };
     };
+
+    # Backup the ludusavi save dir
+    home-manager.cli.rclone.backupPaths = [
+      "${config.home.homeDirectory}/Documents/ludusavi-backup"
+    ];
   };
 }
