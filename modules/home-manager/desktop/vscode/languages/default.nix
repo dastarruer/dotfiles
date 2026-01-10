@@ -1,4 +1,10 @@
-{vscode-extensions, ...}: {
+{
+  vscode-extensions,
+  config,
+  ...
+}: let
+  profile = config.home-manager.desktop.vscode.profile;
+in {
   # Import language specific options
   imports = [
     ./nix
@@ -8,7 +14,7 @@
   ];
 
   # General language formatter settings
-  programs.vscode.profiles.default = {
+  programs.vscode.profiles.${profile} = {
     extensions = with vscode-extensions; [
       esbenp.prettier-vscode
       # foxundermoon.shell-format

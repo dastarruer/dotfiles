@@ -1,9 +1,12 @@
 {
   vscode-extensions,
   pkgs,
+  config,
   ...
-}: {
-  programs.vscode.profiles.default.extensions = with vscode-extensions; [
+}: let
+  profile = config.home-manager.desktop.vscode.profile;
+in {
+  programs.vscode.profiles.${profile}.extensions = with vscode-extensions; [
     # nix lsp
     jnoortheen.nix-ide
 

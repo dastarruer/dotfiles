@@ -1,6 +1,10 @@
-{...}: {
+{config,
+  ...
+}: let
+  profile = config.home-manager.desktop.vscode.profile;
+in{
   # Define other settings here
-  programs.vscode.profiles.default.userSettings = {
+  programs.vscode.profiles.${profile}.userSettings = {
     # File explorer settings
     "explorer.confirmDelete" = false;
     "explorer.confirmDragAndDrop" = false;

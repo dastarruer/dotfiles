@@ -1,5 +1,9 @@
-{...}: {
-  programs.vscode.profiles.default.userSettings = {
+{config,
+  ...
+}: let
+  profile = config.home-manager.desktop.vscode.profile;
+in{
+  programs.vscode.profiles.${profile}.userSettings = {
     "nix.serverPath" = "nixd";
     "nix.enableLanguageServer" = true;
     "nixpkgs" = {

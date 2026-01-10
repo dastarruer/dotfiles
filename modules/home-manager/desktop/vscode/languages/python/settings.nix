@@ -1,5 +1,7 @@
-{...}: {
-  programs.vscode.profiles.default.userSettings = {
+{config, ...}: let
+  profile = config.home-manager.desktop.vscode.profile;
+in {
+  programs.vscode.profiles.${profile}.userSettings = {
     "[python]" = {
       editor.defaultFormatter = "charliermarsh.ruff";
       editor.formatOnSave = true;

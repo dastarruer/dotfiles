@@ -1,6 +1,8 @@
-{...}: {
+{config, ...}: let
+    profile = config.home-manager.desktop.vscode.profile;
+in {
   # UI Layout & Navigation
-  programs.vscode.profiles.default.userSettings = {
+  programs.vscode.profiles.${profile}.userSettings = {
     "workbench.sideBar.location" = "right";
     "workbench.activityBar.location" = "top";
     # "workbench.statusBar.visible" = false;

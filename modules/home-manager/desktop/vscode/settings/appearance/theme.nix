@@ -1,11 +1,13 @@
 {
-  inputs,
-  pkgs,
+  config,
+  vscode-extensions,
   ...
-}: {
-  programs.vscode.profiles.default = {
+}: let
+  profile = config.home-manager.desktop.vscode.profile;
+in {
+  programs.vscode.profiles.${profile} = {
     # Extensions required for theming
-    extensions = with inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace; [
+    extensions = with vscode-extensions; [
       pkief.material-icon-theme
       tintedtheming.base16-tinted-themes
     ];

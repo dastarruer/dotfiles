@@ -1,9 +1,12 @@
 {
   vscode-extensions,
   pkgs,
+  config,
   ...
-}: {
-  programs.vscode.profiles.default.extensions = [
+}: let
+  profile = config.home-manager.desktop.vscode.profile;
+in {
+  programs.vscode.profiles.${profile}.extensions = [
     vscode-extensions.rust-lang.rust-analyzer
     pkgs.vscode-extensions.vadimcn.vscode-lldb
     vscode-extensions.tamasfe.even-better-toml

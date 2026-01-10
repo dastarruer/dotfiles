@@ -1,9 +1,13 @@
 {
   vscode-extensions,
   pkgs,
+  config,
   ...
-}: {
-  programs.vscode.profiles.default.extensions = with vscode-extensions; [
+}: let
+    profile = config.home-manager.desktop.vscode.profile;
+
+in{
+  programs.vscode.profiles.${profile}.extensions = with vscode-extensions; [
     ms-azuretools.vscode-containers
     # ms-vscode-remote.remote-containers
   ];
