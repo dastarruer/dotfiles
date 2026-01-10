@@ -44,7 +44,11 @@
     desktop = {
       gaming.enable = true;
       spicetify.enable = true;
-      firefox.enable = true;
+
+      firefox = {
+        enable = true;
+        deckFixes = true;
+      };
     };
 
     cli = {

@@ -27,6 +27,11 @@ in {
         default = "default";
         description = "Name of the default profile. Set to `default` by default.";
       };
+      deckFixes = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Apply Steam Deck specific Firefox settings.";
+      };
     };
   };
 
