@@ -40,13 +40,13 @@ in {
     wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
       # looks aesthetic innit
       windowrule = [
-        "float, class:^(spotify)$"
-        "move 81 146, class:^(spotify)$"
-        "size 1068 670, class:^(spotify)$"
+        "float on, match:class ^(spotify)$"
+        "move 81 146, match:class ^(spotify)$"
+        "size 1068 670, match:class ^(spotify)$"
       ];
 
       windowrulev2 = [
-        "workspace 5 silent,class:^(spotify)$"
+        "workspace 5 silent,match:class ^(spotify)$"
       ];
     };
   };

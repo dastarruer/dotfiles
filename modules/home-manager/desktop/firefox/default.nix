@@ -48,10 +48,10 @@ in {
     # Windowrules for picture-in-picture
     wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
       windowrule = [
-        "float, title:^(Picture-in-Picture)$"
-        "move 1492 839, title:^(Picture-in-Picture)$"
-        "size 427 240, title:^(Picture-in-Picture)$"
-        "pin, title:^(Picture-in-Picture)$"
+        "float on, match:title ^(Picture-in-Picture)$"
+        "move 1492 839, match:title ^(Picture-in-Picture)$"
+        "size 427 240, match:title ^(Picture-in-Picture)$"
+        "pin on, match:title ^(Picture-in-Picture)$"
       ];
     };
   };

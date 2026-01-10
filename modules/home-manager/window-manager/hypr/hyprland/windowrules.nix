@@ -2,24 +2,26 @@
   wayland.windowManager.hyprland.settings = {
     # Window rules
     windowrule = [
-      "opacity 1.0 override, class:^(firefox|thunar|firefox-nightly)$"
-      "suppressevent maximize, class:.*"
-      "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-      "noshadow, floating:0"
+      "opacity 1.0 override, match:class ^(firefox|thunar|firefox-nightly)$"
+      "suppress_event maximize, match:class .*"
+      "no_initial_focus on,match:class ^$,match:title ^$,match:xwayland 1,match:float 1,match:fullscreen 0,match:pin 0"
+
+      # No shadows on non-floating windows
+      "no_shadow on, match:float 0"
     ];
 
     windowrulev2 = [
-      "workspace 6 silent,class:^(Todoist)$"
-      "workspace 4 silent,title:^(WhatsApp)$"
-      "float, title:^(Bluetooth Devices)$"
-      "pin, title:^(Bluetooth Devices)$"
-      "size 500 300, title:^(Bluetooth Devices)$"
-      "float, class:^(org.pulseaudio.pavucontrol)$"
-      "pin, class:^(org.pulseaudio.pavucontrol)$"
-      "size 750 400, class:^(org.pulseaudio.pavucontrol)$"
-      "pin, title:^(Wi-Fi Network Authentication Required)$"
-      "idleinhibit fullscreen, class:^(*)$"
-      "idleinhibit fullscreen, title:^(*)$"
+      "workspace 6 silent,match:class ^(Todoist)$"
+      "workspace 4 silent,match:title ^(WhatsApp)$"
+      "float on, match:title ^(Bluetooth Devices)$"
+      "pin, match:title ^(Bluetooth Devices)$"
+      "size 500 300, match:title ^(Bluetooth Devices)$"
+      "float on, match:class ^(org.pulseaudio.pavucontrol)$"
+      "pin, match:class ^(org.pulseaudio.pavucontrol)$"
+      "size 750 400, match:class ^(org.pulseaudio.pavucontrol)$"
+      "pin, match:title ^(Wi-Fi Network Authentication Required)$"
+      "idleinhibit fullscreen, match:class ^(*)$"
+      "idleinhibit fullscreen, match:title ^(*)$"
       "idleinhibit fullscreen, fullscreen:1"
     ];
   };

@@ -32,9 +32,8 @@ in {
       ];
       # more hyprland stuff i dont understand
       layerrule = [
-        "blur, waybar"
-        "xray 0, waybar"
-        "ignorezero, waybar"
+        "blur on, match:namespace waybar"
+        "xray on, match:namespace waybar"
       ];
     };
   };

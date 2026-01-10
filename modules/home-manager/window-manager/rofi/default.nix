@@ -31,9 +31,8 @@ in {
       ];
 
       layerrule = [
-        "blur, rofi"
-        "xray 0, rofi"
-        "ignorezero, rofi"
+        "blur on, match:namespace rofi"
+        "xray on, match:namespace rofi"
       ];
     };
   };
