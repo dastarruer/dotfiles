@@ -1,8 +1,6 @@
-{config,
-  ...
-}: let
+{config, ...}: let
   profile = config.home-manager.desktop.vscode.profile;
-in{
+in {
   # Configure font
   programs.vscode.profiles.${profile}.userSettings = {
     "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";

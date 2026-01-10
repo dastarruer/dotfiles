@@ -5,7 +5,7 @@
   ...
 }: let
   profile = config.home-manager.desktop.vscode.profile;
-  in {
+in {
   programs.vscode.profiles.${profile}.extensions = with vscode-extensions; [
     ms-python.python # Python LSP
     ms-python.vscode-pylance

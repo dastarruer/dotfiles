@@ -4,10 +4,18 @@
   ...
 }: {
   options = {
-    home-manager.cli.rclone.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = config.home-manager.cli.enable;
-      description = "Enable rclone, a program for accessing cloud drives from the terminal.";
+    home-manager.cli.rclone = {
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = config.home-manager.cli.enable;
+        description = "Enable rclone, a program for accessing cloud drives from the terminal.";
+      };
+      backupPaths = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [];
+        description = "List of local directories to back up via rclone.";
+        example = ["/home/user/Documents" "/home/user/Pictures"];
+      };
     };
   };
 

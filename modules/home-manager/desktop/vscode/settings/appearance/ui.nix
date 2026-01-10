@@ -1,5 +1,5 @@
 {config, ...}: let
-    profile = config.home-manager.desktop.vscode.profile;
+  profile = config.home-manager.desktop.vscode.profile;
 in {
   # UI Layout & Navigation
   programs.vscode.profiles.${profile}.userSettings = {

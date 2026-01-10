@@ -1,8 +1,6 @@
-{config,
-  ...
-}: let
+{config, ...}: let
   profile = config.home-manager.desktop.vscode.profile;
-in{
+in {
   # Editor Display & Visuals
   programs.vscode.profiles.${profile}.userSettings = {
     "editor.lightbulb.enabled" = "off";
