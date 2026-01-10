@@ -25,6 +25,10 @@
         ''SUPER+SHIFT, O, exec, ${pkgs.grimblast}/bin/grimblast save area - | ${pkgs.tesseract}/bin/tesseract stdin stdout | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.libnotify}/bin/notify-send "Clipboard:" "$(${pkgs.wl-clipboard}/bin/wl-paste)"''
         "SUPER, M, exec, ${pkgs.wl-clipboard}/bin/wl-paste | ${pkgs.swappy}/bin/swappy -f -"
       ];
+
+      layerrules = [
+        "noanim, selection"
+      ];
     };
   };
 }
