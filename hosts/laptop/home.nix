@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   imports = [
@@ -24,6 +25,16 @@
 
       # Necessary for some screenshot tools
       XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/screenshots";
+    };
+  };
+
+  nix = {
+    # This line solves the "Failed assertions" error
+    package = pkgs.nix;
+
+    settings = {
+      # Disable local builds
+      max-jobs = 0;
     };
   };
 
