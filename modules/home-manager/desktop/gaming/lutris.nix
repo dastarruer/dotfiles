@@ -5,6 +5,7 @@
   ...
 }: let
   cfg = config.home-manager.desktop.gaming.lutris;
+  ludusavi = config.home-manager.desktop.gaming.ludusavi;
 in {
   options = {
     home-manager.desktop.gaming.lutris.enable = lib.mkOption {
@@ -59,6 +60,17 @@ in {
           autoconf_joypad = true;
         };
       };
+    };
+
+    # Add lutris to ludusavi
+    services.ludusavi.settings = lib.mkIf ludusavi.enable {
+      roots = [
+        {
+          store = "lutris";
+          path = "${config.home.homeDirectory}/.config/lutris";
+          database = "${config.home.homeDirectory}/.local/share/lutris/pgs.db";
+        }
+      ];
     };
   };
 }
