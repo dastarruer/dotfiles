@@ -1,4 +1,9 @@
-{lib, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ./calibre.nix
     ./libreoffice.nix
@@ -21,6 +26,14 @@
   ];
 
   options = {
-    home-manager.desktop.enableAll = lib.mkEnableOption "Enable all desktop apps.";
+    home-manager.desktop.enable = lib.mkEnableOption "Enable all desktop apps.";
+  };
+
+  config = lib.mkIf config.home-manager.desktop.enable {
+    home.packages = with pkgs; [
+      thunar
+      todoist-electron
+      brave
+    ];
   };
 }

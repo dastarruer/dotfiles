@@ -8,7 +8,7 @@ in {
   options = {
     home-manager.desktop.kitty.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.home-manager.desktop.enableAll;
+      default = config.home-manager.desktop.enable;
       description = "Enable kitty, a terminal emulator.";
     };
   };

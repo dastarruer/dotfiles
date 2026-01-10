@@ -6,7 +6,7 @@
   options = {
     home-manager.desktop.sober.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.home-manager.desktop.enableAll;
+      default = config.home-manager.desktop.enable;
       description = "Enable Sober, an app for playing Roblox on Linux.";
     };
   };

@@ -10,7 +10,7 @@ in {
   options = {
     home-manager.desktop.flameshot.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.home-manager.desktop.enableAll;
+      default = config.home-manager.desktop.enable;
       description = "Enable flameshot, a screenshot tool. Will be disabled by default if home-manager.window-manager.hyprland.enable is set to true.";
     };
   };
