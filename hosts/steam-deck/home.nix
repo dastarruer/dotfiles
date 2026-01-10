@@ -47,6 +47,9 @@
       firefox.enable = true;
     };
 
-    cli.shell.enable = true;
+    cli = {
+      shell.enable = true;
+      rclone.enable = true;
+    };
   };
 }
