@@ -22,8 +22,6 @@
   hardware.brillo.enable = true;
 
   nix.settings = {
-    # Disable local builds
-    max-jobs = 0;
   };
 
   # Microcode updates (might as well yk)
