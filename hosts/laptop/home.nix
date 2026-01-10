@@ -28,16 +28,6 @@
     };
   };
 
-  nix = {
-    # This line solves the "Failed assertions" error
-    package = pkgs.nix;
-
-    settings = {
-      # Disable local builds
-      max-jobs = 0;
-    };
-  };
-
   systemd.user.tmpfiles.rules = [
     # Create the save dir for screenshots, deleting files older than 30 days
     "d %h/Pictures/screenshots - - - 30d -"
