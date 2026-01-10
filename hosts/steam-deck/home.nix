@@ -25,20 +25,20 @@
       # Necessary for some screenshot tools
       XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/screenshots";
     };
+
+    # Symlink steam screenshots
+    file."Pictures/screenshots".source =
+      config.lib.file.mkOutOfStoreSymlink
+      "/home/deck/.local/share/Steam/userdata/1782287269/760/remote";
   };
 
   systemd.user.tmpfiles.rules = [
-    # Create the save dir for screenshots, deleting files older than 30 days
-    "d %h/Pictures/screenshots - - - 30d -"
-
     # Create the Downloads dir, deleting files older than 5 days
     "d %h/Downloads - - - 5d -"
   ];
 
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
-
-  services.polkit-gnome.enable = true;
 
   home-manager = {
     desktop = {
