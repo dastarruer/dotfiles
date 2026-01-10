@@ -6,7 +6,7 @@
   options = {
     home-manager.desktop.calibre.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.home-manager.desktop.enableAll;
+      default = config.home-manager.desktop.enable;
       description = "Enable calibre, an app for managing your book collection.";
     };
   };

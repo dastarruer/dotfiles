@@ -30,5 +30,5 @@
   };
 
   # Enable firmware for wifi cards
-  hardware.enableAllFirmware = true;
+  hardware.enableFirmware = true;
 }

@@ -14,7 +14,7 @@
     home-manager.desktop.vscode = {
       enable = lib.mkOption {
         type = lib.types.bool;
-        default = config.home-manager.desktop.enableAll;
+        default = config.home-manager.desktop.enable;
         description = "Enable vscode.";
       };
       profile = lib.mkOption {

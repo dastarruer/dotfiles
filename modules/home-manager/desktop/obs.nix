@@ -6,7 +6,7 @@
   options = {
     home-manager.desktop.obs.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.home-manager.desktop.enableAll;
+      default = config.home-manager.desktop.enable;
       description = "Enable OBS, a screen recording app.";
     };
   };

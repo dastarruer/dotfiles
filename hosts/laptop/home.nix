@@ -46,7 +46,7 @@
 
   home-manager = {
     desktop = {
-      enableAll = true;
+      enable = true;
 
       foliate.enable = false;
       #   flameshot.enable = false;
