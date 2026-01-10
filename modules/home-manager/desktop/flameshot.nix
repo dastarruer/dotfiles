@@ -8,14 +8,14 @@
   dunst = config.home-manager.window-manager.dunst;
 in {
   options = {
-    home-manager.flameshot.enable = lib.mkOption {
+    home-manager.desktop.flameshot.enable = lib.mkOption {
       type = lib.types.bool;
       default = config.home-manager.desktop.enableAll;
       description = "Enable flameshot, a screenshot tool. Will be disabled by default if home-manager.window-manager.hyprland.enable is set to true.";
     };
   };
 
-  config = lib.mkIf config.home-manager.flameshot.enable {
+  config = lib.mkIf config.home-manager.desktop.flameshot.enable {
     services.flameshot = {
       enable = true;
 

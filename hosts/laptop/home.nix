@@ -48,7 +48,7 @@
       enableAll = true;
 
       foliate.enable = false;
-      flameshot.enable = false;
+      #   flameshot.enable = false;
       gaming.enable = false;
     };
 
@@ -64,8 +64,6 @@
         ];
       };
     };
-
-    sherlock.enable = false;
 
     window-manager = {
       enable = true;

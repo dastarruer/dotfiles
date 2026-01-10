@@ -11,7 +11,7 @@
     };
   };
 
-  config = lib.mkIf config.home-manager.sherlock.enable {
+  config = lib.mkIf config.home-manager.window-manager.sherlock.enable {
     # example configuration
     programs.sherlock = {
       enable = true;

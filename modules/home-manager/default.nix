@@ -2,7 +2,6 @@
   imports = [
     ./cli
     ./desktop
-    ./programs
     ./scripts
     ./services
     ./window-manager
