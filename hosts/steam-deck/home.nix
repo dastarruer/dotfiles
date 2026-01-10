@@ -47,9 +47,6 @@
       firefox.enable = true;
     };
 
-    sherlock.enable = false;
-    distrobox.enable = false;
-    cliphist.enable = false;
-    flameshot.enable = false;
+    cli.shell.enable = true;
   };
 }

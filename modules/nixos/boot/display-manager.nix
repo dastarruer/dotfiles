@@ -1,4 +1,4 @@
-{...}: {
+{config, ...}: {
   services.displayManager = {
     # SDDM is compatible with wayland and hyprland so im not using lightdm
     sddm = {
@@ -8,7 +8,7 @@
       # Define SDDM config
       settings = {
         General = {
-          background = "/home/dastarruer/Pictures/wallpaper";
+          background = "${config.home.homeDirectory}/Pictures/wallpaper";
         };
 
         Autologin = {

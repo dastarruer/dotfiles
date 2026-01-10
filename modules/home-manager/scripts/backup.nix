@@ -26,7 +26,7 @@
             REMOTE="gdrive:"
 
             # Explicitly point to your user's rclone config
-            RCLONE_CONF="/home/dastarruer/.config/rclone/rclone.conf"
+            RCLONE_CONF="${config.home.homeDirectory}/.config/rclone/rclone.conf"
             export RCLONE_CONFIG="$RCLONE_CONF"
 
             # Pull paths from the Nix config into a Bash array
