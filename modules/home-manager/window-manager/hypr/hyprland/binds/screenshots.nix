@@ -26,8 +26,9 @@
         "SUPER, M, exec, ${pkgs.wl-clipboard}/bin/wl-paste | ${pkgs.swappy}/bin/swappy -f -"
       ];
 
-      layerrules = [
-        "noanim, selection"
+      # Remove animations for grimblast: https://github.com/hyprwm/Hyprland/discussions/12964
+      layerrule = [
+        "no_anim on, match:namespace selection"
       ];
     };
   };
