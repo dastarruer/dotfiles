@@ -24,6 +24,7 @@
     ./imv.nix
     ./flameshot.nix
     ./timer.nix
+    ./hianime.nix
   ];
 
   options = {
