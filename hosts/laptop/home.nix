@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: {
   imports = [
@@ -48,8 +47,9 @@
     desktop = {
       enable = true;
 
+      pwa.enable = false;
       foliate.enable = false;
-      #   flameshot.enable = false;
+      flameshot.enable = false;
       gaming.enable = false;
     };
 
