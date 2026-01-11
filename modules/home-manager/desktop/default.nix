@@ -25,6 +25,7 @@
     ./flameshot.nix
     ./timer.nix
     ./hianime.nix
+    ./streaming.nix
   ];
 
   options = {
