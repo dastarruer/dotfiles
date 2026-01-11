@@ -26,6 +26,7 @@
     ./timer.nix
     ./hianime.nix
     ./streaming.nix
+    ./youtube.nix
   ];
 
   options = {
