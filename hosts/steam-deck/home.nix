@@ -26,6 +26,14 @@
       XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/screenshots";
     };
 
+    # Workaround to make all .desktop files executable
+    activation = {
+      fixDesktopPermissions = lib.hm.dag.entryAfter ["writeBoundary"] ''
+        find ~/.local/share/applications/ -name "*.desktop" -exec chmod +x {} +
+        find ~/.nix-profile/share/applications -name "*.desktop" -exec chmod +x {} +
+      '';
+    };
+
     # Symlink steam screenshots
     file."Pictures/screenshots".source =
       config.lib.file.mkOutOfStoreSymlink
