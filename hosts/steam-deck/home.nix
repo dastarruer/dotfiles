@@ -8,6 +8,7 @@
   ];
 
   systemd.user.enable = true;
+  targets.genericLinux.enable = true;
 
   # Set up user
   home = {
