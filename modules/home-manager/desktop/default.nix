@@ -8,12 +8,12 @@
     ./calibre.nix
     ./libreoffice.nix
     ./gaming
+    ./pwa
     ./vscode
     ./firefox
     ./kitty.nix
     ./spicetify
     ./zathura.nix
-    ./whatsapp.nix
     ./anki
     ./foliate.nix
     ./obs.nix
@@ -24,9 +24,6 @@
     ./imv.nix
     ./flameshot.nix
     ./timer.nix
-    ./hianime.nix
-    ./streaming.nix
-    ./youtube.nix
   ];
 
   options = {

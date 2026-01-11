@@ -5,14 +5,14 @@
   ...
 }: {
   options = {
-    home-manager.desktop.youtube.enable = lib.mkOption {
+    home-manager.desktop.pwa.youtube.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.home-manager.desktop.enable;
+      default = config.home-manager.desktop.pwa.enable;
       description = "Enable YouTube PWA.";
     };
   };
 
-  config = lib.mkIf config.home-manager.desktop.youtube.enable {
+  config = lib.mkIf config.home-manager.desktop.pwa.youtube.enable {
     programs.firefoxpwa = {
       enable = true;
 

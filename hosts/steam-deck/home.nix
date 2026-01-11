@@ -44,6 +44,7 @@
     desktop = {
       gaming.enable = true;
       spicetify.enable = true;
+      pwa.enable = true;
 
       firefox = {
         enable = true;

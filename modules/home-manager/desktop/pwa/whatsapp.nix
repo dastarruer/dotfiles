@@ -5,14 +5,14 @@
   ...
 }: {
   options = {
-    home-manager.desktop.whatsapp.enable = lib.mkOption {
+    home-manager.desktop.pwa.whatsapp.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.home-manager.desktop.enable;
+      default = config.home-manager.desktop.pwa.enable;
       description = "Enable WhatsApp PWA.";
     };
   };
 
-  config = lib.mkIf config.home-manager.desktop.whatsapp.enable {
+  config = lib.mkIf config.home-manager.desktop.pwa.whatsapp.enable {
     programs.firefoxpwa = {
       enable = true;
 

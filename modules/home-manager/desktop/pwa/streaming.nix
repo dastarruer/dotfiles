@@ -5,14 +5,14 @@
   ...
 }: {
   options = {
-    home-manager.desktop.streaming.enable = lib.mkOption {
+    home-manager.desktop.pwa.streaming.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.home-manager.desktop.enable;
+      default = config.home-manager.desktop.pwa.enable;
       description = "Enable a completely and definitely legal PWA for streaming TV shows and movies.";
     };
   };
 
-  config = lib.mkIf config.home-manager.desktop.streaming.enable {
+  config = lib.mkIf config.home-manager.desktop.pwa.streaming.enable {
     programs.firefoxpwa = {
       enable = true;
 
