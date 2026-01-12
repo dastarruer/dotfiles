@@ -52,7 +52,7 @@
   home-manager = {
     desktop = {
       gaming.enable = true;
-      spicetify.enable = true;
+      spicetify.enable = false;
       pwa.enable = true;
 
       firefox = {
