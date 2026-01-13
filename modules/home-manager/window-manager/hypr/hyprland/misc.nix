@@ -6,10 +6,12 @@
 
       middle_click_paste = false;
 
+      allow_session_lock_restore = true; # Allows to restart lockscreen if it crashes
+    };
+
+    binds = {
       # If I have a pinned picture-in-picture window, it will stay pinned even after fullscreening it
       allow_pin_fullscreen = true;
-
-      allow_session_lock_restore = true; # Allows to restart lockscreen if it crashes
     };
 
     ecosystem = {
