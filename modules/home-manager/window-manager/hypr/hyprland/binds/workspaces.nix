@@ -1,5 +1,12 @@
 {...}: {
   wayland.windowManager.hyprland.settings = {
+    binds = {
+      allow_workspace_cycles = true; # Required for the SUPER+TAB keybind
+
+      # If special workspace is active, changing to regular workspace hides it
+      hide_special_on_workspace_change = true;
+    };
+
     bind = [
       # Workspace switching
       "SUPER, 1, workspace, 1"
@@ -13,8 +20,8 @@
       "SUPER, 9, workspace, 9"
       "SUPER, 0, workspace, 10"
       "SUPER, minus, workspace, 11"
-      "SUPER, TAB, workspace, previous"
       "SUPER, S, togglespecialworkspace, magic"
+      "SUPER, TAB, workspace, previous"
 
       # Move windows to workspace
       "SUPER+SHIFT, 1, movetoworkspacesilent, 1"
