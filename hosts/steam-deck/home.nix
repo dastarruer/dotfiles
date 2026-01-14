@@ -7,8 +7,10 @@
     ../../modules/home-manager/default.nix
   ];
 
-  systemd.user.enable = true;
+  # Required on non nixos systems
   targets.genericLinux.enable = true;
+
+  systemd.user.enable = true;
 
   # Set up user
   home = {
@@ -52,7 +54,7 @@
   home-manager = {
     desktop = {
       gaming.enable = true;
-      spicetify.enable = false;
+      spicetify.enable = true;
       pwa.enable = true;
 
       firefox = {
