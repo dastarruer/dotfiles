@@ -22,7 +22,7 @@
         backupNotification = true;
 
         settings = {
-          theme = "light";
+          theme = "dark";
           language = "en-US";
           manifest.url = "https://raw.githubusercontent.com/mtkennerly/ludusavi-manifest/master/data/manifest.yaml";
 
