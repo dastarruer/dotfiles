@@ -46,11 +46,14 @@
   home-manager = {
     desktop = {
       enable = true;
-
-      pwa.enable = false;
       foliate.enable = false;
       flameshot.enable = false;
       gaming.enable = false;
+
+      pwa = {
+        enable = false;
+        whatsapp.enable = true;
+      };
     };
 
     cli = {

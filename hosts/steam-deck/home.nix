@@ -55,7 +55,11 @@
     desktop = {
       gaming.enable = true;
       spicetify.enable = true;
-      pwa.enable = true;
+
+      pwa = {
+        enable = true;
+        whatsapp.enable = false;
+      };
 
       firefox = {
         enable = true;
