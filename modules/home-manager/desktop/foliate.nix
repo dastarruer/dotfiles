@@ -14,10 +14,6 @@
   config = lib.mkIf config.home-manager.desktop.foliate.enable {
     programs.foliate = {
       enable = true;
-
-      settings = {
-        invert = true;
-      };
     };
   };
 }
