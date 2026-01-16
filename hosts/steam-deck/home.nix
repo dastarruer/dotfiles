@@ -46,6 +46,7 @@
   systemd.user.tmpfiles.rules = [
     # Create the Downloads dir, deleting files older than 5 days
     "d %h/Downloads - - - 5d -"
+    "d %h/Games - - - - -"
   ];
 
   programs.home-manager.enable = true;
