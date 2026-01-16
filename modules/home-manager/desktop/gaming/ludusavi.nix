@@ -35,6 +35,12 @@
         };
       };
 
+      # Manually patch ludusavi timer
+      systemd.user.timers.ludusavi.Timer = {
+        Persistent = true;
+        RandomizedDelaySec = "1h";
+      };
+
       # Backup the ludusavi save dir
       home-manager.cli.rclone.backupPaths = [
         backupPath
