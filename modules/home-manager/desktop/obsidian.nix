@@ -29,8 +29,8 @@ in {
     };
 
     wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
-      windowrulev2 = [
-        "workspace 10 silent,class:^(obsidian)$"
+      windowrule = [
+        "workspace 10 silent, match:class obsidian"
       ];
     };
   };

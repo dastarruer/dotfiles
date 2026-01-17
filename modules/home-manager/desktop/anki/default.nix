@@ -37,9 +37,9 @@ in {
   };
 
   wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
-    windowrulev2 = [
-      "workspace 9 silent,class:^(anki)$"
-      "idleinhibit focus, class:^(anki)$"
+    windowrule = [
+      "workspace 9 silent,match:class anki"
+      "idle_inhibit focus, match:class anki"
     ];
   };
 }
