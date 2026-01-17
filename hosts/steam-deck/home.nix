@@ -55,6 +55,7 @@
   home-manager = {
     desktop = {
       gaming.enable = true;
+      gaming.lutris.enable = false;
       spicetify.enable = true;
 
       pwa = {
