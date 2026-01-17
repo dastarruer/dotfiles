@@ -11,8 +11,9 @@ in {
       Unit = {
         Description = "User Backup Service";
         After = ["network.target"];
-        WantedBy = ["multi-user.target"];
       };
+
+      Install.WantedBy = ["multi-user.target"];
 
       Service = {
         Type = "oneshot";
