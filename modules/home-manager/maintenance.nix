@@ -8,22 +8,13 @@
     flakeDir = "${config.home.homeDirectory}/.dotfiles";
   };
 
-  # Remove unused generations
-  nix.gc = {
-    automatic = true;
-    persistent = true;
-    dates = "03:00";
 
-    options = "--delete-older-than 15d";
   };
 
-  # Remove old home manager generations
-  services.home-manager.autoExpire = {
+  # Clean nix store and remove old home-manager generations
+  programs.nh.clean = {
     enable = true;
-    frequency = "daily";
-    store.cleanup = true;
-
-    # Remove all generations older than 7 days
-    timestamp = "-7 days";
+    dates = "03:00";
+    extraArgs = "--keep 7 --keep-since 15d";
   };
 }
