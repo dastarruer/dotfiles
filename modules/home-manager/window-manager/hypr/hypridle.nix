@@ -1,33 +1,31 @@
 {
   config,
   lib,
+  pkgs,
   ...
-}: {
+}: let
+  cfg = config.home-manager.window-manager.hypr.hypridle;
+  hyprlock = config.home-manager.window-manager.hypr.hyprlock;
+  hyprland = config.home-manager.window-manager.hypr.hyprland;
+in {
   options = {
     home-manager.window-manager.hypr.hypridle.enable = lib.mkEnableOption "Enable hypridle.";
   };
 
-  config = lib.mkIf config.home-manager.window-manager.hypr.hypridle.enable {
+  config = lib.mkIf cfg.enable {
     services.hypridle = {
       enable = true;
 
-      settings = {
-        general = {
-          lock_cmd = "pidof hyprlock || hyprlock";
-          before_sleep_cmd = "hyprlock";
-        };
+      # These settings will lock the screen before suspend
+      settings.general = {
+        lock_cmd =
+          lib.mkIf hyprlock.enable
+          "pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock && sleep 0.1";
 
-        listener = [
-          {
-            timeout = 180;
-            on-timeout = "hyprctl dispatch dpms off";
-            on-resume = "hyprctl dispatch dpms on";
-          }
-          {
-            timeout = 1800;
-            on-timeout = "systemctl suspend || loginctl suspend";
-          }
-        ];
+        before_sleep_cmd = "${lib.getExe pkgs.pause-all} && ${pkgs.systemd}/bin/loginctl lock-session";
+        after_sleep_cmd =
+          lib.mkIf hyprland.enable
+          "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
       };
     };
   };

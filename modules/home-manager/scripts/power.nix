@@ -38,10 +38,6 @@ in {
                 ${logoutCmd}
                 ;;
             "󰥔 Suspend")
-                # Ensure pause-all exists in your pkgs overlay or scope
-                ${lib.getExe pkgs.pause-all}
-                ${lockCmd} & disown
-                sleep 1
                 systemctl suspend
                 ;;
             " Reboot")

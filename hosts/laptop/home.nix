@@ -85,7 +85,7 @@
 
     window-manager = {
       enable = true;
-      hypr.hypridle.enable = false;
+      hypr.hypridle.enable = true;
       sherlock.enable = false;
     };
   };
