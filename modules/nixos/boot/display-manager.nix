@@ -8,7 +8,7 @@
       # Define SDDM config
       settings = {
         General = {
-          background = "${config.home.homeDirectory}/Pictures/wallpaper";
+          background = "/home/dastarruer/Pictures/wallpaper";
         };
 
         Autologin = {
