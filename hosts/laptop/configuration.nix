@@ -12,9 +12,6 @@
   # Enable ssh
   services.openssh.enable = true;
 
-  # Enable flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -22,6 +19,11 @@
   hardware.brillo.enable = true;
 
   nix.settings = {
+    max-jobs = "auto";
+
+    # Enable flakes
+    experimental-features = ["nix-command" "flakes"];
+
     # Use nix-community binary cache to avoid building from source as much as possible
     extra-substituters = [
       "https://nix-community.cachix.org"
