@@ -48,6 +48,8 @@
     package = pkgs.nix;
 
     settings = {
+      experimental-features = ["nix-command" "flakes"];
+
       # Use nix-community binary cache
       extra-substituters = [
         "https://nix-community.cachix.org"
