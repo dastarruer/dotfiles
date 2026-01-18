@@ -2,7 +2,7 @@
 {
   config,
   lib,
-  firefoxPkgs,
+  pkgs,
   ...
 }: let
   hyprland = config.home-manager.window-manager.hypr.hyprland;
@@ -38,9 +38,7 @@ in {
   config = lib.mkIf config.home-manager.desktop.firefox.enable {
     programs.firefox = {
       enable = true;
-
-      # Use firefox nightly
-      package = firefoxPkgs.firefox-nightly-bin;
+      package = pkgs.firefox-bin;
     };
 
     stylix.targets.firefox = {
