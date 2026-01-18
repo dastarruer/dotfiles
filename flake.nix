@@ -30,11 +30,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    firefox-nightly = {
-      url = "github:nix-community/flake-firefox-nightly/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -101,7 +96,6 @@
       extraSpecialArgs = {
         inherit inputs system;
         spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
-        firefoxPkgs = inputs.firefox-nightly.packages.${pkgs.stdenv.hostPlatform.system};
         firefoxAddonPkgs = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
         vscode-extensions = inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace;
       };
