@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -24,18 +25,30 @@
     wayland.windowManager.hyprland = {
       enable = true;
 
-      # This requires building from source constantly. Cannot figure out how to use cachix to install prebuilt binaries instead, so instead using nixpkgs
-      package = pkgs.hyprland;
-      portalPackage = pkgs.xdg-desktop-portal-hyprland;
       # # set to the flake package for more up to date software
-      # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
-      # # For stuff between apps like clipboard access, drag and drop, etc.
-      # portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      # For stuff between apps like clipboard access, drag and drop, etc.
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
 
     # Use wayland for chromium/electron apps
     home.sessionVariables.NIXOS_OZONE_WL = "1";
+
+    # Use hyprland cachix to avoid building hyprland from source.
+    # Only needed if flake package is being used
+    # https://wiki.hypr.land/Nix/Cachix/
+    nix.settings = {
+      extra-substituters = [
+        "https://hyprland.cachix.org"
+      ];
+      extra-trusted-substituters = [
+        "https://hyprland.cachix.org"
+      ];
+      extra-trusted-public-keys = [
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      ];
+    };
 
     # Workaround to open hyprlinks in current workspace (just like the one here!): https://www.reddit.com/r/hyprland/comments/1b5jvvm/opening_browser_in_the_current_workspace/
     xdg = {

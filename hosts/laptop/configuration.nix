@@ -24,8 +24,8 @@
     # Enable flakes
     experimental-features = ["nix-command" "flakes"];
 
-    # Use nix-community binary cache to avoid building from source as much as possible
     extra-substituters = [
+      # Use nix-community binary cache to avoid building from source as much as possible
       "https://nix-community.cachix.org"
     ];
     extra-trusted-public-keys = [
