@@ -101,9 +101,6 @@ in {
     # Enable Do Not Track header
     "privacy.donottrackheader.enabled" = true;
 
-    # Allow userChrome.css and userContent.css to work
-    "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-
     # Auto-enable extensions
     "extensions.autoDisableScopes" = 0;
 

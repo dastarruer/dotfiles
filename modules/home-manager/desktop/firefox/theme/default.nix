@@ -22,4 +22,12 @@
       }
     '';
   };
+
+  # Settings from here: https://github.com/migueravila/Simplefox#Installation
+  programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}".settings = {
+    "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+    "layers.acceleration.force-enabled" = true;
+    "gfx.webrender.all" = true;
+    "svg.context-properties.content.enabled" = true;
+  };
 }
