@@ -70,7 +70,7 @@
 
       pwa = {
         enable = false;
-        whatsapp.enable = false;
+        whatsapp.enable = true;
       };
     };
 
