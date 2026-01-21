@@ -13,116 +13,116 @@
 
   cfg = config.home-manager.desktop.firefox.deckFixes;
 in {
-  # Symlink user js
-  home.file = {
-    ".mozilla/firefox/${config.home-manager.desktop.firefox.profile}/user.js".text = betterfoxUserjs;
-  };
-
   # Declare settings and overrides, most of which I've stolen from here:
   # https://github.com/gvolpe/nix-config/blob/6feb7e4f47e74a8e3befd2efb423d9232f522ccd/home/programs/browsers/firefox.nix
-  programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}".settings = {
-    # USER JS OVERRIDES
-    "svg.context-properties.content.enabled" = true;
-    "layout.css.has-selector.enabled" = true;
-    "browser.urlbar.suggest.calculator" = true;
-    "browser.urlbar.unitConversion.enabled" = true;
-    "browser.urlbar.trimHttps" = true;
-    "browser.urlbar.trimURLs" = true;
-    "widget.gtk.rounded-bottom-corners.enabled" = true;
-    "widget.gtk.ignore-bogus-leave-notify" = 1;
+  programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}" = {
+    preConfig = betterfoxUserjs;
 
-    # OTHER
-    # Disable remote experimentation and telemetry
-    "app.normandy.first_run" = false; # Don't run Normandy experiments on first run
-    "app.shield.optoutstudies.enabled" = false; # Disable Shield studies (user experiments)
+    settings = {
+      # USER JS OVERRIDES
+      "sidebar.revamp" = false;
+      "svg.context-properties.content.enabled" = true;
+      "layout.css.has-selector.enabled" = true;
+      "browser.urlbar.suggest.calculator" = true;
+      "browser.urlbar.unitConversion.enabled" = true;
+      "browser.urlbar.trimHttps" = true;
+      "browser.urlbar.trimURLs" = true;
+      "widget.gtk.rounded-bottom-corners.enabled" = true;
+      "widget.gtk.ignore-bogus-leave-notify" = 1;
 
-    # Disable Firefox updates — not needed since Nix handles them
-    "app.update.channel" = "default"; # No updates via Firefox itself
+      # OTHER
+      # Disable remote experimentation and telemetry
+      "app.normandy.first_run" = false; # Don't run Normandy experiments on first run
+      "app.shield.optoutstudies.enabled" = false; # Disable Shield studies (user experiments)
 
-    # Use strict tracking protection
-    "browser.contentblocking.category" = "strict"; # Stronger anti-tracking measures
+      # Disable Firefox updates — not needed since Nix handles them
+      "app.update.channel" = "default"; # No updates via Firefox itself
 
-    # Change tab-switching behavior
-    "browser.ctrlTab.recentlyUsedOrder" = false; # Use tab bar order instead of recently used
+      # Use strict tracking protection
+      "browser.contentblocking.category" = "strict"; # Stronger anti-tracking measures
 
-    # Allow internal viewing of these formats without downloading
-    "browser.download.viewableInternally.typeWasRegistered.svg" = true;
-    "browser.download.viewableInternally.typeWasRegistered.webp" = true;
-    "browser.download.viewableInternally.typeWasRegistered.xml" = true;
+      # Change tab-switching behavior
+      "browser.ctrlTab.recentlyUsedOrder" = false; # Use tab bar order instead of recently used
 
-    # Open links in new windows (true means open in new window instead of tab)
-    "browser.link.open_newwindow" = true;
+      # Allow internal viewing of these formats without downloading
+      "browser.download.viewableInternally.typeWasRegistered.svg" = true;
+      "browser.download.viewableInternally.typeWasRegistered.webp" = true;
+      "browser.download.viewableInternally.typeWasRegistered.xml" = true;
 
-    # Set default search region and display style
-    "browser.search.widget.inNavBar" = true; # Show search box in toolbar
+      # Open links in new windows (true means open in new window instead of tab)
+      "browser.link.open_newwindow" = true;
 
-    # Don't ask to make Firefox default
-    "browser.shell.checkDefaultBrowser" = false;
+      # Set default search region and display style
+      "browser.search.widget.inNavBar" = true; # Show search box in toolbar
 
-    # Load new tabs in background (instead of switching to them immediately)
-    "browser.tabs.loadInBackground" = false;
+      # Don't ask to make Firefox default
+      "browser.shell.checkDefaultBrowser" = false;
 
-    # Disable quick actions in address bar (e.g., “open settings” shortcut)
-    "browser.urlbar.quickactions.enabled" = false;
-    "browser.urlbar.quickactions.showPrefs" = false;
-    "browser.urlbar.shortcuts.quickactions" = false;
-    "browser.urlbar.suggest.quickactions" = false;
+      # Load new tabs in background (instead of switching to them immediately)
+      "browser.tabs.loadInBackground" = false;
 
-    # Set default language for search plugins and UI
-    "distribution.searchplugins.defaultLocale" = "en-US";
-    "general.useragent.locale" = "en-US";
+      # Disable quick actions in address bar (e.g., “open settings” shortcut)
+      "browser.urlbar.quickactions.enabled" = false;
+      "browser.urlbar.quickactions.showPrefs" = false;
+      "browser.urlbar.shortcuts.quickactions" = false;
+      "browser.urlbar.suggest.quickactions" = false;
 
-    # Prevent DoH setup prompts
-    "doh-rollout.balrog-migration-done" = true;
-    "doh-rollout.doneFirstRun" = true;
+      # Set default language for search plugins and UI
+      "distribution.searchplugins.defaultLocale" = "en-US";
+      "general.useragent.locale" = "en-US";
 
-    # Disable form autofill suggestions (for privacy)
-    "dom.forms.autocomplete.formautofill" = false;
+      # Prevent DoH setup prompts
+      "doh-rollout.balrog-migration-done" = true;
+      "doh-rollout.doneFirstRun" = true;
 
-    # Enable middle-click scrolling
-    "general.autoScroll" = true;
+      # Disable form autofill suggestions (for privacy)
+      "dom.forms.autocomplete.formautofill" = false;
 
-    # Disable automatic extension updates
-    "extensions.update.enabled" = false;
+      # Enable middle-click scrolling
+      "general.autoScroll" = true;
 
-    # Enable Picture-in-Picture (PIP) support and related compatibility tweaks
-    "extensions.webcompat.enable_picture_in_picture_overrides" = true;
-    "extensions.webcompat.enable_shims" = true;
-    "extensions.webcompat.perform_injections" = true;
-    "extensions.webcompat.perform_ua_overrides" = true;
+      # Disable automatic extension updates
+      "extensions.update.enabled" = false;
 
-    # Clean up print headers and footers
-    "print.print_footerleft" = "";
-    "print.print_footerright" = "";
-    "print.print_headerleft" = "";
-    "print.print_headerright" = "";
+      # Enable Picture-in-Picture (PIP) support and related compatibility tweaks
+      "extensions.webcompat.enable_picture_in_picture_overrides" = true;
+      "extensions.webcompat.enable_shims" = true;
+      "extensions.webcompat.perform_injections" = true;
+      "extensions.webcompat.perform_ua_overrides" = true;
 
-    # Enable Do Not Track header
-    "privacy.donottrackheader.enabled" = true;
+      # Clean up print headers and footers
+      "print.print_footerleft" = "";
+      "print.print_footerright" = "";
+      "print.print_headerleft" = "";
+      "print.print_headerright" = "";
 
-    # Auto-enable extensions
-    "extensions.autoDisableScopes" = 0;
+      # Enable Do Not Track header
+      "privacy.donottrackheader.enabled" = true;
 
-    # Disable alt menu
-    "ui.key.menuAccessKeyFocuses" = false;
+      # Auto-enable extensions
+      "extensions.autoDisableScopes" = 0;
 
-    # Disable middle click paste
-    "middlemouse.paste" = false;
+      # Disable alt menu
+      "ui.key.menuAccessKeyFocuses" = false;
 
-    # STEAM DECK SETTINGS
-    # Steam Deck specific fixes (e.g., touch improvements, hardware accel)
-    # "dom.w3c_touch_events.enabled" = lib.mkIf cfg.enable 1;
+      # Disable middle click paste
+      "middlemouse.paste" = false;
 
-    # # Helps with touch/trackpad detection
-    # "ui.primary_pointer_capabilities" = lib.mkIf cfg.enable 115;
+      # STEAM DECK SETTINGS
+      # Steam Deck specific fixes (e.g., touch improvements, hardware accel)
+      # "dom.w3c_touch_events.enabled" = lib.mkIf cfg.enable 1;
 
-    # # Hardware acceleration
-    # "media.ffmpeg.vaapi.enabled" = lib.mkIf cfg.enable true;
+      # # Helps with touch/trackpad detection
+      # "ui.primary_pointer_capabilities" = lib.mkIf cfg.enable 115;
 
-    # # Saves vertical space on small screen
-    # "browser.tabs.drawInTitlebar" = lib.mkIf cfg.enable true;
+      # # Hardware acceleration
+      # "media.ffmpeg.vaapi.enabled" = lib.mkIf cfg.enable true;
 
-    # Do not restore previous session on startup
-    # "browser.sessionstore.resume_session_once" = lib.mkIf cfg.enable false;
+      # # Saves vertical space on small screen
+      # "browser.tabs.drawInTitlebar" = lib.mkIf cfg.enable true;
+
+      # Do not restore previous session on startup
+      # "browser.sessionstore.resume_session_once" = lib.mkIf cfg.enable false;
+    };
   };
 }

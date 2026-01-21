@@ -34,7 +34,6 @@ in {
 
       # TAB SETTINGS: https://ff-ultima.github.io/docs/settings/tab-settings
       "ultima.tabs.tabbar.autohide" = true;
-      "ultima.tabs.tabbar.autohide+compact" = true;
       "ultima.spacing.compact.tabs" = true;
       "ultima.tabs.disable.scrollbar" = true;
       "ultima.tabs.multiline.labels" = true;
