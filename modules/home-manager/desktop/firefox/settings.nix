@@ -15,7 +15,7 @@
 in {
   # Symlink user js
   home.file = {
-    ".mozilla/firefox/config.home-manager.desktop.firefox.profile/user.js".text = betterfoxUserjs;
+    ".mozilla/firefox/${config.home-manager.desktop.firefox.profile}/user.js".text = betterfoxUserjs;
   };
 
   # Declare settings and overrides, most of which I've stolen from here:
