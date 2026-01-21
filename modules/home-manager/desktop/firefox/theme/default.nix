@@ -28,6 +28,10 @@ in {
     preConfig = themeUserJs;
 
     settings = {
+      # Colorscheme settings
+      "user.theme.0.default" = false;
+      "user.theme.brave" = true;
+
       # TAB SETTINGS: https://ff-ultima.github.io/docs/settings/tab-settings
       "ultima.tabs.tabbar.autohide" = true;
       "ultima.tabs.tabbar.autohide+compact" = true;
