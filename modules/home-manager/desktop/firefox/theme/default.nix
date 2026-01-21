@@ -21,7 +21,32 @@ in {
     ".mozilla/firefox/${config.home-manager.desktop.firefox.profile}/chrome" = {
       source = theme;
     };
+  };
 
-    ".mozilla/firefox/${config.home-manager.desktop.firefox.profile}/user.js".text = themeUserJs;
+  programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}" = {
+    # Adding the userjs this way lets me overwrite specific settings in the settings option
+    preConfig = themeUserJs;
+
+    settings = {
+      # TAB SETTINGS: https://ff-ultima.github.io/docs/settings/tab-settings
+      "ultima.tabs.tabbar.autohide" = true;
+      "ultima.tabs.tabbar.autohide+compact" = true;
+      "ultima.spacing.compact.tabs" = true;
+      "ultima.tabs.disable.scrollbar" = true;
+      "ultima.tabs.multiline.labels" = true;
+      "ultima.tabs.not.a.progress.bar" = true;
+      "ultima.tabs.pinned.transparent.background" = true;
+      "ultima.xstyle.containertabs.i" = true;
+
+      # URL BAR SETTINGS: https://ff-ultima.github.io/docs/settings/urlbar-settings
+      "ultima.urlbar.focus.autogrow" = true;
+      "ultima.urlbar.focus.text.aligns.left" = true;
+      "ultima.urlbar.hide.buttons" = true;
+
+      # CONTENT AREA SETTINGS: https://ff-ultima.github.io/docs/settings/content-area-settings
+      "ultima.spacing.compact.addonmanager" = true;
+      "ultima.spacing.compact" = true;
+      "ultima.findbar.position.top" = true;
+    };
   };
 }
