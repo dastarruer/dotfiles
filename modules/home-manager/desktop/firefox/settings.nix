@@ -22,7 +22,6 @@ in {
   # https://github.com/gvolpe/nix-config/blob/6feb7e4f47e74a8e3befd2efb423d9232f522ccd/home/programs/browsers/firefox.nix
   programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}".settings = {
     # USER JS OVERRIDES
-    "sidebar.revamp" = false;
     "svg.context-properties.content.enabled" = true;
     "layout.css.has-selector.enabled" = true;
     "browser.urlbar.suggest.calculator" = true;

@@ -42,10 +42,9 @@ in {
     };
 
     stylix.targets.firefox = {
+      enable = false;
       # Tell stylix to style this profile
       profileNames = ["${config.home-manager.desktop.firefox.profile}"];
-
-      colorTheme.enable = true;
     };
 
     # Windowrules for picture-in-picture
