@@ -1,9 +1,9 @@
 {
   config,
-  lib,
   pkgs,
   ...
 }: let
+  # Theme used: https://github.com/soulhotel/FF-ULTIMA
   theme = pkgs.fetchFromGitHub {
     owner = "soulhotel";
     repo = "FF-ULTIMA";
@@ -18,7 +18,6 @@ in {
   stylix.targets.firefox.enable = false;
 
   home.file = {
-    # Theme used: https://github.com/soulhotel/FF-ULTIMA
     ".mozilla/firefox/${config.home-manager.desktop.firefox.profile}/chrome" = {
       source = theme;
     };
