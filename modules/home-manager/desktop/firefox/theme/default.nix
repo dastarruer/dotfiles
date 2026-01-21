@@ -4,6 +4,9 @@
   pkgs,
   ...
 }: {
+  # Disable stylix color theming for firefox since we're using a custom theme
+  stylix.targets.firefox.enable = false;
+
   home.file = {
     # Theme used: https://github.com/soulhotel/FF-ULTIMA
     ".mozilla/firefox/${config.home-manager.desktop.firefox.profile}/chrome" = {

@@ -41,11 +41,12 @@ in {
       package = pkgs.firefox-bin;
     };
 
-    stylix.targets.firefox = {
-      enable = false;
-      # Tell stylix to style this profile
-      profileNames = ["${config.home-manager.desktop.firefox.profile}"];
-    };
+    # stylix.targets.firefox = {
+    #   # Tell stylix to style this profile
+    #   profileNames = ["${config.home-manager.desktop.firefox.profile}"];
+
+    #   colorTheme.enable = true;
+    # };
 
     # Windowrules for picture-in-picture
     wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
