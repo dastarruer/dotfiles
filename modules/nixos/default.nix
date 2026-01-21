@@ -16,6 +16,7 @@
     ./gaming.nix
     ./earlyoom.nix
     ./ddcutil.nix
+    ./virtualization.nix
     # ./ds4drv.nix
   ];
 }
