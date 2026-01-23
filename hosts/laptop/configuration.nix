@@ -1,7 +1,5 @@
 {...}: {
   imports = [
-    /etc/nixos/hardware-configuration.nix
-
     # Import all the other files
     ../../modules/nixos/default.nix
   ];

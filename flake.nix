@@ -87,6 +87,7 @@
         inputs.ucodenix.nixosModules.default
 
         ./hosts/laptop/configuration.nix
+        ./hosts/laptop/hardware-configuration.nix
       ];
     };
 
