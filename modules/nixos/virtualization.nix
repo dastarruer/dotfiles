@@ -28,6 +28,7 @@
     libvirtd = {
       enable = true;
       qemu = {
+        package = pkgs.qemu_kvm;
         swtpm.enable = true;
 
         # Required to access VM files inside the nixos host machine
