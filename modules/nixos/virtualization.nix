@@ -6,6 +6,10 @@
   users.users.dastarruer.extraGroups = ["libvirtd"];
 
   environment.systemPackages = with pkgs; [
+    # Command to quickly set up a windows 11 vm
+    quickemu
+
+    # Virtualization tools
     virt-manager
     virt-viewer
     spice
