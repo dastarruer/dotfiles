@@ -5,7 +5,7 @@
 }: let
   betterfoxGit = fetchTarball {
     url = "https://github.com/yokoffing/Betterfox/archive/refs/heads/main.tar.gz";
-    sha256 = "0a3qq3fn4dvcnr4c98ryb8h543p6lkq7wdc9qjgshqx09m15ysnc";
+    sha256 = "06j095y5y37wrva9b0x3vs3w0bcqqa40vbzdgimpqjqcsqahhqqg";
   };
 
   # Get the betterfox userjs as a base for my settings

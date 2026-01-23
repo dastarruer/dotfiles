@@ -87,6 +87,8 @@
         inputs.ucodenix.nixosModules.default
 
         ./hosts/laptop/configuration.nix
+        ./hosts/laptop/hardware-configuration.nix
+        ./modules/nixos/default.nix
       ];
     };
 
@@ -106,6 +108,7 @@
         inputs.spicetify-nix.homeManagerModules.spicetify
 
         ./hosts/laptop/home.nix
+        ./modules/home-manager/default.nix
       ];
     };
 

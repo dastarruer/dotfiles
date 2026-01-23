@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./darkreader.nix
+    ./simple-tab-groups.nix
   ];
 
   programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}" = {
@@ -21,7 +22,6 @@
       packages = with firefoxAddonPkgs; [
         ublock-origin
         sponsorblock
-        simple-tab-groups
         i-dont-care-about-cookies
         privacy-badger
         link-cleaner

@@ -6,6 +6,10 @@
   users.users.dastarruer.extraGroups = ["libvirtd"];
 
   environment.systemPackages = with pkgs; [
+    # Command to quickly set up a windows 11 vm
+    quickemu
+
+    # Virtualization tools
     virt-manager
     virt-viewer
     spice
@@ -24,7 +28,11 @@
     libvirtd = {
       enable = true;
       qemu = {
+        package = pkgs.qemu_kvm;
         swtpm.enable = true;
+
+        # Required to access VM files inside the nixos host machine
+        vhostUserPackages = [pkgs.virtiofsd];
       };
     };
   };

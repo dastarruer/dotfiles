@@ -4,10 +4,6 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ../../modules/home-manager/default.nix
-  ];
-
   systemd.user.enable = true;
 
   # Set up user

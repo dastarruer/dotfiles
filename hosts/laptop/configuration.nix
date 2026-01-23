@@ -1,11 +1,4 @@
 {...}: {
-  imports = [
-    /etc/nixos/hardware-configuration.nix
-
-    # Import all the other files
-    ../../modules/nixos/default.nix
-  ];
-
   # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
   system.stateVersion = "25.05";
 
