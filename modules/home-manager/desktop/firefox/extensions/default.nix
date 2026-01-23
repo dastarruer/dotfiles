@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./darkreader.nix
+    ./simple-tab-groups.nix
   ];
 
   programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}" = {
