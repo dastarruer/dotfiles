@@ -25,6 +25,9 @@
       enable = true;
       qemu = {
         swtpm.enable = true;
+
+        # Required to access VM files inside the nixos host machine
+        vhostUserPackages = [ pkgs.virtiofsd ];
       };
     };
   };
