@@ -22,7 +22,6 @@
       packages = with firefoxAddonPkgs; [
         ublock-origin
         sponsorblock
-        simple-tab-groups
         i-dont-care-about-cookies
         privacy-badger
         link-cleaner

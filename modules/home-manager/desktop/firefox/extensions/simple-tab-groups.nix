@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  firefoxAddonPkgs,
   ...
 }: let
   profile = config.home-manager.desktop.firefox.profile;
@@ -37,65 +38,71 @@
     })
     groupList;
 in {
-  programs.firefox.profiles."${profile}".extensions.settings."simple-tab-groups@drive4ik" = {
-    force = true;
-    settings = {
-      version = "5.3.2";
-      containers = {
-        "firefox-container-${getContainerId "personal"}" = {
-          name = containers.personal.name;
-          color = containers.personal.color;
-          icon = containers.personal.icon;
-        };
-        "firefox-container-${getContainerId "school"}" = {
-          name = containers.school.name;
-          color = containers.school.color;
-          icon = containers.school.icon;
-        };
-      };
+  programs.firefox.profiles."${profile}".extensions = {
+    packages = with firefoxAddonPkgs; [
+      simple-tab-groups
+    ];
 
-      groups = mkGroups [
-        {
-          name = "other";
-          container = "personal";
-        }
-        {
-          name = "nix";
-          container = "personal";
-        }
-        {
-          name = "math";
-          container = "school";
-        }
-        {
-          name = "english";
-          container = "school";
-        }
-        {
-          name = "chem";
-          container = "school";
-        }
-        {
-          name = "spanish";
-          container = "school";
-        }
-        {
-          name = "physics";
-          container = "school";
-        }
-        {
-          name = "personal project";
-          container = "school";
-        }
-        {
-          name = "design";
-          container = "school";
-        }
-        {
-          name = "comp sci";
-          container = "school";
-        }
-      ];
+    settings."simple-tab-groups@drive4ik" = {
+      force = true;
+      settings = {
+        version = "5.3.2";
+        containers = {
+          "firefox-container-${getContainerId "personal"}" = {
+            name = containers.personal.name;
+            color = containers.personal.color;
+            icon = containers.personal.icon;
+          };
+          "firefox-container-${getContainerId "school"}" = {
+            name = containers.school.name;
+            color = containers.school.color;
+            icon = containers.school.icon;
+          };
+        };
+
+        groups = mkGroups [
+          {
+            name = "other";
+            container = "personal";
+          }
+          {
+            name = "nix";
+            container = "personal";
+          }
+          {
+            name = "math";
+            container = "school";
+          }
+          {
+            name = "english";
+            container = "school";
+          }
+          {
+            name = "chem";
+            container = "school";
+          }
+          {
+            name = "spanish";
+            container = "school";
+          }
+          {
+            name = "physics";
+            container = "school";
+          }
+          {
+            name = "personal project";
+            container = "school";
+          }
+          {
+            name = "design";
+            container = "school";
+          }
+          {
+            name = "comp sci";
+            container = "school";
+          }
+        ];
+      };
     };
   };
 }
