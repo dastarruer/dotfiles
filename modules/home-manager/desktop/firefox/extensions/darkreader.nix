@@ -41,7 +41,36 @@
         "customThemes" = [];
         "enabledByDefault" = true;
         "enabledFor" = [];
-        "disabledFor" = [];
+        "disabledFor" = [
+          "coolors.co"
+          "learning.amplify.com"
+          "student.amplify.com"
+          "isps.powerschool.com"
+          "127.0.0.1"
+          "ispsedu.schoology.com"
+          "apps.youscience.com"
+          "wvs.agilixbuzz.com"
+          "172.18.0.3"
+          "notebooklm.google.com"
+          "gemini.google.com"
+          "nidhiupman568.github.io"
+          "runestone.academy"
+          "www.healthcentral.com"
+          "en.wikipedia.org"
+          "localhost"
+          "disney.fandom.com"
+          "www.gamespot.com"
+          "wiki.deckbrew.xyz"
+          "decky.net"
+          "www.figma.com"
+          "read.amazon.in"
+          "apclassroom.collegeboard.org"
+          "archive.org"
+          "wikipedia25.org"
+          "svgcolor.com"
+          "docs.google.com"
+          "www.canva.com"
+        ];
         "changeBrowserTheme" = false;
         "syncSettings" = false;
         "syncSitesFixes" = true;
