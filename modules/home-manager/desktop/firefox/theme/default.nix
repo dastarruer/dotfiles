@@ -282,6 +282,9 @@ in {
     preConfig = themeUserJs;
 
     settings = {
+      # Wallpaper
+      "user.theme.wallpaper.fluent.dark" = true;
+
       # Colorscheme settings
       "user.theme.0.default" = false;
       "user.theme.YourTheme" = true;
