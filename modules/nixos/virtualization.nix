@@ -27,7 +27,7 @@
         swtpm.enable = true;
 
         # Required to access VM files inside the nixos host machine
-        vhostUserPackages = [ pkgs.virtiofsd ];
+        vhostUserPackages = [pkgs.virtiofsd];
       };
     };
   };
