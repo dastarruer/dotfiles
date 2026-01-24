@@ -2,6 +2,11 @@
   description = "My NixOS system made by me";
 
   inputs = {
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixpkgs.url = "github:NixOS/nixpkgs";
 
     home-manager = {
@@ -85,9 +90,11 @@
         inputs.sops-nix.nixosModules.sops
         inputs.home-manager.nixosModules.home-manager
         inputs.ucodenix.nixosModules.default
+        inputs.disko.nixosModules.disko
 
         ./hosts/laptop/configuration.nix
         ./hosts/laptop/hardware-configuration.nix
+        ./hosts/laptop/disko-config.nix
         ./modules/nixos/default.nix
       ];
     };
