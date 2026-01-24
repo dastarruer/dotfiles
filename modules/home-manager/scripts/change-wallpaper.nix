@@ -21,6 +21,12 @@ in {
           # File to track the last selected wallpaper
           INDEX_FILE="$HOME/.cache/.current_wallpaper_index"
 
+          # Ensure cache directory exists and the index file defaults to 0 if missing/invalid
+          mkdir -p "$(dirname "$INDEX_FILE")"
+          if ! [ -s "$INDEX_FILE" ] || ! grep -Eq '^[0-9]+$' "$INDEX_FILE"; then
+            echo 0 > "$INDEX_FILE"
+          fi
+
           CURRENT_INDEX=$(cat "$INDEX_FILE")
 
           # Directory containing wallpapers
