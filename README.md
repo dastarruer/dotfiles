@@ -1,16 +1,11 @@
 # Installation
 
-First, install NixOS with Gnome, which sets up internet and networking for you.
-After installing NixOS, clone this repo, and run `nixos-rebuild`:
-
+In the NixOS installer, run the following commands:
 ```sh
-sudo nix --extra-experimental-features "nix-command flakes" run 'github:nix-community/disko/latest#disko-install' -- \
-  --flake github:dastarruer/dotfiles#<host> \
-  --disk main <disk-name>
+nix-shell -p disko
+sudo disko --mode disko --flake .#dastarruer
+sudo nixos-install --no-channel-copy --no-root-password --flake github:dastarruer/dotfiles#dastarruer
 ```
-
-> ![NOTE]
-> To get `<disk-name>`, run `lsblk`.
 
 Then after rebooting into hyprland, run:
 
