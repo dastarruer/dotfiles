@@ -6,6 +6,7 @@
   imports = [
     ./darkreader.nix
     ./simple-tab-groups.nix
+    ./sponsorblock.nix
   ];
 
   programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}" = {
