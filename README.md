@@ -3,7 +3,7 @@
 In the NixOS installer, run the following commands:
 ```sh
 nix-shell -p disko
-sudo disko --mode disko --flake .#dastarruer
+sudo disko --mode disko --flake github:dastarruer/dotfiles.#dastarruer
 sudo nixos-install --no-channel-copy --no-root-password --flake github:dastarruer/dotfiles#dastarruer
 ```
 
