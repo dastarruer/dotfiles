@@ -12,6 +12,10 @@
   environment.systemPackages = with pkgs; [
     # clipboard functionality
     wl-clipboard
+
+    # Required, since this is the default terminal when booting into hyprland for the first time.
+    # Otherwise, good luck trying to get a terminal running
+    kitty
   ];
 
   # Use hyprland cachix to avoid building hyprland from source.
