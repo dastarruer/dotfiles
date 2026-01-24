@@ -29,6 +29,11 @@
           email = userEmail;
         };
 
+        # Prefer ssh urls instead of https ones
+        url."git@github.com:" = {
+          insteadOf = "https://github.com/";
+        };
+
         # Use vscode for commit messages
         core.editor = "${lib.getExe config.programs.vscode.package} --wait";
 
