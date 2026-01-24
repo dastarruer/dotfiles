@@ -6,7 +6,7 @@
         type = "disk";
         # Change this to your target disk
         # Find the target disk by running `lsblk`
-        device = "/dev/disk/by-id/nvme-SKHynix_HFS512GEJ4X112N_5YCBN01211090BA34";
+        device = "/dev/nvme0n1";
         content = {
           type = "gpt";
           partitions = {
