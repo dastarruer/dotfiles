@@ -10,6 +10,7 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Ayush Pramanik";
+    password = "123";
 
     extraGroups = [
       "networkmanager" # Wifi control
