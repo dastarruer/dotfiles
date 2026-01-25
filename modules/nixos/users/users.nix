@@ -1,4 +1,13 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
+  sops.secrets.sudo_password = {
+    # https://github.com/Mic92/sops-nix#setting-a-users-password
+    neededForUsers = true;
+  };
+
   # Enable fish shell
   programs.fish.enable = true;
 
@@ -10,7 +19,7 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Ayush Pramanik";
-    password = "123";
+    hashedPasswordFile = config.sops.secrets.sudo_password.path;
 
     extraGroups = [
       "networkmanager" # Wifi control

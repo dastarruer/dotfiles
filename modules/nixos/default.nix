@@ -17,6 +17,7 @@
     ./earlyoom.nix
     ./ddcutil.nix
     ./virtualization.nix
+    ./secrets.nix
     # ./ds4drv.nix
   ];
 }
