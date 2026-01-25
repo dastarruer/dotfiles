@@ -1,10 +1,48 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
+  sops.secrets = {
+    home_wifi_id = {};
+    home_wifi_password = {};
+  };
+
   networking = {
     # Define your hostname.
-    hostName = "dastarruer";
+    hostName = "myLaptop";
 
     # Enable networking
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+
+      # Declare network connections
+      # Can be found at /etc/NetworkManager/system-connections
+      ensureProfiles.profiles = {
+        home-wifi = {
+          connection = {
+            id = builtins.readFile config.sops.secrets.home_wifi_id.path;
+            interface-name = "wlp2s0";
+            type = "wifi";
+          };
+
+          wifi = {
+            mode = "infrastructure";
+            ssid = builtins.readFile config.sops.secrets.home_wifi_id.path;
+          };
+
+          ipv4 = {
+            method = "auto";
+          };
+
+          ipv6 = {
+            addr-gen-mode = "default";
+            dns-search = "";
+            method = "auto";
+          };
+        };
+      };
+    };
 
     # Enable iptables firewall https://nixos.wiki/wiki/Firewall
     firewall.enable = true;
@@ -15,7 +53,6 @@
       "9.9.9.9" # Quad9 (blocks malicious domains)
     ];
 
-    # idk what this does
     usePredictableInterfaceNames = true;
   };
 
