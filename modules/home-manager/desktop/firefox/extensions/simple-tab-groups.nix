@@ -98,6 +98,10 @@ in {
             container = "school";
           }
           {
+            name = "ins";
+            container = "school";
+          }
+          {
             name = "comp sci";
             container = "school";
           }
