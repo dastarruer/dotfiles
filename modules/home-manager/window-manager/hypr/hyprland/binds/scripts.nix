@@ -8,7 +8,7 @@
       "SUPER+SHIFT, W, exec, ${pkgs.change-wallpaper}/bin/change-wallpaper"
       "SUPER, B, exec, ${pkgs.headphones}/bin/headphones"
       "SUPER, N, exec, ${pkgs.kill-apps}/bin/kill-apps"
-      "SUPER, K, exec, ${pkgs.move-windows-to-monitor}/bin/move-windows-to-monitor"
+      "SUPER+SHIFT, M, exec, ${pkgs.move-windows-to-monitor}/bin/move-windows-to-monitor"
       "SUPER, E, exec, ${pkgs.power}/bin/power"
     ];
 
