@@ -39,7 +39,7 @@ in {
             echo "Checking rclone status for $REMOTE..."
             if ! rclone --config "$RCLONE_CONF" about "$REMOTE" >/dev/null 2>&1; then
                 echo "Remote not found or needs authentication. Attempting reconnect..."
-                rclone --config "$RCLONE_CONF" config reconnect "$REMOTE"
+                rclone --config "$RCLONE_CONF" config reconnect "$REMOTE" --auto-confirm
             fi
 
             # Backup each source path

@@ -32,11 +32,6 @@
             # Pull paths from the Nix config into a Bash array
             SOURCE_PATHS=( ${lib.escapeShellArgs config.home-manager.cli.rclone.backupPaths} )
 
-            # Dynamic globs check
-            for f in "$HOME"/Downloads/SponsorBlockConfig*.json "$HOME"/Downloads/tab-groups-backup*; do
-              [ -e "$f" ] && SOURCE_PATHS+=("$f")
-            done
-
             echo "Mounting USB drive..."
             # Ensure the mount point exists
             mkdir -p "$MOUNT_POINT"
@@ -51,7 +46,7 @@
             echo "Checking rclone status for $REMOTE..."
             if ! rclone --config "$RCLONE_CONF" about "$REMOTE" >/dev/null 2>&1; then
                 echo "Remote not found or needs authentication. Attempting reconnect..."
-                rclone --config "$RCLONE_CONF" config reconnect "$REMOTE"
+                rclone --config "$RCLONE_CONF" config reconnect "$REMOTE" --auto-confirm
             fi
 
             for SRC in "''${SOURCE_PATHS[@]}"; do
