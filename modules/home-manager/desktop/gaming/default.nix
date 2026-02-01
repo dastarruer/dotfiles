@@ -2,6 +2,7 @@
   imports = [
     ./ludusavi.nix
     ./lutris.nix
+    ./steam.nix
   ];
 
   options = {

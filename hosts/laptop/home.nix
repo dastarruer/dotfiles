@@ -62,7 +62,10 @@
       foliate.enable = false;
       flameshot.enable = false;
       firefox.enable = true;
-      gaming.enable = false;
+      gaming = {
+        steam.enable = true;
+        enable = false;
+      };
 
       pwa = {
         enable = false;
