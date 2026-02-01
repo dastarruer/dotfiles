@@ -25,6 +25,7 @@
       "SUPER+SHIFT+ALT, L, moveactive, 10 0"
       "SUPER+SHIFT+ALT, K, moveactive, 0 -10"
       "SUPER+SHIFT+ALT, J, moveactive, 0 10"
+      "SUPER+SHIFT, A, pin"
     ];
   };
 }
