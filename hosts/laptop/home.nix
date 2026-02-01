@@ -56,6 +56,8 @@
     };
   };
 
+  programs.bottom.enable = true;
+
   home-manager = {
     desktop = {
       enable = true;
