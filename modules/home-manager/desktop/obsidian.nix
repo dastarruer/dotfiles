@@ -21,7 +21,7 @@ in {
       ];
 
       # Enable wayland support for obsidian
-      overrides."md.obsidian.Obsidian".sockets = lib.mkIf hyprland.enable [
+      overrides."md.obsidian.Obsidian".Context.sockets = lib.mkIf hyprland.enable [
         "wayland"
         "!x11"
         "!fallback-x11"
