@@ -9,7 +9,6 @@
     targets = {
       # Note that these requires manual theming
       vscode.enable = false;
-      gtk.enable = false;
 
       # These are fine
       hyprland.enable = false;
