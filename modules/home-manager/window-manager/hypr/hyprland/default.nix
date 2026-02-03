@@ -14,6 +14,7 @@
     ./input.nix
     ./decoration.nix
     ./autostart.nix
+    ./layout.nix
     # ./plugins.nix
   ];
 
