@@ -5,11 +5,14 @@
     config = {
       displayTitles = false;
       tabs.vertical.enable = true;
-      font.accent = "#${config.home-manager.theme.accent}";
 
-      border = {
-        color = "#${config.lib.stylix.colors.base01}";
-      };
+      # Colors
+      font.accent = "#${config.home-manager.theme.accent}";
+      border.color = "#${config.lib.stylix.colors.base01}";
+
+      # Margin
+      tabs.vertical.margin = "0px";
+      navbar.margin = "0px";
     };
   };
 
