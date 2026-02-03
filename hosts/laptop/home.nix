@@ -57,6 +57,8 @@
   };
 
   home-manager = {
+    theme = "everforest-dark-hard";
+
     desktop = {
       enable = true;
       foliate.enable = false;
