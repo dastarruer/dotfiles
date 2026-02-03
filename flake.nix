@@ -60,6 +60,8 @@
       flake = false;
     };
 
+    textfox.url = "github:adriankarlen/textfox";
+
     vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -113,6 +115,7 @@
         inputs.sops-nix.homeManagerModules.sops
         inputs.flatpaks.homeModules.default
         inputs.spicetify-nix.homeManagerModules.spicetify
+        inputs.textfox.homeManagerModules.default
 
         ./hosts/laptop/home.nix
         ./modules/home-manager/default.nix
