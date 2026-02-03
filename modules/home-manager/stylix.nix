@@ -8,7 +8,7 @@
     home-manager.theme = lib.mkOption {
       type = lib.types.str;
       default = "default-dark";
-      description = "Base-16 theme to use.";
+      description = "Base-16 theme to use. See https://github.com/tinted-theming/schemes for available themes.";
     };
   };
 
@@ -21,10 +21,8 @@
 
       # Disable stylix configuration for certain apps
       targets = {
-        # Note that these requires manual theming
-        vscode.enable = false;
-
         # These are fine
+        vscode.enable = false;
         hyprland.enable = false;
         hyprlock.enable = false;
         anki.enable = false;
