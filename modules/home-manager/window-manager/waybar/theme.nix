@@ -3,7 +3,7 @@
     /* ================================ */
     /*            Stylix Colors         */
     /* ================================ */
-    @define-color accent #${config.lib.stylix.colors.base09};
+    @define-color accent #${config.home-manager.theme.accent};
     @define-color fg #${config.lib.stylix.colors.base05};
     @define-color bg #${config.lib.stylix.colors.base00};
     @define-color bg-alt #${config.lib.stylix.colors.base01};

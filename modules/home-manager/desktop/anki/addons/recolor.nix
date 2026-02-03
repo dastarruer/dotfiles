@@ -180,8 +180,8 @@
           ];
           FLAG_2 = [
             "Flag 2"
-            "#${config.lib.stylix.colors.base09}"
-            "#${config.lib.stylix.colors.base09}"
+            "#${config.home-manager.theme.accent}"
+            "#${config.home-manager.theme.accent}"
             "--flag-2"
           ];
           FLAG_3 = [
@@ -294,8 +294,8 @@
           ];
           STATE_MARKED = [
             "Marked"
-            "#${config.lib.stylix.colors.base09}"
-            "#${config.lib.stylix.colors.base09}"
+            "#${config.home-manager.theme.accent}"
+            "#${config.home-manager.theme.accent}"
             "--state-marked"
           ];
           STATE_NEW = [

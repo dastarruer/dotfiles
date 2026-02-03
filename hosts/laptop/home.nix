@@ -57,7 +57,10 @@
   };
 
   home-manager = {
-    theme = "everforest-dark-hard";
+    theme = {
+      name = "everforest-dark-hard";
+      accent = config.lib.stylix.colors.base0B;
+    };
 
     desktop = {
       enable = true;

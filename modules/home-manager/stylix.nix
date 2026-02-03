@@ -5,10 +5,17 @@
   ...
 }: {
   options = {
-    home-manager.theme = lib.mkOption {
-      type = lib.types.str;
-      default = "default-dark";
-      description = "Base-16 theme to use. See https://github.com/tinted-theming/schemes for available themes.";
+    home-manager.theme = {
+      name = lib.mkOption {
+        type = lib.types.str;
+        default = "default-dark";
+        description = "Base-16 theme to use. See https://github.com/tinted-theming/schemes for available themes.";
+      };
+      accent = lib.mkOption {
+        type = lib.types.str;
+        default = config.lib.stylix.colors.base09;
+        description = "Base-16 accent color to use.";
+      };
     };
   };
 
@@ -17,7 +24,7 @@
       enable = true;
 
       # Set the color theme
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/${config.home-manager.theme}.yaml";
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/${config.home-manager.theme.name}.yaml";
 
       # Disable stylix configuration for certain apps
       targets = {

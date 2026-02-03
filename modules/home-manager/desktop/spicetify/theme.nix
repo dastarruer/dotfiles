@@ -18,16 +18,16 @@
     # Colors can be found here: https://github.com/AvinashReddy3108/spicetify-tui/blob/master/tui/color.ini
     # Style guide here: https://github.com/chriskempson/base16/blob/main/styling.md
     customColorScheme = {
-      accent = "${config.lib.stylix.colors.base09}";
-      accent-active = "${config.lib.stylix.colors.base09}";
+      accent = "${config.home-manager.theme.accent}";
+      accent-active = "${config.home-manager.theme.accent}";
       accent-inactive = "${config.lib.stylix.colors.base00}";
-      banner = "${config.lib.stylix.colors.base09}";
+      banner = "${config.home-manager.theme.accent}";
       border-active = "${config.lib.stylix.colors.base05}";
       border-inactive = "${config.lib.stylix.colors.base03}";
       header = "${config.lib.stylix.colors.base03}";
       highlight = "${config.lib.stylix.colors.base01}";
       main = "${config.lib.stylix.colors.base00}";
-      notification = "${config.lib.stylix.colors.base09}";
+      notification = "${config.home-manager.theme.accent}";
       notification-error = "${config.lib.stylix.colors.base08}";
       subtext = "${config.lib.stylix.colors.base04}";
       text = "${config.lib.stylix.colors.base05}";
@@ -47,11 +47,11 @@
     #   sec-card = "${config.lib.stylix.colors.base08}";
     #   shadow = "${config.lib.stylix.colors.base00}";
     #   selected-row = "${config.lib.stylix.colors.base05}";
-    #   button = "${config.lib.stylix.colors.base09}";
-    #   button-active = "${config.lib.stylix.colors.base09}";
+    #   button = "${config.home-manager.theme.accent}";
+    #   button-active = "${config.home-manager.theme.accent}";
     #   button-disabled = "${config.lib.stylix.colors.base05}";
     #   tab-active = "${config.lib.stylix.colors.base08}";
-    #   notification = "${config.lib.stylix.colors.base09}";
+    #   notification = "${config.home-manager.theme.accent}";
     #   notification-error = "${config.lib.stylix.colors.base08}";
     #   misc = "${config.lib.stylix.colors.base0D}";
     # };

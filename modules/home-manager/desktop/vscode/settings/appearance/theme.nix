@@ -4,7 +4,7 @@
   ...
 }: let
   profile = config.home-manager.desktop.vscode.profile;
-  theme = config.home-manager.theme;
+  theme = config.home-manager.theme.name;
 in {
   programs.vscode.profiles.${profile} = {
     # Extensions required for theming

@@ -15,7 +15,7 @@
     # Based off grimblast manual
     wayland.windowManager.hyprland.settings = {
       env = [
-        "SLURP_ARGS, -d -b ${config.lib.stylix.colors.base00}80 -B ${config.lib.stylix.colors.base05}4D -c ${config.lib.stylix.colors.base09} -w ${toString config.wayland.windowManager.hyprland.settings.general.border_size}"
+        "SLURP_ARGS, -d -b ${config.lib.stylix.colors.base00}80 -B ${config.lib.stylix.colors.base05}4D -c ${config.home-manager.theme.accent} -w ${toString config.wayland.windowManager.hyprland.settings.general.border_size}"
       ];
 
       bind = [
