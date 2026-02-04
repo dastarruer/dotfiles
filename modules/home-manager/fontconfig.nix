@@ -13,11 +13,15 @@
         label = "lcdfilter-light";
         priority = 10;
         text = ''
-          <match target="font">
-              <edit name="lcdfilter" mode="assign">
-              <const>lcdlight</const>
-              </edit>
-          </match>
+          <?xml version="1.0"?>
+          <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+          <fontconfig>
+            <match target="font">
+                <edit name="lcdfilter" mode="assign">
+                    <const>lcdlight</const>
+                </edit>
+            </match>
+          </fontconfig>
         '';
       };
       # Enable full hinting for select monospace fonts; will make them sharper
@@ -25,19 +29,23 @@
       "full-hinting-for-monospace" = {
         enable = true;
         label = "full-hinting-for-monospace";
-        priority = 10;
+        priority = 9;
         text = ''
-          <match target="font">
-              <test name="family" qual="any">
-                  <string>JetBrains Mono</string>
-              </test>
-              <edit name="hintstyle" mode="assign">
-                  <const>hintfull</const>
-              </edit>
-              <edit name="hinting" mode="assign">
-                  <bool>true</bool>
-              </edit>
-          </match>'';
+          <?xml version="1.0"?>
+          <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+          <fontconfig>
+            <match target="font">
+                <test name="family" qual="any">
+                    <string>JetBrains Mono</string>
+                </test>
+                <edit name="hintstyle" mode="assign">
+                    <const>hintfull</const>
+                </edit>
+                <edit name="hinting" mode="assign">
+                    <bool>true</bool>
+                </edit>
+            </match>
+          </fontconfig>'';
       };
     };
   };
