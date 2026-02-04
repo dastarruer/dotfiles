@@ -8,11 +8,42 @@
   programs.spicetify = {
     theme = spicePkgs.themes.text;
 
-    # Change the font to the stylix font
     enabledSnippets = [
-      "* {
-           font-family: \"${config.stylix.fonts.serif.name}\" !important
-       }"
+      # Change the font to the stylix font
+      ''
+         * {
+            font-family: "${config.stylix.fonts.serif.name}", monospace !important
+        }
+      ''
+      # Remove borders
+      ''
+        :root {
+           --border-width: 0px !important
+        }
+      ''
+      # Remove headers (e.g. nav, library, sidebar, etc.)
+      # Doesn't seem to work for every header though; nav and sidebar headers still show
+      ''
+        .Root__nav-bar .main-yourLibraryX-entryPoints:nth-child(1)::before {
+            content: "" !important;
+        }
+
+        .Root__nav-bar .main-yourLibraryX-entryPoints:nth-child(2)::before {
+            content: "" !important;
+        }
+
+        .Root__main-view::before {
+            content: "" !important;
+        }
+
+        .Root__now-playing-bar::before {
+            content: "" !important;
+        }
+
+        .Root__right-sidebar > section:not(:empty)::before {
+            content: "" !important;
+        }
+      ''
     ];
 
     # Colors can be found here: https://github.com/AvinashReddy3108/spicetify-tui/blob/master/tui/color.ini
