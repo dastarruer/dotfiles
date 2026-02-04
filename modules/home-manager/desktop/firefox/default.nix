@@ -36,17 +36,13 @@ in {
   };
 
   config = lib.mkIf config.home-manager.desktop.firefox.enable {
+    # Necessary for gdocs to render fonts properly
+    home.packages = [pkgs.corefonts];
+
     programs.firefox = {
       enable = true;
       package = pkgs.firefox-bin;
     };
-
-    # stylix.targets.firefox = {
-    #   # Tell stylix to style this profile
-    #   profileNames = ["${config.home-manager.desktop.firefox.profile}"];
-
-    #   colorTheme.enable = true;
-    # };
 
     # Windowrules for picture-in-picture
     wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
