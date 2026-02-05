@@ -20,7 +20,7 @@
 
           # sleep 5
           # Check if a monitor is disconnected
-          if ${grep} -q "disconnected" /sys/class/drm/card1-HDMI-A-1/status; then
+          if ${grep} -q "disconnected" /sys/class/drm/card1-DP-1/status; then
             new=0
           else
             new=1

@@ -23,7 +23,7 @@
         };
     in {
       # 2. Use the helper to define your packages
-      toggle-hdmi = mkMonitorToggle "HDMI-A-1";
+      toggle-hdmi = mkMonitorToggle "DP-1";
       toggle-laptop = mkMonitorToggle "eDP-1";
     })
   ];

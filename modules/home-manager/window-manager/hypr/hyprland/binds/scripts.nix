@@ -13,7 +13,7 @@
     ];
 
     bindl = [
-      "SUPER, Y, exec, ${pkgs.toggle-hdmi}/bin/toggle-HDMI-A-1"
+      "SUPER, Y, exec, ${pkgs.toggle-hdmi}/bin/toggle-DP-1"
       "SUPER+SHIFT, Y, exec, ${pkgs.toggle-laptop}/bin/toggle-eDP-1"
     ];
   };
