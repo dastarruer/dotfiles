@@ -25,7 +25,7 @@ in {
   config = lib.mkIf config.home-manager.desktop.spicetify.enable {
     systemd.user.tmpfiles.rules = [
       # Periodically clear spicetify cache. Sometimes (rarely) spotify will silently fail to start if cache is not cleared
-      "d %h/.cache/spotify - - - 10d -"
+      "d %h/.cache/spotify - - - 5d -"
     ];
 
     programs.spicetify = {
