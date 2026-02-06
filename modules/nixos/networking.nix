@@ -10,7 +10,7 @@
 
   networking = {
     # Define your hostname.
-    hostName = "myLaptop";
+    hostName = "dastarruer";
 
     # Enable networking
     networkmanager = {
