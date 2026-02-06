@@ -47,7 +47,10 @@
     # Enable iptables firewall https://nixos.wiki/wiki/Firewall
     firewall.enable = true;
 
-    # DNS servers
+    # DNS settings (https://wiki.nixos.org/wiki/NetworkManager#DNS_Management)
+    networkmanager.dns = "none";
+    useDHCP = false;
+    dhcpcd.enable = false;
     nameservers = [
       "1.1.1.1" # Cloudflare (fast + privacy focused)
       "9.9.9.9" # Quad9 (blocks malicious domains)
