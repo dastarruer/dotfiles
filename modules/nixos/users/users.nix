@@ -22,7 +22,6 @@
     hashedPasswordFile = config.sops.secrets.sudo_password.path;
 
     extraGroups = [
-      "networkmanager" # Wifi control
       "wheel" # Sudo access
       "video" # Backlight access
       "input" # Access to input devices

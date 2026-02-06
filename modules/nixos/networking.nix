@@ -56,6 +56,9 @@
     usePredictableInterfaceNames = true;
   };
 
+  # Allow user to configure networkmanager (https://wiki.nixos.org/wiki/NetworkManager#Installation)
+  users.users.dastarruer.extraGroups = ["networkmanager"];
+
   environment.systemPackages = with pkgs; [
     networkmanager
   ];
