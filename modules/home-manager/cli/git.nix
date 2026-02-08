@@ -17,17 +17,15 @@
       email = {};
     };
 
-    programs.git = {
+    programs.git = let
+      usernamePath = config.sops.secrets.name.path;
+      emailPath = config.sops.secrets.email.path;
+    in {
       enable = true;
 
       settings = {
-        user = let
-          userName = builtins.readFile config.sops.secrets.name.path;
-          userEmail = builtins.readFile config.sops.secrets.email.path;
-        in {
-          name = userName;
-          email = userEmail;
-        };
+        name = lib.mkIf (builtins.pathExists usernamePath) builtins.readFile usernamePath;
+        email = lib.mkIf (builtins.pathExists emailPath) builtins.readFile emailPath;
 
         # Prefer ssh urls instead of https ones
         url."git@github.com:" = {

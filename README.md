@@ -13,12 +13,9 @@ Then after rebooting into hyprland, run:
 home-manager switch --flake ~/.dotfiles --impure -b backup
 ```
 
-# Issues
+Reboot, and then run the following to set up secrets:
 
-## Issues with flatpak
-
-Check `flatpak.nix` to find fixes to any issues with flatpak.
-
-## Issues with sops
-
-Sops is bad and bad. Move all declarations of secrets to `home.nix` which might fix the problem. Maybe not.
+```sh
+sudo nixos-rebuild switch --flake ~/.dotfiles#dastarruer --impure
+home-manager switch --flake ~/.dotfiles --impure -b backup
+```
