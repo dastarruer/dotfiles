@@ -85,15 +85,15 @@
       config.allowUnfree = true;
     };
   in {
-    # NixOS configuration (system only)
     nixosConfigurations.dastarruer = nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        inherit inputs system;
-      };
+      specialArgs = {inherit inputs system;};
       modules = [
+        {
+          nixpkgs.config.allowUnfree = true;
+        }
         inputs.stylix.nixosModules.stylix
         inputs.sops-nix.nixosModules.sops
-        inputs.home-manager.nixosModules.home-manager
+        inputs.home-manager.nixosModules.home-manager # home-manager nixos module
         inputs.ucodenix.nixosModules.default
         inputs.disko.nixosModules.disko
 
@@ -101,27 +101,33 @@
         ./hosts/laptop/hardware-configuration.nix
         ./hosts/laptop/disko-config.nix
         ./modules/nixos/default.nix
-      ];
-    };
 
-    # Laptop
-    homeConfigurations.dastarruer = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      extraSpecialArgs = {
-        inherit inputs system;
-        spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
-        firefoxAddonPkgs = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
-        vscode-extensions = inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace;
-      };
-      modules = [
-        inputs.stylix.homeModules.stylix
-        inputs.sops-nix.homeManagerModules.sops
-        inputs.flatpaks.homeModules.default
-        inputs.spicetify-nix.homeManagerModules.spicetify
-        inputs.textfox.homeManagerModules.default
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
 
-        ./hosts/laptop/home.nix
-        ./modules/home-manager/default.nix
+          # Pass the same extraSpecialArgs from nixos
+          home-manager.extraSpecialArgs = {
+            inherit inputs system;
+            spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
+            firefoxAddonPkgs = inputs.firefox-addons.packages.${system};
+            vscode-extensions = inputs.vscode-extensions.extensions.${system}.vscode-marketplace;
+          };
+
+          # Define the user and their modules
+          home-manager.users.dastarruer = {
+            imports = [
+              inputs.stylix.homeModules.stylix
+              inputs.sops-nix.homeManagerModules.sops
+              inputs.flatpaks.homeModules.default
+              inputs.spicetify-nix.homeManagerModules.spicetify
+              inputs.textfox.homeManagerModules.default
+
+              ./hosts/laptop/home.nix
+              ./modules/home-manager/default.nix
+            ];
+          };
+        }
       ];
     };
 

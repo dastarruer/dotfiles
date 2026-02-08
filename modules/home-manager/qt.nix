@@ -1,13 +1,12 @@
-# Style qt apps similar to gtk apps
-{pkgs, ...}: {
+{...}: {
   qt = {
     enable = true;
 
-    platformTheme.name = "adwaita";
+    # platformTheme.name = "adwaita";
 
-    style = {
-      name = "adwaita-dark";
-      package = pkgs.adwaita-qt;
-    };
+    # style = {
+    #   name = "adwaita-dark";
+    #   package = pkgs.adwaita-qt;
+    # };
   };
 }

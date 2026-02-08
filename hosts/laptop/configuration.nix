@@ -4,9 +4,9 @@
 
   # Enable ssh
   services.openssh.enable = true;
-
+  services.flatpak.enable = true;
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 
   # Brightness
   hardware.brillo.enable = true;
