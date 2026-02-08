@@ -4,8 +4,8 @@
   ...
 }: {
   sops.secrets = {
-    home_wifi_id = {};
-    home_wifi_password = {};
+    "wifi/home/ssid" = {};
+    "wifi/home/psk" = {};
   };
 
   networking = {
@@ -17,28 +17,39 @@
       enable = true;
 
       # Declare network connections
-      # Can be found at /etc/NetworkManager/system-connections
-      ensureProfiles.profiles = {
-        home-wifi = {
-          connection = {
-            id = builtins.readFile config.sops.secrets.home_wifi_id.path;
-            interface-name = "wlp2s0";
-            type = "wifi";
-          };
+      # Can be found at /run/NetworkManager/system-connections
+      ensureProfiles = {
+        environmentFiles = [
+          config.sops.secrets."wifi/home/ssid".path
+          config.sops.secrets."wifi/home/psk".path
+        ];
 
-          wifi = {
-            mode = "infrastructure";
-            ssid = builtins.readFile config.sops.secrets.home_wifi_id.path;
-          };
+        profiles = {
+          "home" = {
+            connection = {
+              id = "home";
+              type = "wifi";
+              autoconnect = true;
+              interface-name = "wlp2s0";
+            };
 
-          ipv4 = {
-            method = "auto";
-          };
+            wifi = {
+              mode = "infrastructure";
+              ssid = "$HOME_SSID";
+            };
 
-          ipv6 = {
-            addr-gen-mode = "default";
-            dns-search = "";
-            method = "auto";
+            wifi-security = {
+              key-mgmt = "wpa-psk";
+              psk = "$HOME_PSK";
+            };
+
+            ipv4 = {
+              method = "auto";
+            };
+
+            ipv6 = {
+              addr-gen-mode = "stable-privacy";
+            };
           };
         };
       };
