@@ -1,4 +1,5 @@
 {
+  lib,
   config,
   firefoxAddonPkgs,
   ...
@@ -13,7 +14,9 @@
     settings."addon@darkreader.org" = {
       force = true;
 
-      settings = {
+      settings = let
+        useridPath = config.sops.secrets.sponsorblock_userid.path;
+      in {
         sponsorTimesContributed = 32;
         chapterCategoryAdded = true;
         autoSkipOnMusicVideosUpdate = true;
@@ -52,7 +55,7 @@
           "yt.oelrichsgarcia.de"
           "invidious.snopyta.org"
         ];
-        userID = "${builtins.readFile config.sops.secrets.sponsorblock_userid.path}";
+        userID = lib.mkIf (builtins.pathExists useridPath) (builtins.readFile useridPath);
         categoryPillUpdate = true;
         showZoomToFillError2 = false;
         forceChannelCheck = true;
