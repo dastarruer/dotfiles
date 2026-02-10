@@ -50,7 +50,6 @@
       flameshot.enable = false;
       firefox.enable = true;
       gaming = {
-        steam.enable = true;
         enable = false;
       };
 
