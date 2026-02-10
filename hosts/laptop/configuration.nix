@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
   system.stateVersion = "25.05";
 
@@ -10,6 +10,14 @@
 
   # Brightness
   hardware.brillo.enable = true;
+
+  programs.steam = {
+    enable = true;
+    extest.enable = true;
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
+  };
 
   nix.settings = {
     max-jobs = "auto";
