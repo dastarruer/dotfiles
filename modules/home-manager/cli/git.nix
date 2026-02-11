@@ -22,6 +22,7 @@
       emailPath = config.sops.secrets.email.path;
     in {
       enable = true;
+      lfs.enable = true;
 
       # yh i... don't know either why this is necessary...
       settings = lib.mkMerge [
