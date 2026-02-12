@@ -88,9 +88,6 @@
     nixosConfigurations.dastarruer = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs system;};
       modules = [
-        {
-          nixpkgs.config.allowUnfree = true;
-        }
         inputs.stylix.nixosModules.stylix
         inputs.sops-nix.nixosModules.sops
         inputs.home-manager.nixosModules.home-manager # home-manager nixos module
