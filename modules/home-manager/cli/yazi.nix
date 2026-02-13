@@ -5,7 +5,6 @@
   ...
 }: let
   hyprland = config.home-manager.window-manager.hypr.hyprland;
-  myPrNumber = "484867";
 in {
   options = {
     home-manager.cli.yazi.enable = lib.mkOption {
@@ -23,8 +22,7 @@ in {
         plugins = pkgs.yaziPlugins;
       in {
         # Obviously only meant for wayland, so only enable if hyprland is enabled
-        # Use a modified version of wl-clipboard to fix a broken emit function: https://github.com/grappas/wl-clipboard.yazi/pull/2
-        "wl-clipboard" = lib.mkIf hyprland.enable ./wl-clipboard; # plugins.wl-clipboard;
+        "wl-clipboard" = lib.mkIf hyprland.enable plugins.wl-clipboard;
       };
 
       keymap = {
