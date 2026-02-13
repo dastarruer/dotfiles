@@ -35,6 +35,7 @@
       thunar
       todoist-electron
       brave
+      kdePackages.kdenlive
     ];
   };
 }
