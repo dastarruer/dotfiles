@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  hyprland = config.home-manager.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hyprland;
 in {
   options = {
     home-manager.desktop.zathura.enable = lib.mkOption {

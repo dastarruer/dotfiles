@@ -19,10 +19,14 @@
   ];
 
   options = {
-    home-manager.window-manager.hypr.hyprland.enable = lib.mkEnableOption "Enable hyprland, a script to send notifications on low battery.";
+    home-manager.window-manager.hyprland.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = config.home-manager.window-manager.enable;
+      description = "Enable hyprland.";
+    };
   };
 
-  config = lib.mkIf config.home-manager.window-manager.hypr.hyprland.enable {
+  config = lib.mkIf config.home-manager.window-manager.hyprland.enable {
     wayland.windowManager.hyprland = {
       enable = true;
 
@@ -38,7 +42,7 @@
 
     # Use hyprland cachix to avoid building hyprland from source.
     # Only needed if flake package is being used
-    # https://wiki.hypr.land/Nix/Cachix/
+    # https://wiki.land/Nix/Cachix/
     nix.settings = {
       extra-substituters = [
         "https://hyprland.cachix.org"

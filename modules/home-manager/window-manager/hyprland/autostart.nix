@@ -6,7 +6,7 @@
       # Start networkmanager in systray
       "${pkgs.networkmanagerapplet}/bin/nm-applet"
 
-      # Move all windows to monitor on connect (https://wiki.hypr.land/FAQ/#how-do-i-move-my-favorite-workspaces-to-a-new-monitor-when-i-plug-it-in)
+      # Move all windows to monitor on connect (https://wiki.land/FAQ/#how-do-i-move-my-favorite-workspaces-to-a-new-monitor-when-i-plug-it-in)
       "${pkgs.writeShellApplication {
         name = "${name}";
         runtimeInputs = with pkgs; [

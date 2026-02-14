@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  hyprland = config.home-manager.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hyprland;
 in {
   imports = [
     ./theme.nix

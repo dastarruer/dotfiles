@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  tiling = config.home-manager.window-manager.hypr.hyprland.scrollable-tiling;
+  tiling = config.home-manager.window-manager.hyprland.scrollable-tiling;
 in {
   wayland.windowManager.hyprland.settings = {
     bind =

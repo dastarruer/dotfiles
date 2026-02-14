@@ -69,10 +69,6 @@
       };
     };
 
-    window-manager = {
-      enable = true;
-      hypr.hypridle.enable = true;
-      sherlock.enable = false;
-    };
+    window-manager.sherlock.enable = false;
   };
 }

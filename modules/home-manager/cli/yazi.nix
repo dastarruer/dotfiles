@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  hyprland = config.home-manager.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hyprland;
 in {
   options = {
     home-manager.cli.yazi.enable = lib.mkOption {

@@ -20,7 +20,7 @@
 
   # Use hyprland cachix to avoid building hyprland from source.
   # Only needed if flake package is being used
-  # https://wiki.hypr.land/Nix/Cachix/
+  # https://wiki.land/Nix/Cachix/
   nix.settings = {
     extra-substituters = [
       "https://hyprland.cachix.org"

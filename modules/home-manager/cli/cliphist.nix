@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  hyprland = config.home-manager.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hyprland;
   rofi = config.home-manager.window-manager.rofi;
   cfg = config.home-manager.cliphist;
 in {

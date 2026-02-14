@@ -6,12 +6,12 @@
   # hyprlandPlugins,
   ...
 }: let
-  cfg = config.home-manager.window-manager.hypr.hyprland.scrollable-tiling;
+  cfg = config.home-manager.window-manager.hyprland.scrollable-tiling;
 in {
   options = {
-    home-manager.window-manager.hypr.hyprland.scrollable-tiling.enable = lib.mkOption {
+    home-manager.window-manager.hyprland.scrollable-tiling.enable = lib.mkOption {
       type = lib.types.bool;
-      default = config.home-manager.window-manager.hypr.hyprland.enable;
+      default = config.home-manager.window-manager.hyprland.enable;
       description = "Enable scrollable tiling in hyprland, similar to niri functionality.";
     };
   };
