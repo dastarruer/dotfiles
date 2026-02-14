@@ -46,6 +46,9 @@
         # use vscode because devcontainers only works w regular vscode
         package = pkgs.vscode.fhs;
 
+        # Only way that extensions actually get installed if home-manager is a nixos module for some reason
+        mutableExtensionsDir = false;
+
         # Privacy settings (https://paulsorensen.io/github-copilot-vscode-privacy/)
         profiles.${profile}.userSettings = {
           "telemetry.telemetryLevel" = "off";
