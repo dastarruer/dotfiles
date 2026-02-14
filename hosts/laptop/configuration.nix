@@ -11,10 +11,16 @@
   # Brightness
   hardware.brillo.enable = true;
 
+  programs.gamemode.enable = true;
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+  };
   programs.steam = {
     enable = true;
     protontricks.enable = true;
     extest.enable = true;
+    gamescopeSession.enable = true;
     extraCompatPackages = with pkgs; [
       proton-ge-bin
     ];
