@@ -15,7 +15,7 @@
     ./decoration.nix
     ./autostart.nix
     ./layout.nix
-    # ./plugins.nix
+    ./plugins.nix
   ];
 
   options = {
@@ -26,7 +26,7 @@
     wayland.windowManager.hyprland = {
       enable = true;
 
-      # # set to the flake package for more up to date software
+      # set to the flake package for more up to date software
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
       # For stuff between apps like clipboard access, drag and drop, etc.

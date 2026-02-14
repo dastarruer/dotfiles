@@ -1,17 +1,35 @@
 {
-  inputs,
+  config,
+  lib,
   pkgs,
+  hyprlandPlugins,
+  # hyprlandPlugins,
   ...
-}: {
-  wayland.windowManager.hyprland = {
-    plugins = [
-      inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
-    ];
+}: let
+  cfg = config.home-manager.window-manager.hypr.hyprland.scrollable-tiling;
+in {
+  options = {
+    home-manager.window-manager.hypr.hyprland.scrollable-tiling.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = config.home-manager.window-manager.hypr.hyprland.enable;
+      description = "Enable scrollable tiling in hyprland, similar to niri functionality.";
+    };
+  };
 
-    settings = {
-      "plugin:split-monitor-workspaces" = {
-        keep_focused = true;
-        enable_persistent_workspaces = false;
+  config = lib.mkIf cfg.enable {
+    wayland.windowManager.hyprland = {
+      plugins = [
+        hyprlandPlugins.hyprscrolling
+      ];
+
+      settings = {
+        exec-once = [
+          "${pkgs.hyprland}/bin/hyprctl plugin load ${hyprlandPlugins.hyprscrolling}/lib/libhyprexpo.so"
+        ];
+        "plugin:hyprscrolling" = {
+          fullscreen_on_one_column = true;
+          focus_fit_method = 1;
+        };
       };
     };
   };
