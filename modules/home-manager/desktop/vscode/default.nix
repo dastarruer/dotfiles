@@ -27,6 +27,7 @@
 
   config = let
     profile = config.home-manager.desktop.vscode.profile;
+    package = config.home-manager.desktop.vscode.profile;
   in
     lib.mkIf config.home-manager.desktop.vscode.enable {
       nixpkgs.config.allowUnfree = true;
@@ -43,14 +44,14 @@
       programs.vscode = {
         enable = true;
         # Use vscode fhs so lldb works: https://www.reddit.com/r/NixOS/comments/1e724mx/how_can_i_debug_rust_with_vscode_and/
-        # use vscode because devcontainers only works w regular vscode
         package = pkgs.vscode.fhs;
 
         # Only way that extensions actually get installed if home-manager is a nixos module for some reason
         mutableExtensionsDir = false;
 
         # Privacy settings (https://paulsorensen.io/github-copilot-vscode-privacy/)
-        profiles.${profile}.userSettings = {
+        # Only set if package is not vscodium
+        profiles.${profile}.userSettings = lib.optionalAttrs (!lib.hasInfix "vscodium" (lib.getName package)) {
           "telemetry.telemetryLevel" = "off";
           "telemetry.feedback.enabled" = false;
           "workbench.enableExperiments" = false;
