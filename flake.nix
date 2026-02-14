@@ -49,10 +49,10 @@
     #   inputs.hyprland.follows = "hyprland";
     # };
 
-    # hyprland-plugins = {
-    #   url = "github:hyprwm/hyprland-plugins";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
 
     # Microcode updates
     cpu-microcodes = {
@@ -109,6 +109,7 @@
             spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
             firefoxAddonPkgs = inputs.firefox-addons.packages.${system};
             vscode-extensions = inputs.vscode-extensions.extensions.${system}.vscode-marketplace;
+            hyprlandPlugins = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
           };
 
           # Define the user and their modules
