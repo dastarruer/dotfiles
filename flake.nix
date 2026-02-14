@@ -82,11 +82,10 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
-      config.allowUnfree = true;
     };
   in {
     nixosConfigurations.dastarruer = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs system;};
+      specialArgs = {inherit inputs system;} // {pkgs = pkgs;};
       modules = [
         inputs.stylix.nixosModules.stylix
         inputs.sops-nix.nixosModules.sops
@@ -100,7 +99,6 @@
         ./modules/nixos/default.nix
 
         {
-          home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
 
           # Pass the same extraSpecialArgs from nixos
