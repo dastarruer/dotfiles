@@ -13,10 +13,14 @@
   ];
 
   options = {
-    home-manager.window-manager.hypr.hyprlock.enable = lib.mkEnableOption "Enable hyprlock.";
+    home-manager.window-manager.hyprlock.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = config.home-manager.window-manager.enable;
+      description = "Enable hyprlock.";
+    };
   };
 
-  config = lib.mkIf config.home-manager.window-manager.hypr.hyprlock.enable {
+  config = lib.mkIf config.home-manager.window-manager.hyprlock.enable {
     # Config taken from here: https://github.com/FireDrop6000/hyprland-mydots/blob/master/.config/hypr/hyprlock.conf
     programs.hyprlock = {
       enable = true;

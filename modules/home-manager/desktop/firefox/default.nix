@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: let
-  hyprland = config.home-manager.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hyprland;
 in {
   imports = [
     ./containers.nix

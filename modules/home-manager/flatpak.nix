@@ -14,7 +14,7 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
   pkgs,
   ...
 }: let
-  hyprland = config.home-manager.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hyprland;
 in {
   # This is needed for launching flatpaks with rofi
   home.packages = with pkgs; [

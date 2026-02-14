@@ -4,12 +4,16 @@
   pkgs,
   ...
 }: let
-  cfg = config.home-manager.window-manager.hypr.hypridle;
-  hyprlock = config.home-manager.window-manager.hypr.hyprlock;
-  hyprland = config.home-manager.window-manager.hypr.hyprland;
+  cfg = config.home-manager.window-manager.hypridle;
+  hyprlock = config.home-manager.window-manager.hyprlock;
+  hyprland = config.home-manager.window-manager.hyprland;
 in {
   options = {
-    home-manager.window-manager.hypr.hypridle.enable = lib.mkEnableOption "Enable hypridle.";
+    home-manager.window-manager.hypridle.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = config.home-manager.window-manager.enable;
+      description = "Enable hypridle.";
+    };
   };
 
   config = lib.mkIf cfg.enable {

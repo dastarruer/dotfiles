@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  hyprland = config.home-manager.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hyprland;
   dunst = config.home-manager.window-manager.dunst;
 in {
   options = {

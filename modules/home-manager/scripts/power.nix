@@ -4,8 +4,8 @@
   pkgs,
   ...
 }: let
-  hyprland = config.home-manager.window-manager.hypr.hyprland;
-  hyprlock = config.home-manager.window-manager.hypr.hyprlock;
+  hyprland = config.home-manager.window-manager.hyprland;
+  hyprlock = config.home-manager.window-manager.hyprlock;
   rofi = config.home-manager.window-manager.rofi;
 
   lockCmd = lib.optionalString hyprlock.enable "${lib.getExe pkgs.hyprlock}";
