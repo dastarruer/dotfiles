@@ -43,10 +43,6 @@
     cpuFreqGovernor = "powersave";
   };
 
-  # Load all available firmware blobs.
-  # Ensures WiFi, GPU, sound, etc. have proper drivers and power-saving features.
-  hardware.enableAllFirmware = true;
-
   systemd.tmpfiles.rules = [
     # Write "balance_power" to all CPU energy performance preference files.
     # This biases the CPU toward energy savings at idle while still scaling up when needed.

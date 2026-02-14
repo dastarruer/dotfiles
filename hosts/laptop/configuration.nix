@@ -1,4 +1,9 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
   system.stateVersion = "25.05";
 
@@ -9,24 +14,23 @@
   # Brightness
   hardware.brillo.enable = true;
 
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "steam"
+    ];
   programs.gamemode.enable = true;
   programs.gamescope = {
     enable = true;
     capSysNice = true;
   };
   programs.steam = {
-    enable = true;
+    enable = false;
     protontricks.enable = true;
     extest.enable = true;
     gamescopeSession.enable = true;
     extraCompatPackages = with pkgs; [
       proton-ge-bin
     ];
-  };
-
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowUnfreePredicate = _: true;
   };
 
   nix.settings = {
@@ -46,10 +50,10 @@
 
   # Microcode updates (might as well yk)
   services.ucodenix = {
-    enable = true;
-
-    # Specify cpu id to process only my cpu's thingamabob
-    cpuModelId = "00A50F00";
+    # enable = true;
+    # it don't work
+    enable = false;
+    cpuModelId = "auto";
   };
 
   # Enable docker

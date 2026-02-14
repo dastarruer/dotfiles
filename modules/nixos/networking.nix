@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   sops.secrets = {
@@ -84,5 +85,9 @@
   };
 
   # Enable firmware for wifi cards
-  hardware.enableAllFirmware = true;
+  hardware.enableAllFirmware = false;
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "broadcom-bt-firmware"
+    ];
 }
