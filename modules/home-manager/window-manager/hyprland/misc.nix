@@ -6,7 +6,8 @@
 
       middle_click_paste = false;
 
-      allow_session_lock_restore = true; # Allows to restart lockscreen if it crashes
+      # Allows to restart lockscreen if it crashes
+      allow_session_lock_restore = true;
     };
 
     binds = {
@@ -17,6 +18,9 @@
     ecosystem = {
       # no i cant donate sorry
       no_donation_nag = true;
+
+      # enable hyprland's new permission system
+      enforce_permissions = true;
     };
 
     general = {

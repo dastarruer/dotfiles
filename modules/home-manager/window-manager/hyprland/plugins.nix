@@ -23,9 +23,16 @@ in {
       ];
 
       settings = {
+        # For whatever reason, I need to add this manually
         exec-once = [
           "${pkgs.hyprland}/bin/hyprctl plugin load ${hyprlandPlugins.hyprscrolling}/lib/libhyprexpo.so"
         ];
+
+        # Plugin needs to be allowed
+        permission = [
+          "${hyprlandPlugins.hyprscrolling}/lib/libhyprexpo.so, plugin, allow"
+        ];
+
         "plugin:hyprscrolling" = {
           fullscreen_on_one_column = true;
           focus_fit_method = 1;
