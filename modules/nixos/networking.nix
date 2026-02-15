@@ -86,8 +86,4 @@
 
   # Enable firmware for wifi cards
   hardware.enableAllFirmware = false;
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "broadcom-bt-firmware"
-    ];
 }

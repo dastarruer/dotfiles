@@ -30,17 +30,6 @@
     package = config.home-manager.desktop.vscode.profile;
   in
     lib.mkIf config.home-manager.desktop.vscode.enable {
-      nixpkgs.config.allowUnfree = true;
-      nixpkgs.config.allowUnfreePredicate = pkg:
-        builtins.elem (lib.getName pkg) [
-          "vscode-extension-ms-python-vscode-pylance-2025.12.104"
-          "vscode-extension-ms-python-vscode-pylance"
-          "code"
-          "vscode"
-          "vscode-extension-github-copilot"
-          "vscode-extension-fill-labs-dependi"
-          "vscode-with-extensions"
-        ];
       programs.vscode = {
         enable = true;
         # Use vscode fhs so lldb works: https://www.reddit.com/r/NixOS/comments/1e724mx/how_can_i_debug_rust_with_vscode_and/
