@@ -35,7 +35,7 @@
         anki.enable = false;
         spicetify.enable = false;
         waybar.enable = false;
-        dunst.enable = false;
+        dunst.enable = true;
         rofi.enable = false;
       };
 
