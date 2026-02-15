@@ -80,17 +80,9 @@
     ...
   }: let
     system = "x86_64-linux";
-    # Allow unfree packages: https://stackoverflow.com/questions/77585228/how-to-allow-unfree-packages-in-nix-for-each-situation-nixos-nix-nix-wit
-    pkgs = import nixpkgs {
-      inherit system;
-      config = {
-        allowUnfree = true;
-        allowUnfreePredicate = _: true;
-      };
-    };
   in {
     nixosConfigurations.dastarruer = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs system;} // {pkgs = pkgs;};
+      specialArgs = {inherit inputs system;};
       modules = [
         inputs.stylix.nixosModules.stylix
         inputs.sops-nix.nixosModules.sops
@@ -105,6 +97,7 @@
 
         {
           home-manager.useUserPackages = true;
+          # home-manager.useGlobalPkgs = true;
 
           # Pass the same extraSpecialArgs from nixos
           home-manager.extraSpecialArgs = {
@@ -133,13 +126,19 @@
 
     # Steam deck
     homeConfigurations.deck = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+        overlays = [
+          # Add your script overlays here too
+        ];
+      };
       extraSpecialArgs = {
         inherit inputs system;
-        spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
-        firefoxPkgs = inputs.firefox-nightly.packages.${pkgs.stdenv.hostPlatform.system};
-        firefoxAddonPkgs = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
-        vscode-extensions = inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace;
+        spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
+        firefoxPkgs = inputs.firefox-nightly.packages.${system};
+        firefoxAddonPkgs = inputs.firefox-addons.packages.${system};
+        vscode-extensions = inputs.vscode-extensions.extensions.${system}.vscode-marketplace;
       };
       modules = [
         inputs.stylix.homeModules.stylix

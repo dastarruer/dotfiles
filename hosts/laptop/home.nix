@@ -4,6 +4,7 @@
   ...
 }: {
   systemd.user.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   # Set up user
   home = {
