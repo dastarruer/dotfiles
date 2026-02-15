@@ -12,8 +12,8 @@
     ./sherlock.nix
     ./hyprland
     ./hypridle.nix
-    ./hyprlock
     ./hyprsunset.nix
+    ./screen-locker
   ];
 
   options = {
