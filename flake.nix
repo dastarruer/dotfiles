@@ -98,6 +98,7 @@
         {
           home-manager.useUserPackages = true;
           # home-manager.useGlobalPkgs = true;
+          home-manager.backupFileExtension = "bak";
 
           # Pass the same extraSpecialArgs from nixos
           home-manager.extraSpecialArgs = {
