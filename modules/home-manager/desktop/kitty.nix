@@ -37,6 +37,8 @@ in {
         disable_ligatures = "always";
         text_composition_strategy = "legacy";
         confirm_os_window_close = 0;
+        wayland_enable_ime = "no";
+        enable_audio_bell = "no";
       };
     };
 
