@@ -46,11 +46,8 @@
     desktop = {
       enable = true;
       foliate.enable = false;
-      flameshot.enable = false;
       firefox.enable = true;
-      gaming = {
-        enable = false;
-      };
+      gaming.enable = false;
 
       pwa = {
         enable = false;

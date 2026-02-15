@@ -4,14 +4,6 @@
   ...
 }: {
   config = {
-    assertions = [
-      {
-        assertion = !(config.home-manager.desktop.flameshot.enable && config.window-manager.hyprland.enable);
-        message = "The hyprland config uses grimblast, so flameshot cannot be enabled.";
-      }
-    ];
-    home-manager.desktop.flameshot.enable = false;
-
     # Based off grimblast manual
     wayland.windowManager.hyprland.settings = {
       env = [
