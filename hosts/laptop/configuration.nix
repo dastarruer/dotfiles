@@ -1,15 +1,29 @@
-{...}: {
+{pkgs, ...}: {
   # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
   system.stateVersion = "25.05";
+  nixpkgs.config.allowUnfree = true;
 
   # Enable ssh
   services.openssh.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  services.flatpak.enable = true;
 
   # Brightness
   hardware.brillo.enable = true;
+
+  programs.gamemode.enable = true;
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+  };
+  programs.steam = {
+    enable = true;
+    protontricks.enable = true;
+    extest.enable = true;
+    gamescopeSession.enable = true;
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
+  };
 
   nix.settings = {
     max-jobs = "auto";
@@ -28,10 +42,10 @@
 
   # Microcode updates (might as well yk)
   services.ucodenix = {
-    enable = true;
-
-    # Specify cpu id to process only my cpu's thingamabob
-    cpuModelId = "00A50F00";
+    # enable = true;
+    # it don't work
+    enable = false;
+    cpuModelId = "auto";
   };
 
   # Enable docker
@@ -81,4 +95,10 @@
 
   # Reduce blurry fonts: https://www.reddit.com/r/xfce/comments/vfe7uy/comment/icyffxj/?force-legacy-sct=1
   environment.etc."environment".text = ''FREETYPE_PROPERTIES="truetype:interpreter-version=35"'';
+
+  # Disable touchpad as mouse for dualshock connected via USB and Bluetooth (https://wiki.archlinux.org/title/Gamepad#Disable_touchpad_acting_as_mouse)
+  services.udev.extraRules = ''
+    ATTRS{name}=="Sony Interactive Entertainment Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+    ATTRS{name}=="Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+  '';
 }

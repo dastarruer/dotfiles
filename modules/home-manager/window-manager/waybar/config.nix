@@ -25,12 +25,12 @@
 
       cpu = {
         interval = 10;
-        format = "<span color='#${config.lib.stylix.colors.base09}'><b>cpu:</b></span> {usage}%<span color='#${config.lib.stylix.colors.base01}'> ] </span>";
+        format = "<span color='#${config.home-manager.theme.accent}'><b>cpu:</b></span> {usage}%<span color='#${config.lib.stylix.colors.base01}'> ] </span>";
       };
 
       memory = {
         interval = 10;
-        format = "<span color='#${config.lib.stylix.colors.base01}'> [ </span><span color='#${config.lib.stylix.colors.base09}'><b>mem:</b></span> {percentage}%<span color='#${config.lib.stylix.colors.base01}'> / </span>";
+        format = "<span color='#${config.lib.stylix.colors.base01}'> [ </span><span color='#${config.home-manager.theme.accent}'><b>mem:</b></span> {percentage}%<span color='#${config.lib.stylix.colors.base01}'> / </span>";
         tooltip = true;
         tooltip-format = "{used:0.1f}GiB / {total:0.1f}GiB used";
       };
@@ -52,18 +52,18 @@
       };
 
       "hyprland/language" = {
-        format = "<span color='#${config.lib.stylix.colors.base01}'>[ </span><span color='#${config.lib.stylix.colors.base09}'><b>key: </b></span>{short}<span color='#${config.lib.stylix.colors.base01}'> / </span>";
+        format = "<span color='#${config.lib.stylix.colors.base01}'>[ </span><span color='#${config.home-manager.theme.accent}'><b>key: </b></span>{short}<span color='#${config.lib.stylix.colors.base01}'> / </span>";
         tooltip = false;
       };
 
       pulseaudio = {
-        format = "<span color='#${config.lib.stylix.colors.base09}'><b>vol:</b></span> {volume}%<span color='#${config.lib.stylix.colors.base01}'> / </span>";
+        format = "<span color='#${config.home-manager.theme.accent}'><b>vol:</b></span> {volume}%<span color='#${config.lib.stylix.colors.base01}'> / </span>";
       };
 
       battery = {
         bat = "BAT0";
-        "format" = "<span color='#${config.lib.stylix.colors.base09}'><b>bat:</b></span> {capacity}%<span color='#${config.lib.stylix.colors.base01}'> / </span>";
-        "format-charging" = "<span color='#${config.lib.stylix.colors.base09}'><b>ac:</b></span> {capacity}%<span color='#${config.lib.stylix.colors.base01}'> / </span>";
+        "format" = "<span color='#${config.home-manager.theme.accent}'><b>bat:</b></span> {capacity}%<span color='#${config.lib.stylix.colors.base01}'> / </span>";
+        "format-charging" = "<span color='#${config.home-manager.theme.accent}'><b>ac:</b></span> {capacity}%<span color='#${config.lib.stylix.colors.base01}'> / </span>";
         "format-plugged" = "";
         tooltip = true;
         tooltip-format = "{timeTo}";
@@ -71,7 +71,7 @@
       };
 
       backlight = {
-        format = "<span color='#${config.lib.stylix.colors.base09}'><b>mon:</b></span> {percent}%<span color='#${config.lib.stylix.colors.base01}'> ]</span>";
+        format = "<span color='#${config.home-manager.theme.accent}'><b>mon:</b></span> {percent}%<span color='#${config.lib.stylix.colors.base01}'> ]</span>";
         tooltip = false;
       };
 

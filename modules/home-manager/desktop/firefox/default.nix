@@ -5,14 +5,14 @@
   pkgs,
   ...
 }: let
-  hyprland = config.home-manager.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hyprland;
 in {
   imports = [
     ./containers.nix
     ./settings.nix
     ./search.nix
     ./extensions
-    ./theme
+    ./theme.nix
   ];
 
   options = {
@@ -25,7 +25,7 @@ in {
       profile = lib.mkOption {
         type = lib.types.str;
         default = "default";
-        description = "Name of the default profile. Set to `default` by default.";
+        description = "Name of the default profile.";
       };
       deckFixes = lib.mkOption {
         type = lib.types.bool;
@@ -36,17 +36,13 @@ in {
   };
 
   config = lib.mkIf config.home-manager.desktop.firefox.enable {
+    # Necessary for gdocs to render fonts properly
+    home.packages = [pkgs.corefonts];
+
     programs.firefox = {
       enable = true;
       package = pkgs.firefox-bin;
     };
-
-    # stylix.targets.firefox = {
-    #   # Tell stylix to style this profile
-    #   profileNames = ["${config.home-manager.desktop.firefox.profile}"];
-
-    #   colorTheme.enable = true;
-    # };
 
     # Windowrules for picture-in-picture
     wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {

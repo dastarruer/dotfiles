@@ -4,6 +4,7 @@
   ...
 }: let
   profile = config.home-manager.desktop.vscode.profile;
+  theme = config.home-manager.theme.name;
 in {
   programs.vscode.profiles.${profile} = {
     # Extensions required for theming
@@ -15,7 +16,7 @@ in {
     userSettings = {
       # Theme
       "workbench.iconTheme" = "material-icon-theme";
-      "workbench.colorTheme" = "base16-default-dark";
+      "workbench.colorTheme" = "base16-${theme}";
 
       # Custom Colors
       "workbench.colorCustomizations" = {

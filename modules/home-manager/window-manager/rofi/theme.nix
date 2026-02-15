@@ -3,7 +3,7 @@
     inherit (config.lib.formats.rasi) mkLiteral;
   in {
     "*" = {
-      accent = mkLiteral "#${config.lib.stylix.colors.base09}";
+      accent = mkLiteral "#${config.home-manager.theme.accent}";
       fg = mkLiteral "#${config.lib.stylix.colors.base05}";
       bg = mkLiteral "#${config.lib.stylix.colors.base00}";
       bg-alt = mkLiteral "#${config.lib.stylix.colors.base01}";

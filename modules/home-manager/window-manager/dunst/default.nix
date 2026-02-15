@@ -56,7 +56,7 @@
 
           font = "${config.stylix.fonts.sansSerif.name} ${toString config.stylix.fonts.sizes.applications}";
           markup = "full";
-          format = "<b><span foreground='#${config.lib.stylix.colors.base09}'>%s</span></b>\n<span foreground='#${config.lib.stylix.colors.base05}'>%b</span>";
+          format = "<b><span foreground='#${config.home-manager.theme.accent}'>%s</span></b>\n<span foreground='#${config.lib.stylix.colors.base05}'>%b</span>";
           alignment = "left";
           vertical_alignment = "center";
           show_age_threshold = 60;
@@ -88,7 +88,7 @@
           mouse_middle_click = "do_action, close_current";
           mouse_right_click = "close_all";
 
-          highlight = "#${config.lib.stylix.colors.base09}";
+          highlight = "#${config.home-manager.theme.accent}";
           background = "#${config.lib.stylix.colors.base00}";
           foreground = "#${config.lib.stylix.colors.base05}";
         };

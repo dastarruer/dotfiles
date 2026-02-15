@@ -5,6 +5,7 @@
   ...
 }: {
   systemd.user.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   # Set up user
   home = {
@@ -36,8 +37,6 @@
   ];
 
   programs.home-manager.enable = true;
-  nixpkgs.config.allowUnfree = true;
-
   services.polkit-gnome.enable = true;
 
   nix = {
@@ -56,18 +55,17 @@
     };
   };
 
-  programs.bottom.enable = true;
-
   home-manager = {
+    theme = {
+      name = "everforest-dark-hard";
+      accent = config.lib.stylix.colors.base0B;
+    };
+
     desktop = {
       enable = true;
       foliate.enable = false;
-      flameshot.enable = false;
       firefox.enable = true;
-      gaming = {
-        steam.enable = true;
-        enable = false;
-      };
+      gaming.enable = false;
 
       pwa = {
         enable = false;
@@ -86,10 +84,6 @@
       };
     };
 
-    window-manager = {
-      enable = true;
-      hypr.hypridle.enable = true;
-      sherlock.enable = false;
-    };
+    window-manager.sherlock.enable = false;
   };
 }

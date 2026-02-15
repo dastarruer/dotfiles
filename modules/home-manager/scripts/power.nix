@@ -4,12 +4,19 @@
   pkgs,
   ...
 }: let
-  hyprland = config.home-manager.window-manager.hypr.hyprland;
-  hyprlock = config.home-manager.window-manager.hypr.hyprlock;
+  hyprland = config.home-manager.window-manager.hyprland;
+  locker = config.home-manager.window-manager.screen-locker;
   rofi = config.home-manager.window-manager.rofi;
 
-  lockCmd = lib.optionalString hyprlock.enable "${lib.getExe pkgs.hyprlock}";
+  lockCmd =
+    if locker == "hyprlock"
+    then "${lib.getExe pkgs.hyprlock}"
+    else if locker == "swaylock"
+    then "${lib.getExe pkgs.swaylock}"
+    else "true";
+
   logoutCmd = lib.optionalString hyprland.enable "${pkgs.hyprland}/bin/hyprctl dispatch exit";
+
   launcherCmd =
     if rofi.enable
     then "${lib.getExe pkgs.rofi} -dmenu -i -p 'Power Menu:'"

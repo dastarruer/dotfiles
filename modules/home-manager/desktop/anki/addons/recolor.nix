@@ -39,32 +39,32 @@
           ];
           BORDER_STRONG = [
             "Border (strong)"
-            "#585b70"
-            "#585b70"
+            "#${config.lib.stylix.colors.base04}"
+            "#${config.lib.stylix.colors.base04}"
             "--border-strong"
           ];
           BORDER_SUBTLE = [
             "Border (subtle)"
-            "#313244"
-            "#313244"
+            "#${config.lib.stylix.colors.base00}"
+            "#${config.lib.stylix.colors.base00}"
             "--border-subtle"
           ];
           BUTTON_BG = [
             "Button background"
-            "#313244"
-            "#313244"
+            "#${config.lib.stylix.colors.base00}"
+            "#${config.lib.stylix.colors.base00}"
             "--button-bg"
           ];
           BUTTON_DISABLED = [
             "Button background (disabled)"
-            "#313244"
-            "#313244"
+            "#${config.lib.stylix.colors.base00}"
+            "#${config.lib.stylix.colors.base00}"
             "--button-disabled"
           ];
           BUTTON_HOVER = [
             "Button background (hover)"
-            "#45475a"
-            "#45475a"
+            "#${config.lib.stylix.colors.base01}"
+            "#${config.lib.stylix.colors.base01}"
             [
               "--button-gradient-start"
               "--button-gradient-end"
@@ -72,8 +72,8 @@
           ];
           BUTTON_HOVER_BORDER = [
             "Button border (hover)"
-            "#585b70"
-            "#585b70"
+            "#${config.lib.stylix.colors.base04}"
+            "#${config.lib.stylix.colors.base04}"
             "--button-hover-border"
           ];
           BUTTON_PRIMARY_BG = [
@@ -180,8 +180,8 @@
           ];
           FLAG_2 = [
             "Flag 2"
-            "#${config.lib.stylix.colors.base09}"
-            "#${config.lib.stylix.colors.base09}"
+            "#${config.home-manager.theme.accent}"
+            "#${config.home-manager.theme.accent}"
             "--flag-2"
           ];
           FLAG_3 = [
@@ -228,26 +228,27 @@
           ];
           SCROLLBAR_BG = [
             "Scrollbar background"
-            "#1e1e2e"
-            "#1e1e2e"
+            "#${config.lib.stylix.colors.base02}"
+            "#${config.lib.stylix.colors.base02}"
             "--scrollbar-bg"
           ];
           SCROLLBAR_BG_ACTIVE = [
             "Scrollbar background (active)"
-            "#313244"
-            "#313244"
+            "#${config.lib.stylix.colors.base04}"
+            "#${config.lib.stylix.colors.base04}"
             "--scrollbar-bg-active"
           ];
+          # TODO: Change this to a different color than scrollbar_bg
           SCROLLBAR_BG_HOVER = [
             "Scrollbar background (hover)"
-            "#${config.lib.stylix.colors.base00}"
-            "#${config.lib.stylix.colors.base00}"
+            "#${config.lib.stylix.colors.base02}"
+            "#${config.lib.stylix.colors.base02}"
             "--scrollbar-bg-hover"
           ];
           SELECTED_BG = [
             "Selected Bg"
-            "#313244"
-            "#313244"
+            "#${config.lib.stylix.colors.base00}"
+            "#${config.lib.stylix.colors.base00}"
             "--selected-bg"
           ];
           SELECTED_FG = [
@@ -294,8 +295,8 @@
           ];
           STATE_MARKED = [
             "Marked"
-            "#${config.lib.stylix.colors.base09}"
-            "#${config.lib.stylix.colors.base09}"
+            "#${config.home-manager.theme.accent}"
+            "#${config.home-manager.theme.accent}"
             "--state-marked"
           ];
           STATE_NEW = [

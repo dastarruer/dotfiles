@@ -24,7 +24,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/v3.0.0";
+    flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/latest";
     # flatpaks = {
     #   url = "github:dastarruer/declarative-flatpak/fix/use-tmpfiles-settings";
     #   # rev = "fix/use-tmpfiles-settings";
@@ -49,16 +49,18 @@
     #   inputs.hyprland.follows = "hyprland";
     # };
 
-    # hyprland-plugins = {
-    #   url = "github:hyprwm/hyprland-plugins";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
 
     # Microcode updates
     cpu-microcodes = {
       url = "github:platomav/CPUMicrocodes/ec5200961ecdf78cf00e55d73902683e835edefd";
       flake = false;
     };
+
+    textfox.url = "github:adriankarlen/textfox";
 
     vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
@@ -78,17 +80,13 @@
     ...
   }: let
     system = "x86_64-linux";
-    pkgs = import nixpkgs {inherit system;};
   in {
-    # NixOS configuration (system only)
     nixosConfigurations.dastarruer = nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        inherit inputs system;
-      };
+      specialArgs = {inherit inputs system;};
       modules = [
         inputs.stylix.nixosModules.stylix
         inputs.sops-nix.nixosModules.sops
-        inputs.home-manager.nixosModules.home-manager
+        inputs.home-manager.nixosModules.home-manager # home-manager nixos module
         inputs.ucodenix.nixosModules.default
         inputs.disko.nixosModules.disko
 
@@ -96,38 +94,53 @@
         ./hosts/laptop/hardware-configuration.nix
         ./hosts/laptop/disko-config.nix
         ./modules/nixos/default.nix
-      ];
-    };
 
-    # Laptop
-    homeConfigurations.dastarruer = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      extraSpecialArgs = {
-        inherit inputs system;
-        spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
-        firefoxAddonPkgs = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
-        vscode-extensions = inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace;
-      };
-      modules = [
-        inputs.stylix.homeModules.stylix
-        inputs.sops-nix.homeManagerModules.sops
-        inputs.flatpaks.homeModule
-        inputs.spicetify-nix.homeManagerModules.spicetify
+        {
+          home-manager.useUserPackages = true;
+          # home-manager.useGlobalPkgs = true;
+          home-manager.backupFileExtension = "bak";
 
-        ./hosts/laptop/home.nix
-        ./modules/home-manager/default.nix
+          # Pass the same extraSpecialArgs from nixos
+          home-manager.extraSpecialArgs = {
+            inherit inputs system;
+            spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
+            firefoxAddonPkgs = inputs.firefox-addons.packages.${system};
+            vscode-extensions = inputs.vscode-extensions.extensions.${system}.vscode-marketplace;
+            hyprlandPlugins = inputs.hyprland-plugins.packages.${system};
+          };
+
+          # Define the user and their modules
+          home-manager.users.dastarruer = {
+            imports = [
+              inputs.stylix.homeModules.stylix
+              inputs.sops-nix.homeManagerModules.sops
+              inputs.flatpaks.homeModules.default
+              inputs.spicetify-nix.homeManagerModules.spicetify
+              inputs.textfox.homeManagerModules.default
+
+              ./hosts/laptop/home.nix
+              ./modules/home-manager/default.nix
+            ];
+          };
+        }
       ];
     };
 
     # Steam deck
     homeConfigurations.deck = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+        overlays = [
+          # Add your script overlays here too
+        ];
+      };
       extraSpecialArgs = {
         inherit inputs system;
-        spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
-        firefoxPkgs = inputs.firefox-nightly.packages.${pkgs.stdenv.hostPlatform.system};
-        firefoxAddonPkgs = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
-        vscode-extensions = inputs.vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace;
+        spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
+        firefoxPkgs = inputs.firefox-nightly.packages.${system};
+        firefoxAddonPkgs = inputs.firefox-addons.packages.${system};
+        vscode-extensions = inputs.vscode-extensions.extensions.${system}.vscode-marketplace;
       };
       modules = [
         inputs.stylix.homeModules.stylix

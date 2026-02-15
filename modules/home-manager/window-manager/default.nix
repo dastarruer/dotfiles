@@ -1,15 +1,26 @@
-{lib, ...}: {
+{
+  lib,
+  osConfig,
+  ...
+}: {
   imports = [
     ./rofi
     ./dunst
     ./waybar
-    ./hypr
     ./swww.nix
     ./batsignal.nix
     ./sherlock.nix
+    ./hyprland
+    ./hypridle.nix
+    ./hyprsunset.nix
+    ./screen-locker
   ];
 
   options = {
-    home-manager.window-manager.enable = lib.mkEnableOption "Enable a window-manager instead of a desktop environment.";
+    home-manager.window-manager.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = osConfig.programs.hyprland.enable;
+      description = "Enable a window manager.";
+    };
   };
 }

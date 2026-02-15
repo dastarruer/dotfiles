@@ -23,5 +23,14 @@ in {
 
       python.languageServer = "Pylance";
     };
+
+    emmet.includeLanguages = {
+      "django-html" = "html";
+    };
+
+    # Configure djlint to be the default for teh following
+    "[html][django-html][handlebars][hbs][mustache][jinja][jinja-html][nj][njk][nunjucks][twig]" = {
+      editor.defaultFormatter = "monosans.djlint";
+    };
   };
 }

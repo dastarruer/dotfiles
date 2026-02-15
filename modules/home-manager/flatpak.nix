@@ -8,7 +8,14 @@ and then just take the link that it gives you.
 Example: flatpak run net.ankiweb.Anki
 error: app/net.ankiweb.Anki/x86_64/master not installed
 */
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  hyprland = config.home-manager.window-manager.hyprland;
+in {
   # This is needed for launching flatpaks with rofi
   home.packages = with pkgs; [
     flatpak
@@ -28,14 +35,14 @@ error: app/net.ankiweb.Anki/x86_64/master not installed
     };
 
     overrides = {
-      global = {
+      "global".Context = {
         # Give all flatpaks access to the home dir
         filesystems = [
           "home"
         ];
 
         # Remove x11 support for flatpaks, making them run only on wayland
-        sockets = [
+        sockets = lib.mkIf hyprland.enable [
           "!x11"
           "!fallback-x11"
         ];

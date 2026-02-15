@@ -70,6 +70,9 @@
           "svgcolor.com"
           "docs.google.com"
           "www.canva.com"
+          "youtube.com"
+          "mail.gmail.com"
+          "github.com"
         ];
         "changeBrowserTheme" = false;
         "syncSettings" = false;

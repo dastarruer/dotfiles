@@ -21,7 +21,7 @@
           ];
 
           text = ''
-            USB_DEVICE="/dev/sda1"
+            USB_DEVICE="/dev/sdb1"
             MOUNT_POINT="/media/dastarruer/mnt"
             REMOTE="gdrive:"
 

@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  hyprland = config.home-manager.window-manager.hypr.hyprland;
+  hyprland = config.home-manager.window-manager.hyprland;
 in {
   options = {
     home-manager.desktop.kitty.enable = lib.mkOption {
@@ -23,7 +23,6 @@ in {
         cursor_trail_decay = "0.1 0.4";
         cursor_beam_thickness = "2.5";
         cursor_shape = "block";
-
         # Tab styling
         tab_bar_min_tabs = 1;
         tab_bar_edge = "bottom";
@@ -37,6 +36,8 @@ in {
         disable_ligatures = "always";
         text_composition_strategy = "legacy";
         confirm_os_window_close = 0;
+        wayland_enable_ime = "no";
+        enable_audio_bell = "no";
       };
     };
 
