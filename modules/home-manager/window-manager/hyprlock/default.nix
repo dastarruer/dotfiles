@@ -26,24 +26,7 @@
       enable = true;
     };
 
-    # https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Custom_systemd_units
-    systemd.user.services.hyprlock = {
-      Unit = {
-        Description = "Lock the screen before sleep";
-        Before = ["sleep.target"];
-      };
-
-      Install = {
-        WantedBy = ["sleep.target"];
-      };
-
-      Service = {
-        Type = "forking";
-        User = "%I";
-        Environment = "DISPLAY=:0";
-        ExecStart = "${pkgs.hyprlock}/bin/hyprlock";
-        ExecStartPost = "${pkgs.coreutils}/bin/sleep 1";
-      };
-    };
+    # Set the lock command for hypridle, which will handle locking screen before suspend
+    services.hypridle.settings.general.lock_cmd = "pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock && sleep 0.1";
   };
 }
