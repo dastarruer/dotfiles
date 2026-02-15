@@ -1,7 +1,4 @@
-{
-  lib,
-  ...
-}: {
+{lib, ...}: {
   imports = [
     ./hyprlock
     ./swaylock.nix
@@ -15,4 +12,3 @@
     };
   };
 }
-  
