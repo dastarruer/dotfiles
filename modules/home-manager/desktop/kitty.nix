@@ -23,7 +23,6 @@ in {
         cursor_trail_decay = "0.1 0.4";
         cursor_beam_thickness = "2.5";
         cursor_shape = "block";
-
         # Tab styling
         tab_bar_min_tabs = 1;
         tab_bar_edge = "bottom";
