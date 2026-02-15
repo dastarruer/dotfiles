@@ -25,6 +25,8 @@
     };
   };
 
+  programs.sioyek.enable = true;
+
   systemd.user.tmpfiles.rules = [
     # Create the save dir for screenshots, deleting files older than 30 days
     "d %h/Pictures/screenshots - - - 30d -"
