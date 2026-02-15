@@ -1,11 +1,10 @@
 {
   pkgs,
-  lib,
-  inputs,
   ...
 }: {
   # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
   system.stateVersion = "25.05";
+  nixpkgs.config.allowUnfree = true;
 
   # Enable ssh
   services.openssh.enable = true;
