@@ -1,8 +1,11 @@
 {
-  config,
   lib,
+  config,
+  pkgs,
   ...
-}: {
+}: let
+  hyprland = config.home-manager.window-manager.hyprland;
+in {
   options = {
     home-manager.desktop.obs.enable = lib.mkOption {
       type = lib.types.bool;
@@ -17,6 +20,11 @@
     # Create the save dir for obs
     systemd.user.tmpfiles.rules = [
       "d %h/Videos/screen-recordings - - - - -"
+    ];
+
+    # Let obs capture screen
+    wayland.windowManager.hyprland.settings.permission = lib.mkIf hyprland.enable [
+      "${pkgs.obs-studio}/bin/obs, screencopy, allow"
     ];
   };
 }
