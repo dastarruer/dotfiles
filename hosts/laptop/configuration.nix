@@ -14,17 +14,13 @@
   # Brightness
   hardware.brillo.enable = true;
 
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "steam"
-    ];
   programs.gamemode.enable = true;
   programs.gamescope = {
     enable = true;
     capSysNice = true;
   };
   programs.steam = {
-    enable = false;
+    enable = true;
     protontricks.enable = true;
     extest.enable = true;
     gamescopeSession.enable = true;

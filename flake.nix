@@ -80,8 +80,13 @@
     ...
   }: let
     system = "x86_64-linux";
+    # Allow unfree packages: https://stackoverflow.com/questions/77585228/how-to-allow-unfree-packages-in-nix-for-each-situation-nixos-nix-nix-wit
     pkgs = import nixpkgs {
       inherit system;
+      config = {
+        allowUnfree = true;
+        allowUnfreePredicate = _: true;
+      };
     };
   in {
     nixosConfigurations.dastarruer = nixpkgs.lib.nixosSystem {
