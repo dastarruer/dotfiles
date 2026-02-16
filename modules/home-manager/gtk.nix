@@ -7,8 +7,8 @@
   # themePackage = pkgs.gnome-themes-extra;
   # themeName = "Adwaita-dark";
   # Icon-related settings
-  iconPackage = pkgs.papirus-icon-theme;
-  iconName = "Papirus-Dark";
+  # iconPackage = pkgs.papirus-icon-theme;
+  # iconName = "Papirus-Dark";
   # Font-related settings
   # fontPackage = config.stylix.fonts.sansSerif.package;
   # fontName = "${config.stylix.fonts.sansSerif.name}";
@@ -31,11 +31,11 @@ in {
     #   name = themeName;
     # };
 
-    # Icons
-    iconTheme = {
-      package = iconPackage;
-      name = iconName;
-    };
+    # # Icons
+    # iconTheme = {
+    #   package = iconPackage;
+    #   name = iconName;
+    # };
     # gtk2.iconTheme = {
     #   package = iconPackage;
     #   name = iconName;
