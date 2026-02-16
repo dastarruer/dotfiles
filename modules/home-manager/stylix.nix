@@ -48,6 +48,13 @@
         name = "Bibata-Modern-Classic";
       };
 
+      icons = {
+        enable = true;
+        package = pkgs.papirus-icon-theme;
+        dark = "Papirus-Dark";
+        light = "Papirus-Light";
+      };
+
       fonts = {
         monospace = {
           package = pkgs.nerd-fonts.jetbrains-mono;
