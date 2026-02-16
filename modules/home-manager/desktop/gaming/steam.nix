@@ -18,5 +18,10 @@ in {
     home.packages = [
       pkgs.steam
     ];
+
+    # Backup mods for various games
+    home-manager.cli.rclone.backupPaths = [
+      "${config.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN\ 3/mods"
+    ];
   };
 }
