@@ -47,9 +47,10 @@
         # To find the cursor name: ls ~/.nix-profile/share/icons
         name = "Bibata-Modern-Classic";
       };
-      iconTheme = {
+
+      icons = {
         enable = true;
-        package = pkgs.papirus-icon-theme; # Or adwaita-icon-theme, etc.
+        package = pkgs.papirus-icon-theme;
         dark = "Papirus-Dark";
         light = "Papirus-Light";
       };
