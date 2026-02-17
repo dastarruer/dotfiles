@@ -70,4 +70,12 @@
 
     window-manager.sherlock.enable = false;
   };
+
+  programs.sioyek = {
+    startupCommands = [
+      "toggle_visual_scroll"
+      "toggle_dark_mode"
+    ];
+    enable = true;
+  };
 }
