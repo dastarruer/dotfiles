@@ -36,6 +36,7 @@
   ];
 
   programs.home-manager.enable = true;
+  programs.home-manager.path = "$HOME/Documents/dev/home-manager";
   services.polkit-gnome.enable = true;
 
   home-manager = {
