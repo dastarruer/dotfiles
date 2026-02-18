@@ -18,6 +18,7 @@ in {
         default = [];
         description = "List of local directories to back.";
         example = ["/home/user/Documents" "/home/user/Pictures"];
+<<<<<<< HEAD
       };
     };
   };
@@ -36,10 +37,31 @@ in {
         scope = "drive";
       };
     };
+=======
+      };
+    };
+  };
+
+  config = lib.mkIf cfg.enable {
+    # Declare restic password files
+    sops.secrets = {
+      "restic_passwords/usb" = {};
+      "restic_passwords/drive" = {};
+    };
+
+    programs.rclone = {
+      enable = true;
+      remotes.gdrive.config = {
+        type = "drive";
+        scope = "drive";
+      };
+    };
+>>>>>>> 6f13ae5 (add restic backups)
 
     services.restic = let
       usbPasswordPath = config.sops.secrets."restic_passwords/usb".path;
       drivePasswordPath = config.sops.secrets."restic_passwords/drive".path;
+<<<<<<< HEAD
     in
       lib.mkIf (builtins.pathExists usbPasswordPath && builtins.pathExists drivePasswordPath) {
         enable = true;
@@ -73,5 +95,39 @@ in {
           };
         };
       };
+=======
+    in {
+      enable = true;
+      backups = lib.mkIf (builtins.pathExists usbPasswordPath && builtins.pathExists drivePasswordPath) {
+        usb = {
+          repository = "/mnt/usb/backups";
+          passwordFile = "${usbPasswordPath}";
+          paths = config.home-manager.services.backup.backupPaths;
+          initialize = true;
+        };
+
+        drive = {
+          repository = "rclone:gdrive:backups";
+          passwordFile = "${drivePasswordPath}";
+          paths = config.home-manager.services.backup.backupPaths;
+          initialize = true;
+
+          extraOptions = [
+            "rclone.program=${pkgs.rclone}/bin/rclone"
+          ];
+
+          rcloneOptions = {
+            config = "${config.home.homeDirectory}/.config/rclone/rclone.conf";
+          };
+
+          timerConfig = {
+            OnCalendar = "daily";
+            Persistent = true;
+            RandomizedDelaySec = "1h";
+          };
+        };
+      };
+    };
+>>>>>>> 6f13ae5 (add restic backups)
   };
 }
