@@ -17,6 +17,7 @@ in {
   config = lib.mkIf config.home-manager.cli.yazi.enable {
     programs.yazi = {
       enable = true;
+      shellWrapperName = "y";
 
       plugins = let
         plugins = pkgs.yaziPlugins;

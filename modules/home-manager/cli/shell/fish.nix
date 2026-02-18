@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  rclone = config.home-manager.cli.rclone;
+  backup = config.home-manager.services.backup;
 in {
   options = {
     home-manager.cli.shell.fish.enable = lib.mkEnableOption "Enable fish functionality.";
@@ -25,7 +25,7 @@ in {
         b = "btop";
         mkdir = "mkdir -p";
         cmdf = "${pkgs.commit-dotfiles}/bin/commit-dotfiles";
-        backup = lib.mkIf rclone.enable "${pkgs.backup}/bin/backup";
+        # backup = lib.mkIf backup.enable "${pkgs.backup}/bin/backup";
         sl = "ls";
         zth = "zathura";
         ga = "git add";

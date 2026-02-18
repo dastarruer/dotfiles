@@ -4,73 +4,73 @@
   pkgs,
   ...
 }: let
-  cfg = config.home-manager.cli.rclone;
+  cfg = config.home-manager.services.backup;
 in {
-  systemd.user = lib.mkIf cfg.enable {
-    services.backup = {
-      Unit = {
-        Description = "User Backup Service";
-        After = ["network.target"];
+  options = {
+    home-manager.services.backup = {
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = config.home-manager.services.enable;
+        description = "Enable daily automated backups.";
       };
+      backupPaths = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [];
+        description = "List of local directories to back.";
+        example = ["/home/user/Documents" "/home/user/Pictures"];
+      };
+    };
+  };
 
-      Install.WantedBy = ["multi-user.target"];
+  config = lib.mkIf cfg.enable {
+    # Declare restic password files
+    sops.secrets = {
+      "restic_passwords/usb" = {};
+      "restic_passwords/drive" = {};
+    };
 
-      Service = {
-        Type = "oneshot";
-        ExecStart = let
-          name = "backup";
-        in "${pkgs.writeShellApplication {
-          name = name;
-
-          runtimeInputs = [
-            pkgs.rclone
-          ];
-
-          text = ''
-            REMOTE="gdrive:"
-
-            # Explicitly point to your user's rclone config
-            RCLONE_CONF="${config.home.homeDirectory}/.config/rclone/rclone.conf"
-            export RCLONE_CONFIG="$RCLONE_CONF"
-
-            # Pull paths from the Nix config into a Bash array
-            SOURCE_PATHS=( ${lib.escapeShellArgs config.home-manager.cli.rclone.backupPaths} )
-
-            echo "Checking rclone status for $REMOTE..."
-            if ! rclone --config "$RCLONE_CONF" about "$REMOTE" >/dev/null 2>&1; then
-                echo "Remote not found or needs authentication. Attempting reconnect..."
-                rclone --config "$RCLONE_CONF" config reconnect "$REMOTE" --auto-confirm
-            fi
-
-            # Backup each source path
-            for SRC in "''${SOURCE_PATHS[@]}"; do
-              if [ -e "$SRC" ]; then
-                if [ -d "$SRC" ]; then
-                  echo "Syncing directory $SRC to GDrive..."
-                  rclone --config "$RCLONE_CONF" sync "$SRC" "$REMOTE/Backups/$(basename "$SRC")" -PL
-                else
-                  echo "Copying file $SRC to GDrive..."
-                  rclone --config "$RCLONE_CONF" copy "$SRC" "$REMOTE/Backups/" -PL
-                fi
-              else
-                echo "Warning: $SRC does not exist, skipping."
-              fi
-            done
-          '';
-        }}/bin/${name}";
+    programs.rclone = {
+      enable = true;
+      remotes.gdrive.config = {
+        type = "drive";
+        scope = "drive";
       };
     };
 
-    timers.backup = {
-      Unit.Description = "Run user backup service daily.";
+    services.restic = let
+      usbPasswordPath = config.sops.secrets."restic_passwords/usb".path;
+      drivePasswordPath = config.sops.secrets."restic_passwords/drive".path;
+    in {
+      enable = true;
+      backups = lib.mkIf (builtins.pathExists usbPasswordPath && builtins.pathExists drivePasswordPath) {
+        usb = {
+          repository = "/mnt/usb/backups";
+          passwordFile = "${usbPasswordPath}";
+          paths = config.home-manager.services.backup.backupPaths;
+          initialize = true;
+        };
 
-      Timer = {
-        OnCalendar = "daily";
-        Persistent = true;
-        RandomizedDelaySec = "1h";
+        drive = {
+          repository = "rclone:gdrive:backups";
+          passwordFile = "${drivePasswordPath}";
+          paths = config.home-manager.services.backup.backupPaths;
+          initialize = true;
+
+          extraOptions = [
+            "rclone.program=${pkgs.rclone}/bin/rclone"
+          ];
+
+          rcloneOptions = {
+            config = "${config.home.homeDirectory}/.config/rclone/rclone.conf";
+          };
+
+          timerConfig = {
+            OnCalendar = "daily";
+            Persistent = true;
+            RandomizedDelaySec = "1h";
+          };
+        };
       };
-
-      Install.WantedBy = ["timers.target"];
     };
   };
 }
