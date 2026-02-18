@@ -19,7 +19,7 @@
     }
 
     #mode {
-        font-family: "${config.stylix.fonts.monospace.name}";
+        font-family: "${config.stylix.fonts.monospace.name}", monospace;
         font-weight: bold;
         color: @accent;
     }
@@ -31,12 +31,12 @@
     #custom-clock,
     #cpu,
     #memory {
-        font-family: "${config.stylix.fonts.monospace.name}";
+        font-family: "${config.stylix.fonts.monospace.name}", monospace;
         color: @fg;
     }
 
     #workspaces {
-        font-family: "${config.stylix.fonts.monospace.name}";
+        font-family: "${config.stylix.fonts.monospace.name}", monospace;
         border-bottom: 1px solid @bg-alt;
     }
 
