@@ -4,6 +4,7 @@
   ...
 }: let
   hyprland = config.home-manager.window-manager.hyprland;
+  backup = config.home-manager.services.backup;
 in {
   options = {
     home-manager.desktop.obsidian.enable = lib.mkOption {
@@ -27,6 +28,10 @@ in {
         "!fallback-x11"
       ];
     };
+
+    # my notes are NOT going on the cloud. god know what they'll find in there...
+    services.restic.backups.drive.exclude = ["${config.home.homeDirectory}/Documents/vault"];
+    home-manager.services.backup.backupPaths = ["${config.home.homeDirectory}/Documents/vault"];
 
     wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
       windowrule = [

@@ -1,0 +1,22 @@
+[0;1;31m×[0m restic-backups-driveBackup.service - Restic backup service
+     Loaded: loaded (]8;;file://dastarruer/home/dastarruer/.config/systemd/user/restic-backups-driveBackup.service\/home/dastarruer/.config/systemd/user/restic-backups-driveBackup.service]8;;\; linked; preset: ignored)
+     Active: [0;1;31mfailed[0m (Result: exit-code) since Wed 2026-02-18 14:23:38 AST; 3s ago
+ Invocation: 1af9b706f11e4db1bdd0cfe11d48b6d5
+TriggeredBy: [0;1;32m●[0m restic-backups-driveBackup.timer
+    Process: 213371 ExecStartPre=/nix/store/j7sznj7a7zbxgsi6ngs6kjynvg0p6am1-restic-backups-driveBackup-exec-start-pre/bin/restic-backups-driveBackup-exec-start-pre (code=exited, status=0/SUCCESS)
+    Process: 213375 ExecStart=/nix/store/x12lw455sq6qy2wcya85d7rb88ybc3df-bash-interactive-5.3p9/bin/bash -c /nix/store/1djwajbllkj3s72vvykm97ddgrw168mk-restic-0.18.1/bin/restic -o rclone.program=/nix/store/9jhb7w1g4cr7kckhwpdhzjv7wzb10h4a-rclone-1.73.0/bin/rclone -o rclone.args=--config=/home/dastarruer/.config/rclone/rclone.conf backup --exclude-file=/nix/store/h8v1jrqg2hmkx0dbyvz6mnmh4lqw4csx-exclude-patterns --files-from=/run/user/$UID/restic-backups-driveBackup/includes [0;1;31m(code=exited, status=1/FAILURE)[0m
+    Process: 213410 ExecStopPost=/nix/store/0c9np02fsrkpa25fcnjrlz56vfjgxjna-restic-backups-driveBackup-exec-stop-post/bin/restic-backups-driveBackup-exec-stop-post (code=exited, status=0/SUCCESS)
+   Main PID: 213375 (code=exited, status=1/FAILURE)
+   Mem peak: 65.7M
+        CPU: 237ms
+
+Feb 18 14:23:38 dastarruer bash[213375]: rclone: Error: unknown command "gdrive:backups" for "rclone"
+Feb 18 14:23:38 dastarruer bash[213375]: rclone: Run 'rclone --help' for usage.
+Feb 18 14:23:38 dastarruer bash[213375]: rclone: You could use 'rclone selfupdate' to get latest features.
+Feb 18 14:23:38 dastarruer bash[213375]: rclone:
+Feb 18 14:23:38 dastarruer bash[213375]: rclone: 2026/02/18 14:23:38 NOTICE: Fatal error: unknown command "gdrive:backups" for "rclone"
+Feb 18 14:23:38 dastarruer bash[213375]: Fatal: unable to open repository at rclone:gdrive:backups: error talking HTTP to rclone: exit status 2
+Feb 18 14:23:38 dastarruer systemd[4226]: [0;1;39m[0;1;31m[0;1;39mrestic-backups-driveBackup.service: Main process exited, code=exited, status=1/FAILURE[0m
+Feb 18 14:23:38 dastarruer systemd[4226]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mrestic-backups-driveBackup.service: Failed with result 'exit-code'.[0m
+Feb 18 14:23:38 dastarruer systemd[4226]: [0;1;31m[0;1;39m[0;1;31mFailed to start Restic backup service.[0m
+Feb 18 14:23:38 dastarruer systemd[4226]: restic-backups-driveBackup.service: Consumed 237ms CPU time, 65.7M memory peak.

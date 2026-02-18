@@ -59,12 +59,15 @@
     cli = {
       enable = true;
       distrobox.enable = false;
-      rclone = {
-        backupPaths = [
-          "${config.home.homeDirectory}/Documents/sheet-music"
-          "${config.home.homeDirectory}/Documents/school"
-        ];
-      };
+    };
+
+    services = {
+      enable = true;
+      backup.backupPaths = [
+        "${config.home.homeDirectory}/Documents/sheet-music"
+        "${config.home.homeDirectory}/Documents/school"
+        "${config.home.homeDirectory}/Pictures/trips"
+      ];
     };
 
     window-manager.sherlock.enable = false;
