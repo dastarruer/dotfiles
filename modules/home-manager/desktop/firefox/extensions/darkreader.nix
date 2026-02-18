@@ -71,7 +71,7 @@
           "docs.google.com"
           "www.canva.com"
           "youtube.com"
-          "mail.gmail.com"
+          "mail.google.com"
           "github.com"
         ];
         "changeBrowserTheme" = false;
