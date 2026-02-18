@@ -5,6 +5,7 @@
   ...
 }: let
   cfg = config.home-manager.desktop.gaming.steam;
+  backup = config.home-manager.services.backup;
 in {
   options = {
     home-manager.desktop.gaming.steam.enable = lib.mkOption {
@@ -20,7 +21,7 @@ in {
     ];
 
     # Backup mods for various games
-    home-manager.cli.rclone.backupPaths = [
+    home-manager.services.backup.backupPaths = lib.mkIf backup.enable [
       "${config.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN\ 3/mods"
     ];
   };

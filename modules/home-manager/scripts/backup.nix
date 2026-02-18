@@ -30,7 +30,7 @@
             export RCLONE_CONFIG="$RCLONE_CONF"
 
             # Pull paths from the Nix config into a Bash array
-            SOURCE_PATHS=( ${lib.escapeShellArgs config.home-manager.cli.rclone.backupPaths} )
+            SOURCE_PATHS=( ${lib.escapeShellArgs config.home-manager.services.backupPaths} )
 
             echo "Mounting USB drive..."
             # Ensure the mount point exists

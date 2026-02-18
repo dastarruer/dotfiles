@@ -2,7 +2,9 @@
   config,
   lib,
   ...
-}: {
+}: let
+  backup = config.home-manager.services.backup;
+in {
   options = {
     home-manager.desktop.calibre.enable = lib.mkOption {
       type = lib.types.bool;
@@ -15,7 +17,7 @@
     programs.calibre.enable = true;
 
     # Backup calibre library
-    home-manager.cli.rclone.backupPaths = [
+    home-manager.services.backup.backupPaths = lib.mkIf backup.enable [
       "${config.home.homeDirectory}/Documents/calibre"
     ];
 

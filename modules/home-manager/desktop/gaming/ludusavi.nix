@@ -2,7 +2,9 @@
   config,
   lib,
   ...
-}: {
+}: let
+  backup = config.home-manager.services.backup;
+in {
   options = {
     home-manager.desktop.gaming.ludusavi.enable = lib.mkOption {
       type = lib.types.bool;
@@ -12,7 +14,7 @@
   };
 
   config = let
-    backupPath = "${config.home.homeDirectory}/Documents/ludusavi-backup";
+    saveDataPath = "${config.home.homeDirectory}/Documents/ludusavi-backup";
   in
     lib.mkIf config.home-manager.desktop.gaming.ludusavi.enable {
       services.ludusavi = {
@@ -27,10 +29,10 @@
           manifest.url = "https://raw.githubusercontent.com/mtkennerly/ludusavi-manifest/master/data/manifest.yaml";
 
           backup = {
-            path = backupPath;
+            path = saveDataPath;
           };
           restore = {
-            path = backupPath;
+            path = saveDataPath;
           };
         };
       };
@@ -42,8 +44,8 @@
       };
 
       # Backup the ludusavi save dir
-      home-manager.cli.rclone.backupPaths = [
-        backupPath
+      home-manager.services.backup.backupPaths = lib.mkIf backup.enable lib.mkIf backup.enable [
+        saveDataPath
       ];
     };
 }
