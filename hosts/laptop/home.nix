@@ -25,8 +25,6 @@
     };
   };
 
-  programs.sherlock.enable = true;
-
   systemd.user.tmpfiles.rules = [
     # Create the save dir for screenshots, deleting files older than 30 days
     "d %h/Pictures/screenshots - - - 30d -"
@@ -75,4 +73,8 @@
 
     window-manager.sherlock.enable = false;
   };
+
+  # stylix apps im testing
+  programs.sherlock.enable = true;
+  programs.broot.enable = true;
 }
