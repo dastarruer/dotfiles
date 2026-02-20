@@ -11,7 +11,7 @@
       border.color = "#${config.lib.stylix.colors.base01}";
 
       # Margin
-      tabs.vertical.margin = "0px";
+      tabs.vertical.sidebery.margin = "0px";
       navbar.margin = "0px";
     };
   };
