@@ -21,7 +21,7 @@
           "contrast" = 100;
           "grayscale" = 0;
           "sepia" = 0;
-          "useFont" = false;
+          "useFont" = true;
           fontFamily = "${config.stylix.fonts.sansSerif.name}";
           "textStroke" = 0;
           "engine" = "dynamicTheme";
