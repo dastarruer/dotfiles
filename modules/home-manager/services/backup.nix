@@ -40,37 +40,38 @@ in {
     services.restic = let
       usbPasswordPath = config.sops.secrets."restic_passwords/usb".path;
       drivePasswordPath = config.sops.secrets."restic_passwords/drive".path;
-    in {
-      enable = true;
-      backups = lib.mkIf (builtins.pathExists usbPasswordPath && builtins.pathExists drivePasswordPath) {
-        usb = {
-          repository = "/mnt/usb/backups";
-          passwordFile = "${usbPasswordPath}";
-          paths = config.home-manager.services.backup.backupPaths;
-          initialize = true;
-        };
-
-        drive = {
-          repository = "rclone:gdrive:backups";
-          passwordFile = "${drivePasswordPath}";
-          paths = config.home-manager.services.backup.backupPaths;
-          initialize = true;
-
-          extraOptions = [
-            "rclone.program=${pkgs.rclone}/bin/rclone"
-          ];
-
-          rcloneOptions = {
-            config = "${config.home.homeDirectory}/.config/rclone/rclone.conf";
+    in
+      lib.mkIf (builtins.pathExists usbPasswordPath && builtins.pathExists drivePasswordPath) {
+        enable = true;
+        backups = {
+          usb = {
+            repository = "${config.home.homeDirectory}/usb/backups";
+            passwordFile = "${usbPasswordPath}";
+            paths = config.home-manager.services.backup.backupPaths;
+            initialize = true;
           };
 
-          timerConfig = {
-            OnCalendar = "daily";
-            Persistent = true;
-            RandomizedDelaySec = "1h";
+          drive = {
+            repository = "rclone:gdrive:backups";
+            passwordFile = "${drivePasswordPath}";
+            paths = config.home-manager.services.backup.backupPaths;
+            initialize = true;
+
+            extraOptions = [
+              "rclone.program=${pkgs.rclone}/bin/rclone"
+            ];
+
+            rcloneOptions = {
+              config = "${config.home.homeDirectory}/.config/rclone/rclone.conf";
+            };
+
+            timerConfig = {
+              OnCalendar = "daily";
+              Persistent = true;
+              RandomizedDelaySec = "1h";
+            };
           };
         };
       };
-    };
   };
 }
