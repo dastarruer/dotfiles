@@ -44,7 +44,7 @@ in {
       enable = true;
       backups = lib.mkIf (builtins.pathExists usbPasswordPath && builtins.pathExists drivePasswordPath) {
         usb = {
-          repository = "/mnt/usb/backups";
+          repository = "${config.home.homeDirectory}/usb/backups";
           passwordFile = "${usbPasswordPath}";
           paths = config.home-manager.services.backup.backupPaths;
           initialize = true;
