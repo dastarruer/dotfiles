@@ -25,7 +25,7 @@ in {
         "SUPER+CONTROL, H, layoutmsg, colresize -0.1"
         "SUPER+CONTROL, L, layoutmsg, colresize +0.1"
       ]
-      # Regular tiling binds
+      # Dwindle tiling binds
       ++ lib.optionals (!tiling.enable) [
         "SUPER, H, movefocus, l"
         "SUPER, L, movefocus, r"

@@ -25,10 +25,6 @@
     };
 
     flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/latest";
-    # flatpaks = {
-    #   url = "github:dastarruer/declarative-flatpak/fix/use-tmpfiles-settings";
-    #   # rev = "fix/use-tmpfiles-settings";
-    # };
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -44,15 +40,10 @@
       url = "github:hyprwm/Hyprland";
     };
 
-    # split-monitor-workspaces = {
-    #   url = "github:Duckonaut/split-monitor-workspaces";
+    # hyprland-plugins = {
+    #   url = "github:hyprwm/hyprland-plugins";
     #   inputs.hyprland.follows = "hyprland";
     # };
-
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
 
     # Microcode updates
     cpu-microcodes = {
