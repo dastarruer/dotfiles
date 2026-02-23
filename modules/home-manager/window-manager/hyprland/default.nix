@@ -15,7 +15,7 @@
     ./decoration.nix
     ./autostart.nix
     ./layout.nix
-    ./plugins.nix
+    # ./plugins.nix
   ];
 
   options = {
