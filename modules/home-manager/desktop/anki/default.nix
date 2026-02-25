@@ -5,6 +5,7 @@
   ...
 }: let
   hyprland = config.home-manager.window-manager.hyprland;
+  backup = config.home-manager.services.backup;
 in {
   imports = [
     ./addons
@@ -39,6 +40,8 @@ in {
       usernameFile = config.sops.secrets.email.path;
     };
   };
+
+  home-manager.services.backup.backupPaths = lib.mkIf backup.enable ["${config.home.homeDirectory}/.local/share/Anki2/User\ 1/backups"];
 
   wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
     windowrule = [
