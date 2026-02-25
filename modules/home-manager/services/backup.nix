@@ -25,8 +25,10 @@ in {
   config = lib.mkIf cfg.enable {
     # Declare restic password files
     sops.secrets = {
-      "restic_passwords/usb" = {};
-      "restic_passwords/drive" = {};
+      "restic/passwords/usb" = {};
+      "restic/passwords/drive" = {};
+      "restic/drive/client_id" = {};
+      "restic/drive/client_secret" = {};
     };
 
     programs.rclone = {
@@ -34,14 +36,22 @@ in {
       remotes.gdrive.config = {
         type = "drive";
         scope = "drive";
+        #   client_id = "${}";
+        #   client_secret = "${builtins.readFile clientSecretPath}";
       };
     };
 
     services.restic = let
-      usbPasswordPath = config.sops.secrets."restic_passwords/usb".path;
-      drivePasswordPath = config.sops.secrets."restic_passwords/drive".path;
+      usbPasswordPath = config.sops.secrets."restic/passwords/usb".path;
+      drivePasswordPath = config.sops.secrets."restic/passwords/drive".path;
+
+      clientIdPath = config.sops.secrets."restic/passwords/usb".path;
+      clientSecretPath = config.sops.secrets."restic/passwords/drive".path;
     in
-      lib.mkIf (builtins.pathExists usbPasswordPath && builtins.pathExists drivePasswordPath) {
+      lib.mkIf (builtins.pathExists usbPasswordPath
+        && builtins.pathExists drivePasswordPath
+        && builtins.pathExists clientIdPath
+        && builtins.pathExists clientSecretPath) {
         enable = true;
         backups = {
           usb = {
@@ -55,7 +65,7 @@ in {
             repository = "rclone:gdrive:backups";
             passwordFile = "${drivePasswordPath}";
             paths = config.home-manager.services.backup.backupPaths;
-            initialize = true;
+            # initialize = true;
 
             extraOptions = [
               "rclone.program=${pkgs.rclone}/bin/rclone"
@@ -63,6 +73,8 @@ in {
 
             rcloneOptions = {
               config = "${config.home.homeDirectory}/.config/rclone/rclone.conf";
+              drive-client-id = builtins.readFile clientIdPath;
+              drive-client-secret = builtins.readFile clientSecretPath;
             };
 
             timerConfig = {
@@ -73,5 +85,31 @@ in {
           };
         };
       };
+
+    # Run rclone authenticate before starting the backup
+    # Overriding this means that the repo will not be auto initialized by the restic service (see https://github.com/nix-community/home-manager/blob/5bd3589390b431a63072868a90c0f24771ff4cbb/modules/services/restic.nix#L484)
+    systemd.user.services.restic-backups-drive.Service.ExecStartPre = let
+      usbPasswordPath = config.sops.secrets."restic/passwords/usb".path;
+      drivePasswordPath = config.sops.secrets."restic/passwords/drive".path;
+
+      cmd = lib.getExe (
+        pkgs.writeShellApplication {
+          name = "rclone-auth";
+          runtimeInputs = with pkgs; [
+            libnotify
+            rclone
+          ];
+          text = ''
+            notify-send "Starting automated remote backup..." "Please sign in with the browser window."
+            rclone config reconnect gdrive: --non-interactive
+          '';
+        }
+      );
+    in
+      lib.mkForce (
+        if (builtins.pathExists usbPasswordPath && builtins.pathExists drivePasswordPath)
+        then cmd
+        else ""
+      );
   };
 }
