@@ -68,7 +68,6 @@
           "archive.org"
           "wikipedia25.org"
           "svgcolor.com"
-          "docs.google.com"
           "www.canva.com"
           "youtube.com"
           "mail.google.com"
