@@ -94,7 +94,7 @@
         enableForPDF = true;
         enableForProtectedPages = true;
         enableContextMenus = false;
-        detectDarkTheme = false;
+        detectDarkTheme = true;
         displayedNews = [
           "thanks-2023"
         ];
