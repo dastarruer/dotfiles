@@ -24,7 +24,8 @@
           useFont = true;
           ontFamily = "${config.stylix.fonts.sansSerif.name}";
           textStroke = 0;
-          engine = "dynamicTheme";
+          # Faster than dynamicTheme while also generating a good enough dark theme
+          engine = "svgFilter";
           stylesheet = "";
           darkSchemeBackgroundColor = "#${config.lib.stylix.colors.base00}";
           darkSchemeTextColor = "#${config.lib.stylix.colors.base05}";
