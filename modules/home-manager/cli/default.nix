@@ -22,6 +22,7 @@
   config = lib.mkIf config.home-manager.cli.enable {
     home.packages = with pkgs; [
       ffmpeg
+      devenv
     ];
   };
 }
