@@ -10,6 +10,7 @@ in {
     ./nix
     ./rust
     ./docker
+    ./svelte
     ./python
   ];
 
