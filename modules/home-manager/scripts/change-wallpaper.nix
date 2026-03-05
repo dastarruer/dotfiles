@@ -1,10 +1,13 @@
 {
+  inputs,
   config,
   lib,
   pkgs,
   ...
 }: let
   swww = config.home-manager.window-manager.swww;
+  theme = config.home-manager.theme.name;
+  wallpaperDir = "${inputs.self.outPath}/config/wallpapers/${theme}";
 in {
   nixpkgs.overlays = [
     (final: prev: {
@@ -18,6 +21,8 @@ in {
         ];
 
         text = ''
+          WALLPAPER_DIR=${wallpaperDir}
+
           # File to track the last selected wallpaper
           INDEX_FILE="$HOME/.cache/.current_wallpaper_index"
 
@@ -29,11 +34,8 @@ in {
 
           CURRENT_INDEX=$(cat "$INDEX_FILE")
 
-          # Directory containing wallpapers
-          WALLPAPER_DIR="$HOME/Pictures/wallpapers/"
-
           # Get the list of wallpapers in sorted order
-          mapfile -d ''\'' WALLPAPERS < <(find "$WALLPAPER_DIR" -type f -print0 | sort -z)
+          mapfile -t WALLPAPERS < <(find "$WALLPAPER_DIR" -type f | sort)
 
           # Total number of wallpapers
           NUM_WALLPAPERS=''\${#WALLPAPERS[@]}
