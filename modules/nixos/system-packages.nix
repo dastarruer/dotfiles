@@ -37,11 +37,6 @@
     ];
   };
 
-  # Also unable to use this w home manager
-  services.input-remapper = {
-    enable = true;
-  };
-
   # For nixd i think
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 }
