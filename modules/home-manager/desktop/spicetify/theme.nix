@@ -48,21 +48,21 @@
 
     # Colors can be found here: https://github.com/AvinashReddy3108/spicetify-tui/blob/master/tui/color.ini
     # Style guide here: https://github.com/chriskempson/base16/blob/main/styling.md
-    customColorScheme = {
-      accent = "${config.home-manager.theme.accent}";
-      accent-active = "${config.home-manager.theme.accent}";
-      accent-inactive = "${config.lib.stylix.colors.base00}";
-      banner = "${config.home-manager.theme.accent}";
-      border-active = "${config.lib.stylix.colors.base05}";
-      border-inactive = "${config.lib.stylix.colors.base03}";
-      header = "${config.lib.stylix.colors.base03}";
-      highlight = "${config.lib.stylix.colors.base01}";
-      main = "${config.lib.stylix.colors.base00}";
-      notification = "${config.home-manager.theme.accent}";
-      notification-error = "${config.lib.stylix.colors.base08}";
-      subtext = "${config.lib.stylix.colors.base04}";
-      text = "${config.lib.stylix.colors.base05}";
-    };
+    # customColorScheme = {
+    #   accent = "${config.home-manager.theme.accent}";
+    #   accent-active = "${config.home-manager.theme.accent}";
+    #   accent-inactive = "${config.lib.stylix.colors.base00}";
+    #   banner = "${config.home-manager.theme.accent}";
+    #   border-active = "${config.lib.stylix.colors.base05}";
+    #   border-inactive = "${config.lib.stylix.colors.base03}";
+    #   header = "${config.lib.stylix.colors.base03}";
+    #   highlight = "${config.lib.stylix.colors.base01}";
+    #   main = "${config.lib.stylix.colors.base00}";
+    #   notification = "${config.home-manager.theme.accent}";
+    #   notification-error = "${config.lib.stylix.colors.base08}";
+    #   subtext = "${config.lib.stylix.colors.base04}";
+    #   text = "${config.lib.stylix.colors.base05}";
+    # };
 
     # Colors can be found here: https://github.com/riasat-sheikh/Onepunch/blob/main/color.ini
     # Old onepunch color scheme

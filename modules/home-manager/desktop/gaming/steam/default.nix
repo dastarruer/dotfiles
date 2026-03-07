@@ -7,6 +7,10 @@
   cfg = config.home-manager.desktop.gaming.steam;
   backup = config.home-manager.services.backup;
 in {
+  imports = [
+    ./games
+  ];
+
   options = {
     home-manager.desktop.gaming.steam.enable = lib.mkOption {
       type = lib.types.bool;
