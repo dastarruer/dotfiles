@@ -1,5 +1,19 @@
 # Systemd service to reload udev rules on resume from suspend
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: let
+  script = pkgs.writeShellApplication {
+    name = "reload-udev";
+    runtimeInputs = with pkgs; [
+      systemdMinimal
+    ];
+    text = ''
+      udevadm control --reload-rules && udevadm trigger
+    '';
+  };
+in {
   systemd.services."reload-udev" = {
     enableStrictShellChecks = true;
 
@@ -7,10 +21,7 @@
     after = ["sleep.target"];
     serviceConfig = {
       Type = "forking";
-      ExecStart = "${pkgs.writeShellScript "reload-udev" ''
-        #!/run/current-system/sw/bin/bash
-        ${pkgs.systemdMinimal}/bin/udevadm control --reload-rules && ${pkgs.systemdMinimal}/bin/udevadm trigger
-      ''}";
+      ExecStart = "${lib.getExe script}";
     };
 
     wantedBy = ["sleep.target"];
