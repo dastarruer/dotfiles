@@ -23,7 +23,6 @@
 
     extraGroups = [
       "wheel" # Sudo access
-      "video" # Backlight access
       "input" # Access to input devices
       "docker" # Docker without root
     ];

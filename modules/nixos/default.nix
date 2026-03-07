@@ -15,7 +15,7 @@
     ./audio.nix
     ./gaming.nix
     ./earlyoom.nix
-    ./ddcutil.nix
+    ./backlight.nix
     ./virtualization.nix
     ./secrets.nix
     # ./ds4drv.nix

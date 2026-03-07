@@ -7,9 +7,6 @@
   services.openssh.enable = true;
   services.flatpak.enable = true;
 
-  # Brightness
-  hardware.brillo.enable = true;
-
   programs.gamemode.enable = true;
   programs.gamescope = {
     enable = true;
