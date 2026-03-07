@@ -1,5 +1,15 @@
 # https://github.com/nix-community/disko/blob/master/example/btrfs-subvolumes.nix
 {...}: {
+  # Repair corrupted files
+  services.btrfs.autoScrub = {
+    enable = true;
+    interval = "monthly";
+    fileSystems = ["/"];
+  };
+
+  # Enabled by default but it's here anyways
+  services.fstrim.enable = true;
+
   disko.devices = {
     disk = {
       main = {
