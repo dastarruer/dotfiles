@@ -45,10 +45,6 @@
     cpuModelId = "auto";
   };
 
-  # Enable docker
-  # By default this requires root, but I added my user to the docker group which doesn't need root
-  virtualisation.docker.enable = true;
-
   # Allow fonts to work with flatpak (https://wiki.nixos.org/wiki/Fonts#Flatpak_applications_can't_find_system_fonts)
   # If any issues arise, read through the wiki
   # Note that home-manager flatpak configuration is in flatpak.nix

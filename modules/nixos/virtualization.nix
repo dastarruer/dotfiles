@@ -1,11 +1,14 @@
 # https://www.youtube.com/watch?v=rCVW8BGnYIc
 # Many settings in that video are deprecated however
 {pkgs, ...}: {
+  virtualisation.docker.enable = true;
+
   programs.dconf.enable = true;
 
   users.users.dastarruer.extraGroups = [
     "libvirtd"
     "kvm" # Allow this user to use hardware acceleration i think
+    "docker" # Sudoless access to docker commands
   ];
 
   environment.systemPackages = with pkgs; [
