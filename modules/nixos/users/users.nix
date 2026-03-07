@@ -24,7 +24,6 @@
     extraGroups = [
       "wheel" # Sudo access
       "input" # Access to input devices
-      "docker" # Docker without root
     ];
   };
 }
