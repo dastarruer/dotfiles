@@ -1,11 +1,9 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: let
   cfg = config.home-manager.desktop.gaming.steam;
-  backup = config.home-manager.services.backup;
 in {
   options = {
     home-manager.desktop.gaming.steam.enable = lib.mkOption {
@@ -16,13 +14,16 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [
-      pkgs.steam
-    ];
+    # This is installed w nixos instead
+    # home.packages = [
+    #   pkgs.steam
+    # ];
 
-    # Backup mods for various games
-    home-manager.services.backup.backupPaths = lib.mkIf backup.enable [
-      "${config.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN\ 3/mods"
-    ];
+    # Using this flake: https://github.com/different-name/steam-config-nix we can add settings for specific games
+    programs.steam.config = {
+      enable = true;
+      closeSteam = true;
+      defaultCompatTool = "GE-Proton";
+    };
   };
 }
