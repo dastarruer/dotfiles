@@ -18,6 +18,5 @@
     ./backlight.nix
     ./virtualization.nix
     ./secrets.nix
-    # ./ds4drv.nix
   ];
 }
