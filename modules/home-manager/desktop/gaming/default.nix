@@ -1,5 +1,7 @@
 {lib, ...}: {
   imports = [
+    ./games
+
     ./ludusavi.nix
     ./lutris.nix
     ./steam.nix

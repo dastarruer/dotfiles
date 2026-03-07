@@ -62,6 +62,11 @@
       url = "github:e-tho/ucodenix";
       inputs.cpu-microcodes.follows = "cpu-microcodes";
     };
+
+    steam-config-nix = {
+      url = "github:different-name/steam-config-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -107,6 +112,7 @@
               inputs.flatpaks.homeModules.default
               inputs.spicetify-nix.homeManagerModules.spicetify
               inputs.textfox.homeManagerModules.default
+              inputs.steam-config-nix.homeModules.default
 
               ./hosts/laptop/home.nix
               ./modules/home-manager/default.nix
