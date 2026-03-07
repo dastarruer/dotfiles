@@ -5,6 +5,10 @@
 }: let
   cfg = config.home-manager.desktop.gaming.steam;
 in {
+  imports = [
+    ./games
+  ];
+
   options = {
     home-manager.desktop.gaming.steam.enable = lib.mkOption {
       type = lib.types.bool;

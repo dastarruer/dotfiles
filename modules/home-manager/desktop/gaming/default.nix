@@ -1,10 +1,9 @@
 {lib, ...}: {
   imports = [
-    ./games
+    ./steam
 
     ./ludusavi.nix
     ./lutris.nix
-    ./steam.nix
   ];
 
   options = {
