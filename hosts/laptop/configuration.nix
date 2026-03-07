@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
   system.stateVersion = "25.05";
   nixpkgs.config.allowUnfree = true;
@@ -13,8 +13,8 @@
     # Enable flakes
     experimental-features = ["nix-command" "flakes"];
 
+    # Use nix-community binary cache to avoid building from source as much as possible
     extra-substituters = [
-      # Use nix-community binary cache to avoid building from source as much as possible
       "https://nix-community.cachix.org"
     ];
     extra-trusted-public-keys = [
@@ -35,14 +35,6 @@
   # Note that home-manager flatpak configuration is in flatpak.nix
   fonts.fontDir.enable = true;
 
-  # Run this command in order to give flatpak acces to system fonts (https://wiki.nixos.org/wiki/Fonts#Solution_1:_Copy_fonts_to_$HOME/.local/share/fonts)
-  # Note that fonts.fontDir.enable = true is required for this, which is already declared in configuration.nix
-  # TODO: make this work, it hangs nixos-rebuild
-  # system.activationScripts.copyFonts.text = ''
-  #   mkdir -p "/home/dastarruer/.local/share/fonts"
-  #   cp -L /run/current-system/sw/share/X11/fonts/* "/home/dastarruer/.local/share/fonts/" || true
-  # '';
-
   # Gives extra ram basically
   zramSwap = {
     enable = true;
@@ -62,13 +54,6 @@
     # write dirty pages to disk once 5% of ram holds dirty pages
     # https://medium.com/@charles.vissol/optimize-your-linux-69c70320d852
     "vm.dirty_background_ratio" = 5;
-  };
-
-  # Used to sync system clock
-  # Use these settings so that boot does not get slowed down
-  services.timesyncd = {
-    enable = true;
-    servers = ["time.cloudflare.com" "pool.ntp.org"];
   };
 
   # Reduce blurry fonts: https://www.reddit.com/r/xfce/comments/vfe7uy/comment/icyffxj/?force-legacy-sct=1

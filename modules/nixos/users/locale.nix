@@ -4,6 +4,13 @@
   # Automatically set timezone: https://www.reddit.com/r/NixOS/comments/1411gjs/dynamically_set_the_timezone/
   services.automatic-timezoned.enable = true;
 
+  # Used to sync system clock
+  # Use these settings so that boot does not get slowed down
+  services.timesyncd = {
+    enable = true;
+    servers = ["time.cloudflare.com" "pool.ntp.org"];
+  };
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
