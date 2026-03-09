@@ -1,7 +1,7 @@
 {lib, ...}: {
   imports = [
     ./hyprlock
-    ./swaylock.nix
+    ./swaylock
   ];
 
   options = {
