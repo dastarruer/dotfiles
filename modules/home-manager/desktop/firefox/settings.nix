@@ -31,6 +31,9 @@ in {
       "widget.gtk.ignore-bogus-leave-notify" = 1;
 
       # OTHER
+      # Improves youtube video playback (https://www.reddit.com/r/firefox/comments/pe07q5/firefox_youtube_performance_on_linux/)
+      "media.hardware-video-decoding.force-enabled" = true;
+
       # Disable remote experimentation and telemetry
       "app.normandy.first_run" = false; # Don't run Normandy experiments on first run
       "app.shield.optoutstudies.enabled" = false; # Disable Shield studies (user experiments)
