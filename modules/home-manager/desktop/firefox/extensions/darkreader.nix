@@ -2,7 +2,34 @@
   config,
   firefoxAddonPkgs,
   ...
-}: {
+}: let
+  # While the default is Dynamic theme generation (looks the best), it slows down some sites too much. This function instead sets a site-specific preset that uses the SVG filter engine, which is much faster but less accurate.
+  mkFilterPlusPreset = urls: {
+    url = urls;
+    theme = {
+      mode = 1;
+      brightness = 100;
+      contrast = 100;
+      grayscale = 0;
+      sepia = 0;
+      useFont = true;
+      fontFamily = config.stylix.fonts.sansSerif.name;
+      textStroke = 0;
+      engine = "svgFilter";
+      stylesheet = "";
+      darkSchemeBackgroundColor = "#${config.lib.stylix.colors.base00}";
+      darkSchemeTextColor = "#${config.lib.stylix.colors.base05}";
+      lightSchemeBackgroundColor = "#${config.lib.stylix.colors.base05}";
+      lightSchemeTextColor = "#${config.lib.stylix.colors.base00}";
+      scrollbarColor = "auto";
+      selectionColor = "auto";
+      styleSystemControls = false;
+      lightColorScheme = "Default";
+      darkColorScheme = "Default";
+      immediateModify = false;
+    };
+  };
+in {
   programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}".extensions = {
     packages = with firefoxAddonPkgs; [
       darkreader
@@ -24,8 +51,7 @@
           useFont = true;
           ontFamily = "${config.stylix.fonts.sansSerif.name}";
           textStroke = 0;
-          # Faster than dynamicTheme while also generating a good enough dark theme
-          engine = "svgFilter";
+          engine = "dynamicTheme";
           stylesheet = "";
           darkSchemeBackgroundColor = "#${config.lib.stylix.colors.base00}";
           darkSchemeTextColor = "#${config.lib.stylix.colors.base05}";
@@ -38,7 +64,15 @@
           darkColorScheme = "Default";
           immediateModify = false;
         };
-        presets = [];
+        presets = [
+          (mkFilterPlusPreset [
+            "ispsedu.schoology.com"
+            "mail.google.com"
+            "docs.google.com"
+            "spreadsheets.google.com"
+            "apclassroom.collegeboard.org"
+          ])
+        ];
         customThemes = [];
         enabledByDefault = true;
         enabledFor = [];
@@ -48,7 +82,6 @@
           "student.amplify.com"
           "isps.powerschool.com"
           "127.0.0.1"
-          "ispsedu.schoology.com"
           "apps.youscience.com"
           "wvs.agilixbuzz.com"
           "172.18.0.3"
@@ -65,13 +98,11 @@
           "decky.net"
           "www.figma.com"
           "read.amazon.in"
-          "apclassroom.collegeboard.org"
           "archive.org"
           "wikipedia25.org"
           "svgcolor.com"
           "www.canva.com"
           "youtube.com"
-          "mail.google.com"
           "github.com"
         ];
         changeBrowserTheme = false;
