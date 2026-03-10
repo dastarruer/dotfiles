@@ -7,18 +7,33 @@
     hinting = {
       enable = true;
       # This keeps the font shapes natural while still making it sharper
-      # style = "slight";
-
-      # Fully conforms fonts to the pixel grid, making it sharper but less natural
-      style = "full";
-
-      # Use the font's own hinting instructions, which can be better for some fonts but worse for others
-      autohint = false;
+      style = "slight";
     };
 
     subpixel = {
       rgba = "rgb"; # Use rgb which is most common on most monitors
       lcdfilter = "light";
     };
+
+    # Use full hinting for monospace fonts, since they look better when hinted
+    # localConf = ''
+    #   <match target="font">
+    #     <test name="family" qual="any">
+    #       <string>JetBrains Mono</string>
+    #     </test>
+    #     <edit name="hintstyle" mode="assign">
+    #       <const>hintfull</const>
+    #     </edit>
+    #   </match>
+
+    #   <match target="font">
+    #     <test name="family" qual="any">
+    #       <string>monospace</string>
+    #     </test>
+    #     <edit name="hintstyle" mode="assign">
+    #       <const>hintfull</const>
+    #     </edit>
+    #   </match>
+    # '';
   };
 }
