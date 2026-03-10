@@ -7,6 +7,7 @@
     ./darkreader.nix
     ./simple-tab-groups.nix
     ./sponsorblock.nix
+    ./auto-tab-discard.nix
   ];
 
   programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}" = {
@@ -22,7 +23,6 @@
       # Declare a bunch of extensions
       packages = with firefoxAddonPkgs; [
         ublock-origin
-        sponsorblock
         i-dont-care-about-cookies
         privacy-badger
         link-cleaner
