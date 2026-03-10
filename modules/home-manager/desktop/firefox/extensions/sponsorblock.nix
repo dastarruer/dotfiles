@@ -8,10 +8,10 @@
 
   programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}".extensions = {
     packages = with firefoxAddonPkgs; [
-      darkreader
+      sponsorblock
     ];
 
-    settings."addon@darkreader.org" = {
+    settings."sponsorBlocker@ajay" = {
       force = true;
 
       settings = let
