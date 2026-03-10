@@ -11,6 +11,5 @@
     ./gtk.nix
     ./qt.nix
     ./secrets.nix
-    ./fontconfig.nix
   ];
 }

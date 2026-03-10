@@ -18,5 +18,6 @@
     ./backlight.nix
     ./virtualization.nix
     ./secrets.nix
+    ./fontconfig.nix
   ];
 }
