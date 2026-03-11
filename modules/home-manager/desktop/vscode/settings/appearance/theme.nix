@@ -6,6 +6,8 @@
   profile = config.home-manager.desktop.vscode.profile;
   theme = config.home-manager.theme.name;
 in {
+  stylix.targets.vscode.enable = false;
+
   programs.vscode.profiles.${profile} = {
     # Extensions required for theming
     extensions = with vscode-extensions; [

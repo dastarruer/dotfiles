@@ -3,6 +3,7 @@
   pkgs,
   ...
 }: {
+  stylix.targets.anki.enable = false;
   programs.anki.addons = with pkgs.ankiAddons; [
     (recolor.withConfig {
       config = {

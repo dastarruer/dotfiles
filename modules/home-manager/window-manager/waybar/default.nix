@@ -21,6 +21,8 @@ in {
   config = lib.mkIf config.home-manager.window-manager.waybar.enable {
     programs.waybar.enable = true;
 
+    stylix.targets.waybar.enable = false;
+
     wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
       # Start waybar
       "exec-once" = [

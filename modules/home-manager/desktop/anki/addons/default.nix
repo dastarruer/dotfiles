@@ -1,9 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./passfail2.nix
-    ./recolor.nix
     ./auto-sync.nix
-    # ./streak-fixer.nix
   ];
 
   # install addons that don't need configuration

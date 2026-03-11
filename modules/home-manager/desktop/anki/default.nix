@@ -9,6 +9,7 @@
 in {
   imports = [
     ./addons
+    ./theme.nix
   ];
 
   sops.secrets = {

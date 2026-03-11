@@ -26,19 +26,6 @@
       # Set the color theme
       base16Scheme = "${pkgs.base16-schemes}/share/themes/${config.home-manager.theme.name}.yaml";
 
-      # Disable stylix configuration for certain apps
-      targets = {
-        # These are fine
-        vscode.enable = false;
-        hyprland.enable = false;
-        hyprlock.enable = false;
-        anki.enable = false;
-        spicetify.enable = false;
-        waybar.enable = false;
-        dunst.enable = false;
-        rofi.enable = false;
-      };
-
       # Cursor settings
       cursor = {
         package = pkgs.bibata-cursors;

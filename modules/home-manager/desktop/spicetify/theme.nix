@@ -4,6 +4,8 @@
   spicePkgs,
   ...
 }: {
+  stylix.targets.spicetify.enable = false;
+
   # Spicetify themes
   programs.spicetify = {
     theme = spicePkgs.themes.text;

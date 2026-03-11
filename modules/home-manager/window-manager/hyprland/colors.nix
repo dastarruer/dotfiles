@@ -1,4 +1,6 @@
 {config, ...}: {
+  stylix.targets.hyprland.enable = false;
+
   wayland.windowManager.hyprland.settings = {
     general = {
       "col.active_border" = "rgb(${config.home-manager.theme.accent})";

@@ -13,6 +13,8 @@
   };
 
   config = lib.mkIf config.home-manager.window-manager.dunst.enable {
+    stylix.targets.dunst.enable = false;
+
     services.dunst = {
       enable = true;
 

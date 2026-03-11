@@ -21,6 +21,8 @@ in {
   };
 
   config = lib.mkIf config.home-manager.window-manager.rofi.enable {
+    stylix.targets.rofi.enable = false;
+
     programs.rofi = {
       enable = true;
     };

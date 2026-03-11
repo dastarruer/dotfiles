@@ -15,6 +15,8 @@ in {
   ];
 
   config = lib.mkIf (config.home-manager.window-manager.screen-locker == "hyprlock") {
+    stylix.targets.hyprlock.enable = false;
+
     # Config taken from here: https://github.com/FireDrop6000/hyprland-mydots/blob/master/.config/hypr/hyprlock.conf
     programs.hyprlock = {
       enable = true;
