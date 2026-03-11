@@ -19,6 +19,10 @@
   # (https://discourse.nixos.org/t/how-to-disable-networkmanager-wait-online-service-in-the-configuration-file/19963)
   systemd.services.NetworkManager-wait-online.enable = false;
 
+  # Faster dbus startup by using dbus-broker instead of dbus-daemon
+  # And yeah idk what that means...
+  services.dbus.implementation = "broker";
+
   # Bootloader.
   boot = {
     # Spalsh screen
