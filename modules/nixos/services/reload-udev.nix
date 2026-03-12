@@ -20,7 +20,7 @@ in {
     description = "Reload udev rules on resume from suspend";
     after = ["sleep.target"];
     serviceConfig = {
-      Type = "forking";
+      Type = "oneshot";
       ExecStart = "${lib.getExe script}";
     };
 
