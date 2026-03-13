@@ -5,11 +5,12 @@
   services.automatic-timezoned.enable = true;
 
   # Used to sync system clock
-  # Use these settings so that boot does not get slowed down
-  services.timesyncd = {
-    enable = true;
-    servers = ["time.cloudflare.com" "pool.ntp.org"];
-  };
+  # Can be wildly inaccurate depending on physical loaction
+  # services.timesyncd = {
+  #   enable = true;
+  #   servers = ["time.cloudflare.com" "pool.ntp.org"];
+  # };
+  services.tzupdate.enable = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
