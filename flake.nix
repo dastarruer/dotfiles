@@ -67,6 +67,11 @@
       url = "github:different-name/steam-config-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -82,9 +87,13 @@
       modules = [
         inputs.stylix.nixosModules.stylix
         inputs.sops-nix.nixosModules.sops
-        inputs.home-manager.nixosModules.home-manager # home-manager nixos module
         inputs.ucodenix.nixosModules.default
         inputs.disko.nixosModules.disko
+        inputs.home-manager.nixosModules.home-manager
+
+        # Install comma: https://github.com/nix-community/nix-index-database?tab=readme-ov-file#usage-in-nixos
+        inputs.nix-index-database.nixosModules.default
+        {programs.nix-index-database.comma.enable = true;}
 
         ./hosts/laptop/configuration.nix
         ./hosts/laptop/hardware-configuration.nix
