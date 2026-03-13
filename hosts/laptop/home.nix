@@ -46,6 +46,7 @@
 
     desktop = {
       enable = true;
+      terminal = "ghostty";
       foliate.enable = false;
       firefox.enable = true;
       gaming.enable = false;

@@ -5,13 +5,13 @@
   ...
 }: {
   imports = [
+    ./terminals
     ./calibre.nix
     ./libreoffice.nix
     ./gaming
     ./pwa
     ./vscode
     ./firefox
-    ./kitty.nix
     ./spicetify
     ./zathura.nix
     ./anki
