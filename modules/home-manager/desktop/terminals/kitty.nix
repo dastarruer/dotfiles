@@ -4,16 +4,9 @@
   ...
 }: let
   hyprland = config.home-manager.window-manager.hyprland;
+  terminal = config.home-manager.desktop.terminal;
 in {
-  options = {
-    home-manager.desktop.kitty.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = config.home-manager.desktop.enable;
-      description = "Enable kitty, a terminal emulator.";
-    };
-  };
-
-  config = lib.mkIf config.home-manager.desktop.kitty.enable {
+  config = lib.mkIf (terminal == "kitty") {
     programs.kitty = {
       enable = true;
 
