@@ -51,6 +51,9 @@ in {
         # Always keep ghostty systemd service running for fast window creation
         quit-after-last-window-closed = false;
 
+        # Never show window size when resizing
+        resize-overlay = "never";
+
         custom-shader = cursor-trail-shader-path;
         custom-shader-animation = "always"; # Otherwise, the cursor can pause while it is being animated if the terminal becomes unfocused
 
