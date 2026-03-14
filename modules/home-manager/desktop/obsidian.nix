@@ -29,8 +29,6 @@ in {
       ];
     };
 
-    # my notes are NOT going on the cloud. god know what they'll find in there...
-    services.restic.backups.drive.exclude = ["${config.home.homeDirectory}/Documents/vault"];
     home-manager.services.backup.backupPaths = lib.mkIf backup.enable ["${config.home.homeDirectory}/Documents/vault"];
 
     wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
