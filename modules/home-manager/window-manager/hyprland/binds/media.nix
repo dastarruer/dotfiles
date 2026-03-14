@@ -1,11 +1,15 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   wayland.windowManager.hyprland.settings = {
     bind = [
       # Media keybinds
-      ",XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause -p spotify"
-      "SHIFT,XF86AudioPlay, exec, ${pkgs.pause-all}/bin/pause-all"
-      ",XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous"
-      ",XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next"
+      ",XF86AudioPlay, exec, ${lib.getExe pkgs.pause-all}"
+      "SHIFT,XF86AudioPlay, exec, ${lib.getExe pkgs.playerctl} play-pause -p spotify"
+      ",XF86AudioPrev, exec, ${lib.getExe pkgs.playerctl} previous"
+      ",XF86AudioNext, exec, ${lib.getExe pkgs.playerctl} next"
     ];
 
     # Audio keybinds
