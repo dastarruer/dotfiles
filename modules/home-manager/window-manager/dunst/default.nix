@@ -114,17 +114,11 @@
         # Play an alert sound for all notifications: https://github.com/dunst-project/dunst/issues/257
         play_sound = let
           alertPath = ./alerts/default.wav;
-        in {
-          summary = "*";
-          script = let
+          alertScript = pkgs.writeShellApplication {
             name = "alert";
-          in "${pkgs.writeShellApplication {
-            name = "${name}";
-
             runtimeInputs = with pkgs; [
               pipewire
             ];
-
             text = ''
               # Only proceed if urgency is NOT LOW
               if [ "$DUNST_URGENCY" = "LOW" ]; then
@@ -140,7 +134,10 @@
                   fi
               fi
             '';
-          }}";
+          };
+        in {
+          summary = "*";
+          script = "${lib.getExe alertScript}";
         };
       };
     };
