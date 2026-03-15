@@ -2,7 +2,9 @@
   config,
   lib,
   ...
-}: {
+}: let
+  fish = config.home-manager.cli.shell.fish;
+in {
   options = {
     home-manager.cli.git.enable = lib.mkOption {
       type = lib.types.bool;
@@ -55,6 +57,17 @@
           user.email = lib.removeSuffix "\n" (builtins.readFile emailPath);
         })
       ];
+
+      programs.fish.shellAliases = lib.mkIf fish.enable {
+        ga = "git add";
+        gb = "git branch";
+        "g." = "git add . && git status";
+        gs = "git status";
+        gc = "git commit";
+        gp = "git push";
+        gl = "git log --oneline --graph --decorate";
+        gch = "git checkout";
+      };
 
       # Paths to be ignored globally
       ignores = [

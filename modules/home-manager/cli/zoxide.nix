@@ -2,7 +2,9 @@
   config,
   lib,
   ...
-}: {
+}: let
+  fish = config.home-manager.cli.shell.fish;
+in {
   options = {
     home-manager.cli.zoxide.enable = lib.mkOption {
       type = lib.types.bool;
@@ -16,5 +18,7 @@
       enable = true;
       enableFishIntegration = lib.mkIf config.home-manager.cli.shell.fish.enable true;
     };
+
+    programs.fish.shellAliases.".." = lib.mkIf fish "z ..";
   };
 }

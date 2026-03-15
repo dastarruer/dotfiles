@@ -3,7 +3,9 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  fish = config.home-manager.cli.shell.fish;
+in {
   imports = [
     ./extensions.nix
     ./settings
@@ -73,5 +75,7 @@
 
       # Run vscode under wayland
       home.sessionVariables.NIXOS_OZONE_WL = "1";
+
+      programs.fish.shellAliases.code = lib.mkIf fish.enable "${lib.getExe config.programs.vscode.package}";
     };
 }
