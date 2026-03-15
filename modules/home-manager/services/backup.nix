@@ -91,5 +91,50 @@ in {
           };
         };
       };
+
+    nixpkgs.overlays = [
+      (final: prev: {
+        backup = prev.writeShellApplication {
+          name = "backup";
+
+          runtimeInputs = with prev; [
+            systemd
+            mount
+            eject
+            coreutils
+          ];
+
+          text = ''
+            USB_DEVICE="/dev/sdb1"
+            MOUNT_POINT="${config.home.homeDirectory}/usb"
+
+            echo "Creating mount point..."
+            mkdir -p $MOUNT_POINT
+
+            echo "Mounting USB..."
+            sudo mount $USB_DEVICE $MOUNT_POINT
+
+            echo "Backing up to USB..."
+            systemctl --user start restic-backups-usb.service
+
+            echo "Backing up to drive..."
+            systemctl --user start restic-backups-drive.service
+
+            echo "Ejecting USB..."
+            eject $USB_DEVICE
+
+            echo "Deleting mount point..."
+            rm -rf $MOUNT_POINT
+
+            echo "All done!"
+          '';
+        };
+      })
+    ];
+
+    # Add the package from the overlay to home.packages
+    home.packages = [
+      pkgs.backup
+    ];
   };
 }
