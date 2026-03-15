@@ -7,6 +7,7 @@
   ...
 }: let
   hyprland = config.home-manager.window-manager.hyprland;
+  dunst = config.home-manager.window-manager.dunst;
 in {
   imports = [
     ./extensions.nix
@@ -41,6 +42,8 @@ in {
 
       wayland = true;
     };
+
+    home-manager.window-manager.dunst.excludeTitles = lib.mkIf dunst.enable ["Spotify"];
 
     wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
       # looks aesthetic innit

@@ -3,16 +3,31 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  cfg = config.home-manager.window-manager.dunst;
+in {
   options = {
-    home-manager.window-manager.dunst.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = config.home-manager.window-manager.enable;
-      description = "Enable window-manager.dunst, a script to send notifications on low battery.";
+    home-manager.window-manager.dunst = {
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = config.home-manager.window-manager.enable;
+        description = "Enable window-manager.dunst, a script to send notifications on low battery.";
+      };
+      excludeTitles = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [];
+        description = "List of titles that should not trigger an alert sound.";
+      };
+
+      excludeSummaries = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [];
+        description = "List of summary substrings that should not trigger an alert sound.";
+      };
     };
   };
 
-  config = lib.mkIf config.home-manager.window-manager.dunst.enable {
+  config = lib.mkIf cfg.enable {
     stylix.targets.dunst.enable = false;
 
     services.dunst = {
@@ -113,6 +128,9 @@
 
         # Play an alert sound for all notifications: https://github.com/dunst-project/dunst/issues/257
         play_sound = let
+          appArray = ''("${lib.concatStringsSep "\" \"" cfg.excludeTitles}")'';
+          summaryArray = ''("${lib.concatStringsSep "\" \"" cfg.excludeSummaries}")'';
+
           alertPath = ./alerts/default.wav;
           alertScript = pkgs.writeShellApplication {
             name = "alert";
@@ -125,13 +143,25 @@
                   exit 0
               fi
 
-              if [ "$DUNST_APP_NAME" != "Spotify" ] && \
-                 [ "$DUNST_APP_NAME" != "flameshot" ] && \
-                 [[ "$DUNST_SUMMARY" != *"Wallpaper set to:"* ]]; then
-                  # Only play if no pw-play process is currently running
-                  if ! pgrep -x pw-play >/dev/null; then
-                      pw-play ${alertPath} &
+              # Check excluded App Names
+              EXCLUDE_APPS=${appArray}
+              for app in "''${EXCLUDE_APPS[@]}"; do
+                  if [ "$DUNST_APP_NAME" = "$app" ]; then
+                      exit 0
                   fi
+              done
+
+              # Check excluded Summary substrings
+              EXCLUDE_SUMMARIES=${summaryArray}
+              for sum in "''${EXCLUDE_SUMMARIES[@]}"; do
+                  if [[ "$DUNST_SUMMARY" == *"$sum"* ]]; then
+                      exit 0
+                  fi
+              done
+
+              # Only play if no pw-play process is currently running
+              if ! pgrep -x pw-play >/dev/null; then
+                  pw-play ${alertPath} &
               fi
             '';
           };

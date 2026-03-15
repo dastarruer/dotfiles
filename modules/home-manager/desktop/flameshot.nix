@@ -57,6 +57,8 @@ in {
       format = "";
     };
 
+    home-manager.window-manager.dunst.excludeTitles = lib.mkIf dunst.enable ["flameshot"];
+
     # Same comment as above; might as well keep this
     wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
       windowrule = [

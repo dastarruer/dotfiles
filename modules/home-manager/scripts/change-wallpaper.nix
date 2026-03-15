@@ -8,6 +8,7 @@
   swww = config.home-manager.window-manager.swww;
   theme = config.home-manager.theme.name;
   wallpaperDir = "${inputs.self.outPath}/config/wallpapers/${theme}";
+  dunst = config.home-manager.window-manager.dunst;
 in {
   nixpkgs.overlays = [
     (final: prev: {
@@ -61,4 +62,6 @@ in {
       };
     })
   ];
+
+  home-manager.window-manager.dunst.excludeSummaries = lib.mkIf dunst.enable ["Wallpaper set to:"];
 }
