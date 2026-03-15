@@ -4,6 +4,7 @@
   ...
 }: let
   hyprland = config.home-manager.window-manager.hyprland;
+  fish = config.home-manager.cli.shell.fish;
 in {
   options = {
     home-manager.desktop.zathura.enable = lib.mkOption {
@@ -31,6 +32,8 @@ in {
         restore-session = true;
       };
     };
+
+    programs.fish.shellAliases.zth = lib.mkIf fish.enable "zathura";
 
     # Set zathura as default pdf viewer
     xdg.mimeApps.defaultApplications."application/pdf" = ["org.pwmt.zathura.desktop"];

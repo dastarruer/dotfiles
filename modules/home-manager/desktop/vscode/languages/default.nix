@@ -12,6 +12,7 @@ in {
     ./docker
     ./svelte
     ./python
+    ./tailwind
   ];
 
   # General language formatter settings

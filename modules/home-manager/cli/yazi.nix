@@ -5,6 +5,7 @@
   ...
 }: let
   hyprland = config.home-manager.window-manager.hyprland;
+  fish = config.home-manager.cli.shell.fish;
 in {
   options = {
     home-manager.cli.yazi.enable = lib.mkOption {
@@ -48,5 +49,6 @@ in {
           };
       };
     };
+    programs.fish.shellAliases.y = lib.mkIf fish.enable "yazi";
   };
 }
