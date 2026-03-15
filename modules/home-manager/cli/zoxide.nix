@@ -16,7 +16,7 @@ in {
   config = lib.mkIf config.home-manager.cli.zoxide.enable {
     programs.zoxide = {
       enable = true;
-      enableFishIntegration = lib.mkIf config.home-manager.cli.shell.fish.enable true;
+      enableFishIntegration = fish.enable;
     };
 
     programs.fish.shellAliases.".." = lib.mkIf fish.enable "z ..";

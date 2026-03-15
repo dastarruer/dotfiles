@@ -2,7 +2,9 @@
   config,
   lib,
   ...
-}: {
+}: let
+  fish = config.home-manager.cli.shell.fish;
+in {
   options = {
     home-manager.cli.shell.starship.enable = lib.mkEnableOption "Enable starship.";
   };
@@ -12,8 +14,8 @@
       enable = true;
 
       # These two features only work with the fish shell
-      enableFishIntegration = lib.mkIf config.home-manager.cli.shell.fish.enable true;
-      enableTransience = lib.mkIf config.home-manager.cli.shell.fish.enable true;
+      enableFishIntegration = fish.enable;
+      enableTransience = lib.mkIf fish.enable true;
     };
   };
 }

@@ -18,6 +18,7 @@ in {
   config = lib.mkIf config.home-manager.cli.yazi.enable {
     programs.yazi = {
       enable = true;
+      enableFishIntegration = fish.enable;
       shellWrapperName = "y";
 
       plugins = let
