@@ -57,13 +57,6 @@ in {
           user.email = lib.removeSuffix "\n" (builtins.readFile emailPath);
         })
       ];
-
-      # Paths to be ignored globally
-      ignores = [
-        "*.vscode/"
-        "*.venv/"
-        "*target/"
-      ];
     };
 
     programs.fish.shellAliases = lib.mkIf fish.enable {
