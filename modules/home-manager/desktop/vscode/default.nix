@@ -9,7 +9,6 @@ in {
   imports = [
     ./extensions.nix
     ./settings
-    ./languages
   ];
 
   options = {
