@@ -49,7 +49,7 @@ in {
           grayscale = 0;
           sepia = 0;
           useFont = true;
-          ontFamily = "${config.stylix.fonts.sansSerif.name}";
+          fontFamily = config.stylix.fonts.sansSerif.name;
           textStroke = 0;
           engine = "dynamicTheme";
           stylesheet = "";
