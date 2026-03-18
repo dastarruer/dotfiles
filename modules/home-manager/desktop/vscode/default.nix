@@ -37,7 +37,8 @@ in {
         package = pkgs.vscode.fhs;
 
         # Only way that extensions actually get installed if home-manager is a nixos module for some reason
-        mutableExtensionsDir = false;
+        # mutableExtensionsDir = false;
+        mutableExtensionsDir = true;
 
         # Privacy settings (https://paulsorensen.io/github-copilot-vscode-privacy/)
         # Only set if package is not vscodium
