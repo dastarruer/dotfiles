@@ -5,6 +5,9 @@
   ...
 }: let
   cfg = config.home-manager.services.backup;
+  usbPasswordPath = config.sops.secrets."restic_passwords/usb".path;
+  drivePasswordPath = config.sops.secrets."restic_passwords/drive".path;
+  secretsExist = builtins.pathExists usbPasswordPath && builtins.pathExists drivePasswordPath;
   authRefreshScript = pkgs.writeShellApplication {
     name = "rclone-auth-refresh";
     runtimeInputs = with pkgs; [
@@ -37,104 +40,65 @@ in {
     };
   };
 
-  config = lib.mkIf cfg.enable {
-    # Declare restic password files
-    sops.secrets = {
-      "restic_passwords/usb" = {};
-      "restic_passwords/drive" = {};
-    };
-
-    programs.rclone = {
-      enable = true;
-      remotes.gdrive.config = {
-        type = "drive";
-        scope = "drive";
+  config = lib.mkIf cfg.enable (lib.mkMerge [
+    # Always declare the secrets so sops-nix knows to create them
+    {
+      sops.secrets = {
+        "restic_passwords/usb" = {};
+        "restic_passwords/drive" = {};
       };
-    };
+    }
 
-    services.restic = let
-      usbPasswordPath = config.sops.secrets."restic_passwords/usb".path;
-      drivePasswordPath = config.sops.secrets."restic_passwords/drive".path;
-    in
-      lib.mkIf (builtins.pathExists usbPasswordPath && builtins.pathExists drivePasswordPath) {
+    # Only include the services if the secret files actually exist on disk
+    (lib.mkIf secretsExist {
+      programs.rclone = {
         enable = true;
-        backups = {
-          usb = {
-            repository = "${config.home.homeDirectory}/usb/backups";
-            passwordFile = "${usbPasswordPath}";
-            paths = config.home-manager.services.backup.backupPaths;
-            initialize = true;
-          };
+        remotes.gdrive.config = {
+          type = "drive";
+          scope = "drive";
+        };
+      };
 
-          drive = {
-            repository = "rclone:gdrive:backups";
-            passwordFile = "${drivePasswordPath}";
-            paths = config.home-manager.services.backup.backupPaths;
-            initialize = true;
+      services.restic.enable = true;
+      services.restic.backups = {
+        usb = {
+          repository = "${config.home.homeDirectory}/usb/backups";
+          passwordFile = usbPasswordPath;
+          paths = cfg.backupPaths;
+          initialize = true;
+        };
 
-            # Refresh rclone auth token before backing up
-            backupPrepareCommand = "${lib.getExe authRefreshScript}";
-
-            extraOptions = [
-              "rclone.program=${pkgs.rclone}/bin/rclone"
-            ];
-
-            rcloneOptions = {
-              config = "${config.home.homeDirectory}/.config/rclone/rclone.conf";
-            };
-
-            timerConfig = {
-              OnCalendar = "daily";
-              Persistent = true;
-              RandomizedDelaySec = "1h";
-            };
+        drive = {
+          repository = "rclone:gdrive:backups";
+          passwordFile = drivePasswordPath;
+          paths = cfg.backupPaths;
+          initialize = true;
+          backupPrepareCommand = "${lib.getExe authRefreshScript}";
+          extraOptions = ["rclone.program=${pkgs.rclone}/bin/rclone"];
+          rcloneOptions.config = "${config.home.homeDirectory}/.config/rclone/rclone.conf";
+          timerConfig = {
+            OnCalendar = "daily";
+            Persistent = true;
           };
         };
       };
 
-    nixpkgs.overlays = [
-      (final: prev: {
-        backup = prev.writeShellApplication {
+      home.packages = [
+        (pkgs.writeShellApplication {
           name = "backup";
-
-          runtimeInputs = with prev; [
-            systemd
-            mount
-            eject
-            coreutils
-          ];
-
+          runtimeInputs = with pkgs; [systemd mount eject coreutils];
           text = ''
             USB_DEVICE="/dev/sdb1"
             MOUNT_POINT="${config.home.homeDirectory}/usb"
-
-            echo "Creating mount point..."
-            mkdir -p $MOUNT_POINT
-
-            echo "Mounting USB..."
-            sudo mount $USB_DEVICE $MOUNT_POINT
-
-            echo "Backing up to USB..."
+            mkdir -p "$MOUNT_POINT"
+            sudo mount "$USB_DEVICE" "$MOUNT_POINT"
             systemctl --user start restic-backups-usb.service
-
-            echo "Backing up to drive..."
             systemctl --user start restic-backups-drive.service
-
-            echo "Ejecting USB..."
-            eject $USB_DEVICE
-
-            echo "Deleting mount point..."
-            rm -rf $MOUNT_POINT
-
-            echo "All done!"
+            eject "$USB_DEVICE"
+            rm -rf "$MOUNT_POINT"
           '';
-        };
-      })
-    ];
-
-    # Add the package from the overlay to home.packages
-    home.packages = [
-      pkgs.backup
-    ];
-  };
+        })
+      ];
+    })
+  ]);
 }
