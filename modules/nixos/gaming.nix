@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -12,7 +16,23 @@
   # The only essential line for AMD hardware support
   services.xserver.videoDrivers = ["amdgpu"];
 
-  programs.gamemode.enable = true;
+  programs.gamemode = {
+    enable = true;
+    enableRenice = true;
+    settings = {
+      general = {
+        softrealtime = "auto";
+        renice = 10;
+      };
+
+      # Use full cpu power when gaming
+      custom = {
+        start = "${lib.getExe pkgs.tlp} setcfg CPU_BOOST_ON_AC=1 CPU_SCALING_GOVERNOR_ON_AC=performance PLATFORM_PROFILE_ON_AC=performance";
+        end = "${lib.getExe pkgs.tlp} setcfg CPU_BOOST_ON_AC=0 CPU_SCALING_GOVERNOR_ON_AC=powersave PLATFORM_PROFILE_ON_AC=balanced";
+      };
+    };
+  };
+
   programs.gamescope = {
     enable = true;
     capSysNice = true;
