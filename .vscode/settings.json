@@ -1,0 +1,19 @@
+{
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nixd",
+  "nix.serverSettings": {
+    "nixd": {
+      "formatting": {
+        "command": ["alejandra"]
+      },
+      "options": {
+        "nixos": {
+          "expr": "(builtins.getFlake \"github:dastarruer/dotfiles\").nixosConfigurations.<name>.options"
+        },
+        "home-manager": {
+          "expr": "(builtins.getFlake \"github:dastarruer/dotfiles\").homeConfigurations.<name>.options"
+        }
+      }
+    }
+  }
+}
