@@ -3,6 +3,7 @@
   lib,
   ...
 }: let
+  cfg = config.home-manager.desktop.gaming.ludusavi;
   backup = config.home-manager.services.backup;
 in {
   options = {
@@ -16,7 +17,7 @@ in {
   config = let
     saveDataPath = "${config.home.homeDirectory}/Documents/ludusavi-backup";
   in
-    lib.mkIf config.home-manager.desktop.gaming.ludusavi.enable {
+    lib.mkIf cfg.enable {
       services.ludusavi = {
         enable = true;
 
@@ -44,7 +45,7 @@ in {
       };
 
       # Backup the ludusavi save dir
-      home-manager.services.backup.backupPaths = lib.mkIf backup.enable lib.mkIf backup.enable [
+      home-manager.services.backup.backupPaths = lib.mkIf backup.enable [
         saveDataPath
       ];
     };
