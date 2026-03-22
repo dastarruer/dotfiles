@@ -78,6 +78,7 @@ in {
           rcloneOptions.config = "${config.home.homeDirectory}/.config/rclone/rclone.conf";
           timerConfig = {
             OnCalendar = "daily";
+            RandomizedDelaySec = "1h";
             Persistent = true;
           };
         };
