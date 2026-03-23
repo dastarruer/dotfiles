@@ -111,7 +111,7 @@
         {
           home-manager.useUserPackages = true;
           # home-manager.useGlobalPkgs = true;
-          home-manager.backupFileExtension = "bak";
+          home-manager.backupCommand = "${pkgs.trash-cli}/bin/trash";
 
           # Pass the same extraSpecialArgs from nixos
           home-manager.extraSpecialArgs = {
