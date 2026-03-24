@@ -14,9 +14,6 @@
 
     # No clue what this does
     stateVersion = "25.11";
-
-    # Necessary for some screenshot tools
-    sessionVariables.XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/screenshots";
   };
 
   systemd.user.tmpfiles.rules = [
