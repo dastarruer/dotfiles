@@ -15,13 +15,8 @@
     # No clue what this does
     stateVersion = "25.11";
 
-    sessionVariables = {
-      # Allow unfree packages.
-      NIXPKGS_ALLOW_UNFREE = "1";
-
-      # Necessary for some screenshot tools
-      XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/screenshots";
-    };
+    # Necessary for some screenshot tools
+    sessionVariables.XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/screenshots";
   };
 
   systemd.user.tmpfiles.rules = [
