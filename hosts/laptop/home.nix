@@ -60,6 +60,7 @@
     services = {
       enable = true;
       backup.backupPaths = [
+        "${config.home.homeDirectory}/Music"
         "${config.home.homeDirectory}/Documents/sheet-music"
         "${config.home.homeDirectory}/Documents/school"
         "${config.home.homeDirectory}/Pictures/trips"
