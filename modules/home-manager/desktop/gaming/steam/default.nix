@@ -4,6 +4,7 @@
   ...
 }: let
   cfg = config.home-manager.desktop.gaming.steam;
+  ludusavi = config.home-manager.desktop.gaming.ludusavi;
 in {
   imports = [
     ./games
@@ -29,5 +30,12 @@ in {
       closeSteam = true;
       defaultCompatTool = "GE-Proton";
     };
+
+    services.ludusavi.settings.roots = lib.mkIf ludusavi.enable [
+      {
+        path = "~/.local/share/Steam";
+        store = "steam";
+      }
+    ];
   };
 }
