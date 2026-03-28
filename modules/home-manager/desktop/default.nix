@@ -25,6 +25,7 @@
     ./flameshot.nix
     ./timer.nix
     ./kdenlive.nix
+    ./gimp.nix
   ];
 
   options = {
@@ -35,7 +36,6 @@
     home.packages = with pkgs; [
       thunar
       todoist-electron
-      brave
       gimp
     ];
   };
