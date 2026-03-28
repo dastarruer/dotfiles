@@ -24,6 +24,7 @@
     ./imv.nix
     ./flameshot.nix
     ./timer.nix
+    ./kdenlive.nix
   ];
 
   options = {
@@ -35,7 +36,6 @@
       thunar
       todoist-electron
       brave
-      kdePackages.kdenlive
       gimp
     ];
   };
