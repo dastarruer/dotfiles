@@ -36,6 +36,7 @@
       todoist-electron
       brave
       kdePackages.kdenlive
+      gimp
     ];
   };
 }
