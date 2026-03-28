@@ -66,6 +66,7 @@ in {
           passwordFile = usbPasswordPath;
           paths = cfg.backupPaths;
           initialize = true;
+          pruneOpts = ["--keep-last 3"]; # Only keep last three backups
         };
 
         drive = {
@@ -73,6 +74,7 @@ in {
           passwordFile = drivePasswordPath;
           paths = cfg.backupPaths;
           initialize = true;
+          pruneOpts = ["--keep-last 3"]; # Only keep last three backups
           backupPrepareCommand = "${lib.getExe authRefreshScript}";
           extraOptions = ["rclone.program=${pkgs.rclone}/bin/rclone"];
           rcloneOptions.config = "${config.home.homeDirectory}/.config/rclone/rclone.conf";
