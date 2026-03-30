@@ -780,6 +780,22 @@
         "type": "github"
       }
     },
+    "peacock": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1774105372,
+        "narHash": "sha256-Jv1N2K2a3nlqaoQX98m75lhdqwfht46/U/skzi3vvEY=",
+        "owner": "thepeacockproject",
+        "repo": "linux-steam-setup",
+        "rev": "270e97bc357b0709749f54975dad66d20c0232d5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "thepeacockproject",
+        "repo": "linux-steam-setup",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -814,6 +830,7 @@
         "hyprland": "hyprland",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs_2",
+        "peacock": "peacock",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
         "steam-config-nix": "steam-config-nix",

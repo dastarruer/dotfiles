@@ -22,6 +22,6 @@ in {
       enable = true;
     };
 
-    services.hypridle.settings.general.lock_cmd = lib.mkIf hypridle.enable "pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock && sleep 0.1";
+    services.hypridle.settings.general.lock_cmd = lib.mkIf hypridle.enable "pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock";
   };
 }

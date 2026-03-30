@@ -77,6 +77,11 @@
       url = "github:yokoffing/Betterfox/main";
       flake = false;
     };
+
+    peacock = {
+      url = "github:thepeacockproject/linux-steam-setup";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {

@@ -18,6 +18,6 @@ in {
       };
     };
 
-    services.hypridle.settings.general.lock_cmd = lib.mkIf hypridle.enable "pidof swaylock || ${pkgs.swaylock}/bin/swaylock && sleep 0.1";
+    services.hypridle.settings.general.lock_cmd = lib.mkIf hypridle.enable "pidof swaylock || ${pkgs.swaylock}/bin/swaylock";
   };
 }
