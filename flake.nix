@@ -72,6 +72,11 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    betterfox = {
+      url = "github:yokoffing/Betterfox/main";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {

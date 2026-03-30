@@ -1,15 +1,11 @@
 {
   config,
+  inputs,
   lib,
   ...
 }: let
-  betterfoxGit = fetchTarball {
-    url = "https://github.com/yokoffing/Betterfox/archive/refs/heads/main.tar.gz";
-    sha256 = "0hynq2qi271s4q1jfj5z51pbp2dcba2zz9cvqxwqqpn8p1yq8jxd";
-  };
-
   # Get the betterfox userjs as a base for my settings
-  betterfoxUserjs = builtins.readFile "${betterfoxGit}/user.js";
+  betterfoxUserjs = builtins.readFile "${inputs.betterfox}/user.js";
 
   cfg = config.home-manager.desktop.firefox.deckFixes;
 in {
