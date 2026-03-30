@@ -78,9 +78,9 @@
       flake = false;
     };
 
-    peacock = {
-      url = "github:thepeacockproject/linux-steam-setup";
-      flake = false;
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -140,6 +140,7 @@
               inputs.spicetify-nix.homeManagerModules.spicetify
               inputs.textfox.homeManagerModules.default
               inputs.steam-config-nix.homeModules.default
+              inputs.noctalia.homeModules.default
 
               ./hosts/laptop/home.nix
               ./modules/home-manager/default.nix

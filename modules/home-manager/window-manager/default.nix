@@ -14,6 +14,7 @@
     ./hypridle.nix
     ./hyprsunset.nix
     ./screen-locker
+    ./noctalia.nix
   ];
 
   options = {
