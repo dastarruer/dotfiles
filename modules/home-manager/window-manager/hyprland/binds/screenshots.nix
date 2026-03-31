@@ -3,6 +3,11 @@
   config,
   ...
 }: {
+  # Create the screenshots dir, deleting files older than 30 days
+  systemd.user.tmpfiles.rules = [
+    "d %h/Pictures/screenshots - - - 30d -"
+  ];
+
   # Based off grimblast manual
   wayland.windowManager.hyprland.settings = let
     screenshotDir = "${config.home.homeDirectory}/Pictures/screenshots";
@@ -17,10 +22,19 @@
     ];
 
     bind = [
-      "SUPER, P, exec, ${pkgs.grimblast}/bin/grimblast copysave area ${screenshotDir} -n"
-      "SUPER+SHIFT, P, exec, ${pkgs.grimblast}/bin/grimblast copysave active -n"
-      "SUPER+CTRL, P, exec, ${pkgs.grimblast}/bin/grimblast copysave screen -n"
-      ''SUPER+SHIFT, O, exec, ${pkgs.grimblast}/bin/grimblast save area ${screenshotDir} - | ${pkgs.tesseract}/bin/tesseract stdin stdout | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.libnotify}/bin/notify-send "Clipboard:" "$(${pkgs.wl-clipboard}/bin/wl-paste)"''
+      # Copysave area to your specified directory
+      "SUPER, P, exec, ${pkgs.grimblast}/bin/grimblast copysave area ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n"
+
+      # Copysave active window
+      "SUPER+SHIFT, P, exec, ${pkgs.grimblast}/bin/grimblast copysave active ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n"
+
+      # Copysave full screen
+      "SUPER+CTRL, P, exec, ${pkgs.grimblast}/bin/grimblast copysave screen ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n"
+
+      # OCR (Optical Character Recognition)
+      ''SUPER+SHIFT, O, exec, ${pkgs.grimblast}/bin/grimblast save area - | ${pkgs.tesseract}/bin/tesseract stdin stdout | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.libnotify}/bin/notify-send "OCR Copied to Clipboard"''
+
+      # Open last paste in Swappy for editing
       "SUPER, M, exec, ${pkgs.wl-clipboard}/bin/wl-paste | ${pkgs.swappy}/bin/swappy -f -"
     ];
 
