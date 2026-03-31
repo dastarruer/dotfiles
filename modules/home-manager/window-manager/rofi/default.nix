@@ -25,6 +25,7 @@ in {
 
     programs.rofi = {
       enable = true;
+      location = "top";
     };
 
     wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
