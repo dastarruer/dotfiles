@@ -4,25 +4,24 @@
   pkgs,
   ...
 }: let
-  cfg = config.home-manager.desktop.gimp;
+  cfg = config.home-manager.desktop.krita;
   backup = config.home-manager.services.backup;
-  saveDir = "${config.home.homeDirectory}/Pictures/gimp";
+  saveDir = "${config.home.homeDirectory}/Pictures/krita";
 in {
   options = {
-    home-manager.desktop.gimp.enable = lib.mkOption {
+    home-manager.desktop.krita.enable = lib.mkOption {
       type = lib.types.bool;
-      # gimp sucks
-      default = false;
-      description = "Enable GIMP, an image editing app.";
+      default = config.home-manager.desktop.enable;
+      description = "Enable krita, an image editing app.";
     };
   };
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      pkgs.gimp
+      pkgs.krita
     ];
 
-    # Create the save dir for gimp
+    # Create the save dir for krita
     systemd.user.tmpfiles.rules = [
       "d ${saveDir} - - - - -"
     ];

@@ -26,6 +26,7 @@
     ./timer.nix
     ./kdenlive.nix
     ./gimp.nix
+    ./krita.nix
   ];
 
   options = {
@@ -36,7 +37,6 @@
     home.packages = with pkgs; [
       thunar
       todoist-electron
-      gimp
     ];
   };
 }
