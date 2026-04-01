@@ -107,6 +107,72 @@ in {
       # Disable middle click paste
       "middlemouse.paste" = false;
 
+      # Disable the warning when accessing about:config
+      "browser.aboutConfig.showWarning" = false;
+
+      # Configure toolbar (https://www.reddit.com/r/NixOS/comments/1s8dmkr/configuring_firefox_menubar_and_toolbar/)
+      "browser.uiCustomization.state" = builtins.toJSON {
+        placements = {
+          widget-overflow-fixed-list = [];
+          unified-extensions-area = [
+            "simple-tab-groups_drive4ik-browser-action"
+            "sponsorblocker_ajay_app-browser-action"
+            "jid1-mnnxcxisbpnsxq_jetpack-browser-action"
+            "_6a65273e-2b26-40f5-b66e-8eed317307da_-browser-action"
+            "addon_darkreader_org-browser-action"
+            "jid1-kkzogwgsw3ao4q_jetpack-browser-action"
+            "_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action"
+            "firefoxcolor_mozilla_com-browser-action"
+            "_c2c003ee-bd69-42a2-b0e9-6f34222cb046_-browser-action"
+          ];
+          nav-bar = [
+            "sidebar-button"
+            "back-button"
+            "forward-button"
+            "stop-reload-button"
+            "customizableui-special-spring1"
+            "vertical-spacer"
+            "urlbar-container"
+            "customizableui-special-spring2"
+            "downloads-button"
+            "reset-pbm-toolbar-button"
+            "ublock0_raymondhill_net-browser-action"
+            "unified-extensions-button"
+            "_3c078156-979c-498b-8990-85f7987dd929_-browser-action"
+          ];
+          toolbar-menubar = ["menubar-items"];
+          TabsToolbar = [];
+          vertical-tabs = ["tabbrowser-tabs"];
+          PersonalToolbar = ["personal-bookmarks"];
+        };
+        seen = [
+          "reset-pbm-toolbar-button"
+          "addon_darkreader_org-browser-action"
+          "jid1-kkzogwgsw3ao4q_jetpack-browser-action"
+          "jid1-mnnxcxisbpnsxq_jetpack-browser-action"
+          "simple-tab-groups_drive4ik-browser-action"
+          "ublock0_raymondhill_net-browser-action"
+          "sponsorblocker_ajay_app-browser-action"
+          "_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action"
+          "developer-button"
+          "screenshot-button"
+          "firefoxcolor_mozilla_com-browser-action"
+          "_3c078156-979c-498b-8990-85f7987dd929_-browser-action"
+          "_6a65273e-2b26-40f5-b66e-8eed317307da_-browser-action"
+          "_c2c003ee-bd69-42a2-b0e9-6f34222cb046_-browser-action"
+        ];
+        dirtyAreaCache = [
+          "unified-extensions-area"
+          "nav-bar"
+          "vertical-tabs"
+          "toolbar-menubar"
+          "TabsToolbar"
+          "PersonalToolbar"
+        ];
+        currentVersion = 23;
+        newElementCount = 2;
+      };
+
       # STEAM DECK SETTINGS
       # Steam Deck specific fixes (e.g., touch improvements, hardware accel)
       # "dom.w3c_touch_events.enabled" = lib.mkIf cfg.enable 1;
