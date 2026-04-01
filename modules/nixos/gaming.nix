@@ -16,6 +16,9 @@
   # The only essential line for AMD hardware support
   services.xserver.videoDrivers = ["amdgpu"];
 
+  # Enable the new ntsync kernel module for improved multithreading performance w newer versions of proton/wine
+  boot.kernelModules = ["ntsync"];
+
   programs.gamemode = {
     enable = true;
     enableRenice = true;
@@ -69,6 +72,9 @@
 
         # Standardizes video/vulkan behavior to avoid driver conflicts
         WINE_VK_VULKAN_ONLY = "1";
+
+        # Force proton to use ntsync
+        PROTON_USE_NTSYNC = "1";
       };
     };
 
