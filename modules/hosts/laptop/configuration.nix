@@ -12,6 +12,7 @@
       cli_btop
       cli_direnv
       cli_git
+      cli_yazi
 
       services_backup
     ];
