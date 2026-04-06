@@ -8,6 +8,7 @@
       shell
 
       cli_btop
+      cli_direnv
     ];
 
     # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
