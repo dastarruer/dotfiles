@@ -15,6 +15,8 @@
       cli_yazi
       cli_zoxide
 
+      desktop_anki
+
       services_backup
     ];
 
