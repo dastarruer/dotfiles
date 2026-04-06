@@ -1,0 +1,75 @@
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.homeConfigurations.laptopHome = {
+    config,
+    lib,
+    ...
+  }: {
+    systemd.user.enable = true;
+    nixpkgs.config.allowUnfree = true;
+
+    # Set up user
+    home = {
+      # Set username and home directory
+      username = "dastarruer";
+      homeDirectory = lib.mkForce "/home/dastarruer";
+
+      # No clue what this does
+      stateVersion = "25.11";
+    };
+
+    systemd.user.tmpfiles.rules = [
+      # Create the Downloads dir, deleting files older than 5 days
+      "d %h/Downloads - - - 5d -"
+
+      # Create the Trash dir, deleting files older than 30 days
+      "d %h/.local/share/Trash/files - - - 30d -"
+    ];
+
+    programs.home-manager.enable = true;
+    services.polkit-gnome.enable = true;
+
+    home-manager = {
+      theme = {
+        name = "everforest-dark-hard";
+        accent = config.lib.stylix.colors.base0B;
+      };
+
+      desktop = {
+        enable = true;
+        terminal = "ghostty";
+        foliate.enable = false;
+        firefox.enable = true;
+        gaming = {
+          lutris.enable = false;
+          enable = true;
+        };
+
+        pwa = {
+          enable = false;
+          whatsapp.enable = true;
+        };
+      };
+
+      cli = {
+        enable = true;
+        distrobox.enable = false;
+      };
+
+      services = {
+        enable = true;
+        backup.backupPaths = [
+          "${config.home.homeDirectory}/Music"
+          "${config.home.homeDirectory}/Documents/sheet-music"
+          "${config.home.homeDirectory}/Documents/school"
+          "${config.home.homeDirectory}/Pictures/trips"
+        ];
+      };
+
+      window-manager.sherlock.enable = false;
+    };
+  };
+}
