@@ -82,97 +82,29 @@
       url = "github:thepeacockproject/linux-steam-setup";
       flake = false;
     };
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
   };
 
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  }: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    devShells.${system}.default = pkgs.mkShell {
-      nativeBuildInputs = with pkgs; [
-        nixd
-        alejandra
+  outputs = inputs @ {flake-parts, ...}:
+    flake-parts.lib.mkFlake {inherit inputs;}
+    {
+      imports = [
+        (inputs.import-tree ./modules)
       ];
-    };
 
-    nixosConfigurations.dastarruer = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs system;};
-      modules = [
-        inputs.stylix.nixosModules.stylix
-        inputs.sops-nix.nixosModules.sops
-        inputs.ucodenix.nixosModules.default
-        inputs.disko.nixosModules.disko
-        inputs.home-manager.nixosModules.home-manager
-
-        # Install comma: https://github.com/nix-community/nix-index-database?tab=readme-ov-file#usage-in-nixos
-        inputs.nix-index-database.nixosModules.default
-        {programs.nix-index-database.comma.enable = true;}
-
-        ./hosts/laptop/configuration.nix
-        ./hosts/laptop/hardware-configuration.nix
-        ./hosts/laptop/disko-config.nix
-        ./modules/nixos/default.nix
-
-        {
-          home-manager.useUserPackages = true;
-          # home-manager.useGlobalPkgs = true;
-          home-manager.backupCommand = "${pkgs.trash-cli}/bin/trash";
-
-          # Pass the same extraSpecialArgs from nixos
-          home-manager.extraSpecialArgs = {
-            inherit inputs system;
-            spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
-            firefoxAddonPkgs = inputs.firefox-addons.packages.${system};
-            vscode-extensions = inputs.vscode-extensions.extensions.${system}.vscode-marketplace;
-          };
-
-          # Define the user and their modules
-          home-manager.users.dastarruer = {
-            imports = [
-              inputs.stylix.homeModules.stylix
-              inputs.sops-nix.homeManagerModules.sops
-              inputs.flatpaks.homeModules.default
-              inputs.spicetify-nix.homeManagerModules.spicetify
-              inputs.textfox.homeManagerModules.default
-              inputs.steam-config-nix.homeModules.default
-
-              ./hosts/laptop/home.nix
-              ./modules/home-manager/default.nix
-            ];
-          };
-        }
-      ];
-    };
-
-    # Steam deck
-    homeConfigurations.deck = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-        overlays = [
-          # Add your script overlays here too
-        ];
+      perSystem = {
+        pkgs,
+        self',
+        ...
+      }: {
+        devShells.default = pkgs.mkShell {
+          nativeBuildInputs = with pkgs; [
+            nixd
+            alejandra
+          ];
+        };
       };
-      extraSpecialArgs = {
-        inherit inputs system;
-        spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
-        firefoxPkgs = inputs.firefox-nightly.packages.${system};
-        firefoxAddonPkgs = inputs.firefox-addons.packages.${system};
-        vscode-extensions = inputs.vscode-extensions.extensions.${system}.vscode-marketplace;
-      };
-      modules = [
-        inputs.stylix.homeModules.stylix
-        inputs.sops-nix.homeManagerModules.sops
-        inputs.flatpaks.homeModule
-        inputs.spicetify-nix.homeManagerModules.spicetify
-
-        ./hosts/steam-deck/home.nix
-      ];
     };
-  };
 }
