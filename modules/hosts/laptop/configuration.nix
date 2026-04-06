@@ -6,6 +6,8 @@
       laptopHome
 
       shell
+
+      cli_btop
     ];
 
     # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
