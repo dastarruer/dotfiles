@@ -1,0 +1,60 @@
+{...}: {
+  flake.nixosModules.cli_git = {
+    config,
+    lib,
+    ...
+  }: {
+    home-manager.users.dastarruer = {
+      sops.secrets = {
+        name = {};
+        email = {};
+      };
+
+      programs.gh = {
+        enable = true;
+        # TODO: Move to vscode
+        # settings.editor = "${lib.getExe config.programs.vscode.package} --wait";
+      };
+
+      programs.git = let
+        usernamePath = config.sops.secrets.name.path;
+        emailPath = config.sops.secrets.email.path;
+      in {
+        enable = true;
+        lfs.enable = true;
+
+        # yh i... don't know either why this is necessary...
+        settings = lib.mkMerge [
+          {
+            # Prefer ssh urls instead of https ones
+            url."git@github.com:" = {
+              insteadOf = "https://github.com/";
+            };
+            # Use vscode for commit messages
+            # TODO: Move to vscode
+            # core.editor = "${lib.getExe config.programs.vscode.package} --wait";
+            # Automatically push to the current branch
+            push.autoSetupRemote = true;
+          }
+          (lib.mkIf (builtins.pathExists usernamePath) {
+            user.name = lib.removeSuffix "\n" (builtins.readFile usernamePath);
+          })
+          (lib.mkIf (builtins.pathExists emailPath) {
+            user.email = lib.removeSuffix "\n" (builtins.readFile emailPath);
+          })
+        ];
+      };
+
+      programs.fish.shellAliases = lib.mkIf config.programs.fish.enable {
+        ga = "git add";
+        gb = "git branch";
+        "g." = "git add . && git status";
+        gs = "git status";
+        gc = "git commit";
+        gp = "git push";
+        gl = "git log --oneline --graph --decorate";
+        gch = "git checkout";
+      };
+    };
+  };
+}

@@ -11,6 +11,7 @@
 
       cli_btop
       cli_direnv
+      cli_git
 
       services_backup
     ];
