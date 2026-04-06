@@ -9,6 +9,8 @@
 
       cli_btop
       cli_direnv
+
+      services_backup
     ];
 
     # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
