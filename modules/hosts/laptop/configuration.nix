@@ -5,6 +5,8 @@
       laptopDisk
       laptopHome
 
+      core
+
       shell
 
       cli_btop
