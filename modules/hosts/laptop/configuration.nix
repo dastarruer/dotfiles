@@ -19,6 +19,7 @@
       desktop_firefox
       desktop_steam
       desktop_whatsapp
+      desktop_spicetify
 
       services_backup
       services_ludusavi
