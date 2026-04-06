@@ -7,6 +7,7 @@
 
       shell.fish
       shell.fastfetch
+      shell.starship
     ];
 
     # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
