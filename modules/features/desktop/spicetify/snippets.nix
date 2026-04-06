@@ -1,8 +1,4 @@
-{
-  inputs,
-  config,
-  ...
-}: {
+{inputs, ...}: {
   perSystem = {system, ...}: {
     flake.nixosModules.desktop_spicetify = {...}: let
       spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
