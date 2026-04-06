@@ -22,6 +22,7 @@
       desktop_spicetify
       desktop_terminal
       desktop_vscode
+      desktop_calibre
 
       services_backup
       services_ludusavi
