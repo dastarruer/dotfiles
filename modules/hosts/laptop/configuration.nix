@@ -20,6 +20,7 @@
       desktop_steam
 
       services_backup
+      services_ludusavi
     ];
 
     # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
