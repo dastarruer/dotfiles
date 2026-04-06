@@ -17,6 +17,7 @@
 
       desktop_anki
       desktop_firefox
+      desktop_steam
 
       services_backup
     ];
