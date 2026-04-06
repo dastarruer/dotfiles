@@ -13,6 +13,7 @@
       cli_direnv
       cli_git
       cli_yazi
+      cli_zoxide
 
       services_backup
     ];
