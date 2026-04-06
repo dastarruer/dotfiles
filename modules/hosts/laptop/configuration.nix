@@ -4,6 +4,8 @@
       laptopHardware
       laptopDisk
       laptopHome
+
+      programs.cli.shell.fish
     ];
 
     # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
