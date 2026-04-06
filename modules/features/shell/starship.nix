@@ -1,5 +1,5 @@
 {...}: {
-  flake.nixosModules.shell_starship = {config, ...}: {
+  flake.nixosModules.shell = {config, ...}: {
     home-manager.users.dastarruer = let
       fish = config.programs.fish;
     in {
