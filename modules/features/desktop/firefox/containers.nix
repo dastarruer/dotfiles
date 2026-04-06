@@ -1,7 +1,7 @@
 {...}: {
   flake.nixosModules.desktop_firefox = {config, ...}: {
     home-manager.users.dastarruer = {
-      programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}" = {
+      programs.firefox.profiles."${config.custom.desktop.firefox.profile}" = {
         # Set up containers
         containersForce = true;
         containers = {

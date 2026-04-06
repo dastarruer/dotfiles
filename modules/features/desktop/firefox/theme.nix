@@ -1,7 +1,7 @@
 {inputs, ...}: {
   flake.nixosModules.desktop_firefox = {config, ...}: {
     home-manager.users.dastarruer = let
-      profile = config.home-manager.desktop.firefox.profile;
+      profile = config.custom.desktop.firefox.profile;
     in {
       imports = [
         inputs.textfox.homeManagerModules.default

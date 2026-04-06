@@ -6,7 +6,7 @@
     in {
       # Declare settings and overrides, most of which I've stolen from here:
       # https://github.com/gvolpe/nix-config/blob/6feb7e4f47e74a8e3befd2efb423d9232f522ccd/home/programs/browsers/firefox.nix
-      programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}" = {
+      programs.firefox.profiles."${config.custom.desktop.firefox.profile}" = {
         preConfig = betterfoxUserjs;
 
         settings = {

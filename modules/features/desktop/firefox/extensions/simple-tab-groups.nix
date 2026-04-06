@@ -6,7 +6,7 @@
       ...
     }: {
       home-manager.users.dastarruer = let
-        profile = config.home-manager.desktop.firefox.profile;
+        profile = config.custom.desktop.firefox.profile;
         containers = config.programs.firefox.profiles."${profile}".containers;
 
         # Helper to get container IDs from profile config

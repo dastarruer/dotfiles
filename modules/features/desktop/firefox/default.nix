@@ -7,8 +7,8 @@
   }: let
     hyprland = config.programs.hyprland;
   in {
-    options = {
-      home-manager.desktop.firefox = {
+    options.custom = {
+      desktop.firefox = {
         profile = lib.mkOption {
           type = lib.types.str;
           default = "default";

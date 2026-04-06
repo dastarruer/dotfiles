@@ -29,7 +29,7 @@
           };
         };
       in {
-        programs.firefox.profiles."${config.home-manager.desktop.firefox.profile}".extensions = {
+        programs.firefox.profiles."${config.custom.desktop.firefox.profile}".extensions = {
           packages = with inputs.firefox-addons.packages.${system}; [
             darkreader
           ];

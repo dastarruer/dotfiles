@@ -5,7 +5,7 @@
     ...
   }: {
     home-manager.users.dastarruer = {
-      programs.firefox.profiles.${config.home-manager.desktop.firefox.profile}.search = {
+      programs.firefox.profiles.${config.custom.desktop.firefox.profile}.search = {
         force = true;
 
         # Use brave because it's about as fast as google
