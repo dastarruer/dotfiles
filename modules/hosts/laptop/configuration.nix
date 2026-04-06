@@ -16,6 +16,7 @@
       cli_zoxide
 
       desktop_anki
+      desktop_firefox
 
       services_backup
     ];
