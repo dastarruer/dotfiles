@@ -20,6 +20,7 @@
       desktop_steam
       desktop_whatsapp
       desktop_spicetify
+      desktop_terminal
 
       services_backup
       services_ludusavi
