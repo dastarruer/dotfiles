@@ -1,5 +1,5 @@
 {self, ...}: {
-  flake.nixosModules.shell.fish = {
+  flake.nixosModules.shell_fish = {
     config,
     lib,
     pkgs,

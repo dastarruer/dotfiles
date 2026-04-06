@@ -5,9 +5,7 @@
       laptopDisk
       laptopHome
 
-      shell.fish
-      shell.fastfetch
-      shell.starship
+      shell
     ];
 
     # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
