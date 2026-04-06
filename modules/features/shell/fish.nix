@@ -1,8 +1,7 @@
-{self, ...}: {
+{...}: {
   flake.nixosModules.shell = {
     config,
     lib,
-    pkgs,
     ...
   }: {
     home-manager.users.dastarruer = {
