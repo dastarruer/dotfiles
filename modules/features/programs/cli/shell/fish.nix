@@ -1,6 +1,8 @@
 {self, ...}: {
   flake.nixosModules.programs.cli.shell.fish = {
+    config,
     lib,
+    pkgs,
     ...
   }: {
     home-manager.users.dastarruer = {
@@ -28,7 +30,7 @@
           set -g fish_greeting ""
 
           # Run fastfetch on startup
-          fastfetch
+          ${lib.optionalString (config.programs.fastfetch.enable) "fastfetch"}
         '';
       };
     };
