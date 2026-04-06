@@ -18,6 +18,7 @@
       desktop_anki
       desktop_firefox
       desktop_steam
+      desktop_whatsapp
 
       services_backup
       services_ludusavi
