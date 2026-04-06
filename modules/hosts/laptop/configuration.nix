@@ -5,8 +5,8 @@
       laptopDisk
       laptopHome
 
-      programs.cli.shell.fish
-      programs.cli.shell.fastfetch
+      shell.fish
+      shell.fastfetch
     ];
 
     # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)

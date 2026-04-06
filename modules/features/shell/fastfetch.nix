@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.nixosModules.programs.cli.shell.fish = {...}: {
+  flake.nixosModules.shell.fastfetch = {...}: {
     home-manager.users.dastarruer = {
       programs.fastfetch = {
         enable = true;
