@@ -21,6 +21,7 @@
       desktop_whatsapp
       desktop_spicetify
       desktop_terminal
+      desktop_vscode
 
       services_backup
       services_ludusavi
