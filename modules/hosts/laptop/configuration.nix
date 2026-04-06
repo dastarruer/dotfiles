@@ -1,5 +1,11 @@
-{...}: {
+{self, ...}: {
   flake.nixosModules.laptopConfiguration = {...}: {
+    imports = with self.nixosModules; [
+      laptopHardware
+      laptopDisk
+      laptopHome
+    ];
+
     # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
     system.stateVersion = "25.05";
     nixpkgs.config.allowUnfree = true;
