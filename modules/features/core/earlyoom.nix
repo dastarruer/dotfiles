@@ -1,0 +1,18 @@
+# earlyoom will kill processes that are taking up the most ram when ram usage is high
+# https://github.com/rfjakob/earlyoom
+{...}: {
+  flake.nixosModules.core = {...}: {
+    services.earlyoom = {
+      enable = true;
+      enableNotifications = true;
+
+      # If 5% of memory is left, start killing processes
+      freeMemThreshold = 5;
+
+      extraArgs = [
+        "--avoid"
+        ".*\.ex$" # Don't kill any wine apps, like games
+      ];
+    };
+  };
+}
