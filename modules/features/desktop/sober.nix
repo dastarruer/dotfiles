@@ -1,5 +1,5 @@
 {self, ...}: {
-  flake.nixosModules.desktop_obsidian = {...}: {
+  flake.nixosModules.desktop_sober = {...}: {
     imports = [
       self.nixosModules.flatpak
     ];
