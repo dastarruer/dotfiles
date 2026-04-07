@@ -7,6 +7,15 @@
     ageKeyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
     backup = config.services.restic;
   in {
+    sops = {
+      # Path to secrets file
+      defaultSopsFile = "${inputs.self.outPath}/secrets/secrets.yaml";
+      defaultSopsFormat = "yaml";
+
+      # Path to age key
+      age.keyFile = "/home/dastarruer/.config/sops/age/keys.txt";
+    };
+
     home-manager.users.dastarruer = {
       sops = {
         # Path to secrets file

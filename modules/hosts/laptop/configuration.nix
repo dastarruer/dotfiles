@@ -6,7 +6,7 @@
       laptopHome
 
       core
-
+      hardware
       shell
 
       cli_btop
