@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    inputs.disko.nixosModules.disko
+    inputs.disko.flakeModule
   ];
 
   flake.nixosModules.laptopDisk = {
@@ -13,6 +13,10 @@
     pkgs,
     ...
   }: {
+    imports = [
+      inputs.disko.nixosModules.disko
+    ];
+
     # Use Btrfs with subvolumes for better performance and reliability on SSDs
     # Repair corrupted files
     services.btrfs.autoScrub = {
