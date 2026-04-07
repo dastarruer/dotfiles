@@ -1,6 +1,9 @@
 # Settings to make fonts less blurry
 {...}: {
   flake.nixosModules.core = {...}: {
+    # Reduce blurry fonts: https://www.reddit.com/r/xfce/comments/vfe7uy/comment/icyffxj/?force-legacy-sct=1
+    environment.etc."environment".text = ''FREETYPE_PROPERTIES="truetype:interpreter-version=35"'';
+
     fonts.fontconfig = {
       enable = true;
       antialias = true;
