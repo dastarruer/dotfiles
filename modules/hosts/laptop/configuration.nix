@@ -10,6 +10,7 @@
 
       hardware
       hardware_logind
+      hardware_power-management
 
       cli_btop
       cli_direnv
