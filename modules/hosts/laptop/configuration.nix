@@ -31,6 +31,7 @@
       desktop_obs
       desktop_zathura
       desktop_timer
+      desktop_kdeconnect
 
       services_backup
       services_ludusavi
