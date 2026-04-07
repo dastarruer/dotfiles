@@ -39,6 +39,7 @@
       services_smart-pause-resume
       services_conservation-mode
       services_reload-udev
+      services_docker
     ];
 
     # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
