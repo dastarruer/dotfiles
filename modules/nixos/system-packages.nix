@@ -12,12 +12,6 @@
     gh
   ];
 
-  # Unable to open firewall port in home manager, so it is here instead
-  programs.localsend = {
-    enable = true;
-    openFirewall = true;
-  };
-
   # https://www.reddit.com/r/NixOS/comments/xz4m6m/how_to_use_kdeconnect_on_nixos/
   programs.kdeconnect = {
     enable = true;
