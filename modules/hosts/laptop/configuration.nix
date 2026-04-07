@@ -29,6 +29,8 @@
       desktop_krita
       desktop_libreoffice
       desktop_mpv
+      desktop_obs
+      desktop_zathura
 
       services_backup
       services_ludusavi
