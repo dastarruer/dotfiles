@@ -48,14 +48,6 @@
     # Enable ssh
     services.openssh.enable = true;
 
-    # Microcode updates (might as well yk)
-    services.ucodenix = {
-      # enable = true;
-      # it don't work
-      enable = false;
-      cpuModelId = "auto";
-    };
-
     # Gives extra ram basically
     zramSwap = {
       enable = true;
