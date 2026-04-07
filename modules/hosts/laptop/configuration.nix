@@ -23,7 +23,6 @@
       desktop_terminal
       desktop_vscode
       desktop_calibre
-      desktop_gimp
       desktop_imv
       desktop_kdenlive
       desktop_krita
