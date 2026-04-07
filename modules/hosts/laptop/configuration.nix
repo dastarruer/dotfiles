@@ -28,6 +28,7 @@
       desktop_kdenlive
       desktop_krita
       desktop_libreoffice
+      desktop_mpv
 
       services_backup
       services_ludusavi
