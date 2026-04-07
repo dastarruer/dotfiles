@@ -31,6 +31,7 @@
       desktop_mpv
       desktop_obs
       desktop_zathura
+      desktop_timer
 
       services_backup
       services_ludusavi
