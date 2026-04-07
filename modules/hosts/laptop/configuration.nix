@@ -46,13 +46,6 @@
       services_ssh
     ];
 
-    # Gives extra ram basically
-    zramSwap = {
-      enable = true;
-      priority = 100;
-      algorithm = "zstd";
-    };
-
     # Disable touchpad as mouse for dualshock connected via USB and Bluetooth (https://wiki.archlinux.org/title/Gamepad#Disable_touchpad_acting_as_mouse)
     services.udev.extraRules = ''
       ATTRS{name}=="Sony Interactive Entertainment Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
