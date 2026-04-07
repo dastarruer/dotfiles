@@ -6,8 +6,10 @@
       laptopHome
 
       core
-      hardware
       shell
+
+      hardware
+      hardware_logind
 
       cli_btop
       cli_direnv
