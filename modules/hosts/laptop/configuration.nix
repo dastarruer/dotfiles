@@ -43,10 +43,8 @@
       services_conservation-mode
       services_reload-udev
       services_docker
+      services_ssh
     ];
-
-    # Enable ssh
-    services.openssh.enable = true;
 
     # Gives extra ram basically
     zramSwap = {
