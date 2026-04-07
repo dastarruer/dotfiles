@@ -5,6 +5,9 @@
     lib,
     ...
   }: {
+    # Autologin me so i dont get login prompt on boot
+    services.getty.autologinUser = "dastarruer";
+
     # Get the latest kernel packages
     kernelPackages = pkgs.linuxPackages_latest;
 
