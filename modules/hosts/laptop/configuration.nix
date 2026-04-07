@@ -23,6 +23,7 @@
       desktop_terminal
       desktop_vscode
       desktop_calibre
+      desktop_gimp
 
       services_backup
       services_ludusavi
