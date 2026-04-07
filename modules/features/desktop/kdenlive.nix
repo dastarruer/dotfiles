@@ -1,12 +1,12 @@
 {...}: {
-  flake.nixosModules.desktop_imv = {
+  flake.nixosModules.desktop_kdenlive = {
     config,
     pkgs,
     lib,
     ...
   }: {
     home-manager.users.dastarruer = let
-      backup = config.home-manager.services.backup;
+      backup = config.services.restic;
       saveDir = "${config.home.homeDirectory}/Videos/kdenlive";
     in {
       home.packages = [

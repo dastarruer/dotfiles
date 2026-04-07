@@ -25,6 +25,7 @@
       desktop_calibre
       desktop_gimp
       desktop_imv
+      desktop_kden
 
       services_backup
       services_ludusavi
