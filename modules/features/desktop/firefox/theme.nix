@@ -15,7 +15,7 @@
           tabs.vertical.enable = true;
 
           # Colors
-          font.accent = "#${config.home-manager.theme.accent}";
+          font.accent = "#${config.custom.theme.accent}";
           border.color = "#${config.lib.stylix.colors.base01}";
 
           # Margin

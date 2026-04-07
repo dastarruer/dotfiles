@@ -6,7 +6,7 @@
     ...
   }: {
     home-manager.users.dastarruer = let
-      hyprland = config.programs.hyprland;
+      hyprland = config.wayland.windowManager.hyprland;
     in {
       programs.obs-studio.enable = true;
 

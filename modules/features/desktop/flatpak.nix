@@ -7,7 +7,7 @@
     ...
   }: {
     home-manager.users.dastarruer = let
-      hyprland = config.home-manager.window-manager.hyprland;
+      hyprland = config.wayland.windowManager.hyprland;
     in {
       # This is needed for launching flatpaks with rofi
       home.packages = with pkgs; [

@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  hyprland = config.home-manager.window-manager.hyprland;
+  hyprland = config.wayland.windowManager.hyprland;
   locker = config.home-manager.window-manager.screen-locker;
   rofi = config.home-manager.window-manager.rofi;
 

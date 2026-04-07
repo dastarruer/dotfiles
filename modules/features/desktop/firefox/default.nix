@@ -5,7 +5,7 @@
     lib,
     ...
   }: let
-    hyprland = config.programs.hyprland;
+    hyprland = config.wayland.windowManager.hyprland;
   in {
     options.custom = {
       desktop.firefox = {

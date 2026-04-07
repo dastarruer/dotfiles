@@ -8,7 +8,7 @@
 }: {
   perSystem = {system, ...}: {
     flake.nixosModules.desktop_spicetify = {...}: let
-      hyprland = config.programs.hyprland;
+      hyprland = config.wayland.windowManager.hyprland;
       dunst = config.services.dunst;
 
       spicePkgs = inputs.spicetify-nix.legacyPackages.${system};

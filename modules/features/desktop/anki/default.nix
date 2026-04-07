@@ -6,7 +6,7 @@
   }: {
     home-manager.users.dastarruer = let
       backup = config.services.restic;
-      hyprland = config.programs.hyprland;
+      hyprland = config.wayland.windowManager.hyprland;
     in {
       sops.secrets = {
         anki_synckey = {};

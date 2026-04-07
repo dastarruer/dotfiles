@@ -183,8 +183,8 @@
               ];
               FLAG_2 = [
                 "Flag 2"
-                "#${config.home-manager.theme.accent}"
-                "#${config.home-manager.theme.accent}"
+                "#${config.custom.theme.accent}"
+                "#${config.custom.theme.accent}"
                 "--flag-2"
               ];
               FLAG_3 = [
@@ -298,8 +298,8 @@
               ];
               STATE_MARKED = [
                 "Marked"
-                "#${config.home-manager.theme.accent}"
-                "#${config.home-manager.theme.accent}"
+                "#${config.custom.theme.accent}"
+                "#${config.custom.theme.accent}"
                 "--state-marked"
               ];
               STATE_NEW = [

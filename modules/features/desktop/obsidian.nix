@@ -9,7 +9,7 @@
     ];
 
     home-manager.users.dastarruer = let
-      hyprland = config.programs.hyprland;
+      hyprland = config.wayland.windowManager.hyprland;
       backup = config.services.restic;
     in {
       # Use the flatpak, which does not ask for login every reboot

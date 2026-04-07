@@ -5,7 +5,7 @@
     ...
   }: {
     home-manager.users.dastarruer = let
-      hyprland = config.programs.hyprland;
+      hyprland = config.wayland.windowManager.hyprland;
       fish = config.programs.fish;
     in {
       programs.zathura = {

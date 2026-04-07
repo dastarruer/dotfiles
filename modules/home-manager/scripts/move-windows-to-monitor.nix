@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  hyprland = config.home-manager.window-manager.hyprland;
+  hyprland = config.wayland.windowManager.hyprland;
 in {
   nixpkgs.overlays = lib.mkIf hyprland.enable [
     (final: prev: {

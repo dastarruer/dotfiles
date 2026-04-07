@@ -6,7 +6,7 @@
     ...
   }: {
     home-manager.users.dastarruer = let
-      hyprland = config.programs.hyprland;
+      hyprland = config.wayland.windowManager.hyprland;
       terminal = config.custom.terminal;
 
       # Get cursor trails like in kitty
