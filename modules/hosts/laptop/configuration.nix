@@ -35,6 +35,7 @@
 
       services_backup
       services_ludusavi
+      services_caps-lock-monitor
     ];
 
     # Suppress warning (https://nixos.org/manual/nixos/stable/options.html#opt-system.stateVersion)
