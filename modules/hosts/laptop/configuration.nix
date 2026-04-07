@@ -24,6 +24,7 @@
       desktop_vscode
       desktop_calibre
       desktop_gimp
+      desktop_imv
 
       services_backup
       services_ludusavi
