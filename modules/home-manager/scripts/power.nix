@@ -15,7 +15,7 @@
     then "${lib.getExe pkgs.swaylock}"
     else "true";
 
-  logoutCmd = lib.optionalString hyprland.enable "${pkgs.hyprland}/bin/hyprctl dispatch exit";
+  logoutCmd = lib.optionalString hyprland.enable "${lib.getExe pkgs.hyprshutdown}";
 
   launcherCmd =
     if rofi.enable
@@ -27,10 +27,13 @@ in {
       power = prev.writeShellApplication {
         name = "power";
 
-        runtimeInputs = with prev; [
-          systemd
-          coreutils
-        ];
+        runtimeInputs = with prev;
+          [
+            systemd
+            coreutils
+            gnugrep
+          ]
+          ++ lib.optionals hyprland.enable [prev.hyprshutdown];
 
         text = ''
           OPTIONS=" Lock\n󰗽 Logout\n󰥔 Suspend\n Reboot\n Shutdown"
@@ -48,10 +51,18 @@ in {
                 systemctl suspend
                 ;;
             " Reboot")
-                systemctl reboot
+                ${
+            if hyprland.enable
+            then ''hyprshutdown -t "Rebooting... Please wait..." --post-cmd 'systemctl reboot' ''
+            else "systemctl reboot"
+          }
                 ;;
             " Shutdown")
-                systemctl poweroff
+               ${
+            if hyprland.enable
+            then ''hyprshutdown -t "Shutting down... Please wait..." --post-cmd 'systemctl poweroff' ''
+            else "systemctl reboot"
+          }
                 ;;
             *)
                 exit 0
