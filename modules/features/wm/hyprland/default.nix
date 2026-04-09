@@ -45,10 +45,10 @@
           enable = true;
 
           # set to the flake package for more up to date software
-          package = inputs.hyprland.packages.${system}.hyprland;
+          package = inputs.hyprland.packages.${pkgs.stdenv.system}.hyprland;
 
           # For stuff between apps like clipboard access, drag and drop, etc.
-          portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
+          portalPackage = inputs.hyprland.packages.${pkgs.stdenv.system}.xdg-desktop-portal-hyprland;
         };
 
         # Use wayland for chromium/electron apps

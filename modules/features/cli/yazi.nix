@@ -1,5 +1,5 @@
 {...}: {
-  flake.nixosModules.cli_distrobox = {
+  flake.nixosModules.cli_yazi = {
     config,
     pkgs,
     lib,

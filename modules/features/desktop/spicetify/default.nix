@@ -3,52 +3,51 @@
 {
   inputs,
   config,
+  pkgs,
   lib,
   ...
 }: {
-  perSystem = {system, ...}: {
-    flake.nixosModules.desktop_spicetify = {...}: let
-      hyprland = config.wayland.windowManager.hyprland;
-      dunst = config.services.dunst;
+  flake.nixosModules.desktop_spicetify = {...}: let
+    hyprland = config.wayland.windowManager.hyprland;
+    dunst = config.services.dunst;
 
-      spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
-    in {
-      home-manager.users.dastarruer = {
-        imports = [
-          inputs.spicetify-nix.homeManagerModules.default
+    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+  in {
+    home-manager.users.dastarruer = {
+      imports = [
+        inputs.spicetify-nix.homeManagerModules.default
+      ];
+
+      # Periodically clear spicetify cache. Sometimes (rarely) spotify will silently fail to start if cache is not cleared
+      systemd.user.tmpfiles.rules = [
+        "d %h/.cache/spotify - - - 5d -"
+      ];
+
+      programs.spicetify = {
+        enable = true;
+
+        # Custom apps
+        enabledCustomApps = with spicePkgs.apps; [
+          marketplace
         ];
 
-        # Periodically clear spicetify cache. Sometimes (rarely) spotify will silently fail to start if cache is not cleared
-        systemd.user.tmpfiles.rules = [
-          "d %h/.cache/spotify - - - 5d -"
+        # Chromium devtools
+        alwaysEnableDevTools = true;
+
+        wayland = true;
+      };
+
+      home-manager.window-manager.dunst.excludeTitles = lib.mkIf dunst.enable ["Spotify"];
+
+      wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
+        # looks aesthetic innit
+        windowrule = [
+          "float on, match:class spotify"
+          "move 81 146, match:class spotify"
+          "size 1068 670, match:class spotify"
+
+          "workspace 5 silent,match:class spotify"
         ];
-
-        programs.spicetify = {
-          enable = true;
-
-          # Custom apps
-          enabledCustomApps = with spicePkgs.apps; [
-            marketplace
-          ];
-
-          # Chromium devtools
-          alwaysEnableDevTools = true;
-
-          wayland = true;
-        };
-
-        home-manager.window-manager.dunst.excludeTitles = lib.mkIf dunst.enable ["Spotify"];
-
-        wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
-          # looks aesthetic innit
-          windowrule = [
-            "float on, match:class spotify"
-            "move 81 146, match:class spotify"
-            "size 1068 670, match:class spotify"
-
-            "workspace 5 silent,match:class spotify"
-          ];
-        };
       };
     };
   };

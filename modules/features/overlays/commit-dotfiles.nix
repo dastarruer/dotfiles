@@ -36,8 +36,10 @@
       })
     ];
 
-    home.packages = with pkgs; [
-      commit-dotfiles
-    ];
+    home-manager.users.dastarruer = {
+      home.packages = with pkgs; [
+        commit-dotfiles
+      ];
+    };
   };
 }

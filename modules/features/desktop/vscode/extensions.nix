@@ -7,7 +7,7 @@
     }: {
       home-manager.users.dastarruer = let
         profile = config.home-manager.desktop.vscode.profile;
-        vscode-extensions = inputs.vscode-extensions.extensions.${system}.vscode-marketplace;
+        vscode-extensions = inputs.vscode-extensions.extensions.${pkgs.stdenv.system}.vscode-marketplace;
       in {
         # Globally installed extensions
         programs.vscode.profiles.${profile} = {

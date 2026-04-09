@@ -16,8 +16,9 @@
     };
 
     config.home-manager.users.dastarruer = let
-      usbPasswordPath = config.sops.secrets."restic_passwords/usb".path;
-      drivePasswordPath = config.sops.secrets."restic_passwords/drive".path;
+      hmConfig = config.home-manager.users.dastarruer;
+      usbPasswordPath = hmConfig.sops.secrets."restic_passwords/usb".path;
+      drivePasswordPath = hmConfig.sops.secrets."restic_passwords/drive".path;
       secretsExist = builtins.pathExists usbPasswordPath && builtins.pathExists drivePasswordPath;
       authRefreshScript = pkgs.writeShellApplication {
         name = "rclone-auth-refresh";
