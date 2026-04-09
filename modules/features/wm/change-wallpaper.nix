@@ -5,7 +5,7 @@
     lib,
     ...
   }: let
-    swww = config.services.swww;
+    awww = config.services.awww;
     theme = config.custom.theme.name;
     wallpaperDir = "${inputs.self.outPath}/config/wallpapers/${theme}";
     dunst = config.services.dunst;
@@ -46,8 +46,8 @@
             SELECTED_WALLPAPER=''${WALLPAPERS[$NEXT_INDEX]}
 
             # Set the new wallpaper
-            ${lib.optionalString swww.enable ''
-              ${pkgs.swww}/bin/swww img "$SELECTED_WALLPAPER" -t wipe --transition-angle 30 --transition-duration 1
+            ${lib.optionalString awww.enable ''
+              ${pkgs.awww}/bin/awww img "$SELECTED_WALLPAPER" -t wipe --transition-angle 30 --transition-duration 1
             ''}
 
             # Symlink the wallpaper so it can be accessed by other programs
