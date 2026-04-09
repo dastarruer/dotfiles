@@ -7,7 +7,7 @@
     ./rofi
     ./dunst
     ./waybar
-    ./swww.nix
+    ./awww.nix
     ./batsignal.nix
     ./sherlock.nix
     ./hyprland

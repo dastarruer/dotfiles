@@ -6,19 +6,19 @@
   hyprland = config.home-manager.window-manager.hyprland;
 in {
   options = {
-    home-manager.window-manager.swww.enable = lib.mkOption {
+    home-manager.window-manager.awww.enable = lib.mkOption {
       type = lib.types.bool;
       default = config.home-manager.window-manager.enable;
-      description = "Enable swww, a wallpaper daemon.";
+      description = "Enable awww, a wallpaper daemon.";
     };
   };
 
-  config = lib.mkIf config.home-manager.window-manager.swww.enable {
-    services.swww.enable = true;
+  config = lib.mkIf config.home-manager.window-manager.awww.enable {
+    services.awww.enable = true;
 
-    # Start swww daemon on startup
+    # Start awww daemon on startup
     wayland.windowManager.hyprland.settings."exec-once" = lib.mkIf hyprland.enable [
-      "swww-daemon &"
+      "awww-daemon &"
     ];
   };
 }
