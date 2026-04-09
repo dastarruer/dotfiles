@@ -1,9 +1,13 @@
-{...}: {
+{inputs, ...}: {
   flake.nixosModules.hardware = {
     config,
     pkgs,
     ...
   }: {
+    imports = [
+      inputs.sops-nix.nixosModules.sops
+    ];
+
     sops.secrets = {
       "wifi/home/ssid" = {};
       "wifi/home/psk" = {};

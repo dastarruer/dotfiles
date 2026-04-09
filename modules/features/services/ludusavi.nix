@@ -5,8 +5,8 @@
     ...
   }: {
     home-manager.users.dastarruer = let
-      saveDataPath = "${config.home.homeDirectory}/Documents/ludusavi-backup";
-      backup = config.services.restic;
+      saveDataPath = "${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/ludusavi-backup";
+      backup = config.custom.backup;
     in {
       services.ludusavi = {
         enable = true;
@@ -35,7 +35,7 @@
       };
 
       # Backup the ludusavi save dir
-      home-manager.services.backup.backupPaths = lib.mkIf backup.enable [
+      custom.backup.backupPaths = lib.mkIf backup.enable [
         saveDataPath
       ];
     };

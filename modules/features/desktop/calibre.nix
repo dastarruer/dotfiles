@@ -5,13 +5,13 @@
     ...
   }: {
     home-manager.users.dastarruer = let
-      backup = config.home-manager.services.backup;
+      backup = config.custom.backup;
     in {
       programs.calibre.enable = true;
 
       # Backup calibre library
-      home-manager.services.backup.backupPaths = lib.mkIf backup.enable [
-        "${config.home.homeDirectory}/Documents/calibre"
+      custom.backup.backupPaths = lib.mkIf backup.enable [
+        "${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/calibre"
       ];
 
       # Style guide here: https://github.com/chriskempson/base16/blob/main/styling.md

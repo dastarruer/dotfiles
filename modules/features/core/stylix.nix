@@ -1,10 +1,14 @@
-{...}: {
+{inputs, ...}: {
   flake.nixosModules.core = {
     config,
     lib,
     pkgs,
     ...
   }: {
+    imports = [
+      inputs.stylix.nixosModules.stylix
+    ];
+
     options = {
       home-manager.theme = {
         name = lib.mkOption {

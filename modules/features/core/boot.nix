@@ -8,9 +8,6 @@
     # Autologin me so i dont get login prompt on boot
     services.getty.autologinUser = "dastarruer";
 
-    # Get the latest kernel packages
-    kernelPackages = pkgs.linuxPackages_latest;
-
     # Acheive faster reboot times by making sure services can only take up to ten seconds to shut down
     systemd.settings.Manager = {
       # How long to wait before forcibly killing a service when stopping it
@@ -36,6 +33,9 @@
 
     # Bootloader.
     boot = {
+      # Get the latest kernel
+      kernelPackages = pkgs.linuxKernel.kernels.linux_latest;
+
       # Spalsh screen
       plymouth = {
         enable = true;
@@ -85,20 +85,20 @@
       # https://discourse.nixos.org/t/removing-persistent-boot-messages-for-a-silent-boot/14835
       consoleLogLevel = 0;
       initrd.verbose = false;
-    };
 
-    kernel.sysctl = {
-      # Only use swap when completely necessary
-      "vm.swappiness" = 20;
+      kernel.sysctl = {
+        # Only use swap when completely necessary
+        "vm.swappiness" = 20;
 
-      # For RAM intensive applications that may not use all the ram it allocates, promise more ram than is available (only up to a certain point. Otherwise, the process may be killed by earlyoom).
-      # https://medium.com/@charles.vissol/optimize-your-linux-69c70320d852
-      # "vm.overcommit-memory" = 2;
-      "vm.overcommit-memory" = 0;
+        # For RAM intensive applications that may not use all the ram it allocates, promise more ram than is available (only up to a certain point. Otherwise, the process may be killed by earlyoom).
+        # https://medium.com/@charles.vissol/optimize-your-linux-69c70320d852
+        # "vm.overcommit-memory" = 2;
+        "vm.overcommit-memory" = 0;
 
-      # write dirty pages to disk once 5% of ram holds dirty pages
-      # https://medium.com/@charles.vissol/optimize-your-linux-69c70320d852
-      "vm.dirty_background_ratio" = 5;
+        # write dirty pages to disk once 5% of ram holds dirty pages
+        # https://medium.com/@charles.vissol/optimize-your-linux-69c70320d852
+        "vm.dirty_background_ratio" = 5;
+      };
     };
   };
 }

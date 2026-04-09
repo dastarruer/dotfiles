@@ -6,8 +6,8 @@
     ...
   }: {
     home-manager.users.dastarruer = let
-      backup = config.services.restic;
-      saveDir = "${config.home.homeDirectory}/Pictures/gimp";
+      backup = config.custom.backup;
+      saveDir = "${config.home-manager.users.dastarruer.home.homeDirectory}/Pictures/gimp";
     in {
       home.packages = [
         pkgs.gimp
@@ -18,7 +18,7 @@
         "d ${saveDir} - - - - -"
       ];
 
-      home-manager.services.backup.backupPaths = lib.mkIf backup.enable [saveDir];
+      custom.backup.backupPaths = lib.mkIf backup.enable [saveDir];
     };
   };
 }

@@ -4,8 +4,8 @@
     lib,
     ...
   }: let
-    ageKeyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
-    backup = config.services.restic;
+    ageKeyFile = "${config.home-manager.users.dastarruer.home.homeDirectory}/.config/sops/age/keys.txt";
+    backup = config.custom.backup;
   in {
     sops = {
       # Path to secrets file
@@ -27,7 +27,7 @@
 
         secrets = {
           ssh = {
-            path = "${config.home.homeDirectory}/.ssh/id_ed25519";
+            path = "${config.home-manager.users.dastarruer.home.homeDirectory}/.ssh/id_ed25519";
           };
           github_recovery_codes = {};
         };
@@ -37,7 +37,7 @@
       home.file.".ssh/id_ed25519.pub".source = "${inputs.self.outPath}/secrets/id_ed25519.pub";
 
       # Backup age key file
-      home-manager.services.backup.backupPaths = lib.mkIf backup.enable [ageKeyFile];
+      custom.backup.backupPaths = lib.mkIf backup.enable [ageKeyFile];
     };
   };
 }

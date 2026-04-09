@@ -10,7 +10,7 @@
 
     home-manager.users.dastarruer = let
       hyprland = config.wayland.windowManager.hyprland;
-      backup = config.services.restic;
+      backup = config.custom.backup;
     in {
       # Use the flatpak, which does not ask for login every reboot
       services.flatpak = {
@@ -26,7 +26,7 @@
         ];
       };
 
-      home-manager.services.backup.backupPaths = lib.mkIf backup.enable ["${config.home.homeDirectory}/Documents/vault"];
+      custom.backup.backupPaths = lib.mkIf backup.enable ["${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/vault"];
 
       wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
         windowrule = [

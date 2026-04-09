@@ -12,7 +12,7 @@
 
       # Based off grimblast manual
       wayland.windowManager.hyprland.settings = let
-        screenshotDir = "${config.home.homeDirectory}/Pictures/screenshots";
+        screenshotDir = "${config.home-manager.users.dastarruer.home.homeDirectory}/Pictures/screenshots";
       in {
         # Let grim capture screen
         permission = [

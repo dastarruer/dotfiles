@@ -59,8 +59,8 @@
         roots = [
           {
             store = "lutris";
-            path = "${config.home.homeDirectory}/.config/lutris";
-            database = "${config.home.homeDirectory}/.local/share/lutris/pgs.db";
+            path = "${config.home-manager.users.dastarruer.home.homeDirectory}/.config/lutris";
+            database = "${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/lutris/pgs.db";
           }
         ];
       };

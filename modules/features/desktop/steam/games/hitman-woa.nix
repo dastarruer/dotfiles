@@ -6,8 +6,8 @@
     lib,
     ...
   }: let
-    backup = config.home-manager.users.dastarruer.services.restic;
-    peacockDir = "${config.home.homeDirectory}/.config/peacock-linux";
+    backup = config.custom.backup;
+    peacockDir = "${config.home-manager.users.dastarruer.home.homeDirectory}/.config/peacock-linux";
     port = 3000;
     peacockScript = pkgs.writeShellApplication {
       name = "peacock-setup";
@@ -118,15 +118,15 @@
       Install.WantedBy = ["multi-user.target"];
     };
 
-    home-manager.services.backup.backupPaths = lib.mkIf backup.enable [
+    custom.backup.backupPaths = lib.mkIf backup.enable [
       # Hitman mods
-      "${config.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/Simple Mod Framework"
-      "${config.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/README.md"
+      "${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/Simple Mod Framework"
+      "${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/README.md"
 
       # Freelancer variations stuff
-      "${config.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/Retail/mods/MissionCompanion.dll"
-      "${config.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/Retail/mods/FreelancerVariations.json"
-      "${config.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/Retail/mods/missioncompanion.ini"
+      "${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/Retail/mods/MissionCompanion.dll"
+      "${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/Retail/mods/FreelancerVariations.json"
+      "${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/Retail/mods/missioncompanion.ini"
 
       # Peacock save data
       "${peacockDir}/Peacock/userdata"

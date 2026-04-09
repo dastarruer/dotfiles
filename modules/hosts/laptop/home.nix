@@ -67,10 +67,10 @@
         services = {
           enable = true;
           backup.backupPaths = [
-            "${config.home.homeDirectory}/Music"
-            "${config.home.homeDirectory}/Documents/sheet-music"
-            "${config.home.homeDirectory}/Documents/school"
-            "${config.home.homeDirectory}/Pictures/trips"
+            "${config.home-manager.users.dastarruer.home.homeDirectory}/Music"
+            "${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/sheet-music"
+            "${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/school"
+            "${config.home-manager.users.dastarruer.home.homeDirectory}/Pictures/trips"
           ];
         };
 

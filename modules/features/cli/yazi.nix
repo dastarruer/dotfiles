@@ -30,7 +30,7 @@
               }
               {
                 on = "<C-f>";
-                run = "cd ${config.home.homeDirectory}/Documents/school/G10";
+                run = "cd ${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/school/G10";
                 desc = "Change to schoolwork dir";
               }
             ]

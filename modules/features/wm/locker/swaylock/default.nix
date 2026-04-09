@@ -14,7 +14,7 @@
         settings = {
           ignore-empty-password = true;
 
-          image = "${config.home.homeDirectory}/Pictures/wallpaper";
+          image = "${config.home-manager.users.dastarruer.home.homeDirectory}/Pictures/wallpaper";
           indicator-x-position = 100;
           indicator-y-position = 950;
         };
