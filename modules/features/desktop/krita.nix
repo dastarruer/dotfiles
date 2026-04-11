@@ -4,11 +4,13 @@
     pkgs,
     lib,
     ...
-  }: {
-    home-manager.users.dastarruer = let
-      backup = config.custom.backup;
-      saveDir = "${config.home-manager.users.dastarruer.home.homeDirectory}/Pictures/krita";
-    in {
+  }: let
+    backup = config.custom.backup;
+    saveDir = "${config.home-manager.users.dastarruer.home.homeDirectory}/Pictures/krita";
+  in {
+    custom.backup.backupPaths = lib.mkIf backup.enable [saveDir];
+
+    home-manager.users.dastarruer = {
       home.packages = [
         pkgs.krita
       ];
@@ -17,8 +19,6 @@
       systemd.user.tmpfiles.rules = [
         "d ${saveDir} - - - - -"
       ];
-
-      custom.backup.backupPaths = lib.mkIf backup.enable [saveDir];
     };
   };
 }

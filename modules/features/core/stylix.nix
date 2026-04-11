@@ -9,8 +9,8 @@
       inputs.stylix.nixosModules.stylix
     ];
 
-    options = {
-      home-manager.theme = {
+    options.custom = {
+      theme = {
         name = lib.mkOption {
           type = lib.types.str;
           default = "default-dark";
@@ -29,7 +29,7 @@
         enable = true;
 
         # Set the color theme
-        base16Scheme = "${pkgs.base16-schemes}/share/themes/${config.home-manager.theme.name}.yaml";
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/${config.custom.theme.name}.yaml";
 
         # Cursor settings
         cursor = {

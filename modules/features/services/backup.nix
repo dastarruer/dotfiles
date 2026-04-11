@@ -11,8 +11,6 @@
     usbPasswordPath = hmConfig.sops.secrets."restic_passwords/usb".path;
     drivePasswordPath = hmConfig.sops.secrets."restic_passwords/drive".path;
 
-    secretsExist = builtins.pathExists usbPasswordPath && builtins.pathExists drivePasswordPath;
-
     authRefreshScript = pkgs.writeShellApplication {
       name = "rclone-auth-refresh";
       runtimeInputs = with pkgs; [
@@ -39,7 +37,6 @@
         secretsReady = lib.mkOption {
           type = lib.types.bool;
           default = false;
-          readOnly = true;
         };
         backupPaths = lib.mkOption {
           type = lib.types.listOf lib.types.str;
@@ -50,70 +47,74 @@
       };
     };
 
-    config.home-manager.users.dastarruer = lib.mkIf config.custom.backup.enable {
-      sops.secrets = {
-        "restic_passwords/usb" = {};
-        "restic_passwords/drive" = {};
-      };
+    config = lib.mkIf config.custom.backup.enable {
+      custom.backup.secretsReady =
+        builtins.pathExists usbPasswordPath
+        && builtins.pathExists drivePasswordPath;
 
-      custom.backup.secretsReady = secretsExist;
-
-      programs.rclone = {
-        enable = true;
-        remotes.gdrive.config = {
-          type = "drive";
-          scope = "drive";
-        };
-      };
-
-      services.restic.enable = true;
-      services.restic.backups = lib.mkIf config.custom.backup.secretsReady {
-        usb = {
-          repository = "${config.home-manager.users.dastarruer.home.homeDirectory}/usb/backups";
-          passwordFile = usbPasswordPath;
-          paths = config.custom.backup.backupPaths;
-          initialize = true;
-          pruneOpts = ["--keep-last 3"];
+      home-manager.users.dastarruer = {
+        sops.secrets = {
+          "restic_passwords/usb" = {};
+          "restic_passwords/drive" = {};
         };
 
-        drive = {
-          repository = "rclone:gdrive:backups";
-          passwordFile = drivePasswordPath;
-          paths = config.custom.backup.backupPaths;
-          initialize = true;
-          pruneOpts = ["--keep-last 3"];
-          backupPrepareCommand = "${lib.getExe authRefreshScript}";
-          extraOptions = ["rclone.program=${pkgs.rclone}/bin/rclone"];
-          rcloneOptions.config = "${config.home-manager.users.dastarruer.home.homeDirectory}/.config/rclone/rclone.conf";
-          timerConfig = {
-            OnCalendar = "daily";
-            RandomizedDelaySec = "1h";
-            Persistent = true;
+        programs.rclone = {
+          enable = true;
+          remotes.gdrive.config = {
+            type = "drive";
+            scope = "drive";
           };
         };
-      };
 
-      home.packages = [
-        (pkgs.writeShellApplication {
-          name = "backup";
-          runtimeInputs = with pkgs; [
-            systemd
-            mount
-            eject
-            coreutils
-          ];
-          text = ''
-            USB_DEVICE="/dev/sda"
-            MOUNT_POINT="${config.home-manager.users.dastarruer.home.homeDirectory}/usb"
-            mkdir -p "$MOUNT_POINT"
-            sudo mount "$USB_DEVICE" "$MOUNT_POINT"
-            systemctl --user start restic-backups-usb.service
-            systemctl --user start restic-backups-drive.service
-            eject "$USB_DEVICE"
-            rm -rf "$MOUNT_POINT"
-          '';
-        })
-      ];
+        services.restic.enable = true;
+        services.restic.backups = lib.mkIf config.custom.backup.secretsReady {
+          usb = {
+            repository = "${hmConfig.home.homeDirectory}/usb/backups";
+            passwordFile = usbPasswordPath;
+            paths = config.custom.backup.backupPaths;
+            initialize = true;
+            pruneOpts = ["--keep-last 3"];
+          };
+
+          drive = {
+            repository = "rclone:gdrive:backups";
+            passwordFile = drivePasswordPath;
+            paths = config.custom.backup.backupPaths;
+            initialize = true;
+            pruneOpts = ["--keep-last 3"];
+            backupPrepareCommand = "${lib.getExe authRefreshScript}";
+            extraOptions = ["rclone.program=${pkgs.rclone}/bin/rclone"];
+            rcloneOptions.config = "${hmConfig.home.homeDirectory}/.config/rclone/rclone.conf";
+            timerConfig = {
+              OnCalendar = "daily";
+              RandomizedDelaySec = "1h";
+              Persistent = true;
+            };
+          };
+        };
+
+        home.packages = [
+          (pkgs.writeShellApplication {
+            name = "backup";
+            runtimeInputs = with pkgs; [
+              systemd
+              mount
+              eject
+              coreutils
+            ];
+            text = ''
+              USB_DEVICE="/dev/sda"
+              MOUNT_POINT="${hmConfig.home.homeDirectory}/usb"
+              mkdir -p "$MOUNT_POINT"
+              sudo mount "$USB_DEVICE" "$MOUNT_POINT"
+              systemctl --user start restic-backups-usb.service
+              systemctl --user start restic-backups-drive.service
+              eject "$USB_DEVICE"
+              rm -rf "$MOUNT_POINT"
+            '';
+          })
+        ];
+      };
     };
   };
 }

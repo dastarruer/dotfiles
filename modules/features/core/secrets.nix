@@ -16,6 +16,9 @@
       age.keyFile = "/home/dastarruer/.config/sops/age/keys.txt";
     };
 
+    # Backup age key file
+    custom.backup.backupPaths = lib.mkIf backup.enable [ageKeyFile];
+
     home-manager.users.dastarruer = {
       sops = {
         # Path to secrets file
@@ -35,9 +38,6 @@
 
       # Symlink ssh key
       home.file.".ssh/id_ed25519.pub".source = "${inputs.self.outPath}/secrets/id_ed25519.pub";
-
-      # Backup age key file
-      custom.backup.backupPaths = lib.mkIf backup.enable [ageKeyFile];
     };
   };
 }

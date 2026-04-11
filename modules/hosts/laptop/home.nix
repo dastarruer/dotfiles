@@ -36,46 +36,6 @@
 
       programs.home-manager.enable = true;
       services.polkit-gnome.enable = true;
-
-      home-manager = {
-        theme = {
-          name = "everforest-dark-hard";
-          accent = config.lib.stylix.colors.base0B;
-        };
-
-        desktop = {
-          enable = true;
-          terminal = "ghostty";
-          foliate.enable = false;
-          firefox.enable = true;
-          gaming = {
-            lutris.enable = false;
-            enable = true;
-          };
-
-          pwa = {
-            enable = false;
-            whatsapp.enable = true;
-          };
-        };
-
-        cli = {
-          enable = true;
-          distrobox.enable = false;
-        };
-
-        services = {
-          enable = true;
-          backup.backupPaths = [
-            "${config.home-manager.users.dastarruer.home.homeDirectory}/Music"
-            "${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/sheet-music"
-            "${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/school"
-            "${config.home-manager.users.dastarruer.home.homeDirectory}/Pictures/trips"
-          ];
-        };
-
-        window-manager.sherlock.enable = false;
-      };
     };
   };
 }

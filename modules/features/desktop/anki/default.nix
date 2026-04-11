@@ -3,11 +3,13 @@
     config,
     lib,
     ...
-  }: {
-    home-manager.users.dastarruer = let
-      backup = config.custom.backup;
-      hyprland = config.wayland.windowManager.hyprland;
-    in {
+  }: let
+    backup = config.custom.backup;
+    hyprland = config.wayland.windowManager.hyprland;
+  in {
+    custom.backup.backupPaths = lib.mkIf backup.enable ["${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Anki2/User\ 1/backups"];
+
+    home-manager.users.dastarruer = {
       sops.secrets = {
         anki_synckey = {};
         email = {}; # This is also in git.nix, but no errors will show up if this is put here as well
@@ -37,8 +39,6 @@
           usernameFile = config.sops.secrets.email.path;
         };
       };
-
-      custom.backup.backupPaths = lib.mkIf backup.enable ["${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Anki2/User\ 1/backups"];
 
       wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
         windowrule = [

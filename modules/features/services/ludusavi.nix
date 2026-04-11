@@ -3,11 +3,16 @@
     config,
     lib,
     ...
-  }: {
-    home-manager.users.dastarruer = let
-      saveDataPath = "${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/ludusavi-backup";
-      backup = config.custom.backup;
-    in {
+  }: let
+    saveDataPath = "${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/ludusavi-backup";
+    backup = config.custom.backup;
+  in {
+    # Backup the ludusavi save dir
+    custom.backup.backupPaths = lib.mkIf backup.enable [
+      saveDataPath
+    ];
+
+    home-manager.users.dastarruer = {
       services.ludusavi = {
         enable = true;
 
@@ -33,11 +38,6 @@
         Persistent = true;
         RandomizedDelaySec = "1h";
       };
-
-      # Backup the ludusavi save dir
-      custom.backup.backupPaths = lib.mkIf backup.enable [
-        saveDataPath
-      ];
     };
   };
 }

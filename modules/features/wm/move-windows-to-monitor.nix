@@ -1,19 +1,17 @@
 {...}: {
   flake.nixosModules.wm = {
     config,
+    pkgs,
     lib,
     ...
   }: let
     hyprland = config.wayland.windowManager.hyprland;
   in {
-    nixpkgs.overlays = lib.mkIf hyprland.enable [
-      (final: prev: {
-        move-windows-to-monitor = prev.writeShellApplication {
+    home-manager.users.dastarruer = lib.mkIf hyprland.enable {
+      home.packages = [
+        (pkgs.writeShellApplication {
           name = "move-windows-to-monitor";
-          runtimeInputs = [
-            prev.hyprland
-          ];
-
+          runtimeInputs = [pkgs.hyprland];
           text = ''
             hyprctl dispatch moveworkspacetomonitor "1 1"
             hyprctl dispatch moveworkspacetomonitor "2 1"
@@ -26,14 +24,12 @@
             hyprctl dispatch moveworkspacetomonitor "9 1"
             hyprctl dispatch moveworkspacetomonitor "10 1"
             hyprctl dispatch moveworkspacetomonitor "11 0"
-
-            # Change focused workspace on monitor 0 to 11
             hyprctl dispatch focusmonitor 0
             hyprctl dispatch focusworkspaceoncurrentmonitor 11
             hyprctl dispatch focusmonitor 1
           '';
-        };
-      })
-    ];
+        })
+      ];
+    };
   };
 }

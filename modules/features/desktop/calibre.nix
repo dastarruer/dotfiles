@@ -3,16 +3,16 @@
     config,
     lib,
     ...
-  }: {
-    home-manager.users.dastarruer = let
-      backup = config.custom.backup;
-    in {
-      programs.calibre.enable = true;
+  }: let
+    backup = config.custom.backup;
+  in {
+    # Backup calibre library
+    custom.backup.backupPaths = lib.mkIf backup.enable [
+      "${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/calibre"
+    ];
 
-      # Backup calibre library
-      custom.backup.backupPaths = lib.mkIf backup.enable [
-        "${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/calibre"
-      ];
+    home-manager.users.dastarruer = {
+      programs.calibre.enable = true;
 
       # Style guide here: https://github.com/chriskempson/base16/blob/main/styling.md
       # Has to be applied manually with: Preferences -> Look and Feel -> Adjust colors -> Import

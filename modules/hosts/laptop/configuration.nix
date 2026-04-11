@@ -1,5 +1,5 @@
 {self, ...}: {
-  flake.nixosModules.laptopConfiguration = {...}: {
+  flake.nixosModules.laptopConfiguration = {config, ...}: {
     imports = with self.nixosModules; [
       laptopHardware
       laptopDisk
@@ -7,6 +7,7 @@
 
       core
       shell
+      wm
 
       hardware
       hardware_logind
@@ -45,6 +46,19 @@
       services_docker
       services_ssh
     ];
+
+    custom = {
+      theme = {
+        name = "everforest-dark-hard";
+        accent = config.lib.stylix.colors.base0B;
+      };
+      backup.backupPaths = [
+        "${config.home-manager.users.dastarruer.home.homeDirectory}/Music"
+        "${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/sheet-music"
+        "${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/school"
+        "${config.home-manager.users.dastarruer.home.homeDirectory}/Pictures/trips"
+      ];
+    };
 
     # Disable touchpad as mouse for dualshock connected via USB and Bluetooth (https://wiki.archlinux.org/title/Gamepad#Disable_touchpad_acting_as_mouse)
     services.udev.extraRules = ''

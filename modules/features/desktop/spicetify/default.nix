@@ -2,17 +2,21 @@
 # https://gerg-l.github.io/spicetify-nix/usage.html
 {
   inputs,
-  config,
   pkgs,
   lib,
   ...
 }: {
-  flake.nixosModules.desktop_spicetify = {...}: let
-    hyprland = config.wayland.windowManager.hyprland;
-    dunst = config.services.dunst;
+  flake.nixosModules.desktop_spicetify = {config, ...}: let
+    hmConfig = config.home-manager.users.dastarruer;
+
+    hyprland = hmConfig.wayland.windowManager.hyprland;
+    dunst = hmConfig.services.dunst;
 
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
   in {
+    # Silence alerts for spotify notifications
+    custom.wm.dunst.excludeTitles = lib.mkIf (config ? custom.wm && dunst.enable) ["Spotify"];
+
     home-manager.users.dastarruer = {
       imports = [
         inputs.spicetify-nix.homeManagerModules.default
@@ -36,8 +40,6 @@
 
         wayland = true;
       };
-
-      home-manager.window-manager.dunst.excludeTitles = lib.mkIf dunst.enable ["Spotify"];
 
       wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
         # looks aesthetic innit
