@@ -1,35 +1,41 @@
 {...}: {
   flake.nixosModules.wm = {
     config,
-    pkgs,
     lib,
     ...
   }: let
-    hyprland = config.wayland.windowManager.hyprland;
+    # Check the nixos level option instead of the hm one to preven infinite recursion
+    hyprland = config.programs.hyprland;
   in {
-    home-manager.users.dastarruer = lib.mkIf hyprland.enable {
-      home.packages = [
-        (pkgs.writeShellApplication {
+    nixpkgs.overlays = lib.mkIf hyprland.enable [
+      (final: prev: {
+        move-windows-to-monitor = prev.writeShellApplication {
           name = "move-windows-to-monitor";
-          runtimeInputs = [pkgs.hyprland];
+          runtimeInputs =
+            []
+            ++ lib.optionals hyprland.enable [
+              prev.hyprland
+            ];
           text = ''
-            hyprctl dispatch moveworkspacetomonitor "1 1"
-            hyprctl dispatch moveworkspacetomonitor "2 1"
-            hyprctl dispatch moveworkspacetomonitor "3 1"
-            hyprctl dispatch moveworkspacetomonitor "4 1"
-            hyprctl dispatch moveworkspacetomonitor "5 1"
-            hyprctl dispatch moveworkspacetomonitor "6 1"
-            hyprctl dispatch moveworkspacetomonitor "7 1"
-            hyprctl dispatch moveworkspacetomonitor "8 1"
-            hyprctl dispatch moveworkspacetomonitor "9 1"
-            hyprctl dispatch moveworkspacetomonitor "10 1"
-            hyprctl dispatch moveworkspacetomonitor "11 0"
-            hyprctl dispatch focusmonitor 0
-            hyprctl dispatch focusworkspaceoncurrentmonitor 11
-            hyprctl dispatch focusmonitor 1
+            ${lib.optionalString hyprland.enable ''
+              hyprctl dispatch moveworkspacetomonitor "1 1"
+              hyprctl dispatch moveworkspacetomonitor "2 1"
+              hyprctl dispatch moveworkspacetomonitor "3 1"
+              hyprctl dispatch moveworkspacetomonitor "4 1"
+              hyprctl dispatch moveworkspacetomonitor "5 1"
+              hyprctl dispatch moveworkspacetomonitor "6 1"
+              hyprctl dispatch moveworkspacetomonitor "7 1"
+              hyprctl dispatch moveworkspacetomonitor "8 1"
+              hyprctl dispatch moveworkspacetomonitor "9 1"
+              hyprctl dispatch moveworkspacetomonitor "10 1"
+              hyprctl dispatch moveworkspacetomonitor "11 0"
+              hyprctl dispatch focusmonitor 0
+              hyprctl dispatch focusworkspaceoncurrentmonitor 11
+              hyprctl dispatch focusmonitor 1
+            ''}
           '';
-        })
-      ];
-    };
+        };
+      })
+    ];
   };
 }

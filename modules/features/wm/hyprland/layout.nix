@@ -5,26 +5,26 @@
     ...
   }: {
     options.custom = {
-      wm.scrollable-tiling.enable = lib.mkOption {
+      wm.scrolling.enable = lib.mkOption {
         type = lib.types.bool;
-        default = config.custom.wm.hyprland.enable;
+        default = true;
         description = "Enable scrollable tiling in hyprland, similar to niri functionality.";
       };
     };
 
     config.home-manager.users.dastarruer = let
-      tiling = config.custom.wm.hyprland.scrollable-tiling;
+      scrolling = config.custom.wm.scrolling;
     in {
       wayland.windowManager.hyprland.settings = {
         general.layout =
-          if tiling.enable
+          if scrolling.enable
           then "scrolling"
           else "dwindle";
 
         # Always split windows to the right
-        dwindle.force_split = lib.mkIf (!tiling.enable) "2";
+        dwindle.force_split = lib.mkIf (!scrolling.enable) "2";
 
-        scrolling = lib.mkIf tiling.enable {
+        scrolling = lib.mkIf scrolling.enable {
           fullscreen_on_one_column = true;
           focus_fit_method = 1;
         };

@@ -1,9 +1,9 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  flake.nixosModules.desktop_firefox = {config, ...}: {
+{inputs, ...}: {
+  flake.nixosModules.desktop_firefox = {
+    config,
+    pkgs,
+    ...
+  }: {
     home-manager.users.dastarruer = {
       programs.firefox.profiles."${config.custom.desktop.firefox.profile}".extensions = {
         packages = with inputs.firefox-addons.packages.${pkgs.stdenv.system}; [

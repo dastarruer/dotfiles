@@ -1,5 +1,9 @@
 {...}: {
-  flake.nixosModules.desktop_anki = {pkgs, ...}: {
+  flake.nixosModules.desktop_anki = {
+    config,
+    pkgs,
+    ...
+  }: {
     home-manager.users.dastarruer = {
       programs.anki.addons = with pkgs.ankiAddons; [
         (passfail2.withConfig {

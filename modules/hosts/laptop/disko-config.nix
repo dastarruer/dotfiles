@@ -1,18 +1,10 @@
 # https://github.com/nix-community/disko/blob/master/example/btrfs-subvolumes.nix
-{
-  self,
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
     inputs.disko.flakeModule
   ];
 
-  flake.nixosModules.laptopDisk = {
-    config,
-    pkgs,
-    ...
-  }: {
+  flake.nixosModules.laptopDisk = {...}: {
     imports = [
       inputs.disko.nixosModules.disko
     ];

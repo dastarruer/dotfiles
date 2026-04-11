@@ -1,11 +1,10 @@
 # Note that custom themes can come from here: https://github.com/Gerg-L/spicetify-nix/blob/master/pkgs/themes.nix
-{
-  inputs,
-  config,
-  pkgs,
-  ...
-}: {
-  flake.nixosModules.desktop_spicetify = {...}: let
+{inputs, ...}: {
+  flake.nixosModules.desktop_spicetify = {
+    config,
+    pkgs,
+    ...
+  }: let
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
   in {
     home-manager.users.dastarruer = {

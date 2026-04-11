@@ -1,13 +1,12 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{inputs, ...}: {
   flake.nixosModules.desktop_firefox = {
     config,
+    pkgs,
     lib,
     ...
-  }: {
+  }: let
+    hmConfig = config.home-manager.users.dastarruer;
+  in {
     home-manager.users.dastarruer = {
       sops.secrets.sponsorblock_userid = {};
 
@@ -20,7 +19,7 @@
           force = true;
 
           settings = let
-            useridPath = config.sops.secrets.sponsorblock_userid.path;
+            useridPath = hmConfig.sops.secrets.sponsorblock_userid.path;
           in {
             sponsorTimesContributed = 32;
             chapterCategoryAdded = true;

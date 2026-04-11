@@ -3,7 +3,9 @@
     config,
     pkgs,
     ...
-  }: {
+  }: let
+    hmConfig = config.home-manager.users.dastarruer;
+  in {
     home-manager.users.dastarruer = {
       # Create the screenshots dir, deleting files older than 30 days
       systemd.user.tmpfiles.rules = [
@@ -20,7 +22,7 @@
         ];
 
         env = [
-          "SLURP_ARGS, -d -b ${config.lib.stylix.colors.base00}80 -B ${config.lib.stylix.colors.base05}4D -c ${config.custom.theme.accent} -w ${toString config.wayland.windowManager.hyprland.settings.general.border_size}"
+          "SLURP_ARGS, -d -b ${config.lib.stylix.colors.base00}80 -B ${config.lib.stylix.colors.base05}4D -c ${config.custom.theme.accent} -w ${toString hmConfig.wayland.windowManager.hyprland.settings.general.border_size}"
         ];
 
         bind = [

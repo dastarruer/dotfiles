@@ -1,9 +1,9 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  flake.nixosModules.desktop_vscode = {config, ...}: {
+{inputs, ...}: {
+  flake.nixosModules.desktop_vscode = {
+    config,
+    pkgs,
+    ...
+  }: {
     home-manager.users.dastarruer = let
       profile = config.custom.desktop.vscode.profile;
       theme = config.custom.theme.name;

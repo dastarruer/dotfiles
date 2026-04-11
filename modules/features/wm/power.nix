@@ -5,9 +5,11 @@
     lib,
     ...
   }: let
-    hyprland = config.wayland.windowManager.hyprland;
-    locker = config.home-manager.window-manager.screen-locker;
-    rofi = config.home-manager.window-manager.rofi;
+    hmConfig = config.home-manager.users.dastarruer;
+
+    hyprland = hmConfig.wayland.windowManager.hyprland;
+    locker = config.custom.wm.locker;
+    rofi = hmConfig.programs.rofi;
 
     lockCmd =
       if locker == "hyprlock"

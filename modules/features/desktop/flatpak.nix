@@ -1,5 +1,5 @@
 # Does not need to be manually imported; will be imported as is necessary
-{...}: {
+{inputs, ...}: {
   flake.nixosModules.flatpak = {
     config,
     pkgs,
@@ -15,8 +15,17 @@
     fonts.fontDir.enable = true;
 
     home-manager.users.dastarruer = let
-      hyprland = config.wayland.windowManager.hyprland;
+      hmConfig = config.home-manager.users.dastarruer;
+      hyprland = hmConfig.wayland.windowManager.hyprland;
     in {
+      imports = [
+        inputs.flatpaks.homeModules.default
+      ];
+
+      # Otherwise, an error will be thrown
+      # The specific desktop portal used is configured by whatever wm or de is enabled
+      xdg.portal.enable = true;
+
       # This is needed for launching flatpaks with rofi
       home.packages = with pkgs; [
         flatpak

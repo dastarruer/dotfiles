@@ -1,48 +1,47 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{inputs, ...}: {
   flake.nixosModules.desktop_firefox = {
     config,
+    pkgs,
     lib,
     ...
-  }: {
-    home-manager.users.dastarruer = let
-      profile = config.custom.desktop.firefox.profile;
-      containers = config.programs.firefox.profiles."${profile}".containers;
+  }: let
+    hmConfig = config.home-manager.users.dastarruer;
 
-      # Helper to get container IDs from profile config
-      getContainerId = name: "firefox-container-${toString config.programs.firefox.profiles."${profile}".containers."${name}".id}";
+    profile = config.custom.desktop.firefox.profile;
+    containers = hmConfig.programs.firefox.profiles."${profile}".containers;
 
-      # thank you chatgpt
-      mkGroups = groupList:
-        lib.imap1 (index: group: {
-          id = index;
-          title = group.name;
-          newTabContainer = getContainerId group.container;
+    # Helper to get container IDs from profile config
+    getContainerId = name: "firefox-container-${toString containers."${name}".id}";
 
-          # Required settings, otherwise extension will crash
-          isArchive = false;
-          discardTabsAfterHide = false;
-          discardExcludeAudioTabs = false;
-          prependTitleToWindow = false;
-          exportToBookmarksWhenAutoBackup = false;
-          leaveBookmarksOfClosedTabs = false;
-          ifDifferentContainerReOpen = false;
-          excludeContainersForReOpen = [];
-          isSticky = false;
-          catchTabContainers = [];
-          catchTabRules = "";
-          moveToGroupIfNoneCatchTabRules = null;
-          muteTabsWhenGroupCloseAndRestoreWhenOpen = false;
-          showTabAfterMovingItIntoThisGroup = false;
-          showOnlyActiveTabAfterMovingItIntoThisGroup = false;
-          showNotificationAfterMovingTabIntoThisGroup = false;
-          bookmarkId = null;
-        })
-        groupList;
-    in {
+    # thank you chatgpt
+    mkGroups = groupList:
+      lib.imap1 (index: group: {
+        id = index;
+        title = group.name;
+        newTabContainer = getContainerId group.container;
+
+        # Required settings, otherwise extension will crash
+        isArchive = false;
+        discardTabsAfterHide = false;
+        discardExcludeAudioTabs = false;
+        prependTitleToWindow = false;
+        exportToBookmarksWhenAutoBackup = false;
+        leaveBookmarksOfClosedTabs = false;
+        ifDifferentContainerReOpen = false;
+        excludeContainersForReOpen = [];
+        isSticky = false;
+        catchTabContainers = [];
+        catchTabRules = "";
+        moveToGroupIfNoneCatchTabRules = null;
+        muteTabsWhenGroupCloseAndRestoreWhenOpen = false;
+        showTabAfterMovingItIntoThisGroup = false;
+        showOnlyActiveTabAfterMovingItIntoThisGroup = false;
+        showNotificationAfterMovingTabIntoThisGroup = false;
+        bookmarkId = null;
+      })
+      groupList;
+  in {
+    home-manager.users.dastarruer = {
       programs.firefox.profiles."${profile}".extensions = {
         packages = with inputs.firefox-addons.packages.${pkgs.stdenv.system}; [
           simple-tab-groups

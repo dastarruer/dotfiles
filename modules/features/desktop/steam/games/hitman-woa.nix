@@ -105,19 +105,6 @@
       };
     };
 
-    systemd.user.tmpfiles.rules = [
-      "d ${peacockDir} - - - - -"
-    ];
-
-    systemd.user.services.peacock = {
-      Unit.Description = "Peacock";
-      Service = {
-        WorkingDirectory = peacockDir;
-        ExecStart = "${lib.getExe peacockScript}";
-      };
-      Install.WantedBy = ["multi-user.target"];
-    };
-
     custom.backup.backupPaths = lib.mkIf backup.enable [
       # Hitman mods
       "${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/Simple Mod Framework"
@@ -131,5 +118,20 @@
       # Peacock save data
       "${peacockDir}/Peacock/userdata"
     ];
+
+    home-manager.users.dastarruer = {
+      systemd.user.tmpfiles.rules = [
+        "d ${peacockDir} - - - - -"
+      ];
+
+      systemd.user.services.peacock = {
+        Unit.Description = "Peacock";
+        Service = {
+          WorkingDirectory = peacockDir;
+          ExecStart = "${lib.getExe peacockScript}";
+        };
+        Install.WantedBy = ["multi-user.target"];
+      };
+    };
   };
 }

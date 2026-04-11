@@ -1,9 +1,9 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  flake.nixosModules.desktop_firefox = {config, ...}: {
+{inputs, ...}: {
+  flake.nixosModules.desktop_firefox = {
+    config,
+    pkgs,
+    ...
+  }: {
     home-manager.users.dastarruer = let
       # While the default is Dynamic theme generation (looks the best), it slows down some sites too much. This function instead sets a site-specific preset that uses the SVG filter engine, which is much faster but less accurate.
       mkFilterPlusPreset = urls: {

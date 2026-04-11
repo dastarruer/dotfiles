@@ -5,7 +5,7 @@
     ...
   }: {
     home-manager.users.dastarruer = let
-      tiling = config.custom.wm.scrollable-tiling;
+      scrolling = config.custom.wm.scrolling;
     in {
       wayland.windowManager.hyprland.settings = {
         bind =
@@ -17,7 +17,7 @@
             "SUPER+SHIFT, A, pin"
           ]
           # Scrollable tiling binds
-          ++ lib.optionals tiling.enable [
+          ++ lib.optionals scrolling.enable [
             "SUPER, H, layoutmsg, focus l"
             "SUPER, L, layoutmsg, focus r"
             "SUPER, J, layoutmsg, focus u"
@@ -28,7 +28,7 @@
             "SUPER+CONTROL, L, layoutmsg, colresize +0.1"
           ]
           # Dwindle tiling binds
-          ++ lib.optionals (!tiling.enable) [
+          ++ lib.optionals (!scrolling.enable) [
             "SUPER, H, movefocus, l"
             "SUPER, L, movefocus, r"
             "SUPER, J, movefocus, u"

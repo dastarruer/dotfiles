@@ -31,10 +31,11 @@
     # And yeah idk what that means...
     services.dbus.implementation = "broker";
 
+    stylix.targets.plymouth.enable = false;
     # Bootloader.
     boot = {
       # Get the latest kernel
-      kernelPackages = pkgs.linuxKernel.kernels.linux_latest;
+      kernelPackages = pkgs.linuxPackages_latest;
 
       # Spalsh screen
       plymouth = {

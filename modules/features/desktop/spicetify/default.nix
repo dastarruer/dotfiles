@@ -1,12 +1,12 @@
 # HELLO FUTURE ME basically spicetify on nix will not work if you also install spotify in packages.nix so yeah
 # https://gerg-l.github.io/spicetify-nix/usage.html
-{
-  inputs,
-  pkgs,
-  lib,
-  ...
-}: {
-  flake.nixosModules.desktop_spicetify = {config, ...}: let
+{inputs, ...}: {
+  flake.nixosModules.desktop_spicetify = {
+    config,
+    pkgs,
+    lib,
+    ...
+  }: let
     hmConfig = config.home-manager.users.dastarruer;
 
     hyprland = hmConfig.wayland.windowManager.hyprland;

@@ -30,9 +30,8 @@
         enable = true;
 
         iconTheme = {
-          # Dunst will share the same icon theme as gtk
-          package = config.gtk.iconTheme.package;
-          name = "${config.gtk.iconTheme.name}";
+          package = config.stylix.icons.package;
+          name = config.stylix.icons.dark;
           size = "96x96";
         };
 

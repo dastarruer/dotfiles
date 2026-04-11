@@ -4,7 +4,10 @@
     pkgs,
     lib,
     ...
-  }: {
+  }: let
+    hmConfig = config.home-manager.users.dastarruer;
+    ludusavi = hmConfig.services.ludusavi;
+  in {
     imports = [
       inputs.steam-config-nix.nixosModules.default
     ];
@@ -98,9 +101,7 @@
       defaultCompatTool = "GE-Proton";
     };
 
-    home-manager.users.dastarruer = let
-      ludusavi = config.services.ludusavi;
-    in {
+    home-manager.users.dastarruer = {
       services.ludusavi.settings.roots = lib.mkIf ludusavi.enable [
         {
           path = "~/.local/share/Steam";

@@ -5,7 +5,8 @@
     lib,
     ...
   }: let
-    hyprland = config.wayland.windowManager.hyprland;
+    hmConfig = config.home-manager.users.dastarruer;
+    hyprland = hmConfig.wayland.windowManager.hyprland;
   in {
     options.custom = {
       desktop.firefox = {
@@ -29,6 +30,9 @@
       programs.firefox = {
         enable = true;
         package = pkgs.firefox-bin;
+
+        # Necessary to configure extension settings through hm
+        profiles."${config.custom.desktop.firefox.profile}".extensions.force = true;
       };
 
       # Windowrules for picture-in-picture

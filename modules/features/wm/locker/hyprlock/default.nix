@@ -6,7 +6,8 @@
     ...
   }: {
     home-manager.users.dastarruer = let
-      hypridle = config.home-manager.window-manager.hypridle;
+      hmConfig = config.home-manager.users.dastarruer;
+      hypridle = hmConfig.services.hypridle;
       locker = config.custom.wm.locker;
     in {
       stylix.targets.hyprlock.enable = false;

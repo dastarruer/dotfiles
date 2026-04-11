@@ -5,10 +5,12 @@
     lib,
     ...
   }: let
-    awww = config.services.awww;
+    hmConfig = config.home-manager.users.dastarruer;
+
+    awww = hmConfig.services.awww;
     theme = config.custom.theme.name;
     wallpaperDir = "${inputs.self.outPath}/config/wallpapers/${theme}";
-    dunst = config.services.dunst;
+    dunst = hmConfig.services.dunst;
   in {
     nixpkgs.overlays = [
       (final: prev: {

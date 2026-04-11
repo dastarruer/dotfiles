@@ -3,7 +3,10 @@
     config,
     lib,
     ...
-  }: {
+  }: let
+    hmConfig = config.home-manager.users.dastarruer;
+    fastfetch = hmConfig.programs.fastfetch;
+  in {
     home-manager.users.dastarruer = {
       programs.fish = {
         enable = true;
@@ -29,7 +32,7 @@
           set -g fish_greeting ""
 
           # Run fastfetch on startup
-          ${lib.optionalString (config.programs.fastfetch.enable) "fastfetch"}
+          ${lib.optionalString (fastfetch.enable) "fastfetch"}
         '';
       };
     };

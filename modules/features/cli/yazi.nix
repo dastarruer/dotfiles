@@ -7,7 +7,8 @@
   }: {
     home-manager.users.dastarruer = let
       fish = config.programs.fish;
-      hyprland = config.wayland.windowManager.hyprland;
+      hmConfig = config.home-manager.users.dastarruer;
+      hyprland = hmConfig.wayland.windowManager.hyprland;
     in {
       programs.yazi = {
         enable = true;

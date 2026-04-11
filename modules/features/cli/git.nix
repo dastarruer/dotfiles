@@ -3,7 +3,12 @@
     config,
     lib,
     ...
-  }: {
+  }: let
+    hmConfig = config.home-manager.users.dastarruer;
+
+    usernamePath = hmConfig.sops.secrets.name.path;
+    emailPath = hmConfig.sops.secrets.email.path;
+  in {
     home-manager.users.dastarruer = {
       sops.secrets = {
         name = {};
@@ -17,8 +22,6 @@
       };
 
       programs.git = let
-        usernamePath = config.sops.secrets.name.path;
-        emailPath = config.sops.secrets.email.path;
       in {
         enable = true;
         lfs.enable = true;

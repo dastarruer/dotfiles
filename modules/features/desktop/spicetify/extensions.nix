@@ -1,9 +1,5 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  flake.nixosModules.desktop_spicetify = {...}: let
+{inputs, ...}: {
+  flake.nixosModules.desktop_spicetify = {pkgs, ...}: let
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
   in {
     home-manager.users.dastarruer = {

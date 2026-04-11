@@ -5,7 +5,12 @@
     ...
   }: let
     backup = config.custom.backup;
-    hyprland = config.wayland.windowManager.hyprland;
+
+    hmConfig = config.home-manager.users.dastarruer;
+    hyprland = hmConfig.wayland.windowManager.hyprland;
+
+    keyPath = hmConfig.sops.secrets.anki_synckey.path;
+    emailPath = hmConfig.sops.secrets.email.path;
   in {
     custom.backup.backupPaths = lib.mkIf backup.enable ["${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Anki2/User\ 1/backups"];
 
@@ -15,10 +20,7 @@
         email = {}; # This is also in git.nix, but no errors will show up if this is put here as well
       };
 
-      programs.anki = let
-        keyPath = config.sops.secrets.anki_synckey.path;
-        emailPath = config.sops.secrets.email.path;
-      in {
+      programs.anki = {
         enable = true;
 
         theme = "dark";
@@ -35,8 +37,8 @@
 
           autoSyncMediaMinutes = 10;
 
-          keyFile = config.sops.secrets.anki_synckey.path;
-          usernameFile = config.sops.secrets.email.path;
+          keyFile = keyPath;
+          usernameFile = emailPath;
         };
       };
 

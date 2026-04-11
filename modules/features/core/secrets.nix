@@ -7,6 +7,15 @@
     ageKeyFile = "${config.home-manager.users.dastarruer.home.homeDirectory}/.config/sops/age/keys.txt";
     backup = config.custom.backup;
   in {
+    imports = [
+      inputs.sops-nix.nixosModules.sops
+    ];
+
+    # Must be imported like this if home manager is used as a nixos module
+    home-manager.sharedModules = [
+      inputs.sops-nix.homeManagerModules.sops
+    ];
+
     sops = {
       # Path to secrets file
       defaultSopsFile = "${inputs.self.outPath}/secrets/secrets.yaml";

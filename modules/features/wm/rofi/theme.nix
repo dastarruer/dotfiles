@@ -2,7 +2,9 @@
   flake.nixosModules.wm = {config, ...}: {
     home-manager.users.dastarruer = {
       programs.rofi.theme = let
-        inherit (config.lib.formats.rasi) mkLiteral;
+        hmConfig = config.home-manager.users.dastarruer;
+
+        inherit (hmConfig.lib.formats.rasi) mkLiteral;
       in {
         "*" = {
           accent = mkLiteral "#${config.custom.theme.accent}";
