@@ -4,6 +4,8 @@
     system.stateVersion = "25.05";
 
     nixpkgs.config.allowUnfree = true;
+    home-manager.useGlobalPkgs = true;
+    home-manager.useUserPackages = true;
 
     nix = {
       # For nixd i think
