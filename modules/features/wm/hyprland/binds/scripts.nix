@@ -1,0 +1,22 @@
+{...}: {
+  flake.nixosModules.wm = {pkgs, ...}: {
+    home-manager.users.dastarruer = {
+      wayland.windowManager.hyprland.settings = {
+        bind = [
+          # Custom scripts (defined in home/modules/scripts)
+          "ALT, B, exec, ${pkgs.brightness}/bin/brightness + 5"
+          "ALT, V, exec, ${pkgs.brightness}/bin/brightness - 5"
+          "SUPER+SHIFT, W, exec, ${pkgs.change-wallpaper}/bin/change-wallpaper"
+          "SUPER, B, exec, ${pkgs.headphones}/bin/headphones"
+          "SUPER+SHIFT, M, exec, ${pkgs.move-windows-to-monitor}/bin/move-windows-to-monitor"
+          "SUPER, E, exec, ${pkgs.power}/bin/power"
+        ];
+
+        bindl = [
+          "SUPER, Y, exec, ${pkgs.toggle-hdmi}/bin/toggle-DP-1"
+          "SUPER+SHIFT, Y, exec, ${pkgs.toggle-laptop}/bin/toggle-eDP-1"
+        ];
+      };
+    };
+  };
+}
