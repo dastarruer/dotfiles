@@ -17,8 +17,6 @@
 
       programs.gh = {
         enable = true;
-        # TODO: Move to vscode
-        # settings.editor = "${lib.getExe config.programs.vscode.package} --wait";
       };
 
       programs.git = let
@@ -33,9 +31,7 @@
             url."git@github.com:" = {
               insteadOf = "https://github.com/";
             };
-            # Use vscode for commit messages
-            # TODO: Move to vscode
-            # core.editor = "${lib.getExe config.programs.vscode.package} --wait";
+
             # Automatically push to the current branch
             push.autoSetupRemote = true;
           }

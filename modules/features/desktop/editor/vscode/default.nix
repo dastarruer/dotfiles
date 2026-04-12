@@ -4,7 +4,16 @@
     pkgs,
     lib,
     ...
-  }: {
+  }: let
+    editor = config.custom.editor;
+
+    fish = config.programs.fish;
+
+    gitCommand = "${lib.getExe config.programs.vscode.package} --wait";
+
+    profile = config.custom.desktop.vscode.profile;
+    package = config.custom.desktop.vscode.profile;
+  in {
     options.custom = {
       desktop.vscode = {
         profile = lib.mkOption {
@@ -15,11 +24,10 @@
       };
     };
 
-    config.home-manager.users.dastarruer = let
-      profile = config.custom.desktop.vscode.profile;
-      package = config.custom.desktop.vscode.profile;
-      fish = config.programs.fish;
-    in {
+    config.home-manager.users.dastarruer = lib.mkIf (editor == "vscode") {
+      programs.gh.settings.editor = gitCommand;
+      programs.git.settings.core.editor = gitCommand;
+
       programs.vscode = {
         enable = true;
         # Use vscode fhs so lldb works: https://www.reddit.com/r/NixOS/comments/1e724mx/how_can_i_debug_rust_with_vscode_and/
