@@ -4,21 +4,21 @@
     pkgs,
     lib,
     ...
-  }: {
-    home-manager.users.dastarruer = let
-      hmConfig = config.home-manager.users.dastarruer;
-      hyprland = hmConfig.wayland.windowManager.hyprland;
-      terminal = config.custom.terminal;
+  }: let
+    hmConfig = config.home-manager.users.dastarruer;
+    hyprland = hmConfig.wayland.windowManager.hyprland;
+    terminal = config.custom.terminal;
 
-      # Get cursor trails like in kitty
-      cursor-trail-shader-path = "${pkgs.fetchFromGitHub {
-        owner = "sahaj-b";
-        repo = "ghostty-cursor-shaders";
-        rev = "4faa83e4b9306750fc8de64b38c6f53c57862db8";
-        hash = "sha256-ruhEqXnWRCYdX5mRczpY3rj1DTdxyY3BoN9pdlDOKrE=";
-      }}/cursor_tail.glsl";
-    in {
-      programs.ghostty = lib.mkIf (terminal == "ghostty") {
+    # Get cursor trails like in kitty
+    cursor-trail-shader-path = "${pkgs.fetchFromGitHub {
+      owner = "sahaj-b";
+      repo = "ghostty-cursor-shaders";
+      rev = "4faa83e4b9306750fc8de64b38c6f53c57862db8";
+      hash = "sha256-ruhEqXnWRCYdX5mRczpY3rj1DTdxyY3BoN9pdlDOKrE=";
+    }}/cursor_tail.glsl";
+  in {
+    home-manager.users.dastarruer = lib.mkIf (terminal == "ghostty") {
+      programs.ghostty = {
         enable = true;
         enableFishIntegration = true;
         systemd.enable = true;

@@ -3,13 +3,13 @@
     config,
     lib,
     ...
-  }: {
-    home-manager.users.dastarruer = let
-      hmConfig = config.home-manager.users.dastarruer;
-      hyprland = hmConfig.wayland.windowManager.hyprland;
-      terminal = config.custom.terminal;
-    in {
-      programs.kitty = lib.mkIf (terminal == "kitty") {
+  }: let
+    hmConfig = config.home-manager.users.dastarruer;
+    hyprland = hmConfig.wayland.windowManager.hyprland;
+    terminal = config.custom.terminal;
+  in {
+    home-manager.users.dastarruer = lib.mkIf (terminal == "kitty") {
+      programs.kitty = {
         enable = true;
 
         settings = {
