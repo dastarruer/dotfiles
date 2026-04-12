@@ -84,6 +84,9 @@
       wayland.windowManager.hyprland = {
         enable = true;
 
+        # If not disabled, can conflict with UWSM
+        systemd.enable = false;
+
         # set to the flake package for more up to date software
         package = hyprlandPkgs.hyprland;
 
