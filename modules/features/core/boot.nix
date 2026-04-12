@@ -35,7 +35,7 @@
     # Bootloader.
     boot = {
       # Get the latest kernel
-      kernelPackages = pkgs.linuxPackages_latest;
+      kernelPackages = pkgs.linuxKernel.packages.linux_6_19;
 
       # Spalsh screen
       plymouth = {
