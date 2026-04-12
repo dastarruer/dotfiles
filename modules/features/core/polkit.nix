@@ -1,8 +1,9 @@
 {...}: {
-  flake.nixosModules.core = {pkgs, ...}: {
-    services.polkit = {
-      enable = true;
-      package = pkgs.polkit_gnome;
+  flake.nixosModules.core = {...}: {
+    security.polkit.enable = true;
+
+    home-manager.users.dastarruer = {
+      services.polkit-gnome.enable = true;
     };
   };
 }
