@@ -1,21 +1,10 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.laptopHome = {
-    config,
-    lib,
-    ...
-  }: {
+{inputs, ...}: {
+  flake.nixosModules.laptopHome = {lib, ...}: {
     imports = [
       inputs.home-manager.nixosModules.home-manager
     ];
 
     home-manager.users.dastarruer = {
-      systemd.user.enable = true;
-      nixpkgs.config.allowUnfree = true;
-
       # Set up user
       home = {
         # Set username and home directory
@@ -33,8 +22,6 @@
         # Create the Trash dir, deleting files older than 30 days
         "d %h/.local/share/Trash/files - - - 30d -"
       ];
-
-      services.polkit-gnome.enable = true;
     };
   };
 }
