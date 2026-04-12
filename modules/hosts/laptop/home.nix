@@ -34,7 +34,6 @@
         "d %h/.local/share/Trash/files - - - 30d -"
       ];
 
-      programs.home-manager.enable = true;
       services.polkit-gnome.enable = true;
     };
   };
