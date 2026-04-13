@@ -25,7 +25,7 @@
       desktop_whatsapp
       desktop_spicetify
       desktop_terminal
-      desktop_vscode
+      desktop_editor
       desktop_calibre
       desktop_imv
       desktop_kdenlive
@@ -52,6 +52,10 @@
         name = "everforest-dark-hard";
         accent = config.lib.stylix.colors.base0B;
       };
+
+      editor = "zed";
+      terminal = "ghostty";
+
       backup.backupPaths = [
         "${config.home-manager.users.dastarruer.home.homeDirectory}/Music"
         "${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/sheet-music"

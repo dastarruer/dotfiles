@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.nixosModules.desktop_vscode = {
+  flake.nixosModules.desktop_editor = {
     config,
     pkgs,
     ...

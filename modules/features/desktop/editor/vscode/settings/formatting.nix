@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.nixosModules.desktop_vscode = {config, ...}: {
+  flake.nixosModules.desktop_editor = {config, ...}: {
     home-manager.users.dastarruer = let
       profile = config.custom.desktop.vscode.profile;
     in {
