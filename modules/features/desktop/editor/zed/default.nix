@@ -28,6 +28,9 @@
             "Env" = [".env*"];
             "INI" = ["*.cfg" "*.cnf" "*.conf" "*.config"];
           };
+
+          # Override stylix code font size
+          buffer_font_size = lib.mkForce 15;
         };
       };
 
