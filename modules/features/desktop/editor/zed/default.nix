@@ -31,6 +31,23 @@
 
           # Override stylix code font size
           buffer_font_size = lib.mkForce 15;
+
+          # Layout
+          agent = {
+              dock = "right";
+          };
+          notification_panel = {
+              dock = "right";
+          };
+          git_panel = {
+              dock = "right";
+          };
+          outline_panel = {
+              dock = "right";
+          };
+          project_panel = {
+              dock = "right";
+          };
         };
       };
 
