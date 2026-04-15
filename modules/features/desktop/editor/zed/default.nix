@@ -16,6 +16,15 @@
       programs.zed-editor = {
         enable = true;
 
+        extensions = [
+          "svelte"
+          "toml"
+          "nix"
+          "git-firefly"
+          "dockerfile"
+          "docker-compose"
+        ];
+
         userSettings = {
           telemetry = {
             diagnostics = false;
@@ -34,19 +43,19 @@
 
           # Layout
           agent = {
-              dock = "right";
+            dock = "right";
           };
           notification_panel = {
-              dock = "right";
+            dock = "right";
           };
           git_panel = {
-              dock = "right";
+            dock = "right";
           };
           outline_panel = {
-              dock = "right";
+            dock = "right";
           };
           project_panel = {
-              dock = "right";
+            dock = "right";
           };
         };
       };
