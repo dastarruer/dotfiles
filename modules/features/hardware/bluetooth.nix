@@ -21,49 +21,51 @@
     services.blueman.enable = true;
 
     # Script to connect to my airpods
-    environment.systemPackages = [
-      (pkgs.writeShellApplication {
-        name = "headphones";
-        runtimeInputs = with pkgs; [
-          bluez
-          libnotify
-          blueman
-          playerctl
-          coreutils
-          gnugrep
-          gawk
-        ];
-        text = ''
-          HEADPHONES_MAC=70:8C:F2:65:74:82
-          bluetoothctl power on || {
-              notify-send -t 1000 -u low -i dialog-warning "Failed to turn on Bluetooth, opening Blueman..."
-              blueman-manager &
-              exit 1
-          }
-          ACTIVE_PLAYER=$(playerctl -l | while read -r player; do
-              if playerctl -p "$player" status 2>/dev/null | grep -q Playing; then
-                  echo "$player"
-                  break
-              fi
-          done)
-          playerctl pause -a
-          if bluetoothctl info "$HEADPHONES_MAC" | grep 'Connected: yes' -q; then
-              notify-send -t 1500 -u low -i dialog-warning "Restarting Bluetooth..."
-              bluetoothctl power off
-              bluetoothctl power on
-          fi
-          notify-send -t 1500 -u low -i headphones "Connecting to headphones..."
-          bluetoothctl connect "$HEADPHONES_MAC" || {
-              notify-send -t 1500 -u low -i dialog-error "Failed to connect headphones. Please try again."
-              exit 1
-          }
-          if [ -n "$ACTIVE_PLAYER" ]; then
-              sleep 2
-              playerctl -p "$ACTIVE_PLAYER" play
-          fi
-        '';
+    nixpkgs.overlays = [
+      (final: prev: {
+        headphones = prev.writeShellApplication {
+          name = "headphones";
+          runtimeInputs = with prev; [
+            bluez
+            libnotify
+            blueman
+            playerctl
+            coreutils
+            gnugrep
+            gawk
+          ];
+
+          text = ''
+            HEADPHONES_MAC=70:8C:F2:65:74:82
+
+            # Ensure Bluetooth is on
+            bluetoothctl power on
+
+            ACTIVE_PLAYER=$(playerctl -l 2>/dev/null | xargs -I {} playerctl -p {} status 2>/dev/null | grep -q Playing && playerctl -l | head -n 1 || echo "")
+
+            playerctl pause -a 2>/dev/null
+
+            if bluetoothctl info "$HEADPHONES_MAC" 2>/dev/null | grep -q 'Connected: yes'; then
+                bluetoothctl disconnect "$HEADPHONES_MAC" >/dev/null
+                sleep 1
+            fi
+
+            notify-send -t 1500 -i headphones "Connecting to AirPods..."
+
+            if bluetoothctl connect "$HEADPHONES_MAC"; then
+                if [ -n "$ACTIVE_PLAYER" ]; then
+                    sleep 3
+                    playerctl play
+                fi
+            else
+                notify-send -t 2000 -u critical "Connection Failed"
+                exit 1
+            fi
+          '';
+        };
       })
-    ];
+    ]
+    ;
 
     home-manager.users.dastarruer = {
       services.mpris-proxy.enable = true;
