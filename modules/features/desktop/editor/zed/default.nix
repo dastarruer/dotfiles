@@ -41,6 +41,14 @@
           # Override stylix code font size
           buffer_font_size = lib.mkForce 15;
 
+          scrollbar.diagnostics = "warning"; # Only show warnings on the scrollbar
+
+          # Enable zed's version of errorlens
+          diagnostics.inline = {
+              enabled = true;
+              max_severity = "hint";
+          };
+
           # If provider is not specified, zed will keep trying to do edit predictions which slows down the editor massively
           edit_predictions.provider = "none";
 
