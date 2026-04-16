@@ -1,0 +1,14 @@
+{
+  "languages": {
+    "Nix": {
+      "tab_size": 2,
+      "language_servers": ["nixd", "!nil"],
+      "formatter": {
+        "external": {
+          "command": "alejandra",
+          "arguments": ["--quiet"]
+        }
+      }
+    }
+  }
+}
