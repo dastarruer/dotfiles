@@ -40,10 +40,10 @@
 
           # Override stylix code font size
           buffer_font_size = lib.mkForce 15;
-          
+
           # If provider is not specified, zed will keep trying to do edit predictions which slows down the editor massively
           edit_predictions.provider = "none";
-          
+
           file_scan_exclusions = [
             "**/.git"
             "**/.svn"
