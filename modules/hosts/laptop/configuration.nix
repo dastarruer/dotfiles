@@ -46,6 +46,7 @@
       services_reload-udev
       services_docker
       services_ssh
+      services_cliphist
     ];
 
     custom = {
