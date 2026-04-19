@@ -22,7 +22,6 @@
             enabled = true;
             range = 35;
             render_power = 3;
-            ignore_window = true;
             offset = "15 15";
           };
 
