@@ -47,7 +47,7 @@
       programs.fish.shellAliases = lib.mkIf config.programs.fish.enable {
         ga = "git add";
         gb = "git branch";
-        "g." = "git add . && git status";
+        "g." = "git add -A && git status";
         gs = "git status";
         gc = "git commit";
         gp = "git push";
