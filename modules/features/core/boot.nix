@@ -88,9 +88,6 @@
       initrd.verbose = false;
 
       kernel.sysctl = {
-        # Only use swap when completely necessary
-        "vm.swappiness" = 20;
-
         # For RAM intensive applications that may not use all the ram it allocates, promise more ram than is available (only up to a certain point. Otherwise, the process may be killed by earlyoom).
         # https://medium.com/@charles.vissol/optimize-your-linux-69c70320d852
         # "vm.overcommit-memory" = 2;
