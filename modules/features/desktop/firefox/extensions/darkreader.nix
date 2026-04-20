@@ -66,7 +66,8 @@
               darkColorScheme = "Default";
               immediateModify = false;
             };
-            presets = [
+            presets = [];
+            customThemes = [
               (mkFilterPlusPreset [
                 "ispsedu.schoology.com"
                 "mail.google.com"
@@ -75,7 +76,6 @@
                 "apclassroom.collegeboard.org"
               ])
             ];
-            customThemes = [];
             enabledByDefault = true;
             enabledFor = [];
             disabledFor = [
