@@ -88,6 +88,9 @@
       initrd.verbose = false;
 
       kernel.sysctl = {
+        # Keep stuff in ram for longer
+        "vm.vfs_cache_pressure" = 50;
+
         # For RAM intensive applications that may not use all the ram it allocates, promise more ram than is available (only up to a certain point. Otherwise, the process may be killed by earlyoom).
         # https://medium.com/@charles.vissol/optimize-your-linux-69c70320d852
         # "vm.overcommit-memory" = 2;
