@@ -1,12 +1,17 @@
 {...}: {
   flake.nixosModules.shell = {
     config,
+    pkgs,
     lib,
     ...
   }: let
     hmConfig = config.home-manager.users.dastarruer;
     fastfetch = hmConfig.programs.fastfetch;
   in {
+    programs.fish.enable = true;
+
+    users.users.dastarruer.shell = pkgs.fish;
+
     home-manager.users.dastarruer = {
       programs.fish = {
         enable = true;

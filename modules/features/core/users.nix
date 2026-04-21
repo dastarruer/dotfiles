@@ -9,15 +9,11 @@
       neededForUsers = true;
     };
 
-    # Enable fish shell
-    programs.fish.enable = true;
-
     # Trust any user in the wheel group
     nix.settings.trusted-users = ["@wheel"];
 
     # Define the main user account
     users.users.dastarruer = {
-      shell = pkgs.fish;
       isNormalUser = true;
       description = "Ayush Pramanik";
       hashedPasswordFile = config.sops.secrets.sudo_password.path;
