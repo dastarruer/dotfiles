@@ -28,8 +28,11 @@
       ];
     };
 
+    # Hardcode timezone to reduce ram usage
+    time.timeZone = "America/New_York";
+
     # Automatically set timezone: https://www.reddit.com/r/NixOS/comments/1411gjs/dynamically_set_the_timezone/
-    services.automatic-timezoned.enable = true;
+    # services.automatic-timezoned.enable = true;
 
     # Used to sync system clock
     # Can be wildly inaccurate depending on physical loaction
@@ -37,7 +40,7 @@
     #   enable = true;
     #   servers = ["time.cloudflare.com" "pool.ntp.org"];
     # };
-    services.tzupdate.enable = true;
+    # services.tzupdate.enable = true;
 
     # Select internationalisation properties.
     i18n.defaultLocale = "en_US.UTF-8";
