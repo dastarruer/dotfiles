@@ -64,8 +64,7 @@
           '';
         };
       })
-    ]
-    ;
+    ];
 
     home-manager.users.dastarruer = {
       services.mpris-proxy.enable = true;
