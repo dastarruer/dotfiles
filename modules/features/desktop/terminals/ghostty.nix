@@ -45,11 +45,6 @@
           # Don't ask before closing
           confirm-close-surface = false;
 
-          # Send notification when command finished and terminal is unfocused
-          notify-on-command-finish = "unfocused";
-          notify-on-command-finish-action = "no-bell,notify";
-          notify-on-command-finish-after = "15s";
-
           # Always keep ghostty systemd service running for fast window creation
           quit-after-last-window-closed = false;
 
