@@ -25,7 +25,6 @@
     in {
       wayland.windowManager.hyprland.settings = {
         "exec-once" = [
-          "${pkgs.networkmanagerapplet}/bin/nm-applet" # Start networkmanager in systray
           "${lib.getExe monitorConnectScript}"
         ];
       };

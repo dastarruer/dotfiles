@@ -1,6 +1,11 @@
-# Waybar from here: https://github.com/saatvik333/hyprland-dotfiles/blob/main/waybar/config
+# Waybar from here: https://github.com/martin-djakovic/dotfiles
 {...}: {
-  flake.nixosModules.wm = {config, ...}: {
+  flake.nixosModules.wm = {
+    config,
+    pkgs,
+    lib,
+    ...
+  }: {
     home-manager.users.dastarruer = {
       programs.waybar.settings = {
         config = {
@@ -22,7 +27,7 @@
             "pulseaudio"
             "battery"
             "backlight"
-            "tray"
+            "network"
           ];
 
           cpu = {
@@ -73,14 +78,18 @@
           };
 
           backlight = {
-            format = "<span color='#${config.custom.theme.accent}'><b>mon:</b></span> {percent}%<span color='#${config.lib.stylix.colors.base01}'> ]</span>";
+            format = "<span color='#${config.custom.theme.accent}'><b>mon:</b></span> {percent}%<span color='#${config.lib.stylix.colors.base01}'> / </span>";
             tooltip = false;
           };
+          
+          network = {
+            interface = "wlp2s0";
+            format = "<span color='#${config.custom.theme.accent}'><b>net:</b></span> {essid}<span color='#${config.lib.stylix.colors.base01}'></span>";
+            max-length = 10;
+            tooltip-format = "{essid} ({signalStrength}%) ";
 
-          tray = {
-            "icon-size" = 20;
-            spacing = 7;
-            tooltip = false;
+            # Run custom wifi script from networking.nix
+            on-click = "${lib.getExe pkgs.wifi}";
           };
         };
       };

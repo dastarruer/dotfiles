@@ -32,9 +32,14 @@
         #backlight,
         #custom-clock,
         #cpu,
-        #memory {
+        #memory,
+        #network {
             font-family: "${config.stylix.fonts.monospace.name}", monospace;
             color: @fg;
+        }
+        
+        #network {
+            padding-right: 20px;
         }
 
         #workspaces {
@@ -67,7 +72,6 @@
             padding-right: 5px;
             padding-left: 10px;
         }
-
       '';
     };
   };
