@@ -1,6 +1,6 @@
 {inputs, ...}: {
   flake.nixosModules.shell = {config, ...}: let
-    terminal = config.custom.terminal;
+    terminal = config.custom.desktop.terminal;
   in {
     home-manager.users.dastarruer = {
       programs.fastfetch = {

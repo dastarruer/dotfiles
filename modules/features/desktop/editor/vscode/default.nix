@@ -5,7 +5,7 @@
     lib,
     ...
   }: let
-    editor = config.custom.editor;
+    editor = config.custom.desktop.editor;
 
     fish = config.programs.fish;
 

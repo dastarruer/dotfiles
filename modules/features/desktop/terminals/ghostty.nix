@@ -7,7 +7,7 @@
   }: let
     hmConfig = config.home-manager.users.dastarruer;
     hyprland = hmConfig.wayland.windowManager.hyprland;
-    terminal = config.custom.terminal;
+    terminal = config.custom.desktop.terminal;
 
     # Get cursor trails like in kitty
     cursor-trail-shader-path = "${pkgs.fetchFromGitHub {

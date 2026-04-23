@@ -55,8 +55,10 @@
         accent = config.lib.stylix.colors.base0B;
       };
 
-      editor = "zed";
-      terminal = "foot";
+      desktop = {
+        editor = "zed";
+        terminal = "foot";
+      };
 
       backup.backupPaths = [
         "${config.home-manager.users.dastarruer.home.homeDirectory}/Music"
