@@ -96,28 +96,50 @@
       '';
     };
   in {
-    programs.steam.config.apps.hitmanwoa = {
-      id = 1659040;
-      launchOptions = {
-        args = [
-          "-skip_launcher"
-        ];
+    programs.steam.config = {
+      apps.hitmanwoa = {
+        id = 1659040;
+        launchOptions = {
+          args = [
+            "-skip_launcher"
+          ];
+        };
+      };
+
+      # To get smf working on linux: https://www.reddit.com/r/linux_gaming/comments/1aiiaia/how_to_run_simple_mod_framework_for_hitman_3_on/
+      nonSteamApps."Simple Mod Framework (HITMAN WOA)" = let
+        steamPath = "${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Steam/steamapps";
+      in {
+        # this path should be wrapped in double quotes, but that throws an error so just manually modify the path when opening the mod manager
+        target = ''${steamPath}/common/HITMAN 3/Simple Mod Framework/Mod Manager/Mod Manager.exe'';
+
+        # Start in hitman proton prefix
+        startIn = "${steamPath}/compatdata/1659040/pfx";
+
+        # Needs proton experimental to even start
+        compatTool = "proton_experimental";
+        
+        # why would i need the overlay disable pls
+        allowOverlay = false;
       };
     };
 
-    custom.backup.backupPaths = lib.mkIf backup.enable [
-      # Hitman mods
-      "${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/Simple Mod Framework"
-      "${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/README.md"
+    custom.backup.backupPaths = let
+      hitmanPath = "${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3";
+    in
+      lib.mkIf backup.enable [
+        # Hitman mods
+        "${hitmanPath}/Simple Mod Framework"
+        "${hitmanPath}/README.md"
 
-      # Freelancer variations stuff
-      "${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/Retail/mods/MissionCompanion.dll"
-      "${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/Retail/mods/FreelancerVariations.json"
-      "${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3/Retail/mods/missioncompanion.ini"
+        # Freelancer variations stuff
+        "${hitmanPath}/Retail/mods/MissionCompanion.dll"
+        "${hitmanPath}/Retail/mods/FreelancerVariations.json"
+        "${hitmanPath}/Retail/mods/missioncompanion.ini"
 
-      # Peacock save data
-      "${peacockDir}/Peacock/userdata"
-    ];
+        # Peacock save data
+        "${peacockDir}/Peacock/userdata"
+      ];
 
     home-manager.users.dastarruer = {
       systemd.user.tmpfiles.rules = [
