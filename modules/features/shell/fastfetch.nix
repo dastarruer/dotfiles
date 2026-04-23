@@ -1,5 +1,7 @@
 {inputs, ...}: {
-  flake.nixosModules.shell = {...}: {
+  flake.nixosModules.shell = {config, ...}: let
+    terminal = config.custom.terminal;
+  in {
     home-manager.users.dastarruer = {
       programs.fastfetch = {
         enable = true;
@@ -7,7 +9,10 @@
           "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
           logo = {
             source = "${inputs.self.outPath}/config/images/pfp.png";
-            type = "kitty";
+            type =
+              if (terminal == "foot")
+              then "sixel" # foot uses the sixel protocol for displaying images
+              else "kitty";
             height = 6;
             width = 12;
             padding = {

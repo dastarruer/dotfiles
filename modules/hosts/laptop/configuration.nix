@@ -56,7 +56,7 @@
       };
 
       editor = "zed";
-      terminal = "ghostty";
+      terminal = "foot";
 
       backup.backupPaths = [
         "${config.home-manager.users.dastarruer.home.homeDirectory}/Music"
