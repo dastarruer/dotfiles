@@ -39,7 +39,7 @@
         }
         
         #network {
-            padding-right: 20px;
+            padding-right: 7px;
         }
 
         #workspaces {

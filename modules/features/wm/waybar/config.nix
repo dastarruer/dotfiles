@@ -81,12 +81,17 @@
             format = "<span color='#${config.custom.theme.accent}'><b>mon:</b></span> {percent}%<span color='#${config.lib.stylix.colors.base01}'> / </span>";
             tooltip = false;
           };
-          
+
           network = {
             interface = "wlp2s0";
-            format = "<span color='#${config.custom.theme.accent}'><b>net:</b></span> {essid}<span color='#${config.lib.stylix.colors.base01}'></span>";
-            max-length = 10;
+            format = "<span color='#${config.custom.theme.accent}'><b>net:</b></span> {essid}<span color='#${config.lib.stylix.colors.base01}'> ]</span>";
+            format-disconnected = "<span color='#${config.custom.theme.accent}'><b>net:</b></span> disconnected<span color='#${config.lib.stylix.colors.base01}'> ]</span>";
+            format-disabled = "<span color='#${config.custom.theme.accent}'><b>net:</b></span> disconnected<span color='#${config.lib.stylix.colors.base01}'> ]</span>";
+            max-length = 50;
+
             tooltip-format = "{essid} ({signalStrength}%) ";
+            tooltip-format-disconnected = "Disconnected ({signalStrength}%) 󰖪";
+            tooltip-format-disabled = "Disconnected ({signalStrength}%) 󰖪";
 
             # Run custom wifi script from networking.nix
             on-click = "${lib.getExe pkgs.wifi}";
