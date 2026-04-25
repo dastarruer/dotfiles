@@ -161,6 +161,6 @@
     };
 
     # Enable firmware for wifi cards
-    hardware.enableAllFirmware = false;
+    hardware.enableAllFirmware = true;
   };
 }

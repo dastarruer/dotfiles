@@ -1,5 +1,8 @@
 {...}: {
   flake.nixosModules.hardware = {pkgs, ...}: {
+    # Enable firmware for bluetooth
+    hardware.enableAllFirmware = true;
+
     hardware.bluetooth = {
       # Enable support for Bluetooth
       enable = true;
