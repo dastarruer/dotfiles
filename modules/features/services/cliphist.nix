@@ -18,6 +18,11 @@
         bind = lib.mkIf rofi.enable [
           "SUPER, V, exec, ${lib.getExe pkgs.cliphist} list | ${lib.getExe pkgs.rofi} -dmenu | ${lib.getExe pkgs.cliphist} decode | ${pkgs.wl-clipboard}/bin/wl-copy"
         ];
+        
+        "exec-once" = [
+          # For some reason, the cliphist service does not start properly on startup. This is a workaround
+          "${pkgs.systemd}/bin/systemctl --user start cliphist.service"
+        ];
       };
     };
   };
