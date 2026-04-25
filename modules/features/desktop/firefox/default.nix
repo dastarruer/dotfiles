@@ -30,6 +30,12 @@
       programs.firefox = {
         enable = true;
         package = pkgs.firefox-bin;
+        
+        profiles."${config.custom.desktop.firefox.profile}" = {
+          id = 0;
+          name = "${config.custom.desktop.firefox.profile}";
+          isDefault = true;
+        };
       };
 
       # Windowrules for picture-in-picture
