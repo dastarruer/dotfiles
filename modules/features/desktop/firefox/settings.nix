@@ -11,7 +11,6 @@
 
         settings = {
           # USER JS OVERRIDES
-          "sidebar.revamp" = false;
           "svg.context-properties.content.enabled" = true;
           "layout.css.has-selector.enabled" = true;
           "browser.urlbar.suggest.calculator" = true;
@@ -167,6 +166,17 @@
             currentVersion = 23;
             newElementCount = 2;
           };
+
+          # SIDEBAR SETTINGS
+          "browser.engagement.sidebar-button.has-used" = true;
+          "browser.tooolbarbuttons.introdcued.sidebar-button" = true;
+          "sidebar.main.tools" = "simple-tab-groups@drive4ik,{446900e4-71c2-419f-a6a7-df9c091e268b}";
+          "sidebar.new-sidebar.has-used" = true;
+          "sidebar.old-sidebar.has-used" = true;
+          "sidebar.revamp" = true;
+          "sidebar.verticalTabs" = true;
+          "sidebar.verticalTabs.dragToPinPromo.dismissed" = true;
+          "sidebar.visibility" = "expand-on-hover";
 
           # STEAM DECK SETTINGS
           # Steam Deck specific fixes (e.g., touch improvements, hardware accel)
