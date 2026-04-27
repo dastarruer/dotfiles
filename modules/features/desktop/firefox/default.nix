@@ -27,10 +27,17 @@
       # Necessary for gdocs to render fonts properly
       home.packages = [pkgs.corefonts];
 
+      # Supposedly, configPath is supposed to set the firefox config path... but it doesn't
+      # This is a workaround so i don't go crazy
+      systemd.user.tmpfiles.rules = [
+        "L+ %h/.mozilla - - - - ${hmConfig.xdg.configHome}/mozilla"
+      ];
+
       programs.firefox = {
         enable = true;
         package = pkgs.firefox-bin;
-        
+        configPath = "${hmConfig.xdg.configHome}/mozilla/firefox";
+
         profiles."${config.custom.desktop.firefox.profile}" = {
           id = 0;
           name = "${config.custom.desktop.firefox.profile}";
