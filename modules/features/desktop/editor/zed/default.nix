@@ -25,7 +25,10 @@
 
       programs.zed-editor = {
         enable = true;
-
+        # Allow zed-editor to install its own language servers
+        # Otherwise, i will go insane, because idk if i can point zed to a specific lsp binary
+        package = pkgs.zed-editor-fhs;
+        
         extensions = [
           "svelte"
           "toml"
