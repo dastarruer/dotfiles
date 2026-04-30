@@ -12,6 +12,10 @@
     hmConfig = config.home-manager.users.dastarruer;
     geminiKeyPath = hmConfig.sops.secrets.gemini_api_key.path;
   in {
+    # Allow zed-editor to install its own language servers
+    # zed-fhs is not enough on its own; this has to be enabled as well
+    programs.nix-ld.enable = true;
+
     home-manager.users.dastarruer = lib.mkIf (editor == "zed") {
       programs.gh.settings.editor = gitCommand;
       programs.git.settings.core.editor = gitCommand;
@@ -21,14 +25,17 @@
       };
 
       # Set api key for gemini: https://zed.dev/docs/ai/llm-providers#google-ai
-      home.sessionVariables."GEMINI_API_KEY" = if (builtins.pathExists geminiKeyPath) then (builtins.readFile geminiKeyPath) else "";
+      home.sessionVariables."GEMINI_API_KEY" =
+        if (builtins.pathExists geminiKeyPath)
+        then (builtins.readFile geminiKeyPath)
+        else "";
 
       programs.zed-editor = {
         enable = true;
         # Allow zed-editor to install its own language servers
         # Otherwise, i will go insane, because idk if i can point zed to a specific lsp binary
         package = pkgs.zed-editor-fhs;
-        
+
         extensions = [
           "html"
           "markdownlint"
