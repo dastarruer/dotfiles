@@ -30,6 +30,8 @@
         package = pkgs.zed-editor-fhs;
         
         extensions = [
+          "html"
+          "markdownlint"
           "svelte"
           "toml"
           "nix"
