@@ -21,7 +21,10 @@
     };
 
     # blueman-manager
-    services.blueman.enable = true;
+    services.blueman = {
+      enable = true;
+      withApplet = false;
+    };
 
     # Script to connect to my airpods
     nixpkgs.overlays = [
@@ -71,7 +74,6 @@
 
     home-manager.users.dastarruer = {
       services.mpris-proxy.enable = true;
-      services.blueman-applet.enable = true;
     };
   };
 }
