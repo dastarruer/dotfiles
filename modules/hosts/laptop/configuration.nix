@@ -18,6 +18,7 @@
       cli_git
       cli_yazi
       cli_zoxide
+      cli_zellij
 
       desktop_anki
       desktop_firefox
