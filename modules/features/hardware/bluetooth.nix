@@ -3,6 +3,8 @@
     # Enable firmware for bluetooth
     hardware.enableAllFirmware = true;
 
+    boot.kernelModules = ["btusb"];
+
     hardware.bluetooth = {
       # Enable support for Bluetooth
       enable = true;

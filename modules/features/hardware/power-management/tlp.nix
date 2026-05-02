@@ -29,6 +29,9 @@
 
         START_CHARGE_THRESH_BAT0 = 94;
         STOP_CHARGE_THRESH_BAT0 = 98;
+
+        # Unblock bluetooth on startup: https://discourse.nixos.org/t/bluetooth-is-soft-blocked-on-startup-6-12/60222/2
+        DEVICES_TO_ENABLE_ON_STARTUP = "wifi bluetooth";
       };
     };
 
