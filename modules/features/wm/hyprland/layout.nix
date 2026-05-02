@@ -22,7 +22,11 @@
           else "dwindle";
 
         # Always split windows to the right
-        dwindle.force_split = lib.mkIf (!scrolling.enable) "2";
+        dwindle = lib.mkIf (!scrolling.enable) {
+          force_split = "2";
+          pseudotile = true;
+          preserve_split = true;
+        };
 
         scrolling = lib.mkIf scrolling.enable {
           fullscreen_on_one_column = true;

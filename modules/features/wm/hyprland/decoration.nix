@@ -65,10 +65,6 @@
             "fadeDim, 1, 3, smoothIn"
           ];
         };
-        dwindle = {
-          pseudotile = true;
-          preserve_split = true;
-        };
       };
     };
   };
