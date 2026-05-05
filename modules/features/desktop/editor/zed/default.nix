@@ -45,6 +45,7 @@
           "git-firefly"
           "dockerfile"
           "docker-compose"
+          "comment" # highlight todo comments
         ];
 
         userSettings = {
