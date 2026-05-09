@@ -34,8 +34,8 @@
       systemd.user.services.caps-lock-monitor = {
         Unit = {
           Description = "Caps Lock Event Monitor";
-          After = ["graphical-session.target"];
-          PartOf = ["graphical-session.target"];
+          After = ["default.target"];
+          PartOf = ["default.target"];
         };
 
         Service = {
@@ -45,7 +45,7 @@
         };
 
         Install = {
-          WantedBy = ["graphical-session.target"];
+          WantedBy = ["default.target"];
         };
       };
     };
