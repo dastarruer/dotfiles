@@ -37,7 +37,7 @@
             font-family: "${config.stylix.fonts.monospace.name}", monospace;
             color: @fg;
         }
-        
+
         #network {
             padding-right: 7px;
         }
