@@ -18,7 +18,7 @@
       cli_git
       cli_yazi
       cli_zoxide
-      cli_zellij
+      cli_multiplexer
 
       desktop_anki
       desktop_firefox
@@ -56,6 +56,10 @@
         accent = config.lib.stylix.colors.base0B;
       };
 
+      cli = {
+        multiplexer = "tmux";
+      };
+      
       desktop = {
         editor = "zed";
         terminal = "foot";
