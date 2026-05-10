@@ -48,6 +48,12 @@
           "comment" # highlight todo comments
         ];
 
+        userKeymaps = [
+          {
+            bindings."ctrl-`" = "terminal_panel::ToggleFocus";
+          }
+        ];
+
         userSettings = {
           telemetry = {
             diagnostics = false;
