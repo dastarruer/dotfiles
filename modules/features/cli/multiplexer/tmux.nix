@@ -14,8 +14,10 @@
 
         shell = lib.mkIf fish.enable "${lib.getExe pkgs.fish}";
         sensibleOnTop = true;
+        
         keyMode = "vi";
         prefix = "C-a";
+        mouse = true;
 
         # Bind hjkl to switching windows
         extraConfig = ''
