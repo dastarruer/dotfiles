@@ -20,6 +20,16 @@
 
     logoutCmd = lib.optionalString hyprland.enable "${pkgs.hyprland}/bin/hyprctl dispatch exit";
 
+    rebootCmd =
+      if hyprland.enable
+      then "${lib.getExe pkgs.hyprshutdown} -t 'Restarting...' --post-cmd 'reboot'"
+      else "systemctl reboot";
+
+    shutdownCmd =
+      if hyprland.enable
+      then "${lib.getExe pkgs.hyprshutdown} -t 'Restarting...' --post-cmd 'shutdown -P 0'"
+      else "systemctl poweroff";
+
     launcherCmd =
       if rofi.enable
       then "${lib.getExe pkgs.rofi} -dmenu -i -p 'Power Menu:'"
@@ -51,10 +61,10 @@
                   systemctl suspend
                   ;;
               " Reboot")
-                  systemctl reboot
+                  ${rebootCmd}
                   ;;
               " Shutdown")
-                  systemctl poweroff
+                  ${shutdownCmd}
                   ;;
               *)
                   exit 0
