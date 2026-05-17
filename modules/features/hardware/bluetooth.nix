@@ -14,14 +14,24 @@
 
       # Set bluetooth settings
       settings = {
-        General = {
-          # For airpods (https://gist.github.com/aidos-dev/b49078c1d8c6bb1621e4ac199d18213b)
-          ControllerMode = "bredr";
-          Experimental = true;
+        General.Experimental = true;
+
+        # https://github.com/kavishdevar/librepods#vendorid-spoofing
+        DeviceID = {
+          Source = "bluetooth";
+          Vendor = "004C";
+          Product = "0000";
+          Version = "0000";
         };
       };
     };
 
+    programs.librepods.enable = true;
+    users.users.dastarruer.extraGroups = ["librepods"];
+    environment.systemPackages = with pkgs; [
+      kdePackages.qtstyleplugin-kvantum
+    ];
+    
     # blueman-manager
     services.blueman = {
       enable = true;

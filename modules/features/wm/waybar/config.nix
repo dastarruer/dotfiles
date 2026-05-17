@@ -28,7 +28,14 @@
             "battery"
             "backlight"
             "network"
+            "tray"
           ];
+
+          tray = {
+            "icon-size" = 20;
+            spacing = 7;
+            tooltip = false;
+          };
 
           cpu = {
             interval = 10;
