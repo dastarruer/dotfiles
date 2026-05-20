@@ -12,7 +12,8 @@
           systemdMinimal
         ];
         text = ''
-          udevadm control --reload-rules && udevadm trigger
+          udevadm control --reload-rules
+          udevadm trigger --type=subsystems
         '';
       };
     in {
@@ -20,13 +21,14 @@
         enableStrictShellChecks = true;
 
         description = "Reload udev rules on resume from suspend";
-        after = ["sleep.target"];
+        after = ["suspend.target"];
+
         serviceConfig = {
           Type = "oneshot";
           ExecStart = "${lib.getExe script}";
         };
 
-        wantedBy = ["sleep.target"];
+        wantedBy = ["suspend.target"];
       };
     };
   };
