@@ -1,5 +1,10 @@
 {self, ...}: {
-  flake.nixosModules.laptopConfiguration = {config, ...}: {
+  flake.nixosModules.laptopConfiguration = {
+    config,
+    pkgs,
+    lib,
+    ...
+  }: {
     imports = with self.nixosModules; [
       laptopHardware
       laptopDisk
@@ -59,7 +64,7 @@
       cli = {
         multiplexer = "tmux";
       };
-      
+
       desktop = {
         editor = "zed";
         terminal = "foot";
@@ -78,5 +83,35 @@
       ATTRS{name}=="Sony Interactive Entertainment Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
       ATTRS{name}=="Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
     '';
+
+    home-manager.users.dastarruer = {
+      systemd.user = let
+        service = "cargo-clean";
+
+        hmConfig = config.home-manager.users.dastarruer;
+        devPath = "${hmConfig.home.homeDirectory}/Documents/dev";
+        script = pkgs.writeShellApplication {
+          name = "cargo-clean-wrapper";
+          runtimeInputs = [pkgs.cargo-clean-recursive];
+          text = ''
+            cargo-clean-recursive clean-recursive ${devPath}
+          '';
+        };
+      in {
+        services.${service} = {
+          Unit.Description = "Clean unused cargo build artifacts in ${devPath}";
+          Service = {
+            Type = "oneshot";
+            ExecStart = "${lib.getExe script}";
+          };
+        };
+
+        timers.${service} = {
+          Unit.Description = "Timer for ${service} service";
+          Timer.OnCalendar = "weekly";
+          Install.WantedBy = ["timers.target"];
+        };
+      };
+    };
   };
 }
