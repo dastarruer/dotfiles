@@ -28,6 +28,7 @@
       desktop_anki
       desktop_firefox
       desktop_steam
+      desktop_lutris
       desktop_whatsapp
       desktop_spicetify
       desktop_terminal
