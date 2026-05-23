@@ -33,7 +33,11 @@
           "SUPER+SHIFT, P, exec, ${pkgs.grimblast}/bin/grimblast copysave active ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n"
 
           # Copysave full screen
-          "SUPER+CTRL, P, exec, ${pkgs.grimblast}/bin/grimblast copysave screen ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n"
+          "SUPER+CTRL, P, exec, ${pkgs.grimblast}/bin/grimblast copysave output ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n"
+
+          # Copysave all monitors
+          "SUPER+SHIFT+CTRL, P, exec, ${pkgs.grimblast}/bin/grimblast copysave screen ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n"
+          
 
           # OCR (Optical Character Recognition)
           ''SUPER+SHIFT, O, exec, ${pkgs.grimblast}/bin/grimblast save area - | ${pkgs.tesseract}/bin/tesseract stdin stdout | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.libnotify}/bin/notify-send "OCR Copied to Clipboard"''
