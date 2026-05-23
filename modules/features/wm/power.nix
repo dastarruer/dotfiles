@@ -1,4 +1,4 @@
-{...}: {
+{inputs, ...}: {
   flake.nixosModules.wm = {
     config,
     pkgs,
@@ -22,12 +22,12 @@
 
     rebootCmd =
       if hyprland.enable
-      then "${lib.getExe pkgs.hyprshutdown} -t 'Restarting...' --post-cmd 'reboot'"
+      then "${lib.getExe inputs.gtkshutdown.packages.${pkgs.stdenv.system}.default} --post-cmd 'reboot'"
       else "systemctl reboot";
 
     shutdownCmd =
       if hyprland.enable
-      then "${lib.getExe pkgs.hyprshutdown} -t 'Restarting...' --post-cmd 'shutdown -P 0'"
+      then "${lib.getExe inputs.gtkshutdown.packages.${pkgs.stdenv.system}.default} --post-cmd 'shutdown -P 0'"
       else "systemctl poweroff";
 
     launcherCmd =
