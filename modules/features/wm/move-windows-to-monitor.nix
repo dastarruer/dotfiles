@@ -10,7 +10,7 @@
     nixpkgs.overlays = lib.mkIf hyprland.enable [
       (final: prev: {
         move-windows-to-monitor = prev.writeShellApplication {
-          name = "move-windows-to-monitor";
+          name = "move_windows_to_monitor";
           runtimeInputs =
             []
             ++ lib.optionals hyprland.enable [
@@ -18,20 +18,19 @@
             ];
           text = ''
             ${lib.optionalString hyprland.enable ''
-              hyprctl dispatch moveworkspacetomonitor "1 1"
-              hyprctl dispatch moveworkspacetomonitor "2 1"
-              hyprctl dispatch moveworkspacetomonitor "3 1"
-              hyprctl dispatch moveworkspacetomonitor "4 1"
-              hyprctl dispatch moveworkspacetomonitor "5 1"
-              hyprctl dispatch moveworkspacetomonitor "6 1"
-              hyprctl dispatch moveworkspacetomonitor "7 1"
-              hyprctl dispatch moveworkspacetomonitor "8 1"
-              hyprctl dispatch moveworkspacetomonitor "9 1"
-              hyprctl dispatch moveworkspacetomonitor "10 1"
-              hyprctl dispatch moveworkspacetomonitor "11 0"
-              hyprctl dispatch focusmonitor 0
-              hyprctl dispatch focusworkspaceoncurrentmonitor 11
-              hyprctl dispatch focusmonitor 1
+              hyprctl dispatch "hl.dsp.workspace.move({workspace = 1, monitor = 1})"
+              hyprctl dispatch "hl.dsp.workspace.move({workspace = 2, monitor = 1})"
+              hyprctl dispatch "hl.dsp.workspace.move({workspace = 3, monitor = 1})"
+              hyprctl dispatch "hl.dsp.workspace.move({workspace = 4, monitor = 1})"
+              hyprctl dispatch "hl.dsp.workspace.move({workspace = 5, monitor = 1})"
+              hyprctl dispatch "hl.dsp.workspace.move({workspace = 6, monitor = 1})"
+              hyprctl dispatch "hl.dsp.workspace.move({workspace = 7, monitor = 1})"
+              hyprctl dispatch "hl.dsp.workspace.move({workspace = 8, monitor = 1})"
+              hyprctl dispatch "hl.dsp.workspace.move({workspace = 9, monitor = 1})"
+              hyprctl dispatch "hl.dsp.workspace.move({workspace = 10, monitor = 1})"
+              hyprctl dispatch "hl.dsp.workspace.move({workspace = 11, monitor = 0})"
+              hyprctl dispatch "hl.dsp.focus({monitor = 0})"
+              hyprctl dispatch "hl.dsp.focus({monitor = 0})"
             ''}
           '';
         };

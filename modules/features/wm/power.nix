@@ -18,7 +18,7 @@
       then "${lib.getExe pkgs.swaylock}"
       else "true";
 
-    logoutCmd = lib.optionalString hyprland.enable "${pkgs.hyprland}/bin/hyprctl dispatch exit";
+    logoutCmd = lib.optionalString hyprland.enable ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.exit()"'';
 
     rebootCmd =
       if hyprland.enable

@@ -2,6 +2,7 @@
   flake.nixosModules.wm = {
     config,
     pkgs,
+    lib,
     ...
   }: let
     hmConfig = config.home-manager.users.dastarruer;
@@ -18,37 +19,74 @@
       in {
         # Let grim capture screen
         permission = [
-          "${pkgs.grim}/bin/grim, screencopy, allow"
+          {
+            binary = "${lib.getExe pkgs.grim}";
+            type = "screencopy";
+            mode = "allow";
+          }
         ];
 
         env = [
-          "SLURP_ARGS, -d -b ${config.lib.stylix.colors.base00}80 -B ${config.lib.stylix.colors.base05}4D -c ${config.custom.theme.accent} -w ${toString hmConfig.wayland.windowManager.hyprland.settings.general.border_size}"
+          {
+            _args = [
+              "SLURP_ARGS"
+              "-d -b ${config.lib.stylix.colors.base00}80 -B ${config.lib.stylix.colors.base05}4D -c ${config.custom.theme.accent} -w ${toString hmConfig.wayland.windowManager.hyprland.settings.config.general.border_size}"
+            ];
+          }
         ];
 
         bind = [
           # Copysave area to your specified directory
-          "SUPER, P, exec, ${pkgs.grimblast}/bin/grimblast copysave area ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n"
-
+          {
+            _args = [
+              "SUPER + P"
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${pkgs.grimblast}/bin/grimblast copysave area ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n")'')
+            ];
+          }
           # Copysave active window
-          "SUPER+SHIFT, P, exec, ${pkgs.grimblast}/bin/grimblast copysave active ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n"
-
+          {
+            _args = [
+              "SUPER + SHIFT + P"
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${pkgs.grimblast}/bin/grimblast copysave active ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n")'')
+            ];
+          }
           # Copysave full screen
-          "SUPER+CTRL, P, exec, ${pkgs.grimblast}/bin/grimblast copysave output ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n"
-
+          {
+            _args = [
+              "SUPER + CTRL + P"
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${pkgs.grimblast}/bin/grimblast copysave output ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n")'')
+            ];
+          }
           # Copysave all monitors
-          "SUPER+SHIFT+CTRL, P, exec, ${pkgs.grimblast}/bin/grimblast copysave screen ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n"
-          
+          {
+            _args = [
+              "SUPER + SHIFT + CTRL + P"
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${pkgs.grimblast}/bin/grimblast copysave screen ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n")'')
+            ];
+          }
 
           # OCR (Optical Character Recognition)
-          ''SUPER+SHIFT, O, exec, ${pkgs.grimblast}/bin/grimblast save area - | ${pkgs.tesseract}/bin/tesseract stdin stdout | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.libnotify}/bin/notify-send "OCR Copied to Clipboard"''
-
+          {
+            _args = [
+              "SUPER + SHIFT + O"
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${pkgs.grimblast}/bin/grimblast save area - | ${pkgs.tesseract}/bin/tesseract stdin stdout | ${pkgs.wl-clipboard}/bin/wl-copy && ${pkgs.libnotify}/bin/notify-send 'OCR Copied to Clipboard'")'')
+            ];
+          }
           # Open last paste in Swappy for editing
-          "SUPER, M, exec, ${pkgs.wl-clipboard}/bin/wl-paste | ${pkgs.swappy}/bin/swappy -f -"
+          {
+            _args = [
+              "SUPER + M"
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${pkgs.wl-clipboard}/bin/wl-paste | ${pkgs.swappy}/bin/swappy -f -")'')
+            ];
+          }
         ];
 
         # Remove animations for grimblast: https://github.com/hyprwm/Hyprland/discussions/12964
-        layerrule = [
-          "no_anim on, match:namespace selection"
+        layer_rule = [
+          {
+            match.namespace = "selection";
+            no_anim = true;
+          }
         ];
       };
     };

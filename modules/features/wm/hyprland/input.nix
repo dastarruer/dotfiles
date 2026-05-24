@@ -2,18 +2,18 @@
   flake.nixosModules.wm = {...}: {
     home-manager.users.dastarruer = {
       wayland.windowManager.hyprland.settings = {
-        input = {
+        config.input = {
           # Keyboard layouts
           "kb_layout" = "us, es";
           "kb_options" = "grp:alt_space_toggle";
 
           # Keyboard settings
-          "repeat_delay" = "300";
-          "repeat_rate" = "50";
+          repeat_delay = 300;
+          repeat_rate = 50;
 
           # Mouse settings
-          "follow_mouse" = "1";
-          "sensitivity" = "0";
+          follow_mouse = 1;
+          sensitivity = 0;
 
           # Touchpad settings
           touchpad = {

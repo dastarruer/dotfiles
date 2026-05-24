@@ -2,6 +2,7 @@
 {...}: {
   flake.nixosModules.wm = {
     config,
+    pkgs,
     lib,
     ...
   }: {
@@ -18,12 +19,15 @@
 
       wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
         bind = [
-          "SUPER, D, exec, rofi -show drun"
+          {_args = ["SUPER + D" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.rofi} -show drun")'')];}
         ];
 
-        layerrule = [
-          "blur on, match:namespace rofi"
-          "xray on, match:namespace rofi"
+        layer_rule = [
+          {
+            match.namespace = "rofi";
+            blur = true;
+            xray = true;
+          }
         ];
       };
     };

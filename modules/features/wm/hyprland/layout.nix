@@ -15,7 +15,7 @@
     config.home-manager.users.dastarruer = let
       scrolling = config.custom.wm.scrolling;
     in {
-      wayland.windowManager.hyprland.settings = {
+      wayland.windowManager.hyprland.settings.config = {
         general.layout =
           if scrolling.enable
           then "scrolling"

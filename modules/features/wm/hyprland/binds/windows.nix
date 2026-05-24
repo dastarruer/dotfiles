@@ -10,45 +10,87 @@
       wayland.windowManager.hyprland.settings = {
         bind =
           [
-            "SUPER, Q, killactive"
-            "SUPER, Space, togglefloating"
-            "SUPER, G, centerwindow"
-            "SUPER, F, fullscreen"
-            "SUPER+SHIFT, A, pin"
+            {
+              _args = ["SUPER + Q" (lib.generators.mkLuaInline ''hl.dsp.window.close()'')];
+            }
+            {
+              _args = ["SUPER + Space" (lib.generators.mkLuaInline ''hl.dsp.window.float({ action = "toggle" })'')];
+            }
+            {
+              _args = ["SUPER + G" (lib.generators.mkLuaInline ''hl.dsp.window.center()'')];
+            }
+            {
+              _args = ["SUPER + F" (lib.generators.mkLuaInline ''hl.dsp.window.fullscreen()'')];
+            }
+            {
+              _args = ["SUPER + SHIFT + A" (lib.generators.mkLuaInline ''hl.dsp.window.pin()'')];
+            }
           ]
           # Scrollable tiling binds
           ++ lib.optionals scrolling.enable [
-            "SUPER, H, layoutmsg, focus l"
-            "SUPER, L, layoutmsg, focus r"
-            "SUPER, J, layoutmsg, focus u"
-            "SUPER, K, layoutmsg, focus d"
-            "SUPER+SHIFT, H, layoutmsg, swapcol l"
-            "SUPER+SHIFT, L, layoutmsg, swapcol r"
-            "SUPER+CONTROL, H, layoutmsg, colresize -0.1"
-            "SUPER+CONTROL, L, layoutmsg, colresize +0.1"
+            {
+              _args = ["SUPER + H" (lib.generators.mkLuaInline ''hl.dsp.layout("focus l")'')];
+            }
+            {
+              _args = ["SUPER + L" (lib.generators.mkLuaInline ''hl.dsp.layout("focus r")'')];
+            }
+            {
+              _args = ["SUPER + J" (lib.generators.mkLuaInline ''hl.dsp.layout("focus u")'')];
+            }
+            {
+              _args = ["SUPER + K" (lib.generators.mkLuaInline ''hl.dsp.layout("focus d")'')];
+            }
+            {
+              _args = ["SUPER + SHIFT + H" (lib.generators.mkLuaInline ''hl.dsp.layout("swapcol l")'')];
+            }
+            {
+              _args = ["SUPER + SHIFT + L" (lib.generators.mkLuaInline ''hl.dsp.layout("swapcol r")'')];
+            }
+            {
+              _args = ["SUPER + CONTROL + H" (lib.generators.mkLuaInline ''hl.dsp.layout("colresize -0.1")'')];
+            }
+            {
+              _args = ["SUPER + CONTROL + L" (lib.generators.mkLuaInline ''hl.dsp.layout("colresize +0.1")'')];
+            }
           ]
           # Dwindle tiling binds
           ++ lib.optionals (!scrolling.enable) [
-            "SUPER, H, movefocus, l"
-            "SUPER, L, movefocus, r"
-            "SUPER, J, movefocus, u"
-            "SUPER, K, movefocus, d"
-            "SUPER+SHIFT, H, movewindow, l"
-            "SUPER+SHIFT, L, movewindow, r"
-            "SUPER+SHIFT, K, movewindow, u"
-            "SUPER+SHIFT, J, movewindow, d"
-            "SUPER+CONTROL, H, resizeactive, -50 0"
-            "SUPER+CONTROL, L, resizeactive, 50 0"
-            "SUPER+CONTROL, K, resizeactive, 0 -50"
-            "SUPER+CONTROL, J, resizeactive, 0 50"
-            "SUPER+ALT, H, moveactive, -50 0"
-            "SUPER+ALT, L, moveactive, 50 0"
-            "SUPER+ALT, K, moveactive, 0 -50"
-            "SUPER+ALT, J, moveactive, 0 50"
-            "SUPER+SHIFT+ALT, H, moveactive, -10 0"
-            "SUPER+SHIFT+ALT, L, moveactive, 10 0"
-            "SUPER+SHIFT+ALT, K, moveactive, 0 -10"
-            "SUPER+SHIFT+ALT, J, moveactive, 0 10"
+            {
+              _args = ["SUPER + H" (lib.generators.mkLuaInline ''hl.dsp.focus({ direction = "l" })'')];
+            }
+            {
+              _args = ["SUPER + L" (lib.generators.mkLuaInline ''hl.dsp.focus({ direction = "r" })'')];
+            }
+            {
+              _args = ["SUPER + J" (lib.generators.mkLuaInline ''hl.dsp.focus({ direction = "u" })'')];
+            }
+            {
+              _args = ["SUPER + K" (lib.generators.mkLuaInline ''hl.dsp.focus({ direction = "d" })'')];
+            }
+            {
+              _args = ["SUPER + SHIFT + H" (lib.generators.mkLuaInline ''hl.dsp.window.swap({ direction = "l" })'')];
+            }
+            {
+              _args = ["SUPER + SHIFT + L" (lib.generators.mkLuaInline ''hl.dsp.window.swap({ direction = "r" })'')];
+            }
+            {
+              _args = ["SUPER + SHIFT + K" (lib.generators.mkLuaInline ''hl.dsp.window.swap({ direction = "u" })'')];
+            }
+            {
+              _args = ["SUPER + SHIFT + J" (lib.generators.mkLuaInline ''hl.dsp.window.swap({ direction = "d" })'')];
+            }
+            {
+              _args = ["SUPER + CONTROL + H" (lib.generators.mkLuaInline ''hl.dsp.window.resize({ x = -50, y = 0, relative = true })'')];
+            }
+            {
+              _args = ["SUPER + CONTROL + L" (lib.generators.mkLuaInline ''hl.dsp.window.resize({ x = 50, y = 0, relative = true })'')];
+            }
+            {
+              _args = ["SUPER + CONTROL + K" (lib.generators.mkLuaInline ''hl.dsp.window.resize({ x = 0, y = -50, relative = true })'')];
+            }
+            {
+              _args = ["SUPER + CONTROL + J" (lib.generators.mkLuaInline ''hl.dsp.window.resize({ x = 0, y = 50, relative = true })'')];
+            }
           ];
       };
     };

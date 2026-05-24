@@ -2,46 +2,58 @@
   flake.nixosModules.wm = {...}: {
     home-manager.users.dastarruer = {
       wayland.windowManager.hyprland.settings = {
-        misc = {
-          disable_hyprland_logo = true;
-          disable_splash_rendering = true;
+        config = {
+          misc = {
+            disable_hyprland_logo = true;
+            disable_splash_rendering = true;
 
-          middle_click_paste = false;
+            middle_click_paste = false;
 
-          # Allows to restart lockscreen if it crashes
-          allow_session_lock_restore = true;
-        };
+            # Allows to restart lockscreen if it crashes
+            allow_session_lock_restore = true;
+          };
 
-        binds = {
-          # If I have a pinned picture-in-picture window, it will stay pinned even after fullscreening it
-          allow_pin_fullscreen = true;
-        };
+          binds = {
+            # If I have a pinned picture-in-picture window, it will stay pinned even after fullscreening it
+            allow_pin_fullscreen = true;
+          };
 
-        ecosystem = {
-          # no i cant donate sorry
-          no_donation_nag = true;
+          ecosystem = {
+            # no i cant donate sorry
+            no_donation_nag = true;
 
-          # enable hyprland's new permission system
-          enforce_permissions = true;
-        };
+            # enable hyprland's new permission system
+            enforce_permissions = true;
+          };
 
-        general = {
-          # Resize windows by dragging borders
-          resize_on_border = true;
+          general = {
+            # Resize windows by dragging borders
+            resize_on_border = true;
+          };
         };
 
         # Monitor setup
         monitor = [
           # Main monitor in middle
-          "DP-1, 1920x1080@144, 0x0, 1"
+          {
+            output = "DP-1";
+            mode = "1920x1080@144";
+            position = "0x0";
+            scale = 1;
+          }
 
           # Laptop monitor on the right
-          "eDP-1, 1920x1080@60, 1920x0, 1"
+          {
+            output = "eDP-1";
+            mode = "1920x1080@60";
+            position = "1920x0";
+            scale = 1;
+          }
         ];
 
         env = [
-          "XCURSOR_SIZE,24"
-          "HYPRCURSOR_SIZE,24"
+          {_args=["XCURSOR_SIZE" "24"];}
+          {_args=["HYPRCURSOR_SIZE" "24"];}
         ];
       };
     };

@@ -8,6 +8,26 @@
     hmConfig = config.home-manager.users.dastarruer;
     hyprland = hmConfig.wayland.windowManager.hyprland;
     rofi = hmConfig.programs.rofi;
+
+    launchCmd =
+      if rofi.enable
+      then "rofi -dmenu"
+      else "";
+    script = pkgs.writeShellApplication {
+      name = "cliphist-wrapper";
+      runtimeInputs = with pkgs;
+        [
+          wl-clipboard
+          cliphist
+        ]
+        ++ lib.optionals rofi.enable [
+          pkgs.rofi
+        ];
+
+      text = ''
+        cliphist list | ${launchCmd} | cliphist decode | wl-copy
+      '';
+    };
   in {
     home-manager.users.dastarruer = {
       services.cliphist = {
@@ -15,13 +35,8 @@
       };
 
       wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
-        bind = lib.mkIf rofi.enable [
-          "SUPER, V, exec, ${lib.getExe pkgs.cliphist} list | ${lib.getExe pkgs.rofi} -dmenu | ${lib.getExe pkgs.cliphist} decode | ${pkgs.wl-clipboard}/bin/wl-copy"
-        ];
-
-        "exec-once" = [
-          # For some reason, the cliphist service does not start properly on startup. This is a workaround
-          "${pkgs.systemd}/bin/systemctl --user start cliphist.service"
+        bind = [
+          {_args = ["SUPER + V" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe script}")'')];}
         ];
       };
     };

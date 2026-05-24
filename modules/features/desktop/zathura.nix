@@ -33,8 +33,11 @@
       xdg.mimeApps.defaultApplications."application/pdf" = ["org.pwmt.zathura.desktop"];
 
       wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
-        windowrule = [
-          "idle_inhibit focus, match:class org.pwmt.zathura"
+        window_rule = [
+          {
+            match.class = "org.pwmt.zathura";
+            idle_inhibit = "focus";
+          }
         ];
       };
     };

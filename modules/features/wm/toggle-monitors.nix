@@ -16,9 +16,9 @@
             text = ''
               STATE=$(hyprctl monitors | grep -wA20 "${monitorName}" | grep "dpmsStatus" | awk '{print $2}')
               if [ "$STATE" = 1 ]; then
-                  hyprctl dispatch dpms off "${monitorName}"
+                  hyprctl dispatch "hl.dsp.dpms({action = off, monitor = ${monitorName}})"
               else
-                  hyprctl dispatch dpms on "${monitorName}"
+                  hyprctl dispatch "hl.dsp.dpms({action = on, monitor = ${monitorName}})"
               fi
             '';
           };

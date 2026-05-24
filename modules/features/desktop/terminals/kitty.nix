@@ -38,7 +38,7 @@
 
       # Set hyprland keybind
       wayland.windowManager.hyprland.settings.bind = lib.mkIf hyprland.enable [
-        "SUPER, RETURN, exec, kitty"
+        {_args = ["SUPER + RETURN" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("kitty")'')];}        
       ];
     };
   };

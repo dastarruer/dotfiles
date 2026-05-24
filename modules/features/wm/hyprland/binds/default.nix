@@ -1,13 +1,14 @@
 {...}: {
-  flake.nixosModules.wm = {pkgs, ...}: {
+  flake.nixosModules.wm = {
+    pkgs,
+    lib,
+    ...
+  }: {
     home-manager.users.dastarruer = {
       wayland.windowManager.hyprland.settings = {
-        "bindm" = [
-          "SUPER, mouse:272, movewindow"
-        ];
-
         bind = [
-          "SUPER+SHIFT, K, exec, ${pkgs.hyprland}/bin/hyprctl kill"
+          {_args = ["SUPER + mouse:272" (lib.generators.mkLuaInline "hl.dsp.window.drag()")];}
+          {_args = ["SUPER + SHIFT + K" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${pkgs.hyprland}/bin/hyprctl kill")'')];}
         ];
       };
     };

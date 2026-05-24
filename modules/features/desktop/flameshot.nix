@@ -55,13 +55,16 @@
 
       # Same comment as above; might as well keep this
       wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
-        windowrule = [
-          "no_anim on, match:title flameshot"
-          "float on, match:title flameshot"
-          "move 0 0, match:title flameshot"
-          "pin on, match:title flameshot"
-          "no_initial_focus on, match:title flameshot"
-          "monitor 1, class:flameshot"
+        window_rule = [
+          {
+            match.title = "flameshot";
+            no_anim = true;
+            float = true;
+            move = "{0, 0}";
+            pin = true;
+            no_initial_focus = true;
+            monitor = 1;
+          }
         ];
       };
     };

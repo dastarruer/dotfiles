@@ -30,8 +30,11 @@
       custom.backup.backupPaths = lib.mkIf backup.enable ["${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/vault"];
 
       wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
-        windowrule = [
-          "workspace 10 silent, match:class obsidian"
+        window_rule = [
+          {
+            match.class = "obsidian";
+            workspace = "10 silent";
+          }
         ];
       };
     };

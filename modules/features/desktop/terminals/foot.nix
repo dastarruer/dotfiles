@@ -39,12 +39,7 @@
       # Use footclient for fast window creation (talks to the systemd server)
       wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
         bind = [
-          "SUPER, RETURN, exec, footclient"
-        ];
-
-        "exec-once" = [
-          # For some reason, the systemd foot service does not start properly on startup. This is a workaround
-          "${pkgs.systemd}/bin/systemctl --user start foot.service"
+          {_args = ["SUPER + RETURN" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("footclient")'')];}
         ];
       };
     };

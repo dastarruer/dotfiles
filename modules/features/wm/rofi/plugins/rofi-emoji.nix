@@ -15,7 +15,7 @@
 
       wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
         bind = [
-          "SUPER, A, exec, rofi -modi emoji -show emoji"
+          {_args = ["SUPER + A" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.rofi} -modi emoji -show emoji")'')];}
         ];
       };
     };

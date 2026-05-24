@@ -24,7 +24,8 @@
 
       # Otherwise, an error will be thrown
       # The specific desktop portal used is configured by whatever wm or de is enabled
-      xdg.portal.enable = true;
+      # Disabled for now since it conflicts with an option set by hyprland.systemd.enable = true
+      # xdg.portal.enable = true;
 
       # This is needed for launching flatpaks with rofi
       home.packages = with pkgs; [

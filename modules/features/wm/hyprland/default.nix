@@ -36,7 +36,7 @@
 
         if [ -n "$current_ff_address" ]; then
             # Focus the existing Firefox window
-            hyprctl dispatch focuswindow address:"$current_ff_address"
+            hyprctl dispatch "hl.dsp.focus({address = $current_ff_address})"
             # Open the URL in a new tab
             ${firefoxExe} --new-tab "$url" &
         else
@@ -54,6 +54,12 @@
 
       # Start hyprland on boot
       withUWSM = true;
+
+      # set to the flake package for more up to date software
+      package = hyprlandPkgs.hyprland;
+
+      # For stuff between apps like clipboard access, drag and drop, etc.
+      portalPackage = hyprlandPkgs.xdg-desktop-portal-hyprland;
     };
 
     environment.systemPackages = with pkgs; [
@@ -83,15 +89,15 @@
     home-manager.users.dastarruer = {
       wayland.windowManager.hyprland = {
         enable = true;
+        configType = "lua";
+        systemd.enable = true;
 
-        # If not disabled, can conflict with UWSM
-        systemd.enable = false;
+        # Fix systemd services that don't start on startup
+        systemd.variables = ["--all"];
 
-        # set to the flake package for more up to date software
-        package = hyprlandPkgs.hyprland;
-
-        # For stuff between apps like clipboard access, drag and drop, etc.
-        portalPackage = hyprlandPkgs.xdg-desktop-portal-hyprland;
+        # Use package defined in nixos config
+        package = null;
+        portalPackage = null;
       };
 
       # Use wayland for chromium/electron apps

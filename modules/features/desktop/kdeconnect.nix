@@ -28,9 +28,12 @@
 
     home-manager.users.dastarruer = {
       wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
-        windowrule = [
+        window_rule = [
           # Float the 'Receiving file' popup that occurs when transferring a large file
-          "float on, match:title ^(Receiving file)(.*)$"
+          {
+            match.title = "^(Receiving file)(.*)$";
+            float = true;
+          }
         ];
       };
     };

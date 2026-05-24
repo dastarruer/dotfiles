@@ -18,11 +18,6 @@
           "5500"
         ];
       };
-
-      wayland.windowManager.hyprland.settings."exec-once" = lib.mkIf hyprland.enable [
-        # For some reason, the systemd hyprsunset service does not start properly on startup. This is a workaround
-        "${pkgs.systemd}/bin/systemctl --user start hyprsunset.service"
-      ];
     };
   };
 }

@@ -18,7 +18,11 @@
 
       # Let obs capture screen
       wayland.windowManager.hyprland.settings.permission = lib.mkIf hyprland.enable [
-        "${pkgs.obs-studio}/bin/obs, screencopy, allow"
+        {
+          binary = "${lib.getExe pkgs.obs-studio}";
+          type = "screencopy";
+          mode = "allow";
+        }
       ];
     };
   };

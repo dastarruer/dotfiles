@@ -60,7 +60,7 @@
       };
 
       wayland.windowManager.hyprland.settings.bind = lib.mkIf hyprland.enable [
-        "SUPER, RETURN, exec, ghostty +new-window"
+        {_args = ["SUPER + RETURN" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("ghostty +new-window")'')];}
       ];
     };
   };

@@ -17,7 +17,7 @@
           before_sleep_cmd = "${lib.getExe pkgs.pause-all} && ${pkgs.systemd}/bin/loginctl lock-session";
           after_sleep_cmd =
             lib.mkIf hyprland.enable
-            "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
+            ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.dpms(on)"'';
 
           # Inhibit sleep until screen is locked; prevents lockscreen from dying (hopefully)
           inhibit_sleep = 2;

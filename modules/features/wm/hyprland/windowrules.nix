@@ -3,26 +3,75 @@
     home-manager.users.dastarruer = {
       wayland.windowManager.hyprland.settings = {
         # Window rules
-        windowrule = [
-          "opacity 1.0 override, match:class firefox|thunar|firefox-nightly"
-          "suppress_event maximize, match:class .*"
-          "no_initial_focus on,match:class ^$,match:title ^$,match:xwayland 1,match:float 1,match:fullscreen 0,match:pin 0"
-
-          # No shadows on non-floating windows
-          "no_shadow on, match:float 0"
-
-          "workspace 6 silent,match:class Todoist"
-          "workspace 4 silent,match:title WhatsApp"
-          "float on, match:title Bluetooth Devices"
-          "pin on, match:title Bluetooth Devices"
-          "size 500 300, match:title Bluetooth Devices"
-          "float on, match:class org.pulseaudio.pavucontrol"
-          "pin on, match:class org.pulseaudio.pavucontrol"
-          "size 750 400, match:class org.pulseaudio.pavucontrol"
-          "pin on, match:title Wi-Fi Network Authentication Required"
-          "idle_inhibit fullscreen, match:class *"
-          "idle_inhibit fullscreen, match:title *"
-          "idle_inhibit fullscreen, match:fullscreen 1"
+        window_rule = [
+          # Opacity overrides
+          {
+            match.class = "firefox|thunar|firefox-nightly";
+            opacity = "1.0 override";
+          }
+          # Suppress maximize for all windows
+          {
+            match.class = ".*";
+            suppress_event = "maximize";
+          }
+          # No initial focus for unidentified xwayland floating windows
+          {
+            match = {
+              class = "^$";
+              title = "^$";
+              xwayland = true;
+              float = true;
+              fullscreen = false;
+              pin = false;
+            };
+            no_initial_focus = true;
+          }
+          # No shadows on tiled windows
+          {
+            match.float = false;
+            no_shadow = true;
+          }
+          # Workspace assignments
+          {
+            match.class = "Todoist";
+            workspace = "6 silent";
+          }
+          {
+            match.title = "WhatsApp";
+            workspace = "4 silent";
+          }
+          # Bluetooth Devices popup
+          {
+            match.title = "Bluetooth Devices";
+            float = true;
+            pin = true;
+            size = "500 300";
+          }
+          # PulseAudio volume control
+          {
+            match.class = "org.pulseaudio.pavucontrol";
+            float = true;
+            pin = true;
+            size = "750 400";
+          }
+          # WiFi auth dialog
+          {
+            match.title = "Wi-Fi Network Authentication Required";
+            pin = true;
+          }
+          # Idle inhibit
+          {
+            match.class = ".*";
+            idle_inhibit = "fullscreen";
+          }
+          {
+            match.title = ".*";
+            idle_inhibit = "fullscreen";
+          }
+          {
+            match.fullscreen = true;
+            idle_inhibit = "fullscreen";
+          }
         ];
       };
     };

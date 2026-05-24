@@ -3,7 +3,7 @@
     home-manager.users.dastarruer = {
       stylix.targets.hyprland.enable = false;
 
-      wayland.windowManager.hyprland.settings = {
+      wayland.windowManager.hyprland.settings.config = {
         general = {
           "col.active_border" = "rgb(${config.custom.theme.accent})";
           # Make inactive border transparent
