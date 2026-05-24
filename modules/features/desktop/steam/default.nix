@@ -88,7 +88,11 @@
       };
 
       protontricks.enable = true;
-      gamescopeSession.enable = true;
+
+      # https://github.com/NixOS/nixpkgs/issues/523427
+      # gamescopeSession.enable = true;
+      gamescopeSession.enable = false;
+      
       extraCompatPackages = [pkgs.proton-ge-bin];
 
       # Wayland controller support

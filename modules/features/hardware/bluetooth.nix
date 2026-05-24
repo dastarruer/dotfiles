@@ -25,7 +25,6 @@
     # blueman-manager
     services.blueman = {
       enable = true;
-      withApplet = false;
     };
 
     # Script to connect to my airpods
