@@ -430,11 +430,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779493866,
-        "narHash": "sha256-HLpqMFTyFeWs2bWdy0YsesVtfagjbK3vZhTwBP49Jkg=",
+        "lastModified": 1779577620,
+        "narHash": "sha256-UMvH3LpgnPYazKcevbkh9uEWreCXZzjY3rlnhY7w3DA=",
         "owner": "dastarruer",
         "repo": "gtkshutdown",
-        "rev": "217178661f480b055c0f6179b7b5bcb283ac43a1",
+        "rev": "d73bdc78fcebdbddb323e1614bee2eadda9de653",
         "type": "github"
       },
       "original": {

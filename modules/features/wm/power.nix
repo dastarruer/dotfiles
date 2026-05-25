@@ -7,6 +7,7 @@
   }: let
     hmConfig = config.home-manager.users.dastarruer;
 
+    gtkshutdown = inputs.gtkshutdown.packages.${pkgs.stdenv.system}.default;
     hyprland = hmConfig.wayland.windowManager.hyprland;
     locker = config.custom.wm.locker;
     rofi = hmConfig.programs.rofi;
@@ -22,12 +23,12 @@
 
     rebootCmd =
       if hyprland.enable
-      then "${lib.getExe inputs.gtkshutdown.packages.${pkgs.stdenv.system}.default} --post-cmd 'reboot'"
+      then "${lib.getExe gtkshutdown} --post-cmd 'reboot'"
       else "systemctl reboot";
 
     shutdownCmd =
       if hyprland.enable
-      then "${lib.getExe inputs.gtkshutdown.packages.${pkgs.stdenv.system}.default} --post-cmd 'shutdown -P 0'"
+      then "${lib.getExe gtkshutdown} --post-cmd 'shutdown -P 0'"
       else "systemctl poweroff";
 
     launcherCmd =
@@ -35,6 +36,9 @@
       then "${lib.getExe pkgs.rofi} -dmenu -i -p 'Power Menu:'"
       else "cat";
   in {
+    # For test purposes
+    environment.systemPackages = [gtkshutdown];
+
     nixpkgs.overlays = [
       (final: prev: {
         power = prev.writeShellApplication {
