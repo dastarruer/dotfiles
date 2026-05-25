@@ -62,6 +62,11 @@
         accent = config.lib.stylix.colors.base0B;
       };
 
+      wm = {
+        locker = "swaylock";
+        idle-daemon = "none";
+      };
+
       cli = {
         multiplexer = "tmux";
       };

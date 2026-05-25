@@ -1,0 +1,30 @@
+{...}: {
+  flake.nixosModules.wm = {
+    config,
+    pkgs,
+    lib,
+    ...
+  }: {
+    home-manager.users.dastarruer = let
+      hmConfig = config.home-manager.users.dastarruer;
+      hyprland = hmConfig.wayland.windowManager.hyprland;
+      idle-daemon = config.custom.wm.idle-daemon;
+    in
+      lib.mkIf (idle-daemon == "hypridle") {
+        services.hypridle = {
+          enable = true;
+
+          settings.general = {
+            # Pause all players and lock screen
+            before_sleep_cmd = "${lib.getExe pkgs.pause-all} && ${pkgs.systemd}/bin/loginctl lock-session";
+            after_sleep_cmd =
+              lib.mkIf hyprland.enable
+              ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.dpms(on)"'';
+
+            # Inhibit sleep until screen is locked; prevents lockscreen from dying (hopefully)
+            inhibit_sleep = 2;
+          };
+        };
+      };
+  };
+}

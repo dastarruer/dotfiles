@@ -15,7 +15,7 @@
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
   in {
     # Silence alerts for spotify notifications
-    custom.wm.dunst.excludeTitles = lib.mkIf (config ? custom.wm && dunst.enable) ["Spotify"];
+    custom.wm.notifications.excludeTitles = lib.mkIf (config ? custom.wm && dunst.enable) ["Spotify"];
 
     home-manager.users.dastarruer = {
       imports = [

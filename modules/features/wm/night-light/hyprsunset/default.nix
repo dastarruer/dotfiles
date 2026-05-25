@@ -1,14 +1,12 @@
 {...}: {
   flake.nixosModules.wm = {
     config,
-    pkgs,
     lib,
     ...
   }: let
-    hmConfig = config.home-manager.users.dastarruer;
-    hyprland = hmConfig.wayland.windowManager.hyprland;
+    night-light = config.custom.wm.night-light;
   in {
-    home-manager.users.dastarruer = {
+    home-manager.users.dastarruer = lib.mkIf (night-light == "hyprsunset") {
       services.hyprsunset = {
         enable = true;
 

@@ -65,6 +65,6 @@
       })
     ];
 
-    custom.wm.dunst.excludeSummaries = lib.mkIf dunst.enable ["Wallpaper set to:"];
+    custom.wm.notifications.excludeSummaries = lib.mkIf dunst.enable ["Wallpaper set to:"];
   };
 }
