@@ -12,7 +12,7 @@
       programs.lutris = {
         enable = true;
         steamPackage = config.programs.steam.package;
-        
+
         # https://github.com/NixOS/nixpkgs/issues/513245
         package = pkgs.lutris.override {
           # Intercept buildFHSEnv to modify target packages

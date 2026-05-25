@@ -1,5 +1,9 @@
 {...}: {
-  flake.nixosModules.cli_direnv = {config,lib, ...}: let
+  flake.nixosModules.cli_direnv = {
+    config,
+    lib,
+    ...
+  }: let
     editor = config.custom.desktop.editor;
   in {
     home-manager.users.dastarruer = {

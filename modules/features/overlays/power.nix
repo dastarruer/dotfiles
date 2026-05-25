@@ -10,7 +10,7 @@
     gtkshutdown = inputs.gtkshutdown.packages.${pkgs.stdenv.system}.default;
     hyprland = hmConfig.wayland.windowManager.hyprland;
     locker = config.custom.wm.locker;
-    rofi = hmConfig.programs.rofi;
+    rofi = config.custom.wm.launcher == "rofi";
 
     lockCmd =
       if locker == "hyprlock"

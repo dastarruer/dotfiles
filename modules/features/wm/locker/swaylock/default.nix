@@ -6,7 +6,7 @@
     ...
   }: {
     home-manager.users.dastarruer = let
-      hypridle = config.services.hypridle;
+      hypridle = config.custom.wm.idle-daemon == "hypridle";
       locker = config.custom.wm.locker;
     in {
       programs.swaylock = lib.mkIf (locker == "swaylock") {

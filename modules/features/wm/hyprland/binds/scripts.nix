@@ -32,12 +32,12 @@
               (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.headphones}")'')
             ];
           }
-         {
-           _args = [
-             "SUPER + SHIFT + M"
-             (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.move-windows-to-monitor}")'')
-           ];
-         }
+          {
+            _args = [
+              "SUPER + SHIFT + M"
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.move-windows-to-monitor}")'')
+            ];
+          }
           {
             _args = [
               "SUPER + E"

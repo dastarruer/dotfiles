@@ -7,7 +7,7 @@
   }: let
     hmConfig = config.home-manager.users.dastarruer;
     hyprland = hmConfig.wayland.windowManager.hyprland;
-    rofi = hmConfig.programs.rofi;
+    rofi = config.custom.wm.launcher == "rofi";
 
     launchCmd =
       if rofi
