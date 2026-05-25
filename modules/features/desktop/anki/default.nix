@@ -46,7 +46,7 @@
         window_rule = [
           {
             match.class = "anki";
-            workspace = "6 silent";
+            workspace = "9 silent";
             idle_inhibit = "focus";
           }
         ];
