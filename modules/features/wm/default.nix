@@ -48,5 +48,11 @@
         description = "Set the night-light filter utility to be used.";
       };
     };
+
+    config.home-manager.users.dastarruer = {config, ...}: {
+      programs.quickshell.enable = true;
+      # just do this manually
+      # home.file.".config/quickshell".source = config.lib.file.mkOutOfStoreSymlink "./quickshell";
+    };
   };
 }
