@@ -1,6 +1,7 @@
-{...}: {
+{inputs, ...}: {
   flake.nixosModules.wm = {
     config,
+    pkgs,
     lib,
     ...
   }: let
@@ -12,6 +13,7 @@
       home-manager.users.dastarruer = {
         programs.waybar = {
           enable = true;
+          package = inputs.waybar.packages.${pkgs.stdenv.system}.waybar;
           systemd.enable = true;
         };
 
