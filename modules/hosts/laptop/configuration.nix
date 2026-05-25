@@ -128,6 +128,8 @@
     '';
 
     home-manager.users.dastarruer = {
+      programs.quickshell.enable = true;
+
       systemd.user = let
         service = "cargo-clean";
 
