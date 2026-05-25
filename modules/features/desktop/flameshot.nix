@@ -60,7 +60,7 @@
             match.title = "flameshot";
             no_anim = true;
             float = true;
-            move = "{0, 0}";
+            move = "0 0";
             pin = true;
             no_initial_focus = true;
             monitor = 1;

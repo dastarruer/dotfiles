@@ -1,5 +1,13 @@
 {...}: {
-  flake.nixosModules.core = {pkgs, ...}: {
+  flake.nixosModules.core = {
+    config,
+    pkgs,
+    lib,
+    ...
+  }: let
+    hmConfig = config.home-manager.users.dastarruer;
+    hyprland = hmConfig.wayland.windowManager.hyprland;
+  in {
     # From https://wiki.nixos.org/wiki/PipeWire
     security.rtkit.enable = true;
     services.pipewire = {
@@ -20,5 +28,16 @@
     environment.systemPackages = with pkgs; [
       pavucontrol
     ];
+
+    home-manager.users.dastarruer = {
+      wayland.windowManager.hyprland.settings.window_rule = lib.mkIf hyprland.enable [
+        {
+          match.class = "org.pulseaudio.pavucontrol";
+          float = true;
+          pin = true;
+          size = "933 400";
+        }
+      ];
+    };
   };
 }

@@ -46,8 +46,8 @@
         window_rule = [
           {
             match.class = "spotify";
-            move = "{2049, 146}";
-            size = "{1068, 670}";
+            move = "2049 146";
+            size = "1068 670";
             workspace = "5 silent";
             float = true;
           }

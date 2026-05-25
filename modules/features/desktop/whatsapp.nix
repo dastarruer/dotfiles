@@ -1,6 +1,14 @@
 {...}: {
-  flake.nixosModules.desktop_whatsapp = {pkgs, ...}: {
-    home-manager.users.dastarruer = {
+  flake.nixosModules.desktop_whatsapp = {
+    config,
+    pkgs,
+    lib,
+    ...
+  }: {
+    home-manager.users.dastarruer = let
+      hmConfig = config.home-manager.users.dastarruer;
+      hyprland = hmConfig.wayland.windowManager.hyprland;
+    in {
       programs.firefoxpwa = {
         enable = true;
 
@@ -20,6 +28,13 @@
           };
         };
       };
+
+      wayland.windowManager.hyprland.settings.window_rule = lib.mkIf hyprland.enable [
+        {
+          match.title = "WhatsApp";
+          workspace = "4 silent";
+        }
+      ];
     };
   };
 }

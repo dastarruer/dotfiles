@@ -51,8 +51,8 @@
           {
             match.title = "Picture-in-Picture";
             float = true;
-            move = "{3408 834}";
-            size = "{427 240}";
+            move = "3408 834";
+            size = "427 240";
             pin = true;
           }
         ];

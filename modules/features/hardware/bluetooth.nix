@@ -1,5 +1,12 @@
 {...}: {
-  flake.nixosModules.hardware = {pkgs, ...}: {
+  flake.nixosModules.hardware = {
+    config,
+    lib,
+    ...
+  }: let
+    hmConfig = config.home-manager.users.dastarruer;
+    hyprland = hmConfig.wayland.windowManager.hyprland;
+  in {
     # Enable firmware for bluetooth
     hardware.enableAllFirmware = true;
 
@@ -75,6 +82,15 @@
 
     home-manager.users.dastarruer = {
       services.mpris-proxy.enable = true;
+      wayland.windowManager.hyprland.settings.window_rule = lib.mkIf hyprland.enable [
+        # Bluetooth Devices popup
+        {
+          match.title = "Bluetooth Devices";
+          float = true;
+          pin = true;
+          size = "500 300";
+        }
+      ];
     };
   };
 }

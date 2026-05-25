@@ -1,9 +1,12 @@
 {inputs, ...}: {
   flake.nixosModules.hardware = {
     config,
-    pkgs,
+    lib,
     ...
-  }: {
+  }: let
+    hmConfig = config.home-manager.users.dastarruer;
+    hyprland = hmConfig.wayland.windowManager.hyprland;
+  in {
     imports = [
       inputs.sops-nix.nixosModules.sops
     ];
@@ -162,5 +165,14 @@
 
     # Enable firmware for wifi cards
     hardware.enableAllFirmware = true;
+
+    home-manager.users.dastarruer = {
+      wayland.windowManager.hyprland.settings.window_rule = lib.mkIf hyprland.enable [
+        {
+          match.title = "Wi-Fi Network Authentication Required";
+          pin = true;
+        }
+      ];
+    };
   };
 }

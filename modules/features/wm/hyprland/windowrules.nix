@@ -31,34 +31,6 @@
             match.float = false;
             no_shadow = true;
           }
-          # Workspace assignments
-          {
-            match.class = "Todoist";
-            workspace = "6 silent";
-          }
-          {
-            match.title = "WhatsApp";
-            workspace = "4 silent";
-          }
-          # Bluetooth Devices popup
-          {
-            match.title = "Bluetooth Devices";
-            float = true;
-            pin = true;
-            size = "500 300";
-          }
-          # PulseAudio volume control
-          {
-            match.class = "org.pulseaudio.pavucontrol";
-            float = true;
-            pin = true;
-            size = "750 400";
-          }
-          # WiFi auth dialog
-          {
-            match.title = "Wi-Fi Network Authentication Required";
-            pin = true;
-          }
           # Idle inhibit
           {
             match.class = ".*";
