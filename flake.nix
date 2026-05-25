@@ -116,6 +116,7 @@
           nativeBuildInputs = with pkgs; [
             nixd
             alejandra
+            kdePackages.qtdeclarative # required for qml lsp
           ];
         };
       };
