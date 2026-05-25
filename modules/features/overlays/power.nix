@@ -32,7 +32,7 @@
       else "systemctl poweroff";
 
     launcherCmd =
-      if rofi.enable
+      if rofi
       then "${lib.getExe pkgs.rofi} -dmenu -i -p 'Power Menu:'"
       else "cat";
   in {

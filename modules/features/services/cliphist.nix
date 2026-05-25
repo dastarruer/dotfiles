@@ -10,7 +10,7 @@
     rofi = hmConfig.programs.rofi;
 
     launchCmd =
-      if rofi.enable
+      if rofi
       then "rofi -dmenu"
       else "";
     script = pkgs.writeShellApplication {
@@ -20,7 +20,7 @@
           wl-clipboard
           cliphist
         ]
-        ++ lib.optionals rofi.enable [
+        ++ lib.optionals rofi [
           pkgs.rofi
         ];
 
