@@ -65,6 +65,39 @@
       wm = {
         locker = "swaylock";
         idle-daemon = "none";
+
+        monitors = [
+          # Main monitor in the middle
+          {
+            name = "DP-1";
+            workspaces = [1 2 3 4 5 6 7 8 9 10];
+            backlightDevice = "ddcci7";
+            position = {
+              x = 0;
+              y = 0;
+            };
+            resolution = {
+              width = 1920;
+              height = 1080;
+              rate = 120.0;
+            };
+          }
+          # Laptop monitor
+          {
+            name = "eDP-1";
+            workspaces = [11];
+            backlightDevice = "amdgpu_bl1";
+            position = {
+              x = 1920;
+              y = 0;
+            };
+            resolution = {
+              width = 1920;
+              height = 1080;
+              rate = 60.0;
+            };
+          }
+        ];
       };
 
       cli = {

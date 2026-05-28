@@ -24,7 +24,30 @@
             coreutils
           ];
 
-          text = ''
+          text = let
+            # Build a shell case statement from monitors that have a backlight device
+            cases =
+              lib.concatMapStringsSep "\n" (
+                m:
+                  lib.optionalString (m.backlightDevice != null) ''
+                    "${m.name}")
+                        if [ "$direction" == "-" ]; then
+                            brillo -s ${m.backlightDevice} -U "$brightness" -q
+                        else
+                            brillo -s ${m.backlightDevice} -A "$brightness" -q
+                        fi
+                        ;;
+                  ''
+              )
+              config.custom.wm.monitors;
+
+            # Pick the first monitor with a backlight as the fallback
+            fallback = lib.findFirst (m: m.backlightDevice != null) null config.custom.wm.monitors;
+            fallbackName =
+              if fallback != null
+              then fallback.name
+              else "eDP-1";
+          in ''
             set +e
 
             usage="Usage: $0 [+|-] [brightness]"
@@ -38,40 +61,30 @@
             arg="$1"
             brightness="$2"
 
-            if [ "$arg" == "help" ] || [ "$arg" == "--help" ] || [ "$arg" == "-h" ]; then
-                echo "$usage"
-                exit 0
-            fi
-
-            if [ "$arg" != "+" ] && [ "$arg" != "-" ]; then
+            case "$arg" in
+              help|--help|-h) echo "$usage"; exit 0 ;;
+              +|-) direction=$arg ;;
+              *)
                 echo "Direction parameter must be '+' or '-'"
                 echo "$usage"
                 exit 1
-            fi
+                ;;
+            esac
 
-            direction=$arg
-
-            # Fallback to eDP-1 if Hyprland is not enabled or detection fails
-            focused_name="eDP-1"
+            focused_name="${fallbackName}"
             ${lib.optionalString hyprland.enable ''
               if monitor_data=$(${pkgs.hyprland}/bin/hyprctl monitors -j 2>/dev/null); then
                   focused_name=$(echo "$monitor_data" | ${lib.getExe pkgs.jq} -r '.[] | select(.focused == true) | .name')
               fi
             ''}
 
-            if [ "$focused_name" != "eDP-1" ]; then
-                if [ "$direction" == "-" ]; then
-                    brillo -s ddcci7 -U "$brightness" -q
-                else
-                    brillo -s ddcci7 -A "$brightness" -q
-                fi
-            else
-                if [ "$direction" == "-" ]; then
-                    brillo -s amdgpu_bl1 -U "$brightness" -q
-                else
-                    brillo -s amdgpu_bl1 -A "$brightness" -q
-                fi
-            fi
+            case "$focused_name" in
+            ${cases}
+              *)
+                  echo "No backlight device configured for monitor: $focused_name"
+                  exit 1
+                  ;;
+            esac
           '';
         };
       })

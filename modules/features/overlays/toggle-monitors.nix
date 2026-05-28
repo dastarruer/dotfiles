@@ -1,31 +1,25 @@
 {...}: {
   flake.nixosModules.wm = {...}: {
     nixpkgs.overlays = [
-      (final: prev: let
-        # 1. Define a helper function to create the script
-        mkMonitorToggle = monitorName:
-          prev.writeShellApplication {
-            name = "toggle-${monitorName}";
+      (final: prev: {
+        toggle-focused-monitor = prev.writeShellApplication {
+          name = "toggle-focused-monitor";
+          runtimeInputs = with prev; [
+            hyprland
+            jq
+          ];
 
-            runtimeInputs = with prev; [
-              hyprland
-              gawk
-              gnugrep
-            ];
+          text = ''
+            # Recommended by the hyprland wiki to avoid race conditions: https://wiki.hypr.land/Configuring/Basics/Dispatchers/#cursor
+            sleep 0.5
 
-            text = ''
-              STATE=$(hyprctl monitors | grep -wA20 "${monitorName}" | grep "dpmsStatus" | awk '{print $2}')
-              if [ "$STATE" = 1 ]; then
-                  hyprctl dispatch "hl.dsp.dpms({action = off, monitor = ${monitorName}})"
-              else
-                  hyprctl dispatch "hl.dsp.dpms({action = on, monitor = ${monitorName}})"
-              fi
-            '';
-          };
-      in {
-        # 2. Use the helper to define your packages
-        toggle-hdmi = mkMonitorToggle "DP-1";
-        toggle-laptop = mkMonitorToggle "eDP-1";
+            focused=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name')
+            # I'll keep this here in case i need it, but for now we don't need to know the dpms state
+            # state=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .dpmsStatus')
+
+            hyprctl dispatch 'hl.dsp.dpms({ action = "toggle", monitor = "'"$focused"'" })'
+          '';
+        };
       })
     ];
   };

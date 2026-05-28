@@ -34,28 +34,14 @@
           }
           {
             _args = [
-              "SUPER + SHIFT + M"
-              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.move-windows-to-monitor}")'')
-            ];
-          }
-          {
-            _args = [
               "SUPER + E"
               (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.power}")'')
             ];
           }
-          # bindl (trigger on release)
           {
             _args = [
               "SUPER + Y"
-              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.toggle-hdmi}")'')
-              {locked = true;}
-            ];
-          }
-          {
-            _args = [
-              "SUPER + SHIFT + Y"
-              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.toggle-laptop}")'')
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.toggle-focused-monitor}")'')
               {locked = true;}
             ];
           }
