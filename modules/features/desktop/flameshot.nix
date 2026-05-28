@@ -51,7 +51,7 @@
         format = "";
       };
 
-      home-manager.window-manager.notifications.excludeTitles = lib.mkIf dunst.enable ["flameshot"];
+      home-manager.window-manager.notifications.excludeTitles = ["flameshot"];
 
       # Same comment as above; might as well keep this
       wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {

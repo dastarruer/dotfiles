@@ -10,7 +10,6 @@
     awww = hmConfig.services.awww;
     theme = config.custom.theme.name;
     wallpaperDir = "${inputs.self.outPath}/config/wallpapers/${theme}";
-    dunst = hmConfig.services.dunst;
   in {
     nixpkgs.overlays = [
       (final: prev: {
@@ -65,6 +64,6 @@
       })
     ];
 
-    custom.wm.notifications.excludeSummaries = lib.mkIf dunst.enable ["Wallpaper set to:"];
+    custom.wm.notifications.excludeSummaries = ["Wallpaper set to:"];
   };
 }
