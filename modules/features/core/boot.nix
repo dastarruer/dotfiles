@@ -31,7 +31,6 @@
     # And yeah idk what that means...
     services.dbus.implementation = "broker";
 
-    stylix.targets.plymouth.enable = false;
     # Bootloader.
     boot = {
       # Get the latest kernel
@@ -49,19 +48,7 @@
       ];
 
       # Spalsh screen
-      plymouth = {
-        enable = true;
-
-        # Set the theme of plymouth
-        theme = "cuts_alt";
-
-        themePackages = with pkgs; [
-          # Use an override so it doesn't install every theme
-          (adi1090x-plymouth-themes.override {
-            selected_themes = ["cuts_alt"];
-          })
-        ];
-      };
+      plymouth.enable = true;
 
       # Bootloader
       loader = {
