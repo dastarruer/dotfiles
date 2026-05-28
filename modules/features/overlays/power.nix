@@ -23,12 +23,12 @@
 
     rebootCmd =
       if hyprland.enable
-      then "${lib.getExe gtkshutdown} --post-cmd 'reboot'"
+      then "RUST_LOG=trace ${lib.getExe gtkshutdown} --post-cmd 'reboot'"
       else "systemctl reboot";
 
     shutdownCmd =
       if hyprland.enable
-      then "${lib.getExe gtkshutdown} --post-cmd 'shutdown -P 0'"
+      then "RUST_LOG=trace ${lib.getExe gtkshutdown} --post-cmd 'shutdown -P 0'"
       else "systemctl poweroff";
 
     launcherCmd =
