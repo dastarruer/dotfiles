@@ -10,12 +10,11 @@
     hmConfig = config.home-manager.users.dastarruer;
 
     hyprland = hmConfig.wayland.windowManager.hyprland;
-    dunst = hmConfig.services.dunst;
 
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
   in {
     # Silence alerts for spotify notifications
-    custom.wm.notifications.excludeTitles = lib.mkIf (config ? custom.wm && dunst.enable) ["Spotify"];
+    custom.wm.notifications.excludeTitles = ["Spotify"];
 
     home-manager.users.dastarruer = {
       imports = [
@@ -46,8 +45,8 @@
         window_rule = [
           {
             match.class = "spotify";
-            move = "2049 146";
-            size = "1068 670";
+            move = lib.generators.mkLuaInline "{81, 146}";
+            size = lib.generators.mkLuaInline "{1068, 670}";
             workspace = "5 silent";
             float = true;
           }

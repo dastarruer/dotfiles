@@ -51,8 +51,8 @@
           {
             match.title = "Picture-in-Picture";
             float = true;
-            move = "3408 834";
-            size = "427 240";
+            move = lib.generators.mkLuaInline "{3408, 834}";
+            size = lib.generators.mkLuaInline "{427, 240}";
             pin = true;
           }
         ];

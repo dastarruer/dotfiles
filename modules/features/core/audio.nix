@@ -35,7 +35,7 @@
           match.class = "org.pulseaudio.pavucontrol";
           float = true;
           pin = true;
-          size = "933 400";
+          size = lib.generators.mkLuaInline "{933, 400}";
         }
       ];
     };

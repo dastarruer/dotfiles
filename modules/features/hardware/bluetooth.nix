@@ -88,7 +88,7 @@
           match.title = "Bluetooth Devices";
           float = true;
           pin = true;
-          size = "500 300";
+          size = lib.generators.mkLuaInline "{500, 300}";
         }
       ];
     };
