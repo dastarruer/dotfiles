@@ -5,8 +5,7 @@
     ...
   }: {
     home-manager.users.dastarruer = let
-      hmConfig = config.home-manager.users.dastarruer;
-      hyprland = hmConfig.wayland.windowManager.hyprland;
+      hyprland = config.custom.wm.wm == "hyprland";
       fish = config.programs.fish;
     in {
       programs.zathura = {
@@ -32,7 +31,7 @@
       # Set zathura as default pdf viewer
       xdg.mimeApps.defaultApplications."application/pdf" = ["org.pwmt.zathura.desktop"];
 
-      wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
+      wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
         window_rule = [
           {
             match.class = "org.pwmt.zathura";

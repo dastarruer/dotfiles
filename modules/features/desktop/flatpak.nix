@@ -15,8 +15,7 @@
     fonts.fontDir.enable = true;
 
     home-manager.users.dastarruer = let
-      hmConfig = config.home-manager.users.dastarruer;
-      hyprland = hmConfig.wayland.windowManager.hyprland;
+      hyprland = config.custom.wm.wm == "hyprland";
     in {
       imports = [
         inputs.flatpaks.homeModules.default
@@ -53,7 +52,7 @@
             ];
 
             # Remove x11 support for flatpaks, making them run only on wayland
-            sockets = lib.mkIf hyprland.enable [
+            sockets = lib.mkIf hyprland [
               "!x11"
               "!fallback-x11"
             ];

@@ -4,24 +4,25 @@
     pkgs,
     lib,
     ...
-  }: {
-    home-manager.users.dastarruer = let
-      hmConfig = config.home-manager.users.dastarruer;
-      hyprland = hmConfig.wayland.windowManager.hyprland;
-      dunst = config.services.dunst;
-    in {
-      assertions = [
-        {
-          assertion = !hyprland.enable;
-          message = "hyprland cannot be enabled at the same time as flameshot, since hyprland uses grim + slurp for screenshots. Flameshot is also worse on wayland.";
-        }
-      ];
+  }: let
+    hyprland = config.custom.wm.wm == "hyprland";
+    wayland = config.custom.wm.wayland;
+    dunst = config.services.dunst;
+  in {
+    assertions = [
+      {
+        assertion = !hyprland.enable;
+        message = "hyprland cannot be enabled at the same time as flameshot, since hyprland uses grim + slurp for screenshots. Flameshot is also worse on wayland.";
+      }
+    ];
+
+    home-manager.users.dastarruer = {
       services.flameshot = {
         enable = true;
 
         # Enable wayland support with this build flag
         # Yes there's an assertion but if i ever remove that then it's better to have this here
-        package = lib.mkIf hyprland.enable pkgs.flameshot.override {
+        package = lib.mkIf wayland pkgs.flameshot.override {
           enableWlrSupport = true;
         };
 

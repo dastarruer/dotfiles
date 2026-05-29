@@ -6,8 +6,7 @@
     ...
   }: {
     home-manager.users.dastarruer = let
-      hmConfig = config.home-manager.users.dastarruer;
-      hyprland = hmConfig.wayland.windowManager.hyprland;
+      hyprland = config.custom.wm.wm == "hyprland";
     in {
       programs.obs-studio.enable = true;
 
@@ -17,7 +16,7 @@
       ];
 
       # Let obs capture screen
-      wayland.windowManager.hyprland.settings.permission = lib.mkIf hyprland.enable [
+      wayland.windowManager.hyprland.settings.permission = lib.mkIf hyprland [
         {
           binary = "${lib.getExe pkgs.obs-studio}";
           type = "screencopy";

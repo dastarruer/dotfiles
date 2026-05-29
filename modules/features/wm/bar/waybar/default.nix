@@ -5,11 +5,18 @@
     lib,
     ...
   }: let
-    hmConfig = config.home-manager.users.dastarruer;
-    hyprland = hmConfig.wayland.windowManager.hyprland;
+    hyprland = config.custom.wm.wm == "hyprland";
+    wayland = config.custom.wm.wayland;
     bar = config.custom.wm.bar;
   in
     lib.mkIf (bar == "waybar") {
+      assertions = [
+        {
+          assertion = wayland;
+          message = "waybar is only compatible with Wayland compositors.";
+        }
+      ];
+
       home-manager.users.dastarruer = {
         programs.waybar = {
           enable = true;
@@ -19,7 +26,7 @@
 
         stylix.targets.waybar.enable = false;
 
-        wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
+        wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
           # Start/stop waybar keybind
           bind = [
             {_args = ["SUPER + W" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("pidof waybar && pkill waybar || waybar &")'')];}

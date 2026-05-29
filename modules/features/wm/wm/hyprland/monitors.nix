@@ -3,8 +3,10 @@
     config,
     lib,
     ...
-  }: {
-    home-manager.users.dastarruer = {
+  }: let
+    hyprland = config.custom.wm.wm == "hyprland";
+  in {
+    home-manager.users.dastarruer = lib.mkIf hyprland {
       wayland.windowManager.hyprland.settings = {
         # Monitor setup
         monitor =

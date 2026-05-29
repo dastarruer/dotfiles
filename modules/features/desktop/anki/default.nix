@@ -5,10 +5,9 @@
     ...
   }: let
     backup = config.custom.backup;
+    hyprland = config.custom.wm.wm == "hyprland";
 
     hmConfig = config.home-manager.users.dastarruer;
-    hyprland = hmConfig.wayland.windowManager.hyprland;
-
     keyPath = hmConfig.sops.secrets.anki_synckey.path;
     emailPath = hmConfig.sops.secrets.email.path;
   in {
@@ -42,7 +41,7 @@
         };
       };
 
-      wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
+      wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
         window_rule = [
           {
             match.class = "anki";

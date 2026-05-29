@@ -5,8 +5,7 @@
     lib,
     ...
   }: let
-    hmConfig = config.home-manager.users.dastarruer;
-    hyprland = hmConfig.wayland.windowManager.hyprland;
+    hyprland = config.custom.wm.wm == "hyprland";
     terminal = config.custom.desktop.terminal;
 
     # Get cursor trails like in kitty
@@ -59,7 +58,7 @@
         };
       };
 
-      wayland.windowManager.hyprland.settings.bind = lib.mkIf hyprland.enable [
+      wayland.windowManager.hyprland.settings.bind = lib.mkIf hyprland [
         {_args = ["SUPER + RETURN" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("ghostty +new-window")'')];}
       ];
     };

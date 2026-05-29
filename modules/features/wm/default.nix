@@ -1,5 +1,9 @@
 {...}: {
-  flake.nixosModules.wm = {lib, ...}: {
+  flake.nixosModules.wm = {
+    config,
+    lib,
+    ...
+  }: {
     options.custom.wm = {
       monitors = lib.mkOption {
         type = lib.types.listOf (lib.types.submodule {
@@ -65,6 +69,18 @@
           };
         });
         default = [];
+      };
+
+      wm = lib.mkOption {
+        type = lib.types.enum ["hyprland"];
+        default = "hyprland";
+        description = "Set the window manager to be used.";
+      };
+      wayland = lib.mkOption {
+        type = lib.types.bool;
+        readOnly = true;
+        default = builtins.elem config.custom.wm.wm ["hyprland"];
+        description = "Whether the selected window manager is a Wayland compositor (derived automatically).";
       };
 
       locker = lib.mkOption {

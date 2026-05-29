@@ -5,8 +5,7 @@
     lib,
     ...
   }: let
-    hmConfig = config.home-manager.users.dastarruer;
-    hyprland = hmConfig.wayland.windowManager.hyprland;
+    hyprland = config.custom.wm.wm == "hyprland";
   in {
     hardware.brillo.enable = true;
 
@@ -72,7 +71,7 @@
             esac
 
             focused_name="${fallbackName}"
-            ${lib.optionalString hyprland.enable ''
+            ${lib.optionalString hyprland ''
               if monitor_data=$(${pkgs.hyprland}/bin/hyprctl monitors -j 2>/dev/null); then
                   focused_name=$(echo "$monitor_data" | ${lib.getExe pkgs.jq} -r '.[] | select(.focused == true) | .name')
               fi

@@ -3,10 +3,11 @@
     config,
     lib,
     ...
-  }: {
-    home-manager.users.dastarruer = let
-      scrolling = config.custom.wm.scrolling;
-    in {
+  }: let
+    scrolling = config.custom.wm.scrolling;
+    hyprland = config.custom.wm.wm == "hyprland";
+  in {
+    home-manager.users.dastarruer = lib.mkIf hyprland {
       wayland.windowManager.hyprland.settings = {
         bind =
           [

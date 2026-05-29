@@ -3,7 +3,10 @@
     config,
     lib,
     ...
-  }: {
+  }: let
+    hyprland = config.custom.wm.wm == "hyprland";
+    scrolling = config.custom.wm.scrolling;
+  in {
     options.custom = {
       wm.scrolling.enable = lib.mkOption {
         type = lib.types.bool;
@@ -12,9 +15,7 @@
       };
     };
 
-    config.home-manager.users.dastarruer = let
-      scrolling = config.custom.wm.scrolling;
-    in {
+    config.home-manager.users.dastarruer = lib.mkIf hyprland {
       wayland.windowManager.hyprland.settings.config = {
         general.layout =
           if scrolling.enable

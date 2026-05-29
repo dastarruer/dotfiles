@@ -8,7 +8,7 @@
     hmConfig = config.home-manager.users.dastarruer;
 
     gtkshutdown = inputs.gtkshutdown.packages.${pkgs.stdenv.system}.default;
-    hyprland = hmConfig.wayland.windowManager.hyprland;
+    hyprland = config.custom.wm.wm == "hyprland";
     locker = config.custom.wm.locker;
     rofi = config.custom.wm.launcher == "rofi";
 
@@ -19,15 +19,15 @@
       then "${lib.getExe pkgs.swaylock}"
       else "true";
 
-    logoutCmd = lib.optionalString hyprland.enable ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.exit()"'';
+    logoutCmd = lib.optionalString hyprland ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.exit()"'';
 
     rebootCmd =
-      if hyprland.enable
+      if hyprland
       then "RUST_LOG=trace ${lib.getExe gtkshutdown} --post-cmd 'reboot'"
       else "systemctl reboot";
 
     shutdownCmd =
-      if hyprland.enable
+      if hyprland
       then "RUST_LOG=trace ${lib.getExe gtkshutdown} --post-cmd 'shutdown -P 0'"
       else "systemctl poweroff";
 

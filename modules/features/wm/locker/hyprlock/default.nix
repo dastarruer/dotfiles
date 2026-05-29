@@ -4,11 +4,19 @@
     pkgs,
     lib,
     ...
-  }: {
-    home-manager.users.dastarruer = let
-      hypridle = config.custom.wm.idle-daemon == "hypridle";
-      locker = config.custom.wm.locker;
-    in {
+  }: let
+    wayland = config.custom.wm.wayland;
+    hypridle = config.custom.wm.idle-daemon == "hypridle";
+    locker = config.custom.wm.locker;
+  in {
+    assertions = [
+      {
+        assertion = wayland;
+        message = "hyprlock only works on Wayland compositors.";
+      }
+    ];
+
+    home-manager.users.dastarruer = {
       stylix.targets.hyprlock.enable = false;
 
       # Config taken from here: https://github.com/FireDrop6000/hyprland-mydots/blob/master/.config/hypr/hyprlock.conf

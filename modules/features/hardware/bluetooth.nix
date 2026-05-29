@@ -4,8 +4,7 @@
     lib,
     ...
   }: let
-    hmConfig = config.home-manager.users.dastarruer;
-    hyprland = hmConfig.wayland.windowManager.hyprland;
+    hyprland = config.custom.wm.wm == "hyprland";
   in {
     # Enable firmware for bluetooth
     hardware.enableAllFirmware = true;
@@ -82,7 +81,7 @@
 
     home-manager.users.dastarruer = {
       services.mpris-proxy.enable = true;
-      wayland.windowManager.hyprland.settings.window_rule = lib.mkIf hyprland.enable [
+      wayland.windowManager.hyprland.settings.window_rule = lib.mkIf hyprland [
         # Bluetooth Devices popup
         {
           match.title = "Bluetooth Devices";

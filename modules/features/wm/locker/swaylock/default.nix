@@ -4,23 +4,32 @@
     pkgs,
     lib,
     ...
-  }: {
-    home-manager.users.dastarruer = let
-      hypridle = config.custom.wm.idle-daemon == "hypridle";
-      locker = config.custom.wm.locker;
-    in {
-      programs.swaylock = lib.mkIf (locker == "swaylock") {
-        enable = true;
-        settings = {
-          ignore-empty-password = true;
+  }: let
+    hypridle = config.custom.wm.idle-daemon == "hypridle";
+    locker = config.custom.wm.locker;
+    wayland = config.custom.wm.wayland;
+  in
+    lib.mkIf (locker == "swaylock") {
+      assertions = [
+        {
+          assertion = wayland;
+          message = "swaylock only works on Wayland compositors.";
+        }
+      ];
 
-          image = "${config.home-manager.users.dastarruer.home.homeDirectory}/Pictures/wallpaper";
-          indicator-x-position = 100;
-          indicator-y-position = 950;
+      home-manager.users.dastarruer = {
+        programs.swaylock = {
+          enable = true;
+          settings = {
+            ignore-empty-password = true;
+
+            image = "${config.home-manager.users.dastarruer.home.homeDirectory}/Pictures/wallpaper";
+            indicator-x-position = 100;
+            indicator-y-position = 950;
+          };
         };
-      };
 
-      services.hypridle.settings.general.lock_cmd = lib.mkIf hypridle.enable "pidof swaylock || ${pkgs.swaylock}/bin/swaylock";
+        services.hypridle.settings.general.lock_cmd = lib.mkIf hypridle.enable "pidof swaylock || ${pkgs.swaylock}/bin/swaylock";
+      };
     };
-  };
 }

@@ -5,8 +5,7 @@
     lib,
     ...
   }: let
-    hmConfig = config.home-manager.users.dastarruer;
-    hyprland = hmConfig.wayland.windowManager.hyprland;
+    hyprland = config.custom.wm.wm == "hyprland";
   in {
     # From https://wiki.nixos.org/wiki/PipeWire
     security.rtkit.enable = true;
@@ -30,7 +29,7 @@
     ];
 
     home-manager.users.dastarruer = {
-      wayland.windowManager.hyprland.settings.window_rule = lib.mkIf hyprland.enable [
+      wayland.windowManager.hyprland.settings.window_rule = lib.mkIf hyprland [
         {
           match.class = "org.pulseaudio.pavucontrol";
           float = true;

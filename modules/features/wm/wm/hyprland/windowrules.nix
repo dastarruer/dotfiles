@@ -1,6 +1,12 @@
 {...}: {
-  flake.nixosModules.wm = {...}: {
-    home-manager.users.dastarruer = {
+  flake.nixosModules.wm = {
+    config,
+    lib,
+    ...
+  }: let
+    hyprland = config.custom.wm.wm == "hyprland";
+  in {
+    home-manager.users.dastarruer = lib.mkIf hyprland {
       wayland.windowManager.hyprland.settings = {
         # Window rules
         window_rule = [

@@ -1,10 +1,13 @@
 {...}: {
   flake.nixosModules.wm = {
+    config,
     pkgs,
     lib,
     ...
-  }: {
-    home-manager.users.dastarruer = {
+  }: let
+    hyprland = config.custom.wm.wm == "hyprland";
+  in {
+    home-manager.users.dastarruer = lib.mkIf hyprland {
       wayland.windowManager.hyprland.settings = {
         bind = [
           # Media keybinds

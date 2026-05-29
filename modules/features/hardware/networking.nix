@@ -4,8 +4,7 @@
     lib,
     ...
   }: let
-    hmConfig = config.home-manager.users.dastarruer;
-    hyprland = hmConfig.wayland.windowManager.hyprland;
+    hyprland = config.custom.wm.wm == "hyprland";
   in {
     imports = [
       inputs.sops-nix.nixosModules.sops
@@ -167,7 +166,7 @@
     hardware.enableAllFirmware = true;
 
     home-manager.users.dastarruer = {
-      wayland.windowManager.hyprland.settings.window_rule = lib.mkIf hyprland.enable [
+      wayland.windowManager.hyprland.settings.window_rule = lib.mkIf hyprland [
         {
           match.title = "Wi-Fi Network Authentication Required";
           pin = true;

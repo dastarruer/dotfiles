@@ -7,9 +7,7 @@
     lib,
     ...
   }: let
-    hmConfig = config.home-manager.users.dastarruer;
-
-    hyprland = hmConfig.wayland.windowManager.hyprland;
+    hyprland = config.custom.wm.wm == "hyprland";
 
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
   in {
@@ -40,7 +38,7 @@
         wayland = true;
       };
 
-      wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
+      wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
         # looks aesthetic innit
         window_rule = [
           {

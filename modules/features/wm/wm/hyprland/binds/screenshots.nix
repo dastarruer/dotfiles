@@ -6,8 +6,9 @@
     ...
   }: let
     hmConfig = config.home-manager.users.dastarruer;
+    hyprland = config.custom.wm.wm == "hyprland";
   in {
-    home-manager.users.dastarruer = {
+    home-manager.users.dastarruer = lib.mkIf hyprland {
       # Create the screenshots dir, deleting files older than 30 days
       systemd.user.tmpfiles.rules = [
         "d %h/Pictures/screenshots - - - 30d -"

@@ -7,8 +7,7 @@
   }: {
     home-manager.users.dastarruer = let
       fish = config.programs.fish;
-      hmConfig = config.home-manager.users.dastarruer;
-      hyprland = hmConfig.wayland.windowManager.hyprland;
+      hyprland = config.custom.wm.wm == "hyprland";
     in {
       programs.yazi = {
         enable = true;
@@ -19,7 +18,7 @@
         plugins."wl-clipboard" = let
           plugins = pkgs.yaziPlugins;
         in
-          lib.mkIf hyprland.enable plugins.wl-clipboard;
+          lib.mkIf hyprland plugins.wl-clipboard;
 
         keymap = {
           mgr.prepend_keymap =
@@ -35,7 +34,7 @@
                 desc = "Change to schoolwork dir";
               }
             ]
-            ++ lib.optional hyprland.enable {
+            ++ lib.optional hyprland {
               on = "<C-y>";
               run = ["plugin wl-clipboard"];
               desc = "Copy file to to system clipboard";

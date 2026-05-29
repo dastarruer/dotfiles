@@ -5,8 +5,7 @@
     lib,
     ...
   }: let
-    hmConfig = config.home-manager.users.dastarruer;
-    hyprland = hmConfig.wayland.windowManager.hyprland;
+    hyprland = config.custom.wm.wm == "hyprland";
     rofi = config.custom.wm.launcher == "rofi";
 
     launchCmd =
@@ -34,7 +33,7 @@
         enable = true;
       };
 
-      wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
+      wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
         bind = [
           {_args = ["SUPER + V" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe script}")'')];}
         ];

@@ -9,8 +9,7 @@
     ];
 
     home-manager.users.dastarruer = let
-      hmConfig = config.home-manager.users.dastarruer;
-      hyprland = hmConfig.wayland.windowManager.hyprland;
+      hyprland = config.custom.wm.wm == "hyprland";
       backup = config.custom.backup;
     in {
       # Use the flatpak, which does not ask for login every reboot
@@ -20,7 +19,7 @@
         ];
 
         # Enable wayland support for obsidian
-        overrides."md.obsidian.Obsidian".Context.sockets = lib.mkIf hyprland.enable [
+        overrides."md.obsidian.Obsidian".Context.sockets = lib.mkIf hyprland [
           "wayland"
           "!x11"
           "!fallback-x11"
@@ -29,7 +28,7 @@
 
       custom.backup.backupPaths = lib.mkIf backup.enable ["${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/vault"];
 
-      wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
+      wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
         window_rule = [
           {
             match.class = "obsidian";

@@ -4,8 +4,7 @@
     lib,
     ...
   }: let
-    hmConfig = config.home-manager.users.dastarruer;
-    hyprland = hmConfig.wayland.windowManager.hyprland;
+    hyprland = config.custom.wm.wm == "hyprland";
   in {
     # https://www.reddit.com/r/NixOS/comments/xz4m6m/how_to_use_kdeconnect_on_nixos/
     programs.kdeconnect = {
@@ -27,7 +26,7 @@
     };
 
     home-manager.users.dastarruer = {
-      wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
+      wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
         window_rule = [
           # Float the 'Receiving file' popup that occurs when transferring a large file
           {

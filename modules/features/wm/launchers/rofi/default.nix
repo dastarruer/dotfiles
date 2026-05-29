@@ -7,8 +7,7 @@
     ...
   }: {
     home-manager.users.dastarruer = let
-      hmConfig = config.home-manager.users.dastarruer;
-      hyprland = hmConfig.wayland.windowManager.hyprland;
+      hyprland = config.custom.wm.wm == "hyprland";
       launcher = config.custom.wm.launcher;
     in
       lib.mkIf (launcher == "rofi") {
@@ -19,7 +18,7 @@
           location = "top";
         };
 
-        wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
+        wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
           bind = [
             {_args = ["SUPER + D" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.rofi} -show drun")'')];}
           ];

@@ -5,8 +5,7 @@
     lib,
     ...
   }: let
-    hmConfig = config.home-manager.users.dastarruer;
-    hyprland = hmConfig.wayland.windowManager.hyprland;
+    hyprland = config.custom.wm.wm == "hyprland";
     terminal = config.custom.desktop.terminal;
   in {
     home-manager.users.dastarruer = lib.mkIf (terminal == "foot") {
@@ -37,7 +36,7 @@
       };
 
       # Use footclient for fast window creation (talks to the systemd server)
-      wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
+      wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
         bind = [
           {_args = ["SUPER + RETURN" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("footclient")'')];}
         ];
