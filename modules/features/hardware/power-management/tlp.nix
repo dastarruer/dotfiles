@@ -6,7 +6,7 @@
     lib,
     ...
   }: let
-    daemon = config.custom.power-management.daemon;
+    daemon = config.custom.hardware.power-management;
   in {
     services.tlp = lib.mkIf (daemon == "tlp") {
       enable = true;
