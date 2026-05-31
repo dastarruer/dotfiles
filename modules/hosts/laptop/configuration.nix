@@ -54,6 +54,8 @@
       services_docker
       services_ssh
       services_cliphist
+
+      self-hosted_sunshine
     ];
 
     custom = {
