@@ -38,10 +38,10 @@
                         ;;
                   ''
               )
-              config.custom.wm.monitors;
+              config.custom.hardware.monitors;
 
             # Pick the first monitor with a backlight as the fallback
-            fallback = lib.findFirst (m: m.backlightDevice != null) null config.custom.wm.monitors;
+            fallback = lib.findFirst (m: m.backlightDevice != null) null config.custom.hardware.monitors;
             fallbackName =
               if fallback != null
               then fallback.name

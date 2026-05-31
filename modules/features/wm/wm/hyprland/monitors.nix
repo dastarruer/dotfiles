@@ -23,7 +23,7 @@
               scale = m.scale;
             }
           )
-          config.custom.wm.monitors;
+          config.custom.hardware.monitors;
 
         # Set each workspace to each monitor
         workspace_rule =
@@ -35,7 +35,7 @@
               })
               monitor.workspaces
           )
-          config.custom.wm.monitors;
+          config.custom.hardware.monitors;
       };
     };
   };

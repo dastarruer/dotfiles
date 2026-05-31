@@ -64,10 +64,7 @@
         accent = config.lib.stylix.colors.base0B;
       };
 
-      wm = {
-        locker = "swaylock";
-        idle-daemon = "none";
-
+      hardware = {
         monitors = [
           # Main monitor in the middle
           {
@@ -100,6 +97,11 @@
             };
           }
         ];
+      };
+
+      wm = {
+        locker = "swaylock";
+        idle-daemon = "none";
       };
 
       cli = {
