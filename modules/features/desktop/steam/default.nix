@@ -6,6 +6,7 @@
     ...
   }: let
     hmConfig = config.home-manager.users.dastarruer;
+    tlp = config.custom.hardware.power-management == "tlp";
     ludusavi = hmConfig.services.ludusavi;
   in {
     imports = [
@@ -38,7 +39,7 @@
         };
 
         # Use full cpu power when gaming
-        custom = {
+        custom = lib.mkIf tlp {
           start = "${lib.getExe pkgs.tlp} setcfg CPU_BOOST_ON_AC=1 CPU_SCALING_GOVERNOR_ON_AC=performance PLATFORM_PROFILE_ON_AC=performance";
           end = "${lib.getExe pkgs.tlp} setcfg CPU_BOOST_ON_AC=0 CPU_SCALING_GOVERNOR_ON_AC=powersave PLATFORM_PROFILE_ON_AC=balanced";
         };
