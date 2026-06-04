@@ -7,8 +7,8 @@
     ...
   }: let
     daemon = config.custom.hardware.power-management;
-  in {
-    services.tlp = lib.mkIf (daemon == "tlp") {
+  in lib.mkIf (daemon == "tlp") {
+    services.tlp = {
       enable = true;
       settings = {
         # Change from 1 to 0 to stop aggressive boosting on AC
@@ -27,8 +27,8 @@
         # Enable runtime power management
         RUNTIME_PM_ON_AC = "auto";
 
-        START_CHARGE_THRESH_BAT0 = 94;
-        STOP_CHARGE_THRESH_BAT0 = 98;
+        START_CHARGE_THRESH_BAT0 = 60;
+        STOP_CHARGE_THRESH_BAT0 = 1;
 
         # Unblock bluetooth on startup: https://discourse.nixos.org/t/bluetooth-is-soft-blocked-on-startup-6-12/60222/2
         DEVICES_TO_ENABLE_ON_STARTUP = "wifi bluetooth";
