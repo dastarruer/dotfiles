@@ -446,17 +446,14 @@
         ]
       },
       "locked": {
-        "lastModified": 1779990082,
-        "narHash": "sha256-G3SMoXGNWJ449Xg/BBKuTezU7I0HL1EOvkGjJcbB3fU=",
-        "owner": "dastarruer",
-        "repo": "gtkshutdown",
-        "rev": "104428e2655cf004c1111d49fe3cb02274e6dae4",
-        "type": "github"
+        "lastModified": 1780329801,
+        "narHash": "sha256-NanJRgvGqHgNzApur8ePiDFKnRb6nID2Xwy3n8CGaGA=",
+        "path": "/home/dastarruer/Documents/dev/gtkshutdown",
+        "type": "path"
       },
       "original": {
-        "owner": "dastarruer",
-        "repo": "gtkshutdown",
-        "type": "github"
+        "path": "/home/dastarruer/Documents/dev/gtkshutdown",
+        "type": "path"
       }
     },
     "home-manager": {
