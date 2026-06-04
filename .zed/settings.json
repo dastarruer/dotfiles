@@ -9,6 +9,16 @@
           "arguments": ["--quiet"]
         }
       }
+    },
+    "QML": {
+      "tab_size": 2,
+      "language_servers": ["qmljs"],
+      "formatter": {
+        "external": {
+          "command": "qmlformat",
+          "arguments": ["-i"]
+        }
+      }
     }
   }
 }

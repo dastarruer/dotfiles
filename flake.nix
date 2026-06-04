@@ -118,6 +118,11 @@
             alejandra
             kdePackages.qtdeclarative # required for qml lsp
           ];
+
+          env = {
+            QML_IMPORT_PATH = "${pkgs.quickshell}/lib/qt-6/qml";
+            QML2_IMPORT_PATH="${pkgs.quickshell}/lib/qt-6/qml";
+          };
         };
       };
     };
