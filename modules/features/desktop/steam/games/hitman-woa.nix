@@ -112,7 +112,7 @@
       # To get smf working on linux: https://www.reddit.com/r/linux_gaming/comments/1aiiaia/how_to_run_simple_mod_framework_for_hitman_3_on/
       nonSteamApps."Simple Mod Framework (HITMAN WOA)" = {
         # this path should be wrapped in double quotes, but that throws an error so just manually modify the path when opening the mod manager
-        target = ''${steamPath}/common/HITMAN 3/Simple Mod Framework/Mod Manager/Mod Manager.exe'';
+        target = ''${steamPath}/common/HITMAN\ 3/Simple\ Mod\ Framework/Mod\ Manager/Mod\ Manager.exe'';
 
         # Start in hitman proton prefix
         startIn = "${steamPath}/compatdata/1659040/pfx";
