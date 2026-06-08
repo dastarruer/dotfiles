@@ -441,13 +441,14 @@
       "inputs": {
         "fenix": "fenix",
         "git-hooks": "git-hooks",
+        "home-manager": "home-manager",
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1780329801,
-        "narHash": "sha256-NanJRgvGqHgNzApur8ePiDFKnRb6nID2Xwy3n8CGaGA=",
+        "lastModified": 1780953894,
+        "narHash": "sha256-cGaylf3vHG0XlUZVGAJDlqaRE1yF3Nobj4OA9Iwgo7E=",
         "path": "/home/dastarruer/Documents/dev/gtkshutdown",
         "type": "path"
       },
@@ -457,6 +458,28 @@
       }
     },
     "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "gtkshutdown",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780361225,
+        "narHash": "sha256-wnV9ttf4fPWNonBIQmvlrSlNpQYgx5HgWWd007mwIFA=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "e28654b71096e08c019d4861ca26acb646f583d8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-26.05",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "home-manager_2": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -982,7 +1005,7 @@
         "flake-parts": "flake-parts",
         "flatpaks": "flatpaks",
         "gtkshutdown": "gtkshutdown",
-        "home-manager": "home-manager",
+        "home-manager": "home-manager_2",
         "hyprland": "hyprland",
         "import-tree": "import-tree",
         "nix-index-database": "nix-index-database",
