@@ -89,15 +89,13 @@
       };
 
       protontricks.enable = true;
+      gamescopeSession.enable = true;
+      extest.enable = true; # Wayland controller support
 
-      # https://github.com/NixOS/nixpkgs/issues/523427
-      # gamescopeSession.enable = true;
-      gamescopeSession.enable = false;
-
+      remotePlay.openFirewall = true;
+      localNetworkGameTransfers.openFirewall = true;
+      
       extraCompatPackages = [pkgs.proton-ge-bin];
-
-      # Wayland controller support
-      extest.enable = true;
     };
 
     programs.steam.config = {
