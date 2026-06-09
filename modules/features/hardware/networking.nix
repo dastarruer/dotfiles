@@ -149,9 +149,11 @@
       settings.Resolve = {
         Domains = ["~."];
         DNSSEC = true;
-        FallbackDNS = ["1.1.1.1" "9.9.9.9"];
+        # FallbackDNS = ["1.1.1.1" "9.9.9.9"];
       };
     };
+
+    networking.nameservers = ["1.1.1.1" "9.9.9.9"];
 
     # Allow user to configure networkmanager (https://wiki.nixos.org/wiki/NetworkManager#Installation)
     users.users.dastarruer.extraGroups = ["networkmanager"];
