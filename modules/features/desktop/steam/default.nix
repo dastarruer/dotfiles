@@ -8,6 +8,7 @@
     hmConfig = config.home-manager.users.dastarruer;
     tlp = config.custom.hardware.power-management == "tlp";
     ludusavi = hmConfig.services.ludusavi;
+    wayland = config.custom.wm.wayland;
   in {
     imports = [
       inputs.steam-config-nix.nixosModules.default
@@ -70,15 +71,9 @@
           MESA_SHADER_CACHE_MAX_SIZE = "16G";
           MESA_GLSL_CACHE_MAX_SIZE = "16G";
 
-          # Gamescope & Wayland Compatibility
-          # These ensure Steam and its games talk directly to your Wayland compositor
-          XDG_SESSION_TYPE = "wayland";
-          SDL_VIDEODRIVER = "wayland";
-          QT_QPA_PLATFORM = "wayland";
-
           # Integration for Gamescope
           # Forces the use of the Wayland backend for the micro-compositor
-          SHAPE_WAYLAND = "1";
+          SHAPE_WAYLAND = lib.mkIf wayland "1";
 
           # Standardizes video/vulkan behavior to avoid driver conflicts
           WINE_VK_VULKAN_ONLY = "1";
