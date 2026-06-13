@@ -1,12 +1,14 @@
 {inputs, ...}: {
   flake.nixosModules.wm = {
     config,
-    pkgs,
     lib,
     ...
   }: let
     wayland = config.custom.wm.wayland;
-    bar = config.custom.wm.bar;
+    bar = config.custom.wm.bar.bar;
+
+    colors = config.lib.stylix.colors;
+    fonts = config.stylix.fonts;
   in
     lib.mkIf (bar == "noctalia") {
       assertions = [
@@ -16,23 +18,109 @@
         }
       ];
 
+      nix.settings = {
+        extra-substituters = ["https://noctalia.cachix.org"];
+        extra-trusted-public-keys = ["noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="];
+      };
       home-manager.users.dastarruer = {
         imports = [
           inputs.noctalia.homeModules.default
         ];
 
-        nix.settings = {
-          extra-substituters = ["https://noctalia.cachix.org"];
-          extra-trusted-public-keys = ["noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="];
+        programs.noctalia = {
+          enable = true;
+          systemd.enable = true;
+
+          settings = {
+            # The following settings are disabled here, but can be enabled through the custom options
+            wallpaper.enabled = lib.mkDefault false;
+
+            ui = {
+              font_family = fonts.monospace.name;
+            };
+
+            bar = {
+              order = ["default"];
+              default = {
+                enabled = true;
+
+                position = "top";
+                auto_hide = false;
+                reserve_space = true;
+                layer = "top";
+
+                thickness = 34;
+                scale = 1.05;
+                background_opacity = "1.0";
+                radius = 0;
+                capsule_radius = 0;
+                icon_color = "tertiary";
+                margin_ends = 0;
+                margin_edge = 0;
+                padding = 24;
+                widget_spacing = 13;
+
+                start = ["workspaces" "ram" "cpu"];
+                center = ["clock"];
+                end = ["keyboard_layout"  "volume" "battery" "brightness" "network" "bluetooth"];
+              };
+            };
+
+            # Since stylix does not support v5 yet, configure theme manually
+            theme = {
+              mode = "dark";
+              source = "custom";
+              custom_palette = "Custom";
+            };
+          };
         };
 
-        home-manager.users.dastarruer = {
-          programs.noctalia = {
-            enable = true;
-            systemd.enable = true;
-
-            settings = {
-              wallpaper.enabled = lib.mkDefault false;
+        # I think I have to manually write the json file for now
+        home.file.".config/noctalia/palettes/Custom.json".text = builtins.toJSON {
+          dark = with colors.withHashtag; {
+            mPrimary = base0D;
+            mOnPrimary = base00;
+            mSecondary = base0E;
+            mOnSecondary = base00;
+            mTertiary = base0C;
+            mOnTertiary = base00;
+            mError = base08;
+            mOnError = base00;
+            mSurface = base00;
+            mOnSurface = base05;
+            mSurfaceVariant = base01;
+            mOnSurfaceVariant = base04;
+            mOutline = base03;
+            mShadow = base00;
+            mHover = base02;
+            mOnHover = base05;
+            terminal = {
+              background = base00;
+              foreground = base05;
+              cursor = base05;
+              cursorText = base00;
+              selectionBg = base05;
+              selectionFg = base00;
+            };
+            normal = {
+              black = base00;
+              red = base08;
+              green = base0B;
+              yellow = base0A;
+              blue = base0D;
+              magenta = base0E;
+              cyan = base0C;
+              white = base05;
+            };
+            bright = {
+              black = base03;
+              red = base08;
+              green = base0B;
+              yellow = base0A;
+              blue = base0D;
+              magenta = base0E;
+              cyan = base0C;
+              white = base07;
             };
           };
         };
