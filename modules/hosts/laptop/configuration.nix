@@ -103,6 +103,7 @@
         locker = "swaylock";
         idle-daemon = "none";
         bar.bar = "noctalia";
+        night-light = "noctalia";
       };
 
       cli = {

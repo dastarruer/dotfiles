@@ -34,6 +34,7 @@
           settings = {
             # The following settings are disabled here, but can be enabled through the custom options
             wallpaper.enabled = lib.mkDefault false;
+            nightlight.enabled = lib.mkDefault false;
 
             ui = {
               font_family = fonts.monospace.name;

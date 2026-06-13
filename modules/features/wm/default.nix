@@ -42,7 +42,7 @@
         description = "Set the idle daemon to be used.";
       };
       night-light = lib.mkOption {
-        type = lib.types.enum ["hyprsunset" "none"];
+        type = lib.types.enum ["hyprsunset" "noctalia" "none"];
         default = "hyprsunset";
         description = "Set the night-light filter utility to be used.";
       };
