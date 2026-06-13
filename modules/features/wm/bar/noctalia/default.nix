@@ -36,6 +36,10 @@
             wallpaper.enabled = lib.mkDefault false;
             nightlight.enabled = lib.mkDefault false;
 
+            # I don't need this
+            calendar.enabled = false;
+            weather.enabled = false;
+
             ui = {
               font_family = fonts.monospace.name;
             };
