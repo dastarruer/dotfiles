@@ -7,9 +7,27 @@
   }: let
     hyprland = config.custom.wm.wm == "hyprland";
     wayland = config.custom.wm.wayland;
-    bar = config.custom.wm.bar;
-  in
-    lib.mkIf (bar == "waybar") {
+    bar = config.custom.wm.bar.bar;
+  in {
+    options.custom.wm.bar.waybar = {
+      modules = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [
+          "hyprland/workspaces"
+          "memory"
+          "cpu"
+          "custom/clock"
+          "hyprland/language"
+          "pulseaudio"
+          "battery"
+          "backlight"
+          "network"
+        ];
+        description = "List of Waybar modules to enable. If a module isn't here, it won't be added to the bar layout.";
+      };
+    };
+
+    config = lib.mkIf (bar == "waybar") {
       assertions = [
         {
           assertion = wayland;
@@ -42,4 +60,5 @@
         };
       };
     };
+  };
 }

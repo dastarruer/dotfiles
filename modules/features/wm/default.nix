@@ -16,14 +16,13 @@
         default = builtins.elem config.custom.wm.wm ["hyprland"];
         description = "Whether the selected window manager is a Wayland compositor (derived automatically).";
       };
-
       locker = lib.mkOption {
         type = lib.types.enum ["hyprlock" "swaylock" "none"];
         default = "hyprlock";
         description = "Set the screen locker to be used.";
       };
-      bar = lib.mkOption {
-        type = lib.types.enum ["waybar" "none"];
+      bar.bar = lib.mkOption {
+        type = lib.types.enum ["waybar" "noctalia" "none"];
         default = "waybar";
         description = "Set the bar to be used.";
       };

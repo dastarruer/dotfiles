@@ -4,7 +4,7 @@
     lib,
     ...
   }: let
-    bar = config.custom.wm.bar;
+    bar = config.custom.wm.bar.bar;
   in
     lib.mkIf (bar == "waybar") {
       home-manager.users.dastarruer = {

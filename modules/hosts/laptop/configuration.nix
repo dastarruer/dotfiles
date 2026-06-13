@@ -102,6 +102,7 @@
       wm = {
         locker = "swaylock";
         idle-daemon = "none";
+        bar.bar = "noctalia";
       };
 
       cli = {

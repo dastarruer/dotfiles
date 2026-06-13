@@ -6,7 +6,9 @@
     lib,
     ...
   }: let
-    bar = config.custom.wm.bar;
+    bar = config.custom.wm.bar.bar;
+    enabledModules = config.custom.wm.waybar.modules;
+    filterModules = modulesList: lib.filter (m: lib.elem m enabledModules) modulesList;
   in
     lib.mkIf (bar == "waybar") {
       home-manager.users.dastarruer = {
@@ -17,15 +19,15 @@
             height = 30;
             spacing = 0;
 
-            "modules-left" = [
+            modules-left = filterModules [
               "hyprland/workspaces"
               "memory"
               "cpu"
             ];
-            "modules-center" = [
+            modules-center = filterModules [
               "custom/clock"
             ];
-            "modules-right" = [
+            modules-right = filterModules [
               "hyprland/language"
               "pulseaudio"
               "battery"
