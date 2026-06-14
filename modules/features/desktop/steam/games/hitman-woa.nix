@@ -145,11 +145,18 @@
       ];
 
       systemd.user.services.peacock = {
-        Unit.Description = "Peacock";
+        Unit = {
+          Description = "Peacock";
+          After = ["default.target"];
+          PartOf = ["default.target"];
+        };
         Service = {
           WorkingDirectory = peacockDir;
           ExecStart = "${lib.getExe peacockScript}";
+          Restart = "always";
+          RestartSec = 3;
         };
+
         Install.WantedBy = ["multi-user.target"];
       };
 
