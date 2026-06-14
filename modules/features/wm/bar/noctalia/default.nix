@@ -47,6 +47,7 @@
             shell = {
               avatar_path = "${inputs.self.outPath}/config/images/pfp.png";
               settings_show_advanced = true;
+              launch_apps_as_systemd_services = true;
             };
 
             ui = {
