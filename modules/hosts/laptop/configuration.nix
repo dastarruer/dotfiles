@@ -100,7 +100,7 @@
       };
 
       wm = {
-        locker = "swaylock";
+        locker = "noctalia";
         idle-daemon = "none";
         bar.bar = "noctalia";
         night-light = "noctalia";

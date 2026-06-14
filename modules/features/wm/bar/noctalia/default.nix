@@ -36,6 +36,7 @@
             # The following settings are disabled here, but can be enabled through the custom options
             wallpaper.enabled = lib.mkDefault false;
             nightlight.enabled = lib.mkDefault false;
+            lockscreen.enabled = lib.mkDefault false;
 
             # I don't need this
             calendar.enabled = false;

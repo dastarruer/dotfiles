@@ -17,7 +17,7 @@
         description = "Whether the selected window manager is a Wayland compositor (derived automatically).";
       };
       locker = lib.mkOption {
-        type = lib.types.enum ["hyprlock" "swaylock" "none"];
+        type = lib.types.enum ["hyprlock" "swaylock" "noctalia" "none"];
         default = "hyprlock";
         description = "Set the screen locker to be used.";
       };
