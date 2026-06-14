@@ -104,6 +104,7 @@
         idle-daemon = "none";
         bar.bar = "noctalia";
         night-light = "noctalia";
+        wallpaper-daemon = "noctalia";
       };
 
       cli = {

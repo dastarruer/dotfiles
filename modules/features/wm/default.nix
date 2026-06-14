@@ -46,6 +46,11 @@
         default = "hyprsunset";
         description = "Set the night-light filter utility to be used.";
       };
+      wallpaper-daemon = lib.mkOption {
+        type = lib.types.enum ["awww" "noctalia" "none"];
+        default = "awww";
+        description = "Set the wallpaper daemon to be used.";
+      };
     };
   };
 }
