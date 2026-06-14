@@ -6,8 +6,12 @@
     ...
   }: let
     gtkshutdown = inputs.gtkshutdown.packages.${pkgs.stdenv.system}.default;
+
+    hmConfig = config.home-manager.users.dastarruer;
+
+    launcher = config.custom.wm.launcher;
     hyprland = config.custom.wm.wm == "hyprland";
-    rofi = config.custom.wm.launcher == "rofi";
+    rofi = launcher == "rofi";
 
     lockCmd = config.custom.wm.locker.command;
 
@@ -41,32 +45,37 @@
             coreutils
           ];
 
-          text = ''
-            OPTIONS=" Lock\n󰗽 Logout\n󰥔 Suspend\n Reboot\n Shutdown"
+          text =
+            if launcher == "noctalia"
+            then ''
+              ${lib.getExe hmConfig.programs.noctalia.package} msg panel-toggle session
+            ''
+            else ''
+              OPTIONS=" Lock\n󰗽 Logout\n󰥔 Suspend\n Reboot\n Shutdown"
 
-            CHOICE=$(echo -e "$OPTIONS" | ${launcherCmd})
+              CHOICE=$(echo -e "$OPTIONS" | ${launcherCmd})
 
-            case "$CHOICE" in
-              " Lock")
-                  ${lockCmd} & disown
-                  ;;
-              "󰗽 Logout")
-                  ${logoutCmd}
-                  ;;
-              "󰥔 Suspend")
-                  systemctl suspend
-                  ;;
-              " Reboot")
-                  ${rebootCmd}
-                  ;;
-              " Shutdown")
-                  ${shutdownCmd}
-                  ;;
-              *)
-                  exit 0
-                  ;;
-            esac
-          '';
+              case "$CHOICE" in
+                " Lock")
+                    ${lockCmd} & disown
+                    ;;
+                "󰗽 Logout")
+                    ${logoutCmd}
+                    ;;
+                "󰥔 Suspend")
+                    systemctl suspend
+                    ;;
+                " Reboot")
+                    ${rebootCmd}
+                    ;;
+                " Shutdown")
+                    ${shutdownCmd}
+                    ;;
+                *)
+                    exit 0
+                    ;;
+              esac
+            '';
         };
       })
     ];
