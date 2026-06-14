@@ -42,7 +42,7 @@
         description = "Set the bar to be used.";
       };
       notifications.daemon = lib.mkOption {
-        type = lib.types.enum ["dunst" "none"];
+        type = lib.types.enum ["dunst" "noctalia" "none"];
         default = "dunst";
         description = "Set the notification daemon to be used.";
       };

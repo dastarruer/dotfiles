@@ -37,6 +37,7 @@
             wallpaper.enabled = lib.mkDefault false;
             nightlight.enabled = lib.mkDefault false;
             lockscreen.enabled = lib.mkDefault false;
+            notification.enable_daemon = lib.mkDefault false;
 
             # I don't need this
             calendar.enabled = false;

@@ -11,9 +11,6 @@
 
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
   in {
-    # Silence alerts for spotify notifications
-    custom.wm.notifications.excludeTitles = ["Spotify"];
-
     home-manager.users.dastarruer = {
       imports = [
         inputs.spicetify-nix.homeManagerModules.default

@@ -105,6 +105,7 @@
         bar.bar = "noctalia";
         night-light = "noctalia";
         wallpaper-daemon = "noctalia";
+        notifications.daemon = "noctalia";
       };
 
       cli = {
