@@ -6,26 +6,12 @@
     ...
   }: let
     hmConfig = config.home-manager.users.dastarruer;
-    tlp = config.custom.hardware.power-management == "tlp";
     ludusavi = hmConfig.services.ludusavi;
     wayland = config.custom.wm.wayland;
   in {
     imports = [
       inputs.steam-config-nix.nixosModules.default
     ];
-
-    hardware.graphics = {
-      enable = true;
-      enable32Bit = true;
-      # These provide the actual translation layers for video playback
-      extraPackages = with pkgs; [
-        libva-vdpau-driver
-        libvdpau-va-gl
-      ];
-    };
-
-    # The only essential line for AMD hardware support
-    services.xserver.videoDrivers = ["amdgpu"];
 
     # Enable the new ntsync kernel module for improved multithreading performance w newer versions of proton/wine
     boot.kernelModules = ["ntsync"];
@@ -38,14 +24,11 @@
           softrealtime = "auto";
           renice = 10;
         };
-
-        # Use full cpu power when gaming
-        custom = lib.mkIf tlp {
-          start = "${lib.getExe pkgs.tlp} setcfg CPU_BOOST_ON_AC=1 CPU_SCALING_GOVERNOR_ON_AC=performance PLATFORM_PROFILE_ON_AC=performance";
-          end = "${lib.getExe pkgs.tlp} setcfg CPU_BOOST_ON_AC=0 CPU_SCALING_GOVERNOR_ON_AC=powersave PLATFORM_PROFILE_ON_AC=balanced";
-        };
       };
     };
+
+    # Allow gamemode to renice processes
+    users.users.dastarruer.extraGroups = ["gamemode"];
 
     programs.gamescope = {
       enable = true;
@@ -59,7 +42,8 @@
       package = pkgs.steam.override {
         extraEnv = {
           # Tells the system to use Gamemode's optimizations automatically for every game
-          GAMEMODERUN = "1";
+          # The only way i've found to start gamemode via an env var (https://github.com/FeralInteractive/gamemode#requesting-gamemode)
+          LD_PRELOAD = "$LD_PRELOAD:/usr/\$LIB/libgamemodeauto.so.0";
 
           # Forces the high-performance 'RADV' driver for your Renoir iGPU
           # This prevents accidental fallback to slower software rendering
