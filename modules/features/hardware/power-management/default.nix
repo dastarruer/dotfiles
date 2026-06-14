@@ -1,5 +1,5 @@
 {...}: {
-  flake.nixosModules.hardware = {lib, ...}: {
+  flake.nixosModules.hardware = {...}: {
     # Enable NixOS power management hooks (basic integration).
     powerManagement = {
       enable = true;
@@ -28,11 +28,6 @@
 
       # Disable kernel debugger
       "kernel.nmi_watchdog=0"
-    ];
-
-    services.udev.extraRules = lib.concatStringsSep "\n" [
-      # USB autosuspend: (https://ivanvojtko.blogspot.com/2016/04/how-to-get-longer-battery-life-on-linux.html)
-      ''ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"''
     ];
 
     # Powersaving for wifi
