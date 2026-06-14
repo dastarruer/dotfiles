@@ -44,6 +44,10 @@
             calendar.enabled = false;
             weather.enabled = false;
 
+            shell = {
+              avatar_path = "${inputs.self.outPath}/config/images/pfp.png";
+              settings_show_advanced = true;
+            };
 
             ui = {
               font_family = fonts.monospace.name;
