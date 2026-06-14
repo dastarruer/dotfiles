@@ -39,7 +39,7 @@
 
             custom = {
               enabled = true;
-              command = "systemctl suspend";
+              command = "${lib.getExe hmConfig.programs.noctalia.package} msg session lock-and-suspend";
               timeout = 600;
             };
           };
