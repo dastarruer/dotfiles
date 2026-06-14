@@ -18,7 +18,7 @@
         }
         {
           assertion = bar == "noctalia";
-          message = "noctalia night light daemon only works after enabling the noctalia bar.";
+          message = "noctalia idle daemon only works after enabling the noctalia bar.";
         }
       ];
 
