@@ -25,7 +25,10 @@
       ];
 
       home-manager.users.dastarruer = {
-        # Since noctalia comes with a launcher anyways, just configure the keybinds
+        programs.noctalia.settings.shell.panel = {
+          launcher_placement = "attached";
+        };
+
         wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
           bind = [
             # Launcher

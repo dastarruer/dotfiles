@@ -32,10 +32,11 @@
       home-manager.users.dastarruer = {
         programs.noctalia.settings.shell = {
           clipboard_enabled = true;
-          clipboard_auto_paste  = "off";
+          clipboard_auto_paste = "off";
           clipboard_confirm_clear_history = false;
+          panel.clipboard_placement = "attached";
         };
-        
+
         wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
           bind = [
             # Clipboard
