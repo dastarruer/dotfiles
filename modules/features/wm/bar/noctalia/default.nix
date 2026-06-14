@@ -65,10 +65,26 @@
                 padding = 24;
                 widget_spacing = 13;
 
-                start = ["workspaces" "ram" "cpu"];
+                start = [
+                  "workspaces"
+                  "ram"
+                  "cpu"
+                ];
                 center = ["clock"];
-                end = ["keyboard_layout"  "volume" "battery" "brightness" "network" "bluetooth"];
+                end = [
+                  "keyboard_layout"
+                  "volume"
+                  "battery"
+                  "brightness"
+                  "network"
+                  "bluetooth"
+                ];
               };
+            };
+
+            widget.workspaces = {
+              occupied_color = "surface";
+              empty_color = "surface";
             };
 
             # Since stylix does not support v5 yet, configure theme manually
