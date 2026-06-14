@@ -31,12 +31,6 @@
           }
           {
             _args = [
-              "SUPER + B"
-              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.headphones}")'')
-            ];
-          }
-          {
-            _args = [
               "SUPER + E"
               (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.power}")'')
             ];

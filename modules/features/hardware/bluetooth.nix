@@ -1,10 +1,13 @@
 {...}: {
   flake.nixosModules.hardware = {
     config,
+    pkgs,
     lib,
     ...
   }: let
+    hmConfig = config.home-manager.users.dastarruer;
     hyprland = config.custom.wm.wm == "hyprland";
+    bar = config.custom.wm.bar.bar;
   in {
     # Enable firmware for bluetooth
     hardware.enableAllFirmware = true;
@@ -26,11 +29,6 @@
           Experimental = true;
         };
       };
-    };
-
-    # blueman-manager
-    services.blueman = {
-      enable = true;
     };
 
     # Script to connect to my airpods
@@ -79,17 +77,35 @@
       })
     ];
 
+    # Noctalia comes with its own bluetooth service
+    services.blueman.enable = bar != "noctalia";
+
     home-manager.users.dastarruer = {
       services.mpris-proxy.enable = true;
-      wayland.windowManager.hyprland.settings.window_rule = lib.mkIf hyprland [
-        # Bluetooth Devices popup
-        {
-          match.title = "Bluetooth Devices";
-          float = true;
-          pin = true;
-          size = lib.generators.mkLuaInline "{500, 300}";
-        }
-      ];
+      wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
+        bind = [
+          {
+            _args = [
+              "SUPER + B"
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${
+                  if (bar == "noctalia")
+                  # Open the noctalia bluetooth panel
+                  then "${lib.getExe hmConfig.programs.noctalia.package} msg panel-toggle control-center bluetooth"
+                  else "${lib.getExe pkgs.headphones}"
+                }")'')
+            ];
+          }
+        ];
+        window_rule = lib.mkIf (bar != "noctalia") [
+          # Bluetooth Devices popup
+          {
+            match.title = "Bluetooth Devices";
+            float = true;
+            pin = true;
+            size = lib.generators.mkLuaInline "{500, 300}";
+          }
+        ];
+      };
     };
   };
 }
