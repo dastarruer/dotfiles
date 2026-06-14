@@ -14,11 +14,10 @@
       # Use ACPI alarm for RTC wakeups (more reliable suspend/resume).
       "rtc_cmos.use_acpi_alarm=1"
 
-      # Use AMD’s modern CPU frequency scaling driver (better efficiency on Ryzen).
-      "amd_pstate=active"
-
       # Enable usb autosuspend after 5 seconds (https://wiki.archlinux.org/title/Power_management#USB_autosuspend)
-      "usbcore.autosuspend=5"
+      # "usbcore.autosuspend=5"
+      # Disable this, why did i enable it in the first place?
+      "usbcore.autosuspend=-1"
 
       # Turn on powersaving timeout for audio kernel module (https://wiki.archlinux.org/title/Power_management#Audio)
       "snd_hda_intel.power_save=10"

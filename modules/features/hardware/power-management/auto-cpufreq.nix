@@ -1,5 +1,5 @@
 {...}: {
-  flake.nixosModules.hardware_power-management = {
+  flake.nixosModules.hardware = {
     config,
     lib,
     ...

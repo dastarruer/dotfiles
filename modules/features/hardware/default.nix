@@ -3,7 +3,7 @@
     options.custom.hardware = {
       power-management = lib.mkOption {
         type = lib.types.enum ["tlp" "auto-cpufreq" "power-profiles-daemon" "none"];
-        default = "tlp";
+        default = "none";
         description = "Set the power management daemon to be used.";
       };
       monitors = lib.mkOption {

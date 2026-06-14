@@ -1,7 +1,7 @@
 # https://www.youtube.com/watch?v=pmuubmFcKtg
 # also some settings to reduce fan noise while charging
 {...}: {
-  flake.nixosModules.hardware_power-management = {
+  flake.nixosModules.hardware = {
     config,
     lib,
     ...
