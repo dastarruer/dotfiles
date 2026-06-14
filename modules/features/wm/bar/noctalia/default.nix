@@ -83,9 +83,12 @@
               };
             };
 
-            widget.workspaces = with colors.withHashtag; {
-              occupied_color = base00;
-              empty_color = base00;
+            widget = {
+              clock.format = "%I:%M %A, %b %d";
+              workspaces = with colors.withHashtag; {
+                occupied_color = base00;
+                empty_color = base00;
+              };
             };
 
             # Since stylix does not support v5 yet, configure theme manually
