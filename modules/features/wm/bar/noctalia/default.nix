@@ -83,7 +83,7 @@
         # I think I have to manually write the json file for now
         home.file.".config/noctalia/palettes/Custom.json".text = builtins.toJSON {
           dark = with colors.withHashtag; {
-            mPrimary = base0D;
+            mPrimary = "#${config.custom.theme.accent}";
             mOnPrimary = base00;
             mSecondary = base0E;
             mOnSecondary = base00;
