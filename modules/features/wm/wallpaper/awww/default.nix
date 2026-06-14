@@ -5,7 +5,8 @@
     ...
   }: let
     wayland = config.custom.wm.wayland;
-  in {
+    wallpaper-daemon = config.custom.wm.wallpaper-daemon;
+  in lib.mkIf (wallpaper-daemon == "awww") {
     assertions = [
       {
         assertion = wayland;
