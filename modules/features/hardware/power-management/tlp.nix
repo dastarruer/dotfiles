@@ -35,8 +35,5 @@
           DEVICES_TO_ENABLE_ON_STARTUP = "wifi bluetooth";
         };
       };
-
-      # Disable GNOMEs power management
-      services.power-profiles-daemon.enable = false;
     };
 }

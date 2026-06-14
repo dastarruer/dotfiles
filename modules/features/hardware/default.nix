@@ -2,7 +2,7 @@
   flake.nixosModules.hardware = {lib, ...}: {
     options.custom.hardware = {
       power-management = lib.mkOption {
-        type = lib.types.enum ["tlp" "auto-cpufreq" "none"];
+        type = lib.types.enum ["tlp" "auto-cpufreq" "power-profiles-daemon" "none"];
         default = "tlp";
         description = "Set the power management daemon to be used.";
       };

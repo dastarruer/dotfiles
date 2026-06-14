@@ -64,6 +64,7 @@
       };
 
       hardware = {
+        power-management = "power-profiles-daemon";
         monitors = [
           # Main monitor in the middle
           {
