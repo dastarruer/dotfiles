@@ -59,7 +59,7 @@
                 background_opacity = "1.0";
                 radius = 0;
                 capsule_radius = 0;
-                icon_color = "tertiary";
+                icon_color = "#${config.custom.theme.accent}";
                 margin_ends = 0;
                 margin_edge = 0;
                 padding = 24;
@@ -82,9 +82,9 @@
               };
             };
 
-            widget.workspaces = {
-              occupied_color = "surface";
-              empty_color = "surface";
+            widget.workspaces = with colors.withHashtag; {
+              occupied_color = base00;
+              empty_color = base00;
             };
 
             # Since stylix does not support v5 yet, configure theme manually
