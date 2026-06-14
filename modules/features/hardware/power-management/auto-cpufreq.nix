@@ -7,11 +7,6 @@
     daemon = config.custom.hardware.power-management;
   in
     lib.mkIf (daemon == "auto-cpufreq") {
-      # Significantly reduces cpu wattage
-      boot.kernelParams = [
-        "amd_pstate=passive"
-      ];
-
       services.auto-cpufreq = {
         enable = true;
 
