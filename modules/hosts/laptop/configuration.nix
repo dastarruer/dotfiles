@@ -47,7 +47,7 @@
 
       services_backup
       services_ludusavi
-      services_caps-lock-monitor
+      # services_caps-lock-monitor
       services_smart-pause-resume
       services_conservation-mode
       services_reload-udev

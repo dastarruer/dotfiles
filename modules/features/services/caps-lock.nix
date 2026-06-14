@@ -1,10 +1,13 @@
 {...}: {
   flake.nixosModules.services_caps-lock-monitor = {
+    config,
     pkgs,
     lib,
     ...
   }: {
     home-manager.users.dastarruer = let
+      bar = config.custom.wm.bar.bar;
+
       script = pkgs.writeShellApplication {
         name = "caps-lock-notify";
 
@@ -31,6 +34,13 @@
         '';
       };
     in {
+      assertions = [
+        {
+          assertion = bar != "noctalia";
+          message = "caps lock service is not needed with noctalia, since noctalia includes its own caps lock toast notifications.";
+        }
+      ];
+
       systemd.user.services.caps-lock-monitor = {
         Unit = {
           Description = "Caps Lock Event Monitor";
