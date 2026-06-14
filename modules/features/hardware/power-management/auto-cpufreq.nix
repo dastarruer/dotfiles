@@ -5,28 +5,33 @@
     ...
   }: let
     daemon = config.custom.hardware.power-management;
-  in {
-    services.auto-cpufreq = lib.mkIf (daemon == "auto-cpufreq") {
-      enable = true;
+  in
+    lib.mkIf (daemon == "auto-cpufreq") {
+      # Significantly reduces cpu wattage
+      boot.kernelParams = [
+        "amd_pstate=passive"
+      ];
 
-      settings = {
-        # Settings for when running on battery
-        battery = {
-          governor = "powersave"; # Use the "powersave" CPU governor to reduce frequency scaling.
-          turbo = "never"; # Disable CPU turbo boost to save power and lower temps.
+      services.auto-cpufreq = {
+        enable = true;
 
-          # this doesnt work for whatever reason, ive declared a systemd service to turn on conservation mode, which is the same thing but for lenovo laptops
-          # enable_thresholds = true;
-          # start_threshold = 40;
-          # stop_threshold = 80;
-        };
+        settings = {
+          # Settings for when running on battery
+          battery = {
+            governor = "powersave";
+            turbo = "never"; # so fans aren't so goddamn loud
 
-        # Settings for when running on AC power (charger plugged in)
-        charger = {
-          governor = "performance"; # Run CPU in "performance" mode for maximum responsiveness.
-          turbo = "auto"; # Allow turbo boost when on AC power.
+            # Specifically works for laptops w the 'ideapad_laptop' kernel module
+            # `lsmod | grep ideapad_laptop`
+            ideapad_laptop_conservation_mode = true;
+          };
+
+          # Settings for when plugged in
+          charger = {
+            governor = "performance";
+            turbo = "auto";
+          };
         };
       };
     };
-  };
 }

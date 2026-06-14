@@ -16,7 +16,6 @@
 
       hardware
       hardware_logind
-      hardware_power-management
 
       cli_btop
       cli_direnv
@@ -64,7 +63,7 @@
       };
 
       hardware = {
-        power-management = "power-profiles-daemon";
+        power-management = "auto-cpufreq";
         monitors = [
           # Main monitor in the middle
           {
