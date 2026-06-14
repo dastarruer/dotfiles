@@ -38,10 +38,12 @@
             nightlight.enabled = lib.mkDefault false;
             lockscreen.enabled = lib.mkDefault false;
             notification.enable_daemon = lib.mkDefault false;
+            shell.clipboard_enabled = lib.mkDefault false;
 
             # I don't need this
             calendar.enabled = false;
             weather.enabled = false;
+
 
             ui = {
               font_family = fonts.monospace.name;

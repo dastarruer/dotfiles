@@ -47,7 +47,7 @@
         description = "Set the notification daemon to be used.";
       };
       launcher = lib.mkOption {
-        type = lib.types.enum ["rofi" "sherlock" "none"];
+        type = lib.types.enum ["rofi" "noctalia" "sherlock" "none"];
         default = "rofi";
         description = "Set the launcher to be used.";
       };
@@ -65,6 +65,11 @@
         type = lib.types.enum ["awww" "noctalia" "none"];
         default = "awww";
         description = "Set the wallpaper daemon to be used.";
+      };
+      clipboard = lib.mkOption {
+        type = lib.types.enum ["cliphist" "noctalia" "none"];
+        default = "cliphist";
+        description = "Set the clipboard manager to be used.";
       };
     };
 

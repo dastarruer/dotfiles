@@ -53,7 +53,6 @@
       services_reload-udev
       services_docker
       services_ssh
-      services_cliphist
 
       self-hosted_sunshine
     ];
@@ -106,6 +105,8 @@
         night-light = "noctalia";
         wallpaper-daemon = "noctalia";
         notifications.daemon = "noctalia";
+        launcher = "noctalia";
+        clipboard = "noctalia";
       };
 
       cli = {
