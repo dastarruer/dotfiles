@@ -7,35 +7,36 @@
     ...
   }: let
     daemon = config.custom.hardware.power-management;
-  in lib.mkIf (daemon == "tlp") {
-    services.tlp = {
-      enable = true;
-      settings = {
-        # Change from 1 to 0 to stop aggressive boosting on AC
-        CPU_BOOST_ON_AC = 0;
-        CPU_BOOST_ON_BAT = 0;
+  in
+    lib.mkIf (daemon == "tlp") {
+      services.tlp = {
+        enable = true;
+        settings = {
+          # Change from 1 to 0 to stop aggressive boosting on AC
+          CPU_BOOST_ON_AC = 0;
+          CPU_BOOST_ON_BAT = 0;
 
-        # Use "powersave" or "balanced" even on AC.
-        # On Intel/AMD, "powersave" doesn't mean "slow," it just means "efficient."
-        CPU_SCALING_GOVERNOR_ON_AC = "powersave";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+          # Use "powersave" or "balanced" even on AC.
+          # On Intel/AMD, "powersave" doesn't mean "slow," it just means "efficient."
+          CPU_SCALING_GOVERNOR_ON_AC = "powersave";
+          CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-        # Use "balanced" or "low-power" to tell the BIOS to be quieter
-        PLATFORM_PROFILE_ON_AC = "balanced";
-        PLATFORM_PROFILE_ON_BAT = "low-power";
+          # Use "balanced" or "low-power" to tell the BIOS to be quieter
+          PLATFORM_PROFILE_ON_AC = "balanced";
+          PLATFORM_PROFILE_ON_BAT = "low-power";
 
-        # Enable runtime power management
-        RUNTIME_PM_ON_AC = "auto";
+          # Enable runtime power management
+          RUNTIME_PM_ON_AC = "auto";
 
-        START_CHARGE_THRESH_BAT0 = 60;
-        STOP_CHARGE_THRESH_BAT0 = 1;
+          START_CHARGE_THRESH_BAT0 = 60;
+          STOP_CHARGE_THRESH_BAT0 = 1;
 
-        # Unblock bluetooth on startup: https://discourse.nixos.org/t/bluetooth-is-soft-blocked-on-startup-6-12/60222/2
-        DEVICES_TO_ENABLE_ON_STARTUP = "wifi bluetooth";
+          # Unblock bluetooth on startup: https://discourse.nixos.org/t/bluetooth-is-soft-blocked-on-startup-6-12/60222/2
+          DEVICES_TO_ENABLE_ON_STARTUP = "wifi bluetooth";
+        };
       };
-    };
 
-    # Disable GNOMEs power management
-    services.power-profiles-daemon.enable = false;
-  };
+      # Disable GNOMEs power management
+      services.power-profiles-daemon.enable = false;
+    };
 }

@@ -20,7 +20,7 @@
     services.udev.extraRules = ''
       KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
     '';
-    
+
     # Custom script to handle brightness based on which monitor is focused
     nixpkgs.overlays = [
       (final: prev: {
@@ -97,6 +97,5 @@
         };
       })
     ];
-
   };
 }

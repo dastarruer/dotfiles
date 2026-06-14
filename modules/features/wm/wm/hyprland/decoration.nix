@@ -1,5 +1,9 @@
 {...}: {
-  flake.nixosModules.wm = {config, lib, ...}: let
+  flake.nixosModules.wm = {
+    config,
+    lib,
+    ...
+  }: let
     hyprland = config.custom.wm.wm == "hyprland";
   in {
     home-manager.users.dastarruer = lib.mkIf hyprland {
