@@ -68,6 +68,7 @@
                 widget_spacing = 13;
 
                 start = [
+                  "caffeine"
                   "workspaces"
                   "ram"
                   "cpu"

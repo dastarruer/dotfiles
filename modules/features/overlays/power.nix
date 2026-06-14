@@ -5,19 +5,11 @@
     lib,
     ...
   }: let
-    hmConfig = config.home-manager.users.dastarruer;
-
     gtkshutdown = inputs.gtkshutdown.packages.${pkgs.stdenv.system}.default;
     hyprland = config.custom.wm.wm == "hyprland";
-    locker = config.custom.wm.locker;
     rofi = config.custom.wm.launcher == "rofi";
 
-    lockCmd =
-      if locker == "hyprlock"
-      then "${lib.getExe pkgs.hyprlock}"
-      else if locker == "swaylock"
-      then "${lib.getExe pkgs.swaylock}"
-      else "true";
+    lockCmd = config.custom.wm.locker.command;
 
     logoutCmd = lib.optionalString hyprland ''${pkgs.hyprland}/bin/hyprctl dispatch "hl.dsp.exit()"'';
 

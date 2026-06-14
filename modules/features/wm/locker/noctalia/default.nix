@@ -6,7 +6,7 @@
   }: let
     wayland = config.custom.wm.wayland;
     bar = config.custom.wm.bar.bar;
-    locker = config.custom.wm.locker;
+    locker = config.custom.wm.locker.kind;
   in
     lib.mkIf (locker == "noctalia") {
       assertions = [

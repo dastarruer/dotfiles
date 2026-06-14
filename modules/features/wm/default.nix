@@ -3,7 +3,15 @@
     config,
     lib,
     ...
-  }: {
+  }: let
+    hmConfig = config.home-manager.users.dastarruer;
+    lockerCommands = {
+      hyprlock = "${lib.getExe hmConfig.programs.hyprlock.package}";
+      swaylock = "${lib.getExe hmConfig.programs.swaylock.package}";
+      noctalia = "${lib.getExe hmConfig.programs.noctalia.package} msg session lock";
+      none = "true"; # Fallback/do nothing command
+    };
+  in {
     options.custom.wm = {
       wm = lib.mkOption {
         type = lib.types.enum ["hyprland"];
@@ -16,10 +24,17 @@
         default = builtins.elem config.custom.wm.wm ["hyprland"];
         description = "Whether the selected window manager is a Wayland compositor (derived automatically).";
       };
-      locker = lib.mkOption {
-        type = lib.types.enum ["hyprlock" "swaylock" "noctalia" "none"];
-        default = "hyprlock";
-        description = "Set the screen locker to be used.";
+      locker = {
+        kind = lib.mkOption {
+          type = lib.types.enum ["hyprlock" "swaylock" "noctalia" "none"];
+          default = "hyprlock";
+          description = "Set the screen locker to be used.";
+        };
+        command = lib.mkOption {
+          type = lib.types.str;
+          readOnly = true;
+          description = "The absolute path/command of the chosen locker.";
+        };
       };
       bar.bar = lib.mkOption {
         type = lib.types.enum ["waybar" "noctalia" "none"];
@@ -37,7 +52,7 @@
         description = "Set the launcher to be used.";
       };
       idle-daemon = lib.mkOption {
-        type = lib.types.enum ["hypridle" "none"];
+        type = lib.types.enum ["hypridle" "noctalia" "none"];
         default = "hypridle";
         description = "Set the idle daemon to be used.";
       };
@@ -51,6 +66,10 @@
         default = "awww";
         description = "Set the wallpaper daemon to be used.";
       };
+    };
+
+    config = {
+      custom.wm.locker.command = lockerCommands.${config.custom.wm.locker.kind};
     };
   };
 }

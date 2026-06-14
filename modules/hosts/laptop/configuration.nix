@@ -100,8 +100,8 @@
       };
 
       wm = {
-        locker = "noctalia";
-        idle-daemon = "none";
+        locker.kind = "noctalia";
+        idle-daemon = "noctalia";
         bar.bar = "noctalia";
         night-light = "noctalia";
         wallpaper-daemon = "noctalia";

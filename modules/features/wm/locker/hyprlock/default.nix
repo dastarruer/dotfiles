@@ -7,7 +7,7 @@
   }: let
     wayland = config.custom.wm.wayland;
     hypridle = config.custom.wm.idle-daemon == "hypridle";
-    locker = config.custom.wm.locker;
+    locker = config.custom.wm.locker.kind;
   in {
     assertions = [
       {

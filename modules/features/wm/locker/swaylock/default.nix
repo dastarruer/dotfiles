@@ -6,7 +6,7 @@
     ...
   }: let
     hypridle = config.custom.wm.idle-daemon == "hypridle";
-    locker = config.custom.wm.locker;
+    locker = config.custom.wm.locker.kind;
     wayland = config.custom.wm.wayland;
   in
     lib.mkIf (locker == "swaylock") {
