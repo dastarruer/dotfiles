@@ -53,7 +53,7 @@
       services_docker
       services_ssh
 
-      self-hosted_sunshine
+      # self-hosted_sunshine
     ];
 
     custom = {
