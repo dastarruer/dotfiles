@@ -102,11 +102,10 @@
     programs.steam.config = {
       apps.hitmanwoa = {
         id = 1659040;
-        launchOptions = {
-          args = [
-            "-skip_launcher"
-          ];
-        };
+        launchOptions.args = [
+          "gamemoderun"
+          "-skip_launcher"
+        ];
       };
 
       # To get smf working on linux: https://www.reddit.com/r/linux_gaming/comments/1aiiaia/how_to_run_simple_mod_framework_for_hitman_3_on/
