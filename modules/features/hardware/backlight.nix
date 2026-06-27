@@ -8,10 +8,11 @@
     hyprland = config.custom.wm.wm == "hyprland";
   in {
     hardware.brillo.enable = true;
+    hardware.i2c.enable = true;
 
     users.users.dastarruer.extraGroups = [
       "video" # Backlight access
-      "i2c" # ddcutil access
+      (config.hardware.i2c.group) # ddcutil access
     ];
 
     # Control external monitor backlight
@@ -29,6 +30,7 @@
 
           runtimeInputs = with prev; [
             brillo
+            ddcutil
             coreutils
           ];
 
@@ -37,12 +39,20 @@
             cases =
               lib.concatMapStringsSep "\n" (
                 m:
-                  lib.optionalString (m.backlightDevice != null) ''
+                  lib.optionalString (m.backlightBackend != "none") ''
                     "${m.name}")
                         if [ "$direction" == "-" ]; then
-                            brillo -s ${m.backlightDevice} -U "$brightness" -q
+                            ${
+                      if m.backlightBackend == "ddcutil"
+                      then "ddcutil --bus=${toString m.busNumber} setvcp 10 - \"$brightness\""
+                      else "brillo -U \"$brightness\" -q"
+                    }
                         else
-                            brillo -s ${m.backlightDevice} -A "$brightness" -q
+                            ${
+                      if m.backlightBackend == "ddcutil"
+                      then "ddcutil --bus=${toString m.busNumber} setvcp 10 + \"$brightness\""
+                      else "brillo -A \"$brightness\" -q"
+                    }
                         fi
                         ;;
                   ''
@@ -50,7 +60,7 @@
               config.custom.hardware.monitors;
 
             # Pick the first monitor with a backlight as the fallback
-            fallback = lib.findFirst (m: m.backlightDevice != null) null config.custom.hardware.monitors;
+            fallback = lib.findFirst (m: m.backlightBackend != "none") null config.custom.hardware.monitors;
             fallbackName =
               if fallback != null
               then fallback.name

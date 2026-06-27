@@ -1,5 +1,9 @@
 {...}: {
-  flake.nixosModules.hardware = {lib, ...}: {
+  flake.nixosModules.hardware = {
+    config,
+    lib,
+    ...
+  }: {
     options.custom.hardware = {
       power-management = lib.mkOption {
         type = lib.types.enum ["tlp" "auto-cpufreq" "power-profiles-daemon" "none"];
@@ -17,10 +21,15 @@
               type = lib.types.listOf lib.types.int;
               description = "Workspaces assigned to this monitor.";
             };
-            backlightDevice = lib.mkOption {
-              type = lib.types.nullOr lib.types.str;
+            backlightBackend = lib.mkOption {
+              type = lib.types.enum ["none" "backlight" "ddcutil"];
+              default = "none";
+              description = "Which tool to use to control this monitor's backlight.";
+            };
+            busNumber = lib.mkOption {
+              type = lib.types.nullOr lib.types.int;
               default = null;
-              description = "Brillo backlight device for this monitor (e.g. amdgpu_bl1, ddcci7). Null = not controllable.";
+              description = "Used for external monitors to be handled via ddcutil. Can be left null for laptop monitors.";
             };
             position = lib.mkOption {
               type = lib.types.submodule {
@@ -71,6 +80,15 @@
         });
         default = [];
       };
+    };
+
+    config = {
+      assertions =
+        map (m: {
+          assertion = m.backlightBackend == "ddcutil" -> m.busNumber != null;
+          message = "Monitor '${m.name}' is configured to use 'ddcutil' as its backlightBackend, but 'busNumber' is null. You must specify a valid I2C bus number (e.g., 7) using 'sudo ddcutil detect'";
+        })
+        config.custom.hardware.monitors;
     };
   };
 }

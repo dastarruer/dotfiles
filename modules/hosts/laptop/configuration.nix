@@ -68,9 +68,11 @@
         monitors = [
           # Main monitor in the middle
           {
-            name = "DP-1";
+            # name = "DP-1";
+            name = "HDMI-A-1";
             workspaces = [1 2 3 4 5 6 7 8 9 10];
-            backlightDevice = "ddcci7";
+            backlightBackend = "ddcutil";
+            busNumber = 7;
             position = {
               x = 0;
               y = 0;
@@ -85,7 +87,7 @@
           {
             name = "eDP-1";
             workspaces = [11];
-            backlightDevice = "amdgpu_bl1";
+            backlightBackend = "backlight";
             position = {
               x = 1920;
               y = 0;

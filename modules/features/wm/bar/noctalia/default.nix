@@ -54,6 +54,20 @@
               font_family = fonts.monospace.name;
             };
 
+            brightness = {
+              enable_ddcutil = true;
+
+              monitor = lib.listToAttrs (map (
+                  m: {
+                    name = m.name;
+                    value = {
+                      backend = m.backlightBackend;
+                    };
+                  }
+                )
+                config.custom.hardware.monitors);
+            };
+
             bar = {
               order = ["default"];
               default = {
