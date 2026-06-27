@@ -7,6 +7,9 @@
     daemon = config.custom.hardware.power-management;
   in
     lib.mkIf (daemon == "auto-cpufreq") {
+      # cpufreq handles cpu and powertop handles other stuff
+      powerManagement.powertop.enable = true;
+
       services.auto-cpufreq = {
         enable = true;
 
