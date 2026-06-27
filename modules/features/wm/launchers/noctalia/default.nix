@@ -33,10 +33,10 @@
           shell.panel.launcher_placement = "attached";
 
           # Since gtkshutdown only works on hyprland rn
-          # hooks = lib.mkIf hyprland {
-          #   rebooting = shutdownCmd;
-          #   shutting_down = shutdownCmd;
-          # };
+          hooks = lib.mkIf hyprland {
+            rebooting = shutdownCmd;
+            shutting_down = shutdownCmd;
+          };
         };
 
         wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
