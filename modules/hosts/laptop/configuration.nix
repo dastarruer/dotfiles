@@ -128,6 +128,13 @@
       ];
     };
 
+    # Enable conservation mode
+    # REMOVE IF USING TLP
+    boot.kernelModules = ["ideapad_laptop"];
+    systemd.tmpfiles.rules = [
+      "w /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode - - - - 1"
+    ];
+
     # Disable touchpad as mouse for dualshock connected via USB and Bluetooth (https://wiki.archlinux.org/title/Gamepad#Disable_touchpad_acting_as_mouse)
     services.udev.extraRules = ''
       ATTRS{name}=="Sony Interactive Entertainment Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"

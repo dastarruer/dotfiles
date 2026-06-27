@@ -18,10 +18,6 @@
           battery = {
             governor = "powersave";
             turbo = "never"; # so fans aren't so goddamn loud
-
-            # Specifically works for laptops w the 'ideapad_laptop' kernel module
-            # `lsmod | grep ideapad_laptop`
-            ideapad_laptop_conservation_mode = true;
           };
 
           # Settings for when plugged in
