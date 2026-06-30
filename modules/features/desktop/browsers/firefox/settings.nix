@@ -17,6 +17,8 @@
           preConfig = betterfoxUserjs;
 
           settings = {
+            "media.videocontrols.picture-in-picture.enable-when-switching-tabs.enabled" = true;
+
             # USER JS OVERRIDES
             "svg.context-properties.content.enabled" = true;
             "layout.css.has-selector.enabled" = true;
