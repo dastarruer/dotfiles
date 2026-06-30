@@ -1,6 +1,5 @@
-{...}: {
+{inputs, ...}: {
   flake.nixosModules.desktop_browser = {
-    inputs,
     config,
     lib,
     ...
@@ -8,12 +7,15 @@
     hyprland = config.custom.wm.wm == "hyprland";
     browser = config.custom.desktop.browser.kind;
   in
-    lib.mkIf (browser == "zen") {
-      imports = [
-        inputs.zen-browser.homeModules.beta
-      ];
-
+    lib.mkIf (browser == "zen-browser") {
       home-manager.users.dastarruer = {
+        imports = [
+          inputs.zen-browser.homeModules.beta
+        ];
+
+        # Stylix theme sucks
+        stylix.targets.zen-browser.enable = false;
+
         programs.zen-browser = {
           enable = true;
           setAsDefaultBrowser = true;
