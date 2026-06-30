@@ -5,13 +5,14 @@
     lib,
     ...
   }: let
+    profile = config.custom.desktop.browser.profile;
     hmConfig = config.home-manager.users.dastarruer;
     browser = config.custom.desktop.browser.kind;
   in {
     home-manager.users.dastarruer = lib.mkIf (browser == "firefox") {
       sops.secrets.sponsorblock_userid = {};
 
-      programs.firefox.profiles."${config.custom.desktop.browser.profile}".extensions = {
+      programs.firefox.profiles."${profile}".extensions = {
         packages = with inputs.firefox-addons.packages.${pkgs.stdenv.system}; [
           sponsorblock
         ];

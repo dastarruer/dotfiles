@@ -7,12 +7,13 @@
     browser = config.custom.desktop.browser.kind;
     # Get the betterfox userjs as a base for my settings
     betterfoxUserjs = builtins.readFile "${inputs.betterfox}/user.js";
+    profile = config.custom.desktop.browser.profile;
   in
     lib.mkIf (browser == "firefox") {
       home-manager.users.dastarruer = {
         # Declare settings and overrides, most of which I've stolen from here:
         # https://github.com/gvolpe/nix-config/blob/6feb7e4f47e74a8e3befd2efb423d9232f522ccd/home/programs/browsers/firefox.nix
-        programs.firefox.profiles."${config.custom.desktop.browser.profile}" = {
+        programs.firefox.profiles."${profile}" = {
           preConfig = betterfoxUserjs;
 
           settings = {

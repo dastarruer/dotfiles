@@ -6,6 +6,7 @@
     ...
   }: let
     hmConfig = config.home-manager.users.dastarruer;
+    profile = config.custom.desktop.browser.profile;
     hyprland = config.custom.wm.wm == "hyprland";
     browser = config.custom.desktop.browser.kind;
   in
@@ -25,9 +26,9 @@
           package = pkgs.firefox-bin;
           configPath = "${hmConfig.xdg.configHome}/mozilla/firefox";
 
-          profiles."${config.custom.desktop.browser.profile}" = {
+          profiles."${profile}" = {
             id = 0;
-            name = "${config.custom.desktop.browser.profile}";
+            name = "${profile}";
             isDefault = true;
           };
         };

@@ -4,11 +4,12 @@
     lib,
     ...
   }: let
+    profile = config.custom.desktop.browser.profile;
     browser = config.custom.desktop.browser.kind;
   in
     lib.mkIf (browser == "firefox") {
       home-manager.users.dastarruer = {
-        programs.firefox.profiles."${config.custom.desktop.browser.profile}" = {
+        programs.firefox.profiles."${profile}" = {
           # Set up containers
           containersForce = true;
           containers = {

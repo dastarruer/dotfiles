@@ -5,11 +5,12 @@
     lib,
     ...
   }: let
+    profile = config.custom.desktop.browser.profile;
     browser = config.custom.desktop.browser.kind;
   in
     lib.mkIf (browser == "firefox") {
       home-manager.users.dastarruer = {
-        programs.firefox.profiles."${config.custom.desktop.browser.profile}".extensions = {
+        programs.firefox.profiles."${profile}".extensions = {
           packages = with inputs.firefox-addons.packages.${pkgs.stdenv.system}; [
             auto-tab-discard
           ];
