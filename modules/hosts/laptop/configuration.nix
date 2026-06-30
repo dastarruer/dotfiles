@@ -25,7 +25,7 @@
       cli_multiplexer
 
       desktop_anki
-      desktop_firefox
+      desktop_browser
       desktop_steam
       desktop_lutris
       desktop_whatsapp
@@ -115,6 +115,9 @@
       desktop = {
         editor = "zed";
         terminal = "foot";
+        browser = {
+          kind = "zen-browser";
+        };
       };
 
       backup.backupPaths = [

@@ -1,11 +1,15 @@
 {...}: {
-  flake.nixosModules.desktop_firefox = {
+  flake.nixosModules.desktop_browser = {
     config,
     pkgs,
+    lib,
     ...
-  }: {
+  }: let
+    browser = config.custom.desktop.browser.kind;
+  in
+    lib.mkIf (browser == "firefox"){
     home-manager.users.dastarruer = {
-      programs.firefox.profiles.${config.custom.desktop.firefox.profile}.search = {
+      programs.firefox.profiles.${config.custom.desktop.browser.profile}.search = {
         force = true;
 
         # Use brave because it's about as fast as google

@@ -1,13 +1,13 @@
 {inputs, ...}: {
-  flake.nixosModules.desktop_firefox = {
+  flake.nixosModules.desktop_browser = {
     config,
     pkgs,
     lib,
     ...
   }: let
     hmConfig = config.home-manager.users.dastarruer;
-
-    profile = config.custom.desktop.firefox.profile;
+    browser = config.custom.desktop.browser.kind;
+    profile = config.custom.desktop.browser.profile;
     containers = hmConfig.programs.firefox.profiles."${profile}".containers;
 
     # Helper to get container IDs from profile config
@@ -41,7 +41,7 @@
       })
       groupList;
   in {
-    home-manager.users.dastarruer = {
+    home-manager.users.dastarruer = lib.mkIf (browser == "firefox") {
       programs.firefox.profiles."${profile}".extensions = {
         packages = with inputs.firefox-addons.packages.${pkgs.stdenv.system}; [
           simple-tab-groups

@@ -1030,7 +1030,8 @@
         "textfox": "textfox",
         "ucodenix": "ucodenix",
         "vscode-extensions": "vscode-extensions",
-        "waybar": "waybar"
+        "waybar": "waybar",
+        "zen-browser": "zen-browser"
       }
     },
     "rust-analyzer-src": {
@@ -1387,6 +1388,29 @@
       "original": {
         "owner": "hyprwm",
         "repo": "xdg-desktop-portal-hyprland",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1782812215,
+        "narHash": "sha256-OPVK9WW9QsO2aj1R+Ln3p7fniFj5h441vb3LyrzpeE4=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "a7c2a9a5e492e0e62072547f7e4c2abf138425c5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }

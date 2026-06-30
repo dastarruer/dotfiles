@@ -1,16 +1,17 @@
 {inputs, ...}: {
-  flake.nixosModules.desktop_firefox = {
+  flake.nixosModules.desktop_browser = {
     config,
     pkgs,
     lib,
     ...
   }: let
     hmConfig = config.home-manager.users.dastarruer;
+    browser = config.custom.desktop.browser.kind;
   in {
-    home-manager.users.dastarruer = {
+    home-manager.users.dastarruer = lib.mkIf (browser == "firefox") {
       sops.secrets.sponsorblock_userid = {};
 
-      programs.firefox.profiles."${config.custom.desktop.firefox.profile}".extensions = {
+      programs.firefox.profiles."${config.custom.desktop.browser.profile}".extensions = {
         packages = with inputs.firefox-addons.packages.${pkgs.stdenv.system}; [
           sponsorblock
         ];
