@@ -7,11 +7,16 @@
     storagePath = "/var/lib/webdav";
     usernamePath = config.sops.secrets."webdav/user".path;
     passwordPath = config.sops.secrets."webdav/password".path;
+    backup = config.custom.backup;
   in {
     sops.secrets = {
       "webdav/user" = {};
       "webdav/password" = {};
     };
+
+    custom.backup.backupPaths = lib.mkIf backup.enable [
+      storagePath
+    ];
 
     services.webdav = {
       enable = true;
