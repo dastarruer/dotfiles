@@ -51,6 +51,8 @@
       services_reload-udev
       services_docker
       services_ssh
+
+      self-hosted_webdav
     ];
 
     custom = {
