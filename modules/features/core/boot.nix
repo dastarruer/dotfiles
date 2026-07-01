@@ -33,8 +33,7 @@
 
     # Bootloader.
     boot = {
-      # Get the latest kernel
-      kernelPackages = pkgs.linuxPackages_latest;
+      kernelPackages = pkgs.linuxPackages_6_12;
 
       # Bootloader
       loader = {
