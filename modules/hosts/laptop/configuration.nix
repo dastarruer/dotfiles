@@ -116,7 +116,7 @@
         editor = "zed";
         terminal = "foot";
         browser = {
-          kind = "zen-browser";
+          kind = "firefox";
         };
       };
 
