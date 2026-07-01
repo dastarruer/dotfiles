@@ -36,9 +36,6 @@
       # Get the latest kernel
       kernelPackages = pkgs.linuxPackages_latest;
 
-      # Spalsh screen
-      plymouth.enable = true;
-
       # Bootloader
       loader = {
         # Set a timeout of 0 so it skips the nix generation menu entirely
