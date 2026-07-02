@@ -12,6 +12,9 @@
     hmConfig = config.home-manager.users.dastarruer;
     geminiKeyPath = hmConfig.sops.secrets.gemini_api_key.path;
   in {
+    # Install this globally because many projects do not include this in their devshell
+    environment.systemPackages = [pkgs.nixd];
+
     # Allow zed-editor to install its own language servers
     # zed-fhs is not enough on its own; this has to be enabled as well
     programs.nix-ld.enable = true;
