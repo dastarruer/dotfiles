@@ -28,6 +28,8 @@
           inputs.noctalia.homeModules.default
         ];
 
+        stylix.targets.noctalia.enable = false;
+
         programs.noctalia = {
           enable = true;
           systemd.enable = true;
@@ -115,7 +117,6 @@
               };
             };
 
-            # Since stylix does not support v5 yet, configure theme manually
             theme = {
               mode = "dark";
               source = "custom";
@@ -124,7 +125,6 @@
           };
         };
 
-        # I think I have to manually write the json file for now
         home.file.".config/noctalia/palettes/Custom.json".text = builtins.toJSON {
           dark = with colors.withHashtag; {
             mPrimary = "#${config.custom.theme.accent}";
