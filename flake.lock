@@ -135,6 +135,21 @@
         "type": "github"
       }
     },
+    "crane": {
+      "locked": {
+        "lastModified": 1783102699,
+        "narHash": "sha256-7inE9/GtbWf3MkV6wj2lRr0RixOpWBZboAKTPAnRDxY=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "7605d0ca1a69331596d4ec0f2577fc566d17b3ad",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -439,6 +454,7 @@
     },
     "gtkshutdown": {
       "inputs": {
+        "crane": "crane",
         "fenix": "fenix",
         "git-hooks": "git-hooks",
         "home-manager": "home-manager",
@@ -447,11 +463,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782950269,
-        "narHash": "sha256-/wxK1VhksAc/sw5M1dcf8GpyklOSWDiPOEdck6JIgz8=",
+        "lastModified": 1783690367,
+        "narHash": "sha256-PoxkRbRk/U1eiaxsx+5bYvZxqNSF0lBuEePLY5MaoPE=",
         "owner": "dastarruer",
         "repo": "gtkshutdown",
-        "rev": "7b7b5fa672f7ab5e410a29847b3ee7492c546ab7",
+        "rev": "d3041a71e9dd60f7553df01bb0fd21ca05d164ba",
         "type": "github"
       },
       "original": {
