@@ -84,7 +84,7 @@
 
     programs.steam.config = {
       enable = true;
-      closeSteam = true;
+      onSteamRunning = "close";
       defaultCompatTool = "GE-Proton";
     };
 
