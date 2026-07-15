@@ -50,7 +50,7 @@
       services_ludusavi
       services_smart-pause-resume
       services_reload-udev
-      services_docker
+      # services_docker
       services_ssh
 
       self-hosted_webdav
