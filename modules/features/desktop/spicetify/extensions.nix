@@ -4,7 +4,7 @@
   in {
     home-manager.users.dastarruer = {
       programs.spicetify.enabledExtensions = with spicePkgs.extensions; [
-        adblockify
+        adblock
         hidePodcasts
         loopyLoop
         seekSong

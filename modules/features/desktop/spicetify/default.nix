@@ -39,7 +39,7 @@
         # looks aesthetic innit
         window_rule = [
           {
-            match.class = "Spotify";
+            match.class = "spotify";
             move = lib.generators.mkLuaInline "{81, 146}";
             size = lib.generators.mkLuaInline "{1068, 670}";
             workspace = "5 silent";
