@@ -46,6 +46,9 @@
             calendar.enabled = false;
             weather.enabled = false;
 
+            # nice to have innit
+            screen_time_enabled = true;
+
             shell = {
               avatar_path = "${inputs.self.outPath}/config/images/pfp.png";
               settings_show_advanced = true;
