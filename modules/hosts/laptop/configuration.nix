@@ -109,6 +109,7 @@
         notifications.daemon = "noctalia";
         launcher = "noctalia";
         clipboard = "noctalia";
+        screenshot.path = "${config.home-manager.users.dastarruer.home.homeDirectory}/Pictures/screenshots";
       };
 
       cli = {

@@ -71,6 +71,17 @@
         default = "cliphist";
         description = "Set the clipboard manager to be used.";
       };
+      screenshot = {
+        kind = lib.mkOption {
+          type = lib.types.enum ["flameshot" "grimblast" "none"];
+          default = "grimblast";
+          description = "Set the screenshot tool to be used.";
+        };
+        path = lib.mkOption {
+          type = lib.types.path;
+          description = "Set the path to which screenshots are saved.";
+        };
+      };
     };
 
     config = {

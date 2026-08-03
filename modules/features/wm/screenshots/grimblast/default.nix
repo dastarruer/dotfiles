@@ -5,19 +5,13 @@
     lib,
     ...
   }: let
+    screenshot = config.custom.wm.screenshot.kind;
     hmConfig = config.home-manager.users.dastarruer;
     hyprland = config.custom.wm.wm == "hyprland";
-  in {
+    screenshotPath = config.custom.wm.screenshot.path;
+  in lib.mkIf (screenshot == "grimblast") {
     home-manager.users.dastarruer = lib.mkIf hyprland {
-      # Create the screenshots dir, deleting files older than 30 days
-      systemd.user.tmpfiles.rules = [
-        "d %h/Pictures/screenshots - - - 30d -"
-      ];
-
-      # Based off grimblast manual
-      wayland.windowManager.hyprland.settings = let
-        screenshotDir = "${config.home-manager.users.dastarruer.home.homeDirectory}/Pictures/screenshots";
-      in {
+      wayland.windowManager.hyprland.settings = {
         # Let grim capture screen
         permission = [
           {
@@ -41,28 +35,28 @@
           {
             _args = [
               "SUPER + P"
-              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${pkgs.grimblast}/bin/grimblast copysave area ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n")'')
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${pkgs.grimblast}/bin/grimblast copysave area ${screenshotPath}/$(date +'%Y-%m-%d_%H-%M-%S').png -n")'')
             ];
           }
           # Copysave active window
           {
             _args = [
               "SUPER + SHIFT + P"
-              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${pkgs.grimblast}/bin/grimblast copysave active ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n")'')
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${pkgs.grimblast}/bin/grimblast copysave active ${screenshotPath}/$(date +'%Y-%m-%d_%H-%M-%S').png -n")'')
             ];
           }
           # Copysave full screen
           {
             _args = [
               "SUPER + CTRL + P"
-              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${pkgs.grimblast}/bin/grimblast copysave output ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n")'')
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${pkgs.grimblast}/bin/grimblast copysave output ${screenshotPath}/$(date +'%Y-%m-%d_%H-%M-%S').png -n")'')
             ];
           }
           # Copysave all monitors
           {
             _args = [
               "SUPER + SHIFT + CTRL + P"
-              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${pkgs.grimblast}/bin/grimblast copysave screen ${screenshotDir}/$(date +'%Y-%m-%d_%H-%M-%S').png -n")'')
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${pkgs.grimblast}/bin/grimblast copysave screen ${screenshotPath}/$(date +'%Y-%m-%d_%H-%M-%S').png -n")'')
             ];
           }
 
