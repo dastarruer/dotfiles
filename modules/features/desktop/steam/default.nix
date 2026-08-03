@@ -6,6 +6,7 @@
     ...
   }: let
     hmConfig = config.home-manager.users.dastarruer;
+    hyprland = config.custom.wm.wm == "hyprland";
     ludusavi = hmConfig.services.ludusavi;
     wayland = config.custom.wm.wayland;
   in {
@@ -95,6 +96,24 @@
           store = "steam";
         }
       ];
+
+      wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
+        window_rule = [
+          # Tag games so performance-related settings can be applied
+          {
+            match.xdg_tag = "proton-game";
+            tag = "+game";
+          }
+          {
+            match.initial_class = "steam_app_.*";
+            tag = "+game";
+          }
+          {
+            match.class = "gamescope";
+            tag = "+game";
+          }
+        ];
+      };
     };
   };
 }
