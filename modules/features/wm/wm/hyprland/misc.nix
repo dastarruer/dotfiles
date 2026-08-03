@@ -38,25 +38,6 @@
           };
         };
 
-        # Monitor setup
-        monitor = [
-          # Main monitor in middle
-          {
-            output = "DP-1";
-            mode = "1920x1080@144";
-            position = "0x0";
-            scale = 1;
-          }
-
-          # Laptop monitor on the right
-          {
-            output = "eDP-1";
-            mode = "1920x1080@60";
-            position = "1920x0";
-            scale = 1;
-          }
-        ];
-
         env = [
           {_args = ["XCURSOR_SIZE" "24"];}
           {_args = ["HYPRCURSOR_SIZE" "24"];}
