@@ -8,13 +8,14 @@
     profile = config.custom.desktop.browser.profile;
     hmConfig = config.home-manager.users.dastarruer;
     browser = config.custom.desktop.browser.kind;
+    firefoxPkgs = inputs.firefox-addons.packages.${pkgs.stdenv.system};
   in {
     home-manager.users.dastarruer = lib.mkIf (browser == "firefox") {
       sops.secrets.sponsorblock_userid = {};
 
       programs.firefox.profiles."${profile}".extensions = {
-        packages = with inputs.firefox-addons.packages.${pkgs.stdenv.system}; [
-          sponsorblock
+        packages = [
+          firefoxPkgs.sponsorblock
         ];
 
         settings."sponsorBlocker@ajay" = {

@@ -5,6 +5,8 @@
     lib,
     ...
   }: let
+    firefoxPkgs = inputs.firefox-addons.packages.${pkgs.stdenv.system};
+
     hmConfig = config.home-manager.users.dastarruer;
     browser = config.custom.desktop.browser.kind;
     profile = config.custom.desktop.browser.profile;
@@ -43,8 +45,8 @@
   in {
     home-manager.users.dastarruer = lib.mkIf (browser == "firefox") {
       programs.firefox.profiles."${profile}".extensions = {
-        packages = with inputs.firefox-addons.packages.${pkgs.stdenv.system}; [
-          simple-tab-groups
+        packages = [
+          firefoxPkgs.simple-tab-groups
         ];
 
         settings."simple-tab-groups@drive4ik" = {

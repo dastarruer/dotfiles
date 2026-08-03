@@ -6,6 +6,7 @@
     ...
   }: let
     profile = config.custom.desktop.browser.profile;
+    firefoxPkgs = inputs.firefox-addons.packages.${pkgs.stdenv.system};
     browser = config.custom.desktop.browser.kind;
   in
     lib.mkIf (browser == "firefox") {
@@ -14,7 +15,7 @@
           # Necessary to configure extension settings through hm
           force = true;
 
-          packages = with inputs.firefox-addons.packages.${pkgs.stdenv.system}; [
+          packages = with firefoxPkgs; [
             ublock-origin
             i-dont-care-about-cookies
             privacy-badger

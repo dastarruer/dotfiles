@@ -8,6 +8,8 @@
     browser = config.custom.desktop.browser.kind;
     profile = config.custom.desktop.browser.profile;
 
+    firefoxPkgs = inputs.firefox-addons.packages.${pkgs.stdenv.system};
+
     # While the default is Dynamic theme generation (looks the best), it slows down some sites too much. This function instead sets a site-specific preset that uses the SVG filter engine, which is much faster but less accurate.
     mkFilterPlusPreset = urls: {
       url = urls;
@@ -38,8 +40,8 @@
     lib.mkIf (browser == "firefox") {
       home-manager.users.dastarruer = {
         programs.firefox.profiles."${profile}".extensions = {
-          packages = with inputs.firefox-addons.packages.${pkgs.stdenv.system}; [
-            darkreader
+          packages = [
+            firefoxPkgs.darkreader
           ];
 
           settings."addon@darkreader.org" = {

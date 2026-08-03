@@ -7,12 +7,13 @@
   }: let
     profile = config.custom.desktop.browser.profile;
     browser = config.custom.desktop.browser.kind;
+    firefoxPkgs = inputs.firefox-addons.packages.${pkgs.stdenv.system};
   in
     lib.mkIf (browser == "firefox") {
       home-manager.users.dastarruer = {
         programs.firefox.profiles."${profile}".extensions = {
-          packages = with inputs.firefox-addons.packages.${pkgs.stdenv.system}; [
-            auto-tab-discard
+          packages = [
+            firefoxPkgs.auto-tab-discard
           ];
 
           settings."{c2c003ee-bd69-42a2-b0e9-6f34222cb046}" = {
