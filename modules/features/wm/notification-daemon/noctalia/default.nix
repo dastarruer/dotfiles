@@ -24,6 +24,8 @@
         programs.noctalia.settings.notification = {
           enable_daemon = true;
           background_opacity = 1.0;
+          scale = 0.95;
+          layer = "overlay"; # show notifications in full screen window
 
           # Not sure how to block based on description though
           blacklist = config.custom.wm.notifications.excludeTitles;
