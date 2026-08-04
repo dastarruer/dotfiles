@@ -13,9 +13,6 @@
           inputs.zen-browser.homeModules.beta
         ];
 
-        # Stylix theme sucks
-        stylix.targets.zen-browser.enable = false;
-
         programs.zen-browser = {
           enable = true;
           setAsDefaultBrowser = true;

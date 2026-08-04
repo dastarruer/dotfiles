@@ -10,20 +10,22 @@
   in
     lib.mkIf (browser == "zen-browser") {
       home-manager.users.dastarruer = {
+        stylix.targets.zen-browser = {
+          enable = true;
+          profileNames = [profile];
+        };
+
         programs.zen-browser.profiles."${profile}" = {
           mods = [
-            "1b88a6d1-d931-45e8-b6c3-bfdca2c7e9d6" # Remove Tab X
-            "c01d3e22-1cee-45c1-a25e-53c0f180eea8" # Ghost tabs
-            "e74cb40a-f3b8-445a-9826-1b1b6e41b846" # Custom ui font
-            "642854b5-88b4-4c40-b256-e035532109df" # Transparent zen
+            # Disable rounded corners (https://zen-browser.app/mods/c6813222-6571-4ba6-8faf-58f3343324f6/?page=2)
+            "c6813222-6571-4ba6-8faf-58f3343324f6"
           ];
           settings = {
-            "theme.customui_font.default" = "monospace";
+            "zen.widget.linux.transparency" = false;
 
-            "zen.widget.linux.transparency" = true;
-            "mod.sameerasw.zen_bg_color_enabled" = true;
-            "mod.sameerasw.zen_transparency_color" = colors.withHashtag.base00;
-            "zen.view.grey-out-inactive-windows" = false;
+            # Set both to dark mode
+            "browser.theme.content-theme" = 2;
+            "browser.theme.toolbar-theme" = 2;
           };
         };
       };
