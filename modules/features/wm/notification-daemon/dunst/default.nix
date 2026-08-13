@@ -1,4 +1,4 @@
-{...}: {
+{inputs, ...}: {
   flake.nixosModules.wm = {
     config,
     pkgs,
@@ -138,7 +138,7 @@
                 appArray = ''("${lib.concatStringsSep "\" \"" cfg.excludeTitles}")'';
                 summaryArray = ''("${lib.concatStringsSep "\" \"" cfg.excludeSummaries}")'';
 
-                alertPath = ./alerts/default.wav;
+                alertPath = "${inputs.self.outPath}/config/alerts/notification.wav";
                 alertScript = pkgs.writeShellApplication {
                   name = "alert";
                   runtimeInputs = with pkgs; [
