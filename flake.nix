@@ -95,7 +95,7 @@
       flake = false;
     };
 
-    noctalia.url = "github:noctalia-dev/noctalia";
+    noctalia.url = "github:noctalia-dev/noctalia/cachix";
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
