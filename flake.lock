@@ -979,6 +979,38 @@
         "type": "github"
       }
     },
+    "noctalia-community-plugins": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786589093,
+        "narHash": "sha256-qY6hkTjF2g4MpnblAAqtwuVT0KpaWF4HOwlmPNaGu84=",
+        "owner": "noctalia-dev",
+        "repo": "community-plugins",
+        "rev": "37856683875fbec2c9ac027e5e6143e11231d1d2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "community-plugins",
+        "type": "github"
+      }
+    },
+    "noctalia-official-plugins": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786565732,
+        "narHash": "sha256-+ANQuOUHwChz5mtnMWrceBTxQIHc8jIY9Q1Ez9gMB2A=",
+        "owner": "noctalia-dev",
+        "repo": "official-plugins",
+        "rev": "72939b31889c6026bf72847748bd122354c003f5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "official-plugins",
+        "type": "github"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": [
@@ -1058,6 +1090,8 @@
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-stable": "nixpkgs-stable",
         "noctalia": "noctalia",
+        "noctalia-community-plugins": "noctalia-community-plugins",
+        "noctalia-official-plugins": "noctalia-official-plugins",
         "peacock": "peacock",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",

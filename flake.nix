@@ -95,14 +95,22 @@
       flake = false;
     };
 
-    noctalia.url = "github:noctalia-dev/noctalia/cachix";
-
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
       };
+    };
+
+    noctalia.url = "github:noctalia-dev/noctalia/cachix";
+    noctalia-official-plugins = {
+      url = "github:noctalia-dev/official-plugins";
+      flake = false;
+    };
+    noctalia-community-plugins = {
+      url = "github:noctalia-dev/community-plugins";
+      flake = false;
     };
 
     flake-parts.url = "github:hercules-ci/flake-parts";
