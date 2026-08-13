@@ -32,7 +32,7 @@
               enabled = true;
               command =
                 if (locker == "noctalia")
-                then "noctalia:session lock" # i doth believe i need to use this syntax
+                then "${lib.getExe hmConfig.programs.noctalia.package} msg session lock"
                 else config.custom.wm.locker.command;
               timeout = 300;
             };
