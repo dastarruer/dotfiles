@@ -59,7 +59,7 @@
           }
           {
             leaf = "windowsOut";
-            enabled = true;
+            enabled = false;
             speed = 3;
             bezier = "smoothOut";
             style = "slide";
