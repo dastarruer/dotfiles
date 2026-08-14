@@ -27,6 +27,7 @@
               "apex077/eyecare"
               "icefish/phone-connect"
               "noctalia/timer"
+              "yuuto/calculator"
             ];
             
             # Manage plugin updates with nix
@@ -67,6 +68,8 @@
             ];
             center = [
               "icefish/phone-connect:bar"
+              "spacer"
+              "yuuto/calculator:bar"
             ];
             end = [
               "apex077/eyecare:eyecare-widget"
