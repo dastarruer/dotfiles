@@ -42,7 +42,7 @@
       desktop_mpv
       desktop_obs
       desktop_zathura
-      desktop_timer
+      # desktop_timer
       desktop_kdeconnect
       desktop_readest
 
