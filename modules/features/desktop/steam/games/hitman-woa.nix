@@ -102,6 +102,11 @@
     programs.steam.config = {
       apps.hitmanwoa = {
         id = 1659040;
+        preHook = lib.getExe (pkgs.writeShellApplication {
+          name = "start_peacock";
+          runtimeInputs = [pkgs.systemd];
+          text = ''systemctl start --user peacock'';
+        });
         wrappers = [
           (lib.getExe config.programs.gamemode.package)
         ];
