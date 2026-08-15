@@ -2,6 +2,7 @@
 {...}: {
   flake.nixosModules.wm = {
     config,
+    pkgs,
     lib,
     ...
   }: let
@@ -17,6 +18,16 @@
             no_break_fs_vrr = 0;
           };
         };
+
+        bind = [
+          # suspend an app, freeing resources for other processes
+          {
+            _args = [
+              "SUPER + X"
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.wl-freeze} -a")'')
+            ];
+          }
+        ];
 
         window_rule = [
           {
