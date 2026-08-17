@@ -6,39 +6,46 @@
   }: let
     hyprland = config.custom.wm.wm == "hyprland";
     terminal = config.custom.desktop.terminal;
-  in {
-    home-manager.users.dastarruer = lib.mkIf (terminal == "kitty") {
-      programs.kitty = {
+  in
+    lib.mkIf (terminal == "kitty") {
+      environment.variables.TERMINAL = "kitty";
+      xdg.terminal-exec = {
         enable = true;
-
-        settings = {
-          # Cursor settings
-          cursor_trail = 3;
-          cursor_trail_decay = "0.1 0.4";
-          cursor_beam_thickness = "2.5";
-          cursor_shape = "block";
-          # Tab styling
-          tab_bar_min_tabs = 1;
-          tab_bar_edge = "bottom";
-          tab_bar_style = "powerline";
-          tab_powerline_style = "slanted";
-          tab_title_template = "{title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}";
-
-          # Other
-          detect_urls = "yes";
-          window_padding_width = 20;
-          disable_ligatures = "always";
-          text_composition_strategy = "legacy";
-          confirm_os_window_close = 0;
-          wayland_enable_ime = "no";
-          enable_audio_bell = "no";
-        };
+        settings.default = ["kitty.desktop"];
       };
 
-      # Set hyprland keybind
-      wayland.windowManager.hyprland.settings.bind = lib.mkIf hyprland [
-        {_args = ["SUPER + RETURN" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("kitty")'')];}
-      ];
+      home-manager.users.dastarruer = {
+        programs.kitty = {
+          enable = true;
+
+          settings = {
+            # Cursor settings
+            cursor_trail = 3;
+            cursor_trail_decay = "0.1 0.4";
+            cursor_beam_thickness = "2.5";
+            cursor_shape = "block";
+            # Tab styling
+            tab_bar_min_tabs = 1;
+            tab_bar_edge = "bottom";
+            tab_bar_style = "powerline";
+            tab_powerline_style = "slanted";
+            tab_title_template = "{title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}";
+
+            # Other
+            detect_urls = "yes";
+            window_padding_width = 20;
+            disable_ligatures = "always";
+            text_composition_strategy = "legacy";
+            confirm_os_window_close = 0;
+            wayland_enable_ime = "no";
+            enable_audio_bell = "no";
+          };
+        };
+
+        # Set hyprland keybind
+        wayland.windowManager.hyprland.settings.bind = lib.mkIf hyprland [
+          {_args = ["SUPER + RETURN" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("kitty")'')];}
+        ];
+      };
     };
-  };
 }

@@ -15,52 +15,59 @@
       rev = "4faa83e4b9306750fc8de64b38c6f53c57862db8";
       hash = "sha256-ruhEqXnWRCYdX5mRczpY3rj1DTdxyY3BoN9pdlDOKrE=";
     }}/cursor_tail.glsl";
-  in {
-    home-manager.users.dastarruer = lib.mkIf (terminal == "ghostty") {
-      programs.ghostty = {
+  in
+    lib.mkIf (terminal == "ghostty") {
+      environment.variables.TERMINAL = "ghostty";
+      xdg.terminal-exec = {
         enable = true;
-        enableFishIntegration = true;
-        systemd.enable = true;
-
-        settings = {
-          cursor-style = "block";
-          cursor-style-blink = false;
-          link-url = true;
-          window-padding-x = 20;
-          window-padding-y = 20;
-
-          # Disable ligatures
-          font-feature = [
-            "-calt"
-            "-liga"
-            "-dliga"
-          ];
-
-          keybind = [
-            # Remove fullscreen keybind
-            "ctrl+enter=unbind"
-          ];
-
-          # Don't ask before closing
-          confirm-close-surface = false;
-
-          # Always keep ghostty systemd service running for fast window creation
-          quit-after-last-window-closed = false;
-
-          # Never show window size when resizing
-          resize-overlay = "never";
-
-          custom-shader = cursor-trail-shader-path;
-          custom-shader-animation = "always"; # Otherwise, the cursor can pause while it is being animated if the terminal becomes unfocused
-
-          cursor-click-to-move = true;
-          mouse-hide-while-typing = true;
-        };
+        settings.default = ["ghostty.desktop"];
       };
 
-      wayland.windowManager.hyprland.settings.bind = lib.mkIf hyprland [
-        {_args = ["SUPER + RETURN" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("ghostty +new-window")'')];}
-      ];
+      home-manager.users.dastarruer = {
+        programs.ghostty = {
+          enable = true;
+          enableFishIntegration = true;
+          systemd.enable = true;
+
+          settings = {
+            cursor-style = "block";
+            cursor-style-blink = false;
+            link-url = true;
+            window-padding-x = 20;
+            window-padding-y = 20;
+
+            # Disable ligatures
+            font-feature = [
+              "-calt"
+              "-liga"
+              "-dliga"
+            ];
+
+            keybind = [
+              # Remove fullscreen keybind
+              "ctrl+enter=unbind"
+            ];
+
+            # Don't ask before closing
+            confirm-close-surface = false;
+
+            # Always keep ghostty systemd service running for fast window creation
+            quit-after-last-window-closed = false;
+
+            # Never show window size when resizing
+            resize-overlay = "never";
+
+            custom-shader = cursor-trail-shader-path;
+            custom-shader-animation = "always"; # Otherwise, the cursor can pause while it is being animated if the terminal becomes unfocused
+
+            cursor-click-to-move = true;
+            mouse-hide-while-typing = true;
+          };
+        };
+
+        wayland.windowManager.hyprland.settings.bind = lib.mkIf hyprland [
+          {_args = ["SUPER + RETURN" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("ghostty +new-window")'')];}
+        ];
+      };
     };
-  };
 }
