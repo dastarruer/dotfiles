@@ -113,6 +113,12 @@
       flake = false;
     };
 
+    readest = {
+      type = "git";
+      url = "https://github.com/readest/readest.git";
+      submodules = true;
+    };
+
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
   };
