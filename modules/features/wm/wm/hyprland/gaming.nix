@@ -11,6 +11,7 @@
     home-manager.users.dastarruer = lib.mkIf hyprland {
       wayland.windowManager.hyprland.settings = {
         config = {
+          general.allow_tearing = true;
           # misc.vrr = 3;
           # render.direct_scanout = 0;
           cursor = {
