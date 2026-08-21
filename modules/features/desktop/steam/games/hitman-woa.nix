@@ -7,10 +7,12 @@
     ...
   }: let
     backup = config.custom.backup;
-    steamPath = "${config.home-manager.users.dastarruer.home.homeDirectory}/.local/share/Steam/steamapps";
+    hmConfig = config.home-manager.users.dastarruer;
+
+    steamPath = "${hmConfig.home.homeDirectory}/.local/share/Steam/steamapps";
     hitmanPath = "${steamPath}/common/HITMAN 3";
 
-    peacockDir = "${config.home-manager.users.dastarruer.home.homeDirectory}/.config/peacock-linux";
+    peacockDir = "${hmConfig.home.homeDirectory}/.config/peacock-linux";
     port = 3000;
     peacockScript = pkgs.writeShellApplication {
       name = "peacock-setup";
@@ -102,30 +104,12 @@
     programs.steam.config = {
       apps.hitmanwoa = {
         id = 1659040;
+        compatTool = "proton_11"; # having performance issues w latest ge proton
         preHook = lib.getExe (pkgs.writeShellApplication {
           name = "start_peacock";
           runtimeInputs = [pkgs.systemd];
           text = ''systemctl start --user peacock'';
         });
-        wrappers = [
-          (lib.getExe config.programs.gamescope.package)
-          # set window to monitor resolution
-          "-W"
-          "1920"
-          "-H"
-          "1080"
-          # render game at 720p
-          "-w"
-          "1600"
-          "-h"
-          "900"
-          # upscale to monitor resolution
-          "-F"
-          "fsr"
-          "-f"
-          "--"
-          (lib.getExe config.programs.gamemode.package)
-        ];
         args = [
           "-skip_launcher"
         ];
