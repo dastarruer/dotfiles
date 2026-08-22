@@ -1,0 +1,486 @@
+{
+  "patches": [
+    {
+      "id": "ebb8cdab-e521-4ba8-9288-d697b1aaaba7",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/paris/thebanker_mild.brick",
+        "assembly:/_pro/scenes/missions/paris/gamechangers_wild_card_juniper.brick",
+        "assembly:/_pro/scenes/missions/paris/tod_midday_mild.brick",
+        "assembly:/_pro/scenes/missions/paris/tod_ets_mild.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "c945b720-12c4-4f62-8026-4b4011a67dff",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/paris/thebanker_hot.brick",
+        "assembly:/_pro/scenes/missions/paris/gamechangers_wild_card_juniper.brick",
+        "assembly:/_pro/scenes/missions/paris/tod_midday.brick",
+        "assembly:/_pro/scenes/missions/paris/tod_ets.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "d4719601-83ce-4ca9-83cd-5164331d643f",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/coastaltown/mission_mild_author.brick",
+        "assembly:/_pro/scenes/missions/coastaltown/mission_mild_landslide.brick",
+        "assembly:/_pro/scenes/missions/coastaltown/mission_mild_icon.brick",
+        "assembly:/_pro/scenes/missions/coastaltown/tod_landslide_day.brick",
+        "assembly:/_pro/scenes/missions/coastaltown/tod_mild_sunset.brick",
+        "assembly:/_pro/scenes/missions/coastaltown/tod_wot_night.brick",
+        "assembly:/_pro/scenes/missions/coastaltown/mission_mild_bingo.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/coastaltown/alerted_fv.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "47d10233-0008-4f34-abd2-a84ca2bb7530",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/coastaltown/mission_hot_author.brick",
+        "assembly:/_pro/scenes/missions/coastaltown/mission_hot_landslide.brick",
+        "assembly:/_pro/scenes/missions/coastaltown/mission_hot_bingo.brick",
+        "assembly:/_pro/scenes/missions/coastaltown/night_hot_bingo.brick",
+        "assembly:/_pro/scenes/missions/coastaltown/tod_ets_sunset.brick",
+        "assembly:/_pro/scenes/missions/coastaltown/hot_landslide_day.brick",
+        "assembly:/_pro/scenes/missions/coastaltown/mission_hot_icon.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/coastaltown/alerted_fv.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "ff0264f0-c9b8-476f-b8f2-a5762d077a09",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/marrakesh/mission_mild_python.brick",
+        "assembly:/_pro/scenes/missions/marrakesh/mission_mild_mancala.brick",
+        "assembly:/_pro/scenes/missions/marrakesh/sunset_ets.brick",
+        "assembly:/_pro/scenes/missions/marrakesh/mission_mild_brothers.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/marrakesh/gamechanger_python_cereus_wild_card.brick",
+        "assembly:/_pro/scenes/missions/marrakesh/gamechangers_big_brother.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "2f5db1a8-dfcb-4b2a-9c5a-bd80fec93026",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/marrakesh/mission_hot_python.brick",
+        "assembly:/_pro/scenes/missions/marrakesh/mission_hot_mancala.brick",
+        "assembly:/_pro/scenes/missions/marrakesh/mission_hot_sunset.brick",
+        "assembly:/_pro/scenes/missions/marrakesh/mission_hot_brothers.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/marrakesh/gamechanger_python_cereus_wild_card.brick",
+        "assembly:/_pro/scenes/missions/marrakesh/gamechangers_big_brother.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "d40076af-74d1-484e-8936-1367d5b107ce",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/bangkok/mission_mild_zika.brick",
+        "assembly:/_pro/scenes/missions/bangkok/gamechanger_wild_card_geranium.brick",
+        "assembly:/_pro/scenes/missions/bangkok/tod_zika_night.brick",
+        "assembly:/_pro/scenes/missions/bangkok/tod_warlord_midday.brick",
+        "assembly:/_pro/scenes/missions/bangkok/mild_baiju.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "2f562dba-2b14-42f3-b9fb-eb72e79450ba",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/bangkok/mission_zika.brick",
+        "assembly:/_pro/scenes/missions/bangkok/gamechanger_wild_card_geranium.brick",
+        "assembly:/_pro/scenes/missions/bangkok/tod_zika_night.brick",
+        "assembly:/_pro/scenes/missions/bangkok/tod_warlord_hot_midday.brick",
+        "assembly:/_pro/scenes/missions/bangkok/hot_baiju.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "1a98c48e-d618-4d4d-b17b-90ca3b180d2a",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/colorado_2/ets_night_mild.brick",
+        "assembly:/_pro/scenes/missions/colorado_2/mission_mild_rabies.brick",
+        "assembly:/_pro/scenes/missions/colorado_2/mission_mild_spades.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "4a95baa5-6ad6-43c8-ae3e-be8449d578ec",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/colorado_2/ets_night.brick",
+        "assembly:/_pro/scenes/missions/colorado_2/mission_hot_rabies.brick",
+        "assembly:/_pro/scenes/missions/colorado_2/mission_hot_spades.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "76fd7c40-83a0-48c9-be49-cef107583eae",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/hokkaido/mission_mild_mamushi.brick",
+        "assembly:/_pro/scenes/missions/hokkaido/mission_mild_flu.brick",
+        "assembly:/_pro/scenes/missions/hokkaido/tod_flu.brick",
+        "assembly:/_pro/scenes/missions/hokkaido/override_shogi.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "65659b19-fb1a-4a14-b074-65227ffac128",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/hokkaido/mission_hot_flu.brick",
+        "assembly:/_pro/scenes/missions/hokkaido/hsf_night.brick",
+        "assembly:/_pro/scenes/missions/hokkaido/tod_flu.brick",
+        "assembly:/_pro/scenes/missions/hokkaido/override_shogi.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "5e2d2784-1fb0-4006-8e0b-d7d907bae1b5",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/sheep/mild_sheep.brick",
+        "assembly:/_pro/scenes/missions/sheep/mild_adonis_sunrise.brick",
+        "assembly:/_pro/scenes/missions/sheep/mild_adonis.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "bdda4dc3-6af8-44b6-b4ca-09de1b5cb6fd",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/sheep/mission_hot_adonis.brick",
+        "assembly:/_pro/scenes/missions/sheep/hot_adonis_sunrise.brick",
+        "assembly:/_pro/scenes/missions/sheep/hot_adonis_midday.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "4a34f12a-ab98-4dc5-9262-c600193b2629",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/miami/mild_night_ass.brick",
+        "assembly:/_pro/scenes/missions/miami/mission_mild_pinochle.brick",
+        "assembly:/_pro/scenes/missions/miami/mild_sunset.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "ee67660e-4bd6-4743-9163-40331056f690",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/miami/tod_night_ass.brick",
+        "assembly:/_pro/scenes/missions/miami/mission_hot_pinochle.brick",
+        "assembly:/_pro/scenes/missions/miami/variant_sunset.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "107100ca-f910-49a9-ac13-59d0bb5691a4",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/colombia/mission_mild_anaconda.brick",
+        "assembly:/_pro/scenes/missions/colombia/night_mild_highball.brick",
+        "assembly:/_pro/scenes/missions/colombia/mission_mild_trompo.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "aab7a569-cead-40b8-81b5-c1605070b366",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/colombia/mission_hot_anaconda.brick",
+        "assembly:/_pro/scenes/missions/colombia/night_hot_highball.brick",
+        "assembly:/_pro/scenes/missions/colombia/mission_hot_trompo.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "59c15d1e-c65e-4394-9906-46cdeb944c64",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/mumbai/mission_mild_kingcobra.brick",
+        "assembly:/_pro/scenes/missions/mumbai/mumbai_night.brick",
+        "assembly:/_pro/scenes/missions/mumbai/mumbai_day.brick",
+        "assembly:/_pro/scenes/missions/mumbai/gamechanger_monkshood_holyman_override.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "0d2a243a-f140-4be5-bfe7-e151878ec88e",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/mumbai/mumbai_night.brick",
+        "assembly:/_pro/scenes/missions/mumbai/mumbai_day.brick",
+        "assembly:/_pro/scenes/missions/mumbai/gamechanger_monkshood_holyman_override.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "dac2d6fd-4f25-4a63-b338-aef458c05a7f",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/skunk/ass_night_mild.brick",
+        "assembly:/_pro/scenes/missions/skunk/elusive_sunset_mild.brick",
+        "assembly:/_pro/scenes/missions/skunk/override_solitaire.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "6efd360a-5f78-44ac-9823-df077018c2b3",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/skunk/ass_night.brick",
+        "assembly:/_pro/scenes/missions/skunk/elusive_sunset.brick",
+        "assembly:/_pro/scenes/missions/skunk/override_solitaire.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "37be638c-4265-4622-9326-8835b8535180",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/theark/sunset_disruptor_mild.brick",
+        "assembly:/_pro/scenes/missions/theark/tod_day_ets_mild.brick",
+        "assembly:/_pro/scenes/missions/theark/mission_mild_whist.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "aa6447f6-7566-4e54-b1c9-15fa3d4acb39",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/theark/sunset_disruptor.brick",
+        "assembly:/_pro/scenes/missions/theark/tod_day_ets.brick",
+        "assembly:/_pro/scenes/missions/theark/mission_hot_whist.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "be4714d4-c7a5-4c21-a63a-89c5643965e7",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/greedy/mission_raccoon/mild_midday.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "a3aab02b-be9a-4f97-8ddb-80843dceb3c4",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/greedy/mission_raccoon/raccoon_midday.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "f075fbc3-79ef-4e42-9326-9572f712a298",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/opulent/mission_stingray/tod_night_mild.brick",
+        "assembly:/_pro/scenes/missions/opulent/mission_stingray/mission_mild_hilo.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "d2419fe4-ea72-4e61-b91b-bb39706f551d",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/opulent/mission_stingray/tod_night_hot.brick",
+        "assembly:/_pro/scenes/missions/opulent/mission_stingray/mission_hot_hilo.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "84727ec8-7f13-4c00-94c1-b5c60a8a181f",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/golden/mission_gecko/midday_gibson.brick",
+        "assembly:/_pro/scenes/missions/golden/mission_gecko/mission_mild_chess.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "cd1c3479-e3e4-42c3-a9a4-bfedd2ea31f9",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/golden/mission_gecko/midday_gibson_hot.brick",
+        "assembly:/_pro/scenes/missions/golden/mission_gecko/mission_hot_chess.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "d84fb174-2cbb-4337-8a66-f13f9fb170cd",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/ancestral/mild_vesper_night.brick",
+        "assembly:/_pro/scenes/missions/ancestral/mild_bramble_midday.brick",
+        "assembly:/_pro/scenes/missions/ancestral/override_bridge.brick",
+        "assembly:/_pro/scenes/missions/ancestral/mild_filur.brick",
+        "assembly:/_pro/scenes/missions/ancestral/mild_filur_outbreak.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "dec0ed42-41bf-4ff0-bc0a-08d73b3e7430",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/ancestral/tod_vesper_night.brick",
+        "assembly:/_pro/scenes/missions/ancestral/mission_hot_bridge.brick",
+        "assembly:/_pro/scenes/missions/ancestral/hot_bramble_midday.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "0ffe44ea-d241-49ec-835c-74d5714db343",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/edgy/mission_fox/mission_mild_radler.brick",
+        "assembly:/_pro/scenes/missions/edgy/mission_fox/tod_sunset_mild.brick",
+        "assembly:/_pro/scenes/missions/edgy/mission_fox/variant_easterl3.brick",
+        "assembly:/_pro/scenes/missions/edgy/mission_fox/mission_mild_meyer.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "c147e93f-2fa6-4618-a84e-d929c5d3d391",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/edgy/mission_fox/tod_sunset.brick",
+        "assembly:/_pro/scenes/missions/edgy/mission_fox/override_meyer.brick",
+        "assembly:/_pro/scenes/missions/edgy/mission_fox/variant_easter.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "4d9b38ab-5ea8-4bc3-8fbe-273a36c72731",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/wet/mission_mild_mahjong.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/wet/difficulty_hard_ruddy.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "5162c4a1-4b07-43b1-82ad-37c9e350764c",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/wet/tod_cloudy.brick",
+        "assembly:/_pro/scenes/missions/wet/mission_hot_mahjong.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/wet/difficulty_hard_ruddy.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "89500fa3-2466-4c52-8b90-9890cc5039ee",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/elegant/ets_midday_mild.brick",
+        "assembly:/_pro/scenes/missions/elegant/override_sapo.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "8caa8f0e-ac39-4088-95c1-42075afe8213",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/elegant/ets_midday.brick",
+        "assembly:/_pro/scenes/missions/elegant/override_sapo.brick"
+      ],
+      "hardbricks": [],
+      "clearDefaultBricks": false,
+      "resetVRBricks": false
+    },
+    {
+      "id": "060a48f0-117b-4b22-a165-111fd4a5b745",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/thefacility/mission_mild_cuba.brick",
+        "assembly:/_pro/scenes/missions/thefacility/mild_cuba_day.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "3e72588a-46ea-4cb8-a10f-e2242ca8cc99",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/thefacility/mission_hot_cuba.brick",
+        "assembly:/_pro/scenes/missions/thefacility/hot_cuba_day.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    }
+  ],
+  "configFileVersion": 1.12
+}
