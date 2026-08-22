@@ -105,11 +105,7 @@
       apps.hitmanwoa = {
         id = 1659040;
         compatTool = "proton_11"; # having performance issues w latest ge proton
-        preHook = lib.getExe (pkgs.writeShellApplication {
-          name = "start_peacock";
-          runtimeInputs = [pkgs.systemd];
-          text = ''systemctl start --user peacock'';
-        });
+        systemd.enable = true;
         args = [
           "-skip_launcher"
         ];
@@ -119,14 +115,9 @@
       nonSteamApps."Simple Mod Framework (HITMAN WOA)" = {
         # this path should be wrapped in double quotes, but that throws an error so just manually modify the path when opening the mod manager
         target = ''${steamPath}/common/HITMAN 3/Simple Mod Framework/Mod Manager/Mod Manager.exe'';
-
-        # Start in hitman proton prefix
+        # Hitman proton prefix
         startIn = "${steamPath}/compatdata/1659040/pfx";
-
-        # Needs proton experimental to even start
-        compatTool = "proton_experimental";
-
-        # why would i need the overlay disable pls
+        compatTool = "proton_experimental"; # Needs proton experimental to even start
         allowOverlay = false;
       };
     };
@@ -150,11 +141,12 @@
         "d ${peacockDir} - - - - -"
       ];
 
-      systemd.user.services.peacock = {
+      systemd.user.services.peacock = let
+        hitmanTarget = config.programs.steam.config.apps.hitmanwoa.systemd.target.unitName;
+      in {
         Unit = {
-          Description = "Peacock";
-          After = ["default.target"];
-          PartOf = ["default.target"];
+          Before = [hitmanTarget]; # Wait for peacock to start before opening hitman
+          PartOf = [hitmanTarget];
         };
         Service = {
           WorkingDirectory = peacockDir;
@@ -162,8 +154,7 @@
           Restart = "always";
           RestartSec = 3;
         };
-
-        Install.WantedBy = ["multi-user.target"];
+        Install.WantedBy = [hitmanTarget];
       };
 
       # This file needs to be generated for mission companion (freelancer variations) to work
