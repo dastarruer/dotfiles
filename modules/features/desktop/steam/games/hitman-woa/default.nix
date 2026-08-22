@@ -124,24 +124,32 @@
             hash = "sha256-rlbKDeIKJB2SaoNsGrLz9MEI+EhCAtnyl0EgoYY75p8=";
             stripRoot = false;
           };
-          "Retail/mods/missioncompanion.ini".source = iniFormat.generate "missioncompanion" {
-            general = {
-              # This is the most important setting. Without it, freelancer variations does not work. All other settings seem to just be auto generated
-              override_last_deploy_path = lastDeployJsonPath;
-              allow_update_checks = true;
-            };
 
-            overrides = {
-              force_load_teamruddcy_randomtods = false;
-              force_load_kevinrudd_freelancervariations = false;
-              force_load_teamruddcy_realyacht = false;
-              force_load_kevinrudd_sandboxvector = false;
-              force_load_kevinrudd_welcometocuba = false;
-            };
+          # Freelancer variations
+          "Retail/mods/missioncompanion.ini" = {
+            source = iniFormat.generate "missioncompanion" {
+              general = {
+                # This is the most important setting. Without it, freelancer variations does not work. All other settings seem to just be auto generated
+                override_last_deploy_path = lastDeployJsonPath;
+                allow_update_checks = true;
+              };
 
-            freelancervariations.dynamic_location_names = true;
+              overrides = {
+                force_load_teamruddcy_randomtods = false;
+                force_load_kevinrudd_freelancervariations = false;
+                force_load_teamruddcy_realyacht = false;
+                force_load_kevinrudd_sandboxvector = false;
+                force_load_kevinrudd_welcometocuba = false;
+              };
+
+              freelancervariations.dynamic_location_names = true;
+            };
+            mode = "lock";
           };
-          "Retail/mods/FreelancerVariations.json".source = ./files/FreelancerVariations.json; # Generated from this site: https://www.piepieonline.com/h3-freelancer-variations-configuration
+          "Retail/mods/FreelancerVariations.json" = {
+            source = ./files/FreelancerVariations.json; # Generated from this site: https://www.piepieonline.com/h3-freelancer-variations-configuration
+            mode = "lock";
+          };
         };
       };
 
