@@ -47,9 +47,8 @@
       # Idk where to find all these env variables, so thanks again gemini!
       package = pkgs.steam.override {
         extraEnv = {
-          # Tells the system to use Gamemode's optimizations automatically for every game
-          # The only way i've found to start gamemode via an env var (https://github.com/FeralInteractive/gamemode#requesting-gamemode)
-          LD_PRELOAD = "$LD_PRELOAD:/usr/\$LIB/libgamemodeauto.so.0";
+          # Unset to fix gamescope stutter issues: https://github.com/ValveSoftware/gamescope/issues/163#issuecomment-2143491396
+          LD_PRELOAD = "";
 
           # Forces the high-performance 'RADV' driver for your Renoir iGPU
           # This prevents accidental fallback to slower software rendering
