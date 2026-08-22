@@ -936,11 +936,11 @@
     "mods": {
       "flake": false,
       "locked": {
-        "lastModified": 1787367816,
-        "narHash": "sha256-eyey66vGCgqehBPnwQ/QyIQezKrJAPxGa5aecenLNcU=",
+        "lastModified": 1787409631,
+        "narHash": "sha256-/xbCJWdjpzWRRHLM70bQH1NYk6TWQe+s5w4GbWjw46w=",
         "owner": "dastarruer",
         "repo": "mods",
-        "rev": "95602affff56312cda432dfdca63e992ab46e394",
+        "rev": "4046f03e7b39045cb123334df5a3f1e3745e142a",
         "type": "github"
       },
       "original": {

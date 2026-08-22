@@ -162,6 +162,7 @@
             source = ./files/FreelancerVariations.json; # Generated from this site: https://www.piepieonline.com/h3-freelancer-variations-configuration
             mode = "lock";
           };
+          "Retail/mods/MissionCompanion.dll".source = "${inputs.mods}/hitman_woa/MissionCompanion.dll";
         };
       };
 
@@ -176,9 +177,6 @@
     };
 
     custom.backup.backupPaths = lib.mkIf backup.enable [
-      # Freelancer variations stuff
-      "${hitmanPath}/Retail/mods/MissionCompanion.dll"
-
       # Peacock save data
       "${peacockDir}/Peacock/userdata"
     ];
