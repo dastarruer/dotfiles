@@ -134,6 +134,8 @@
             };
             mode = "seed"; # smf modifies itself during deployment
           };
+          "Simple Mod Framework/config.json".source = "${inputs.mods}/hitman_woa/config.json";
+          "Simple Mod Framework/Mods".source = "${inputs.mods}/hitman_woa/Mods";
 
           # Freelancer Variations prerequisites
           "Retail/mods/missioncompanion.ini" = {

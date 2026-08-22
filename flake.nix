@@ -2,6 +2,8 @@
   description = "My NixOS system made by me";
 
   inputs = {
+    self.lfs = true;
+
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -67,6 +69,11 @@
     steam-config-nix = {
       url = "github:different-name/steam-config-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    mods = {
+      url = "github:dastarruer/mods";
+      flake = false;
     };
 
     nix-index-database = {

@@ -933,6 +933,22 @@
         "type": "github"
       }
     },
+    "mods": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787367816,
+        "narHash": "sha256-eyey66vGCgqehBPnwQ/QyIQezKrJAPxGa5aecenLNcU=",
+        "owner": "dastarruer",
+        "repo": "mods",
+        "rev": "95602affff56312cda432dfdca63e992ab46e394",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dastarruer",
+        "repo": "mods",
+        "type": "github"
+      }
+    },
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
@@ -1242,6 +1258,7 @@
         "home-manager": "home-manager_2",
         "hyprland": "hyprland",
         "import-tree": "import-tree",
+        "mods": "mods",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-stable": "nixpkgs-stable",
