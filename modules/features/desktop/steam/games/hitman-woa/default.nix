@@ -118,6 +118,12 @@
         ];
 
         files.game.place = {
+          # Install zhmmodsdk
+          "Retail".source = pkgs.fetchzip {
+            url = "https://github.com/OrfeasZ/ZHMModSDK/releases/download/v4.0.2/ZHMModSDK-Release.zip";
+            hash = "sha256-rlbKDeIKJB2SaoNsGrLz9MEI+EhCAtnyl0EgoYY75p8=";
+            stripRoot = false;
+          };
           "Retail/mods/missioncompanion.ini".source = iniFormat.generate "missioncompanion" {
             general = {
               # This is the most important setting. Without it, freelancer variations does not work. All other settings seem to just be auto generated
