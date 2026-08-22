@@ -10,7 +10,6 @@
     hmConfig = config.home-manager.users.dastarruer;
 
     steamPath = "${hmConfig.home.homeDirectory}/.local/share/Steam/steamapps";
-    hitmanPath = "${steamPath}/common/HITMAN 3";
 
     iniFormat = pkgs.formats.ini {};
     smfPrefix = "3086416570";
