@@ -118,14 +118,24 @@
         ];
 
         files.game.place = {
-          # Install zhmmodsdk
+          # ZHMModSDK
           "Retail".source = pkgs.fetchzip {
             url = "https://github.com/OrfeasZ/ZHMModSDK/releases/download/v4.0.2/ZHMModSDK-Release.zip";
             hash = "sha256-rlbKDeIKJB2SaoNsGrLz9MEI+EhCAtnyl0EgoYY75p8=";
             stripRoot = false;
           };
 
-          # Freelancer variations
+          # SMF (Simple Mod Framework)
+          "Simple Mod Framework" = {
+            source = pkgs.fetchzip {
+              url = "https://github.com/atampy25/simple-mod-framework/releases/download/2.33.41/Release.zip";
+              hash = "sha256-8+E3Mzibb2kmdxrhkGZSSTw1sQt3uYWHI/2blO90+DY=";
+              stripRoot = false;
+            };
+            mode = "seed"; # smf modifies itself during deployment
+          };
+
+          # Freelancer Variations prerequisites
           "Retail/mods/missioncompanion.ini" = {
             source = iniFormat.generate "missioncompanion" {
               general = {
@@ -164,10 +174,6 @@
     };
 
     custom.backup.backupPaths = lib.mkIf backup.enable [
-      # Hitman mods
-      "${hitmanPath}/Simple Mod Framework"
-      "${hitmanPath}/README.md"
-
       # Freelancer variations stuff
       "${hitmanPath}/Retail/mods/MissionCompanion.dll"
 
