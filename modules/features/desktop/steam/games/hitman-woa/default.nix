@@ -108,8 +108,8 @@
     };
   in {
     programs.steam.config = {
-      apps.hitmanwoa = {
-        id = 1659040;
+      # hitman
+      apps."1659040" = {
         compatTool = "proton_11"; # having performance issues w latest ge proton
         systemd.enable = true;
         args = [
@@ -168,8 +168,7 @@
       # To get smf working on linux: https://www.reddit.com/r/linux_gaming/comments/1aiiaia/how_to_run_simple_mod_framework_for_hitman_3_on/
       nonSteamApps."Simple Mod Framework (HITMAN WOA)" = {
         target = "${steamPath}/common/HITMAN 3/Simple Mod Framework/Mod Manager/Mod Manager.exe";
-        # Hitman proton prefix
-        startIn = "${steamPath}/compatdata/1659040/pfx";
+        startIn = config.programs.steam.config.apps."1659040".prefixPath;
         compatTool = "proton_experimental"; # Needs proton experimental to even start
         allowOverlay = false;
       };
@@ -186,7 +185,7 @@
       ];
 
       systemd.user.services.peacock = let
-        hitmanTarget = config.programs.steam.config.apps.hitmanwoa.systemd.target.unitName;
+        hitmanTarget = config.programs.steam.config.apps."1659040".systemd.target.unitName;
       in {
         Unit = {
           Before = [hitmanTarget]; # Wait for peacock to start before opening hitman

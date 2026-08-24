@@ -2,8 +2,8 @@
 
 {
   mkSteamGame = config: apps:
-    lib.mapAttrs (_name: id: {
-      inherit id;
+    lib.mapAttrs (_id: name: {
+      inherit name;
 
       wrappers = [
         (lib.getExe config.programs.gamescope.package)

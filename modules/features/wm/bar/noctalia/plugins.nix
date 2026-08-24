@@ -31,7 +31,7 @@
             ];
             
             # Manage plugin updates with nix
-            auto_update = false;
+            auto_update = "none";
             source = [
               {
                 name = "official";
