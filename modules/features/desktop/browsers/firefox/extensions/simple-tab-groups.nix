@@ -84,23 +84,7 @@
                 container = "school";
               }
               {
-                name = "chem";
-                container = "school";
-              }
-              {
-                name = "spanish";
-                container = "school";
-              }
-              {
                 name = "physics";
-                container = "school";
-              }
-              {
-                name = "personal project";
-                container = "school";
-              }
-              {
-                name = "design";
                 container = "school";
               }
               {
@@ -108,7 +92,7 @@
                 container = "school";
               }
               {
-                name = "comp sci";
+                name = "music";
                 container = "school";
               }
             ];
