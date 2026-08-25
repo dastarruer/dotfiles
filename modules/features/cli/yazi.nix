@@ -25,7 +25,7 @@
             [
               {
                 on = "<C-n>";
-                run = ''shell -- ${pkgs.dragon-drop}/bin/dragon-drop -x -i -T "$1"'';
+                run = "shell -- ${lib.getExe pkgs.dragon-drop} -x -i -T %h";
                 desc = "Initiate drag and drop";
               }
               {
