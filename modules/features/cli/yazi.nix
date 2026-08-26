@@ -7,18 +7,12 @@
   }: {
     home-manager.users.dastarruer = let
       fish = config.programs.fish;
-      hyprland = config.custom.wm.wm == "hyprland";
+      wayland = config.custom.wm.wayland;
     in {
       programs.yazi = {
         enable = true;
         enableFishIntegration = fish.enable;
         shellWrapperName = "y";
-
-        # Obviously only meant for wayland, so only enable if hyprland is enabled
-        plugins."wl-clipboard" = let
-          plugins = pkgs.yaziPlugins;
-        in
-          lib.mkIf hyprland plugins.wl-clipboard;
 
         keymap = {
           mgr.prepend_keymap =
@@ -34,10 +28,11 @@
                 desc = "Change to schoolwork dir";
               }
             ]
-            ++ lib.optional hyprland {
-              on = "<C-y>";
-              run = ["plugin wl-clipboard"];
-              desc = "Copy file to to system clipboard";
+            # https://yazi-rs.github.io/docs/tips#selected-files-to-clipboard
+            ++ lib.optional wayland {
+              on = "y";
+              run = [''shell -- for path in %s; do echo "file://$path"; done | wl-copy -t text/uri-list'' "yank"];
+              desc = "Yank and copy file to to system clipboard";
             };
         };
       };
