@@ -37,6 +37,7 @@
       desktop_imv
       desktop_kdenlive
       desktop_krita
+      desktop_musescore
       desktop_libreoffice
       desktop_todoist
       desktop_mpv
