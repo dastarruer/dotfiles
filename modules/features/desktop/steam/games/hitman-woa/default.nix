@@ -19,91 +19,80 @@
     lastDeployJsonPath = ''Z:\home\dastarruer\.local\share\Steam\steamapps\compatdata\${smfPrefix}\pfx\drive_c\users\steamuser\Local Settings\Application Data\Simple Mod Framework\lastDeploy.json'';
 
     peacockDir = "${hmConfig.home.homeDirectory}/.config/peacock-linux";
+    peacockPkg = pkgs.fetchzip {
+      url = "https://github.com/thepeacockproject/Peacock/releases/download/v8.9.0/Peacock-v8.9.0-linux.zip";
+      hash = "sha256-Lxo3UwqLyCsvD35ZmUTedkLBkg5iJnghezBn7FsBURQ=";
+    };
     port = 3000;
     peacockScript = pkgs.writeShellApplication {
       name = "peacock-setup";
       runtimeInputs = with pkgs; [
         nodejs_24
-        curl
-        unzip
         coreutils
         gnugrep
       ];
       text = ''
-        # Define ANSI escape codes for text formatting
-        BOLD='\e[1m'
-        RESET='\e[0m'
-        RED='\e[31m'
-        GREEN='\e[32m'
-        BLUE='\e[34m'
-
-        success_message() { echo -e "[''${GREEN}''${BOLD}✔''${RESET}] $1!"; }
-        error_message() { echo -e "[''${RED}''${BOLD}Error''${RESET}] $1"; }
-        info_message() { echo -e "\n[''${BLUE}''${BOLD}Info''${RESET}] $1"; }
-
-        # Ensure we are in the right place
-        mkdir -p "${peacockDir}"
-        cd "${peacockDir}"
-
-        # Grab Peacock if needed
-        if [ ! -f "./Peacock/chunk0.js" ]; then
-            # ShellCheck Fix: Added quotes and simplified logic
-            LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/thepeacockproject/peacock/releases/latest | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
-            FOLDER_NAME="Peacock-''${LATEST_RELEASE}-linux"
-            FILE_NAME="''${FOLDER_NAME}.zip"
-
-            info_message "Grabbing Peacock ''${LATEST_RELEASE}"
-
-            if curl -sSLJO -H "Accept: application/octet-stream" "https://github.com/thepeacockproject/Peacock/releases/download/''${LATEST_RELEASE}/''${FILE_NAME}" &&
-               unzip -q "''${FILE_NAME}" &&
-               rm "''${FILE_NAME}" &&
-               mv "''${FOLDER_NAME}" Peacock; then
-                success_message "Peacock downloaded"
-            else
-                error_message "We hit a problem getting Peacock"
-                exit 1
-            fi
-        else
-            success_message "Peacock already installed"
-        fi
-
-        # Copy files to Steam
-        STEAM_DIR="''${HOME}/.local/share/Steam"
-        VDF_FILE="''${STEAM_DIR}/steamapps/libraryfolders.vdf"
-
-        if [ -f "''${VDF_FILE}" ]; then
-            # ShellCheck Fix: Quoted variables
-            STEAM_PATHS=$(grep -oP '"path"\s+"\K[^"]+' "''${VDF_FILE}")
-            HITMAN_FOUND=false
-
-            for i in ''${STEAM_PATHS}; do
-                TARGET_DIR="''${i}/steamapps/common/HITMAN 3"
-                if [ -d "''${TARGET_DIR}" ]; then
-                    HITMAN_FOUND=true
-                    info_message "Found Hitman 3 in ''${TARGET_DIR}"
-
-                    # Note: WineLaunch.bat must exist in your peacockDir for this to work
-                    if cp Peacock/PeacockPatcher.exe "''${TARGET_DIR}/" && \
-                       cp "${inputs.peacock}/legacy/WineLaunch.bat" "''${TARGET_DIR}/"; then
-                        success_message "Copied Patcher and WineLaunch.bat to successfully!"
-                    else
-                        error_message "Failed to copy Patcher or WineLaunch.bat (Check if WineLaunch.bat exists in ${peacockDir})"
-                    fi
-                fi
-            done
-
-            if [ "''${HITMAN_FOUND}" = false ]; then
-               error_message "Hitman 3 folder not found in Steam libraries."
-            fi
-        fi
-
-        # START THE SERVER
-        # Without this, the systemd service finishes and stops immediately.
-        if [ -f "Peacock/chunk0.js" ]; then
-            info_message "Starting Peacock Server..."
-            cd Peacock
-            PORT=${toString port} exec node chunk0.js
-        fi
+          BOLD='\e[1m'
+          RESET='\e[0m'
+          RED='\e[31m'
+          GREEN='\e[32m'
+          BLUE='\e[34m'
+          
+          success_message() { echo -e "[''${GREEN}''${BOLD}✔''${RESET}] $1!"; }
+          error_message() { echo -e "[''${RED}''${BOLD}Error''${RESET}] $1"; }
+          info_message() { echo -e "\n[''${BLUE}''${BOLD}Info''${RESET}] $1"; }
+          
+          mkdir -p "${peacockDir}"
+          cd "${peacockDir}"
+          
+          # Userdata lives OUTSIDE the versioned Peacock/ dir so it survives reinstalls
+          mkdir -p userdata
+          
+          INSTALLED_VERSION=""
+          [ -f "./Peacock/.nix-version" ] && INSTALLED_VERSION=$(cat "./Peacock/.nix-version")
+          
+          if [ "''${INSTALLED_VERSION}" != "${peacockPkg}" ]; then
+              rm -rf ./Peacock
+              cp -r --no-preserve=mode "${peacockPkg}" ./Peacock
+              rm -rf ./Peacock/userdata
+              ln -s ../userdata ./Peacock/userdata
+              echo "${peacockPkg}" > ./Peacock/.nix-version
+          fi
+          
+          # Copy patcher files to Steam
+          STEAM_DIR="''${HOME}/.local/share/Steam"
+          VDF_FILE="''${STEAM_DIR}/steamapps/libraryfolders.vdf"
+          
+          if [ -f "''${VDF_FILE}" ]; then
+              STEAM_PATHS=$(grep -oP '"path"\s+"\K[^"]+' "''${VDF_FILE}")
+              HITMAN_FOUND=false
+          
+              for i in ''${STEAM_PATHS}; do
+                  TARGET_DIR="''${i}/steamapps/common/HITMAN 3"
+                  if [ -d "''${TARGET_DIR}" ]; then
+                      HITMAN_FOUND=true
+                      info_message "Found Hitman 3 in ''${TARGET_DIR}"
+          
+                      if cp Peacock/PeacockPatcher.exe "''${TARGET_DIR}/" && \
+                         cp "${inputs.peacock}/legacy/WineLaunch.bat" "''${TARGET_DIR}/"; then
+                          success_message "Copied Patcher and WineLaunch.bat successfully!"
+                      else
+                          error_message "Failed to copy Patcher or WineLaunch.bat (Check if WineLaunch.bat exists in ${peacockDir})"
+                      fi
+                  fi
+              done
+          
+              if [ "''${HITMAN_FOUND}" = false ]; then
+                 error_message "Hitman 3 folder not found in Steam libraries."
+              fi
+          fi
+          
+          # START THE SERVER
+          if [ -f "Peacock/chunk0.js" ]; then
+              info_message "Starting Peacock Server..."
+              cd Peacock
+              PORT=${toString port} exec node chunk0.js
+          fi
       '';
     };
   in {
@@ -119,16 +108,16 @@
         files.game.place = {
           # ZHMModSDK
           "Retail".source = pkgs.fetchzip {
-            url = "https://github.com/OrfeasZ/ZHMModSDK/releases/download/v4.0.2/ZHMModSDK-Release.zip";
-            hash = "sha256-rlbKDeIKJB2SaoNsGrLz9MEI+EhCAtnyl0EgoYY75p8=";
+            url = "https://github.com/OrfeasZ/ZHMModSDK/releases/download/v4.1.0/ZHMModSDK-Release.zip";
+            hash = "sha256-iyzvMyANB0du5Vp+P5QdFGRsNHtHcs9Rja+QT4ub4VM=";
             stripRoot = false;
           };
 
           # SMF (Simple Mod Framework)
           "Simple Mod Framework" = {
             source = pkgs.fetchzip {
-              url = "https://github.com/atampy25/simple-mod-framework/releases/download/2.33.41/Release.zip";
-              hash = "sha256-8+E3Mzibb2kmdxrhkGZSSTw1sQt3uYWHI/2blO90+DY=";
+              url = "https://github.com/atampy25/simple-mod-framework/releases/download/2.33.42/Release.zip";
+              hash = "sha256-xLPKQ5RCv07K8i+7Gje7P04qfSNaOY+kOw0NEeiH+sE=";
               stripRoot = false;
             };
             mode = "seed"; # smf modifies itself during deployment
@@ -176,7 +165,7 @@
 
     custom.backup.backupPaths = lib.mkIf backup.enable [
       # Peacock save data
-      "${peacockDir}/Peacock/userdata"
+      "${peacockDir}/userdata"
     ];
 
     home-manager.users.dastarruer = {
