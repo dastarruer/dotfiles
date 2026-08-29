@@ -144,6 +144,28 @@
           "Simple Mod Framework/config.json".source = "${inputs.mods}/hitman_woa/config.json";
           "Simple Mod Framework/Mods".source = "${inputs.mods}/hitman_woa/Mods";
 
+          # Peacock prerequisites
+          "Retail/mods/onlinetools.ini" = {
+            source = iniFormat.generate "onlinetools" {
+              online = {
+                optional_dynamic_resources = true;
+                bypass_cert_pinning = true;
+                enable_dynamic_resources = true;
+                always_send_auth_header = true;
+                use_http = true;
+              };
+              domains = {
+                saved = "localhost:${toString port}";
+                default = 0;
+              };
+            };
+            mode = "lock";
+          };
+          "Retail/mods/mods.ini".source = iniFormat.generate "mods" {
+            sdk.crash_reporting = true;
+            onlinetools = {};
+          };
+
           # Freelancer Variations prerequisites
           "Retail/mods/missioncompanion.ini" = {
             source = iniFormat.generate "missioncompanion" {
