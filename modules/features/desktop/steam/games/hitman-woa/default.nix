@@ -164,6 +164,7 @@
           "Retail/mods/mods.ini".source = iniFormat.generate "mods" {
             sdk.crash_reporting = true;
             onlinetools = {};
+            missioncompanion = {};
           };
 
           # Freelancer Variations prerequisites
