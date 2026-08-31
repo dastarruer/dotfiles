@@ -72,6 +72,8 @@
             cp -r --no-preserve=mode "${peacockPkg}" ./Peacock
             rm -rf ./Peacock/userdata
             ln -s ../userdata ./Peacock/userdata
+            rm -rf ./Peacock/plugins
+            ln -s ../plugins ./Peacock/plugins
             echo "${peacockPkg}" > ./Peacock/.nix-version
         fi
 
@@ -211,6 +213,12 @@
     ];
 
     home-manager.users.dastarruer = {
+      # place peacock plugins
+      home.file."${peacockDir}/plugins" = {
+        source = "${inputs.mods}/hitman_woa/plugins";
+        force = true;
+      };
+
       systemd.user.tmpfiles.rules = [
         "d ${peacockDir} - - - - -"
       ];

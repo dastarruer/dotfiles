@@ -913,11 +913,11 @@
     "mods": {
       "flake": false,
       "locked": {
-        "lastModified": 1788110873,
-        "narHash": "sha256-SE/uxq3xCyf0C+WeI3lkiG2TdHDSBtlmPlukZV4DZvE=",
+        "lastModified": 1788195225,
+        "narHash": "sha256-TQzcPHPXMjo3EJjBfdFwOa0RgDu19KpoehITe5wQAa4=",
         "owner": "dastarruer",
         "repo": "mods",
-        "rev": "b5f38dde54ac66acb88e697026cc8669f1e6a86c",
+        "rev": "d5310dab204c13ca6f89b1295445a156e0311b22",
         "type": "github"
       },
       "original": {
