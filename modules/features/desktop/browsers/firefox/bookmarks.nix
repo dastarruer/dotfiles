@@ -59,6 +59,11 @@
               url = "https://ispsedu.schoology.com/course/8479041593/materials";
               keyword = "ins";
             }
+            {
+              name = "Gmail";
+              url = "https://mail.google.com/mail/u/1/#inbox";
+              keyword = "gmail";
+            }
           ];
         };
       };
