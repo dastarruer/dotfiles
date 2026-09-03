@@ -10,7 +10,10 @@
   in {
     custom.backup.backupPaths = lib.mkIf backup.enable [saveDir];
     home-manager.users.dastarruer = {
-      home.packages = [pkgs.musescore];
+      home.packages = with pkgs; [
+        musescore
+        muse-sounds-manager
+      ];
     };
   };
 }
