@@ -74,7 +74,7 @@
       screenshot = {
         kind = lib.mkOption {
           type = lib.types.enum ["flameshot" "grimblast" "none"];
-          default = "grimblast";
+          default = "none";
           description = "Set the screenshot tool to be used.";
         };
         path = lib.mkOption {

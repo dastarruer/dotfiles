@@ -12,14 +12,18 @@
     screenshotPath = config.custom.wm.screenshot.path;
   in
     lib.mkIf (screenshot == "flameshot") {
+      custom.wm.notifications.excludeTitles = ["flameshot"];
       home-manager.users.dastarruer = {
         services.flameshot = {
           enable = true;
 
           # Enable wayland support with this build flag
-          package = lib.mkIf wayland pkgs.flameshot.override {
-            enableWlrSupport = true;
-          };
+          package =
+            if wayland
+            then pkgs.flameshot.override {
+              enableWlrSupport = true;
+            }
+            else pkgs.flameshot;
 
           settings = {
             General = {
@@ -33,10 +37,6 @@
               filenamePattern = "%F_%H-%M";
               drawThickness = 1;
               copyPathAfterSave = true;
-
-              # For wayland
-              useGrimAdapter = true;
-              disabledGrimWarning = true;
             };
           };
         };
@@ -47,18 +47,39 @@
           format = "";
         };
 
-        home-manager.window-manager.notifications.excludeTitles = ["flameshot"];
-
-        wayland.windowManager.hyprland.settings = lib.mkIf hyprland.enable {
+        # https://github.com/flameshot-org/flameshot/blob/master/docs/UsageHyprlandSwayWlroots.md
+        wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
+          bind = [
+            {
+              _args = [
+                "SUPER + P"
+                (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe config.home-manager.users.dastarruer.services.flameshot.package} gui -c")'')
+              ];
+            }
+          ];
           window_rule = [
             {
-              match.title = "flameshot";
+              match.class = "flameshot";
               no_anim = true;
               float = true;
-              move = lib.generators.mkLuaInline "{0, 0}";
+              decorate = false;
+              no_blur = true;
+              no_shadow = true;
               pin = true;
-              no_initial_focus = true;
-              monitor = 1;
+            }
+            {
+              match = {
+                class = "flameshot";
+                title = "flameshot";
+              };
+              move = lib.generators.mkLuaInline "{0, 0}";
+            }
+            {
+              match = {
+                class = "flameshot";
+                title = "flameshot-pin";
+              };
+              move = lib.generators.mkLuaInline "{\"cursor_x-(window_w*0.5)\", \"cursor_y-(window_h*0.5)\"}";
             }
           ];
         };
