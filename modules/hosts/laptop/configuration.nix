@@ -111,7 +111,7 @@
         launcher = "noctalia";
         clipboard = "noctalia";
         screenshot = {
-          kind = "grimblast";
+          kind = "hyprshot";
           path = "${config.home-manager.users.dastarruer.home.homeDirectory}/Pictures/screenshots";
         };
       };

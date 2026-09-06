@@ -73,7 +73,7 @@
       };
       screenshot = {
         kind = lib.mkOption {
-          type = lib.types.enum ["flameshot" "grimblast" "none"];
+          type = lib.types.enum ["flameshot" "grimblast" "hyprshot" "none"];
           default = "none";
           description = "Set the screenshot tool to be used.";
         };
