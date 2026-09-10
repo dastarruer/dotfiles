@@ -10,13 +10,13 @@
       wayland.windowManager.hyprland.settings = {
         config = {
           misc = {
-            disable_hyprland_logo = true;
-            disable_splash_rendering = true;
-
-            middle_click_paste = false;
-
             # Allows to restart lockscreen if it crashes
             allow_session_lock_restore = true;
+
+            disable_hyprland_logo = true;
+            disable_splash_rendering = true;
+            enable_swallow = true;
+            middle_click_paste = false;
           };
 
           binds = {
