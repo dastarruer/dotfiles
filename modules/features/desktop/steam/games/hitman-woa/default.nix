@@ -8,27 +8,10 @@
   }: let
     backup = config.custom.backup;
     hmConfig = config.home-manager.users.dastarruer;
-
     steamPath = "${hmConfig.home.homeDirectory}/.local/share/Steam/steamapps";
-    hitmanPath = ''${hmConfig.home.homeDirectory}/.local/share/Steam/steamapps/common/HITMAN 3'';
 
     iniFormat = pkgs.formats.ini {};
     smfPrefix = "3086416570";
-
-    activationScript = pkgs.writeShellApplication {
-      name = "remove_hitman_mods";
-      runtimeInputs = [pkgs.coreutils];
-      text = ''
-        rm -rf "${hitmanPath}/Simple Mod Framework"
-        rm -rf "${hitmanPath}/Retail/mods"
-        rm -rf "${hitmanPath}/Retail/licenses"
-        rm -r "${hitmanPath}/Retail/crashpad_handler.exe"
-        rm -r "${hitmanPath}/Retail/dinput8.dll"
-        rm -r "${hitmanPath}/Retail/LICENSE"
-        rm -r "${hitmanPath}/Retail/ResourceLib_HM3.dll"
-        rm -r "${hitmanPath}/Retail/ZHMModSDK.dll"
-      '';
-    };
 
     smfZip = pkgs.fetchzip {
       url = "https://github.com/atampy25/simple-mod-framework/releases/download/2.33.42/Release.zip";
@@ -126,9 +109,6 @@
       '';
     };
   in {
-    # for now do this to replace files on every rebuild until steam-config-nix supports it
-    system.activationScripts.preActivation.text = "${lib.getExe activationScript}";
-
     programs.steam.config = {
       # hitman
       apps."1659040" = {
