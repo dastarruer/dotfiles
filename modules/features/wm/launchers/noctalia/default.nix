@@ -14,7 +14,8 @@
     hyprland = config.custom.wm.wm == "hyprland";
 
     gtkshutdown = inputs.gtkshutdown.packages.${pkgs.stdenv.system}.default;
-    shutdownCmd = "RUST_LOG=trace ${lib.getExe gtkshutdown} --post-cmd 'reboot'";
+    rebootCmd = "RUST_LOG=trace ${lib.getExe gtkshutdown} --post-cmd 'reboot'";
+    shutdownCmd = "RUST_LOG=trace ${lib.getExe gtkshutdown} --post-cmd 'systemctl shutdown'";
   in
     lib.mkIf (launcher == "noctalia") {
       assertions = [
@@ -30,12 +31,12 @@
 
       home-manager.users.dastarruer = {
         programs.noctalia.settings = {
-          shell.panel.launcher_placement = "attached";
-
-          # Since gtkshutdown only works on hyprland rn
-          hooks = lib.mkIf hyprland {
-            rebooting = shutdownCmd;
-            shutting_down = shutdownCmd;
+          shell = {
+            panel.launcher_placement = "attached";
+            session.power = {
+              reboot = rebootCmd;
+              shutdown = shutdownCmd;
+            };
           };
         };
 

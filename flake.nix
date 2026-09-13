@@ -82,8 +82,7 @@
     };
 
     gtkshutdown = {
-      url = "github:dastarruer/gtkshutdown";
-      # url = "path:/home/dastarruer/Documents/dev/gtkshutdown";
+      url = "path:/home/dastarruer/Documents/dev/gtkshutdown";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
