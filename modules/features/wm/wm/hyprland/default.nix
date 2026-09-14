@@ -9,44 +9,44 @@
 
     hyprlandPkgs = inputs.hyprland.packages.${pkgs.stdenv.system};
     firefoxPkg = config.programs.firefox.package;
-    openUrlScript = pkgs.writeShellApplication {
-      name = "open-url";
+    # openUrlScript = pkgs.writeShellApplication {
+    #   name = "open-url";
 
-      runtimeInputs = with pkgs; [
-        jq
-        pkgs.hyprland
-        firefoxPkg
-      ];
+    #   runtimeInputs = with pkgs; [
+    #     jq
+    #     pkgs.hyprland
+    #     firefoxPkg
+    #   ];
 
-      text = let
-        firefoxExe = lib.getExe firefoxPkg;
-      in ''
-        # Get current workspace ID
-        workspace_id=$(hyprctl activeworkspace -j | jq ".id")
+    #   text = let
+    #     firefoxExe = lib.getExe firefoxPkg;
+    #   in ''
+    #     # Get current workspace ID
+    #     workspace_id=$(hyprctl activeworkspace -j | jq ".id")
 
-        # Get the address of a Firefox window on the current workspace, if any
-        current_ff_address=$(hyprctl clients -j | jq -r ".[] | select(.initialClass == \"firefox-nightly\" and .workspace.id == $workspace_id) | .address")
+    #     # Get the address of a Firefox window on the current workspace, if any
+    #     current_ff_address=$(hyprctl clients -j | jq -r ".[] | select(.initialClass == \"firefox-nightly\" and .workspace.id == $workspace_id) | .address")
 
-        # Get the URL from the first argument
-        url="$1"
+    #     # Get the URL from the first argument
+    #     url="$1"
 
-        # Check if a URL was provided
-        if [ -z "$url" ]; then
-            echo "No URL provided" >&2
-            exit 1
-        fi
+    #     # Check if a URL was provided
+    #     if [ -z "$url" ]; then
+    #         echo "No URL provided" >&2
+    #         exit 1
+    #     fi
 
-        if [ -n "$current_ff_address" ]; then
-            # Focus the existing Firefox window
-            hyprctl dispatch "hl.dsp.focus({address = $current_ff_address})"
-            # Open the URL in a new tab
-            ${firefoxExe} --new-tab "$url" &
-        else
-            # No Firefox window on this workspace, open a new window
-            ${firefoxExe} --new-window "$url" &
-        fi
-      '';
-    };
+    #     if [ -n "$current_ff_address" ]; then
+    #         # Focus the existing Firefox window
+    #         hyprctl dispatch "hl.dsp.focus({address = $current_ff_address})"
+    #         # Open the URL in a new tab
+    #         ${firefoxExe} --new-tab "$url" &
+    #     else
+    #         # No Firefox window on this workspace, open a new window
+    #         ${firefoxExe} --new-window "$url" &
+    #     fi
+    #   '';
+    # };
   in
     lib.mkIf hyprland {
       programs.uwsm.enable = true;
@@ -126,31 +126,32 @@
           # This needs to be redefined for flatpaks to function for some reason
           portal.extraPortals = [hyprlandPkgs.xdg-desktop-portal-hyprland];
 
+          # doesn't work anymore and i can't be bothered to fix it
           # The script to run every time a url is clicked
-          desktopEntries."open_url" = {
-            name = "Open URL";
+          # desktopEntries."open_url" = {
+          #   name = "Open URL";
 
-            exec = "${lib.getExe openUrlScript} %u";
-            terminal = false;
-            type = "Application";
+          #   exec = "${lib.getExe openUrlScript} %u";
+          #   terminal = false;
+          #   type = "Application";
 
-            # Don't show this in rofi
-            noDisplay = true;
-          };
+          #   # Don't show this in rofi
+          #   noDisplay = true;
+          # };
 
-          # This section just runs the previously declared .desktop file when a link is clicked
-          mimeApps = {
-            enable = true;
-            associations.added = {
-              "x-scheme-handler/http" = ["open_url.desktop"];
-              "x-scheme-handler/https" = ["open_url.desktop"];
-            };
+          # # This section just runs the previously declared .desktop file when a link is clicked
+          # mimeApps = {
+          #   enable = true;
+          #   associations.added = {
+          #     "x-scheme-handler/http" = ["open_url.desktop"];
+          #     "x-scheme-handler/https" = ["open_url.desktop"];
+          #   };
 
-            defaultApplications = {
-              "x-scheme-handler/http" = ["open_url.desktop"];
-              "x-scheme-handler/https" = ["open_url.desktop"];
-            };
-          };
+          #   defaultApplications = {
+          #     "x-scheme-handler/http" = ["open_url.desktop"];
+          #     "x-scheme-handler/https" = ["open_url.desktop"];
+          #   };
+          # };
         };
       };
     };
