@@ -1101,11 +1101,11 @@
     "noctalia-community-plugins": {
       "flake": false,
       "locked": {
-        "lastModified": 1789218751,
-        "narHash": "sha256-Md9MIkw609wVwdE8ui9GdV8JmoFKNkARK1U9YO7yuG0=",
+        "lastModified": 1789597170,
+        "narHash": "sha256-gMg/tBqEHjrrZa1ZOUxtWMM0Mu+7dS9XlG2dhUAQRnw=",
         "owner": "noctalia-dev",
         "repo": "community-plugins",
-        "rev": "e11f7b52de6d2d5a38cbe275c8649ab460bcd51b",
+        "rev": "3753244d42db38b98c4ede2586afdbb4971ac90a",
         "type": "github"
       },
       "original": {

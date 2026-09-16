@@ -32,6 +32,8 @@
 
         programs.noctalia = {
           enable = true;
+          # this is declared in plugins.nix instead
+          # package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
           systemd.enable = true;
 
           settings = {
