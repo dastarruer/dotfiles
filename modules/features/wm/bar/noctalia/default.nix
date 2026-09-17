@@ -5,6 +5,7 @@
     ...
   }: let
     wayland = config.custom.wm.wayland;
+    hyprland = config.custom.wm.wm == "hyprland";
     bar = config.custom.wm.bar.bar;
 
     colors = config.lib.stylix.colors;
@@ -128,6 +129,15 @@
               custom_palette = "Custom";
             };
           };
+        };
+
+        wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
+          layer_rule = [
+            {
+              match.namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$";
+              no_anim = true;
+            }
+          ];
         };
 
         home.file.".config/noctalia/palettes/Custom.json".text = builtins.toJSON {
