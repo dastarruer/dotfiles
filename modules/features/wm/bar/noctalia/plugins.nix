@@ -5,6 +5,8 @@
     lib,
     ...
   }: let
+    hmConfig = config.home-manager.users.dastarruer;
+    hyprland = config.custom.wm.wm == "hyprland";
     bar = config.custom.wm.bar.bar;
   in
     lib.mkIf (bar == "noctalia") {
@@ -28,6 +30,9 @@
                     kdePackages.kdeconnect-kde
                     glib # gdbus
                     sshfs # phone file browsing
+
+                    # calculator-plus
+                    libqalculate
                   ])}"
                 ]
                 old.postFixup;
@@ -39,7 +44,7 @@
                 "apex077/eyecare"
                 "icefish/phone-connect"
                 "noctalia/timer"
-                "yuuto/calculator"
+                "samuelskovbakke/calculator-plus"
               ];
 
               # Manage plugin updates with nix
@@ -80,14 +85,20 @@
               ];
               center = [
                 "icefish/phone-connect:bar"
-                "spacer"
-                "yuuto/calculator:bar"
+                # "spacer"
               ];
               end = [
                 "apex077/eyecare:eyecare-widget"
               ];
             };
           };
+        };
+
+        wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
+          bind = [
+            # Calculator
+            {_args = ["SUPER + C" (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe hmConfig.programs.noctalia.package} msg panel-toggle samuelskovbakke/calculator-plus:panel")'')];}
+          ];
         };
       };
     };
