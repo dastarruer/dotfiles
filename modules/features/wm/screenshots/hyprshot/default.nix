@@ -6,19 +6,18 @@
     ...
   }: let
     screenshot = config.custom.wm.screenshot.kind;
-    hmConfig = config.home-manager.users.dastarruer;
     hyprland = config.custom.wm.wm == "hyprland";
     screenshotPath = config.custom.wm.screenshot.path;
   in
     lib.mkIf (screenshot == "hyprshot") {
       home-manager.users.dastarruer = lib.mkIf hyprland {
         wayland.windowManager.hyprland.settings = {
-          env = [
+          # Let grim capture screen
+          permission = [
             {
-              _args = [
-                "SLURP_ARGS"
-                "-d -b ${config.lib.stylix.colors.base00}80 -B ${config.lib.stylix.colors.base05}4D -c ${config.custom.theme.accent} -w ${toString hmConfig.wayland.windowManager.hyprland.settings.config.general.border_size}"
-              ];
+              binary = "${lib.getExe pkgs.grim}";
+              type = "screencopy";
+              mode = "allow";
             }
           ];
 
