@@ -6,7 +6,6 @@
     ...
   }: let
     screenshot = config.custom.wm.screenshot.kind;
-    hmConfig = config.home-manager.users.dastarruer;
     hyprland = config.custom.wm.wm == "hyprland";
     screenshotPath = config.custom.wm.screenshot.path;
   in lib.mkIf (screenshot == "grimblast") {
@@ -18,15 +17,6 @@
             binary = "${lib.getExe pkgs.grim}";
             type = "screencopy";
             mode = "allow";
-          }
-        ];
-
-        env = [
-          {
-            _args = [
-              "SLURP_ARGS"
-              "-d -b ${config.lib.stylix.colors.base00}80 -B ${config.lib.stylix.colors.base05}4D -c ${config.custom.theme.accent} -w ${toString hmConfig.wayland.windowManager.hyprland.settings.config.general.border_size}"
-            ];
           }
         ];
 
