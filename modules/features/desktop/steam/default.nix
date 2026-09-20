@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   flake.nixosModules.desktop_steam = {
     config,
     pkgs,
@@ -12,34 +16,8 @@
   in {
     imports = [
       inputs.steam-config-nix.nixosModules.default
+      self.nixosModules.desktop_gaming
     ];
-
-    # Enable the new ntsync kernel module for improved multithreading performance w newer versions of proton/wine
-    boot.kernelModules = ["ntsync"];
-
-    programs.gamemode = {
-      enable = true;
-      enableRenice = true;
-      settings = {
-        general = {
-          softrealtime = "auto";
-          renice = 10;
-        };
-
-        custom = {
-          start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
-          end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
-        };
-      };
-    };
-
-    # Allow gamemode to renice processes
-    users.users.dastarruer.extraGroups = ["gamemode"];
-
-    programs.gamescope = {
-      enable = true;
-      capSysNice = true;
-    };
 
     programs.steam = {
       enable = true;
