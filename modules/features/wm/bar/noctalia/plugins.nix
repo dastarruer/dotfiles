@@ -22,12 +22,8 @@
                 [
                   "${pkgs.lib.makeBinPath (with pkgs; [
                     git
-                    # eyecare
-                    pipewire # pw-play
-                    dbus # dbus-monitor
-
                     # phone-connect
-                    kdePackages.kdeconnect-kde
+                    config.programs.kdeconnect.package
                     glib # gdbus
                     sshfs # phone file browsing
 
@@ -41,7 +37,6 @@
           settings = {
             plugins = {
               enabled = [
-                "apex077/eyecare"
                 "icefish/phone-connect"
                 "noctalia/timer"
                 "samuelskovbakke/calculator-plus"
@@ -87,9 +82,7 @@
                 "icefish/phone-connect:bar"
                 # "spacer"
               ];
-              end = [
-                "apex077/eyecare:eyecare-widget"
-              ];
+              end = [];
             };
           };
         };
