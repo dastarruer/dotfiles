@@ -59,8 +59,8 @@
 
     custom = {
       theme = {
-        name = "everforest-dark-hard";
-        accent = config.lib.stylix.colors.base0B;
+        name = "nord";
+        accent = config.lib.stylix.colors.base0D;
       };
 
       hardware = {
