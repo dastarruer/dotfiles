@@ -1,5 +1,5 @@
 # Not meant to be imported manually; meant to be imported by other modules
-{...}: {
+{inputs,...}: {
   flake.nixosModules.desktop_gaming = {
     pkgs,
     lib,
@@ -26,7 +26,14 @@
     # Allow gamemode to renice processes
     users.users.dastarruer.extraGroups = ["gamemode"];
 
+    # Having mouse capture issues with gamescope
+    nixpkgs.overlays = [
+      (inputs.multiverse.lib.pinOverlay {
+        pins.gamescope = "3.16.28";
+      })
+    ];
     programs.gamescope = {
+      # package = lib.mkForce config.multiverse.pinned.gamescope;
       enable = true;
       capSysNice = true;
     };

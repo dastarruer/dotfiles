@@ -8,7 +8,6 @@
         hidePodcasts
         loopyLoop
         seekSong
-        betterGenres
       ];
     };
   };
