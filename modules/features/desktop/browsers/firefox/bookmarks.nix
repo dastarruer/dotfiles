@@ -51,7 +51,7 @@
             }
             {
               name = "Advanced Music";
-              url = "https://ispsedu.schoology.com/course/8506163291/materials";
+              url = "https://ispsedu.schoology.com/course/8501405842/materials";
               keyword = "music";
             }
             {
