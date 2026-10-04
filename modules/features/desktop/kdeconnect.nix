@@ -28,9 +28,9 @@
     home-manager.users.dastarruer = {
       wayland.windowManager.hyprland.settings = lib.mkIf hyprland {
         window_rule = [
-          # Float the 'Receiving file' popup that occurs when transferring a large file
+          # Float the popup that occurs when transferring a file
           {
-            match.title = "^(Receiving file)(.*)$";
+            match.class = "org.kde.kdeconnect.daemon";
             float = true;
           }
         ];
