@@ -19,10 +19,10 @@
     };
 
     nix = {
-      # For nixd i think
-      nixPath = ["nixpkgs=${inputs.nixpkgs}"];
-
       settings = {
+        # For nixd i think
+        nix-path = ["nixpkgs=${inputs.nixpkgs}"];
+
         max-jobs = "auto";
 
         # Enable flakes
