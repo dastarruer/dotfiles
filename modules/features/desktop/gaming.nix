@@ -8,6 +8,11 @@
     # Enable the new ntsync kernel module for improved multithreading performance w newer versions of proton/wine
     boot.kernelModules = ["ntsync"];
 
+    hardware.graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+    
     programs.gamemode = {
       enable = true;
       enableRenice = true;
