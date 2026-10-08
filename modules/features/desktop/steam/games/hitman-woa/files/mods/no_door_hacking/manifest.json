@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"id": "invalid.nodoorhacking",
+	"name": "No door hacking",
+	"description": "Makes the facility doors in Chongqing no longer require hacking, and instead simply open when you have the respective dongle.",
+	"authors": [
+		"invalid"
+	],
+	"frameworkVersion": "2.0.0",
+	"contentFolders": [
+		"cont"
+	]
+}

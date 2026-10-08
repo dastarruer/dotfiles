@@ -1,0 +1,117 @@
+{
+    "tempHash": "00102EA3A46F6E24",
+    "tbluHash": "000977D5F9070B8D",
+    "patch": [
+        {
+            "SubEntityOperation": [
+                "70f7a4774441d86e",
+                {
+                    "RemoveAllEventConnectionsForTrigger": [
+                        "Out",
+                        "Enable"
+                    ]
+                }
+            ]
+        },
+        {
+            "SubEntityOperation": [
+                "70f7a4774441d86e",
+                {
+                    "AddEventConnection": [
+                        "Out",
+                        "Poll",
+                        "4d6a41334f444135"
+                    ]
+                }
+            ]
+        },
+        {
+            "SubEntityOperation": [
+                "5f8da0a7330faef0",
+                {
+                    "AddEventConnection": [
+                        "OnValue",
+                        "SetEnabled",
+                        "22a48c959c9d7a36"
+                    ]
+                }
+            ]
+        },
+        {
+            "SubEntityOperation": [
+                "22a48c959c9d7a36",
+                {
+                    "SetPropertyValue": {
+                        "property_name": "m_bIsVisible",
+                        "value": true
+                    }
+                }
+            ]
+        },
+        {
+            "SubEntityOperation": [
+                "22a48c959c9d7a36",
+                {
+                    "SetPropertyValue": {
+                        "property_name": "m_bIsEnabled",
+                        "value": true
+                    }
+                }
+            ]
+        },
+        {
+            "SubEntityOperation": [
+                "22a48c959c9d7a36",
+                {
+                    "AddEventConnection": [
+                        "ToggledOn",
+                        "Disable",
+                        "599375ad41442caf"
+                    ]
+                }
+            ]
+        },
+        {
+            "SubEntityOperation": [
+                "22a48c959c9d7a36",
+                {
+                    "AddEventConnection": [
+                        "ToggledOff",
+                        "Enable",
+                        "599375ad41442caf"
+                    ]
+                }
+            ]
+        },
+        {
+            "AddEntity": [
+                "4d6a41334f444135",
+                {
+                    "parent": "ca1bf3d9a532f5b1",
+                    "name": "Selfie Mode Fix",
+                    "factory": "[assembly:/_pro/design/logic/valuebool.template?/valuebool_poll.entitytemplate].pc_entitytype",
+                    "blueprint": "[assembly:/_pro/design/logic/valuebool.template?/valuebool_poll.entitytemplate].pc_entityblueprint",
+                    "properties": {
+                        "m_rValueEntity": {
+                            "type": "SEntityTemplateReference",
+                            "value": "a9a20b4ce273c8f4"
+                        }
+                    },
+                    "events": {
+                        "PollTrue": {
+                            "Disable": [
+                                "599375ad41442caf"
+                            ]
+                        },
+                        "PollFalse": {
+                            "Enable": [
+                                "599375ad41442caf"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "patchVersion": 6
+}

@@ -936,22 +936,6 @@
         "type": "github"
       }
     },
-    "mods": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1789780697,
-        "narHash": "sha256-EY8wFFB6pxeGk231t+FbRRlOL9eZuk/qWuoOF/y5my4=",
-        "owner": "dastarruer",
-        "repo": "mods",
-        "rev": "f88736e93a75751e779291859f72c1443ade8f3b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "dastarruer",
-        "repo": "mods",
-        "type": "github"
-      }
-    },
     "multiverse": {
       "locked": {
         "lastModified": 1791111465,
@@ -1257,7 +1241,6 @@
         "home-manager": "home-manager_2",
         "hyprland": "hyprland",
         "import-tree": "import-tree",
-        "mods": "mods",
         "multiverse": "multiverse",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs_3",

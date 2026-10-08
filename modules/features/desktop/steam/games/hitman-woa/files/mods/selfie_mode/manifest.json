@@ -1,0 +1,43 @@
+{
+	"version": "1.1.0",
+	"id": "anthonyfuller.selfiemode",
+	"name": "Selfie Mode",
+	"description": "Enables the cut selfie mode on the camera.",
+	"authors": ["Anthony Fuller"],
+	"frameworkVersion": "2.0.0",
+	"localisation": {
+		"english": {
+			"UI_SELFIE_MODE_LABEL": "Selfie Mode"
+		},
+		"french": {
+			"UI_SELFIE_MODE_LABEL": "Mode selfie"
+		},
+		"italian": {
+			"UI_SELFIE_MODE_LABEL": "Modalità selfie"
+		},
+		"german": {
+			"UI_SELFIE_MODE_LABEL": "Selfie-Modus"
+		},
+		"spanish": {
+			"UI_SELFIE_MODE_LABEL": "Modo autofoto"
+		},
+		"russian": {
+			"UI_SELFIE_MODE_LABEL": "Режим селфи"
+		},
+		"chineseSimplified": {
+			"UI_SELFIE_MODE_LABEL": "自拍模式"
+		},
+		"chineseTraditional": {
+			"UI_SELFIE_MODE_LABEL": "自拍模式"
+		},
+		"japanese": {
+			"UI_SELFIE_MODE_LABEL": "自分撮りモード"
+		}
+	},
+	"localisedLines": {
+		"0024813C8E35F245": "UI_SELFIE_MODE_LABEL"
+	},
+	"contentFolders": [
+		"content"
+	]
+}

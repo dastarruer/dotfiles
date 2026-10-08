@@ -1,0 +1,35 @@
+{
+  "version": "1.0.4",
+  "id": "Atampy26.ReadableUI",
+  "name": "Readable UI",
+  "description": "Makes the objective text more readable, improves minimap clarity and removes ALL CAPS from almost all UI text.",
+  "authors": ["Atampy26"],
+  "contentFolders": ["content"],
+  "frameworkVersion": "2.33.29",
+  "updateCheck": "https://hitman-resources.netlify.app/framework/updates/Readable UI.json",
+  "localisationOverrides": {
+    "00B7482C2C0EF59D": {
+      "english": {
+        "3503867328": "Analysing"
+      },
+      "french": {
+        "3503867328": "Analyse en cours"
+      },
+      "italian": {
+        "3503867328": "Analisi"
+      },
+      "german": {
+        "3503867328": "Analysiere"
+      },
+      "spanish": {
+        "3503867328": "Analizando"
+      },
+      "russian": {
+        "3503867328": "Идет анализ"
+      },
+      "chineseSimplified": {},
+      "chineseTraditional": {},
+      "japanese": {}
+    }
+  }
+}
