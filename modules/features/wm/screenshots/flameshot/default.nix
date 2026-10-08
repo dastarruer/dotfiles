@@ -20,9 +20,10 @@
           # Enable wayland support with this build flag
           package =
             if wayland
-            then pkgs.flameshot.override {
-              enableWlrSupport = true;
-            }
+            then
+              pkgs.flameshot.override {
+                enableWlrSupport = true;
+              }
             else pkgs.flameshot;
 
           settings = {

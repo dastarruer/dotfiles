@@ -1,5 +1,5 @@
 # Not meant to be imported manually; meant to be imported by other modules
-{inputs,...}: {
+{inputs, ...}: {
   flake.nixosModules.desktop_gaming = {
     pkgs,
     lib,
@@ -12,7 +12,7 @@
       enable = true;
       enable32Bit = true;
     };
-    
+
     programs.gamemode = {
       enable = true;
       enableRenice = true;
