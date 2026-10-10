@@ -31,6 +31,20 @@
     # Allow gamemode to renice processes
     users.users.dastarruer.extraGroups = ["gamemode"];
 
+    nixpkgs.overlays = [
+      (final: prev: {
+        gamescope = prev.gamescope.overrideAttrs (old: rec {
+          version = "3.16.28";
+          src = prev.fetchFromGitHub {
+            owner = "ValveSoftware";
+            repo = "gamescope";
+            tag = version;
+            fetchSubmodules = true;
+            hash = "sha256-6B9Vbr21EHDOVCx27TZk3ruJPqoovEQ1JYtd8F6Siv4="; # build once, paste the real hash
+          };
+        });
+      })
+    ];
     programs.gamescope = {
       # package = lib.mkForce config.multiverse.pinned.gamescope;
       enable = true;
