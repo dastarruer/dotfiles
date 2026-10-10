@@ -18,6 +18,7 @@
         "-F"
         "fsr"
         "-f"
+        "--force-grab-cursor" 
         "--"
         (lib.getExe config.programs.gamemode.package)
       ];
