@@ -1,5 +1,5 @@
 # Declare settings that speed up boot times, and some other things as well
-{...}: {
+{inputs, ...}: {
   flake.nixosModules.core = {
     pkgs,
     lib,
@@ -31,9 +31,16 @@
     # And yeah idk what that means...
     services.dbus.implementation = "broker";
 
+    
+    # cachyos kernel
+    nix.settings.substituters = ["https://attic.xuyh0120.win/lantian" "https://cache.xinux.uz"];
+    nix.settings.trusted-public-keys = ["lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="];
+    nixpkgs.overlays = [
+      inputs.nix-cachyos-kernel.overlays.pinned
+    ];
     # Bootloader.
     boot = {
-      kernelPackages = pkgs.linuxPackages_latest;
+      kernelPackages = lib.mkForce pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
 
       # Bootloader
       loader = {
