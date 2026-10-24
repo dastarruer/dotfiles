@@ -11,6 +11,7 @@
       "287700" = "METAL GEAR SOLID V: THE PHANTOM PAIN";
       "284160" = "beam.ng";
       "3812600" = "ReStory: Chill Electronics Repairs";
+      "365450" = "Hacknet";
     };
   };
 }
