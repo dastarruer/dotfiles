@@ -11,6 +11,7 @@
 
     hmConfig = config.home-manager.users.dastarruer;
     geminiKeyPath = hmConfig.sops.secrets.gemini_api_key.path;
+    openrouterKeyPath = hmConfig.sops.secrets.openrouter_api_key.path;
   in {
     # Install this globally because many projects do not include this in their devshell
     environment.systemPackages = [pkgs.nixd];
@@ -25,13 +26,20 @@
 
       sops.secrets = {
         gemini_api_key = {};
+        openrouter_api_key = {};
       };
 
-      # Set api key for gemini: https://zed.dev/docs/ai/llm-providers#google-ai
-      home.sessionVariables."GEMINI_API_KEY" =
-        if (builtins.pathExists geminiKeyPath)
-        then (builtins.readFile geminiKeyPath)
-        else "";
+      # Set api key for AI providers
+      home.sessionVariables = {
+        "GEMINI_API_KEY" =
+          if (builtins.pathExists geminiKeyPath)
+          then (builtins.readFile geminiKeyPath)
+          else "";
+        "OPENROUTER_API_KEY" =
+          if (builtins.pathExists openrouterKeyPath)
+          then (builtins.readFile openrouterKeyPath)
+          else "";
+      };
 
       programs.zed-editor = {
         enable = true;
