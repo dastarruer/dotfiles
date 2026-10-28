@@ -10,6 +10,13 @@
     hmConfig = config.home-manager.users.dastarruer;
     iniFormat = pkgs.formats.ini {};
 
+    # supposed to fix issues with kill everyone peacock plugin
+    manyTargetsFix = pkgs.fetchzip {
+      url = "https://github.com/endlessniche/ManyTargetsFix/releases/download/1.0.0/ManyTargetsFix-1.0.0.zip";
+      hash = "sha256-NUdfqKILX8poVJkYLeFu7AgbwzTi+OTsu6PFX6PairQ=";
+      stripRoot = false;
+    };
+
     peacockDir = "${hmConfig.home.homeDirectory}/.config/peacock-linux";
     peacockZip = pkgs.fetchzip {
       url = "https://github.com/thepeacockproject/Peacock/releases/download/v8.9.1/Peacock-v8.9.1-linux.zip";
@@ -93,6 +100,8 @@
     programs.steam.config = {
       # hitman
       apps."1659040".files.game.place = {
+        "Retail/mods/ManyTargetsFix.dll".source = "${manyTargetsFix}/ManyTargetsFix.dll";
+
         # Peacock prerequisites
         "Retail/mods/onlinetools.ini" = {
           source = iniFormat.generate "onlinetools" {
