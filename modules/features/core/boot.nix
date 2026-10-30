@@ -31,10 +31,9 @@
     # And yeah idk what that means...
     services.dbus.implementation = "broker";
 
-    
     # cachyos kernel
-    nix.settings.substituters = ["https://attic.xuyh0120.win/lantian" "https://cache.xinux.uz"];
-    nix.settings.trusted-public-keys = ["lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="];
+    nix.settings.substituters = ["https://cache.lantian.pub/lantian"];
+    nix.settings.trusted-public-keys = ["lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ="];
     nixpkgs.overlays = [
       inputs.nix-cachyos-kernel.overlays.pinned
     ];
@@ -72,7 +71,6 @@
 
       # https://discourse.nixos.org/t/removing-persistent-boot-messages-for-a-silent-boot/14835
       consoleLogLevel = 0;
-      initrd.verbose = false;
 
       kernel.sysctl = {
         # Keep stuff in ram for longer
