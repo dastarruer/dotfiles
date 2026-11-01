@@ -25,7 +25,7 @@
     };
 
     # Hardcode timezone to reduce ram usage
-    time.timeZone = "America/New_York";
+    time.timeZone = "America/Port_of_Spain";
 
     # Automatically set timezone: https://www.reddit.com/r/NixOS/comments/1411gjs/dynamically_set_the_timezone/
     # services.automatic-timezoned.enable = true;
