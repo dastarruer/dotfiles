@@ -52,6 +52,7 @@
       services_smart-pause-resume
       services_reload-udev
       services_docker
+      services_librepods
       services_ssh
 
       self-hosted_webdav
