@@ -10,6 +10,7 @@
   in {
     custom.backup.backupPaths = lib.mkIf backup.enable [saveDir];
     home-manager.users.dastarruer = {
+      xdg.configFile."MuseScore/MuseScore4.ini".source = ./MuseScore4.ini;
       home.packages = with pkgs; [
         musescore
         muse-sounds-manager
