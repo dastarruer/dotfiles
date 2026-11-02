@@ -86,10 +86,7 @@
     programs.steam.config = {
       # hitman
       apps."1659040".files.game.place = {
-        "Simple Mod Framework" = {
-          source = smfZip;
-          mode = "seed"; # smf modifies itself during deployment
-        };
+        "Simple Mod Framework".source = smfZip;
         "Simple Mod Framework/config.json".source = ./files/smf_config.json;
 
         # le mods
