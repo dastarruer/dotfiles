@@ -25,62 +25,50 @@
     burnTheWitchHeritageUI = pkgs.fetchzip {
       url = "https://github.com/Burn-the-witch/Heritage-UI/releases/download/14.0.3/mod.framework.zip";
       hash = "sha256-Ivziq7cjxEBF8unDwYYhRbJwN6EW/GO/EFOEgl5j6nQ=";
-      stripRoot = false;
     };
     charc0alMoreBloodMelee = pkgs.fetchzip {
       url = "https://github.com/charc0al/HM3_MBM/releases/download/2.4.0/mod.framework.zip";
       hash = "sha256-1ageEt/d6ilfsNtLQ+tjq8bWfvGhQf5SvwP7WYgQeDQ=";
-      stripRoot = false;
     };
     charc0alNoHoldButtons = pkgs.fetchzip {
       url = "https://github.com/charc0al/HM3_NoHoldButtons/releases/download/1.3.0/mod.framework.zip";
       hash = "sha256-KBaLqHTzEgkj1OIqDKZbFea74C/NlYi2fj2TDbHxBpw=";
-      stripRoot = false;
     };
     charc0alThrownItemAdjustments = pkgs.fetchzip {
       url = "https://github.com/charc0al/HM3_ThrownItemAdjustments/releases/download/1.10.0/mod.framework.zip";
-      hash = "sha256-KBaLqHTzEgkj1OIqDKZbFea74C/NlYi2fj2TDbHxBpw=";
-      stripRoot = false;
+      hash = "sha256-8PXuRR8UyptBxOI15T3/ABLgVYlkVX2AJfHkyqBVuqY=";
     };
     freelancerVariations = pkgs.fetchzip {
       url = "https://github.com/Kevin-Rudd/FV-Autoupdater/releases/download/1.13.0/Freelancer.Variations.1.13.0.zip";
       hash = "sha256-gPiQUeDJEjF2F+pA0iSHwNvXOowih/SYoIaCp23wtt0=";
-      stripRoot = false;
     };
     glacierOrganisationCommunityPatches = pkgs.fetchzip {
       url = "https://github.com/glacier-modding/H3-Unofficial-Community-Patch/releases/download/1.162.0/mod.framework.zip";
       hash = "sha256-PBzOBLOLAt0G6v4hXLaVEeZKfzN24j2E3ZeDHZJBXYc=";
-      stripRoot = false;
     };
     invalidEarpiecevoiecs = pkgs.fetchzip {
       url = "https://github.com/scrungofan/handler-dialogue/releases/download/1.5.1/mod.framework.zip";
       hash = "sha256-02ZfzwA+vJIjzPYRn89PQh98SVHZM1lqC3Tkw3M91fI=";
-      stripRoot = false;
     };
     jojjeBayHarborButcher = pkgs.fetchzip {
       url = "https://github.com/JojjeE/h3-bayharbor/releases/download/1.1.1/mod.framework.zip";
       hash = "sha256-5KDbVKd1dIk4WDZwT2EckEBlSLtrGgOG828FO/TBHqw=";
-      stripRoot = false;
     };
     minnowMoreFreelancerTargets = pkgs.fetchzip {
       url = "https://github.com/Ocean-Minnow/Minnow.MoreFreelancerTargets/releases/download/1.1.0/mod.framework.zip";
       hash = "sha256-iNBBnV8cPMzV2jdCCyToac0Ao/i1ei508Z2Grtu6ecU=";
-      stripRoot = false;
     };
     musicalmushr00mLightingUltimate = pkgs.fetchzip {
       url = "https://github.com/team-mushroom/lighting-ultimate/releases/download/2.6.1/mod.framework.zip";
       hash = "sha256-/7BSZPqIhANY1R4WQU2KDVVBmVw82VjdiV1MZSzxQhk=";
-      stripRoot = false;
     };
     notexSimpleHealthBar = pkgs.fetchzip {
       url = "https://github.com/NotexMods/h3-simple-health-bar/releases/download/1.11.0/mod.framework.zip";
       hash = "sha256-P7UK5JbaDhqNd3BnmmcYwp1FfCTPrfnQ5yY/L1PoXTA=";
-      stripRoot = false;
     };
     roguelessFreelancer = pkgs.fetchzip {
       url = "https://github.com/WINNODD/Rogueless-Freelancer/releases/download/2.1.1/Rogueless-Freelancer.zip";
       hash = "sha256-Ea58201PFDv16IyCDNCHp1pqPJPb3Mn5zT5bCF36uIw=";
-      stripRoot = false;
     };
   in {
     programs.steam.config = {
@@ -90,21 +78,21 @@
         "Simple Mod Framework/config.json".source = ./files/smf_config.json;
 
         # le mods
-        "Simple Mod Framework/Mods/BurnTheWitch.HeritageUI".source = burnTheWitchHeritageUI;
-        "Simple Mod Framework/Mods/Char0al.MoreBloodMelee".source = charc0alMoreBloodMelee;
-        "Simple Mod Framework/Mods/Char0al.NoHoldButtons".source = charc0alNoHoldButtons;
-        "Simple Mod Framework/Mods/Char0al.ThrownItemAdjustments".source = charc0alThrownItemAdjustments;
-        "Simple Mod Framework/Mods/Freelancer Variations".source = freelancerVariations;
-        "Simple Mod Framework/Mods/GlacierOrganisation.CommunityPatches".source = glacierOrganisationCommunityPatches;
-        "Simple Mod Framework/Mods/invalid.earpiecevoices".source = invalidEarpiecevoiecs;
-        "Simple Mod Framework/Mods/Jojje.BayHarborButcher".source = jojjeBayHarborButcher;
-        "Simple Mod Framework/Mods/Minnow.MoreFreelancerTargets".source = minnowMoreFreelancerTargets;
-        "Simple Mod Framework/Mods/musicalmushr00m.LightingUltimate".source = musicalmushr00mLightingUltimate;
+        "Simple Mod Framework/Mods/BurnTheWitch.HeritageUI".source = "${burnTheWitchHeritageUI}/BurnTheWitch.HeritageUI";
+        "Simple Mod Framework/Mods/Charc0al.MoreBloodMelee".source = "${charc0alMoreBloodMelee}/Charc0al.MoreBloodMelee";
+        "Simple Mod Framework/Mods/Charc0al.NoHoldButtons".source = "${charc0alNoHoldButtons}/Charc0al.NoHoldButtons";
+        "Simple Mod Framework/Mods/Charc0al.ThrownItemAdjustments".source = charc0alThrownItemAdjustments;
+        "Simple Mod Framework/Mods/Freelancer Variations".source = "${freelancerVariations}/Freelancer Variations";
+        "Simple Mod Framework/Mods/GlacierOrganisation.CommunityPatches".source = "${glacierOrganisationCommunityPatches}/GlacierOrganisation.CommunityPatches";
+        "Simple Mod Framework/Mods/invalid.earpiecevoices".source = "${invalidEarpiecevoiecs}/invalid.earpiecevoices";
+        "Simple Mod Framework/Mods/Jojje.BayHarborButcher".source = "${jojjeBayHarborButcher}/Jojje.BayHarborButcher";
+        "Simple Mod Framework/Mods/Minnow.MoreFreelancerTargets".source = "${minnowMoreFreelancerTargets}/Minnow.MoreFreelancerTargets";
+        "Simple Mod Framework/Mods/musicalmushr00m.LightingUltimate".source = "${musicalmushr00mLightingUltimate}/musicalmushr00m.LightingUltimate";
+        "Simple Mod Framework/Mods/Notex.SimpleHealthBar".source = "${notexSimpleHealthBar}/Notex.SimpleHealthBar";
+        "Simple Mod Framework/Mods/Rogueless-Freelancer".source = "${roguelessFreelancer}/Rogueless-Freelancer";
         "Simple Mod Framework/Mods/No door hacking".source = ./files/mods/no_door_hacking;
-        "Simple Mod Framework/Mods/Notex.SimpleHealthBar".source = notexSimpleHealthBar;
-        "Simple Mod Framework/Mods/Readable UI".source = ./files/mods/readable_ui;
-        "Simple Mod Framework/Mods/Rogueless-Freelancer".source = roguelessFreelancer;
         "Simple Mod Framework/Mods/Selfie Mode".source = ./files/mods/selfie_mode;
+        "Simple Mod Framework/Mods/Readable UI".source = ./files/mods/readable_ui;
 
         # Freelancer Variations prerequisites
         "Retail/mods/missioncompanion.ini" = {
