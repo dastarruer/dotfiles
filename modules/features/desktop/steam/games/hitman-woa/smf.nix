@@ -31,12 +31,12 @@
       hash = "sha256-1ageEt/d6ilfsNtLQ+tjq8bWfvGhQf5SvwP7WYgQeDQ=";
     };
     charc0alNoHoldButtons = pkgs.fetchzip {
-      url = "https://github.com/charc0al/HM3_NoHoldButtons/releases/download/1.3.0/mod.framework.zip";
-      hash = "sha256-KBaLqHTzEgkj1OIqDKZbFea74C/NlYi2fj2TDbHxBpw=";
+      url = "https://github.com/charc0al/HM3_NoHoldButtons/releases/download/1.4.0/mod.framework.zip";
+      hash = "sha256-0jeTFDFu3kJyuWD0jl1qlU0rMhVpZ23GjGLSY1wJUFo=";
     };
     charc0alThrownItemAdjustments = pkgs.fetchzip {
-      url = "https://github.com/charc0al/HM3_ThrownItemAdjustments/releases/download/1.10.0/mod.framework.zip";
-      hash = "sha256-8PXuRR8UyptBxOI15T3/ABLgVYlkVX2AJfHkyqBVuqY=";
+      url = "https://github.com/charc0al/HM3_ThrownItemAdjustments/releases/download/1.12.0/mod.framework.zip";
+      hash = "sha256-0jeTFDFu3kJyuWD0jl1qlU0rMhVpZ23GjGLSY1wJUFo=";
     };
     freelancerVariations = pkgs.fetchzip {
       url = "https://github.com/Kevin-Rudd/FV-Autoupdater/releases/download/1.13.0/Freelancer.Variations.1.13.0.zip";
@@ -46,9 +46,9 @@
       url = "https://github.com/glacier-modding/H3-Unofficial-Community-Patch/releases/download/1.162.0/mod.framework.zip";
       hash = "sha256-PBzOBLOLAt0G6v4hXLaVEeZKfzN24j2E3ZeDHZJBXYc=";
     };
-    invalidEarpiecevoiecs = pkgs.fetchzip {
-      url = "https://github.com/scrungofan/handler-dialogue/releases/download/1.5.1/mod.framework.zip";
-      hash = "sha256-02ZfzwA+vJIjzPYRn89PQh98SVHZM1lqC3Tkw3M91fI=";
+    invalidEarpiecevoices = pkgs.fetchzip {
+      url = "https://github.com/scrungofan/handler-dialogue/releases/download/1.6.0/mod.framework.zip";
+      hash = "sha256-0jeTFDFu3kJyuWD0jl1qlU0rMhVpZ23GjGLSY1wJUFo=";
     };
     jojjeBayHarborButcher = pkgs.fetchzip {
       url = "https://github.com/JojjeE/h3-bayharbor/releases/download/1.1.1/mod.framework.zip";
@@ -84,7 +84,7 @@
         "Simple Mod Framework/Mods/Charc0al.ThrownItemAdjustments".source = charc0alThrownItemAdjustments;
         "Simple Mod Framework/Mods/Freelancer Variations".source = "${freelancerVariations}/Freelancer Variations";
         "Simple Mod Framework/Mods/GlacierOrganisation.CommunityPatches".source = "${glacierOrganisationCommunityPatches}/GlacierOrganisation.CommunityPatches";
-        "Simple Mod Framework/Mods/invalid.earpiecevoices".source = "${invalidEarpiecevoiecs}/invalid.earpiecevoices";
+        "Simple Mod Framework/Mods/invalid.earpiecevoices".source = "${invalidEarpiecevoices}/invalid.earpiecevoices";
         "Simple Mod Framework/Mods/Jojje.BayHarborButcher".source = "${jojjeBayHarborButcher}/Jojje.BayHarborButcher";
         "Simple Mod Framework/Mods/Minnow.MoreFreelancerTargets".source = "${minnowMoreFreelancerTargets}/Minnow.MoreFreelancerTargets";
         "Simple Mod Framework/Mods/musicalmushr00m.LightingUltimate".source = "${musicalmushr00mLightingUltimate}/musicalmushr00m.LightingUltimate";
