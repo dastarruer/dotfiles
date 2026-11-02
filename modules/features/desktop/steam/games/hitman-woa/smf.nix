@@ -12,8 +12,8 @@
     smfPrefix = "3086416570";
 
     smfZip = pkgs.fetchzip {
-      url = "https://github.com/atampy25/simple-mod-framework/releases/download/2.33.42/Release.zip";
-      hash = "sha256-Kv78ZQQ2itsZQorizswV5f7eVATe08ZNnmtKmYheuiY=";
+      url = "https://github.com/atampy25/simple-mod-framework/releases/download/2.33.43/Release.zip";
+      hash = "sha256-NnpZK6SNxIG17EdrTudJr/KHUX0DA9V6gIVNIyLrkeM=";
       stripRoot = false;
     };
 
