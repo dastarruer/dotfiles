@@ -12,8 +12,8 @@
     smfPrefix = "3086416570";
 
     smfZip = pkgs.fetchzip {
-      url = "https://github.com/atampy25/simple-mod-framework/releases/download/2.33.43/Release.zip";
-      hash = "sha256-NnpZK6SNxIG17EdrTudJr/KHUX0DA9V6gIVNIyLrkeM=";
+      url = "https://github.com/atampy25/simple-mod-framework/releases/download/2.33.45/Release.zip";
+      hash = "sha256-jiJAYy9wFhytIp8nH3Q0WM7aCNU1NOlit5JfpaeWTpY=";
       stripRoot = false;
     };
 
@@ -32,19 +32,20 @@
     };
     charc0alNoHoldButtons = pkgs.fetchzip {
       url = "https://github.com/charc0al/HM3_NoHoldButtons/releases/download/1.4.0/mod.framework.zip";
-      hash = "sha256-0jeTFDFu3kJyuWD0jl1qlU0rMhVpZ23GjGLSY1wJUFo=";
+      hash = "sha256-1STrJXFVsEF7FGJUxi8wLvuNvW2RBS8SGM1Xora/a2M=";
     };
     charc0alThrownItemAdjustments = pkgs.fetchzip {
       url = "https://github.com/charc0al/HM3_ThrownItemAdjustments/releases/download/1.12.0/mod.framework.zip";
-      hash = "sha256-0jeTFDFu3kJyuWD0jl1qlU0rMhVpZ23GjGLSY1wJUFo=";
+      hash = "sha256-OPeHXVBGMfMxNrEra0Wa3SiwD70h1lF3Ml/ktsRTwlM=";
     };
     freelancerVariations = pkgs.fetchzip {
-      url = "https://github.com/Kevin-Rudd/FV-Autoupdater/releases/download/1.13.0/Freelancer.Variations.1.13.0.zip";
-      hash = "sha256-gPiQUeDJEjF2F+pA0iSHwNvXOowih/SYoIaCp23wtt0=";
+      url = "https://github.com/Kevin-Rudd/FV-Autoupdater/releases/download/2.0.1/Freelancer.Variations.2.0.1.zip";
+      hash = "sha256-Y54B+nv9GRGjUcw9aestXGl/c4htPYNFYvlT94tGWo0=";
+      stripRoot = false;
     };
     glacierOrganisationCommunityPatches = pkgs.fetchzip {
-      url = "https://github.com/glacier-modding/H3-Unofficial-Community-Patch/releases/download/1.162.0/mod.framework.zip";
-      hash = "sha256-PBzOBLOLAt0G6v4hXLaVEeZKfzN24j2E3ZeDHZJBXYc=";
+      url = "https://github.com/glacier-modding/H3-Unofficial-Community-Patch/releases/download/1.163.0/mod.framework.zip";
+      hash = "sha256-g+6mcORcE0RjeTMsABs6oknL9EZamp2zBv3oFS8dtNQ=";
     };
     invalidEarpiecevoices = pkgs.fetchzip {
       url = "https://github.com/scrungofan/handler-dialogue/releases/download/1.6.0/mod.framework.zip";
@@ -83,7 +84,7 @@
         "Simple Mod Framework/Mods/Charc0al.NoHoldButtons".source = "${charc0alNoHoldButtons}/Charc0al.NoHoldButtons";
         "Simple Mod Framework/Mods/Charc0al.ThrownItemAdjustments".source = charc0alThrownItemAdjustments;
         "Simple Mod Framework/Mods/Freelancer Variations".source = "${freelancerVariations}/Freelancer Variations";
-        "Simple Mod Framework/Mods/GlacierOrganisation.CommunityPatches".source = "${glacierOrganisationCommunityPatches}/GlacierOrganisation.CommunityPatches";
+        "Simple Mod Framework/Mods/GlacierOrganisation.CommunityPatches".source = glacierOrganisationCommunityPatches;
         "Simple Mod Framework/Mods/invalid.earpiecevoices".source = "${invalidEarpiecevoices}/invalid.earpiecevoices";
         "Simple Mod Framework/Mods/Jojje.BayHarborButcher".source = "${jojjeBayHarborButcher}/Jojje.BayHarborButcher";
         "Simple Mod Framework/Mods/Minnow.MoreFreelancerTargets".source = "${minnowMoreFreelancerTargets}/Minnow.MoreFreelancerTargets";

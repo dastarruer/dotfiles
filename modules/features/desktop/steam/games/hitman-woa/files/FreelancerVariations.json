@@ -121,11 +121,9 @@
         "assembly:/_pro/scenes/missions/colorado_2/mission_mild_rabies.brick",
         "assembly:/_pro/scenes/missions/colorado_2/mission_mild_spades.brick"
       ],
-      "hardbricks": [
-        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
-      ],
+      "hardbricks": [],
       "clearDefaultBricks": true,
-      "resetVRBricks": true
+      "resetVRBricks": false
     },
     {
       "id": "4a95baa5-6ad6-43c8-ae3e-be8449d578ec",
@@ -134,11 +132,9 @@
         "assembly:/_pro/scenes/missions/colorado_2/mission_hot_rabies.brick",
         "assembly:/_pro/scenes/missions/colorado_2/mission_hot_spades.brick"
       ],
-      "hardbricks": [
-        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
-      ],
+      "hardbricks": [],
       "clearDefaultBricks": true,
-      "resetVRBricks": true
+      "resetVRBricks": false
     },
     {
       "id": "76fd7c40-83a0-48c9-be49-cef107583eae",
@@ -169,10 +165,12 @@
       "bricks": [
         "assembly:/_pro/scenes/missions/sheep/mild_sheep.brick",
         "assembly:/_pro/scenes/missions/sheep/mild_adonis_sunrise.brick",
-        "assembly:/_pro/scenes/missions/sheep/mild_adonis.brick"
+        "assembly:/_pro/scenes/missions/sheep/mild_adonis_midday.brick",
+        "assembly:/_pro/scenes/missions/sheep/mild_adonis.brick",
+        "assembly:/_pro/scenes/missions/sheep/mild_shamrock.brick"
       ],
       "hardbricks": [
-        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
+        "assembly:/_pro/scenes/missions/sheep/difficulty_hard_newzealand_sheep.brick"
       ],
       "clearDefaultBricks": true,
       "resetVRBricks": true
@@ -182,10 +180,77 @@
       "bricks": [
         "assembly:/_pro/scenes/missions/sheep/mission_hot_adonis.brick",
         "assembly:/_pro/scenes/missions/sheep/hot_adonis_sunrise.brick",
-        "assembly:/_pro/scenes/missions/sheep/hot_adonis_midday.brick"
+        "assembly:/_pro/scenes/missions/sheep/hot_adonis_midday.brick",
+        "assembly:/_pro/scenes/missions/sheep/hot_shamrock.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/sheep/difficulty_hard_newzealand_sheep.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "79afb4a5-bb4e-4dd4-a53e-d63b366e6c44",
+      "bricks": [],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/salty/mission_seagull/difficulty_hard_hantu.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "c2227b36-db89-4e79-bb1b-daf24a4b7117",
+      "bricks": [],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/salty/mission_seagull/difficulty_hard_hantu.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "2aacb6cd-3b8f-44e8-aacb-1d323e1e485a",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/thefacility/mission_mild_cuba.brick",
+        "assembly:/_pro/scenes/missions/thefacility/mild_cuba_day.brick"
       ],
       "hardbricks": [
         "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "c8c4d3b1-a9e5-40dc-a948-7e364d787ff5",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/thefacility/mission_hot_cuba.brick",
+        "assembly:/_pro/scenes/missions/thefacility/hot_cuba_day.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "f128650c-96db-4a55-ab28-95bc2983687e",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/trapped/mild_trapped.brick",
+        "assembly:/_pro/scenes/missions/trapped/mild_trapped_day.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/trapped/difficulty_hard_trapped_wolverine.brick"
+      ],
+      "clearDefaultBricks": true,
+      "resetVRBricks": true
+    },
+    {
+      "id": "be9e444d-f58c-4c45-8d33-745dce403ef2",
+      "bricks": [
+        "assembly:/_pro/scenes/missions/trapped/hot_trapped.brick",
+        "assembly:/_pro/scenes/missions/trapped/hot_trapped_day.brick"
+      ],
+      "hardbricks": [
+        "assembly:/_pro/scenes/missions/trapped/difficulty_hard_trapped_wolverine.brick"
       ],
       "clearDefaultBricks": true,
       "resetVRBricks": true
@@ -291,7 +356,7 @@
         "assembly:/_pro/scenes/missions/theark/mission_mild_whist.brick"
       ],
       "hardbricks": [],
-      "clearDefaultBricks": true,
+      "clearDefaultBricks": false,
       "resetVRBricks": true
     },
     {
@@ -302,7 +367,7 @@
         "assembly:/_pro/scenes/missions/theark/mission_hot_whist.brick"
       ],
       "hardbricks": [],
-      "clearDefaultBricks": true,
+      "clearDefaultBricks": false,
       "resetVRBricks": true
     },
     {
@@ -310,42 +375,40 @@
       "bricks": [
         "assembly:/_pro/scenes/missions/greedy/mission_raccoon/mild_midday.brick"
       ],
-      "hardbricks": [
-        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
-      ],
+      "hardbricks": [],
       "clearDefaultBricks": true,
-      "resetVRBricks": true
+      "resetVRBricks": false
     },
     {
       "id": "a3aab02b-be9a-4f97-8ddb-80843dceb3c4",
       "bricks": [
         "assembly:/_pro/scenes/missions/greedy/mission_raccoon/raccoon_midday.brick"
       ],
-      "hardbricks": [
-        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
-      ],
+      "hardbricks": [],
       "clearDefaultBricks": true,
-      "resetVRBricks": true
+      "resetVRBricks": false
     },
     {
       "id": "f075fbc3-79ef-4e42-9326-9572f712a298",
       "bricks": [
         "assembly:/_pro/scenes/missions/opulent/mission_stingray/tod_night_mild.brick",
+        "assembly:/_pro/scenes/missions/opulent/mission_stingray/greentini_sunset_mild.brick",
         "assembly:/_pro/scenes/missions/opulent/mission_stingray/mission_mild_hilo.brick"
       ],
       "hardbricks": [],
       "clearDefaultBricks": true,
-      "resetVRBricks": true
+      "resetVRBricks": false
     },
     {
       "id": "d2419fe4-ea72-4e61-b91b-bb39706f551d",
       "bricks": [
         "assembly:/_pro/scenes/missions/opulent/mission_stingray/tod_night_hot.brick",
+        "assembly:/_pro/scenes/missions/opulent/mission_stingray/greentini_sunset_hot.brick",
         "assembly:/_pro/scenes/missions/opulent/mission_stingray/mission_hot_hilo.brick"
       ],
       "hardbricks": [],
       "clearDefaultBricks": true,
-      "resetVRBricks": true
+      "resetVRBricks": false
     },
     {
       "id": "84727ec8-7f13-4c00-94c1-b5c60a8a181f",
@@ -459,28 +522,74 @@
     },
     {
       "id": "060a48f0-117b-4b22-a165-111fd4a5b745",
-      "bricks": [
-        "assembly:/_pro/scenes/missions/thefacility/mission_mild_cuba.brick",
-        "assembly:/_pro/scenes/missions/thefacility/mild_cuba_day.brick"
-      ],
-      "hardbricks": [
-        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
-      ],
+      "bricks": [],
+      "hardbricks": [],
       "clearDefaultBricks": true,
-      "resetVRBricks": true
+      "resetVRBricks": false
     },
     {
       "id": "3e72588a-46ea-4cb8-a10f-e2242ca8cc99",
-      "bricks": [
-        "assembly:/_pro/scenes/missions/thefacility/mission_hot_cuba.brick",
-        "assembly:/_pro/scenes/missions/thefacility/hot_cuba_day.brick"
-      ],
-      "hardbricks": [
-        "assembly:/_pro/scenes/missions/thefacility/outfits_prologue.brick"
-      ],
+      "bricks": [],
+      "hardbricks": [],
       "clearDefaultBricks": true,
-      "resetVRBricks": true
+      "resetVRBricks": false
     }
   ],
-  "configFileVersion": 1.12
+  "extraDestinations": [
+    {
+      "travelReceiverId": "feed452b0ac243bc",
+      "name": "Hawke's Bay",
+      "mildContractId": "5e2d2784-1fb0-4006-8e0b-d7d907bae1b5",
+      "hotContractId": "bdda4dc3-6af8-44b6-b4ca-09de1b5cb6fd",
+      "scenePath": "assembly:/_pro/scenes/missions/sheep/scene_hex.entity",
+      "destinationEntityId": "feed682949452ec7",
+      "worldMapEntryId": "53395ceeef815992"
+    },
+    {
+      "travelReceiverId": "a022452b0ac243bc",
+      "destinationEntityId": "a022682949452ec7",
+      "worldMapEntryId": "a022586ef119fc13",
+      "name": "Sierra Cantante",
+      "mildContractId": "2aacb6cd-3b8f-44e8-aacb-1d323e1e485a",
+      "hotContractId": "c8c4d3b1-a9e5-40dc-a948-7e364d787ff5",
+      "scenePath": "assembly:/_pro/scenes/missions/cuba/scene_cuba_freelancer.entity",
+      "destination": 21,
+      "locationNames": {
+        "city": "UI_LOCATION_PARENT_CUBA_CITY",
+        "country": "UI_LOCATION_PARENT_CUBA_COUNTRY",
+        "name": "UI_LOCATION_PARENT_CUBA_NAME"
+      }
+    },
+    {
+      "travelReceiverId": "a024452b0ac243bc",
+      "destinationEntityId": "a024682949452ec7",
+      "worldMapEntryId": "a024bd7a9ba14eb2",
+      "name": "Carpathian Mountains",
+      "mildContractId": "f128650c-96db-4a55-ab28-95bc2983687e",
+      "hotContractId": "be9e444d-f58c-4c45-8d33-745dce403ef2",
+      "scenePath": "assembly:/_pro/scenes/missions/trapped/scene_lynx.entity",
+      "destination": 22,
+      "locationNames": {
+        "city": "UI_LOCATION_PARENT_TRAPPED_CITY",
+        "country": "UI_LOCATION_PARENT_TRAPPED_COUNTRY",
+        "name": "UI_LOCATION_PARENT_TRAPPED_NAME"
+      }
+    },
+    {
+      "travelReceiverId": "a021452b0ac243bc",
+      "destinationEntityId": "a021682949452ec7",
+      "worldMapEntryId": "a0211df768a064a4",
+      "name": "Hantu Port",
+      "mildContractId": "79afb4a5-bb4e-4dd4-a53e-d63b366e6c44",
+      "hotContractId": "c2227b36-db89-4e79-bb1b-daf24a4b7117",
+      "scenePath": "assembly:/_pro/scenes/missions/salty/mission_seagull/scene_seagull_sandbox.entity",
+      "destination": 23,
+      "locationNames": {
+        "city": "UI_LOCATION_PARENT_SALTY_CITY",
+        "country": "UI_LOCATION_PARENT_SALTY_COUNTRY",
+        "name": "UI_LOCATION_PARENT_SALTY_NAME"
+      }
+    }
+  ],
+  "configFileVersion": 2
 }
