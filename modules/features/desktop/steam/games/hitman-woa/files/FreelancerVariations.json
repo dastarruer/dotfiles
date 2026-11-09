@@ -165,6 +165,7 @@
       "bricks": [
         "assembly:/_pro/scenes/missions/sheep/mild_sheep.brick",
         "assembly:/_pro/scenes/missions/sheep/mild_adonis_sunrise.brick",
+        "assembly:/_pro/scenes/missions/sheep/mild_adonis_sunset.brick",
         "assembly:/_pro/scenes/missions/sheep/mild_adonis_midday.brick",
         "assembly:/_pro/scenes/missions/sheep/mild_adonis.brick",
         "assembly:/_pro/scenes/missions/sheep/mild_shamrock.brick"
@@ -180,6 +181,7 @@
       "bricks": [
         "assembly:/_pro/scenes/missions/sheep/mission_hot_adonis.brick",
         "assembly:/_pro/scenes/missions/sheep/hot_adonis_sunrise.brick",
+        "assembly:/_pro/scenes/missions/sheep/hot_adonis_sunset.brick",
         "assembly:/_pro/scenes/missions/sheep/hot_adonis_midday.brick",
         "assembly:/_pro/scenes/missions/sheep/hot_shamrock.brick"
       ],
@@ -233,10 +235,7 @@
     },
     {
       "id": "f128650c-96db-4a55-ab28-95bc2983687e",
-      "bricks": [
-        "assembly:/_pro/scenes/missions/trapped/mild_trapped.brick",
-        "assembly:/_pro/scenes/missions/trapped/mild_trapped_day.brick"
-      ],
+      "bricks": [],
       "hardbricks": [
         "assembly:/_pro/scenes/missions/trapped/difficulty_hard_trapped_wolverine.brick"
       ],
@@ -245,10 +244,7 @@
     },
     {
       "id": "be9e444d-f58c-4c45-8d33-745dce403ef2",
-      "bricks": [
-        "assembly:/_pro/scenes/missions/trapped/hot_trapped.brick",
-        "assembly:/_pro/scenes/missions/trapped/hot_trapped_day.brick"
-      ],
+      "bricks": [],
       "hardbricks": [
         "assembly:/_pro/scenes/missions/trapped/difficulty_hard_trapped_wolverine.brick"
       ],
