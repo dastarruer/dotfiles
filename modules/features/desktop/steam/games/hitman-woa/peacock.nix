@@ -19,8 +19,8 @@
 
     peacockDir = "${hmConfig.home.homeDirectory}/.config/peacock-linux";
     peacockZip = pkgs.fetchzip {
-      url = "https://github.com/thepeacockproject/Peacock/releases/download/v8.10.1/Peacock-v8.10.1-linux.zip";
-      hash = "sha256-pM3qLlO+k0e//qlDwT/cLc/Ye2o82oooLPTjT0yVO6M=";
+      url = "https://github.com/thepeacockproject/Peacock/releases/download/v8.10.2/Peacock-v8.10.2-linux.zip";
+      hash = "sha256-GtPfBwBJz7zcvyBZfKT2OfPKhV4oJfFR5vK+e4szi8o=";
     };
     port = 3000;
     peacockScript = pkgs.writeShellApplication {
