@@ -29,8 +29,8 @@
         openrouter_api_key = {};
       };
 
-      # Set api key for AI providers
       home.sessionVariables = {
+        # Set api key for AI providers
         "GEMINI_API_KEY" =
           if (builtins.pathExists geminiKeyPath)
           then (builtins.readFile geminiKeyPath)
@@ -39,6 +39,8 @@
           if (builtins.pathExists openrouterKeyPath)
           then (builtins.readFile openrouterKeyPath)
           else "";
+
+        EDITOR = "zeditor --wait";
       };
 
       programs.zed-editor = {
