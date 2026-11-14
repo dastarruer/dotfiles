@@ -55,7 +55,7 @@
       # services_librepods
       services_ssh
 
-      self-hosted_webdav
+      # self-hosted_webdav
     ];
 
     custom = {
