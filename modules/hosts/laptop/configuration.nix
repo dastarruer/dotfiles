@@ -56,6 +56,7 @@
       services_ssh
 
       # self-hosted_webdav
+      self-hosted_mpd
     ];
 
     custom = {
