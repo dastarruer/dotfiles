@@ -6,7 +6,13 @@
   }: let
     hmConfig = config.home-manager.users.dastarruer;
     musicPath = "${hmConfig.home.homeDirectory}/Music/mpd";
+    backup = config.custom.backup;
   in {
+    custom.backup.backupPaths = lib.mkIf backup.enable [
+      musicPath
+      hmConfig.services.mpd.playlistDirectory
+    ];
+
     home-manager.users.dastarruer = {
       systemd.user.tmpfiles.rules = [
         "d ${musicPath} - - - - -"
@@ -19,7 +25,7 @@
         network.startWhenNeeded = true; # only start MPD service upon connection to its socket
       };
 
-      # im not remembering the full name it's just a bunch of letters 
+      # im not remembering the full name it's just a bunch of letters
       programs.fish.shellAliases.nm = "${lib.getExe hmConfig.programs.ncmpcpp.package}";
       programs.ncmpcpp = {
         enable = true;
