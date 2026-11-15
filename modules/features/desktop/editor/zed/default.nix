@@ -59,6 +59,7 @@
           "dockerfile"
           "docker-compose"
           "comment" # highlight todo comments
+          "color-highlight"
         ];
 
         userKeymaps = [
