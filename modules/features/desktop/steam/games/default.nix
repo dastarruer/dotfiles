@@ -12,6 +12,7 @@
       "284160" = "beam.ng";
       "3812600" = "ReStory: Chill Electronics Repairs";
       "365450" = "Hacknet";
+      "3240220" = "Grand Theft Auto V Enhanced";
     };
   };
 }
