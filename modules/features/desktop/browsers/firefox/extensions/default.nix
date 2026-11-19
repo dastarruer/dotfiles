@@ -22,6 +22,7 @@
             privacy-badger
             link-cleaner
             bitwarden
+            tridactyl
           ];
         };
 
