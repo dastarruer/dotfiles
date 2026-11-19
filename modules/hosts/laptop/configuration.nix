@@ -42,6 +42,7 @@
       desktop_todoist
       desktop_mpv
       desktop_obs
+      desktop_obsidian
       desktop_zathura
       # desktop_timer
       desktop_kdeconnect

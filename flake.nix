@@ -12,6 +12,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     multiverse.url = "github:fzakaria/nixpkgs-multiverse";
 
+    obsidian-extensions = {
+      url = "github:karaolidis/nix-obsidian-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
