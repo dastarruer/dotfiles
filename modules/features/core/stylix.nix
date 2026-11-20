@@ -30,6 +30,7 @@
 
         # Set the color theme
         base16Scheme = "${pkgs.base16-schemes}/share/themes/${config.custom.theme.name}.yaml";
+        polarity = "dark";
 
         # Cursor settings
         cursor = {
