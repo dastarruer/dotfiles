@@ -18,7 +18,8 @@
           ];
         };
 
-        home.packages = with pkgs; [
+        # Plugin deps
+        programs.noctalia.extraPackages = with pkgs; [
           git
           # phone-connect
           config.programs.kdeconnect.package
