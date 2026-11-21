@@ -1,6 +1,7 @@
 {...}: {
   flake.nixosModules.self-hosted_mpd = {
     config,
+    pkgs,
     lib,
     ...
   }: let
@@ -14,6 +15,8 @@
     ];
 
     home-manager.users.dastarruer = {
+      home.packages = [pkgs.mpc];
+      
       systemd.user.tmpfiles.rules = [
         "d ${musicPath} - - - - -"
       ];
