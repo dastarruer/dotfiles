@@ -42,6 +42,12 @@
 
           communityPlugins = [
             {
+              pkg = pkgs.obsidianPlugins.mononote;
+            }
+            {
+              pkg = pkgs.obsidianPlugins.recent-files-obsidian;
+            }
+            {
               pkg = pkgs.obsidianPlugins.obsidian-linter;
               settings = {
                 ruleConfigs = {
