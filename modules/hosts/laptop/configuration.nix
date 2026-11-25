@@ -34,6 +34,7 @@
       desktop_editor
       # desktop_calibre
       # desktop_bottles
+      desktop_minuet
       desktop_imv
       desktop_kdenlive
       desktop_krita
