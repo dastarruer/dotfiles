@@ -6,9 +6,12 @@
     ...
   }: let
     backup = config.custom.backup;
+    sync = config.custom.sync;
     vaultPath = "${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/vault";
   in {
     custom.backup.backupPaths = lib.mkIf backup.enable [vaultPath];
+    custom.sync.syncPaths = lib.mkIf sync.enable [vaultPath];
+
     nixpkgs.overlays = [
       inputs.obsidian-extensions.overlays.default
     ];
@@ -46,6 +49,9 @@
             }
             {
               pkg = pkgs.obsidianPlugins.recent-files-obsidian;
+            }
+            {
+              pkg = pkgs.obsidianPlugins.obsidian-annotator;
             }
             {
               pkg = pkgs.obsidianPlugins.obsidian-linter;
