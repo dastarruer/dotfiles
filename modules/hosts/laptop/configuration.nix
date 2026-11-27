@@ -59,6 +59,7 @@
 
       # self-hosted_webdav
       self-hosted_mpd
+      self-hosted_syncthing
     ];
 
     custom = {

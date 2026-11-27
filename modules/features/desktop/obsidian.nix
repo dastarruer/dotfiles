@@ -10,7 +10,12 @@
     vaultPath = "${config.home-manager.users.dastarruer.home.homeDirectory}/Documents/vault";
   in {
     custom.backup.backupPaths = lib.mkIf backup.enable [vaultPath];
-    custom.sync.syncPaths = lib.mkIf sync.enable [vaultPath];
+    custom.sync.syncPaths = lib.mkIf sync.enable [
+      {
+        path = vaultPath;
+        devices = ["cool awesome iphone" "cool awesome ipad"];
+      }
+    ];
 
     nixpkgs.overlays = [
       inputs.obsidian-extensions.overlays.default
