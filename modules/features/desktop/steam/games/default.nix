@@ -13,6 +13,12 @@
       "3812600" = "ReStory: Chill Electronics Repairs";
       "365450" = "Hacknet";
       "3240220" = "Grand Theft Auto V Enhanced";
+      "35140" = "Batman: Arkham Asylum GOTY Edition";
+      "200260" = "Batman: Arkham City GOTY";
+      "208650" = "Batman™: Arkham Knight";
+      "289650" = "Assassin's Creed Unity";
+      "1222680" = "Need for Speed™ Heat";
+      "2138710" = "Sifu";
     };
   };
 }
