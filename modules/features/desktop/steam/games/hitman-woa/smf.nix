@@ -12,8 +12,8 @@
     smfPrefix = "3086416570";
 
     smfZip = pkgs.fetchzip {
-      url = "https://github.com/atampy25/simple-mod-framework/releases/download/2.33.45/Release.zip";
-      hash = "sha256-jiJAYy9wFhytIp8nH3Q0WM7aCNU1NOlit5JfpaeWTpY=";
+      url = "https://github.com/atampy25/simple-mod-framework/releases/download/2.33.46/Release.zip";
+      hash = "sha256-BfcCfL0OXvyGiWbxNvgp9py+jIcG+YN+RlnMCDpQMts=";
       stripRoot = false;
     };
 
@@ -22,10 +22,6 @@
     lastDeployJsonPath = ''Z:\home\dastarruer\.local\share\Steam\steamapps\compatdata\${smfPrefix}\pfx\drive_c\users\steamuser\AppData\Local\Simple Mod Framework\lastDeploy.json'';
 
     # lot of mods to be downloaded
-    burnTheWitchHeritageUI = pkgs.fetchzip {
-      url = "https://github.com/Burn-the-witch/Heritage-UI/releases/download/14.0.3/mod.framework.zip";
-      hash = "sha256-Ivziq7cjxEBF8unDwYYhRbJwN6EW/GO/EFOEgl5j6nQ=";
-    };
     charc0alMoreBloodMelee = pkgs.fetchzip {
       url = "https://github.com/charc0al/HM3_MBM/releases/download/2.4.0/mod.framework.zip";
       hash = "sha256-1ageEt/d6ilfsNtLQ+tjq8bWfvGhQf5SvwP7WYgQeDQ=";
@@ -51,10 +47,6 @@
       url = "https://github.com/scrungofan/handler-dialogue/releases/download/1.6.0/mod.framework.zip";
       hash = "sha256-0jeTFDFu3kJyuWD0jl1qlU0rMhVpZ23GjGLSY1wJUFo=";
     };
-    jojjeBayHarborButcher = pkgs.fetchzip {
-      url = "https://github.com/JojjeE/h3-bayharbor/releases/download/1.1.1/mod.framework.zip";
-      hash = "sha256-5KDbVKd1dIk4WDZwT2EckEBlSLtrGgOG828FO/TBHqw=";
-    };
     minnowMoreFreelancerTargets = pkgs.fetchzip {
       url = "https://github.com/Ocean-Minnow/Minnow.MoreFreelancerTargets/releases/download/1.1.0/mod.framework.zip";
       hash = "sha256-iNBBnV8cPMzV2jdCCyToac0Ao/i1ei508Z2Grtu6ecU=";
@@ -79,14 +71,12 @@
         "Simple Mod Framework/config.json".source = ./files/smf_config.json;
 
         # le mods
-        "Simple Mod Framework/Mods/BurnTheWitch.HeritageUI".source = "${burnTheWitchHeritageUI}/BurnTheWitch.HeritageUI";
         "Simple Mod Framework/Mods/Charc0al.MoreBloodMelee".source = "${charc0alMoreBloodMelee}/Charc0al.MoreBloodMelee";
         "Simple Mod Framework/Mods/Charc0al.NoHoldButtons".source = "${charc0alNoHoldButtons}/Charc0al.NoHoldButtons";
         "Simple Mod Framework/Mods/Charc0al.ThrownItemAdjustments".source = charc0alThrownItemAdjustments;
         "Simple Mod Framework/Mods/Freelancer Variations".source = "${freelancerVariations}/Freelancer Variations";
         "Simple Mod Framework/Mods/GlacierOrganisation.CommunityPatches".source = glacierOrganisationCommunityPatches;
         "Simple Mod Framework/Mods/invalid.earpiecevoices".source = "${invalidEarpiecevoices}/invalid.earpiecevoices";
-        "Simple Mod Framework/Mods/Jojje.BayHarborButcher".source = "${jojjeBayHarborButcher}/Jojje.BayHarborButcher";
         "Simple Mod Framework/Mods/Minnow.MoreFreelancerTargets".source = "${minnowMoreFreelancerTargets}/Minnow.MoreFreelancerTargets";
         "Simple Mod Framework/Mods/musicalmushr00m.LightingUltimate".source = "${musicalmushr00mLightingUltimate}/musicalmushr00m.LightingUltimate";
         "Simple Mod Framework/Mods/Notex.SimpleHealthBar".source = "${notexSimpleHealthBar}/Notex.SimpleHealthBar";
